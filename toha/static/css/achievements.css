@@ -1,0 +1,112 @@
+#gallery .achievement-entry {
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 7px;
+  margin-right: 7px;
+  z-index: 1;
+  opacity: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#gallery .achievement-entry:hover {
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0.95;
+  transition: opacity 0.3s ease-out;
+}
+
+#gallery .achievement-details {
+  cursor: pointer;
+  z-index: 1;
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+#gallery .img-type-1 {
+  height: 300px;
+}
+#gallery .img-type-2 {
+  height: 146px;
+  margin-bottom: 8px;
+}
+
+#gallery i {
+  color: #8392a5;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  font-size: 0rem;
+  opacity: 0;
+  position: absolute;
+}
+
+#gallery .achievement-entry:hover i {
+  opacity: 1;
+  font-size: 1rem;
+  transition: all 0.3s ease-out;
+  --webkit-transition: all 0.3s ease-out;
+}
+
+#gallery .img-type-1 i {
+  margin-top: 140px;
+}
+#gallery .img-type-2 i {
+  margin-top: 65px;
+}
+
+#gallery .achievement-details.img-type-1 i,
+.achievement-details.img-type-2 i {
+  right: 5px !important;
+  margin-top: 5px !important;
+  transition: none !important;
+}
+
+#gallery .achievement-entry .title {
+  color: #e5e9f2;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  padding: 5px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  margin-bottom: 0px;
+  bottom: -5px;
+}
+
+#gallery .achievement-entry:hover .title {
+  opacity: 1;
+  bottom: 0px;
+  transition: bottom 0.3s ease-out;
+}
+
+#gallery .caption {
+  background-color: rgba(0, 0, 0, 0.7);
+  bottom: 1rem;
+  left: 1rem;
+  color: #e5e9f2;
+  padding: 15px;
+  position: absolute;
+  transition: all 0.3s ease-out;
+}
+
+#gallery .caption h3 {
+  color: #e5e9f2;
+}
+
+#gallery .caption p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #e5e9f2;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#gallery .achievement-details {
+  height: 75vh !important;
+}

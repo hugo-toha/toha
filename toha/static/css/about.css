@@ -1,0 +1,367 @@
+.social-link {
+  list-style: none;
+  padding: 0.2rem;
+}
+
+.social-link a {
+  font-size: 1.5rem;
+  color: #3c4858;
+  padding: 0.5rem;
+}
+
+.social-link a:hover {
+  color: #248aaa;
+  transition: all 0.3s ease-in;
+}
+
+.circular-progress {
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  background: none;
+  margin: 0 auto;
+  box-shadow: none;
+  position: relative;
+}
+
+.circular-progress:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 12px solid #f9fafc;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.circular-progress > span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.circular-progress .circular-progress-left {
+  left: 0;
+}
+
+.circular-progress .circular-progress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 12px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+}
+
+.circular-progress .circular-progress-left .circular-progress-bar {
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+
+.circular-progress .circular-progress-right {
+  right: 0;
+}
+
+.circular-progress .circular-progress-right .circular-progress-bar {
+  left: -100%;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+  animation: circular-loading-1 1.8s linear forwards;
+}
+
+.circular-progress .circular-progress-value {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: #3c4858;
+  font-size: 1rem;
+  color: #f9fafc;
+  line-height: 135px;
+  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.circular-progress.blue .circular-progress-bar {
+  border-color: #048dff;
+}
+
+.circular-progress.yellow .circular-progress-bar {
+  border-color: #ffc212;
+}
+
+.circular-progress.pink .circular-progress-bar {
+  border-color: #ed63d2;
+}
+
+.circular-progress.green .circular-progress-bar {
+  border-color: #2dca73;
+}
+
+.circular-progress-percentage-50 {
+  animation: circular-loading-50 0s linear forwards 1.8s;
+}
+
+.circular-progress-percentage-55 {
+  animation: circular-loading-55 0.18s linear forwards 1.8s;
+}
+
+.circular-progress-percentage-60 {
+  animation: circular-loading-60 0.36s linear forwards 1.8s;
+}
+
+.circular-progress-percentage-65 {
+  animation: circular-loading-65 0.54s linear forwards 1.8s;
+}
+
+.circular-progress-percentage-70 {
+  animation: circular-loading-70 0.72s linear forwards 1.8s;
+}
+
+.circular-progress-percentage-75 {
+  animation: circular-loading-75 0.9s linear forwards 1.8s;
+}
+
+.circular-progress-percentage-80 {
+  animation: circular-loading-80 1.08s linear forwards 1.8s;
+}
+
+.circular-progress-percentage-85 {
+  animation: circular-loading-85 1.26s linear forwards 1.8s;
+}
+
+.circular-progress-percentage-90 {
+  animation: circular-loading-90 1.44s linear forwards 1.8s;
+}
+
+.circular-progress-percentage-95 {
+  animation: circular-loading-95 1.62s linear forwards 1.8s;
+}
+
+.circular-progress-percentage-100 {
+  animation: circular-loading-100 1.8s linear forwards 1.8s;
+}
+
+@keyframes circular-loading-50 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes circular-loading-55 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(18deg);
+    transform: rotate(18deg);
+  }
+}
+
+@keyframes circular-loading-60 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(36deg);
+    transform: rotate(36deg);
+  }
+}
+
+@keyframes circular-loading-65 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(54deg);
+    transform: rotate(54deg);
+  }
+}
+
+@keyframes circular-loading-70 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(72deg);
+    transform: rotate(72deg);
+  }
+}
+
+@keyframes circular-loading-75 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes circular-loading-80 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(108deg);
+    transform: rotate(108deg);
+  }
+}
+
+@keyframes circular-loading-85 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(126deg);
+    transform: rotate(126deg);
+  }
+}
+
+@keyframes circular-loading-90 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(144deg);
+    transform: rotate(144deg);
+  }
+}
+
+@keyframes circular-loading-95 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(162deg);
+    transform: rotate(162deg);
+  }
+}
+
+@keyframes circular-loading-100 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes circular-loading-1 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes circular-loading-2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(144deg);
+    transform: rotate(144deg);
+  }
+}
+
+@keyframes circular-loading-3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes circular-loading-4 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(36deg);
+    transform: rotate(36deg);
+  }
+}
+
+@keyframes circular-loading-5 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(126deg);
+    transform: rotate(126deg);
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .circular-progress {
+    margin-bottom: 20px;
+  }
+}
+
+/* ============= Device specific fixes ======= */
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (max-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+/*  Large devices (desktops, 992px and up) */
+
+@media (max-width: 992px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media only screen and (max-width: 768px) {
+}
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media only screen and (max-width: 576px) {
+}

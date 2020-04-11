@@ -1,0 +1,30 @@
+.projects .card .card-header {
+  padding: 10px;
+}
+
+.projects .card .card-img-xs {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+
+.card .card-header .sub-title span:nth-child(1) {
+  float: left;
+}
+.card .card-header .sub-title span:nth-child(2) {
+  float: right;
+}
+
+.projects .card .card-header {
+  background-color: #f9fafc;
+}
+
+.projects .card .card-header .sub-title {
+  color: #8392a5;
+  margin-top: 5px;
+}
+
+.filtr-projects {
+  padding: 15px !important;
+}

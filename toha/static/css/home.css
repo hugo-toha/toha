@@ -1,0 +1,72 @@
+.home {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  color: #f9fafc;
+  overflow: hidden;
+}
+
+.background {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-image: url("/assets/img/background/flower.jpg");
+  background-attachment: fixed;
+  transform: scale(1.1);
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  background-size: cover;
+}
+
+.content {
+  position: relative;
+  top: -80%;
+  height: 75%;
+}
+
+.home img {
+  width: 160px;
+  max-width: 50%;
+  height: auto;
+}
+
+.home .greeting {
+  color: #f9fafc;
+}
+
+.home .typing-carousel {
+  font-size: 14pt;
+  color: #f0f0f0;
+}
+
+#typing-carousel-data {
+  display: none;
+}
+
+.arrow {
+  position: absolute;
+  color: #f9fafc;
+  font-size: 1.5rem;
+  bottom: 0;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
