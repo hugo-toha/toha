@@ -19,17 +19,17 @@
 }
 
 .initial-navbar .navbar-brand {
-  color: #C0CCDA;
+  color: #c0ccda;
   font-weight: 800;
 }
 
 .initial-navbar li a {
-  color: #C0CCDA;
+  color: #c0ccda;
 }
 
 .initial-navbar .navbar-nav .active,
 .initial-navbar li a:hover {
-  color: #F9FAFC;
+  color: #f9fafc;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
@@ -46,18 +46,18 @@
 
 .final-navbar {
   background-color: #f9fafc;
-  color: #1C2D41;
+  color: #1c2d41;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
 .final-navbar .navbar-brand {
-  color: #1C2D41;
+  color: #1c2d41;
   font-weight: 800;
 }
 
 .final-navbar li a {
-  color: #1C2D41;
+  color: #1c2d41;
   font-weight: 500;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -80,7 +80,7 @@
 
 .navbar-collapse.show li a,
 .navbar-collapse.collapsing li a {
-  color: #1C2D41;
+  color: #1c2d41;
   font-weight: 500;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -104,12 +104,15 @@
   height: 20px;
   width: 2px;
 }
+
 .final-navbar #top-navbar-divider {
   background: rgba(0, 0, 0, 0.6);
+}
+
+#top-navbar-divider {
   height: 20px;
   width: 2px;
 }
-
 /*------ navbar on blog page start ----*/
 
 .final-navbar .navbar-toggler {
@@ -117,12 +120,12 @@
 }
 
 .blog-navbar .navbar-brand {
-  color: #1C2D41;
+  color: #1c2d41;
   font-weight: 800;
 }
 
 .blog-navbar li a {
-  color: #1C2D41;
+  color: #1c2d41;
   font-weight: 500;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -177,6 +180,12 @@
 
   .dropdown-divider {
     border-top: 1px solid #c0ccda;
+  }
+  #top-navbar-divider {
+    background: rgba(0, 0, 0, 0.6);
+    height: auto;
+    width: auto;
+    margin-right: 15px;
   }
 }
 
