@@ -219,4 +219,8 @@ a:hover {
 /* Small devices (landscape phones, 576px and up) */
 
 @media only screen and (max-width: 576px) {
+  .container-fluid.about, .container-fluid.skills, .container-fluid.projects, .container-fluid.recent-posts, .container-fluid.achievements{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
