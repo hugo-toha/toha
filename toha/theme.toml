@@ -11,11 +11,5 @@ features = []
 min_version = "0.41.0"
 
 [author]
-  name = ""
-  homepage = ""
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Emruz Hossain"
+  homepage = "hossainemruz.github.io"
