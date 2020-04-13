@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>.Sites.name</title>
+    {{- partial "head.html" . -}}
 </head>
-<body>
-    <h1>This is index page.</h1>
+<body data-spy="scroll" data-target="#top-navbar" data-offset="50">
+    <!--- NAVBAR START ---->
+    {{- partial "navbar.html" . -}}
+    <!--- NAVBAR END ---->
+
+    <!--- LANDING SECTION START ---->
+    {{- partial "landing.html" . -}}
+    <!--- LANDING SECTION END ---->
+    
+    <!--- ABOUT SECTION START --->
+    {{- partial "about.html" . -}}
+    <!--- ABOUT SECTION END ---->
+
+    <!--- SKILLS SECTION START --->
+    {{- partial "skills.html" . -}}
+    <!--- SKILLS SECTION END ---->
+
+    <!--- EXPERIENCE SECTION START --->
+    {{- partial "experiences.html" . -}}
+    <!--- EXPERIENCE SECTION END ---->
+
+    <!--- PROJECT SECTION START --->
+    {{- partial "projects.html" . -}}
+    <!--- PROJECT SECTION END ---->
+
+    <!--- RECENT-POSTS SECTION START --->
+    {{- partial "recent-posts.html" . -}}
+    <!--- RECENTS-POSTS SECTION END ---->
+
+    <!--- ACHIEVEMENT SECTION START --->
+    {{- partial "achievements.html" . -}}
+    <!--- ACHIEVEMENTS SECTION END ---->
+
+    <!--- FOOTER START --->
+    {{- partial "footer.html" . -}}
+    <!--- FOOTER END ---->
+
 </body>
 </html>
