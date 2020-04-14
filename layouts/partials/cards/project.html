@@ -1,0 +1,43 @@
+<div
+  class="col-md-6 col-lg-4 p-2 filtr-item"
+  data-category='all, {{ delimit  .tags ","}}'
+>
+  <div class="card mt-1">
+    <div class="card">
+      <div class="card-header">
+        <div class="d-flex">
+          {{ if .logo }}
+          <img class="card-img-xs" src="{{ .logo }}" alt="{{ .name }}" />
+          {{ end }}
+          <h5 class="card-title mb-0">{{ .name }}</h5>
+        </div>
+        <div class="sub-title">
+          <span>{{ .role }}</span>
+          <span>{{ .timeline }}</span>
+        </div>
+      </div>
+      <div class="card-body text-justify pt-1 pb-1">
+        <p>{{ .summary }}</p>
+        <span class="float-right">
+          {{ if .repo }}
+          <a
+            class="github-button-inactive"
+            href="{{ .repo }}"
+            data-icon="octicon-standard"
+            data-show-count="true"
+            aria-label="Star {{ .name }}"
+            >Star</a
+          >
+          {{ else if .url }}
+          <a
+            class="btn btn-outline-info btn-sm mb-2"
+            href="{{ .url }}"
+            target="#"
+            >Details</a
+          >
+          {{ end }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

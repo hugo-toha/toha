@@ -1,0 +1,15 @@
+<div class="col-sm-12 col-md-6 col-lg-4 pt-2">
+  <div class="card">
+    <div class="card-head d-flex">
+      {{ if .icon }}
+      <img class="card-img-sm" src="{{ .icon }}" alt="{{ .name }}" />
+      {{ else }}
+      <i class="fas fas fa-tools"></i>
+      {{ end }}
+      <h4 class="card-title">{{ .name }}</h4>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{ .summary }}</p>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,10 @@
   padding-bottom: 1rem;
 }
 
+.experiences .timeline{
+  margin-top: 2rem!important;
+}
+
 .text-muted {
   color: #e5e9f2;
 }

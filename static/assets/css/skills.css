@@ -2,6 +2,12 @@
   margin: 10px;
 }
 
+.skills .card .card-head i{
+  font-size: 1.5rem;
+  margin: 10px;
+  margin-top: 15px;
+}
+
 .skills .card {
   margin-top: 10px;
   margin-bottom: 10px;

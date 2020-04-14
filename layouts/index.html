@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.Sites.name</title>
+    <title>{{- .Site.Title -}}</title>
     {{- partial "head.html" . -}}
 </head>
 <body data-spy="scroll" data-target="#top-navbar" data-offset="50">
@@ -11,9 +11,9 @@
     {{- partial "navbar.html" . -}}
     <!--- NAVBAR END ---->
 
-    <!--- LANDING SECTION START ---->
-    {{- partial "landing.html" . -}}
-    <!--- LANDING SECTION END ---->
+    <!--- Home SECTION START ---->
+    {{- partial "home.html" . -}}
+    <!--- Home SECTION END ---->
     
     <!--- ABOUT SECTION START --->
     {{- partial "about.html" . -}}

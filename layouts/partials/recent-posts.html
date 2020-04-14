@@ -1,72 +1,10 @@
-  <!-- RECENT POSTS START -->
-  <div class="container-fluid recent-posts bg-white anchor pb-5">
-    <h1 class="text-center">Recent Posts</h1>
-    <div class="container">
-      <div class="row" id="recent-posts">
-        <div class="col-lg-4 col-md-6 pt-2">
-          <div class="card">
-            <div class="card-head">
-              <img class="card-img-top" src="assets/images/background/bird.jpg" alt="Card image cap" />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">
-                How to Build Multi-stage Docker Image
-              </h5>
-              <p class="card-text post-summery">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-            <div class="card-footer">
-              <span class="float-left">November 12, 2019</span>
-              <a href="#" class="float-right btn btn-outline-info btn-sm">Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pt-2">
-          <div class="card">
-            <div class="card-head">
-              <img class="card-img-top" src="assets/images/recent-posts/docker-2.png" alt="Card image cap" />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">
-                How to Build Multi-stage Docker Image
-              </h5>
-              <p class="card-text post-summery">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-                corporis sint voluptates maiores expedita, id ullam, maxime sit eaque eius earum, consectetur blanditiis
-                nulla ex aliquam dolor libero. Inventore, maiores.
-              </p>
-            </div>
-            <div class="card-footer">
-              <span class="float-left">November 12, 2019</span>
-              <a href="#" class="float-right btn btn-outline-info btn-sm">Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pt-2">
-          <div class="card">
-            <div class="card-head">
-              <img class="card-img-top" src="assets/images/recent-posts/kubernetes.png" alt="Card image cap" />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">
-                How to Build Multi-stage Docker Image
-              </h5>
-              <p class="card-text post-summery">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis veritatis sapiente fuga
-                aspernatur adipisci dolor, et doloremque quos eos incidunt? Earum, debitis explicabo. Obcaecati eligendi
-                placeat eos quod laboriosam quia.
-              </p>
-            </div>
-            <div class="card-footer">
-              <span class="float-left">November 12, 2019</span>
-              <a href="#" class="float-right btn btn-outline-info btn-sm">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="container-fluid recent-posts bg-white anchor pb-5">
+  <h1 class="text-center">Recent Posts</h1>
+  <div class="container">
+    <div class="row" id="recent-posts">
+      {{ range first 3 .Site.RegularPages }}
+        {{ partial "cards/post.html" . }}
+      {{ end }}
     </div>
   </div>
-  <!-- RECENT POSTS END -->
+</div>

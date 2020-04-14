@@ -5,34 +5,19 @@
       <div class="col-md-4 col-sm-12">
         <h5>Navigation</h5>
         <ul>
+          {{ range .Site.Menus.main }}
           <li class="nav-item">
-            <a class="smooth-scroll" href="#home">Home</a>
+            <a class="smooth-scroll" href="#{{ .URL }}">{{ .Name }}</a>
           </li>
-          <li class="nav-item">
-            <a class="smooth-scroll" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="smooth-scroll" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="smooth-scroll" href="#experiences">Experiences</a>
-          </li>
-          <li class="nav-item">
-            <a class="smooth-scroll" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="smooth-scroll" href="#recent-posts">Recent Posts</a>
-          </li>
-          <li class="nav-item">
-            <a class="smooth-scroll" href="#achievements">Achievements</a>
-          </li>
+          {{ end }}
         </ul>
       </div>
       <div class="col-md-4 col-sm-12">
         <h5>Contact Me</h5>
         <ul>
-          <li><span>Email: </span> <span>hossainemruz@gmail.com</span></li>
-          <li><span>Phone: </span><span>+8801770582121</span></li>
+          {{ range $key,$value:=.Site.Params.contactInfo }}
+          <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
+          {{ end }}
         </ul>
       </div>
       <div class="col-md-4 col-sm-12">
@@ -61,7 +46,7 @@
     <div class="row text-left">
       <div class="col-md-4">
         Theme:
-        <a id="theme" href="https://github.com/hossainemruz" target="#">XS2</a>
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">Toha</a>
       </div>
       <div class="col-md-4">© 2019 Copyright.</div>
       <div class="col-md-4">
