@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
     <title>{{- .Site.Title -}}</title>
-    {{- partial "head.html" . -}}
-</head>
-<body data-spy="scroll" data-target="#top-navbar" data-offset="50">
-    <!--- NAVBAR START ---->
+    <!-- import common headers -->
+    {{- partial "header.html" . -}}
+
+    <!-- import index page specific headers -->
+    <link rel="stylesheet" href="/assets/css/home.css" />
+    <link rel="stylesheet" href="/assets/css/about.css" />
+    <link rel="stylesheet" href="/assets/css/skills.css" />
+    <link rel="stylesheet" href="/assets/css/experiences.css" />
+    <link rel="stylesheet" href="/assets/css/projects.css" />
+    <link rel="stylesheet" href="/assets/css/recent-posts.css" />
+    <link rel="stylesheet" href="/assets/css/achievements.css" />
+  </head>
+  <body data-spy="scroll" data-target="#top-navbar" data-offset="50">
+    <!--- NAVBAR ------------------------->
     {{- partial "navbar.html" . -}}
-    <!--- NAVBAR END ---->
 
-    <!--- Home SECTION START ---->
+    <!--- ADD HOME SECTION ---------------->
     {{- partial "home.html" . -}}
-    <!--- Home SECTION END ---->
-    
-    <!--- ABOUT SECTION START --->
+
+    <!--- ADD ABOUT SECTION --------------->
     {{- partial "about.html" . -}}
-    <!--- ABOUT SECTION END ---->
 
-    <!--- SKILLS SECTION START --->
+    <!--- ADD SKILLS SECTION -------------->
     {{- partial "skills.html" . -}}
-    <!--- SKILLS SECTION END ---->
 
-    <!--- EXPERIENCE SECTION START --->
+    <!--- ADD EXPERIENCE SECTION ----------->
     {{- partial "experiences.html" . -}}
-    <!--- EXPERIENCE SECTION END ---->
 
-    <!--- PROJECT SECTION START --->
+    <!--- ADD PROJECT SECTION -------------->
     {{- partial "projects.html" . -}}
-    <!--- PROJECT SECTION END ---->
 
-    <!--- RECENT-POSTS SECTION START --->
+    <!--- ADD RECENT-POSTS SECTION --------->
     {{- partial "recent-posts.html" . -}}
-    <!--- RECENTS-POSTS SECTION END ---->
 
-    <!--- ACHIEVEMENT SECTION START --->
+    <!--- ADD ACHIEVEMENT SECTION ---------->
     {{- partial "achievements.html" . -}}
-    <!--- ACHIEVEMENTS SECTION END ---->
 
-    <!--- FOOTER START --->
+    <!--- ADD FOOTER ----------------------->
     {{- partial "footer.html" . -}}
-    <!--- FOOTER END ---->
 
-</body>
+    <!--- ADD COMMON SCRIPTS --------------->
+    {{ partial "scripts.html" . }}
+
+    <!--- ADD INDEX PAGE SPECIFIC SCRIPTS -->
+    <script src="/assets/js/itype.min.js"></script>
+    <script src="/assets/js/github-button.js"></script>
+    <script src="/assets/js/home.js"></script>
+  </body>
 </html>

@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+  <head>
+    <!------ ADD COMMON HEADERS -------->
+    {{- partial "header.html" . -}}
+
+    <!------ ADD PAGE SPECIFIC HEADERS ------->
+    {{ block "header" . }} {{ end }}
+
+    <!-- ADD GOOGLE ANALYTICS IF ENABLED -->
+    {{ if .Site.GoogleAnalytics }}
+      {{ template "_internal/google_analytics_async.html" . }}
+    {{ end }}
+  </head>
+
+  <body>
+    <div class="container-fluid bg-dimmed wrapper">
+      <!----- ADD NAVBAR --------------->
+      {{ block "navbar" . }} {{ end }}
+
+      <!----- ADD PAGE CONTENT --------->
+      {{ block "content" . }} {{ end }}
+    </div>
+
+    <!------- ADD FOOTER ------------>
+    {{- partial "footer.html" . -}}
+
+    <!------- ADD COMMON SCRIPTS ------->
+    {{ partial "scripts.html" . }}
+
+    <!------- ADD PAGE SPECIFIC SCRIPTS ------>
+    {{ block "scripts" . }} {{ end }}
+  </body>
 </html>

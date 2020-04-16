@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-xs top-navbar final-navbar shadow">
+    <div class="container">
+      <a class="navbar-brand" href="{{ .baseURL }}">{{ .title }}</a>
+      <button class="navbar-toggler navbar-light" type="button" {{ if .hasToggleButton }}onclick="toggleSidebar()"{{ end }}>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="top-nav-items">
+        <ul class="navbar-nav ml-auto">
+        </ul>
+        </ul>
+      </div>
+    </div>
+</nav>

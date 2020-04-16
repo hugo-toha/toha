@@ -1,11 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Single</title>
-</head>
-<body>
-    <h1>This is single page</h1>
-</body>
-</html>
+{{ define "header" }}
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/assets/css/single.css" />
+{{ end }}
+
+{{ define "navbar" }}
+    {{ partial "navbar-2.html" (dict "baseURL" .Site.BaseURL "title" .Site.Title "hasToggleButton" false) }}
+{{ end }}
+
+{{ define "content" }}
+<div class="container p-0 read-area">
+  <!--Hero Area-->
+  <div class="hero-area col-sm-12" style="background-image: url({{ .Page.Params.hero }});">
+  </div>
+
+  <!--Content Start-->
+  <div class="page-content">
+    <div class="author-profile ml-auto align-self-lg-center">
+      <img class="rounded-circle" src="{{.Page.Params.author.image }}" alt="" />
+      <h5>{{ .Page.Params.author.name }}</h5>
+      <p>{{ .Page.Date.Format "January 2, 2006" }}</p>
+    </div>
+
+    <div class="title">
+      <h1>{{ .Page.Title }}</h1>
+    </div>
+
+    <div class="post-content">
+      {{ .Page.Content }}
+    </div>
+
+  <!---Next and Previous Navigator -->
+  <hr />
+  <div class="row next-prev-navigator">
+    {{ if .Prev }}
+    <div class="col-md-6 previous-article">
+      <a href="{{.Prev.RelPermalink}}" class="btn btn-outline-info">
+        <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+        <br />
+        <span>{{ .Prev.Title }}</span>
+      </a>
+    </div>
+    {{ end }}
+    {{ if .Next }}
+    <div class="col-md-6 next-article">
+      <a href="{{ .Next.RelPermalink }}" class="btn btn-outline-info">
+        <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+        <br />
+        <span>{{ .Next.Title }}</span>
+      </a>
+    </div>
+    {{ end }}
+  </div>
+  <hr />
+  <!-- Add Disqus forum  -->
+  {{ if .Site.DisqusShortname }}
+      {{ partial "disqus.html" . }}
+  {{ end }}
+</div>
+{{ end }}
+
+
+{{ define "scripts" }}
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+{{ if .Params.math }}
+    {{ partial "math.html" . }}
+{{ end }}
+{{ end }}
