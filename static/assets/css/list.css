@@ -43,6 +43,10 @@
   position: fixed;
 }
 
+#list-heading{
+  padding-left: 0px!important;
+}
+
 .tree,
 .tree ul {
   margin: 0;
@@ -52,7 +56,7 @@
 }
 
 .tree ul {
-  margin-left: 1em;
+  margin-left: 0.5rem;
   position: relative;
 }
 
@@ -65,8 +69,23 @@
   display: block;
   width: 0;
   position: absolute;
-  top: -17px;
+  top: -20px;
   left: -3px;
+  bottom: 16px;
+  border-left: 1px solid;
+}
+
+.subtree{
+  padding-left: 0.7rem;
+}
+
+.subtree:before{
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  top: 6.5rem;
+  left: 0.5rem;
   bottom: 16px;
   border-left: 1px solid;
 }
@@ -80,10 +99,10 @@
   position: relative;
 }
 
-.tree ul li:before {
+.subtree li:before {
   content: "";
   display: block;
-  width: 16px;
+  width: 20px;
   height: 0;
   border-top: 1px solid;
   margin-top: -1px;
@@ -92,7 +111,7 @@
   left: -3px;
 }
 
-.tree ul li:last-child:before {
+.subtree li:last-child:before {
   background: #f9fafc;
   height: auto;
   top: 1em;

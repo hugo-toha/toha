@@ -1,14 +1,30 @@
 {{ define "header" }}
-
+    <link rel="stylesheet" href="/assets/css/list.css">
 {{ end }}
 
 {{ define "navbar" }}
     {{ partial "navbar-2.html" (dict "baseURL" .Site.BaseURL "title" .Site.Title "hasToggleButton" true) }}
 {{ end }}
 
-
 {{ define "content" }}
-    <h1>Here is the actual content</h1>
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-tree">
+      <input type="text" name="filtr-search" value="" placeholder="Search" data-search="" id="search-box" />
+      <ul class="tree" id="tree">
+        <li id="list-heading"><a href="#" data-filter="all">{{.Title}}</a></li>
+        <div class="subtree">
+            {{ partial "sections.html" .Sections }}
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="content container-fluid" id="content">
+    <div class="content-cards">
+      <div class="container-fluid filtr-container post-cards" id="post-cards">
+        {{ partial "posts.html" . }}
+      </div>
+    </div>
+  </div>
 {{ end }}
 
 {{ define "scripts" }}

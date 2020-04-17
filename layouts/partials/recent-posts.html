@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row" id="recent-posts">
       {{ range first 3 .Site.RegularPages }}
-        {{ partial "cards/post.html" . }}
+        {{ partial "cards/recent-post.html" . }}
       {{ end }}
     </div>
   </div>

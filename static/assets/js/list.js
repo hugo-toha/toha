@@ -26,7 +26,11 @@ var isMobile = false, isTablet = false, isLaptop = false;
     // ======= Adjust height of the post cards =============
     function adjustPostCardsHeight() {
       if (!isMobile) { // no need to adjust height for mobile devices
-        let el = document.getElementById("post-cards").children;
+        let postCardHolder = document.getElementById("post-cards");
+        if (postCardHolder == null ){
+          return
+        }
+        let el = postCardHolder.children;
         let maxHeight = 0;
         for (let i = 0; i < el.length; i++) {
           if (el[i].children[0].clientHeight > maxHeight) {

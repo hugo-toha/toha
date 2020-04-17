@@ -1,0 +1,7 @@
+{{ range .Pages }}
+    {{ if .IsNode }}
+        {{ partial "posts.html" . }}
+    {{ else }}
+        {{ partial "cards/post.html" . }}
+    {{ end }}
+{{ end }}

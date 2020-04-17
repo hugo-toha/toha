@@ -1,0 +1,11 @@
+{{ range . }}
+{{ if .Sections }}
+    <li><a data-filter="{{ .Params.id }}">{{ title .Title }}</a>
+    <ul>
+        {{ partial "sections.html" .Sections }}
+    </ul>
+    </li>
+    {{ else }}
+        <li><a data-filter="{{ .Params.id }}">{{ title .Title }}</a></li>
+    {{ end }}
+{{ end }}
