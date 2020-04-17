@@ -6,7 +6,7 @@
         <ul>
           {{ range .Site.Menus.main }}
           <li class="nav-item">
-            <a class="smooth-scroll" href="#{{ .URL }}">{{ .Name }}</a>
+            <a class="smooth-scroll" href="{{ .URL }}">{{ .Name }}</a>
           </li>
           {{ end }}
         </ul>
