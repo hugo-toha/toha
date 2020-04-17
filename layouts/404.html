@@ -1,3 +1,7 @@
+{{ define "header" }}
+    <link rel="stylesheet" href="/assets/css/404.css">
+{{ end }}
+
 {{ define "navbar" }}
     {{ partial "navbar-2.html" (dict "baseURL" .Site.BaseURL "title" .Site.Title "hasToggleButton" false) }}
 {{ end }}

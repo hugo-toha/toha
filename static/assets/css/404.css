@@ -1,0 +1,24 @@
+.navbar-toggler {
+  display: none;
+}
+
+.notFound {
+  padding-top: 5rem;
+  text-align: center;
+  padding-bottom: 8rem;
+}
+
+.notFound img {
+  height: 500px;
+}
+
+.notFound h1 {
+  font-style: italic;
+}
+
+.notFound .message {
+  position: absolute;
+  max-width: 20rem;
+  top: 40%;
+  left: 30%;
+}
