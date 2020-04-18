@@ -35,6 +35,10 @@
 }
 
 @media (max-width: 1200px) {
+  .notFound .message {
+    top: 50%;
+    left: 25%;
+  }
 }
 
 /*  Large devices (desktops, 992px and up) */
@@ -54,8 +58,8 @@
   }
 
   .notFound .message {
-    top: 23%;
-    left: 25%;
+    top: 20rem;
+    left: 4rem;
   }
 }
 
@@ -67,7 +71,7 @@
   }
 
   .notFound .message {
-    top: 50%;
-    left: 5%;
+    top: 20rem;
+    left: 2rem;
   }
 }
