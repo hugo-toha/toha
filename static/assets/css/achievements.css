@@ -1,3 +1,7 @@
+.achievements .container{
+  padding-top: 0.5rem;
+}
+
 #gallery .achievement-entry {
   cursor: pointer;
   margin-top: 5px;
