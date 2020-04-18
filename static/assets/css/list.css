@@ -334,6 +334,15 @@ a.focused {
     transition: all ease-out 0.5s;
   }
 
+  .sidebar-tree{
+    margin-left: 1.5rem;
+  }
+
+  .sidebar.hide .sidebar-tree{
+    margin-left: 1.5rem;
+    transition: all 0.3s ease-out;
+  }
+
   .content-cards {
     padding-top: 20px;
     padding-left: 0px;
