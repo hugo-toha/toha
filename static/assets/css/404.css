@@ -49,9 +49,13 @@
 /* Medium devices (tablets, 768px and up) */
 
 @media only screen and (max-width: 768px) {
+  .notFound img {
+    height: 400px;
+  }
+
   .notFound .message {
-    top: 50%;
-    left: 10%;
+    top: 23%;
+    left: 25%;
   }
 }
 
@@ -59,7 +63,7 @@
 
 @media only screen and (max-width: 576px) {
   .notFound img {
-    height: 500px;
+    height: 250px;
   }
 
   .notFound .message {
