@@ -12,12 +12,14 @@
   min-height: 100vh;
   overflow: auto;
   transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
 }
 
 .sidebar.hide {
   position: relative;
   width: 0;
   transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
   z-index: -1001;
 }
 
@@ -29,6 +31,7 @@
   border-radius: 5px;
   background-color: #e5e9f2;
   transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
   border: 1px solid #c0ccda;
 }
 
@@ -43,8 +46,8 @@
   position: fixed;
 }
 
-#list-heading{
-  padding-left: 0px!important;
+#list-heading {
+  padding-left: 0px !important;
 }
 
 .tree,
@@ -75,11 +78,11 @@
   border-left: 1px solid;
 }
 
-.subtree{
+.subtree {
   padding-left: 0.7rem;
 }
 
-.subtree:before{
+.subtree:before {
   content: "";
   display: block;
   width: 0;
@@ -122,11 +125,13 @@
   text-decoration: none;
   color: #131313;
   transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
 }
 .tree li a:hover {
   margin-left: 3px;
   color: #2098d1;
   transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
 }
 
 .tree i {
@@ -230,7 +235,6 @@ a.focused {
   .content.overley {
     width: 60vw;
     padding-left: 3px;
-    /* margin-left: -50vw; */
   }
   .navbar-toggler {
     display: block;
@@ -242,6 +246,7 @@ a.focused {
   .sidebar nav {
     display: none;
     transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
   }
   .sidebar.hide {
     position: relative;
@@ -252,9 +257,10 @@ a.focused {
   .sidebar-tree {
     margin-left: -20rem;
     transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
   }
 
-  .sidebar.hide .sidebar-tree{
+  .sidebar.hide .sidebar-tree {
     margin-left: 1.5rem;
     transition: all 0.3s ease-out;
   }
@@ -319,6 +325,7 @@ a.focused {
     min-height: 0;
     overflow: hidden;
     transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
   }
 
   .sidebar-tree {
@@ -332,38 +339,44 @@ a.focused {
     max-height: 100vh;
     overflow: hidden;
     transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
   }
 
-  .sidebar-tree{
+  .sidebar-tree {
     margin-left: 1.5rem;
   }
 
-  .sidebar.hide .sidebar-tree{
+  .sidebar.hide .sidebar-tree {
     margin-left: 1.5rem;
     transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
   }
 
   .content-cards {
     padding-top: 20px;
     padding-left: 0px;
     transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
   }
 
   .content.overley .content-cards {
     padding-top: 0px;
     padding-left: 0px;
     transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
   }
 
   .post-cards {
     margin: 0;
     margin-top: 32px;
     transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
   }
 
   .content.overley .post-cards {
     margin: 0;
     transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
   }
 
   .post-cards .filtr-item {

@@ -1,4 +1,4 @@
-body{
+body {
   background-color: #e5e9f2;
 }
 .read-area {
@@ -10,7 +10,7 @@ body{
 }
 
 .hero-area {
-  margin-top: 3.5rem;
+  margin-top: 3rem;
   width: 100%;
   height: 400px;
   background-position: center;
@@ -160,11 +160,13 @@ mark {
 .next-prev-navigator a {
   color: #2098d1;
   transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
 }
 
 .next-prev-navigator a:hover {
   color: #3c4858;
   transition: all 0.3 ease-out;
+  -webkit-transition: all 0.3 ease-out;
 }
 
 .next-prev-navigator .next-article {
@@ -173,10 +175,12 @@ mark {
 
 .next-prev-navigator .next-article a {
   transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
 }
 
 .next-prev-navigator .previous-article a {
   transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
 }
 
 .next-prev-navigator .btn-outline-info {
@@ -184,12 +188,14 @@ mark {
   border-color: #e5e9f2 !important;
   background-color: #248aaa !important;
   transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
 }
 
 .next-prev-navigator .btn-outline-info:hover {
   color: #3c4858 !important;
   background-color: #e5e9f2 !important;
   transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
 }
 
 .disquss {
@@ -204,9 +210,6 @@ mark {
   }
   .container {
     max-width: 100%;
-  }
-  .container {
-    padding: 10px;
   }
 }
 @media only screen and (max-width: 576px) {
@@ -239,5 +242,10 @@ mark {
   .previous-article a,
   .next-article a {
     width: 100%;
+  }
+
+  #disqus_thread,
+  .dsq-brlink {
+    padding: 5px;
   }
 }

@@ -14,12 +14,16 @@
 
         $('#navbar-toggler').removeClass('navbar-dark');
         $('#navbar-toggler').addClass('navbar-light');
+
+        $('#logo').attr("src","/assets/images/logos/logo.png");
       } else {
         $('#top-navbar').removeClass('final-navbar shadow');
         $('#top-navbar').addClass('initial-navbar');
 
         $('#navbar-toggler').removeClass('navbar-light');
         $('#navbar-toggler').addClass('navbar-dark');
+
+        $('#logo').attr("src","/assets/images/logos/logo-inverted.png");
       }
     });
   });

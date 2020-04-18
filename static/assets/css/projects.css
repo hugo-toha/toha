@@ -56,7 +56,7 @@
 /* Small devices (landscape phones, 576px and up) */
 
 @media only screen and (max-width: 576px) {
-  .projects .btn{
+  .projects .btn {
     margin-top: 5px;
   }
 }

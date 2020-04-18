@@ -5,8 +5,8 @@
   width: 100%;
   height: 50px;
   z-index: 99999;
-  -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
   margin: 0;
   padding-top: 0.1rem;
   text-align: center;
@@ -15,7 +15,7 @@
 /* --- initial state start ------ */
 
 .initial-navbar {
-  background-color: none;
+  background-color: transparent;
 }
 
 .initial-navbar .navbar-brand {
@@ -30,8 +30,12 @@
 .initial-navbar .navbar-nav .active,
 .initial-navbar li a:hover {
   color: #f9fafc;
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+}
+
+.navbar-collapse {
+  margin-top: -5px;
 }
 
 .navbar-collapse.show,
@@ -47,8 +51,8 @@
 .final-navbar {
   background-color: #f9fafc;
   color: #1c2d41;
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
 }
 
 .final-navbar .navbar-brand {
@@ -59,16 +63,16 @@
 .final-navbar li a {
   color: #1c2d41;
   font-weight: 500;
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
   border-bottom: 2px solid#F9FAFC;
 }
 
 .final-navbar .navbar-nav .active,
 .final-navbar li a:hover {
   color: #2098d1;
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
   border-bottom: 2px solid #2098d1;
   background: rgb(2, 0, 36);
   background: linear-gradient(
@@ -82,15 +86,13 @@
 .navbar-collapse.collapsing li a {
   color: #1c2d41;
   font-weight: 500;
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
 }
 
 .navbar-collapse.show .navbar-nav .active,
 .navbar-collapse.show .navbar-nav a:hover {
   color: #2098d1;
-  /* -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out; */
 }
 
 #top-navbar-divider {
@@ -113,29 +115,11 @@
   height: 20px;
   width: 2px;
 }
-/*------ navbar on blog page start ----*/
 
-.final-navbar .navbar-toggler {
-  padding: 2px !important;
-}
-
-.blog-navbar .navbar-brand {
-  color: #1c2d41;
-  font-weight: 800;
-}
-
-.blog-navbar li a {
-  color: #1c2d41;
-  font-weight: 500;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-
-.blog-navbar .navbar-nav .active,
-.blog-navbar li a:hover {
-  color: #2098d1;
-  /* -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out; */
+.navbar-brand img {
+  width: 42px;
+  padding: 5px;
+  margin-left: -10px;
 }
 
 /* ============= Device specific fixes ======= */
@@ -160,18 +144,23 @@
 /* Medium devices (tablets, 768px and up) */
 
 @media only screen and (max-width: 768px) {
+  .top-navbar .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
   .initial-navbar .navbar-nav .active,
   .initial-navbar li a:hover {
     color: #2098d1;
-    -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
   }
 
   .final-navbar .navbar-nav .active,
   .final-navbar li a:hover {
     color: #2098d1;
-    -webkit-transition: none;
     transition: none;
+    -webkit-transition: none;
     border-bottom: none;
     background: transparent;
   }
@@ -183,6 +172,7 @@
   .final-navbar .navbar-collapse.show {
     box-shadow: 5px 10px 10px rgba(192, 204, 218, 0.3);
     transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
   }
 
   .dropdown-divider {

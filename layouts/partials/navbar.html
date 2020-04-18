@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-lg top-navbar initial-navbar" id="top-navbar">
   <div class="container">
-    <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{- .Site.Title -}}</a>
+    <a class="navbar-brand" href="{{ .Site.BaseURL }}">
+      <img src="/assets/images/logos/logo-inverted.png" id="logo">
+      {{- .Site.Title -}}
+    </a>
     <button
       class="navbar-toggler navbar-dark"
       id="navbar-toggler"

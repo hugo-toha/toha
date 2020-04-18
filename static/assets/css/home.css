@@ -13,6 +13,7 @@
   margin: 0;
   background-attachment: fixed;
   transform: scale(1.1);
+  -webkit-transform: scale(1.1);
   filter: blur(3px);
   -webkit-filter: blur(3px);
   background-size: cover;
@@ -109,7 +110,7 @@
     height: auto;
   }
 
-  .home .greeting{
+  .home .greeting {
     font-size: 24pt;
   }
 }
