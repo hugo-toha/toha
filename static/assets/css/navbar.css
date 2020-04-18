@@ -160,6 +160,13 @@
 /* Medium devices (tablets, 768px and up) */
 
 @media only screen and (max-width: 768px) {
+  .initial-navbar .navbar-nav .active,
+  .initial-navbar li a:hover {
+    color: #2098d1;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+
   .final-navbar .navbar-nav .active,
   .final-navbar li a:hover {
     color: #2098d1;
@@ -173,7 +180,7 @@
     border-bottom: none;
   }
 
-  .navbar-collapse.show {
+  .final-navbar .navbar-collapse.show {
     box-shadow: 5px 10px 10px rgba(192, 204, 218, 0.3);
     transition: all 0.3s ease-out;
   }

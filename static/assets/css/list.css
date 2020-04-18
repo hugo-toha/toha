@@ -11,13 +11,13 @@
   background: #f9fafc;
   min-height: 100vh;
   overflow: auto;
-  transition: all ease-in-out 0.3s;
+  transition: all ease-out 0.3s;
 }
 
 .sidebar.hide {
   position: relative;
   width: 0;
-  transition: all ease-in-out 0.3s;
+  transition: all ease-out 0.3s;
   z-index: -1001;
 }
 
@@ -241,7 +241,7 @@ a.focused {
   }
   .sidebar nav {
     display: none;
-    transition: all ease-in-out 0.3s;
+    transition: all ease-out 0.3s;
   }
   .sidebar.hide {
     position: relative;
@@ -250,7 +250,13 @@ a.focused {
   }
 
   .sidebar-tree {
+    margin-left: -20rem;
+    transition: all 0.3s ease-out;
+  }
+
+  .sidebar.hide .sidebar-tree{
     margin-left: 1.5rem;
+    transition: all 0.3s ease-out;
   }
 
   .content-cards {
@@ -312,7 +318,7 @@ a.focused {
     width: 100vw;
     min-height: 0;
     overflow: hidden;
-    transition: all ease-in-out 0.5s;
+    transition: all ease-out 0.5s;
   }
 
   .sidebar-tree {
@@ -325,35 +331,35 @@ a.focused {
     width: 100vw;
     max-height: 100vh;
     overflow: hidden;
-    transition: all ease-in-out 0.5s;
+    transition: all ease-out 0.5s;
   }
 
   .content-cards {
     padding-top: 20px;
     padding-left: 0px;
-    transition: all ease-in-out 0.5s;
+    transition: all ease-out 0.5s;
   }
 
   .content.overley .content-cards {
     padding-top: 0px;
     padding-left: 0px;
-    transition: all ease-in-out 0.5s;
+    transition: all ease-out 0.5s;
   }
 
   .post-cards {
     margin: 0;
     margin-top: 32px;
-    transition: all ease-in-out 0.5s;
+    transition: all ease-out 0.5s;
   }
 
   .content.overley .post-cards {
     margin: 0;
-    transition: all ease-in-out 0.5s;
+    transition: all ease-out 0.5s;
   }
 
   .post-cards .filtr-item {
-    margin: 10px;
-    width: 90vw !important;
+    margin: 0px;
+    width: 95vw !important;
   }
 
   .post-cards .card {
@@ -361,11 +367,11 @@ a.focused {
   }
 
   .content.overley .post-cards .filtr-item {
-    margin: 10px;
-    width: 90vw !important;
+    margin: 0px;
+    width: 95vw !important;
   }
 
   .content.overley .post-cards .card {
-    max-width: 90vw !important;
+    max-width: 95vw !important;
   }
 }
