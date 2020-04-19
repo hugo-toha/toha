@@ -26,9 +26,10 @@
 }
 
 .home img {
-  width: 160px;
-  max-width: 50%;
-  height: auto;
+  width: 172px;
+  height: 172px;
+  background-color: #f9fafc;
+  padding: 5px;
 }
 
 .home .greeting {

@@ -1,0 +1,58 @@
+# filter buttons
+filters:
+  - name: All
+    tag: "all"
+  - name: Professional
+    tag: "professional"
+  - name: Academic
+    tag: "academic"
+  - name: Hobby
+    tag: "hobby"
+
+# my projects
+projects:
+  - name: Stash
+    logo: assets/images/logos/stash.png
+    role: Team Lead
+    timeline: "March 2018 - Present"
+    repo: https://github.com/stashed/stash
+    #url: ""
+    summary: A tool to backup Kubernetes volumes, StatefulSet application, databases etc.
+    tags: ["professional", "kubernetes", "backup"]
+
+  - name: KubeDB
+    logo: assets/images/logos/kubedb.png
+    role: Developer
+    timeline: "Jan 2019 - Present"
+    repo: https://github.com/kubedb/cli
+    #url: ""
+    summary: KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds.
+    tags: ["professional", "kubernetes", "database"]
+
+  - name: Kubed
+    logo: assets/images/logos/kubed.png
+    role: Developer
+    timeline: "Oct 2018 - Dec 2018"
+    repo: https://github.com/appscode/kubed
+    #url: ""
+    summary: A tool to sync Kubernetes ConfigMap, Secret across namespaces and clusters.
+    tags: ["professional", "kubernetes", "sync"]
+
+  - name: Riverine Vehicle Tracking System with Overload Detection
+    role: Owner
+    timeline: "Jan 2017 - Nov 2017"
+    url: "https://drive.google.com/open?id=0BwCjE-AXb1mjT1ExczBuMjk1aTQ"
+    summary:
+      This project aims to develop a monitoring and overload detection system for riverine vehicles.
+      Here, we have built an Ardunio based GPS tracking system, an ultrasonic sensor based overload
+      detector. We have also built a mobile based user application as well as an emergency notification
+      system.
+    tags: ["academic","iot"]
+
+  - name: Toha
+    logo: assets/images/logos/project-default.png
+    role: Owner
+    timeline: "Jun 2019 - Present"
+    repo: https://github.com/hossainemruz/toha
+    summary: A Hugo theme for personal portfolio.
+    tags: ["hobby","hugo","theme"]

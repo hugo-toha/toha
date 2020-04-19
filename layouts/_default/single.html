@@ -13,14 +13,14 @@
 {{ define "content" }}
 <div class="container p-0 read-area">
   <!--Hero Area-->
-  <div class="hero-area col-sm-12" style="background-image: url({{ .Page.Params.hero }});">
+  <div class="hero-area col-sm-12" style='background-image: url({{ partial "helpers/get-hero.html" .Params }});'>
   </div>
 
   <!--Content Start-->
   <div class="page-content">
     <div class="author-profile ml-auto align-self-lg-center">
-      <img class="rounded-circle" src="{{.Page.Params.author.image }}" alt="" />
-      <h5>{{ .Page.Params.author.name }}</h5>
+      <img class="rounded-circle" src='{{ partial "helpers/get-author-image.html" .Params }}'/>
+      <h5>{{ partial "helpers/get-author-name.html" .Params }}</h5>
       <p>{{ .Page.Date.Format "January 2, 2006" }}</p>
     </div>
 
@@ -64,7 +64,7 @@
 
 
 {{ define "scripts" }}
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
 <script>
   hljs.initHighlightingOnLoad();
 </script>

@@ -1,0 +1,5 @@
+{{ $authorName:= "John Doe"}}
+{{ if  isset .author "name" }}
+    {{ $authorName = .author.name }}
+{{ end }}
+{{ return $authorName }}

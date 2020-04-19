@@ -1,0 +1,5 @@
+{{ $categories:= ""}}
+{{ if  .categories }}
+    {{ $categories = delimit .categories "," }}
+{{ end }}
+{{ return $categories }}

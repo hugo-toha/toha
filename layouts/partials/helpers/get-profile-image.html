@@ -1,0 +1,5 @@
+{{ $profileImage:= "/assets/images/default-avatar.svg"}}
+{{ if .Site.Data.home.image }}
+    {{ $profileImage = .Site.Data.home.image }}
+{{ end }}
+{{ return $profileImage }}

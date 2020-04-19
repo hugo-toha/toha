@@ -1,0 +1,5 @@
+{{ $heroImage:= "/assets/images/default-hero.jpg"}}
+{{ if  .hero }}
+    {{ $heroImage = .hero }}
+{{ end }}
+{{ return $heroImage }}

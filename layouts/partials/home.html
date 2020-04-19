@@ -1,21 +1,20 @@
 <div class="container-fluid home" id="home">
   <div
     class="background container-fluid"
-    style="background-image: url('assets/images/background/flower.jpg');"
+    style="background-image: url('{{ .Site.Data.home.background }}');"
   ></div>
   <div class="container content text-center">
     <img
-      src="assets/images/profile-image.jpg"
+      src="{{ .Site.Data.home.author.image }}"
       class="rounded-circle mx-auto d-block img-fluid"
-      alt=""
     />
-    <h1 class="greeting">{{- .Site.Data.home.greeting -}}</h1>
+    <h1 class="greeting">Hi, I am {{ .Site.Data.home.author.name -}}</h1>
     <div class="typing-carousel">
       <span id="ityped" class="ityped"></span>
       <span class="ityped-cursor"></span>
     </div>
     <ul id="typing-carousel-data">
-      {{ range .Site.Data.home.typeWriter }}
+      {{ range .Site.Data.home.author.summary }}
       <li>{{ . }}</li>
       {{ end }}
     </ul>

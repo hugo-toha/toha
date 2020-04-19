@@ -1,0 +1,5 @@
+{{ $authorImage:= "/assets/images/default-avatar.svg"}}
+{{ if isset .author "image" }}
+    {{ $authorImage = .author.image }}
+{{ end }}
+{{ return $authorImage }}

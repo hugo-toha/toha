@@ -34,6 +34,8 @@ body {
 .author-profile img {
   height: 120px;
   width: 120px;
+  background-color: #f9fafc;
+  padding: 5px;
 }
 .author-profile p {
   color: #8392a5;

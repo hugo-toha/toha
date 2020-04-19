@@ -1,7 +1,7 @@
 <div class="col-lg-4 col-md-6 pt-2">
   <div class="card">
     <div class="card-head">
-      <img class="card-img-top" src="{{ .Params.hero }}"
+      <img class="card-img-top" src='{{ partial "helpers/get-hero.html" .Params }}'
         alt="Card image cap"
       />
     </div>
