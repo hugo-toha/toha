@@ -1,5 +1,9 @@
 {{ $authorName:= "John Doe"}}
-{{ if  isset .author "name" }}
-    {{ $authorName = .author.name }}
+{{ if eq (printf "%T" .Params.author ) "maps.Params" }}
+    {{ with .Params.author }}
+        {{ if .name }}
+        {{ $authorName = .name }}
+        {{ end }}
+    {{ end }}
 {{ end }}
 {{ return $authorName }}

@@ -1,26 +1,14 @@
-# my achievements
+# Your achievements achievements
 achievements:
-  - title: UAP IUPC 2017
-    image: assets/images/achievements/1.jpg
+  - title: Best Presenter
+    image: assets/images/achievements/presenter.jpg
     summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus architecto minus facere vero?
-  - title: UAP IUPC 2017
-    image: assets/images/achievements/2.jpg
+  - title: Champion
+    image: assets/images/achievements/sport.jpg
     summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus architecto minus facere vero?
-  - title: UAP IUPC 2017
-    image: assets/images/achievements/3.jpg
+  - title: Graduation
+    image: assets/images/achievements/graduation-cap.jpg
     summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus architecto minus facere vero?
-  - title: UAP IUPC 2017
-    image: assets/images/achievements/4.jpg
-    summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus architecto minus facere vero?
-  - title: UAP IUPC 2017
-    image: assets/images/achievements/5.jpg
-    summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus architecto minus facere vero?
-  - title: UAP IUPC 2017
-    image: assets/images/achievements/6.jpg
-    summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus architecto minus facere vero?
-  - title: UAP IUPC 2017
-    image: assets/images/achievements/7.jpg
-    summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus architecto minus facere vero?
-  - title: UAP IUPC 2017
-    image: assets/images/achievements/8.jpg
+  - title: Award Winner
+    image: assets/images/achievements/woman-winner.jpg
     summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus architecto minus facere vero?

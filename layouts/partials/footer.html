@@ -4,9 +4,9 @@
       <div class="col-md-4 col-sm-12">
         <h5>Navigation</h5>
         <ul>
-          {{ range .Site.Menus.main }}
+          {{ range .Site.Data.site.menus }}
           <li class="nav-item">
-            <a class="smooth-scroll" href="{{ .URL }}">{{ .Name }}</a>
+            <a class="smooth-scroll" href="{{ .url }}">{{ .name }}</a>
           </li>
           {{ end }}
         </ul>
@@ -14,7 +14,7 @@
       <div class="col-md-4 col-sm-12">
         <h5>Contact Me</h5>
         <ul>
-          {{ range $key,$value:=.Site.Params.contactInfo }}
+          {{ range $key,$value:=.Site.Data.site.author.contactInfo }}
           <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
           {{ end }}
         </ul>
@@ -45,7 +45,7 @@
     <div class="row text-left">
       <div class="col-md-4">
         <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
-          <img src="/assets/images/logos/logo-inverted.png">
+          <img src="/assets/images/logo-inverted.png">
           Toha
         </a>
       </div>
@@ -53,7 +53,7 @@
       <div class="col-md-4">
         Powered by <a href="https://gohugo.io/">Hugo
         <img
-          src="/assets/images/logos/hugo-logo-wide.svg"
+          src="/assets/images/hugo-logo-wide.svg"
           alt="Hugo Logo"
           height="18"
         />

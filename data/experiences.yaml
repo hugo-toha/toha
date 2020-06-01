@@ -13,45 +13,31 @@ experiences:
     # give some points about what was your responsibilities at the company.
     responsibilities:
       - Design, develop and manage disaster recovery tool Stash that backup Kubernetes volumes, databases and cluster's resource definition.
-      - My another respons
-      - Added support for Prometheus monitoring in various AppsCode's tools.
-      - Provide support to the users of our various tools.
+      - My another responsibilities.
+      - My more responsibilities.
+
+  - designation: Software Engineer
+    company:
+      name: PreExample Co.
+      url: "https://www.preexample.com"
+      location: Nowhere
+      overview: PreExample Co. is gateway company to enter into Example co. So, nothing special here.
+    start: March 2016
+    end: May 2017
+    responsibilities:
+      - Write lots of example codes.
+      - Read lots of examples.
+      - See lots of example videos.
 
   - designation: Intern
     company:
-      name: AppCode Inc.
-      url: "https://www.appscode.com"
-      location: Dhaka Branch
-      overview: AppsCode Ltd. is a subsidiary company of AppsCode Inc. USA. An Integrated platform for collaborative coding, testing & deploying containerized apps.
-    start: March 2016
-    end: May 2016
+      name: Intern Counting Company (ICC).
+      url: "https://www.intern.com"
+      location: Intern Land
+      overview: Intern counting Company (ICC) is responsible for counting worldwide intern Engineer.
+    start: Jun 2015
+    end: Jan 2016
     responsibilities:
-      - Design, develop and test a sample library website.
-      - Learn git version control.
-      - Learn backbone.js framework.
-
-  - designation: Demo 1
-    company:
-      name: Demo Co.
-      url: "https://www.appscode.com"
-      location: Dhaka Branch
-      overview: this is a demo company.
-    start: March 2016
-    end: May 2016
-    responsibilities:
-      - Design, develop and test a sample library website.
-      - Learn git version control.
-      - Learn backbone.js framework.
-
-  - designation: Demo 2
-    company:
-      name: Demo Co.
-      url: "https://www.appscode.com"
-      location: Dhaka Branch
-      overview: this is a demo company.
-    start: March 2016
-    end: May 2016
-    responsibilities:
-      - Design, develop and test a sample library website.
-      - Learn git version control.
-      - Learn backbone.js framework.
+      - Count lost of interns.
+      - Count more interns.
+      - Count myself as intern.

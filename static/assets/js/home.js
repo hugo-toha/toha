@@ -134,7 +134,7 @@ var projectCards;
 
     function adjustRecentPostsHeight() {
       if (!isMobile) { // no need to adjust height for mobile devices
-        let el = document.getElementById("recent-posts").children;
+        let el = document.getElementById("recent-post-cards").children;
         let maxHeight = 0;
         for (let i = 0; i < el.length; i++) {
           if (el[i].children[0].clientHeight > maxHeight) {

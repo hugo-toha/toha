@@ -1,5 +1,5 @@
 {{ $categories:= ""}}
-{{ if  .categories }}
-    {{ $categories = delimit .categories "," }}
+{{ if  .Params.categories }}
+    {{ $categories = delimit .Params.categories "," }}
 {{ end }}
 {{ return $categories }}

@@ -21,7 +21,6 @@ var isMobile = false, isTablet = false, isLaptop = false;
       }
     }
     detectDevice();
-    console.log(isMobile);
 
     // ======= Adjust height of the post cards =============
     function adjustPostCardsHeight() {

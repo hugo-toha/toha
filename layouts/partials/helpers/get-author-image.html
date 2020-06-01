@@ -1,5 +1,9 @@
 {{ $authorImage:= "/assets/images/default-avatar.svg"}}
-{{ if isset .author "image" }}
-    {{ $authorImage = .author.image }}
+{{ if eq (printf "%T" .Params.author ) "maps.Params" }}
+    {{ with .Params.author }}
+        {{ if .image }}
+            {{ $authorImage = .image }}
+        {{ end }}
+    {{ end }}
 {{ end }}
 {{ return $authorImage }}

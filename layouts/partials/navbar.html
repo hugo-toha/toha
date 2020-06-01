@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg top-navbar initial-navbar" id="top-navbar">
   <div class="container">
     <a class="navbar-brand" href="{{ .Site.BaseURL }}">
-      <img src="/assets/images/logos/logo-inverted.png" id="logo">
+      <img src="/assets/images/logo-inverted.png" id="logo">
       {{- .Site.Title -}}
     </a>
     <button
@@ -16,9 +16,9 @@
 
     <div class="collapse navbar-collapse" id="top-nav-items">
       <ul class="navbar-nav ml-auto">
-        {{ range .Site.Menus.main }}
+        {{ range .Site.Data.site.menus }}
         <li class="nav-item">
-          <a class="nav-link smooth-scroll" href="{{ .URL }}">{{ .Name }}</a>
+          <a class="nav-link smooth-scroll" href="{{ .url }}">{{ .name }}</a>
         </li>
         {{ end }}
         <div class="dropdown-divider" id="top-navbar-divider"></div>
