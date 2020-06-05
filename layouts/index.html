@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="/assets/css/projects.css" />
     <link rel="stylesheet" href="/assets/css/recent-posts.css" />
     <link rel="stylesheet" href="/assets/css/achievements.css" />
+
+    <!-- Add Google Analytics if enabled in configuration -->
+    {{ if .Site.GoogleAnalytics }}
+        {{ template "_internal/google_analytics_async.html" . }}
+    {{ end }}
   </head>
   <body data-spy="scroll" data-target="#top-navbar" data-offset="50">
     <!--- NAVBAR ------------------------->
