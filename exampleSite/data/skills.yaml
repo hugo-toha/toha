@@ -1,0 +1,42 @@
+# Your Skills.
+# Give a summary of you each skill in summary section.
+skills:
+- name: Kubernetes
+  icon: "assets/images/skills/kubernetes.png"
+  summary: "Some quick example text to build on the card title and make up the bulk
+    of tlsdfjlsdjflsdfhe card's content."
+
+- name: Go Development
+  icon: "assets/images/skills/go.png"
+  summary: "Some quick example text to build on the card title and make up the bulk
+    of tlsdfjlsdjflsdfhe card's content."
+
+- name: Cloud Computing
+  icon: "assets/images/skills/cloud.png"
+  summary: "Some quick example text to build on the card title and make up the bulk
+    of tlsdfjlsdjflsdfhe card's content."
+
+- name: Docker
+  icon: "assets/images/skills/docker.svg"
+  summary: "Some quick example text to build on the card title and make up the bulk
+    of tlsdfjlsdjflsdfhe card's content."
+
+- name: Linux
+  icon: "assets/images/skills/linux.png"
+  summary: "Some quick example text to build on the card title and make up the bulk
+    of tlsdfjlsdjflsdfhe card's content."
+
+- name: Prometheus
+  icon: "assets/images/skills/prometheus.png"
+  summary: "Some quick example text to build on the card title and make up the bulk
+    of tlsdfjlsdjflsdfhe card's content."
+
+- name: Git
+  icon: "assets/images/skills/git.png"
+  summary: "Some quick example text to build on the card title and make up the bulk
+    of tlsdfjlsdjflsdfhe card's content."
+
+- name: C++
+  icon: "assets/images/skills/c++.png"
+  summary: "Some quick example text to build on the card title and make up the bulk
+    of tlsdfjlsdjflsdfhe card's content."
