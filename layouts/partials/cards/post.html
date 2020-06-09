@@ -1,7 +1,7 @@
-<div class="filtr-item" data-category='{{ partial "helpers/get-categories.html" .Params }}'>
+<div class="filtr-item" data-category='{{ partial "helpers/get-categories.html" . }}'>
   <div class="card">
     <div class="card-head">
-      <img class="card-img-top" src='{{ partial "helpers/get-hero.html" .Params }}'/>
+      <img class="card-img-top" src='{{ partial "helpers/get-hero.html" . }}'/>
     </div>
     <div class="card-body">
       <h5 class="card-title">{{ .Title }}</h5>
