@@ -21,8 +21,17 @@
   <div class="content container-fluid" id="content">
     <div class="content-cards">
       <div class="container-fluid filtr-container post-cards" id="post-cards">
-        {{ partial "posts.html" . }}
+        {{ range .Site.RegularPages }}
+          {{ partial "cards/post.html" . }}
+        {{ end }}
+        {{/*  {{ $paginator := .Paginate .Site.RegularPages 120 }}
+        {{ range $paginator.Pages }}
+          {{ partial "cards/post.html" . }}
+        {{ end }}  */}}
       </div>
+      {{/*  <div class="paginator">
+        {{ template "_internal/pagination.html" . }}
+      </div>  */}}
     </div>
   </div>
 {{ end }}

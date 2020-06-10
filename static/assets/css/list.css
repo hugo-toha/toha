@@ -209,6 +209,20 @@ a.focused {
   text-decoration: none;
 }
 
+.content-cards .paginator{
+  width: fit-content;
+  margin: auto;
+}
+
+.content-cards .paginator .page-item>a{
+  color: #248aaa;
+}
+
+.content-cards .paginator .page-item.active>a{
+  background-color: #248aaa;
+  color: #f9fafc;
+}
+
 .navbar-toggler {
   display: none;
 }

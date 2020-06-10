@@ -1,7 +1,0 @@
-{{ range .Site.RegularPages.ByDate.Reverse }}
-    {{ if .IsNode }}
-        {{ partial "posts.html" . }}
-    {{ else }}
-        {{ partial "cards/post.html" . }}
-    {{ end }}
-{{ end }}
