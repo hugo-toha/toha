@@ -205,6 +205,10 @@ a.focused {
   -webkit-box-orient: vertical;
 }
 
+.post-cards .post-card-link{
+  text-decoration: none;
+}
+
 .navbar-toggler {
   display: none;
 }

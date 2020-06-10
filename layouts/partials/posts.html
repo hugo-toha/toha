@@ -1,4 +1,4 @@
-{{ range .Pages }}
+{{ range .Site.RegularPages.ByDate.Reverse }}
     {{ if .IsNode }}
         {{ partial "posts.html" . }}
     {{ else }}

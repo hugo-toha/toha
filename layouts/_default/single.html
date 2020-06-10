@@ -35,23 +35,28 @@
   <!---Next and Previous Navigator -->
   <hr />
   <div class="row next-prev-navigator">
-    {{ if .Prev }}
-    <div class="col-md-6 previous-article">
-      <a href="{{.Prev.RelPermalink}}" class="btn btn-outline-info">
-        <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
-        <br />
-        <span>{{ .Prev.Title }}</span>
-      </a>
-    </div>
-    {{ end }}
-    {{ if .Next }}
-    <div class="{{ if .Prev }}col-md-6{{ else }}col-md-12{{ end }} next-article">
-      <a href="{{ .Next.RelPermalink }}" class="btn btn-outline-info">
-        <span>Next <i class="fas fa-chevron-circle-right"></i></span>
-        <br />
-        <span>{{ .Next.Title }}</span>
-      </a>
-    </div>
+    {{ $currentPage := . }}
+    {{ range .Site.RegularPages.ByDate }}
+      {{ if eq .RelPermalink  $currentPage.RelPermalink }}
+        {{ if .Next }}
+        <div class="col-md-6 previous-article">
+          <a href="{{.Next.RelPermalink}}" class="btn btn-outline-info">
+            <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+            <br />
+            <span>{{ .Next.Title }}</span>
+          </a>
+        </div>
+        {{ end }}
+        {{ if .Prev }}
+        <div class="{{ if .Next }}col-md-6{{ else }}col-md-12{{ end }} next-article">
+          <a href="{{ .Prev.RelPermalink }}" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>{{ .Prev.Title }}</span>
+          </a>
+        </div>
+        {{ end }}
+      {{ end }}
     {{ end }}
   </div>
   <hr />
