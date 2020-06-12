@@ -192,6 +192,7 @@ a.focused {
 
 .post-cards .card .card-footer {
   background: #fff;
+  margin-top: auto;
 }
 
 .post-summery {
