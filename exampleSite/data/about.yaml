@@ -6,11 +6,11 @@ company:
   url: "https://www.example.com"
 
 # your resume
-resume: "assets/files/resume.pdf"
+resume: "files/resume.pdf"
 
 # a summary about you
 summary: 'I am a passionate software engineer with x years of working
-  experience. I built OSS tools for Kubernetes using GO. My tools helps people to
+  experience. I built OSS tools for [Kubernetes](https://kubernetes.io/) using GO. My tools helps people to
   deploy their workloads in Kuberenetes. Sometimes, I work on some fun projects such as writing a theme etc.'
 
 # your social links

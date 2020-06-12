@@ -6,13 +6,13 @@ experiences:
       url: "https://www.example.com"
       location: Dhaka Branch
       # company overview
-      overview: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ipsum deserunt dignissimos iure incidunt porro sapiente adipisci neque, eveniet quam.
+      overview: Example Co. is a widely recognized company for cloud native development. It build tools for Kubernetes.
     start: Nov 2017
     # don't provide end date if you are currently working there. It will be replaced by "Present"
     # end: Dec 2020
     # give some points about what was your responsibilities at the company.
     responsibilities:
-      - Design, develop and manage disaster recovery tool Stash that backup Kubernetes volumes, databases and cluster's resource definition.
+      - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases and cluster's resource definition.
       - My another responsibilities.
       - My more responsibilities.
 

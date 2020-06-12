@@ -9,7 +9,7 @@
       <h4 class="card-title">{{ .name }}</h4>
     </div>
     <div class="card-body">
-      <p class="card-text">{{ .summary }}</p>
+      <p class="card-text">{{ .summary | markdownify }}</p>
     </div>
   </div>
 </div>

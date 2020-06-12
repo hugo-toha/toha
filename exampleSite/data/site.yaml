@@ -1,10 +1,10 @@
 # background image of the landing page
-background: "assets/images/default-background.jpg"
+background: "images/background.jpg"
 
 # some information about you
 author:
   name: "Jane Doe"
-  image: "assets/images/default-avatar.png"
+  image: "images/avatar.png"
   # give your some contact information. they will be used in the footer
   contactInfo:
     email: "janedoe@example.com"
