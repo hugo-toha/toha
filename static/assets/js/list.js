@@ -43,7 +43,7 @@ var isMobile = false, isTablet = false, isLaptop = false;
     }
     adjustPostCardsHeight();
 
-    // ============= Sidebar Tre ================
+    // ============= Sidebar Tree ================
     function buildSidebarMenu() {
       var openedClass = "fa-minus-circle";
       var closedClass = "fa-plus-circle";
