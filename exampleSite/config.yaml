@@ -10,9 +10,14 @@ markup:
       unsafe: true
 
 # Enable Google Analytics
-# googleAnalytics: UA-12345
+googleAnalytics: UA-12345
 
 # Enable Disqus forum
-# disqusShortname: does-not-exist
+disqusShortname: does-not-exist
 
 # Enable global emoji support
+enableEmoji: true
+
+# Custom parameters
+params:
+  gitRepo: https://github.com/hossainemruz/toha-example-site

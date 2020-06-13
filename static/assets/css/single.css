@@ -31,6 +31,10 @@ body {
   text-align: center;
 }
 
+.author-name {
+  margin-top: 0px;
+}
+
 .author-profile img {
   height: 120px;
   width: 120px;
@@ -202,6 +206,10 @@ mark {
 
 .disquss {
   padding: 10px;
+}
+
+.btn-improve-page{
+  text-align: right;
 }
 
 @media only screen and (max-width: 768px) {

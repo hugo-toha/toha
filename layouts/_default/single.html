@@ -20,7 +20,7 @@
   <div class="page-content">
     <div class="author-profile ml-auto align-self-lg-center">
       <img class="rounded-circle" src='{{ partial "helpers/get-author-image.html" . }}'/>
-      <h5>{{ partial "helpers/get-author-name.html" . }}</h5>
+      <h5 class="author-name">{{ partial "helpers/get-author-name.html" . }}</h5>
       <p>{{ .Page.Date.Format "January 2, 2006" }}</p>
     </div>
 
@@ -32,7 +32,15 @@
       {{ .Page.Content }}
     </div>
 
-  <!---Next and Previous Navigator -->
+    <!--- Improve this page button --->
+    <div class="btn-improve-page">
+        <a href="{{ .Site.Params.GitRepo }}/edit/master/content/{{ .File.Path }}">
+          <i class="fas fa-code-branch"></i>
+          Improve This Page
+        </a>
+    </div>
+
+    <!---Next and Previous Navigator -->
   <hr />
   <div class="row next-prev-navigator">
     {{ $currentPage := . }}
