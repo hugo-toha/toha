@@ -8,8 +8,8 @@ description = "A simple hugo theme for personal portfolio"
 homepage = "https://toha.netlify.app/"
 tags = ["Responsive","Blog", "Portfolio"]
 features = []
-min_version = "0.41.0"
+min_version = "0.68.0"
 
 [author]
   name = "Emruz Hossain"
-  homepage = "hossainemruz.github.io"
+  homepage = "https://hossainemruz.github.io"
