@@ -29,16 +29,18 @@ var projectCards;
     if (document.getElementById('typing-carousel-data') != undefined) {
       var ul = document.getElementById('typing-carousel-data').children;
 
-      var data = [];
-      Array.from(ul).forEach(el => {
-        data.push(el.textContent);
-      })
+      if (ul.length != 0) {
+        var data = [];
+        Array.from(ul).forEach(el => {
+          data.push(el.textContent);
+        })
 
-      ityped.init('#ityped', {
-        strings: data,
-        startDelay: 200,
-        loop: true
-      });
+        ityped.init('#ityped', {
+          strings: data,
+          startDelay: 200,
+          loop: true
+        });
+      }
     }
 
     // ================= Smooth Scroll ===================
@@ -113,7 +115,9 @@ var projectCards;
       }
     }
 
-    projectCards = $(".filtr-projects").filterizr({ layout: 'sameWidth' });
+    if (document.getElementById("project-card-holder").children.length != 0) {
+      projectCards = $(".filtr-projects").filterizr({ layout: 'sameWidth' });
+    }
 
     function showGithubStars() {
       // fix the github button class

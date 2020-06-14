@@ -10,8 +10,9 @@
     </div>
   </div>
   <div class="container filtr-projects">
-    <div class="row">
-      {{ range .Site.Data.projects.projects }} {{ partial "cards/project" . }}
+    <div class="row" id="project-card-holder">
+      {{ range .Site.Data.projects.projects }}
+        {{ partial "cards/project" . }}
       {{ end }}
     </div>
   </div>
