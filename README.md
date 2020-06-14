@@ -1,3 +1,117 @@
 # Toha
 
-A Hugo theme for personal website
+A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist design and responsiveness.
+
+![Thumbnail](https://github.com/hossainemruz/toha/blob/master/images/tn.png)
+
+Example Site: [Toha Example Site](https://toha.netlify.app)
+
+## Features
+
+- Minimalist Design
+- Fully Responsive
+- Carefully designed cards
+- Great Experience timeline
+- Achievement gallery
+- Sidebar to categorize posts
+- Short Codes
+- Google Analytics Support
+- Disqus Comment Support
+
+For more details about the features please visit [here](https://toha.netlify.app/posts/features/features/).
+
+## Requirements
+
+- Hugo Version 0.68.0 or higher
+
+## Installation
+
+- Create your site if you haven't already
+
+```console
+hugo new site my-site -f=yaml
+cd my-site
+git init
+```
+
+- Add the theme as git sub-module
+
+```console
+git submodule add https://github.com/hossainemruz/toha.git themes/toha
+```
+
+>Don't use SSH URL of the theme during adding as git sub-module. Also, don't clone the theme in your `themes` directory using `git clone`. They don't work well with Github Action or Netlify.
+
+If you want to customize the theme templates, then fork it and use the fork as your theme.
+
+## Configuration
+
+Configure your `config.yaml` file of your site as below:
+
+```yaml
+baseURL: http://example.org/
+languageCode: en-us
+title: "Toha"
+theme: "toha"
+
+# Allow raw html in markdown file
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+# Enable Google Analytics
+googleAnalytics: <your google analytics id>
+
+# Enable Disqus forum
+# optional
+disqusShortname: <your disqus short code>
+
+# Enable global emoji support
+enableEmoji: true
+
+# Custom parameters
+params:
+  # Github Repo URL. This is used to add "Improve This Page" button
+  gitRepo: <your site's Github repo URL>
+```
+
+You can just copy the content for `config.yaml` files from `theme/toha/exampleSite/config.yaml`.
+
+## Usage
+
+Run your hugo site with this theme.
+
+```console
+hugo server -w
+```
+
+Don't panic if the generated site does not look like what have you seen in the demo. Now, you have to provide some data in `data` folder of your site.
+
+Follow the posts giving step by step instructions for configuring your data folder from [here](https://toha.netlify.app/posts/configuration/home-section/home-section/).
+
+You can also follow the sample format given in `themes/toha/exampleSite/data` directory.
+
+## Shortcodes
+
+Here, are some handy shortcodes you can use with this theme.
+
+- [img](https://toha.netlify.app/posts/short-codes/img/)
+- [split](https://toha.netlify.app/posts/short-codes/split/)
+- [vs](https://toha.netlify.app/posts/short-codes/vs/)
+
+## Contributing
+
+Contributions are welcomed and I will be happy to review. Just follow the following principles:
+
+- Keep it simple.
+- Keep it consistent with the design.
+- Use as little dependency as possible.
+- Have patient.
+
+I am not a web developer. I just created this theme for my personal needs. So, it is reasonable to have some flaws in the codes. Feel free to open issues and PR acknowledging the problems.
+
+## Attribution
+
+- Thanks [Anup Deb](https://dribbble.com/anupdeb) for his design guidance.
+- Many of the illustrations have been taken from [iconscout](http://iconscout.com/).

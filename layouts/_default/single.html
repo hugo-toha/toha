@@ -33,12 +33,14 @@
     </div>
 
     <!--- Improve this page button --->
-    <div class="btn-improve-page">
-        <a href="{{ .Site.Params.GitRepo }}/edit/master/content/{{ .File.Path }}">
-          <i class="fas fa-code-branch"></i>
-          Improve This Page
-        </a>
-    </div>
+    {{ if .Site.Params.GitRepo }}
+      <div class="btn-improve-page">
+          <a href="{{ .Site.Params.GitRepo }}/edit/master/content/{{ .File.Path }}">
+            <i class="fas fa-code-branch"></i>
+            Improve This Page
+          </a>
+      </div>
+    {{ end }}
 
     <!---Next and Previous Navigator -->
   <hr />

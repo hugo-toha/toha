@@ -10,7 +10,7 @@ markup:
       unsafe: true
 
 # Enable Google Analytics
-googleAnalytics: UA-12345
+googleAnalytics: UA-xxxxxxxx
 
 # Enable Disqus forum
 disqusShortname: does-not-exist
@@ -20,4 +20,5 @@ enableEmoji: true
 
 # Custom parameters
 params:
+  # Github Repo URL. This is used to add "Improve This Page" button
   gitRepo: https://github.com/hossainemruz/toha-example-site
