@@ -132,7 +132,7 @@ pre {
   margin: 5px;
 }
 
-code {
+pre>code {
   padding: 10px !important;
 }
 
