@@ -21,7 +21,7 @@
   <div class="content container-fluid" id="content">
     <div class="content-cards">
       <div class="container-fluid filtr-container post-cards" id="post-cards">
-        {{ range .Site.RegularPages }}
+        {{ range (where site.RegularPages "Type" "in" site.Params.mainSections) }}
           {{ partial "cards/post.html" . }}
         {{ end }}
         {{/*  {{ $paginator := .Paginate .Site.RegularPages 120 }}
