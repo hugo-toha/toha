@@ -19,87 +19,19 @@ var isMobile = false, isTablet = false, isLaptop = false;
       }
     }
     detectDevice();
-    console.log(isMobile);
 
-    // ======= Add table wrapper ===========
-    function adjustPostCardsHeight() {
-      if (!isMobile) { // no need to adjust height for mobile devices
-        let el = document.getElementById("post-cards").children;
-        let maxHeight = 0;
-        for (let i = 0; i < el.length; i++) {
-          if (el[i].children[0].clientHeight > maxHeight) {
-            maxHeight = el[i].children[0].clientHeight;
-          }
-        }
-        for (let i = 0; i < el.length; i++) {
-          el[i].children[0].setAttribute("style", "min-height: " + maxHeight + "px;")
-        }
+    // =========== Add anchor to the headers ================
+    function addAnchor(element) {
+      element.innerHTML = `<a href="#${element.id}" class="header-anchor">${element.innerHTML}<sup><i class="fas fa-link"></i></sup></a>`;
+    }
+
+    var headerTypes = ["h1", "h2", "h3", "h4", "h5", "h6"];
+    for (var i = 0; i < headerTypes.length; i++) {
+      var headers = document.querySelectorAll(headerTypes[i]);
+      if (headers) {
+        headers.forEach(addAnchor);
       }
     }
-    adjustPostCardsHeight();
 
-    // ============= Sidebar Tre ================
-    function buildSidebarMenu() {
-      var openedClass = "fa-minus-circle";
-      var closedClass = "fa-plus-circle";
-      // initialize top level
-      var tree = $("#tree");
-      // add expand icon to those li who has ul as children
-      tree.find("li").has("ul").each(function () {
-        var branch = $(this);
-        branch.prepend('<i class="fas ' + closedClass + '"></i>');
-        branch.on('click', function (e) {
-          if (this.children[1] == e.target) {
-            // toggle "expand" class and icon
-            branch.toggleClass("expand");
-            var icon = $(this).children('i:first');
-            icon.toggleClass(openedClass + " " + closedClass);
-          }
-        });
-      });
-
-      // remove "expnad" class from siblings of the clicked item
-      tree.find("li").on("click", function () {
-        var item = $(this);
-        var shiblings = item.siblings().each(function () {
-          var sibling = $(this);
-          if (sibling.hasClass("expand")) {
-            sibling.removeClass("expand");
-            var icon = sibling.children('i:first');
-            icon.toggleClass(openedClass + " " + closedClass);
-          }
-        });
-      });
-
-      // focus the cliked item
-      tree.find("a").on("click", function () {
-        // clear other focused link
-        tree.find("a.focused").each(function () {
-          $(this).removeClass("focused");
-        });
-        // focus cliked link
-        $(this).addClass("focused");
-      });
-    }
-
-    buildSidebarMenu();
-    // initialize filterizr
-    filterizd = $(".filtr-container").filterizr({ layout: 'sameWidth' });
   });
 })(jQuery);
-
-// toggle sidebar on click
-function toggleSidebar() {
-  document.getElementById("sidebar").classList.toggle("hide");
-  document.getElementById("content").classList.toggle("overley");
-
-  // if it is mobile device. then scroll to top.
-  if (isMobile && $("#sidebar").hasClass("hide")) {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-
-  setTimeout(function () {
-    filterizd.filterizr('sort');
-  }, 300);
-}

@@ -1,39 +1,41 @@
 <div class="container-fluid about bg-white anchor p-md-5 d-flex" id="about">
   <div class="container">
     <div class="row pt-sm-2 pt-md-4 align-self-center">
-      <!-- summery -->
-      <div class="col-md-6">
-        <h3 class="p-1">{{ .Site.Data.home.author.name }}</h3>
-        <h5 class="p-1">
-          {{ .Site.Data.about.designation }} at
-          <a href="{{ .Site.Data.about.company.url }}"
-            >{{ .Site.Data.about.company.name }}</a
+      {{ if .Site.Data.about }}
+        <!-- summery -->
+        <div class="col-md-6">
+          <h3 class="p-1">{{ .Site.Data.home.author.name }}</h3>
+          <h5 class="p-1">
+            {{ .Site.Data.about.designation }} at
+            <a href="{{ .Site.Data.about.company.url }}"
+              >{{ .Site.Data.about.company.name }}</a
+            >
+          </h5>
+          <p class="p-1 text-justify">
+            {{ .Site.Data.about.summary | markdownify }}
+          </p>
+          <div class="text-container ml-auto">
+            <ul class="social-link d-flex">
+              {{ range .Site.Data.about.socialLinks }}
+              <li>
+                <a href="{{ .url }}" target="/"><i class="{{ .icon }}"></i></a>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+          <a href="{{ .Site.Data.about.resume }}" target="#"
+            ><button class="btn btn-dark">My Resume</button></a
           >
-        </h5>
-        <p class="p-1 text-justify">
-          {{ .Site.Data.about.summary | markdownify }}
-        </p>
-        <div class="text-container ml-auto">
-          <ul class="social-link d-flex">
-            {{ range .Site.Data.about.socialLinks }}
-            <li>
-              <a href="{{ .url }}" target="/"><i class="{{ .icon }}"></i></a>
-            </li>
+        </div>
+        <!-- soft skills circular-progressbar -->
+        <div class="col-md-6 pt-5 pl-md-4 pl-sm-3 pt-md-0">
+          <div class="row">
+            {{ range .Site.Data.about.softSkills }}
+              {{ partial "progress/soft-skills" . }}
             {{ end }}
-          </ul>
+          </div>
         </div>
-        <a href="{{ .Site.Data.about.resume }}" target="#"
-          ><button class="btn btn-dark">My Resume</button></a
-        >
-      </div>
-      <!-- soft skills circular-progressbar -->
-      <div class="col-md-6 pt-5 pl-md-4 pl-sm-3 pt-md-0">
-        <div class="row">
-          {{ range .Site.Data.about.softSkills }}
-            {{ partial "progress/soft-skills" . }}
-          {{ end }}
-        </div>
-      </div>
+      {{ end }}
     </div>
   </div>
 </div>

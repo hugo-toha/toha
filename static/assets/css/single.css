@@ -136,6 +136,24 @@ pre>code {
   padding: 10px !important;
 }
 
+a.header-anchor{
+  text-decoration: none;
+  color: #1c2d41;
+}
+
+a.header-anchor i{
+  font-size: 10pt;
+  color: #3c4858;
+  display: none;
+  margin-left: 0.5rem;
+}
+a.header-anchor:hover i{
+  display: inline-block;
+}
+a.header-anchor code{
+  color: #e83e8c;
+}
+
 .navbar-toggler {
   display: none;
 }

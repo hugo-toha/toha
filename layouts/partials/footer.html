@@ -3,13 +3,15 @@
     <div class="row text-left">
       <div class="col-md-4 col-sm-12">
         <h5>Navigation</h5>
-        <ul>
-          {{ range .Site.Data.site.menus }}
-          <li class="nav-item">
-            <a class="smooth-scroll" href="{{ .url }}">{{ .name }}</a>
-          </li>
-          {{ end }}
-        </ul>
+        {{ if .Site.Data.site }}
+          <ul>
+            {{ range .Site.Data.site.menus }}
+            <li class="nav-item">
+              <a class="smooth-scroll" href="{{ .url }}">{{ .name }}</a>
+            </li>
+            {{ end }}
+          </ul>
+        {{ end }}
       </div>
       <div class="col-md-4 col-sm-12">
         <h5>Contact Me</h5>
