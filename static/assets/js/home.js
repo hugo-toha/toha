@@ -91,15 +91,18 @@ var projectCards;
     function adjustSkillCardsHeight() {
       if (!isMobile) { // no need to adjust height for mobile devices
         // primary skills
-        var el = document.getElementById("primary-skills").children;
-        var maxHeight = 0;
-        for (let i = 0; i < el.length; i++) {
-          if (el[i].children[0].clientHeight > maxHeight) {
-            maxHeight = el[i].children[0].clientHeight;
+        var skillCards = document.getElementById("primary-skills");
+        if (skillCards != null) {
+          var el = skillCards.children;
+          var maxHeight = 0;
+          for (let i = 0; i < el.length; i++) {
+            if (el[i].children[0].clientHeight > maxHeight) {
+              maxHeight = el[i].children[0].clientHeight;
+            }
           }
-        }
-        for (let i = 0; i < el.length; i++) {
-          el[i].children[0].setAttribute("style", "min-height: " + maxHeight + "px;")
+          for (let i = 0; i < el.length; i++) {
+            el[i].children[0].setAttribute("style", "min-height: " + maxHeight + "px;")
+          }
         }
       }
     }
