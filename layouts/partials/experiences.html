@@ -1,7 +1,8 @@
 <div class="container-fluid experiences bg-white anchor" id="experiences">
-  <h1 class="text-center">Experiences</h1>
-  <div class="container timeline text-justify">
-    {{ if .Site.Data }}  
+  {{ if .Site.Data.experiences }}
+    <h1 class="text-center">Experiences</h1>
+
+    <div class="container timeline text-justify">
       {{ $total:= len .Site.Data.experiences.experiences }}
       {{ range $idx,$val:= .Site.Data.experiences.experiences }}
         {{ if eq (mod $idx 2) 0 }}
@@ -22,6 +23,6 @@
           {{ end }}
         {{ end }}
       {{ end }}
-    {{ end }}
-  </div>
+    </div>
+  {{ end }}
 </div>

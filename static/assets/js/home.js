@@ -91,15 +91,18 @@ var projectCards;
     function adjustSkillCardsHeight() {
       if (!isMobile) { // no need to adjust height for mobile devices
         // primary skills
-        var el = document.getElementById("primary-skills").children;
-        var maxHeight = 0;
-        for (let i = 0; i < el.length; i++) {
-          if (el[i].children[0].clientHeight > maxHeight) {
-            maxHeight = el[i].children[0].clientHeight;
+        var skillCards = document.getElementById("primary-skills");
+        if (skillCards != null) {
+          var el = skillCards.children;
+          var maxHeight = 0;
+          for (let i = 0; i < el.length; i++) {
+            if (el[i].children[0].clientHeight > maxHeight) {
+              maxHeight = el[i].children[0].clientHeight;
+            }
           }
-        }
-        for (let i = 0; i < el.length; i++) {
-          el[i].children[0].setAttribute("style", "min-height: " + maxHeight + "px;")
+          for (let i = 0; i < el.length; i++) {
+            el[i].children[0].setAttribute("style", "min-height: " + maxHeight + "px;")
+          }
         }
       }
     }
@@ -107,15 +110,19 @@ var projectCards;
 
     // ================== Project cards =====================
     // Add click action on project category selector buttons
-    var btns = document.getElementById("project-filter-buttons").children;
+    var filterButtons = document.getElementById("project-filter-buttons");
+    if (filterButtons != null) {
+      var btns = filterButtons.children;
 
-    for (let i = 0; i < btns.length; i++) {
-      btns[i].onclick = function () {
-        showGithubStars(btns[i].id);
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].onclick = function () {
+          showGithubStars(btns[i].id);
+        }
       }
     }
 
-    if (document.getElementById("project-card-holder").children.length != 0) {
+    var projectCardHolder = document.getElementById("project-card-holder");
+    if (projectCardHolder != null && projectCardHolder.children.length != 0) {
       projectCards = $(".filtr-projects").filterizr({ layout: 'sameWidth' });
     }
 
@@ -279,6 +286,9 @@ var projectCards;
     function showAchievements() {
       // show achievements from achievements-holder div
       let gallery = document.getElementById("gallery");
+      if (gallery == null) {
+        return
+      }
       gallery.innerHTML = "";
       const entries = document.getElementById("achievements-holder").children;
       let len = entries.length;
