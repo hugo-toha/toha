@@ -100,16 +100,105 @@ Here, are some handy shortcodes you can use with this theme.
 - [split](https://toha.netlify.app/posts/short-codes/split/)
 - [vs](https://toha.netlify.app/posts/short-codes/vs/)
 
+## Project Roadmap
+
+Here, are the current plan and progress of various components of this theme. The components will be prioritized based on users requests.
+
+### Sections
+
+- [x] **Home**
+  - [x] Configurable Background
+  - [x] Author Image
+  - [x] Greeting
+  - [x] Typing Carousel
+
+- [x] **About**
+  - [x] Name and Designation
+  - [x] Summary
+    - [x] Markdown Support
+  - [x] Social Links
+    - [x] Font Awesome Support
+  - [x] Resume Link
+  - [x] Soft Skills Indicator
+
+- [x] **Skills**
+  - [x] Skill Cards
+  - [x] Markdown Support
+
+- [x] **Experiences**
+  - [x] Designation
+  - [x] Timeline
+  - [x] Company Overview
+  - [x] Responsibilities
+
+- [ ] **Projects**
+  - [x] Category Filter
+  - [ ] Project Card
+    - [x] Overview
+      - [x] Markdown Support
+    - [x] Github Stars
+    - [x] External URL Support
+    - [ ] Technology Tags
+
+- [x] **Recent Posts**
+
+- [ ] **Publications**
+  - [ ] Category Filter
+  - [ ] Card
+  - [ ] Abstract
+  - [ ] Authors
+  - [ ] Tags
+  - [ ] Links
+  - [ ] Gallery
+
+- [ ] **Accomplishment / Courses**
+  - [ ] Overview
+  - [ ] Certificate
+
+- [x] **Achievements Gallery**
+  - [x] Image
+  - [x] Summary
+
+### List Page
+
+- [x] Post Cards
+- [x] Sidebar
+- [ ] Pagination
+
+### Reading Page
+
+- [x] Hero Image
+- [x] Author Information
+- [x] Next & Previous Page Navigation
+- [x] `Improve This Page` Button
+- [x] Disqus Comment
+- [ ] Option to navigate to list page
+
+### Tracking and Comments
+
+- [x] Google Analytics
+- [x] Disqus Comment
+
+### Shortcodes
+
+- [x] Image
+- [x] Split Page into Multiple Column
+- [x] Vertical space between two sections
+- [ ] Figure & sub-figure
+- [ ] Tabs
+
 ## Contributing
 
-Contributions are welcomed and I will be happy to review. Just follow the following principles:
+You can contribute to this theme in various way. You can report a bug, file an feature request, send a PR, share your thoughts etc.
+
+Pull requests are most welcomed and I will be happy to review. Just follow the following principles:
 
 - Keep it simple.
 - Keep it consistent with the design.
 - Use as little dependency as possible.
 - Have patient.
 
-I am not a web developer. I just created this theme for my personal needs. So, it is reasonable to have some flaws in the codes. Feel free to open issues and PR acknowledging the problems.
+>I am not a web developer. I just created this theme for my personal needs. So, it is reasonable to have some flaws in the codes. Feel free to open issues and PR acknowledging the problems.
 
 ## Attribution
 
