@@ -1,0 +1,14 @@
+<div class="col-10 col-lg-8">
+  <div class="experience-entry-heading">
+    <h5>{{ .company.name }}</h5>
+    <h6>{{ if .designation }} {{ .designation }} {{end}}</h6>
+    <p class="text-muted">{{ .start }} - {{ .end }} , {{ .company.location }}</p>
+  </div>
+  <p>{{ .company.overview | markdownify }}</p>
+  <h6 class="text-muted">Responsibilities:</h6>
+  <ul class="justify-content-around">
+      {{ range .responsibilities }}
+        <li>{{ . | markdownify }}</li>
+      {{ end }}
+  </ul>
+</div>
