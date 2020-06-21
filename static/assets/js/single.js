@@ -25,11 +25,14 @@ var isMobile = false, isTablet = false, isLaptop = false;
       element.innerHTML = `<a href="#${element.id}" class="header-anchor">${element.innerHTML}<sup><i class="fas fa-link"></i></sup></a>`;
     }
 
-    var headerTypes = ["h1", "h2", "h3", "h4", "h5", "h6"];
-    for (var i = 0; i < headerTypes.length; i++) {
-      var headers = document.querySelectorAll(headerTypes[i]);
-      if (headers) {
-        headers.forEach(addAnchor);
+    var postContent = document.getElementById("post-content");
+    if (postContent != null) {
+      var headerTypes = ["h1", "h2", "h3", "h4", "h5", "h6"];
+      for (var i = 0; i < headerTypes.length; i++) {
+        var headers = postContent.querySelectorAll(headerTypes[i]);
+        if (headers) {
+          headers.forEach(addAnchor);
+        }
       }
     }
 
