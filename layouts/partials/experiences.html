@@ -3,24 +3,21 @@
     <h1 class="text-center">Experiences</h1>
 
     <div class="container timeline text-justify">
-      {{ $total:= len .Site.Data.experiences.experiences }}
-      {{ range $idx,$val:= .Site.Data.experiences.experiences }}
-        {{ if eq (mod $idx 2) 0 }}
+      {{ $totalExperiences:= len .Site.Data.experiences.experiences }}
+      {{ range $index,$experience:= .Site.Data.experiences.experiences }}
+        {{ if eq (mod $index 2) 0 }}
           <div class="row align-items-center  d-flex">
-            {{ partial "experiences/left-v-line.html" $idx }}
-            {{ partial "experiences/experience-info.html" $val }}
+            {{ partial "experiences/vertical-line.html" $index }}
+            {{ partial "experiences/experience-info.html" $experience }}
           </div>
-          {{ if lt $idx (sub $total 1) }}
-            {{ partial "experiences/left-to-right-h-line.html" $idx }}
-          {{ end }}
         {{else}}
           <div class="row align-items-center justify-content-end d-flex">
-            {{ partial "experiences/experience-info.html" $val }}
-            {{ partial "experiences/right-v-line.html" $idx }}
+            {{ partial "experiences/experience-info.html" $experience }}
+            {{ partial "experiences/vertical-line.html" $index }}
           </div>
-          {{ if lt $idx (sub $total 1) }}
-            {{ partial "experiences/right-to-left-h-line.html" $idx }}
-          {{ end }}
+        {{ end }}
+        {{ if lt $index (sub $totalExperiences 1) }}
+          {{ partial "experiences/horizontal-line.html" $index }}
         {{ end }}
       {{ end }}
     </div>
