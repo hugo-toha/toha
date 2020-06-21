@@ -26,6 +26,10 @@ h5 {
   color: #1c2d41;
 }
 
+strong{
+  color: #1c2d41!important;
+}
+
 p {
   color: #3c4858;
 }
