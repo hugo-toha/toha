@@ -6,6 +6,6 @@
   <h4 class="title" id="achievement-title">{{ .title }}</h4>
   <div class="caption hidden col-lg-6 text-left" id="caption">
     <h4>{{ .title }}</h4>
-    <p>{{ .summary }}</p>
+    <p>{{ .summary | markdownify }}</p>
   </div>
 </div>

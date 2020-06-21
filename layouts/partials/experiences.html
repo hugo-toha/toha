@@ -3,7 +3,7 @@
     <h1 class="text-center">Experiences</h1>
 
     <div class="container timeline text-justify">
-      {{ $experiencesTotal:= len .Site.Data.experiences.experiences }}
+      {{ $totalExperiences:= len .Site.Data.experiences.experiences }}
       {{ range $index,$experience:= .Site.Data.experiences.experiences }}
         {{ if eq (mod $index 2) 0 }}
           <div class="row align-items-center  d-flex">
@@ -16,7 +16,7 @@
             {{ partial "experiences/vertical-line.html" $index }}
           </div>
         {{ end }}
-        {{ if lt $index (sub $experiencesTotal 1) }}
+        {{ if lt $index (sub $totalExperiences 1) }}
           {{ partial "experiences/horizontal-line.html" $index }}
         {{ end }}
       {{ end }}
