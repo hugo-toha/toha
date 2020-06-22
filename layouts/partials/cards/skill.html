@@ -2,11 +2,9 @@
   <div class="card">
     <div class="card-head d-flex">
       {{ if .icon }}
-      <img class="card-img-sm" src="{{ .icon }}" alt="{{ .name }}" />
-      {{ else }}
-      <i class="fas fas fa-tools"></i>
+        <img class="card-img-xs" src="{{ .icon }}" alt="{{ .name }}" />
       {{ end }}
-      <h4 class="card-title">{{ .name }}</h4>
+      <h5 class="card-title">{{ .name }}</h5>
     </div>
     <div class="card-body">
       <p class="card-text">{{ .summary | markdownify }}</p>

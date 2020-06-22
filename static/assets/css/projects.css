@@ -1,12 +1,11 @@
 .projects .card .card-header {
-  padding: 10px;
+  background-color: #f9fafc;
+  padding: 0.7rem;
+  padding-bottom: 0rem;
 }
 
 .projects .card .card-img-xs {
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-bottom: 5px;
-  margin-right: 10px;
+  margin-right: 0.5rem;
 }
 
 .card .card-header .sub-title span:nth-child(1) {
@@ -16,17 +15,17 @@
   float: right;
 }
 
-.projects .card .card-header {
-  background-color: #f9fafc;
+.projects .card .card-body {
+  padding: 0.7rem;
 }
 
 .projects .card .card-header .sub-title {
   color: #8392a5;
-  margin-top: 5px;
+  margin-top: 0.4rem;
 }
 
 .filtr-projects {
-  padding: 15px !important;
+  padding: 1rem !important;
 }
 
 /* ============= Device specific fixes ======= */
@@ -57,6 +56,6 @@
 
 @media only screen and (max-width: 576px) {
   .projects .btn {
-    margin-top: 5px;
+    margin-top: 0.3125rem;
   }
 }
