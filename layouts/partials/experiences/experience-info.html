@@ -1,7 +1,7 @@
 <div class="col-10 col-lg-8">
   <div class="experience-entry-heading">
-    <h5>{{ .designation }}</h5>
-    <h6><a href="{{ .company.url }}">{{ .company.name }}</a></h6>
+    <h5><a href="{{ .company.url }}">{{ .company.name }}</a></h5>
+    <h6>{{ .designation }}</h6>
     <p class="text-muted">{{ .start }} - {{ if .end }} {{ .end }} {{ else }}Present{{ end }}, {{ .company.location }}</p>
   </div>
   <p>{{ .company.overview | markdownify }}</p>
