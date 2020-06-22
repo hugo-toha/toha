@@ -150,10 +150,6 @@ img.right{
   -webkit-transform: scale(1.2);
 }
 
-.card-title {
-  font-weight: 600;
-}
-
 .card-body {
   text-align: justify;
 }
