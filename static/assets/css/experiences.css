@@ -6,10 +6,6 @@
   margin-top: 1.5rem !important;
 }
 
-.text-muted {
-  color: #e5e9f2;
-}
-
 .experiences ul {
   padding-left: 1rem;
 }
@@ -17,10 +13,6 @@
 .experiences ul > li {
   margin-left: 0;
   color: #3c4858;
-}
-
-.experience-entry-heading h5 {
-  font-weight: 600;
 }
 
 .circle {
