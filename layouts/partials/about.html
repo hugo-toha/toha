@@ -23,9 +23,9 @@
               {{ end }}
             </ul>
           </div>
-          <a href="{{ .Site.Data.about.resume }}" target="#"
-            ><button class="btn btn-dark">My Resume</button></a
-          >
+          {{ if .Site.Data.about.resume }}
+            <a href="{{ .Site.Data.about.resume }}" target="#"><button class="btn btn-dark">My Resume</button></a>
+          {{end}}
         </div>
         <!-- soft skills circular-progressbar -->
         <div class="col-md-6 pt-5 pl-md-4 pl-sm-3 pt-md-0">
