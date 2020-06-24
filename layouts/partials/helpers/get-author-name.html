@@ -1,4 +1,7 @@
 {{ $authorName:= "John Doe"}}
+{{ if .Site.Data.site.author}}
+    {{ $authorName = .Site.Data.site.author.name }}
+{{ end}}
 {{ if eq (printf "%T" .Params.author ) "maps.Params" }}
     {{ with .Params.author }}
         {{ if .name }}
