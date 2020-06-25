@@ -18,7 +18,11 @@
             <ul class="social-link d-flex">
               {{ range .Site.Data.about.socialLinks }}
               <li>
-                <a href="{{ .url }}" target="/"><i class="{{ .icon }}"></i></a>
+                {{ if eq .name "Email" }}
+                  <a href="mailto:{{ .url }}" target="/"><i class="{{ .icon }}"></i></a>
+                {{ else }}
+                  <a href="{{ .url }}" target="/"><i class="{{ .icon }}"></i></a>
+                {{ end }}
               </li>
               {{ end }}
             </ul>
