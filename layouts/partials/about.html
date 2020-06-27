@@ -5,12 +5,14 @@
         <!-- summery -->
         <div class="col-md-6">
           <h3 class="p-1">{{ .Site.Data.site.author.name }}</h3>
+          {{ if .Site.Data.about.designation }}
           <h5 class="p-1">
-            {{ .Site.Data.about.designation }} at
-            <a href="{{ .Site.Data.about.company.url }}"
-              >{{ .Site.Data.about.company.name }}</a
-            >
+            {{ .Site.Data.about.designation }}
+            {{ if .Site.Data.about.company }}
+              at <a href="{{ .Site.Data.about.company.url }}">{{ .Site.Data.about.company.name }}</a>
+            {{ end }}
           </h5>
+          {{ end }}
           <p class="p-1 text-justify">
             {{ .Site.Data.about.summary | markdownify }}
           </p>
