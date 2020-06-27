@@ -1,5 +1,5 @@
+{{ if .Site.Data.projects }}
 <div class="container-fluid projects bg-dimmed anchor pb-5" id="projects">
-  {{ if .Site.Data.projects }}
     <h1 class="text-center">Projects</h1>
     <div class="container ml-auto text-center">
       <div class="btn-group flex-wrap" role="group" id="project-filter-buttons">
@@ -17,5 +17,5 @@
         {{ end }}
       </div>
     </div>
-  {{ end }}
 </div>
+{{ end }}

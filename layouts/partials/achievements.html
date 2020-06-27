@@ -1,5 +1,5 @@
+{{ if .Site.Data.achievements }}
 <div class="container-fluid achievements bg-dimmed anchor pb-5" id="achievements">
-  {{ if .Site.Data.achievements }}
     <h1 class="text-center">Achievements</h1>
 
     <div class="container">
@@ -12,5 +12,5 @@
         {{ partial "misc/achievement.html" . }}
       {{ end }}
     </div>
-  {{ end }}
 </div>
+{{ end }}
