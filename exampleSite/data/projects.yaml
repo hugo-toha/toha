@@ -1,4 +1,6 @@
 # filter buttons
+title: Projects
+
 buttons:
   - name: All
     filter: "all"

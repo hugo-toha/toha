@@ -26,7 +26,7 @@ menus:
 - name: Skills
   url: "#skills"
   weight: 3
-- name: Experiences
+- name: Experience
   url: "#experiences"
   weight: 4
 - name: Projects

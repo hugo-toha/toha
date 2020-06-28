@@ -1,6 +1,6 @@
 <div class="container-fluid experiences bg-white anchor" id="experiences">
   {{ if .Site.Data.experiences }}
-    <h1 class="text-center">Experiences</h1>
+    <h1 class="text-center">{{ .Site.Data.experiences.title }}</h1>
 
     <div class="container timeline text-justify">
       {{ $totalExperiences:= len .Site.Data.experiences.experiences }}
