@@ -16,15 +16,35 @@
 
     <div class="collapse navbar-collapse" id="top-nav-items">
       <ul class="navbar-nav ml-auto">
-        {{ range .Site.Data.site.menus }}
         <li class="nav-item">
-          <a class="nav-link smooth-scroll" href="{{ .url }}">{{ .name }}</a>
+          <a class="nav-link smooth-scroll" href="#home">Home</a>
         </li>
+        {{- range sort .Site.Data.sections "section.weight" }}
+          {{ if .section.showOnNavbar }}
+            <li class="nav-item">
+              <a class="nav-link smooth-scroll" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
+            </li>
+          {{ end }}
+        {{- end }}
+        {{ $hasCustomMenus:= false }}
+        {{ if and site.Params.customMenus }}
+          {{ if gt (len site.Params.customMenus) 0 }}
+            {{ $hasCustomMenus = true }}
+          {{ end }}
         {{ end }}
-        <div class="dropdown-divider" id="top-navbar-divider"></div>
-        <li class="nav-item">
-          <a class="nav-link" id="blog-link" href="/posts">Blog</a>
-        </li>
+        {{ if (or site.Params.enableBlogPost $hasCustomMenus) }}
+          <div class="dropdown-divider" id="top-navbar-divider"></div>
+        {{ end }}
+        {{ if site.Params.enableBlogPost }}
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Posts</a>
+          </li>
+        {{ end }}
+        {{ range site.Params.customMenus }}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ .url }}" target="/">{{ .name }}</a>
+          </li>
+        {{ end }}
       </ul>
     </div>
   </div>

@@ -245,12 +245,16 @@ img.right{
 /* Small devices (landscape phones, 576px and up) */
 
 @media only screen and (max-width: 576px) {
-  .container-fluid.about,
-  .container-fluid.skills,
-  .container-fluid.projects,
-  .container-fluid.recent-posts,
-  .container-fluid.achievements {
+  .section-holder {
     padding-left: 5px;
     padding-right: 5px;
+  }
+
+  #skills,
+  #projects,
+  #recent-posts,
+  #achievements{
+    padding-left: 0;
+    padding-right: 0;
   }
 }
