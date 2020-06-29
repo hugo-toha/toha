@@ -99,6 +99,7 @@ Here, are some handy shortcodes you can use with this theme.
 - [img](https://toha.netlify.app/posts/short-codes/img/)
 - [split](https://toha.netlify.app/posts/short-codes/split/)
 - [vs](https://toha.netlify.app/posts/short-codes/vs/)
+- [alert](https://toha.netlify.app/posts/short-codes/alert/)
 
 ## Project Roadmap
 
@@ -184,6 +185,7 @@ Here, are the current plan and progress of various components of this theme. The
 - [x] Image
 - [x] Split Page into Multiple Column
 - [x] Vertical space between two sections
+- [x] Alert
 - [ ] Figure & sub-figure
 - [ ] Tabs
 
