@@ -7,7 +7,7 @@
 {{ end }}
 
 {{ define "navbar" }}
-    {{ partial "navbar-2.html" (dict "baseURL" .Site.BaseURL "title" .Site.Title "hasToggleButton" false) }}
+    {{ partial "navbar-2.html" (dict "baseURL" .Site.BaseURL "title" .Site.Title "hasToggleButton" false "navBrandURL"  "/posts") }}
 {{ end }}
 
 {{ define "content" }}
