@@ -44,31 +44,7 @@
 
     <!---Next and Previous Navigator -->
   <hr />
-  <div class="row next-prev-navigator">
-    {{ $currentPage := . }}
-    {{ range (where site.RegularPages.ByDate "Type" "in" site.Params.mainSections )}}
-      {{ if eq .RelPermalink  $currentPage.RelPermalink }}
-        {{ if in site.Params.mainSections .Next.Type }}
-        <div class="col-md-6 previous-article">
-          <a href="{{.Next.RelPermalink}}" class="btn btn-outline-info">
-            <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
-            <br />
-            <span>{{ .Next.Title }}</span>
-          </a>
-        </div>
-        {{ end }}
-        {{ if in site.Params.mainSections .Prev.Type  }}
-        <div class="{{ if in site.Params.mainSections .Next.Type }}col-md-6{{ else }}col-md-12{{ end }} next-article">
-          <a href="{{ .Prev.RelPermalink }}" class="btn btn-outline-info">
-            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
-            <br />
-            <span>{{ .Prev.Title }}</span>
-          </a>
-        </div>
-        {{ end }}
-      {{ end }}
-    {{ end }}
-  </div>
+    {{ partial "next-prev-navigator.html" . }}
   <hr />
   <!-- Add Disqus forum  -->
   {{ if .Site.DisqusShortname }}
