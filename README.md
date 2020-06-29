@@ -61,19 +61,44 @@ markup:
       unsafe: true
 
 # Enable Google Analytics
-googleAnalytics: <your google analytics id>
+googleAnalytics: UA-xxxxxxxx
 
 # Enable Disqus forum
-# optional
-disqusShortname: <your disqus short code>
+disqusShortname: does-not-exist
 
 # Enable global emoji support
 enableEmoji: true
 
 # Custom parameters
 params:
-  # Github Repo URL. This is used to add "Improve This Page" button
-  gitRepo: <your site's Github repo URL>
+  # background image of the landing page
+  background: "images/background.jpg"
+
+  # GitHub repo URL of your site
+  gitRepo: https://github.com/hossainemruz/toha-example-site
+
+  # specify whether you want to write blog post or not
+  enableBlogPost: true
+
+  # specify the list of custom menus that you want to show in the top navbar.
+  # they will be separated by a divider from the main menus.
+  customMenus:
+  - name: Notes
+    url: https://hossainnotes.netlify.app/docs/example/
+
+  # some information about you
+  author:
+    name: "Jane Doe"
+    image: "images/avatar.png"
+    # give your some contact information. they will be used in the footer
+    contactInfo:
+      email: "janedoe@example.com"
+      phone: "+0123456789"
+    # a summary of what you do
+    summary:
+    - I am a Developer
+    - I work with Go
+    - I love to work with some fun projects
 ```
 
 You can just copy the content for `config.yaml` files from `theme/toha/exampleSite/config.yaml`.
@@ -99,6 +124,7 @@ Here, are some handy shortcodes you can use with this theme.
 - [img](https://toha.netlify.app/posts/short-codes/img/)
 - [split](https://toha.netlify.app/posts/short-codes/split/)
 - [vs](https://toha.netlify.app/posts/short-codes/vs/)
+- [alert](https://toha.netlify.app/posts/short-codes/alert/)
 
 ## Project Roadmap
 
@@ -184,6 +210,7 @@ Here, are the current plan and progress of various components of this theme. The
 - [x] Image
 - [x] Split Page into Multiple Column
 - [x] Vertical space between two sections
+- [x] Alert
 - [ ] Figure & sub-figure
 - [ ] Tabs
 

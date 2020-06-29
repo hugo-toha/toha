@@ -1,5 +1,12 @@
+# section information
+section:
+  name: Skills
+  enable: true
+  weight: 2
+  showOnNavbar: true
+
 # Your Skills.
-# Give a summary of you each skill in summary section.
+# Give a summary of you each skill in the summary section.
 skills:
 - name: Kubernetes
   icon: "images/skills/kubernetes.png"
@@ -7,7 +14,7 @@ skills:
 
 - name: Go Development
   icon: "images/skills/go.png"
-  summary: "Using as main language for professional development. Capable of writing scalable, testable, and maintainable program."
+  summary: "Using as the main language for professional development. Capable of writing scalable, testable, and maintainable program."
 
 - name: Cloud Computing
   icon: "images/skills/cloud.png"
@@ -23,11 +30,11 @@ skills:
 
 - name: Linux
   icon: "images/skills/linux.png"
-  summary: "Using as main operating system. Capable of writing bash/shell scripts."
+  summary: "Using as the main operating system. Capable of writing bash/shell scripts."
 
 - name: Git
   icon: "images/skills/git.png"
-  summary: "Experienced with git based development. Mostly, use Github. Also have experience in working with GitLab."
+  summary: "Experienced with git-based development. Mostly, use Github. Also, have experience in working with GitLab."
 
 - name: C++
   icon: "images/skills/c++.png"

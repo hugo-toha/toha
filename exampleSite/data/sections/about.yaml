@@ -1,3 +1,10 @@
+# section information
+section:
+  name: About
+  enable: true
+  weight: 1
+  showOnNavbar: true
+
 # your designation
 designation: Software Engineer
 # your company information

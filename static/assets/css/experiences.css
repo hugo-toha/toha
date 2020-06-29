@@ -1,16 +1,16 @@
-.experiences {
+#experiences {
   padding-bottom: 1rem;
 }
 
-.experiences .timeline {
+#experiences .timeline {
   margin-top: 1.5rem !important;
 }
 
-.experiences ul {
+#experiences ul {
   padding-left: 1rem;
 }
 
-.experiences ul > li {
+#experiences ul > li {
   margin-left: 0;
   color: #3c4858;
 }

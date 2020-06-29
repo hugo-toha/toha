@@ -3,20 +3,23 @@
     <div class="row text-left">
       <div class="col-md-4 col-sm-12">
         <h5>Navigation</h5>
-        {{ if .Site.Data.site }}
-          <ul>
-            {{ range .Site.Data.site.menus }}
+        {{ if .Site.Data.sections }}
+        <ul>
+          {{- range sort .Site.Data.sections "section.weight" }}
+            {{ if .section.enable }}
             <li class="nav-item">
-              <a class="smooth-scroll" href="{{ .url }}">{{ .name }}</a>
+              <a class="smooth-scroll" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
             </li>
             {{ end }}
-          </ul>
+          {{- end }}
+        </ul>
         {{ end }}
+
       </div>
       <div class="col-md-4 col-sm-12">
         <h5>Contact Me</h5>
         <ul>
-          {{ range $key,$value:=.Site.Data.site.author.contactInfo }}
+          {{ range $key,$value:=.Site.Params.author.contactInfo }}
           <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
           {{ end }}
         </ul>

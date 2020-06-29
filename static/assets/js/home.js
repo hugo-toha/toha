@@ -145,15 +145,18 @@ var projectCards;
 
     function adjustRecentPostsHeight() {
       if (!isMobile) { // no need to adjust height for mobile devices
-        let el = document.getElementById("recent-post-cards").children;
-        let maxHeight = 0;
-        for (let i = 0; i < el.length; i++) {
-          if (el[i].children[1].clientHeight > maxHeight) {
-            maxHeight = el[i].children[1].clientHeight;
+        let recentPostCards = document.getElementById("recent-post-cards")
+        if (recentPostCards != null) {
+          let el = recentPostCards.children;
+          let maxHeight = 0;
+          for (let i = 0; i < el.length; i++) {
+            if (el[i].children[1].clientHeight > maxHeight) {
+              maxHeight = el[i].children[1].clientHeight;
+            }
           }
-        }
-        for (let i = 0; i < el.length; i++) {
-          el[i].children[1].setAttribute("style", "min-height: " + maxHeight + "px;")
+          for (let i = 0; i < el.length; i++) {
+            el[i].children[1].setAttribute("style", "min-height: " + maxHeight + "px;")
+          }
         }
       }
     }
