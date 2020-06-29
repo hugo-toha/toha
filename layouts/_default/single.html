@@ -46,9 +46,9 @@
   <hr />
   <div class="row next-prev-navigator">
     {{ $currentPage := . }}
-    {{ range .Site.RegularPages.ByDate }}
+    {{ range (where site.RegularPages.ByDate "Type" "in" site.Params.mainSections )}}
       {{ if eq .RelPermalink  $currentPage.RelPermalink }}
-        {{ if .Next }}
+        {{ if in site.Params.mainSections .Next.Type }}
         <div class="col-md-6 previous-article">
           <a href="{{.Next.RelPermalink}}" class="btn btn-outline-info">
             <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
@@ -57,8 +57,8 @@
           </a>
         </div>
         {{ end }}
-        {{ if .Prev }}
-        <div class="{{ if .Next }}col-md-6{{ else }}col-md-12{{ end }} next-article">
+        {{ if in site.Params.mainSections .Prev.Type  }}
+        <div class="{{ if in site.Params.mainSections .Next.Type }}col-md-6{{ else }}col-md-12{{ end }} next-article">
           <a href="{{ .Prev.RelPermalink }}" class="btn btn-outline-info">
             <span>Next <i class="fas fa-chevron-circle-right"></i></span>
             <br />

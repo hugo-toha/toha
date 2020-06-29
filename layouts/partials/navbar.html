@@ -19,12 +19,14 @@
         <li class="nav-item">
           <a class="nav-link smooth-scroll" href="#home">Home</a>
         </li>
-        {{- range sort .Site.Data.sections "section.weight" }}
-          {{ if .section.showOnNavbar }}
-            <li class="nav-item">
-              <a class="nav-link smooth-scroll" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
-            </li>
-          {{ end }}
+        {{- if .Site.Data.sections }}
+          {{- range sort .Site.Data.sections "section.weight" }}
+            {{ if .section.showOnNavbar }}
+              <li class="nav-item">
+                <a class="nav-link smooth-scroll" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
+              </li>
+            {{ end }}
+          {{- end }}
         {{- end }}
         {{ $hasCustomMenus:= false }}
         {{ if and site.Params.customMenus }}
