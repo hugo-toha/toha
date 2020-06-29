@@ -19,30 +19,31 @@
         {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
   </head>
-  <body data-spy="scroll" data-target="#top-navbar" data-offset="50">
+  <body data-spy="scroll" data-target="#top-navbar" data-offset="100">
+
     <!--- NAVBAR ------------------------->
     {{- partial "navbar.html" . -}}
 
     <!--- ADD HOME SECTION ---------------->
     {{- partial "home.html" . -}}
 
-    <!--- ADD ABOUT SECTION --------------->
-    {{- partial "about.html" . -}}
-
-    <!--- ADD SKILLS SECTION -------------->
-    {{- partial "skills.html" . -}}
-
-    <!--- ADD EXPERIENCE SECTION ----------->
-    {{- partial "experiences.html" . -}}
-
-    <!--- ADD PROJECT SECTION -------------->
-    {{- partial "projects.html" . -}}
-
-    <!--- ADD RECENT-POSTS SECTION --------->
-    {{- partial "recent-posts.html" . -}}
-
-    <!--- ADD ACHIEVEMENT SECTION ---------->
-    {{- partial "achievements.html" . -}}
+    <!--- ADD OPTIONAL SECTIONS ----------->
+    {{ if .Site.Data.sections }}
+      {{ $background:= "bg-white"}}
+      {{ range sort .Site.Data.sections "section.weight" }}
+        {{ if .section.enable }}
+          <div class="container-fluid section-holder d-flex {{ $background }}">
+            {{- partial (printf "%s.html" (replace (lower .section.name) " " "-")) . -}}
+          </div>
+          <!--- alter background color for next section --->
+          {{ if eq $background "bg-white" }}
+            {{ $background = "bg-dimmed" }}
+          {{ else }}
+            {{ $background = "bg-white" }}
+          {{end}}
+        {{ end }}
+      {{ end }}
+    {{ end }}
 
     <!--- ADD FOOTER ----------------------->
     {{- partial "footer.html" . -}}

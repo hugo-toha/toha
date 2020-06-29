@@ -1,20 +1,20 @@
 <div class="container-fluid home" id="home">
   <div
     class="background container-fluid"
-    style="background-image: url('{{ if .Site.Data.site.background }}{{ .Site.Data.site.background }}{{ else }}/assets/images/default-background.jpg{{ end }}');"
+    style="background-image: url('{{ if .Site.Params.background }}{{ .Site.Params.background }}{{ else }}/assets/images/default-background.jpg{{ end }}');"
   ></div>
   <div class="container content text-center">
-    <img src="{{ if .Site.Data.site.author.image }}{{ .Site.Data.site.author.image }}{{ else }}/assets/images/default-avatar.png{{ end }}"
+    <img src="{{ if .Site.Params.author.image }}{{ .Site.Params.author.image }}{{ else }}/assets/images/default-avatar.png{{ end }}"
       class="rounded-circle mx-auto d-block img-fluid"
     />
-    <h1 class="greeting">Hi, I am {{ if .Site.Data.site.author.name }}{{ .Site.Data.site.author.name }}{{ else }}Jane Doe{{ end }}
+    <h1 class="greeting">Hi, I am {{ if .Site.Params.author.name }}{{ .Site.Params.author.name }}{{ else }}Jane Doe{{ end }}
     </h1>
     <div class="typing-carousel">
       <span id="ityped" class="ityped"></span>
       <span class="ityped-cursor"></span>
     </div>
     <ul id="typing-carousel-data">
-      {{ range .Site.Data.site.author.summary }}
+      {{ range .Site.Params.author.summary }}
       <li>{{ . }}</li>
       {{ end }}
     </ul>

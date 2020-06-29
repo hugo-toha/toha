@@ -1,0 +1,8 @@
+# section information
+section:
+  name: Recent Posts
+  enable: true
+  weight: 5
+  showOnNavbar: true
+
+# no other configuration is required

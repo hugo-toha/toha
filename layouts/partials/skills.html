@@ -1,13 +1,11 @@
-<div class="container-fluid skills bg-dimmed anchor pb-5" id="skills">
-  {{ if .Site.Data.skills }}
-    <h1 class="text-center">Skills</h1>
+<div class="container-fluid anchor pb-5" id="skills">
+  <h1 class="text-center">{{ .section.name }}</h1>
 
-    <div class="container d-flex-block">
-      <div class="row" id="primary-skills">
-        {{ range .Site.Data.skills.skills }}
-          {{ partial "cards/skill.html" . }}
-        {{ end }}
-      </div>
+  <div class="container d-flex-block">
+    <div class="row" id="primary-skills">
+      {{ range .skills }}
+        {{ partial "cards/skill.html" . }}
+      {{ end }}
     </div>
-  {{ end }}
+  </div>
 </div>

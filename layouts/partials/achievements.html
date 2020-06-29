@@ -1,16 +1,13 @@
-<div class="container-fluid achievements bg-dimmed anchor pb-5" id="achievements">
-  {{ if .Site.Data.achievements }}
-    <h1 class="text-center">Achievements</h1>
-
-    <div class="container">
-      <div class="row" id="gallery">
-      </div>
+<div class="container-fluid anchor pb-5" id="achievements">
+  <h1 class="text-center">{{ .section.name }}</h1>
+  <div class="container">
+    <div class="row" id="gallery">
     </div>
-    <!-- achievements-holder holds achievement-entry -->
-    <div class="d-none" id="achievements-holder">
-      {{ range .Site.Data.achievements.achievements }}
-        {{ partial "misc/achievement.html" . }}
-      {{ end }}
-    </div>
-  {{ end }}
+  </div>
+  <!-- achievements-holder holds achievement-entry -->
+  <div class="d-none" id="achievements-holder">
+    {{ range .achievements }}
+      {{ partial "misc/achievement.html" . }}
+    {{ end }}
+  </div>
 </div>
