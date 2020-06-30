@@ -1,4 +1,4 @@
-<div class="container-fluid anchor pb-5" id="recent-posts">
+<div class="container-fluid anchor pb-5 recent-posts-section" id="{{ replace (lower .section.name) " " "-" }}">
   <h1 class="text-center">{{ .section.name }}</h1>
   <div class="container">
     <div class="row" id="recent-post-cards">

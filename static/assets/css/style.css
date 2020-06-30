@@ -250,10 +250,10 @@ img.right{
     padding-right: 5px;
   }
 
-  #skills,
-  #projects,
-  #recent-posts,
-  #achievements{
+  .skills-section,
+  .projects-section,
+  .recent-posts-section,
+  .achievements-section{
     padding-left: 0;
     padding-right: 0;
   }

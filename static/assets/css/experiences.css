@@ -113,3 +113,43 @@
 
 @media only screen and (max-width: 576px) {
 }
+
+
+/* iPhoneX, iPhone 6,7,8 */
+@media only screen and (max-width: 375px) {
+  .top-left {
+    left: -52%;
+    top: -50%;
+  }
+  
+  .top-right {
+    left: 52%;
+    top: -50%;
+  }
+}
+
+/* Galaxy S5, Moto G4 */
+@media only screen and (max-width: 360px) {
+  .top-left {
+    left: -56%;
+    top: -50%;
+  }
+  
+  .top-right {
+    left: 56%;
+    top: -50%;
+  }
+}
+
+/* iPhone 5 or before */
+@media only screen and (max-width: 320px) {
+  .top-left {
+    left: -64%;
+    top: -50%;
+  }
+  
+  .top-right {
+    left: 64%;
+    top: -50%;
+  }
+}
