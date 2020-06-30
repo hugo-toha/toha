@@ -111,6 +111,14 @@
   border-color: #2dca73;
 }
 
+.circular-progress.sky .circular-progress-bar {
+  border-color: #01e0fd;
+}
+
+.circular-progress.orange .circular-progress-bar {
+  border-color: #FF7D51;
+}
+
 .circular-progress-percentage-50 {
   animation: circular-loading-50 0s linear forwards 1.8s;
 }

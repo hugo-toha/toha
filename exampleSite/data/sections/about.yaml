@@ -47,7 +47,7 @@ socialLinks:
 
 # your soft skills
 # give the percentage between 50 to 100 with 5 intervals.
-# currently supported color: blue, yellow, pink, green
+# currently supported colors: blue, yellow, pink, green, sky, orange
 softSkills:
 - name: Leadership
   percentage: 85
