@@ -16,6 +16,7 @@ googleAnalytics: UA-xxxxxxxx
 disqusShortname: does-not-exist
 
 # Enable global emoji support
+enableEmoji: true
 
 # Custom parameters
 params:
