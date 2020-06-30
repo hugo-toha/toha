@@ -1,10 +1,10 @@
-#projects-section .card .card-header {
+.projects-section .card .card-header {
   background-color: #f9fafc;
   padding: 0.7rem;
   padding-bottom: 0rem;
 }
 
-#projects-section .card .card-img-xs {
+.projects-section .card .card-img-xs {
   margin-right: 0.5rem;
 }
 
@@ -15,11 +15,11 @@
   float: right;
 }
 
-#projects-section .card .card-body {
+.projects-section .card .card-body {
   padding: 0.7rem;
 }
 
-#projects-section .card .card-header .sub-title {
+.projects-section .card .card-header .sub-title {
   color: #8392a5;
   margin-top: 0.4rem;
 }
@@ -55,7 +55,7 @@
 /* Small devices (landscape phones, 576px and up) */
 
 @media only screen and (max-width: 576px) {
-  #projects-section .btn {
+  .projects-section .btn {
     margin-top: 0.3125rem;
   }
 }

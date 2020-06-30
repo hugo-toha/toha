@@ -1,12 +1,10 @@
-<div class="container-fluid anchor pb-5" id="{{ replace (lower .section.name) " " "-" }}">
-  <div id="skills-section">
-    <h1 class="text-center">{{ .section.name }}</h1>
-    <div class="container d-flex-block">
-      <div class="row" id="primary-skills">
-        {{ range .skills }}
-          {{ partial "cards/skill.html" . }}
-        {{ end }}
-      </div>
+<div class="container-fluid anchor pb-5 skills-section" id="{{ replace (lower .section.name) " " "-" }}">
+  <h1 class="text-center">{{ .section.name }}</h1>
+  <div class="container d-flex-block">
+    <div class="row" id="primary-skills">
+      {{ range .skills }}
+        {{ partial "cards/skill.html" . }}
+      {{ end }}
     </div>
   </div>
 </div>
