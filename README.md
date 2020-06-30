@@ -71,6 +71,9 @@ enableEmoji: true
 
 # Custom parameters
 params:
+  # copyright
+  copyright: © 2020 Copyright.
+
   # background image of the landing page
   background: "images/background.jpg"
 
