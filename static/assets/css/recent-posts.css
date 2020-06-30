@@ -17,7 +17,7 @@
   text-decoration: none;
 }
 
-.post-summery {
+.post-summary {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
