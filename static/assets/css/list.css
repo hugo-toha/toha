@@ -194,7 +194,7 @@ a.focused {
   margin-top: auto;
 }
 
-.post-summery {
+.post-summary {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

@@ -1,23 +1,23 @@
-#recent-posts .container{
+.recent-posts-section .container{
   padding-top: 1rem;
 }
 
-#recent-posts .card .card-footer span {
+.recent-posts-section .card .card-footer span {
   font-size: 10pt;
   color: #6c757d !important;
   padding-top: 5px;
 }
 
-#recent-posts .card .card-footer {
+.recent-posts-section .card .card-footer {
   background: #fff;
   margin-top: auto;
 }
 
-#recent-posts .post-card-link{
+.recent-posts-section .post-card-link{
   text-decoration: none;
 }
 
-.post-summery {
+.post-summary {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

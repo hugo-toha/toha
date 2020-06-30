@@ -13,7 +13,7 @@
 {{ define "content" }}
 <div class="container p-0 read-area">
   <!--Hero Area-->
-  <div class="hero-area col-sm-12" style='background-image: url({{ partial "helpers/get-hero.html" . }});'>
+  <div class="hero-area col-sm-12" style='background-image: url({{ strings.TrimSuffix "/" .Site.BaseURL }}{{ partial "helpers/get-hero.html" . }});'>
   </div>
 
   <!--Content Start-->
