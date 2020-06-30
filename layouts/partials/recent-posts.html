@@ -1,10 +1,12 @@
-<div class="container-fluid anchor pb-5" id="recent-posts">
-  <h1 class="text-center">{{ .section.name }}</h1>
-  <div class="container">
-    <div class="row" id="recent-post-cards">
-      {{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections )}}
-        {{ partial "cards/recent-post.html" . }}
-      {{ end }}
+<div class="container-fluid anchor pb-5" id="{{ replace (lower .section.name) " " "-" }}">
+  <div id="recent-posts">
+    <h1 class="text-center">{{ .section.name }}</h1>
+    <div class="container">
+      <div class="row" id="recent-post-cards">
+        {{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections )}}
+          {{ partial "cards/recent-post.html" . }}
+        {{ end }}
+      </div>
     </div>
   </div>
 </div>

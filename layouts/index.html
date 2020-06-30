@@ -33,7 +33,11 @@
       {{ range sort .Site.Data.sections "section.weight" }}
         {{ if .section.enable }}
           <div class="container-fluid section-holder d-flex {{ $background }}">
-            {{- partial (printf "%s.html" (replace (lower .section.name) " " "-")) . -}}
+            {{ if .section.template }}
+              {{- partial .section.template . -}}
+            {{ else }}
+              {{- partial (printf "%s.html" (replace (lower .section.name) " " "-")) . -}}
+            {{ end }}
           </div>
           <!--- alter background color for next section --->
           {{ if eq $background "bg-white" }}
