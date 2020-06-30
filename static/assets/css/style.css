@@ -250,10 +250,10 @@ img.right{
     padding-right: 5px;
   }
 
-  #skills,
-  #projects,
-  #recent-posts,
-  #achievements{
+  #skills-template,
+  #projects-template,
+  #recent-posts-template,
+  #achievements-template{
     padding-left: 0;
     padding-right: 0;
   }
