@@ -1,4 +1,4 @@
-#skills-template .card .card-head {
+#skills-section .card .card-head {
   background-color: #f9fafc;
   height: fit-content;
   padding: 0.7rem;
@@ -6,16 +6,16 @@
   border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.125);
 }
 
-#skills-template .card .card-img-xs {
+#skills-section .card .card-img-xs {
   margin-right: 0.5rem;
 }
 
-#skills-template .card {
+#skills-section .card {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-#skills-template .card .card-body {
+#skills-section .card .card-body {
   padding-top: 0.2rem;
   padding-left: 0.7rem;
 }

@@ -1,19 +1,19 @@
-#recent-posts-template .container{
+#recent-posts-section .container{
   padding-top: 1rem;
 }
 
-#recent-posts-template .card .card-footer span {
+#recent-posts-section .card .card-footer span {
   font-size: 10pt;
   color: #6c757d !important;
   padding-top: 5px;
 }
 
-#recent-posts-template .card .card-footer {
+#recent-posts-section .card .card-footer {
   background: #fff;
   margin-top: auto;
 }
 
-#recent-posts-template .post-card-link{
+#recent-posts-section .post-card-link{
   text-decoration: none;
 }
 
