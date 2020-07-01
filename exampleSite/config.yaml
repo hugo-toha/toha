@@ -41,6 +41,7 @@ params:
   # some information about you
   author:
     name: "Jane Doe"
+    nickname: "Jane"
     image: "images/avatar.png"
     # give your some contact information. they will be used in the footer
     contactInfo:
