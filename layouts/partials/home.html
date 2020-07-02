@@ -25,7 +25,10 @@
       <li>{{ . }}</li>
       {{ end }}
     </ul>
-    <!-- @todo this section should go to the first section, not necessarily about -->
-    <a href="#about"><i class="arrow bounce fa fa-chevron-down"></i></a>
+    {{ if .Site.Data.sections }}
+      {{ range first 1 (where (sort .Site.Data.sections "section.weight") ".section.enable" true) }}
+        <a href="#{{ replace (lower .section.name) " " "-" }}"><i class="arrow bounce fa fa-chevron-down"></i></a>
+      {{ end }}
+    {{ end }}
   </div>
 </div>
