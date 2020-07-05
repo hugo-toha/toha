@@ -1,0 +1,23 @@
+<div class="col-10 col-lg-8">
+    <div class="experience-entry-heading">
+        <h5>{{ if .company.url }} <a href={{.company.url}}> {{end }} {{ .company.name }}</a></a></h5>
+        {{ $oldestPosition := index (last 1 .positions) 0}}
+        {{ $mostRecentPosition := index (first 1 .positions) 0}}
+        <h6>{{ .designation }}</h6>
+        <p class="text-muted">{{ $oldestPosition.start }} - {{ if $mostRecentPosition.end }} {{ $mostRecentPosition.end }} {{ else }} Present {{ end }},
+            {{ .company.location }}
+        </p>
+    </div>
+    <p>{{ .company.overview | markdownify }}</p>
+    {{ $totalPositions:= len .positions }}
+    {{ range $index,$position:= .positions }}
+        <h6>{{ $position.designation }}</h6>
+        <p class="text-muted">{{ $position.start }} - {{if $position.end }} {{ $position.end }} {{else}} Present {{end}}</p>
+        <ul class="justify-content-around">
+            {{ range $position.responsibilities }}
+                <li>{{ . | markdownify }}</li>
+            {{ end }}
+          </ul>
+          <br>
+        {{ end }}
+</div>
