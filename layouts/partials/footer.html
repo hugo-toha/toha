@@ -6,7 +6,7 @@
         {{ if .Site.Data.sections }}
         <ul>
           {{- range sort .Site.Data.sections "section.weight" }}
-            {{ if .section.enable }}
+            {{ if and (.section.enable) (.section.showOnNavbar)}}
             <li class="nav-item">
               <a class="smooth-scroll" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
             </li>

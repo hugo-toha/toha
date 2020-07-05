@@ -21,7 +21,7 @@
         </li>
         {{- if .Site.Data.sections }}
           {{- range sort .Site.Data.sections "section.weight" }}
-            {{ if .section.showOnNavbar }}
+            {{ if and (.section.enable) (.section.showOnNavbar)}}
               <li class="nav-item">
                 <a class="nav-link smooth-scroll" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
               </li>
@@ -44,7 +44,7 @@
         {{ end }}
         {{ range site.Params.customMenus }}
           <li class="nav-item">
-            <a class="nav-link" href="{{ .url }}" target="/">{{ .name }}</a>
+            <a class="nav-link" href="{{ .url }}">{{ .name }}</a>
           </li>
         {{ end }}
       </ul>

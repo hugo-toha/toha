@@ -100,7 +100,7 @@
 }
 
 .circular-progress.yellow .circular-progress-bar {
-  border-color: #ffc212;
+  border-color: #eebb4d;
 }
 
 .circular-progress.pink .circular-progress-bar {
@@ -109,6 +109,14 @@
 
 .circular-progress.green .circular-progress-bar {
   border-color: #2dca73;
+}
+
+.circular-progress.sky .circular-progress-bar {
+  border-color: #00c9e3;
+}
+
+.circular-progress.orange .circular-progress-bar {
+  border-color: #ff7c7c;
 }
 
 .circular-progress-percentage-50 {

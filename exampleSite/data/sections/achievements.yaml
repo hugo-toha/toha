@@ -4,6 +4,8 @@ section:
   enable: true
   weight: 6
   showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true 
 
 # Your achievements achievements
 achievements:

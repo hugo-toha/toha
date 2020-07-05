@@ -47,7 +47,7 @@ socialLinks:
 
 # your soft skills
 # give the percentage between 50 to 100 with 5 intervals.
-# currently supported color: blue, yellow, pink, green
+# currently supported colors: blue, yellow, pink, green, sky, orange
 softSkills:
 - name: Leadership
   percentage: 85
@@ -61,3 +61,16 @@ softSkills:
 - name: Hard Working
   percentage: 85
   color: green
+- name: Fast Learner
+  percentage: 85
+  color: sky
+- name: Problem Solving
+  percentage: 85
+  color: orange
+# you can also provide color code instead of pre-defined color name
+# - name: Example 1
+#   percentage: 75
+#   color: "#00adb5"
+# - name: Example 2
+#   percentage: 65
+#   color: "#8b8383"
