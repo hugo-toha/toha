@@ -1,6 +1,6 @@
-{{ if .projects }} 
-  {{ partial "experiences/info/multiple-projects.html" . }}
+{{ if .positions }}
+  {{ partial "experiences/multiple-positions" . }}
 {{ else }}
-  {{ partial "experiences/info/one-project.html" . }}
+  {{ partial "experiences/single-position.html" . }}
 {{ end }}
 
