@@ -1,16 +1,24 @@
-<div class="col-10 col-lg-8">
-    <div class="experience-entry-heading">
+<div class="company">
+    <div class="company-logo">
+        <img src="{{ .company.logo_path }} ">
+    </div>
+    <div class="company-info">
         <h5>{{ .designation }}</h5>
         <h6>{{ if .company.url }}<a href={{.company.url}}>{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h6>
-        <p class="text-muted">{{ .start }} - {{ if .end }}{{ .end }}{{ else }}Present{{ end }},
+        <span class="text-muted">{{ .start }} - {{ .end }},
             {{ .company.location }}
-        </p>
+        </span>
     </div>
-    <p>{{ .company.overview | markdownify }}</p>
-    <h6 class="text-muted">Responsibilities:</h6>
-    <ul class="justify-content-around">
-    {{ range .responsibilities }}
-        <li>{{ . | markdownify }}</li>
-    {{ end }}
-    </ul>
+</div>
+
+
+<div class="company-timeline">
+    <div class="company-timeline-item">
+        <p>{{ .company.overview | markdownify }}</p>
+        <ul class="justify-content-around">
+        {{ range .responsibilities }}
+            <li>{{ . | markdownify }}</li>
+        {{ end }}
+        </ul>
+    </div>
 </div>

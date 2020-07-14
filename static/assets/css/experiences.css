@@ -19,93 +19,91 @@
   margin-bottom: 0.2rem;
 }
 
-.positions > h6 {
+.experiences-section .designation{
+ font-weight: 600;
+ text-align: left;
+}
+
+.company{
+  display: flex;
+  align-items: center;
+}
+
+
+.company-logo {
+  height: 56px;
+  width: 56px;
+}
+
+.company-logo img {
+  border-radius: 15%;
+  width: 100%;
+  height: 100%;
+}
+
+.company-info {
+  margin-left: 24px;
+  width: 75%;
+}
+
+.company-timeline {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.company-timeline > h6 {
   margin-bottom: 0.2rem;
 }
 
-.positions > .text-muted {
+.company-timeline  > .text-muted {
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
 }
 
-.experiences-section .designation{
- font-weight: 600;
+.experience:not(:last-child) {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e6e9ec;
 }
 
-.circle {
-  padding: 13px 20px;
-  border-radius: 50%;
-  background-color: #248aaa;
-  color: #f9fafc;
-  max-height: 50px;
-  margin-left: 2px;
-  z-index: 2;
+.responsabilities {
+  margin-bottom: 1rem;
 }
 
-.vertical-line-left-adjustment > .circle {
-  margin-right: 6px;
+.company-timeline-item {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 8px;
+    padding-left: 80px;
 }
 
-.timeline .vertical-line {
-  align-self: stretch;
-}
-
-.timeline .vertical-line::after {
+.company-timeline-item.position::before {
   content: "";
   position: absolute;
-  border-left: 3px solid #248aaa;
-  z-index: 1;
-  height: 100%;
-  left: 50%;
+  top: 8px;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #7cb2c3;
+  left: 24px;
 }
 
-.vertical-line-left-adjustment::after {
-  left: calc(50% - 3px) !important;
+.company-timeline-item.position::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  height: calc(100% - 18px);
+  width: 2px;
+  background-color: #7cb2c3;
+  left: 27px;
 }
 
-.timeline .horizontal-line div {
-  padding: 0;
-  height: 40px;
+.company-timeline-item:last-child::after {
+  content: none;
 }
 
-.timeline .horizontal-line hr {
-  border-top: 3px solid #248aaa;
-  margin: 0;
-  top: 17px;
-  position: relative;
-}
-
-.timeline .horizontal-line .timeline-side-div {
-  display: flex;
-  overflow: hidden;
-}
-
-.timeline .horizontal-line .corner {
-  border: 3px solid #248aaa;
-  width: 100%;
-  position: relative;
-  border-radius: 15px;
-}
-
-.top-left {
-  left: -50%;
-  top: -50%;
-}
-
-.top-right {
-  left: 50%;
-  top: -50%;
-}
-
-.bottom-left {
-  left: -50%;
-  top: calc(50% - 3px);
-}
-
-.bottom-right {
-  left: 50%;
-  top: calc(50% - 3px);
-}
 
 /* ============= Device specific fixes ======= */
 
@@ -134,71 +132,45 @@
 /* Small devices (landscape phones, 576px and up) */
 
 @media only screen and (max-width: 576px) {
-  .positions {
-    font-size: 0.95em;
-    margin-bottom: 0.5rem;
+  .container.timeline {
+    padding-left: 0px;
+    padding-right: 10px;
   }
 
-  .circle {
-    padding: 8px 15px;
-    max-height: 40px;
+  .company-timeline-item {
+    padding-left: 55px;
+  }
+
+  .company-logo {
+    height: 42px;
+    width: 42px;
+  }
+
+  .company-info {
+    margin-left: 16px;
+  }
+
+  .company-timeline-item.position::before {
+    left: 17px;
+  }
+
+
+  .company-timeline-item.position::after {
+    left: 20px;
   }
 }
 
 /* iPhoneX, iPhone 6,7,8 */
 @media only screen and (max-width: 375px) {
-  .top-left {
-    left: -52%;
-  }
-  
-  .top-right {
-    left: 52%;
-  }
-
-  .bottom-right {
-    left: 52%;
-  }
-
-  .bottom-left {
-    left: -52%;
-  }
 
 }
 
 /* Galaxy S5, Moto G4 */
 @media only screen and (max-width: 360px) {
-  .top-left {
-    left: -56%;
-  }
-  
-  .top-right {
-    left: 56%;
-  }
 
-  .bottom-right {
-    left: 56%;
-  }
-
-  .bottom-left {
-    left: -56%;
-  }
 }
 
 /* iPhone 5 or before */
 @media only screen and (max-width: 320px) {
-  .top-left {
-    left: -64%;
-  }
-  
-  .top-right {
-    left: 64%;
-  }
 
-  .bottom-right {
-    left: 64%;
-  }
-
-  .bottom-left {
-    left: -64%;
-  }
 }
