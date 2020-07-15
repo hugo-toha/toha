@@ -373,6 +373,17 @@ var projectCards;
       adjustRecentPostsHeight();
       showAchievements();
     };
+
+    if (isMobile) {
+      $(".position").click(function() {
+        let responsabilities = $(this).find('.responsabilities');
+        if (responsabilities.is(":visible")) {
+          responsabilities.slideUp( "slow");
+        }
+        else responsabilities.slideDown("slow");
+      });
+    }
+    
   });
 
 })(jQuery);

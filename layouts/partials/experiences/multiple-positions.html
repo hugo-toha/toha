@@ -18,7 +18,7 @@
 {{ range $index,$position:= .positions }}
     <div class="company-timeline-item position">
         <h6 class="designation">{{ $position.designation }}</h6>
-        <p class="text-muted">{{ $position.start }} - {{if $position.end }} {{ $position.end }} {{else}} Present {{end}}</p>
+        <span class="text-muted company-period">{{ $position.start }} - {{ $position.end }} </span>
         <ul class="justify-content-around responsabilities">
         {{ range $position.responsibilities }}
             <li>{{ . | markdownify }}</li>

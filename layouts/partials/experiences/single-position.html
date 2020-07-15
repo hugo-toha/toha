@@ -5,7 +5,7 @@
     <div class="company-info">
         <h5>{{ .designation }}</h5>
         <h6>{{ if .company.url }}<a href={{.company.url}}>{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h6>
-        <span class="text-muted">{{ .start }} - {{ .end }},
+        <span class="text-muted company-period">{{ .start }} - {{ .end }},
             {{ .company.location }}
         </span>
     </div>
