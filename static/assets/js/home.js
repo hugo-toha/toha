@@ -139,7 +139,7 @@ var projectCards;
       // now render github button. it will call the github API and fill the respective fields
       renderGithubButton();
     }
-    showGithubStars();
+    //showGithubStars();
 
     // ==================== Adjust height of the recent-posts card =============
 
