@@ -1,8 +1,11 @@
 <div class="col-sm-12 col-md-6 col-lg-4 pt-2">
   <div class="card">
     <div class="card-head d-flex">
-      {{ if .icon }}
-        <img class="card-img-xs" src="{{ .icon }}" alt="{{ .name }}" />
+      {{ if .svg_icon }}
+        {{ $svg := readFile .svg_icon | safeHTML }}
+        {{ $svg := replace $svg "#" "%23" }}
+        <img class="card-img-xs" src='data:image/svg+xml;charset=UTF-8,{{ $svg }}' alt="{{ .name }}"/>
+        <!-- <div class="card-img-xs"></div> -->
       {{ end }}
       <h5 class="card-title">{{ .name }}</h5>
     </div>
