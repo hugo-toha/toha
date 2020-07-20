@@ -27,7 +27,7 @@
     </ul>
     {{ if .Site.Data.sections }}
       {{ range first 1 (where (sort .Site.Data.sections "section.weight") ".section.enable" true) }}
-        <a href="#{{ replace (lower .section.name) " " "-" }}"><i class="arrow bounce fa fa-chevron-down"></i></a>
+        <a href="#{{ replace (lower .section.name) " " "-" }}"><i class="arrow bounce icon-down-open"></i></a>
       {{ end }}
     {{ end }}
   </div>

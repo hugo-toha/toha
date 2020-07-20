@@ -45,8 +45,8 @@ var isMobile = false, isTablet = false, isLaptop = false;
 
     // ============= Sidebar Tree ================
     function buildSidebarMenu() {
-      var openedClass = "fa-minus-circle";
-      var closedClass = "fa-plus-circle";
+      var openedClass = "icon-minus-circled";
+      var closedClass = "icon-plus-circled";
       // initialize top level
       var tree = $("#tree");
       // add expand icon to those li who has ul as children

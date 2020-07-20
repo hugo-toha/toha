@@ -22,7 +22,7 @@ var isMobile = false, isTablet = false, isLaptop = false;
 
     // =========== Add anchor to the headers ================
     function addAnchor(element) {
-      element.innerHTML = `<a href="#${element.id}" class="header-anchor">${element.innerHTML}<sup><i class="fas fa-link"></i></sup></a>`;
+      element.innerHTML = `<a href="#${element.id}" class="header-anchor">${element.innerHTML}<sup><i class="icon-link"></i></sup></a>`;
     }
 
     var postContent = document.getElementById("post-content");
