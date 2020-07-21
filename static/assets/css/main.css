@@ -1,0 +1,260 @@
+/* ========= Colors ============
+Heading:     #1C2D41
+Paragraph:   #3C4858
+Iconography: #8392A5
+Secondary:   #C0CCDA
+Dirty Snow:  #E5E9F2
+Snow:        #F9FAFC
+
+Magenta: #7551E9
+Orange:  #FF7D51
+Pink:    #ED63D2
+Green:   #2DCA73
+Yellow:  #FFC212
+*/
+
+body {
+  background-color: #f9fafc;
+  font-family: "Muli";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #1c2d41;
+}
+
+strong{
+  color: #1c2d41!important;
+}
+
+p {
+  color: #3c4858;
+}
+
+a {
+  color: #248aaa;
+}
+
+a:hover {
+  color: #207089;
+}
+
+.btn-dark {
+  background-color: #3c4858;
+  border-color: #3c4858;
+  color: #e5e9f2;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+}
+
+.btn-dark:hover,
+.btn-dark:focus {
+  background-color: #248aaa;
+  border-color: #248aaa;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+}
+
+.btn-outline-info {
+  color: #2098d1 !important;
+  border-color: #2098d1 !important;
+}
+
+.btn-outline-info:hover {
+  background-color: #2098d1 !important;
+  color: #e5e9f2 !important;
+}
+
+.btn-info {
+  background-color: #248aaa !important;
+  color: #e5e9f2 !important;
+}
+
+.btn-info:hover {
+  background-color: #2098d1 !important;
+  color: #e5e9f2 !important;
+}
+
+.bg-white {
+  background-color: #f9fafc !important;
+}
+
+.bg-dimmed {
+  background-color: #e5e9f2;
+}
+
+.anchor {
+  padding-top: 3.5rem;
+}
+
+img.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.left{
+  display: block;
+  margin-right: auto;
+}
+
+img.right{
+  display: block;
+  margin-left: auto;
+}
+
+.card {
+  box-shadow: none;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  overflow: hidden;
+}
+
+.card-img-sm {
+  width: 32px;
+  height: 32px;
+}
+
+.card-img-xs {
+  width: 24px;
+  height: 24px;
+}
+
+.card:hover,
+.card:focus {
+  box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
+  border: 1px solid #fff;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+}
+
+.card .card-head {
+  height: 172px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.card-img-top {
+  transition: all 0.3s ease-out !important;
+  -webkit-transition: all 0.3s ease-out !important;
+}
+
+.card:hover .card-head .card-img-top,
+.card:focus .card-head .card-img-top {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+}
+
+.card-body {
+  text-align: justify;
+}
+
+.sub-title {
+  color: #c0ccda;
+  font-size: 10pt;
+}
+
+/* --- FOOTER START --- */
+
+.footer {
+  color: #8392a5 !important;
+  background-color: #1c2d41;
+  position: relative;
+  z-index: 9999;
+}
+
+.footer h5 {
+  color: #c0ccda;
+}
+.footer a {
+  color: #8392a5;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+}
+
+.footer a:hover {
+  margin-left: 5px;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  margin-top: 5px;
+}
+
+.footer hr {
+  background-color: #8392a5;
+}
+
+.footer p:first-child {
+  color: #c0ccda;
+}
+
+.footer input {
+  background-color: #c0ccda;
+}
+
+.footer input:focus {
+  background-color: #e5e9f2;
+}
+
+.footer #theme {
+  color: #c0ccda;
+}
+
+.footer #theme img {
+  width: 32px;
+}
+
+/* --- FOOTER END ---- */
+
+/* ============= Device specific fixes ======= */
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (max-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+/*  Large devices (desktops, 992px and up) */
+
+@media (max-width: 992px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media only screen and (max-width: 768px) {
+}
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media only screen and (max-width: 576px) {
+  .section-holder {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .skills-section,
+  .projects-section,
+  .recent-posts-section,
+  .achievements-section{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
