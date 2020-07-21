@@ -1,0 +1,22 @@
+{{ range .menus }}
+  {{ $class:= "" }}
+  {{ $icon:= "fa-plus-circle" }}
+  <!-- If the current menu is the selected menu or it contain the selected menu, set expand icon and set "active" class -->
+  {{ if or ($.ctx.HasMenuCurrent "sidebar" .)  ($.ctx.IsMenuCurrent "sidebar" .)}}
+    {{ $icon = "fa-minus-circle"}}
+    {{ $class = "active" }}
+  {{end}}
+  {{ if .HasChildren }}
+    <!-- Add current entry -->
+    <li>
+      <i class="fas {{ $icon }}"></i><a class="{{$class}}" href="{{.URL}}">{{.Name}}</a>
+      <!-- Add sub-tree -->
+      <ul class="{{ $class }}">
+        {{ partial "navigators/sidebar.html" (dict "menus" .Children "ctx" $.ctx) }}
+      </ul>
+    </li>
+  {{ else }}
+    <!-- No sub-tree. So, only add current entry -->
+    <li><a class="{{$class}}" href="{{.URL}}">{{.Name}}</a></li>
+  {{ end }}
+{{ end }}

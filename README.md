@@ -59,9 +59,13 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
+    ordered: false
 
 # Enable Google Analytics
-googleAnalytics: UA-xxxxxxxx
+googleAnalytics: UA-XXXXXXXXX-X
 
 # Enable Disqus forum
 disqusShortname: does-not-exist
@@ -83,6 +87,9 @@ params:
   # specify whether you want to write blog post or not
   enableBlogPost: true
 
+  # specify whether you want to show Table of Contents in reading page
+  enableTOC: true
+
   # specify the list of custom menus that you want to show in the top navbar.
   # they will be separated by a divider from the main menus.
   customMenus:
@@ -92,6 +99,7 @@ params:
   # some information about you
   author:
     name: "Jane Doe"
+    nickname: "Jane"
     image: "images/avatar.png"
     # give your some contact information. they will be used in the footer
     contactInfo:
@@ -192,7 +200,7 @@ Here, are the current plan and progress of various components of this theme. The
 
 - [x] Post Cards
 - [x] Sidebar
-- [ ] Pagination
+- [x] Pagination
 
 ### Reading Page
 
@@ -201,7 +209,7 @@ Here, are the current plan and progress of various components of this theme. The
 - [x] Next & Previous Page Navigation
 - [x] `Improve This Page` Button
 - [x] Disqus Comment
-- [ ] Option to navigate to list page
+- [x] Option to navigate to list page
 
 ### Tracking and Comments
 

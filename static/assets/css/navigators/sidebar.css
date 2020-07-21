@@ -1,0 +1,315 @@
+.sidebar-section {
+  order: 1;
+  flex: 20%;
+  max-width: 20%;
+  /* background-color: lightsalmon; */
+  transition: all ease-out 0.5s;
+  -webkit-transition: all ease-out 0.5s;
+}
+
+.sidebar-holder {
+  top: 2.5rem;
+  position: sticky;
+  background-color: #f9fafc;
+  height: 100vh;
+  overflow: auto;
+  box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
+  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
+}
+
+.sidebar {
+  background: #f9fafc;
+  height: 100vh;
+  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
+}
+
+.sidebar-tree {
+  padding-left: 1rem;
+  position: relative;
+  width: max-content;
+}
+
+#search-box {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: -webkit-fill-available;
+  height: 35px;
+  padding-left: 15px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #e5e9f2;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  border: 1px solid #c0ccda;
+}
+
+#search-box:focus {
+  border: 1pt solid #248aaa;
+  outline: none;
+}
+
+#list-heading {
+  padding-left: 0px !important;
+}
+
+.tree,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tree li {
+  margin: 0;
+  padding: 0 1em;
+  line-height: 2em;
+  color: #3c4858;
+  position: relative;
+}
+
+.tree li a {
+  text-decoration: none;
+  color: #131313;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+}
+
+.tree li a.active {
+  display: inline;
+  color: #2098d1;
+}
+
+.tree li a:hover {
+  margin-left: 3px;
+  color: #2098d1;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+}
+
+.tree i {
+  color: #3c4858;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.tree .shift-right {
+  margin-left: 5px;
+}
+
+.tree .active,
+.tree .active > ul {
+  display: block;
+}
+
+.subtree {
+  padding-left: 0.7rem;
+}
+
+.subtree:before {
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  top: 2.5rem;
+  left: 1.5rem;
+  bottom: 0.9rem;
+  border-left: 1px solid;
+}
+
+.subtree ul,
+ul > ul {
+  position: relative;
+  padding-left: 0.5rem;
+  display: none;
+}
+
+.subtree ul:before {
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  top: -10px;
+  left: 0.3rem;
+  bottom: 0.9rem;
+  border-left: 1px solid;
+}
+
+.subtree li:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 0;
+  border-top: 1px solid;
+  margin-top: -1px;
+  position: absolute;
+  top: 18px;
+  left: -3px;
+}
+
+.subtree li:last-child:before {
+  background: #f9fafc;
+  height: auto;
+  top: 1.1rem;
+  bottom: 0;
+}
+
+a.focused {
+  color: #2098d1 !important;
+}
+
+/* ============= Device specific fixes ======= */
+
+/* Large screens such as TV */
+@media only screen and (min-width: 1824px) {
+  .sidebar-section {
+    flex: 15%;
+    max-width: 15%;
+  }
+  .sidebar-holder {
+    max-width: 100%;
+  }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (max-width: 1400px) {
+  .sidebar-holder {
+    max-width: 20rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .sidebar-tree {
+    margin-left: 1rem;
+  }
+}
+
+/* IPad Pro */
+@media (max-width: 1024px) {
+  .sidebar-section {
+    flex: 0%;
+    max-width: 0%;
+    min-height: 100vh;
+    transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+  }
+  .sidebar-holder {
+    position: sticky;
+    top: 2.5rem;
+    width: 100%;
+  }
+
+  .sidebar-section.hide {
+    flex: 30%;
+    max-width: 30%;
+    margin-right: 0.5rem;
+    transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+  }
+}
+
+/*  Large devices (desktops, 992px and up) */
+
+@media (max-width: 992px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media only screen and (max-width: 768px) {
+  .sidebar-section {
+    flex: 0%;
+    max-width: 0%;
+    min-height: 100vh;
+    transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+  }
+  .sidebar-holder {
+    position: sticky;
+    top: 2.5rem;
+    width: 100%;
+  }
+
+  .sidebar-section.hide {
+    flex: 40%;
+    max-width: 40%;
+    margin-right: 0.5rem;
+    transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media only screen and (max-width: 576px) {
+  .sidebar-section {
+    width: 100%;
+    min-height: 0;
+    max-height: 0;
+    max-width: 100%;
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+  }
+
+  .sidebar-section.hide {
+    margin-top: 2rem;
+    position: relative;
+    height: fit-content;
+    flex: none;
+    max-height: 300vh;
+    max-width: 100%;
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+  }
+
+  .sidebar-holder {
+    max-height: 0;
+    height: fit-content;
+    overflow: hidden;
+    max-width: 100%;
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+  }
+
+  .sidebar-section.hide .sidebar-holder {
+    max-height: 200vh;
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+  }
+
+  .sidebar {
+    position: relative;
+    height: fit-content;
+    max-height: fit-content;
+    width: 100vw;
+    min-height: 0;
+    overflow: hidden;
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+  }
+
+  .sidebar-tree {
+    margin-left: 0rem;
+    max-height: 0;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+  }
+  .sidebar-section.hide .sidebar-tree {
+    max-height: 200vh;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+  }
+}
+
+/* iPhoneX, iPhone 6,7,8 */
+@media only screen and (max-width: 375px) {
+}
+
+/* Galaxy S5, Moto G4 */
+@media only screen and (max-width: 360px) {
+}
+
+/* iPhone 5 or before */
+@media only screen and (max-width: 320px) {
+}

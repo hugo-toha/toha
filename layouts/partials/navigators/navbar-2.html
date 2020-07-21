@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+    <div class="container">
+       <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="{{ site.BaseURL }}">
+        <img src="/assets/images/logo.png">
+        {{- site.Title -}}
+      </a>
+      <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="top-nav-items">
+        <ul class="navbar-nav ml-auto">
+        </ul>
+      </div>
+    </div>
+</nav>

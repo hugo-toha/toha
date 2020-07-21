@@ -36,5 +36,28 @@ var isMobile = false, isTablet = false, isLaptop = false;
       }
     }
 
+    // =============== Make TOC Compatible wit Bootstrap Scroll Spy ========
+    // add "navbar" class to the "nav" element
+    let toc = document.getElementById("TableOfContents");
+    toc.classList.add("navbar");
+    // add "nav-pills" class to the "ul" elements
+    let elems = toc.getElementsByTagName("ul");
+    for (let i = 0; i < elems.length; i++) {
+      elems[i].classList.add("nav-pills");
+    }
+    // add "nav-item" class to the "li" elements
+    elems = toc.getElementsByTagName("li");
+    for (let i = 0; i < elems.length; i++) {
+      elems[i].classList.add("nav-item");
+      if (isMobile) {
+        elems[i].setAttribute("onclick", "toggleTOC()");
+      }
+    }
+    // add "nav-link" class to the "a" elements
+    elems = toc.getElementsByTagName("a");
+    for (let i = 0; i < elems.length; i++) {
+      elems[i].classList.add("nav-link");
+    }
+
   });
 })(jQuery);

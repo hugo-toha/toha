@@ -1,39 +1,44 @@
 {{ define "header" }}
     <link rel="stylesheet" href="/assets/css/list.css">
+    <link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
 {{ end }}
 
 {{ define "navbar" }}
-    {{ partial "navbar-2.html" (dict "baseURL" .Site.BaseURL "title" .Site.Title "hasToggleButton" true "navBrandURL"  .Site.BaseURL ) }}
+    {{ partial "navigators/navbar-2.html" . }}
+{{ end }}
+
+{{ define "sidebar" }}
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                {{ partial "navigators/sidebar.html" (dict "menus" .Site.Menus.sidebar "ctx" .) }}
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 {{ end }}
 
 {{ define "content" }}
-<div class="sidebar" id="sidebar">
-    <div class="sidebar-tree">
-      <input type="text" name="filtr-search" value="" placeholder="Search" data-search="" id="search-box" />
-      <ul class="tree" id="tree">
-        <li id="list-heading"><a href="#" data-filter="all">{{.Title}}</a></li>
-        <div class="subtree">
-            {{ partial "sections.html" .Sections }}
-        </div>
-      </ul>
-    </div>
-  </div>
+<section class="content-section" id="content-section">
   <div class="content container-fluid" id="content">
-    <div class="content-cards">
-      <div class="container-fluid filtr-container post-cards" id="post-cards">
-        {{ range (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-          {{ partial "cards/post.html" . }}
-        {{ end }}
-        {{/*  {{ $paginator := .Paginate .Site.RegularPages 120 }}
-        {{ range $paginator.Pages }}
-          {{ partial "cards/post.html" . }}
-        {{ end }}  */}}
-      </div>
-      {{/*  <div class="paginator">
-        {{ template "_internal/pagination.html" . }}
-      </div>  */}}
+    <div class="container-fluid post-card-holder" id="post-card-holder">
+      {{ $paginator := .Paginate .RegularPagesRecursive 12 }}
+      {{ range $paginator.Pages }}
+        {{ partial "cards/post.html" . }}
+      {{ end }}
+    </div>
+    <div class="paginator">
+      {{ template "_internal/pagination.html" . }}
     </div>
   </div>
+</section>
 {{ end }}
 
 {{ define "scripts" }}

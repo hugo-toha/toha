@@ -26,8 +26,8 @@ h5 {
   color: #1c2d41;
 }
 
-strong{
-  color: #1c2d41!important;
+strong {
+  color: #1c2d41 !important;
 }
 
 p {
@@ -40,6 +40,13 @@ a {
 
 a:hover {
   color: #207089;
+}
+
+.nav-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #8392a5;
 }
 
 .btn-dark {
@@ -90,18 +97,18 @@ a:hover {
   padding-top: 3.5rem;
 }
 
-img.center{
+img.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-img.left{
+img.left {
   display: block;
   margin-right: auto;
 }
 
-img.right{
+img.right {
   display: block;
   margin-left: auto;
 }
@@ -220,9 +227,9 @@ img.right{
 
 /* ============= Device specific fixes ======= */
 
-/* Extra small devices (portrait phones, less than 576px) */
-
-/* No media query for `xs` since this is the default in Bootstrap */
+/* Large screens such as TV */
+@media only screen and (min-width: 1824px) {
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
 
@@ -230,6 +237,10 @@ img.right{
 }
 
 @media (max-width: 1200px) {
+}
+
+/* IPad Pro */
+@media (max-width: 1024px) {
 }
 
 /*  Large devices (desktops, 992px and up) */
@@ -245,6 +256,12 @@ img.right{
 /* Small devices (landscape phones, 576px and up) */
 
 @media only screen and (max-width: 576px) {
+  .skills-section .container,
+  .projects-section .container {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+
   .section-holder {
     padding-left: 5px;
     padding-right: 5px;
@@ -253,8 +270,20 @@ img.right{
   .skills-section,
   .projects-section,
   .recent-posts-section,
-  .achievements-section{
+  .achievements-section {
     padding-left: 0;
     padding-right: 0;
   }
+}
+
+/* iPhoneX, iPhone 6,7,8 */
+@media only screen and (max-width: 375px) {
+}
+
+/* Galaxy S5, Moto G4 */
+@media only screen and (max-width: 360px) {
+}
+
+/* iPhone 5 or before */
+@media only screen and (max-width: 320px) {
 }
