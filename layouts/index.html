@@ -6,13 +6,13 @@
     {{- partial "header.html" . -}}
 
     <!-- import index page specific headers -->
-    <link rel="stylesheet" href="/assets/css/home.css" />
-    <link rel="stylesheet" href="/assets/css/about.css" />
-    <link rel="stylesheet" href="/assets/css/skills.css" />
-    <link rel="stylesheet" href="/assets/css/experiences.css" />
-    <link rel="stylesheet" href="/assets/css/projects.css" />
-    <link rel="stylesheet" href="/assets/css/recent-posts.css" />
-    <link rel="stylesheet" href="/assets/css/achievements.css" />
+    <link rel="stylesheet" href="/assets/css/sections/home.css" />
+    <link rel="stylesheet" href="/assets/css/sections/about.css" />
+    <link rel="stylesheet" href="/assets/css/sections/skills.css" />
+    <link rel="stylesheet" href="/assets/css/sections/experiences.css" />
+    <link rel="stylesheet" href="/assets/css/sections/projects.css" />
+    <link rel="stylesheet" href="/assets/css/sections/recent-posts.css" />
+    <link rel="stylesheet" href="/assets/css/sections/achievements.css" />
 
     <!-- Add Google Analytics if enabled in configuration -->
     {{ if .Site.GoogleAnalytics }}
@@ -22,10 +22,10 @@
   <body data-spy="scroll" data-target="#top-navbar" data-offset="100">
 
     <!--- NAVBAR ------------------------->
-    {{- partial "navbar.html" . -}}
+    {{- partial "navigators/navbar.html" . -}}
 
     <!--- ADD HOME SECTION ---------------->
-    {{- partial "home.html" . -}}
+    {{- partial "sections/home.html" . -}}
 
     <!--- ADD OPTIONAL SECTIONS ----------->
     {{ if .Site.Data.sections }}
@@ -36,7 +36,7 @@
             {{ if .section.template }}
               {{- partial .section.template . -}}
             {{ else }}
-              {{- partial (printf "%s.html" (replace (lower .section.name) " " "-")) . -}}
+              {{- partial (printf "sections/%s.html" (replace (lower .section.name) " " "-")) . -}}
             {{ end }}
           </div>
           <!--- alter background color for next section --->
@@ -59,5 +59,6 @@
     <script src="/assets/js/itype.min.js"></script>
     <script src="/assets/js/github-button.js"></script>
     <script src="/assets/js/home.js"></script>
+    <script src="/assets/js/jquery.filterizr.min.js"></script>
   </body>
 </html>
