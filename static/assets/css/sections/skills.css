@@ -7,6 +7,10 @@
   border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.125);
 }
 
+.skills-section .skill-card-link {
+  text-decoration: none;
+}
+
 .skills-section .card .card-img-xs {
   margin-right: 0.5rem;
 }
