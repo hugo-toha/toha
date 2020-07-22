@@ -81,6 +81,13 @@ params:
   # background image of the landing page
   background: "images/background.jpg"
 
+  # Provide logos for your site. The inverted logo will be used in the initial
+  # transparent navbar and the main logo will be used in the non-transparent navbar.
+  # It will be default to the theme logos if not provided.
+  logo:
+    main: /assets/images/main-logo.png
+    inverted: /assets/images/inverted-logo.png
+
   # GitHub repo URL of your site
   gitRepo: https://github.com/hossainemruz/toha-example-site
 
@@ -95,6 +102,11 @@ params:
   customMenus:
   - name: Notes
     url: https://hossainnotes.netlify.app/docs/example/
+
+  # Provide newsletter configuration. This feature hasn't been implemented yet.
+  # Currently, you can just hide it from the footer.
+  newsletter:
+    enable: true
 
   # some information about you
   author:
