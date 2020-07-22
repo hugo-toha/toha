@@ -223,6 +223,12 @@ img.right {
   width: 32px;
 }
 
+.footer #hugo:hover {
+  margin-right: 5px;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+}
+
 /* --- FOOTER END ---- */
 
 /* ============= Device specific fixes ======= */
