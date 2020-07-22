@@ -52,6 +52,11 @@ params:
   - name: Notes
     url: https://hossainnotes.netlify.app/docs/example/
 
+  # Provide newsletter configuration. This feature hasn't been implemented yet.
+  # Currently, you can just hide it from the footer.
+  newsletter:
+    enable: true
+
   # some information about you
   author:
     name: "Jane Doe"
