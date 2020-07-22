@@ -24,6 +24,7 @@
           {{ end }}
         </ul>
       </div>
+      {{ if .Site.Params.newsletter.enable }}
       <div class="col-md-4 col-sm-12">
         <!-- <h5>Newsletter</h5> -->
         <p>Stay up to date with email notification</p>
@@ -43,6 +44,7 @@
           <button type="submit" class="btn btn-info">Submit</button>
         </form>
       </div>
+      {{ end }}
     </div>
   </div>
   <hr />
@@ -50,7 +52,7 @@
     <div class="row text-left">
       <div class="col-md-4">
         <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
-          <img src="/assets/images/logo-inverted.png">
+          <img src="/assets/images/inverted-logo.png">
           Toha
         </a>
       </div>
