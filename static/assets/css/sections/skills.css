@@ -1,4 +1,5 @@
 .skills-section .card .card-head {
+  text-decoration: none;
   background-color: #f9fafc;
   height: fit-content;
   padding: 0.7rem;
