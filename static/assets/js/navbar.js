@@ -15,7 +15,9 @@
         $('#navbar-toggler').removeClass('navbar-dark');
         $('#navbar-toggler').addClass('navbar-light');
 
-        $('#logo').attr("src","assets/images/logo.png");
+        // get the main logo from hidden img tag
+        let mainLogo = document.getElementById("main-logo").getAttribute("src");
+        $('#logo').attr("src", mainLogo);
       } else {
         $('#top-navbar').removeClass('final-navbar shadow');
         $('#top-navbar').addClass('initial-navbar');
@@ -23,7 +25,9 @@
         $('#navbar-toggler').removeClass('navbar-light');
         $('#navbar-toggler').addClass('navbar-dark');
 
-        $('#logo').attr("src","assets/images/logo-inverted.png");
+        // get the inverted logo from hidden img tag
+        let invertedLogo = document.getElementById("inverted-logo").getAttribute("src");
+        $('#logo').attr("src", invertedLogo);
       }
     });
   });
