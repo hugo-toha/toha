@@ -1,11 +1,13 @@
-<div class="col-xs-12 col-sm-6 col-lg-4 pt-2">
+<div class="col-sm-12 col-md-6 col-lg-4 pt-2">
   <div class="card">
-    <div class="card-head d-flex">
-      {{ if .icon }}
+    <a class="card-head d-flex" href="{{ .url }}">
+      <div>
+        {{ if .icon }}
         <img class="card-img-xs" src="{{ .icon }}" alt="{{ .name }}" />
-      {{ end }}
-      <h5 class="card-title">{{ .name }}</h5>
-    </div>
+        {{ end }}
+        <h5 class="card-title">{{ .name }}</h5>
+      </div>
+    </a>
     <div class="card-body">
       <p class="card-text">{{ .summary | markdownify }}</p>
     </div>
