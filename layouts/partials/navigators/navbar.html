@@ -1,7 +1,15 @@
 <nav class="navbar navbar-expand-xl top-navbar initial-navbar" id="top-navbar">
   <div class="container">
+    {{ $mainLogo:="/assets/images/main-logo.png" }}
+    {{ $invertedLogo:="/assets/images/inverted-logo.png" }}
+    {{ if .Site.Params.logo.main }}
+      {{ $mainLogo = .Site.Params.logo.main }}
+    {{ end }}
+    {{ if .Site.Params.logo.inverted }}
+      {{ $invertedLogo = .Site.Params.logo.inverted }}
+    {{ end }}
     <a class="navbar-brand" href="{{ .Site.BaseURL }}">
-      <img src="/assets/images/logo-inverted.png" id="logo">
+      <img src="{{ $invertedLogo }}" id="logo">
       {{- .Site.Title -}}
     </a>
     <button
@@ -50,4 +58,7 @@
       </ul>
     </div>
   </div>
+  <!-- Store the logo information in a hidden img for the JS -->
+  <img src="{{ $mainLogo }}" class="d-none" id="main-logo">
+  <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo">
 </nav>
