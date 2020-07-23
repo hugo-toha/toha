@@ -69,20 +69,22 @@ var projectCards;
         // primary skills
         var skillCards = document.getElementById("primary-skills");
         if (skillCards != null) {
-          var el = skillCards.children;
+          var cardElems = skillCards.getElementsByClassName("card");
           var maxHeight = 0;
-          for (let i = 0; i < el.length; i++) {
-            if (el[i].children[0].clientHeight > maxHeight) {
-              maxHeight = el[i].children[0].clientHeight;
+          for (let i = 0; i < cardElems.length; i++) {
+            if (cardElems.item(i).clientHeight > maxHeight) {
+              maxHeight = cardElems.item(i).clientHeight;
             }
           }
-          for (let i = 0; i < el.length; i++) {
-            el[i].children[0].setAttribute("style", "min-height: " + maxHeight + "px;")
+          for (let i = 0; i < cardElems.length; i++) {
+            cardElems.item(i).setAttribute("style", "min-height: " + maxHeight + "px;");
           }
         }
       }
     }
-    adjustSkillCardsHeight();
+    $(window).on("load", function () {
+      adjustSkillCardsHeight();
+    });
 
     // ================== Project cards =====================
     // Add click action on project category selector buttons
