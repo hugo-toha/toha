@@ -136,7 +136,7 @@ hugo server -w
 
 Don't panic if the generated site does not look like what have you seen in the demo. Now, you have to provide some data in `data` folder of your site.
 
-Follow the posts giving step by step instructions for configuring your data folder from [here](https://toha.netlify.app/posts/configuration/home-section/home-section/).
+Follow the posts giving step by step instructions for configuring your data folder from [here](https://toha.netlify.app/posts/configuration/home-section/).
 
 You can also follow the sample format given in `themes/toha/exampleSite/data` directory.
 
