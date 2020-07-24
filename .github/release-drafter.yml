@@ -1,0 +1,31 @@
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+template: |
+  I am very excited to announce Toha 'v$RESOLVED_VERSION'. Thanks to $CONTRIBUTORS	for their valuable contribution in this release.
+  
+  The following things has been changed since last release:
+  $CHANGES
+categories:
+  - title: 'Breaking Changes'
+    label: 'breaking-change'
+  - title: 'New Features & Enhancements'
+    labels:
+    - 'feature'
+    - 'enhancement'
+  - title: 'Bug Fixes'
+    labels:
+      - 'bug'
+      - 'bug-fix'
+
+version-resolver:
+  major:
+    labels:
+      - 'breaking'
+  minor:
+    labels:
+      - 'feature'
+      - 'enhancement'
+  patch:
+    labels:
+      - 'bug'
+      - 'bug-fix'
