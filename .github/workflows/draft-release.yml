@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: release-drafter/release-drafter@master
         env:
-          GITHUB_TOKEN: ${{ secrets.ACTION_DEPLOY_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
