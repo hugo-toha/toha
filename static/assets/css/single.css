@@ -17,6 +17,7 @@ body {
 
 .content-section {
   flex: 60%;
+  max-width: 60%;
   order: 2;
   /* background-color: lightseagreen; */
   padding: 0;
@@ -317,6 +318,7 @@ mark {
 @media only screen and (min-width: 1824px) {
   .content-section {
     flex: 65%;
+    max-width: 65%;
   }
   .content-section .container {
     max-width: 100%;
@@ -341,6 +343,7 @@ mark {
   .content-section {
     padding: 0;
     flex: 60%;
+    max-width: 100%;
     order: 2;
     overflow: hidden;
   }
@@ -416,6 +419,7 @@ mark {
   .content-section {
     padding: 0;
     flex: 60%;
+    max-width: 100%;
     order: 2;
     overflow: hidden;
   }
@@ -487,6 +491,7 @@ mark {
   .content-section {
     padding: 0;
     flex: 100%;
+    max-width: 100%;
     order: 3;
   }
 
