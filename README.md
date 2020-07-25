@@ -134,11 +134,9 @@ Run your hugo site with this theme.
 hugo server -w
 ```
 
-Don't panic if the generated site does not look like what have you seen in the demo. Now, you have to provide some data in `data` folder of your site.
+When you first run your site, it will start with the default parameters. It should look similar to the [example site](https://toha.netlify.app) except it will not have any sections in the homepage. Those sections are added via some data files.
 
-Follow the posts giving step by step instructions for configuring your data folder from [here](https://toha.netlify.app/posts/configuration/home-section/).
-
-You can also follow the sample format given in `themes/toha/exampleSite/data` directory.
+You can configure your site by following the step by step guides from [here](https://toha.netlify.app/posts/configuration/).
 
 ## Shortcodes
 
