@@ -75,6 +75,9 @@ enableEmoji: true
 
 # Custom parameters
 params:
+  # description
+  description: Theme for a personal portfolio with minimalist design and responsiveness
+
   # copyright
   copyright: © 2020 Copyright.
 

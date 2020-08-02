@@ -24,6 +24,9 @@ enableEmoji: true
 
 # Custom parameters
 params:
+  # description
+  description: this is an example site for the Toha theme
+
   # copyright
   copyright: © 2020 Copyright.
 

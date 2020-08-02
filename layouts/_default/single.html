@@ -1,4 +1,5 @@
 {{ define "header" }}
+<meta name="description" content="{{.Description}}" />
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
@@ -36,7 +37,7 @@
       <!--Hero Area-->
       <div class="hero-area col-sm-12" id="hero-area" style='background-image: url({{ strings.TrimSuffix "/" .Site.BaseURL }}{{ partial "helpers/get-hero.html" . }});'>
       </div>
-  
+
       <!--Content Start-->
       <div class="page-content">
         <div class="author-profile ml-auto align-self-lg-center">
@@ -44,15 +45,15 @@
           <h5 class="author-name">{{ partial "helpers/get-author-name.html" . }}</h5>
           <p>{{ .Page.Date.Format "January 2, 2006" }}</p>
         </div>
-  
+
         <div class="title">
           <h1>{{ .Page.Title }}</h1>
         </div>
-  
+
         <div class="post-content" id="post-content">
           {{ .Page.Content }}
         </div>
-  
+
         <!--- Improve this page button --->
         {{ if .Site.Params.GitRepo }}
           <div class="btn-improve-page">
@@ -62,7 +63,7 @@
               </a>
           </div>
         {{ end }}
-  
+
         <!---Next and Previous Navigator -->
       <hr />
         {{ partial "navigators/next-prev-navigator.html" . }}
