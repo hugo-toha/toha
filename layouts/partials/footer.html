@@ -2,7 +2,7 @@
   <div class="container pt-5">
     <div class="row text-left">
       <div class="col-md-4 col-sm-12">
-        <h5>Navigation</h5>
+        <h5>{{ i18n "navigation" }}</h5>
         {{ if (index .Site.Data .Site.Language.Lang).sections }}
         <ul>
           {{- range sort (index .Site.Data .Site.Language.Lang).sections "section.weight" }}
@@ -17,7 +17,7 @@
 
       </div>
       <div class="col-md-4 col-sm-12">
-        <h5>Contact Me</h5>
+        <h5>{{ i18n "contact_me" }}</h5>
         <ul>
           {{ range $key,$value:=.Site.Params.author.contactInfo }}
           <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
