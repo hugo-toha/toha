@@ -27,7 +27,7 @@
       {{ if .Site.Params.newsletter.enable }}
       <div class="col-md-4 col-sm-12">
         <!-- <h5>Newsletter</h5> -->
-        <p>Stay up to date with email notification</p>
+        <p>{{ i18n "newsletter_text" }}</p>
         <form>
           <div class="form-group">
             <input
@@ -35,13 +35,13 @@
               class="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              placeholder="Enter email"
+              placeholder="{{ i18n "newsletter_input" }}"
             />
             <small id="emailHelp" class="form-text text-muted"
-              >We'll never share your email with anyone else.</small
+              >{{ i18n "newsletter_warning" }}</small
             >
           </div>
-          <button type="submit" class="btn btn-info">Submit</button>
+          <button type="submit" class="btn btn-info">{{ i18n "submit" }}</button>
         </form>
       </div>
       {{ end }}

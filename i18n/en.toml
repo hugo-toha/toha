@@ -16,3 +16,15 @@ other = "Navigation"
 
 [contact_me]
 other = "Contact me:"
+
+[newsletter_text]
+other = "Stay up to date with email notification"
+
+[newsletter_input]
+other = "Enter email"
+
+[newsletter_warning]
+other = "We'll never share your email with anyone else."
+
+[submit]
+other = "Submit"
