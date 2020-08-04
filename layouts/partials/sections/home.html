@@ -23,12 +23,18 @@
       <span class="ityped-cursor"></span>
     </div>
     <ul id="typing-carousel-data">
-      {{ range .Site.Params.author.summary }}
-      <li>{{ . }}</li>
+      {{ if .Site.Params.author.summary }}
+        {{ range .Site.Params.author.summary }}
+          <li>{{ . }}</li>
+        {{ end}}
+      {{ else }}
+        {{ range (split (i18n "quotes") ";") }}
+          <li>{{ . }}</li>
+        {{ end}}
       {{ end }}
     </ul>
-    {{ if .Site.Data.sections }}
-      {{ range first 1 (where (sort .Site.Data.sections "section.weight") ".section.enable" true) }}
+    {{ if (index .Site.Data .Site.Language.Lang).sections }}
+      {{ range first 1 (where (sort (index .Site.Data .Site.Language.Lang).sections "section.weight") ".section.enable" true) }}
         <a href="#{{ replace (lower .section.name) " " "-" }}"><i class="arrow bounce fa fa-chevron-down"></i></a>
       {{ end }}
     {{ end }}

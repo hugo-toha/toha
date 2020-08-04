@@ -29,9 +29,9 @@
     {{- partial "sections/home.html" . -}}
 
     <!--- ADD OPTIONAL SECTIONS ----------->
-    {{ if .Site.Data.sections }}
+    {{ if (index .Site.Data .Site.Language.Lang).sections }}
       {{ $background:= "bg-white"}}
-      {{ range sort .Site.Data.sections "section.weight" }}
+      {{ range sort (index .Site.Data .Site.Language.Lang).sections "section.weight" }}
         {{ if .section.enable }}
           <div class="container-fluid section-holder d-flex {{ $background }}">
             {{ if .section.template }}

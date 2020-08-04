@@ -25,10 +25,10 @@
     <div class="collapse navbar-collapse" id="top-nav-items">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="#home">{{ i18n "home" }}</a>
         </li>
-        {{- if .Site.Data.sections }}
-          {{- range sort .Site.Data.sections "section.weight" }}
+        {{ if (index .Site.Data .Site.Language.Lang).sections }}
+          {{ range sort (index .Site.Data .Site.Language.Lang).sections "section.weight" }}
             {{ if and (.section.enable) (.section.showOnNavbar)}}
               <li class="nav-item">
                 <a class="nav-link" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
@@ -55,6 +55,25 @@
             <a class="nav-link" href="{{ .url }}">{{ .name }}</a>
           </li>
         {{ end }}
+        <li class="nav-item">
+            {{ if .IsTranslated }}
+            <ul>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{ .Site.Language.LanguageName }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  {{ range $.Site.Home.AllTranslations }}
+                    <a class="dropdown-item" href="{{ .Permalink }}">
+                      <img class="flag" src="https://www.countryflags.io/{{ cond (eq .Site.Language.Lang "en") "gb" .Language }}/flat/32.png">
+                      {{ .Language.LanguageName }}
+                    </a>
+                  {{ end }}
+                </div>
+              </div>
+            </ul>
+            {{ end }}
+        </li>
       </ul>
     </div>
   </div>

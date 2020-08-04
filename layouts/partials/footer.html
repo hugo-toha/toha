@@ -3,9 +3,9 @@
     <div class="row text-left">
       <div class="col-md-4 col-sm-12">
         <h5>Navigation</h5>
-        {{ if .Site.Data.sections }}
+        {{ if (index .Site.Data .Site.Language.Lang).sections }}
         <ul>
-          {{- range sort .Site.Data.sections "section.weight" }}
+          {{- range sort (index .Site.Data .Site.Language.Lang).sections "section.weight" }}
             {{ if and (.section.enable) (.section.showOnNavbar)}}
             <li class="nav-item">
               <a class="smooth-scroll" href="/#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
