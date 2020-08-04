@@ -8,9 +8,6 @@ other = "Accueil"
 [resume]
 other = "Mon Curriculum vitæ"
 
-[quotes]
-other = "Je bidouille;Bref je code" # Split each quote with a ';'
-
 [navigation]
 other = "Naviguation"
 

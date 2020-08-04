@@ -28,8 +28,8 @@
           <li>{{ . }}</li>
         {{ end}}
       {{ else }}
-        {{ range (split (i18n "quotes") ";") }}
-          <li>{{ . }}</li>
+        {{ range (index .Site.Data .Site.Language.Lang).home.summary }}
+          <li>{{ . }}</li> 
         {{ end}}
       {{ end }}
     </ul>

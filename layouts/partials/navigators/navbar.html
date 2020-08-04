@@ -58,13 +58,13 @@
         <li class="nav-item">
             {{ if .IsTranslated }}
             <ul>
-              <div class="dropdown">
+              <div class="dropdown nav-item">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {{ .Site.Language.LanguageName }}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   {{ range $.Site.Home.AllTranslations }}
-                    <a class="dropdown-item" href="{{ .Permalink }}">
+                    <a class="dropdown-item nav-link" href="{{ .Permalink }}">
                       <img class="flag" src="https://www.countryflags.io/{{ cond (eq .Site.Language.Lang "en") "gb" .Language }}/flat/32.png">
                       {{ .Language.LanguageName }}
                     </a>
