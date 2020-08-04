@@ -3,6 +3,18 @@ languageCode: en-us
 title: "Toha"
 theme: "toha"
 
+# Manage languages
+# For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
+languages:
+  en:
+    languageName: English
+    weight: 1
+  fr:
+    languageName: Français
+    weight: 2
+# Force a locale to be use, really usefull to develop the application ! Should be commented in production, the "weight" should rocks.
+#DefaultContentLanguage: fr
+
 # Allow raw html in markdown file
 markup:
   goldmark:
@@ -31,7 +43,7 @@ params:
   description: Portfolio and personal blog of Jane Doe.
 
   # background image of the landing page
-  background: "images/background.jpg"
+  background: "/images/background.jpg"
 
   # Provide logos for your site. The inverted logo will be used in the initial
   # transparent navbar and the main logo will be used in the non-transparent navbar.
@@ -72,8 +84,3 @@ params:
     contactInfo:
       email: "janedoe@example.com"
       phone: "+0123456789"
-    # a summary of what you do
-    summary:
-    - I am a Developer
-    - I work with Go
-    - I love to work with some fun projects
