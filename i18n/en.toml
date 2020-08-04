@@ -1,0 +1,12 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[profile]
+other = "Hello, I am"
+
+[home]
+other = "Home"
+
+[resume]
+other = "My resume"
+
+[quotes]
+other = "I am a Developer;I am a Devops;I love servers;I work on open-source projects;I love to work with some fun projects"  # Split each quote with a ';'
