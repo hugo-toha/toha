@@ -8,7 +8,7 @@
     {{ if .Site.Params.logo.inverted }}
       {{ $invertedLogo = .Site.Params.logo.inverted }}
     {{ end }}
-    <a class="navbar-brand" href="{{ .Site.BaseURL }}">
+    <a class="navbar-brand" href="{{ .Site.BaseURL }}/{{ .Site.Language.Lang }}">
       <img src="{{ $invertedLogo }}" id="logo">
       {{- .Site.Title -}}
     </a>
