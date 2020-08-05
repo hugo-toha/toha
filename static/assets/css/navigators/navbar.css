@@ -271,3 +271,14 @@
 /* iPhone 5 or before */
 @media only screen and (max-width: 320px) {
 }
+
+.languages-menu {
+   filter:alpha(opacity=50);   /* Internet Explorer 6     */
+   -moz-opacity:0.5;           /* Mozilla 1.6 et infér.   */
+   opacity: 0.5;               /* CSS3 et Mozilla récents */
+  padding-top: 6px;
+  border: 0;
+}
+
+.languages-item {
+}

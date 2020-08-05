@@ -66,13 +66,13 @@
         <li class="nav-item">
             {{ if .IsTranslated }}
             <ul>
-              <div class="dropdown nav-item">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="dropdown nav-item languages-menu">
+                <button class="btn-dark dropdown-toggle nav-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: rgba(255, 255, 255, 0); color: ;">
                   {{ .Site.Language.LanguageName }}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   {{ range $.Site.Home.AllTranslations }}
-                    <a class="dropdown-item nav-link" href="{{ .Permalink }}">
+                    <a class="dropdown-item nav-link languages-item" href="{{ .Permalink }}">
                       <img class="flag" src="https://www.countryflags.io/{{ cond (eq .Site.Language.Lang "en") "gb" .Language }}/flat/32.png">
                       {{ .Language.LanguageName }}
                     </a>
