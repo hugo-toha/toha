@@ -8,7 +8,7 @@
     {{ if .Site.Params.logo.inverted }}
       {{ $invertedLogo = .Site.Params.logo.inverted }}
     {{ end }}
-    <a class="navbar-brand" href="{{ .Site.BaseURL }}/{{ .Site.Language.Lang }}">
+    <a class="navbar-brand" href="{{ .Site.BaseURL }}{{ if .IsTranslated }}/{{ .Site.Language.Lang }}{{end}}">
       <img src="{{ $invertedLogo }}" id="logo">
       {{- .Site.Title -}}
     </a>
@@ -29,6 +29,14 @@
         </li>
         {{ if (index .Site.Data .Site.Language.Lang).sections }}
           {{ range sort (index .Site.Data .Site.Language.Lang).sections "section.weight" }}
+            {{ if and (.section.enable) (.section.showOnNavbar)}}
+              <li class="nav-item">
+                <a class="nav-link" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
+              </li>
+            {{ end }}
+          {{- end }}
+        {{ else if .Site.Data.sections }}
+          {{ range sort .Site.Data.sections "section.weight" }}
             {{ if and (.section.enable) (.section.showOnNavbar)}}
               <li class="nav-item">
                 <a class="nav-link" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>

@@ -48,6 +48,25 @@
           {{end}}
         {{ end }}
       {{ end }}
+    {{ else if .Site.Data.sections }}
+      {{ $background:= "bg-white"}}
+      {{ range sort .Site.Data.sections "section.weight" }}
+        {{ if .section.enable }}
+          <div class="container-fluid section-holder d-flex {{ $background }}">
+            {{ if .section.template }}
+              {{- partial .section.template . -}}
+            {{ else }}
+              {{- partial (printf "sections/%s.html" (replace (lower .section.name) " " "-")) . -}}
+            {{ end }}
+          </div>
+          <!--- alter background color for next section --->
+          {{ if eq $background "bg-white" }}
+            {{ $background = "bg-dimmed" }}
+          {{ else }}
+            {{ $background = "bg-white" }}
+          {{end}}
+        {{ end }}
+      {{ end }}
     {{ end }}
 
     <!--- ADD FOOTER ----------------------->
