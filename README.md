@@ -75,8 +75,11 @@ enableEmoji: true
 
 # Custom parameters
 params:
-  # copyright
+  # Copyright Notice
   copyright: © 2020 Copyright.
+
+  # Meta description for your site.  This will help the search engines to find your site.
+  description: Portfolio and personal blog of Jane Doe.
 
   # background image of the landing page
   background: "images/background.jpg"
