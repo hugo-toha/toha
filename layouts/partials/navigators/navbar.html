@@ -63,25 +63,22 @@
             <a class="nav-link" href="{{ .url }}">{{ .name }}</a>
           </li>
         {{ end }}
-        <li class="nav-item">
-            {{ if .IsTranslated }}
-            <ul>
-              <div class="dropdown nav-item languages-menu">
-                <button class="btn-dark dropdown-toggle nav-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: rgba(255, 255, 255, 0); color: ;">
-                  {{ .Site.Language.LanguageName }}
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  {{ range $.Site.Home.AllTranslations }}
-                    <a class="dropdown-item nav-link languages-item" href="{{ .Permalink }}">
-                      <img class="flag" src="https://www.countryflags.io/{{ cond (eq .Site.Language.Lang "en") "gb" .Language }}/flat/32.png">
-                      {{ .Language.LanguageName }}
-                    </a>
-                  {{ end }}
-                </div>
-              </div>
-            </ul>
+        {{ if .IsTranslated }}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img class="flag" src="https://www.countryflags.io/{{ cond (eq .Site.Language.Lang "en") "gb" .Language }}/flat/16.png">
+            {{ .Site.Language.LanguageName }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {{ range $.Site.Home.AllTranslations }}
+              <a class="dropdown-item nav-link languages-item" href="{{ .Permalink }}">
+                <img class="flag" src="https://www.countryflags.io/{{ cond (eq .Site.Language.Lang "en") "gb" .Language }}/flat/24.png">
+                {{ .Language.LanguageName }}
+              </a>
             {{ end }}
+          </div>
         </li>
+        {{ end }}
       </ul>
     </div>
   </div>
