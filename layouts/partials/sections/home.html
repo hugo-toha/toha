@@ -52,10 +52,6 @@
         {{ range $author.summary }}
           <li>{{ . }}</li>
         {{ end}}
-      {{ else }}
-        {{ range $author.summary }}
-          <li>{{ . }}</li> 
-        {{ end}}
       {{ end }}
     </ul>
     {{ if $sections }}
