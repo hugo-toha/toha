@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {{ $greeting:="Hi! I am" }}
 {{ if .Site.Params.author.greeting }}
   {{ $greeting = .Site.Params.author.greeting }}
@@ -8,33 +9,57 @@
 {{ else if .Site.Params.author.name }}
   {{ $name = .Site.Params.author.name }}
 {{ end }}
+=======
+{{ $author:= .Site.Data.author }}
+{{ if (index .Site.Data .Site.Language.Lang).author }}
+  {{ $author = (index .Site.Data .Site.Language.Lang).author }}
+{{ end }}
+
+{{ $sections:= .Site.Data.sections }}
+{{ if (index .Site.Data .Site.Language.Lang).sections }}
+  {{ $sections = (index .Site.Data .Site.Language.Lang).sections }}
+{{ end }}
+
+>>>>>>> Refactor translation codes
 <div class="container-fluid home" id="home">
   <div
     class="background container-fluid"
     style="background-image: url('{{ if .Site.Params.background }}{{ .Site.Params.background }}{{ else }}/assets/images/default-background.jpg{{ end }}');"
   ></div>
   <div class="container content text-center">
-    <img src="{{ if .Site.Params.author.image }}{{ .Site.Params.author.image }}{{ else }}/assets/images/default-avatar.png{{ end }}"
+    <img src="{{ if $author.image }}{{ $author.image }}{{ else }}/assets/images/default-avatar.png{{ end }}"
       class="rounded-circle mx-auto d-block img-fluid"
     />
+<<<<<<< HEAD
     <h1 class="greeting"> {{ $greeting }} {{ $name }}</h1>
+=======
+    <h1 class="greeting">{{ i18n "greeting" }}
+      {{ if $author.nickname }}
+        {{ $author.nickname }}
+      {{ else if $author.name }}
+        {{ $author.name }}
+      {{ else }}
+        Jane Doe
+      {{ end }}
+    </h1>
+>>>>>>> Refactor translation codes
     <div class="typing-carousel">
       <span id="ityped" class="ityped"></span>
       <span class="ityped-cursor"></span>
     </div>
     <ul id="typing-carousel-data">
-      {{ if .Site.Params.author.summary }}
-        {{ range .Site.Params.author.summary }}
+      {{ if $author.summary }}
+        {{ range $author.summary }}
           <li>{{ . }}</li>
         {{ end}}
       {{ else }}
-        {{ range (index .Site.Data .Site.Language.Lang).home.summary }}
+        {{ range $author.summary }}
           <li>{{ . }}</li> 
         {{ end}}
       {{ end }}
     </ul>
-    {{ if (index .Site.Data .Site.Language.Lang).sections }}
-      {{ range first 1 (where (sort (index .Site.Data .Site.Language.Lang).sections "section.weight") ".section.enable" true) }}
+    {{ if $sections }}
+      {{ range first 1 (where (sort $sections "section.weight") ".section.enable" true) }}
         <a href="#{{ replace (lower .section.name) " " "-" }}"><i class="arrow bounce fa fa-chevron-down"></i></a>
       {{ end }}
     {{ end }}

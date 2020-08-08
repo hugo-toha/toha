@@ -1,5 +1,5 @@
 # More documentation here: https://github.com/nicksnyder/go-i18n
-[profile]
+[greeting]
 other = "Hello, I am"
 
 [home]
@@ -17,7 +17,7 @@ other = "Contact me:"
 [newsletter_text]
 other = "Stay up to date with email notification"
 
-[newsletter_input]
+[newsletter_input_placeholder]
 other = "Enter email"
 
 [newsletter_warning]

@@ -1,3 +1,8 @@
+{{ $sections:= .Site.Data.sections }}
+{{ if (index .Site.Data .Site.Language.Lang).sections }}
+  {{ $sections = (index .Site.Data .Site.Language.Lang).sections }}
+{{ end }}
+
 <nav class="navbar navbar-expand-xl top-navbar initial-navbar" id="top-navbar">
   <div class="container">
     {{ $mainLogo:="/assets/images/main-logo.png" }}
@@ -27,16 +32,8 @@
         <li class="nav-item">
           <a class="nav-link" href="#home">{{ i18n "home" }}</a>
         </li>
-        {{ if (index .Site.Data .Site.Language.Lang).sections }}
-          {{ range sort (index .Site.Data .Site.Language.Lang).sections "section.weight" }}
-            {{ if and (.section.enable) (.section.showOnNavbar)}}
-              <li class="nav-item">
-                <a class="nav-link" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
-              </li>
-            {{ end }}
-          {{- end }}
-        {{ else if .Site.Data.sections }}
-          {{ range sort .Site.Data.sections "section.weight" }}
+        {{ if $sections }}
+          {{ range sort $sections "section.weight" }}
             {{ if and (.section.enable) (.section.showOnNavbar)}}
               <li class="nav-item">
                 <a class="nav-link" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
