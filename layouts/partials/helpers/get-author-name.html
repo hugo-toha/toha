@@ -1,4 +1,4 @@
-{{ $authorName:= "John Doe"}}
+{{ $authorName:= .Site.Params.author.name }}
 {{ if .Site.Data.site.author}}
     {{ $authorName = .Site.Data.site.author.name }}
 {{ end}}
