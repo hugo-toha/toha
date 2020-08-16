@@ -7,7 +7,13 @@
     <img src="{{ if .Site.Params.author.image }}{{ .Site.Params.author.image }}{{ else }}/assets/images/default-avatar.png{{ end }}"
       class="rounded-circle mx-auto d-block img-fluid"
     />
-    <h1 class="greeting">Hi, I am
+    <h1 class="greeting">
+      {{ if .Site.Params.home_greeting.message}}
+        {{ .Site.Params.home_greeting.message}}
+      {{ else }}
+        Hi, I am
+      {{ end }}
+      
       {{ if .Site.Params.author.nickname }}
         {{ .Site.Params.author.nickname }}
       {{ else if .Site.Params.author.name }}
