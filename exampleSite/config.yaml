@@ -63,7 +63,7 @@ params:
   # home page greeting message
   # if empty it will default to "Hi, I am"
   home_greeting:
-    message: ""
+    message: "" 
 
   # some information about you
   author:
