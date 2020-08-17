@@ -60,6 +60,11 @@ params:
   newsletter:
     enable: true
 
+  # home page greeting message
+  # if empty it will default to "Hi, I am"
+  home_greeting:
+    message: ""
+
   # some information about you
   author:
     name: "Jane Doe"
