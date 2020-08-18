@@ -39,6 +39,7 @@ params:
   logo:
     main: /assets/images/main-logo.png
     inverted: /assets/images/inverted-logo.png
+    favicon: /assets/images/favicon.png
 
   # GitHub repo URL of your site
   gitRepo: https://github.com/hossainemruz/toha-example-site
