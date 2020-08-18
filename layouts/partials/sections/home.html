@@ -1,7 +1,8 @@
 <div class="container-fluid home" id="home">
   <div
     class="background container-fluid"
-    style="background-image: url('{{ if .Site.Params.background }}{{ .Site.Params.background }}{{ else }}/assets/images/default-background.jpg{{ end }}');"
+    style="background-image: url('{{ if .Site.Params.background }}{{ .Site.Params.background }}{{ else }}/assets/images/default-background.jpg{{ end }}');
+           {{ if .Site.Params.background_position }}background-position: {{ .Site.Params.background_position }};{{ end }}"
   ></div>
   <div class="container content text-center">
     <img src="{{ if .Site.Params.author.image }}{{ .Site.Params.author.image }}{{ else }}/assets/images/default-avatar.png{{ end }}"
