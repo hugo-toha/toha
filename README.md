@@ -129,6 +129,9 @@ params:
 
 You can just copy the content for `config.yaml` files from `theme/toha/exampleSite/config.yaml`.
 
+If you want to customize the any of the CSS styles on your site, create a
+`static/assets/css/style.css` file and add any custom CSS there.
+
 ## Usage
 
 Run your hugo site with this theme.
