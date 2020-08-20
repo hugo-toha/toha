@@ -24,7 +24,7 @@ var isMobile = false, isTablet = false, isLaptop = false;
     // ================= Smooth Scroll ===================
     function addSmoothScroll() {
       // Add smooth scrolling to all links
-      $("a").on('click', function (event) {
+      $('a[href*="#"]').on('click', function (event) {
 
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
@@ -47,9 +47,9 @@ var isMobile = false, isTablet = false, isLaptop = false;
           }, 800, function () {
 
             // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash - offset;
+            window.location.hash = hash
           });
-        } // End if
+        }
       });
     }
     addSmoothScroll();
