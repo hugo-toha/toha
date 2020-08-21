@@ -16,7 +16,6 @@
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
 }
 
 #gallery .achievement-entry:hover {
@@ -24,7 +23,6 @@
   z-index: 1;
   transform: scale(1.1);
   transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
   z-index: 20000;
 }
 
@@ -33,9 +31,7 @@
   z-index: 1;
   opacity: 1 !important;
   transition: none !important;
-  -webkit-transition: none !important;
   transform: none !important;
-  -webkit-transform: none !important;
 }
 
 #gallery .img-type-1 {
@@ -58,7 +54,6 @@
   opacity: 1;
   font-size: 1rem;
   transition: all 0.3s ease-out;
-  --webkit-transition: all 0.3s ease-out;
 }
 
 #gallery .img-type-1 i {
@@ -72,7 +67,6 @@
 .achievement-details.img-type-2 i {
   margin-top: 0px !important;
   transition: none !important;
-  -webkit-transition: none !important;
   float: right;
 }
 
@@ -92,7 +86,6 @@
   opacity: 1;
   bottom: 0px;
   transition: bottom 0.3s ease-out;
-  -webkit-transition: bottom 0.3s ease-out;
 }
 
 #gallery .caption {
@@ -103,7 +96,6 @@
   padding: 15px;
   position: absolute;
   transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
 }
 
 #gallery .caption h4 {

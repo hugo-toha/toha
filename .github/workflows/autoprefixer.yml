@@ -1,0 +1,32 @@
+name: Autoprefixer
+on:
+  push:
+    branches:
+      - master
+jobs:
+  createPullRequest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to latest commit
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+
+      - name: Run autoprefixer
+        run: |
+          npm install postcss-cli autoprefixer --save-dev
+          npm run autoprefixer
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          branch: autoprefixer
+          branch-suffix: timestamp
+          title: "[Autoprefixer] Add vendor specific CSS prefixes"
+          body: This PR adds vendor specific CSS prefixes using [postcss/autoprefixer](https://github.com/postcss/autoprefixer). <br> <br> >This PR has been created automatically by Github Action [peter-evans/create-pull-request](https://github.com/peter-evans/create-pull-request).
+          labels: enhancements
+          reviewers:
+            - hossainemruz
