@@ -76,7 +76,8 @@
   border-bottom-left-radius: 80px;
   border-right: 0;
   transform-origin: center right;
-  animation: circular-loading-1 1.8s linear forwards;
+  -webkit-animation: circular-loading-1 1.8s linear forwards;
+          animation: circular-loading-1 1.8s linear forwards;
 }
 
 .circular-progress .circular-progress-value {
@@ -118,47 +119,67 @@
 }
 
 .circular-progress-percentage-50 {
-  animation: circular-loading-50 0s linear forwards 1.8s;
+  -webkit-animation: circular-loading-50 0s linear forwards 1.8s;
+          animation: circular-loading-50 0s linear forwards 1.8s;
 }
 
 .circular-progress-percentage-55 {
-  animation: circular-loading-55 0.18s linear forwards 1.8s;
+  -webkit-animation: circular-loading-55 0.18s linear forwards 1.8s;
+          animation: circular-loading-55 0.18s linear forwards 1.8s;
 }
 
 .circular-progress-percentage-60 {
-  animation: circular-loading-60 0.36s linear forwards 1.8s;
+  -webkit-animation: circular-loading-60 0.36s linear forwards 1.8s;
+          animation: circular-loading-60 0.36s linear forwards 1.8s;
 }
 
 .circular-progress-percentage-65 {
-  animation: circular-loading-65 0.54s linear forwards 1.8s;
+  -webkit-animation: circular-loading-65 0.54s linear forwards 1.8s;
+          animation: circular-loading-65 0.54s linear forwards 1.8s;
 }
 
 .circular-progress-percentage-70 {
-  animation: circular-loading-70 0.72s linear forwards 1.8s;
+  -webkit-animation: circular-loading-70 0.72s linear forwards 1.8s;
+          animation: circular-loading-70 0.72s linear forwards 1.8s;
 }
 
 .circular-progress-percentage-75 {
-  animation: circular-loading-75 0.9s linear forwards 1.8s;
+  -webkit-animation: circular-loading-75 0.9s linear forwards 1.8s;
+          animation: circular-loading-75 0.9s linear forwards 1.8s;
 }
 
 .circular-progress-percentage-80 {
-  animation: circular-loading-80 1.08s linear forwards 1.8s;
+  -webkit-animation: circular-loading-80 1.08s linear forwards 1.8s;
+          animation: circular-loading-80 1.08s linear forwards 1.8s;
 }
 
 .circular-progress-percentage-85 {
-  animation: circular-loading-85 1.26s linear forwards 1.8s;
+  -webkit-animation: circular-loading-85 1.26s linear forwards 1.8s;
+          animation: circular-loading-85 1.26s linear forwards 1.8s;
 }
 
 .circular-progress-percentage-90 {
-  animation: circular-loading-90 1.44s linear forwards 1.8s;
+  -webkit-animation: circular-loading-90 1.44s linear forwards 1.8s;
+          animation: circular-loading-90 1.44s linear forwards 1.8s;
 }
 
 .circular-progress-percentage-95 {
-  animation: circular-loading-95 1.62s linear forwards 1.8s;
+  -webkit-animation: circular-loading-95 1.62s linear forwards 1.8s;
+          animation: circular-loading-95 1.62s linear forwards 1.8s;
 }
 
 .circular-progress-percentage-100 {
-  animation: circular-loading-100 1.8s linear forwards 1.8s;
+  -webkit-animation: circular-loading-100 1.8s linear forwards 1.8s;
+          animation: circular-loading-100 1.8s linear forwards 1.8s;
+}
+
+@-webkit-keyframes circular-loading-50 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @keyframes circular-loading-50 {
@@ -167,6 +188,15 @@
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes circular-loading-55 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(18deg);
   }
 }
 
@@ -179,12 +209,30 @@
   }
 }
 
+@-webkit-keyframes circular-loading-60 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(36deg);
+  }
+}
+
 @keyframes circular-loading-60 {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(36deg);
+  }
+}
+
+@-webkit-keyframes circular-loading-65 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(54deg);
   }
 }
 
@@ -197,12 +245,30 @@
   }
 }
 
+@-webkit-keyframes circular-loading-70 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(72deg);
+  }
+}
+
 @keyframes circular-loading-70 {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(72deg);
+  }
+}
+
+@-webkit-keyframes circular-loading-75 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
   }
 }
 
@@ -215,12 +281,30 @@
   }
 }
 
+@-webkit-keyframes circular-loading-80 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(108deg);
+  }
+}
+
 @keyframes circular-loading-80 {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(108deg);
+  }
+}
+
+@-webkit-keyframes circular-loading-85 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(126deg);
   }
 }
 
@@ -233,12 +317,30 @@
   }
 }
 
+@-webkit-keyframes circular-loading-90 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(144deg);
+  }
+}
+
 @keyframes circular-loading-90 {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(144deg);
+  }
+}
+
+@-webkit-keyframes circular-loading-95 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(162deg);
   }
 }
 
@@ -251,7 +353,25 @@
   }
 }
 
+@-webkit-keyframes circular-loading-100 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
 @keyframes circular-loading-100 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes circular-loading-1 {
   0% {
     transform: rotate(0deg);
   }
@@ -269,12 +389,30 @@
   }
 }
 
+@-webkit-keyframes circular-loading-2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(144deg);
+  }
+}
+
 @keyframes circular-loading-2 {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(144deg);
+  }
+}
+
+@-webkit-keyframes circular-loading-3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
   }
 }
 
@@ -287,12 +425,30 @@
   }
 }
 
+@-webkit-keyframes circular-loading-4 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(36deg);
+  }
+}
+
 @keyframes circular-loading-4 {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(36deg);
+  }
+}
+
+@-webkit-keyframes circular-loading-5 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(126deg);
   }
 }
 

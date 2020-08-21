@@ -136,7 +136,8 @@ img.right {
 
 .card .card-head {
   height: 172px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   overflow: hidden;
 }
 
