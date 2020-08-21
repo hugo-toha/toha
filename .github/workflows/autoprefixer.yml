@@ -25,7 +25,10 @@ jobs:
         with:
           branch: autoprefixer
           branch-suffix: timestamp
-          title: "[Autoprefixer] Add vendor specific CSS prefixes"
-          body: This PR adds vendor specific CSS prefixes using [postcss/autoprefixer](https://github.com/postcss/autoprefixer). <br> <br> >This PR has been created automatically by Github Action [peter-evans/create-pull-request](https://github.com/peter-evans/create-pull-request).
+          title: "Add vendor specific CSS prefixes"
+          body: | 
+            This PR adds vendor specific CSS prefixes using [postcss/autoprefixer](https://github.com/postcss/autoprefixer).
+            
+            >This PR has been created automatically by Github Action [peter-evans/create-pull-request](https://github.com/peter-evans/create-pull-request).
           labels: enhancements
           reviewers: hossainemruz
