@@ -37,6 +37,7 @@ body {
 }
 
 .toc-holder {
+  position: -webkit-sticky;
   position: sticky;
   top: 4.5rem;
   overflow-x: hidden;
@@ -187,7 +188,11 @@ tbody tr:hover {
 
 figure {
   border: 1px solid #c0ccda;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   align-self: center;
   margin: auto;
@@ -240,7 +245,8 @@ a.header-anchor code {
 .content ol > ol,
 .content li > ol,
 .content li > ul {
-  padding-inline-start: 1rem;
+  -webkit-padding-start: 1rem;
+          padding-inline-start: 1rem;
 }
 
 kbd {
@@ -493,6 +499,8 @@ mark {
     position: relative;
     /* height: fit-content; */
     flex: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     max-height: 200vh;
     max-width: 100%;
