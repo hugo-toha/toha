@@ -311,7 +311,6 @@
     padding-top: 20px;
     padding-left: 0px;
     transition: all ease-out 0.5s;
-    -webkit-transition: all ease-out 0.5s;
   }
 
   .post-card-holder {
@@ -320,7 +319,6 @@
     padding-right: 0;
     padding-left: 0;
     transition: all ease-out 0.5s;
-    -webkit-transition: all ease-out 0.5s;
   }
 
   .post-card-holder.hide {
