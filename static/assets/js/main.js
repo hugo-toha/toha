@@ -23,32 +23,44 @@ var isMobile = false, isTablet = false, isLaptop = false;
 
     // ================= Smooth Scroll ===================
     function addSmoothScroll() {
-      // Add smooth scrolling to all links
-      $('a[href*="#"]').on('click', function (event) {
+      // ref: https://css-tricks.com/snippets/jquery/smooth-scrolling/
+      // Select all links with hashes
+      $('a[href*="#"]').click(function (event) {
+        // On-page links
+        if (
+          location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+          &&
+          location.hostname == this.hostname
+        ) {
+          // Figure out element to scroll to
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          // Does a scroll target exist?
+          if (target.length) {
+            // Only prevent default if animation is actually gonna happen
+            event.preventDefault();
 
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
-
-          // Store hash
-          var hash = this.hash;
-
-          let offset = 60;
-          if (isMobile) {
-            offset = 760;
-          } else if (isTablet) {
-            offset = 60;
+            let offset = 60;
+            if (isMobile) {
+              offset = 710;
+            } else if (isTablet) {
+              offset = 60;
+            }
+            $('html, body').animate({
+              scrollTop: target.offset().top - offset
+            }, 1000, function () {
+              // Callback after animation
+              // Must change focus!
+              var $target = $(target);
+              $target.focus();
+              if ($target.is(":focus")) { // Checking if the target was focused
+                return false;
+              } else {
+                $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                $target.focus(); // Set focus again
+              };
+            });
           }
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top - offset
-          }, 800, function () {
-
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash
-          });
         }
       });
     }

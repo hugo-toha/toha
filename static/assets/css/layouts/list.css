@@ -167,6 +167,7 @@
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     position: relative;
+    transition: all ease-out 0.3s;
   }
 
   .post-card-holder .post-card {
@@ -181,45 +182,6 @@
 /*  Large devices (desktops, 992px and up) */
 
 @media (max-width: 992px) {
-  .wrapper {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  .content-section {
-    padding: 0;
-    flex: 60%;
-    order: 2;
-    padding-bottom: 0.5rem;
-  }
-
-  .content {
-    overflow: hidden;
-  }
-  .container {
-    max-width: 100%;
-  }
-  .navbar-toggler {
-    display: block;
-  }
-
-  #toc-toggler {
-    visibility: hidden;
-  }
-
-  .content-cards {
-    padding-top: 20px;
-    width: 100%;
-    padding-left: 0px;
-  }
-
-  .post-card-holder {
-    margin: 0;
-    margin-top: 1.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    position: relative;
-  }
-
   .post-card-holder .post-card {
     width: 50%;
   }
@@ -232,52 +194,6 @@
 /* Medium devices (tablets, 768px and up) */
 
 @media only screen and (max-width: 768px) {
-  .wrapper {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  .content-section {
-    padding: 0;
-    flex: 60%;
-    order: 2;
-    padding-bottom: 0.5rem;
-  }
-
-  .content {
-    overflow: hidden;
-  }
-  .container {
-    max-width: 100%;
-  }
-  .navbar-toggler {
-    display: block;
-  }
-
-  #toc-toggler {
-    visibility: hidden;
-  }
-
-  .content-cards {
-    padding-top: 20px;
-    width: 100%;
-    padding-left: 0px;
-  }
-
-  .post-card-holder {
-    margin: 0;
-    margin-top: 1.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    position: relative;
-  }
-
-  .post-card-holder .post-card {
-    width: 50%;
-  }
-
-  .content-section.hide .post-card-holder .post-card {
-    width: 100%;
-  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -300,33 +216,24 @@
     width: 100%;
     padding-left: 0;
     padding-right: 0;
+    transition: all ease-out 0.3s;
   }
 
   .content-section.hide .content {
     margin-top: 0;
     padding-top: 0;
-  }
-
-  #toc-toggler {
-    visibility: hidden;
+    transition: all ease-out 0.3s;
   }
 
   .content-cards {
     padding-top: 20px;
     padding-left: 0px;
-    transition: all ease-out 0.5s;
+    transition: all ease-out 0.3s;
   }
 
-  .post-card-holder {
-    margin: 0;
-    margin-top: 1.5rem;
-    padding-right: 0;
-    padding-left: 0;
-    transition: all ease-out 0.5s;
-  }
-
-  .post-card-holder.hide {
-    margin-top: 0;
+  .content-section.hide .post-card-holder {
+    margin-top: 0.5rem;
+    transition: all ease-out 0.3s;
   }
 
   .post-card-holder .post-card {

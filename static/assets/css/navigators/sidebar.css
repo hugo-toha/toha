@@ -196,6 +196,7 @@ a.focused {
     position: sticky;
     top: 2.5rem;
     width: 100%;
+    max-height: calc(100vh - 2.5rem);
   }
 
   .sidebar-section.hide {

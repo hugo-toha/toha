@@ -132,6 +132,14 @@
 
 /* IPad Pro */
 @media (max-width: 1024px) {
+  .top-navbar {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+
   .top-navbar .container {
     max-width: 100%;
   }
