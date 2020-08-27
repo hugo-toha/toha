@@ -1,3 +1,13 @@
+{{ $greeting:="Hi! I am" }}
+{{ if .Site.Params.author.greeting }}
+  {{ $greeting = .Site.Params.author.greeting }}
+{{ end }}
+{{ $name:="Jane Doe" }}
+{{ if .Site.Params.author.nickname }}
+  {{ $name = .Site.Params.author.nickname }}
+{{ else if .Site.Params.author.name }}
+  {{ $name = .Site.Params.author.name }}
+{{ end }}
 <div class="container-fluid home" id="home">
   <div
     class="background container-fluid"
@@ -7,15 +17,7 @@
     <img src="{{ if .Site.Params.author.image }}{{ .Site.Params.author.image }}{{ else }}/assets/images/default-avatar.png{{ end }}"
       class="rounded-circle mx-auto d-block img-fluid"
     />
-    <h1 class="greeting">Hi, I am
-      {{ if .Site.Params.author.nickname }}
-        {{ .Site.Params.author.nickname }}
-      {{ else if .Site.Params.author.name }}
-        {{ .Site.Params.author.name }}
-      {{ else }}
-        Jane Doe
-      {{ end }}
-    </h1>
+    <h1 class="greeting"> {{ $greeting }} {{ $name }}</h1>
     <div class="typing-carousel">
       <span id="ityped" class="ityped"></span>
       <span class="ityped-cursor"></span>
