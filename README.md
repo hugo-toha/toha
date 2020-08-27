@@ -116,6 +116,8 @@ params:
     name: "Jane Doe"
     nickname: "Jane"
     image: "images/avatar.png"
+    # greeting message before your name. it will default to "Hi! I am" if not provided
+    greeting: "Hi, I am"
     # give your some contact information. they will be used in the footer
     contactInfo:
       email: "janedoe@example.com"
