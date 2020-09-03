@@ -56,7 +56,7 @@
             <a class="nav-link" id="blog-link" href="/posts">Posts</a>
           </li>
         {{ end }}
-        {{ range site.Params.customMenus }}
+        {{ range  (index .Site.Data .Site.Language.Lang).site.customMenus }}
           <li class="nav-item">
             <a class="nav-link" href="{{ .url }}">{{ .name }}</a>
           </li>

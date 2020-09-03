@@ -1,7 +1,4 @@
 # More documentation here: https://github.com/nicksnyder/go-i18n
-[greeting]
-other = "Bonjour, je suis"
-
 [home]
 other = "Accueil"
 
@@ -25,3 +22,6 @@ other = "Nous ne partagerons jamais votre courriel avec quelqu'un d'autre."
 
 [submit]
 other = "Envoyer"
+
+[hugoAttributionText]
+other = "Alimenté par"

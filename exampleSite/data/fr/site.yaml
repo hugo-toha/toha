@@ -1,0 +1,11 @@
+# Copyright Notice
+copyright: © 2020 Droits d'auteur.
+
+# Meta description for your site.  This will help the search engines to find your site.
+description: Portfolio et blog personnel de Jane Doe.
+
+# specify the list of custom menus that you want to show in the top navbar.
+# they will be separated by a divider from the main menus.
+customMenus:
+- name: Remarques
+  url: https://hossainemruz.gitbook.io/

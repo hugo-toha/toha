@@ -8,6 +8,14 @@
   {{ $sections = (index .Site.Data .Site.Language.Lang).sections }}
 {{ end }}
 
+{{ $copyrightNotice := "© 2020 Copyright."}}
+{{ if (index .Site.Data .Site.Language.Lang).site }}
+  {{ $siteConfig := (index .Site.Data .Site.Language.Lang).site }}
+  {{ if $siteConfig.copyright }}
+    {{ $copyrightNotice = $siteConfig.copyright }}
+  {{ end }}
+{{ end }}
+
 <footer class="container-fluid text-center align-content-center footer pb-2">
   <div class="container pt-5">
     <div class="row text-left">
@@ -68,9 +76,9 @@
           Toha
         </a>
       </div>
-      <div class="col-md-4 text-center">{{ if .Site.Params.copyright }}{{ .Site.Params.copyright }}{{ else }}© 2020 Copyright.{{ end }}</div>
+      <div class="col-md-4 text-center">{{ $copyrightNotice }}</div>
       <div class="col-md-4 text-right">
-        <a id="hugo" href="https://gohugo.io/">Powered by Hugo
+        <a id="hugo" href="https://gohugo.io/">{{ i18n "hugoAttributionText" }}
         <img
           src="/assets/images/hugo-logo-wide.svg"
           alt="Hugo Logo"

@@ -1,17 +1,13 @@
-{{ $greeting:="Hi! I am" }}
-{{ if .Site.Params.author.greeting }}
-  {{ $greeting = .Site.Params.author.greeting }}
-{{ end }}
-{{ $name:="Jane Doe" }}
-{{ if .Site.Params.author.nickname }}
-  {{ $name = .Site.Params.author.nickname }}
-{{ else if .Site.Params.author.name }}
-  {{ $name = .Site.Params.author.name }}
-{{ end }}
-
 {{ $author:= .Site.Data.author }}
 {{ if (index .Site.Data .Site.Language.Lang).author }}
   {{ $author = (index .Site.Data .Site.Language.Lang).author }}
+{{ end }}
+
+{{ $name:="Jane Doe" }}
+{{ if $author.nickname }}
+  {{ $name = $author.nickname }}
+{{ else if $author.name }}
+  {{ $name = $author.name }}
 {{ end }}
 
 {{ $sections:= .Site.Data.sections }}
@@ -38,7 +34,7 @@
     <img src="{{ $authorImage | absURL }}"
       class="rounded-circle mx-auto d-block img-fluid"
     />
-    <h1 class="greeting"> {{ $greeting }} {{ $name }}</h1>
+    <h1 class="greeting"> {{ $author.greeting }} {{ $name }}</h1>
     <div class="typing-carousel">
       <span id="ityped" class="ityped"></span>
       <span class="ityped-cursor"></span>
