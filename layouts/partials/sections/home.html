@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {{ $greeting:="Hi! I am" }}
 {{ if .Site.Params.author.greeting }}
   {{ $greeting = .Site.Params.author.greeting }}
@@ -9,7 +8,7 @@
 {{ else if .Site.Params.author.name }}
   {{ $name = .Site.Params.author.name }}
 {{ end }}
-=======
+
 {{ $author:= .Site.Data.author }}
 {{ if (index .Site.Data .Site.Language.Lang).author }}
   {{ $author = (index .Site.Data .Site.Language.Lang).author }}
@@ -20,29 +19,26 @@
   {{ $sections = (index .Site.Data .Site.Language.Lang).sections }}
 {{ end }}
 
->>>>>>> Refactor translation codes
+{{ $backgroundImage:= "assets/images/default-background.jpg" }}
+{{ if .Site.Params.background }}
+  {{ $backgroundImage = .Site.Params.background }}
+{{ end }}
+
+{{ $authorImage:= "assets/images/default-avatar.png" }}
+{{ if $author.image }}
+  {{ $authorImage = $author.image }}
+{{ end }}
+
 <div class="container-fluid home" id="home">
   <div
     class="background container-fluid"
-    style="background-image: url('{{ if .Site.Params.background }}{{ .Site.Params.background }}{{ else }}/assets/images/default-background.jpg{{ end }}');"
+    style="background-image: url('{{ $backgroundImage | absURL }}');"
   ></div>
   <div class="container content text-center">
-    <img src="{{ if $author.image }}{{ $author.image }}{{ else }}/assets/images/default-avatar.png{{ end }}"
+    <img src="{{ $authorImage | absURL }}"
       class="rounded-circle mx-auto d-block img-fluid"
     />
-<<<<<<< HEAD
     <h1 class="greeting"> {{ $greeting }} {{ $name }}</h1>
-=======
-    <h1 class="greeting">{{ i18n "greeting" }}
-      {{ if $author.nickname }}
-        {{ $author.nickname }}
-      {{ else if $author.name }}
-        {{ $author.name }}
-      {{ else }}
-        Jane Doe
-      {{ end }}
-    </h1>
->>>>>>> Refactor translation codes
     <div class="typing-carousel">
       <span id="ityped" class="ityped"></span>
       <span class="ityped-cursor"></span>

@@ -14,7 +14,7 @@ company:
   url: "https://www.example.com"
 
 # your resume. this file path should be relative to you "static" directory
-resume: "/files/resume.pdf"
+resume: "files/resume.pdf"
 
 # a summary about you
 summary: "Je suis un ingénieur en logiciel passionné, avec x années d'expérience professionnelle. J'ai construit des outils OSS pour [Kubernetes](https://kubernetes.io/) en utilisant GO. Mes outils aident les gens à déployer leurs charges de travail dans Kubernetes. Parfois, je travaille sur des projets amusants comme l'écriture d'un thème, etc."

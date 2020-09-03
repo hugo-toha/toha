@@ -1,18 +1,24 @@
+{{ $mainLogo:="assets/images/main-logo.png" }}
+{{ $invertedLogo:="assets/images/inverted-logo.png" }}
+{{ if .Site.Params.logo.main }}
+  {{ $mainLogo = .Site.Params.logo.main }}
+{{ end }}
+{{ if .Site.Params.logo.inverted }}
+  {{ $invertedLogo = .Site.Params.logo.inverted }}
+{{ end }}
+
+{{ $pageURL:= .RelPermalink }}
+{{ if .Site.IsMultiLingual }}
+  {{ $pageURL = strings.TrimPrefix (path.Join "/" .Language.Lang) $pageURL }}
+{{ end }}
+
 <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
   <div class="container">
-    {{ $mainLogo:="/assets/images/main-logo.png" }}
-    {{ $invertedLogo:="/assets/images/inverted-logo.png" }}
-    {{ if .Site.Params.logo.main }}
-      {{ $mainLogo = .Site.Params.logo.main }}
-    {{ end }}
-    {{ if .Site.Params.logo.inverted }}
-      {{ $invertedLogo = .Site.Params.logo.inverted }}
-    {{ end }}
       <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="{{ site.BaseURL }}">
-      <img src="{{ $mainLogo }}">
+    <a class="navbar-brand" href="{{ site.BaseURL | absLangURL }}">
+      <img src="{{ $mainLogo | absURL }}">
       {{- site.Title -}}
     </a>
     <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
@@ -21,10 +27,26 @@
 
     <div class="collapse navbar-collapse" id="top-nav-items">
       <ul class="navbar-nav ml-auto">
+        {{ if .IsTranslated }}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img class="flag" src="https://www.countryflags.io/{{ cond (eq .Site.Language.Lang "en") "gb" .Language }}/flat/16.png">
+            {{- .Site.Language.LanguageName -}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="languageSelector">
+            {{ range $.Site.Home.AllTranslations }}
+              <a class="dropdown-item nav-link languages-item" href="{{ path.Join "/" (cond (eq .Language.Lang "en") "" .Language.Lang) $pageURL }}">
+                <img class="flag" src="https://www.countryflags.io/{{ cond (eq .Site.Language.Lang "en") "gb" .Language }}/flat/24.png">
+                {{- .Language.LanguageName -}}
+              </a>
+            {{ end }}
+          </div>
+        </li>
+        {{ end }}
       </ul>
     </div>
   </div>
   <!-- Store the logo information in a hidden img for the JS -->
-  <img src="{{ $mainLogo }}" class="d-none" id="main-logo">
-  <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo">
+  <img src="{{ $mainLogo | absURL }}" class="d-none" id="main-logo">
+  <img src="{{ $invertedLogo | absURL }}" class="d-none" id="inverted-logo">
 </nav>

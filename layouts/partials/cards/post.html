@@ -1,5 +1,5 @@
 <div class="post-card">
-  <a href="{{ .RelPermalink }}" class="post-card-link">
+  <a href="{{ .RelPermalink | relLangURL }}" class="post-card-link">
     <div class="card">
       <div class="card-head">
         <img class="card-img-top" src='{{ partial "helpers/get-hero.html" . }}'/>
@@ -11,7 +11,7 @@
       <div class="card-footer">
         <span class="float-left">{{ .Date.Format "January 2, 2006" }}</span>
         <a
-        href="{{ .RelPermalink }}"
+        href="{{ .RelPermalink | relLangURL }}"
         class="float-right btn btn-outline-info btn-sm"
         >Read</a
         >

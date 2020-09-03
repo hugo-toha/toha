@@ -12,7 +12,7 @@ languages:
   fr:
     languageName: Français
     weight: 2
-# Force a locale to be use, really usefull to develop the application ! Should be commented in production, the "weight" should rocks.
+# Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
 #DefaultContentLanguage: fr
 
 # Allow raw html in markdown file
@@ -33,8 +33,8 @@ disqusShortname: does-not-exist
 
 # Enable global emoji support
 enableEmoji: true
-# Custom parameters
 
+# Custom parameters
 params:
   # Copyright Notice
   copyright: © 2020 Copyright.
@@ -49,9 +49,9 @@ params:
   # transparent navbar and the main logo will be used in the non-transparent navbar.
   # It will be default to the theme logos if not provided.
   logo:
-    main: /assets/images/main-logo.png
-    inverted: /assets/images/inverted-logo.png
-    favicon: /assets/images/favicon.png
+    main: assets/images/main-logo.png
+    inverted: assets/images/inverted-logo.png
+    favicon: assets/images/favicon.png
 
   # GitHub repo URL of your site
   gitRepo: https://github.com/hossainemruz/toha-example-site

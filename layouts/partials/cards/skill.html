@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-head d-flex">
         {{ if .icon }}
-        <img class="card-img-xs" src="{{ .icon }}" alt="{{ .name }}" />
+        <img class="card-img-xs" src="{{ .icon | absURL }}" alt="{{ .name }}" />
         {{ end }}
         <h5 class="card-title">{{ .name }}</h5>
       </div>
