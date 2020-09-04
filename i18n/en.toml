@@ -2,6 +2,9 @@
 [home]
 other = "Home"
 
+[posts]
+other = "Posts"
+
 [resume]
 other = "My resume"
 

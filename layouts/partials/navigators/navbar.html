@@ -53,7 +53,7 @@
         {{ end }}
         {{ if site.Params.enableBlogPost }}
           <li class="nav-item">
-            <a class="nav-link" id="blog-link" href="/posts">Posts</a>
+            <a class="nav-link" id="blog-link" href="/posts">{{ i18n "posts" }}</a>
           </li>
         {{ end }}
         {{ range  (index .Site.Data .Site.Language.Lang).site.customMenus }}
@@ -64,13 +64,13 @@
         {{ if .IsTranslated }}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img class="flag" src="https://www.countryflags.io/{{ cond (eq .Site.Language.Lang "en") "gb" .Language }}/flat/16.png">
+            <img class="flag" src="https://www.countryflags.io/{{ partial "helpers/country-code.html" .Language }}/flat/16.png">
             {{ .Site.Language.LanguageName }}
           </a>
           <div class="dropdown-menu" aria-labelledby="languageSelector">
             {{ range $.Site.Home.AllTranslations }}
               <a class="dropdown-item nav-link languages-item" href="{{ .Permalink }}">
-                <img class="flag" src="https://www.countryflags.io/{{ cond (eq .Site.Language.Lang "en") "gb" .Language }}/flat/24.png">
+                <img class="flag" src="https://www.countryflags.io/{{ partial "helpers/country-code.html" .Language }}/flat/24.png">
                 {{ .Language.LanguageName }}
               </a>
             {{ end }}
