@@ -86,6 +86,22 @@
   display: none;
 }
 
+#search-results-template {
+  display: none;
+}
+
+
+.search-results {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  color: #248aaa;
+  background-color: white;
+  border-radius: 0.25em;
+  padding: 2px;
+}
+
 .pagination {
   margin-left: auto;
   margin-right: auto;

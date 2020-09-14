@@ -29,18 +29,27 @@
 <section class="content-section" id="content-section">
   <div class="content container-fluid" id="content">
     <div class="container-fluid post-card-holder" id="post-card-holder">
-      {{ $paginator := .Paginate .RegularPagesRecursive 12 }}
-      {{ range $paginator.Pages }}
-        {{ partial "cards/post.html" . }}
-      {{ end }}
+        {{ $paginator := .Paginate .RegularPagesRecursive 12 }}
+        {{ range $paginator.Pages }}
+            {{ partial "cards/post.html" . }}
+        {{ end }}
     </div>
     <div class="paginator">
-      {{ template "_internal/pagination.html" . }}
+        {{ template "_internal/pagination.html" . }}
     </div>
+    <div class="container-fluid post-card-holder" id="search-results-holder">      
+    </div>
+    <div class="search-results-template" id="search-results-template">
+        {{ partial "cards/search-result-post.html" . }}
+    </div>   
+    <div class="search-results" id="search-results"></div>
   </div>
+
+
 </section>
 {{ end }}
 
 {{ define "scripts" }}
     <script src="/assets/js/list.js"></script>
+    <script src="/assets/js/search.js"></script>
 {{ end }}

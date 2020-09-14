@@ -77,3 +77,12 @@ params:
     - I am a Developer
     - I work with Go
     - I love to work with some fun projects
+
+outputs:
+    home:
+    - HTML
+    - JSON
+    - RSS
+    page:
+    - HTML
+    - RSS
