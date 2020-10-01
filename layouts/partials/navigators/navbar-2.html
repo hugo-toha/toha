@@ -7,11 +7,6 @@
   {{ $invertedLogo = .Site.Params.logo.inverted }}
 {{ end }}
 
-{{ $pageURL:= .RelPermalink }}
-{{ if .Site.IsMultiLingual }}
-  {{ $pageURL = strings.TrimPrefix (path.Join "/" .Language.Lang) $pageURL }}
-{{ end }}
-
 <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
   <div class="container">
       <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
@@ -25,24 +20,11 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="top-nav-items">
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
       <ul class="navbar-nav ml-auto">
-        {{ if .IsTranslated }}
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img class="flag" src="https://www.countryflags.io/{{ partial "helpers/country-code.html" .Language }}/flat/16.png">
-            {{ .Site.Language.LanguageName }}
-          </a>
-          <div class="dropdown-menu" aria-labelledby="languageSelector">
-            {{ range .Translations }}
-              <a class="dropdown-item nav-link languages-item" href="{{ path.Join "/" (cond (eq .Language.Lang "en") "" .Language.Lang) $pageURL }}">
-                <img class="flag" src="https://www.countryflags.io/{{ partial "helpers/country-code.html" .Language }}/flat/24.png">
-                {{ .Language.LanguageName }}
-              </a>
-            {{ end }}
-          </div>
-        </li>
-        {{ end }}
+      {{ if .IsTranslated }}
+        {{ partial "navigators/lang-selector-2.html" . }}
+      {{ end }}
       </ul>
     </div>
   </div>

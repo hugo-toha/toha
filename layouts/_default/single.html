@@ -75,6 +75,9 @@
       </div>
     </div>
   </div>
+  {{ if .IsTranslated }}
+    {{ partial "navigators/floating-lang-selector.html" . }}
+  {{ end }}
 </section>
 {{ end }}
 
