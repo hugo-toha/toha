@@ -137,7 +137,7 @@ img.right {
 .card .card-head {
   height: 172px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   overflow: hidden;
 }
 
@@ -238,6 +238,14 @@ img.right {
 
 /* IPad Pro */
 @media (max-width: 1024px) {
+  .content-section .languageSelector {
+    position: fixed;
+    right: 0.5rem;
+    bottom: 1rem;
+    z-index: 10000000;
+    background-color: #f9fafc;
+    box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
+  }
 }
 
 /*  Large devices (desktops, 992px and up) */

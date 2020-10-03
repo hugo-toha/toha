@@ -1,0 +1,11 @@
+# section information
+section:
+  name: Posts recents
+  enable: true
+  weight: 5
+  showOnNavbar: true
+  template: sections/recent-posts.html
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# no additional configuration is required

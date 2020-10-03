@@ -28,8 +28,8 @@
         </ul>
       </div>
       {{ if .resume }}
-      <a href="{{ .resume }}" target="#"
-        ><button class="btn btn-dark">My Resume</button></a
+      <a href="{{ .resume | absURL }}" target="#"
+        ><button class="btn btn-dark">{{ i18n "resume"}}</button></a
       >
       {{ end }}
     </div>

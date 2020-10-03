@@ -9,7 +9,7 @@
   {{ if .HasChildren }}
     <!-- Add current entry -->
     <li>
-      <i class="fas {{ $icon }}"></i><a class="{{$class}}" href="{{.URL}}">{{.Name}}</a>
+      <i class="fas {{ $icon }}"></i><a class="{{$class}}" href="{{ .URL }}">{{.Name}}</a>
       <!-- Add sub-tree -->
       <ul class="{{ $class }}">
         {{ partial "navigators/sidebar.html" (dict "menus" .Children "ctx" $.ctx) }}
@@ -17,6 +17,6 @@
     </li>
   {{ else }}
     <!-- No sub-tree. So, only add current entry -->
-    <li><a class="{{$class}}" href="{{.URL}}">{{.Name}}</a></li>
+    <li><a class="{{$class}}" href="{{ .URL }}">{{.Name}}</a></li>
   {{ end }}
 {{ end }}

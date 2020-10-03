@@ -368,6 +368,9 @@ mark {
   .navbar-toggler {
     display: block;
   }
+  .navbar-collapse.lang-selector {
+    display: none;
+  }
 
   .hero-area {
     height: 300px;

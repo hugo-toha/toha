@@ -1,11 +1,29 @@
+{{ $author:= .Site.Data.author }}
+{{ if (index .Site.Data .Site.Language.Lang).author }}
+  {{ $author = (index .Site.Data .Site.Language.Lang).author }}
+{{ end }}
+
+{{ $sections:= .Site.Data.sections }}
+{{ if (index .Site.Data .Site.Language.Lang).sections }}
+  {{ $sections = (index .Site.Data .Site.Language.Lang).sections }}
+{{ end }}
+
+{{ $copyrightNotice := "© 2020 Copyright."}}
+{{ if (index .Site.Data .Site.Language.Lang).site }}
+  {{ $siteConfig := (index .Site.Data .Site.Language.Lang).site }}
+  {{ if $siteConfig.copyright }}
+    {{ $copyrightNotice = $siteConfig.copyright }}
+  {{ end }}
+{{ end }}
+
 <footer class="container-fluid text-center align-content-center footer pb-2">
   <div class="container pt-5">
     <div class="row text-left">
       <div class="col-md-4 col-sm-12">
-        <h5>Navigation</h5>
-        {{ if .Site.Data.sections }}
+        <h5>{{ i18n "navigation" }}</h5>
+        {{ if $sections }}
         <ul>
-          {{- range sort .Site.Data.sections "section.weight" }}
+          {{- range sort $sections "section.weight" }}
             {{ if and (.section.enable) (.section.showOnNavbar)}}
             <li class="nav-item">
               <a class="smooth-scroll" href="/#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
@@ -16,18 +34,20 @@
         {{ end }}
 
       </div>
+      {{ if $author }}
       <div class="col-md-4 col-sm-12">
-        <h5>Contact Me</h5>
+        <h5>{{ i18n "contact_me" }}</h5>
         <ul>
-          {{ range $key,$value:=.Site.Params.author.contactInfo }}
+          {{ range $key,$value:= $author.contactInfo }}
           <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
           {{ end }}
         </ul>
       </div>
+      {{ end }}
       {{ if .Site.Params.newsletter.enable }}
       <div class="col-md-4 col-sm-12">
         <!-- <h5>Newsletter</h5> -->
-        <p>Stay up to date with email notification</p>
+        <p>{{ i18n "newsletter_text" }}</p>
         <form>
           <div class="form-group">
             <input
@@ -35,13 +55,13 @@
               class="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              placeholder="Enter email"
+              placeholder="{{ i18n "newsletter_input_placeholder" }}"
             />
             <small id="emailHelp" class="form-text text-muted"
-              >We'll never share your email with anyone else.</small
+              >{{ i18n "newsletter_warning" }}</small
             >
           </div>
-          <button type="submit" class="btn btn-info">Submit</button>
+          <button type="submit" class="btn btn-info">{{ i18n "submit" }}</button>
         </form>
       </div>
       {{ end }}
@@ -56,9 +76,9 @@
           Toha
         </a>
       </div>
-      <div class="col-md-4 text-center">{{ if .Site.Params.copyright }}{{ .Site.Params.copyright }}{{ else }}© 2020 Copyright.{{ end }}</div>
+      <div class="col-md-4 text-center">{{ $copyrightNotice }}</div>
       <div class="col-md-4 text-right">
-        <a id="hugo" href="https://gohugo.io/">Powered by Hugo
+        <a id="hugo" href="https://gohugo.io/">{{ i18n "hugoAttributionText" }}
         <img
           src="/assets/images/hugo-logo-wide.svg"
           alt="Hugo Logo"

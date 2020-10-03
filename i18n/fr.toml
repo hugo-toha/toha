@@ -1,0 +1,30 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Accueil"
+
+[posts]
+other = "Des postes"
+
+[resume]
+other = "Mon Curriculum vitæ"
+
+[navigation]
+other = "Naviguation"
+
+[contact_me]
+other = "Contactez moi :"
+
+[newsletter_text]
+other = "Restez à jour par e-mail"
+
+[newsletter_input_placeholder]
+other = "Entrez une adresse e-mail"
+
+[newsletter_warning]
+other = "Nous ne partagerons jamais votre courriel avec quelqu'un d'autre."
+
+[submit]
+other = "Envoyer"
+
+[hugoAttributionText]
+other = "Alimenté par"

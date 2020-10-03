@@ -1,12 +1,13 @@
 # section information
 section:
-  name: About
+  name: "A propos"
   enable: true
   weight: 1
   showOnNavbar: true
+  template: sections/about.html
 
 # your designation
-designation: Software Engineer
+designation: "Développeur logiciel"
 # your company information
 company:
   name: Example Co.
@@ -16,7 +17,7 @@ company:
 resume: "files/resume.pdf"
 
 # a summary about you
-summary: 'I am a passionate software engineer with x years of working experience. I built OSS tools for [Kubernetes](https://kubernetes.io/) using GO. My tools help people to deploy their workloads in Kubernetes. Sometimes, I work on some fun projects such as writing a theme, etc.'
+summary: "Je suis un ingénieur en logiciel passionné, avec x années d'expérience professionnelle. J'ai construit des outils OSS pour [Kubernetes](https://kubernetes.io/) en utilisant GO. Mes outils aident les gens à déployer leurs charges de travail dans Kubernetes. Parfois, je travaille sur des projets amusants comme l'écriture d'un thème, etc."
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
@@ -49,22 +50,22 @@ socialLinks:
 # give the percentage between 50 to 100 with 5 intervals.
 # currently supported colors: blue, yellow, pink, green, sky, orange
 softSkills:
-- name: Leadership
+- name: Chef de projet
   percentage: 85
   color: blue
-- name: Team Work
+- name: Travail d'équipe
   percentage: 90
   color: yellow
 - name: Communication
   percentage: 85
   color: pink
-- name: Hard Working
+- name: Persévérant
   percentage: 85
   color: green
-- name: Fast Learner
+- name: Autonome
   percentage: 85
   color: sky
-- name: Problem Solving
+- name: Logique
   percentage: 85
   color: orange
 # you can also provide color code instead of pre-defined color name

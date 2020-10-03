@@ -1,0 +1,19 @@
+name: "Jane Doe"
+nickname: "Jane"
+image: "images/avatar.png"
+
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Bonjour, je suis"
+
+# give your some contact information. they will be used in the footer
+contactInfo:
+  email: "janedoe@example.com"
+  phone: "+0123456789"
+
+# some summary about what you do
+summary:
+  - Je suis un développeur
+  - Je suis un Devops
+  - J'aime les serveurs
+  - Je travaille sur des projets open-source
+  - J'aime travailler avec des projets amusants

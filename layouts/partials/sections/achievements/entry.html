@@ -1,6 +1,6 @@
 <div
   class="achievement-entry text-center"
-  style="background-image: url({{ .image }});"
+  style="background-image: url({{ .image | absURL }});"
 >
   <i class="fas fa-search-plus" id="enlarge-icon"></i>
   <h4 class="title" id="achievement-title">{{ .title }}</h4>

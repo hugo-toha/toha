@@ -1,30 +1,34 @@
+{{ $mainLogo:="assets/images/main-logo.png" }}
+{{ $invertedLogo:="assets/images/inverted-logo.png" }}
+{{ if .Site.Params.logo.main }}
+  {{ $mainLogo = .Site.Params.logo.main }}
+{{ end }}
+{{ if .Site.Params.logo.inverted }}
+  {{ $invertedLogo = .Site.Params.logo.inverted }}
+{{ end }}
+
 <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
   <div class="container">
-    {{ $mainLogo:="/assets/images/main-logo.png" }}
-    {{ $invertedLogo:="/assets/images/inverted-logo.png" }}
-    {{ if .Site.Params.logo.main }}
-      {{ $mainLogo = .Site.Params.logo.main }}
-    {{ end }}
-    {{ if .Site.Params.logo.inverted }}
-      {{ $invertedLogo = .Site.Params.logo.inverted }}
-    {{ end }}
       <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="{{ site.BaseURL }}">
-      <img src="{{ $mainLogo }}">
+    <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
+      <img src="{{ $mainLogo | absURL }}">
       {{- site.Title -}}
     </a>
     <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="top-nav-items">
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
       <ul class="navbar-nav ml-auto">
+      {{ if .IsTranslated }}
+        {{ partial "navigators/lang-selector-2.html" . }}
+      {{ end }}
       </ul>
     </div>
   </div>
   <!-- Store the logo information in a hidden img for the JS -->
-  <img src="{{ $mainLogo }}" class="d-none" id="main-logo">
-  <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo">
+  <img src="{{ $mainLogo | absURL }}" class="d-none" id="main-logo">
+  <img src="{{ $invertedLogo | absURL }}" class="d-none" id="inverted-logo">
 </nav>

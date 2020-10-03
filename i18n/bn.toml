@@ -1,0 +1,30 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "হোম"
+
+[posts]
+other = "পোষ্ট সমূহ"
+
+[resume]
+other = "আমার জীবনবৃত্তান্ত"
+
+[navigation]
+other = "নেভিগেশন"
+
+[contact_me]
+other = "আমার সাথে যোগাযোগ করুনঃ"
+
+[newsletter_text]
+other = "ইমেইল নোটিফিকেশান এর মাধ্যমে সর্বশেষ তথ্য জানুন"
+
+[newsletter_input_placeholder]
+other = "ইমেইল প্রবেশ করান"
+
+[newsletter_warning]
+other = "আমরা আপনার ইমেল অন্য কারও সাথে শেয়ার করব না।"
+
+[submit]
+other = "জমা দিন"
+
+[hugoAttributionText]
+other = "পাওয়ারড বাই"

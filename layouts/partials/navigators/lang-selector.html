@@ -1,0 +1,14 @@
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img class="flag" src="https://www.countryflags.io/{{ partial "helpers/country-code.html" .Language }}/flat/16.png">
+    {{ .Site.Language.LanguageName }}
+</a>
+<div class="dropdown-menu" aria-labelledby="languageSelector">
+    {{ range $.Site.Home.AllTranslations }}
+    <a class="dropdown-item nav-link languages-item" href="{{ .Permalink }}">
+        <img class="flag" src="https://www.countryflags.io/{{ partial "helpers/country-code.html" .Language }}/flat/24.png">
+        {{ .Language.LanguageName }}
+    </a>
+    {{ end }}
+</div>
+</li>
