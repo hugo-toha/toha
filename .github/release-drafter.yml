@@ -22,6 +22,7 @@ categories:
 version-resolver:
   major:
     labels:
+      - 'breaking-change'
       - 'breaking'
   minor:
     labels:
