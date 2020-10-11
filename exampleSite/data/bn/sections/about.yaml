@@ -1,6 +1,7 @@
 # section information
 section:
   name: আমার-সম্পর্কে
+  id: about
   enable: true
   weight: 1
   showOnNavbar: true

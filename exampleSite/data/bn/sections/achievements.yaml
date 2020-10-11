@@ -1,6 +1,7 @@
 # section information
 section:
   name: সাফল্য
+  id: achievements
   enable: true
   weight: 6
   showOnNavbar: true

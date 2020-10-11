@@ -1,6 +1,7 @@
 # section information
 section:
   name: "A propos"
+  id: about
   enable: true
   weight: 1
   showOnNavbar: true

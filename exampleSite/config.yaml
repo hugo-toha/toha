@@ -15,8 +15,9 @@ languages:
   bn:
     languageName: বাংলা
     weight: 3
+
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
-#DefaultContentLanguage: fr
+# DefaultContentLanguage: fr
 
 # Allow raw html in markdown file
 markup:

@@ -36,8 +36,12 @@
         {{ if $sections }}
           {{ range sort $sections "section.weight" }}
             {{ if and (.section.enable) (.section.showOnNavbar)}}
+              {{ $sectionID := replace (lower .section.name) " " "-"  }}
+              {{ if .section.id }}
+                {{ $sectionID = .section.id }}
+              {{ end }}
               <li class="nav-item">
-                <a class="nav-link" href="#{{ replace (lower .section.name) " " "-" }}">{{ .section.name }}</a>
+                <a class="nav-link" href="#{{ $sectionID }}">{{ .section.name }}</a>
               </li>
             {{ end }}
           {{- end }}

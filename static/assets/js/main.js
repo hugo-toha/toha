@@ -64,6 +64,8 @@ var isMobile = false, isTablet = false, isLaptop = false;
                   $target.focus(); // Set focus again
                 };
               });
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = this.hash
             }
           }
         });
