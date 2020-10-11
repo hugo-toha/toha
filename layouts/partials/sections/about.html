@@ -1,4 +1,9 @@
-<div class="container anchor p-lg-5 about-section" id="{{ replace (lower .section.name) " " "-" }}">
+{{ $sectionID := replace (lower .section.name) " " "-"  }}
+{{ if .section.id }}
+  {{ $sectionID = .section.id }}
+{{ end }}
+
+<div class="container anchor p-lg-5 about-section" id="{{ $sectionID }}">
   <div class="row pt-sm-2 pt-md-4 align-self-center">
     <!-- summary -->
     <div class="col-sm-6">

@@ -1,6 +1,7 @@
 # section information
 section:
   name: দক্ষতা
+  id: skills
   enable: true
   weight: 2
   showOnNavbar: true

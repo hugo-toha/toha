@@ -1,6 +1,7 @@
 # section information
 section:
   name: Competences
+  id: skills
   enable: true
   weight: 2
   showOnNavbar: true

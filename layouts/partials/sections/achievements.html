@@ -1,4 +1,9 @@
-<div class="container-fluid anchor pb-5 achievements-section" id="{{ replace (lower .section.name) " " "-" }}">
+{{ $sectionID := replace (lower .section.name) " " "-"  }}
+{{ if .section.id }}
+  {{ $sectionID = .section.id }}
+{{ end }}
+
+<div class="container-fluid anchor pb-5 achievements-section" id="{{ $sectionID }}">
   {{ if not (.section.hideTitle) }}
     <h1 class="text-center">{{ .section.name }}</h1>
   {{ end }}
