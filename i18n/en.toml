@@ -5,6 +5,9 @@ other = "Home"
 [posts]
 other = "Posts"
 
+[at]
+other = "at"
+
 [resume]
 other = "My resume"
 
