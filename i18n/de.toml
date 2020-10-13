@@ -3,31 +3,31 @@
 other = "Home"
 
 [posts]
-other = "Posts"
+other = "Beiträge"
 
 [at]
-other = "at"
+other = "bei"
 
 [resume]
-other = "My resume"
+other = "Mein Lebenslauf"
 
 [navigation]
 other = "Navigation"
 
 [contact_me]
-other = "Contact me:"
+other = "Kontakt aufnehmen"
 
 [newsletter_text]
-other = "Stay up to date with email notification"
+other = "Mit dem Newsletter auf dem neuesten Stand bleiben"
 
 [newsletter_input_placeholder]
-other = "Enter email"
+other = "E-Mail-Adresse eingeben"
 
 [newsletter_warning]
-other = "We'll never share your email with anyone else."
+other = "Wir werden Ihre E-Mail-Adresse nicht an Dritte weitergeben."
 
 [submit]
-other = "Submit"
+other = "Absenden"
 
 [hugoAttributionText]
 other = "Powered by"
