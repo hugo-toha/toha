@@ -5,6 +5,9 @@ other = "Home"
 [posts]
 other = "Beiträge"
 
+[at]
+other = "bei"
+
 [resume]
 other = "Mein Lebenslauf"
 

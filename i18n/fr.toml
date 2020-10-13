@@ -5,6 +5,9 @@ other = "Accueil"
 [posts]
 other = "Des postes"
 
+[at]
+other = "chez"
+
 [resume]
 other = "Mon Curriculum vitæ"
 
