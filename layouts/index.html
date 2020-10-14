@@ -42,7 +42,7 @@
             {{ if .section.template }}
               {{- partial .section.template . -}}
             {{ else }}
-              {{- partial (printf "sections/%s.html" (replace (lower .section.name) " " "-")) . -}}
+              {{- partial (printf "sections/%s.html" (replace (lower .section.id) " " "-")) . -}}
             {{ end }}
           </div>
           <!--- alter background color for next section --->
