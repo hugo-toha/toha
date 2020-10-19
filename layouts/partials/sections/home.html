@@ -15,12 +15,12 @@
   {{ $sections = (index .Site.Data .Site.Language.Lang).sections }}
 {{ end }}
 
-{{ $backgroundImage:= "assets/images/default-background.jpg" }}
+{{ $backgroundImage:= "/assets/images/default-background.jpg" }}
 {{ if .Site.Params.background }}
   {{ $backgroundImage = .Site.Params.background }}
 {{ end }}
 
-{{ $authorImage:= "assets/images/default-avatar.png" }}
+{{ $authorImage:= "/assets/images/default-avatar.png" }}
 {{ if $author.image }}
   {{ $authorImage = $author.image }}
 {{ end }}

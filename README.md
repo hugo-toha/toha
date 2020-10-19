@@ -98,9 +98,9 @@ params:
   # transparent navbar and the main logo will be used in the non-transparent navbar.
   # It will be default to the theme logos if not provided.
   logo:
-    main: assets/images/main-logo.png
-    inverted: assets/images/inverted-logo.png
-    favicon: assets/images/favicon.png
+    main: /assets/images/main-logo.png
+    inverted: /assets/images/inverted-logo.png
+    favicon: /assets/images/favicon.png
 
   # GitHub repo URL of your site
   gitRepo: https://github.com/hossainemruz/toha-example-site
