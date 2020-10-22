@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{{- .Site.Title -}}</title>
-    <meta name="description" content="{{ .Site.Params.description }}" />
+    <title>{{- site.Title -}}</title>
+    <meta name="description" content="{{ site.Params.description }}" />
     <!-- import common headers -->
     {{- partial "header.html" . -}}
 
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ "/assets/css/sections/achievements.css" | relURL }}"/>
 
     <!-- Add Google Analytics if enabled in configuration -->
-    {{ if .Site.GoogleAnalytics }}
+    {{ if site.GoogleAnalytics }}
         {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
   </head>
@@ -29,9 +29,9 @@
     {{- partial "sections/home.html" . -}}
 
     <!--- ADD OPTIONAL SECTIONS ----------->
-    {{ $sections:= .Site.Data.sections }}
-    {{ if (index .Site.Data .Site.Language.Lang).sections }}
-      {{ $sections = (index .Site.Data .Site.Language.Lang).sections }}
+    {{ $sections:= site.Data.sections }}
+    {{ if (index site.Data site.Language.Lang).sections }}
+      {{ $sections = (index site.Data site.Language.Lang).sections }}
     {{ end }}
 
     {{ if $sections }}

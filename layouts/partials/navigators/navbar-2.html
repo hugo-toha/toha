@@ -1,5 +1,5 @@
-{{ $mainLogo:="assets/images/main-logo.png" }}
-{{ $invertedLogo:="assets/images/inverted-logo.png" }}
+{{ $mainLogo:="/assets/images/main-logo.png" }}
+{{ $invertedLogo:="/assets/images/inverted-logo.png" }}
 {{ if site.Params.logo.main }}
   {{ $mainLogo = site.Params.logo.main }}
 {{ end }}
@@ -13,7 +13,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
-      <img src="{{ $mainLogo | absURL }}">
+      <img src="{{ $mainLogo | relURL }}">
       {{- site.Title -}}
     </a>
     <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
@@ -29,6 +29,6 @@
     </div>
   </div>
   <!-- Store the logo information in a hidden img for the JS -->
-  <img src="{{ $mainLogo | absURL }}" class="d-none" id="main-logo">
-  <img src="{{ $invertedLogo | absURL }}" class="d-none" id="inverted-logo">
+  <img src="{{ $mainLogo | relURL }}" class="d-none" id="main-logo">
+  <img src="{{ $invertedLogo | relURL }}" class="d-none" id="inverted-logo">
 </nav>

@@ -1,16 +1,16 @@
-{{ $author:= .Site.Data.author }}
-{{ if (index .Site.Data .Site.Language.Lang).author }}
-  {{ $author = (index .Site.Data .Site.Language.Lang).author }}
+{{ $author:= site.Data.author }}
+{{ if (index site.Data site.Language.Lang).author }}
+  {{ $author = (index site.Data site.Language.Lang).author }}
 {{ end }}
 
-{{ $sections:= .Site.Data.sections }}
-{{ if (index .Site.Data .Site.Language.Lang).sections }}
-  {{ $sections = (index .Site.Data .Site.Language.Lang).sections }}
+{{ $sections:= site.Data.sections }}
+{{ if (index site.Data site.Language.Lang).sections }}
+  {{ $sections = (index site.Data site.Language.Lang).sections }}
 {{ end }}
 
 {{ $copyrightNotice := "© 2020 Copyright."}}
-{{ if (index .Site.Data .Site.Language.Lang).site }}
-  {{ $siteConfig := (index .Site.Data .Site.Language.Lang).site }}
+{{ if (index site.Data site.Language.Lang).site }}
+  {{ $siteConfig := (index site.Data site.Language.Lang).site }}
   {{ if $siteConfig.copyright }}
     {{ $copyrightNotice = $siteConfig.copyright }}
   {{ end }}
@@ -48,7 +48,7 @@
         </ul>
       </div>
       {{ end }}
-      {{ if .Site.Params.newsletter.enable }}
+      {{ if site.Params.newsletter.enable }}
       <div class="col-md-4 col-sm-12">
         <!-- <h5>Newsletter</h5> -->
         <p>{{ i18n "newsletter_text" }}</p>

@@ -1,22 +1,22 @@
-{{ $mainLogo:="assets/images/main-logo.png" }}
-{{ $invertedLogo:="assets/images/inverted-logo.png" }}
-{{ if .Site.Params.logo.main }}
-  {{ $mainLogo = .Site.Params.logo.main }}
+{{ $mainLogo:="/assets/images/main-logo.png" }}
+{{ $invertedLogo:="/assets/images/inverted-logo.png" }}
+{{ if site.Params.logo.main }}
+  {{ $mainLogo = site.Params.logo.main }}
 {{ end }}
-{{ if .Site.Params.logo.inverted }}
-  {{ $invertedLogo = .Site.Params.logo.inverted }}
+{{ if site.Params.logo.inverted }}
+  {{ $invertedLogo = site.Params.logo.inverted }}
 {{ end }}
 
-{{ $sections:= .Site.Data.sections }}
-{{ if (index .Site.Data .Site.Language.Lang).sections }}
-  {{ $sections = (index .Site.Data .Site.Language.Lang).sections }}
+{{ $sections:= site.Data.sections }}
+{{ if (index site.Data site.Language.Lang).sections }}
+  {{ $sections = (index site.Data site.Language.Lang).sections }}
 {{ end }}
 
 <nav class="navbar navbar-expand-xl top-navbar initial-navbar" id="top-navbar">
   <div class="container">
-    <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
-      <img src="{{ $invertedLogo | absURL }}" id="logo">
-      {{- .Site.Title -}}
+    <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
+      <img src="{{ $invertedLogo | relURL }}" id="logo">
+      {{- site.Title -}}
     </a>
     <button
       class="navbar-toggler navbar-dark"
@@ -77,7 +77,7 @@
             <a class="nav-link" id="blog-link" href="{{ "/posts" | relLangURL }}">{{ i18n "posts" }}</a>
           </li>
         {{ end }}
-        {{ range  (index .Site.Data .Site.Language.Lang).site.customMenus }}
+        {{ range  (index site.Data site.Language.Lang).site.customMenus }}
           <li class="nav-item">
             <a class="nav-link" href="{{ .url }}">{{ .name }}</a>
           </li>
@@ -89,6 +89,6 @@
     </div>
   </div>
   <!-- Store the logo information in a hidden img for the JS -->
-  <img src="{{ $mainLogo | absURL }}" class="d-none" id="main-logo">
-  <img src="{{ $invertedLogo | absURL }}" class="d-none" id="inverted-logo">
+  <img src="{{ $mainLogo | relURL }}" class="d-none" id="main-logo">
+  <img src="{{ $invertedLogo | relURL }}" class="d-none" id="inverted-logo">
 </nav>

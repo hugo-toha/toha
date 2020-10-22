@@ -1,6 +1,6 @@
-{{ $author:= .Site.Data.author }}
-{{ if (index .Site.Data .Site.Language.Lang).author }}
-  {{ $author = (index .Site.Data .Site.Language.Lang).author }}
+{{ $author:= site.Data.author }}
+{{ if (index site.Data site.Language.Lang).author }}
+  {{ $author = (index site.Data site.Language.Lang).author }}
 {{ end }}
 
 {{ $name:="Jane Doe" }}
@@ -10,14 +10,14 @@
   {{ $name = $author.name }}
 {{ end }}
 
-{{ $sections:= .Site.Data.sections }}
-{{ if (index .Site.Data .Site.Language.Lang).sections }}
-  {{ $sections = (index .Site.Data .Site.Language.Lang).sections }}
+{{ $sections:= site.Data.sections }}
+{{ if (index site.Data site.Language.Lang).sections }}
+  {{ $sections = (index site.Data site.Language.Lang).sections }}
 {{ end }}
 
 {{ $backgroundImage:= "/assets/images/default-background.jpg" }}
-{{ if .Site.Params.background }}
-  {{ $backgroundImage = .Site.Params.background }}
+{{ if site.Params.background }}
+  {{ $backgroundImage = site.Params.background }}
 {{ end }}
 
 {{ $authorImage:= "/assets/images/default-avatar.png" }}
@@ -28,10 +28,10 @@
 <div class="container-fluid home" id="home">
   <div
     class="background container-fluid"
-    style="background-image: url('{{ $backgroundImage | absURL }}');"
+    style="background-image: url('{{ strings.TrimSuffix "/" site.BaseURL }}{{ $backgroundImage | relURL }}');"
   ></div>
   <div class="container content text-center">
-    <img src="{{ $authorImage | absURL }}"
+    <img src="{{ $authorImage | relURL }}"
       class="rounded-circle mx-auto d-block img-fluid"
     />
     <h1 class="greeting"> {{ $author.greeting }} {{ $name }}</h1>

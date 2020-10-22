@@ -21,7 +21,7 @@
           <ul class="tree" id="tree">
             <li id="list-heading"><a href="{{ site.BaseURL | absLangURL }}posts" data-filter="all">Posts</a></li>
             <div class="subtree">
-                {{ partial "navigators/sidebar.html" (dict "menus" .Site.Menus.sidebar "ctx" .) }}
+                {{ partial "navigators/sidebar.html" (dict "menus" site.Menus.sidebar "ctx" .) }}
             </div>
           </ul>
         </div>

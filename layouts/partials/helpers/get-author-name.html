@@ -1,6 +1,6 @@
-{{ $authorName:= .Site.Params.author.name }}
-{{ if .Site.Data.site.author}}
-    {{ $authorName = .Site.Data.site.author.name }}
+{{ $authorName:= site.Params.author.name }}
+{{ if site.Data.site.author}}
+    {{ $authorName = site.Data.site.author.name }}
 {{ end}}
 {{ if eq (printf "%T" .Params.author ) "maps.Params" }}
     {{ with .Params.author }}
