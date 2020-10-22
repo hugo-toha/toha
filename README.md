@@ -18,7 +18,7 @@ Example Site: [Toha Example Site](https://toha.netlify.app)
 - Google Analytics Support
 - Disqus Comment Support
 
-For more details about the features please visit [here](https://toha.netlify.app/posts/features/features/).
+For more details about the features please visit [here](https://toha.netlify.app/posts/features/).
 
 ## Requirements
 
