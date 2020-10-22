@@ -7,13 +7,13 @@
     {{- partial "header.html" . -}}
 
     <!-- import index page specific headers -->
-    <link rel="stylesheet" href="/assets/css/sections/home.css" />
-    <link rel="stylesheet" href="/assets/css/sections/about.css" />
-    <link rel="stylesheet" href="/assets/css/sections/skills.css" />
-    <link rel="stylesheet" href="/assets/css/sections/experiences.css" />
-    <link rel="stylesheet" href="/assets/css/sections/projects.css" />
-    <link rel="stylesheet" href="/assets/css/sections/recent-posts.css" />
-    <link rel="stylesheet" href="/assets/css/sections/achievements.css" />
+    <link rel="stylesheet" href="{{ "/assets/css/sections/home.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/assets/css/sections/about.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/assets/css/sections/skills.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/assets/css/sections/experiences.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/assets/css/sections/projects.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/assets/css/sections/recent-posts.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/assets/css/sections/achievements.css" | relURL }}"/>
 
     <!-- Add Google Analytics if enabled in configuration -->
     {{ if .Site.GoogleAnalytics }}
@@ -62,9 +62,9 @@
     {{ partial "scripts.html" . }}
 
     <!--- ADD INDEX PAGE SPECIFIC SCRIPTS -->
-    <script src="/assets/js/itype.min.js"></script>
-    <script src="/assets/js/github-button.js"></script>
-    <script src="/assets/js/home.js"></script>
-    <script src="/assets/js/jquery.filterizr.min.js"></script>
+    <script src="{{ "/assets/js/itype.min.js" | relURL }}"></script>
+    <script src="{{ "/assets/js/github-button.js" | relURL }}"></script>
+    <script src="{{ "/assets/js/home.js" | relURL }}"></script>
+    <script src="{{ "/assets/js/jquery.filterizr.min.js" | relURL }}"></script>
   </body>
 </html>
