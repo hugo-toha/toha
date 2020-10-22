@@ -4,8 +4,8 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
 />
-<link rel="stylesheet" href="/assets/css/layouts/single.css" />
-<link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
+<link rel="stylesheet" href="{{ "/assets/css/layouts/single.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "/assets/css/navigators/sidebar.css" | relURL }}">
 {{ end }}
 
 {{ define "navbar" }}
@@ -97,7 +97,7 @@
 
 {{ define "scripts" }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-<script src="/assets/js/single.js"></script>
+<script src="{{ "/assets/js/single.js" | relURL }}"></script>
 <script>
   hljs.initHighlightingOnLoad();
 </script>

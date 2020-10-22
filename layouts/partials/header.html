@@ -3,10 +3,10 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
 <!-- ============ import common css ========== -->
-<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/assets/css/layouts/main.css" />
-<link rel="stylesheet" href="/assets/css/style.css" />
-<link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
+<link rel="stylesheet" href="{{ "/assets/css/bootstrap.min.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "/assets/css/layouts/main.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "/assets/css/style.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "/assets/css/navigators/navbar.css" | relURL }}"/>
 
 <!--=================== cdn ==============================-->
 <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
@@ -16,4 +16,4 @@
 <link rel="icon" type="image/png" href="{{ .Site.Params.logo.favicon | default "/assets/images/favicon.png" | absURL }}" />
 
 <!--================= custom style overrides =========================-->
-<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="{{ "/assets/css/style.css" | relURL }}"/>
