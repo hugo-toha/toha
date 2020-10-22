@@ -1,0 +1,18 @@
+# some information about you
+name: "Jane Doe"
+nickname: "Jane"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Halo, saya"
+image: "images/avatar.png"
+# give your some contact information. they will be used in the footer
+contactInfo:
+  email: "janedoe@example.com"
+  phone: "+0123456789"
+
+# some summary about what you do
+summary:
+  - Saya seorang developer
+  - Saya mengerjakan System
+  - Saya suka dengan servers
+  - Saya melakukan projek open-source
+  - Projek-projek yang seru sangat menarik buat saya

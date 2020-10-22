@@ -1,0 +1,33 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Beranda"
+
+[posts]
+other = "Artikel"
+
+[at]
+other = "at"
+
+[resume]
+other = "Resume saya"
+
+[navigation]
+other = "Navigasi"
+
+[contact_me]
+other = "Hubungi saya:"
+
+[newsletter_text]
+other = "Ingin selalu update dengan notifikasi email"
+
+[newsletter_input_placeholder]
+other = "Masukkan email"
+
+[newsletter_warning]
+other = "Kami tidak pernah berbagi data email dengan siapapun."
+
+[submit]
+other = "Kirim"
+
+[hugoAttributionText]
+other = "Didukung oleh"

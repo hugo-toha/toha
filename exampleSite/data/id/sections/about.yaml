@@ -1,0 +1,78 @@
+# section information
+section:
+  name: Tentang Saya
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/about.html
+
+# your designation
+designation: Programmer
+# your company information
+company:
+  name: Example Co.
+  url: "https://www.example.com"
+
+# your resume. this file path should be relative to you "static" directory
+resume: "files/resume.pdf"
+
+# a summary about you
+summary: 'Saya seorang insinyur perangkat lunak yang bersemangat dengan pengalaman kerja x tahun. Saya membuat alat OSS untuk [Kubernetes] (https://kubernetes.io/) menggunakan GO. Alat saya membantu orang untuk menyebarkan beban kerja mereka di Kubernetes. Terkadang, saya mengerjakan beberapa proyek menyenangkan seperti menulis tema, dll.'
+
+# your social links
+# give as many as you want. use font-awesome for the icons.
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "example@gmail.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://www.github.com/example"
+
+- name: Stackoverflow
+  icon: "fab fa-stack-overflow"
+  url: "#"
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "#"
+
+- name: Twitter
+  icon: "fab fa-twitter"
+  url: "#"
+
+- name: Facebook
+  icon: "fab fa-facebook"
+  url: "#"
+
+# your soft skills
+# give the percentage between 50 to 100 with 5 intervals.
+# currently supported colors: blue, yellow, pink, green, sky, orange
+softSkills:
+- name: Kepemimpinan
+  percentage: 85
+  color: blue
+- name: Bekerja dengan Tim
+  percentage: 90
+  color: yellow
+- name: Komunikasi
+  percentage: 85
+  color: pink
+- name: Kerja Keras
+  percentage: 85
+  color: green
+- name: Belajar Cepat
+  percentage: 85
+  color: sky
+- name: Menyelesaikan Masalah
+  percentage: 85
+  color: orange
+# you can also provide color code instead of pre-defined color name
+# - name: Example 1
+#   percentage: 75
+#   color: "#00adb5"
+# - name: Example 2
+#   percentage: 65
+#   color: "#8b8383"

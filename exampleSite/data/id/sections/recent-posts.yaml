@@ -1,0 +1,11 @@
+# section information
+section:
+  name: Artikel Akhir
+  id: recent-posts
+  enable: true
+  weight: 5
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# no additional configuration is required
