@@ -233,16 +233,43 @@ Here, are the current plan and progress of various components of this theme. The
 
 ## Contributing
 
-You can contribute to this theme in various way. You can report a bug, file an feature request, send a PR, share your thoughts etc.
+You can contribute to this theme in various ways. You can report a [bug](https://github.com/hossainemruz/toha/issues/new?template=bug.md), file an [feature request](https://github.com/hossainemruz/toha/issues/new?template=feature_request.md), send a PR, [share your thoughts](https://github.com/hossainemruz/toha/issues/new?template=question.md) etc.
 
-Pull requests are most welcomed and I will be happy to review. Just follow the following principles:
+Pull requests are most welcome and I will be happy to review. Just follow the following principles:
 
 - Keep it simple.
 - Keep it consistent with the design.
-- Use as little dependency as possible.
-- Have patient.
+- Use as few dependencies as possible.
+- Have patience.
 
 >I am not a web developer. I just created this theme for my personal needs. So, it is reasonable to have some flaws in the codes. Feel free to open issues and PR acknowledging the problems.
+
+## Local Development
+
+For local development, you can run your own site or the [example site](https://github.com/hossainemruz/toha-example-site) locally and make changes in the theme submodule.
+
+### Fork
+Fork [this repo](https://github.com/hossainemruz/toha) and setup your local submodule with the following from the site's folder by running the following
+
+```sh
+git submodule update --init --recursive --remote
+cd themes/toha
+git remote add my-fork https://github.com/<your-github-user>/toha
+git checkout -b my-feature-branch
+```
+
+From there you can make changes to the source code of the theme while testing with your running Hugo site.
+
+### Open a PR
+
+When the changes look good, commit and push them to your fork
+```sh
+git add .
+git commit -m "A meaningful commit message"
+git push my-fork my-feature-branch
+```
+
+And then open a PR `https://github.com/<your-github-user></your-github-user>/toha/pull/new/my-feature-branch`
 
 ## Attribution
 
