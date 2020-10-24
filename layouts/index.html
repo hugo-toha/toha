@@ -2,7 +2,14 @@
 <html lang="en">
   <head>
     <title>{{- .Site.Title -}}</title>
-    <meta name="description" content="{{ .Site.Params.description }}" />
+    {{ $siteDescription := .Site.Params.description }}
+    {{ if (index .Site.Data .Site.Language.Lang).site }}
+      {{ $siteConfig := (index .Site.Data .Site.Language.Lang).site }}
+      {{ if $siteConfig.description }}
+        {{ $siteDescription = $siteConfig.description }}
+      {{ end }}
+    {{ end }}
+    <meta name="description" content="{{ $siteDescription }}" />
     <!-- import common headers -->
     {{- partial "header.html" . -}}
 
