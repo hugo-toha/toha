@@ -38,7 +38,7 @@
         </ul>
       </div>
       {{ if .resume }}
-      <a href="{{ .resume | absURL }}" target="#"
+      <a href="{{ .resume | relURL }}" target="#"
         ><button class="btn btn-dark">{{ i18n "resume"}}</button></a
       >
       {{ end }}

@@ -9,7 +9,7 @@
     {{ block "header" . }} {{ end }}
 
     <!-- ADD GOOGLE ANALYTICS IF ENABLED -->
-    {{ if .Site.GoogleAnalytics }}
+    {{ if site.GoogleAnalytics }}
       {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
   </head>

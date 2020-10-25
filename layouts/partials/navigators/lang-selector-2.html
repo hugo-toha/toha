@@ -1,12 +1,12 @@
 {{ $pageURL:= .RelPermalink }}
-{{ if .Site.IsMultiLingual }}
+{{ if site.IsMultiLingual }}
   {{ $pageURL = strings.TrimPrefix (path.Join "/" .Language.Lang) $pageURL }}
 {{ end }}
 
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <img class="flag" src="https://www.countryflags.io/{{ partial "helpers/country-code.html" .Language }}/flat/16.png">
-      {{ .Site.Language.LanguageName }}
+      {{ site.Language.LanguageName }}
     </a>
     <div class="dropdown-menu" aria-labelledby="languageSelector">
       {{ range .Translations }}
