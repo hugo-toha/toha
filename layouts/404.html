@@ -1,15 +1,15 @@
 {{ define "header" }}
-    <link rel="stylesheet" href="/assets/css/404.css">
+    <link rel="stylesheet" href="{{ "/assets/css/404.css" | relURL }}">
 {{ end }}
 
 {{ define "navbar" }}
-    {{ partial "navigators/navbar-2.html" (dict "baseURL" .Site.BaseURL "title" .Site.Title "hasToggleButton" false) }}
+    {{ partial "navigators/navbar-2.html" (dict "baseURL" site.BaseURL "title" site.Title "hasToggleButton" false) }}
 {{ end }}
 
 {{ define "content" }}
 <div class="container">
     <div class="notFound">
-        <img src="/assets/images/404.png" alt="">
+        <img src="{{ "/assets/images/404.png" | relURL }}" alt="">
         <div class="message">
             <h1>404</h1>
             <h4>The page you are looking for is not there yet.</h4>
