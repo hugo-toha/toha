@@ -7,31 +7,35 @@ template: |
   $CHANGES
 
   This release note has been generated automatically by [Release Drafter](https://github.com/marketplace/actions/release-drafter).
+
 categories:
-  - title: 'Breaking Changes'
-    label: 'breaking-change'
-  - title: 'New Translations'
-    label: 'translation'
-  - title: 'New Features & Enhancements'
-    labels:
-    - 'feature'
-    - 'enhancement'
-  - title: 'Bug Fixes'
-    labels:
-      - 'bug'
-      - 'bug-fix'
+- title: 'Breaking Changes'
+  label: 'breaking-change'
+
+- title: 'New Features & Enhancements'
+  labels:
+  - 'feature'
+  - 'enhancement'
+
+- title: 'New Translations'
+  label: 'translation'
+
+- title: 'Bug Fixes'
+  labels:
+  - 'bug'
+  - 'bug-fix'
 
 version-resolver:
   major:
     labels:
-      - 'breaking-change'
-      - 'breaking'
+    - 'breaking-change'
+    - 'breaking'
   minor:
     labels:
-      - 'feature'
-      - 'enhancement'
-      - 'translation'
+    - 'feature'
+    - 'enhancement'
+    - 'translation'
   patch:
     labels:
-      - 'bug'
-      - 'bug-fix'
+    - 'bug'
+    - 'bug-fix'
