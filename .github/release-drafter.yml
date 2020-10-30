@@ -10,6 +10,8 @@ template: |
 categories:
   - title: 'Breaking Changes'
     label: 'breaking-change'
+  - title: 'New Translations'
+    label: 'translation'
   - title: 'New Features & Enhancements'
     labels:
     - 'feature'
@@ -28,6 +30,7 @@ version-resolver:
     labels:
       - 'feature'
       - 'enhancement'
+      - 'translation'
   patch:
     labels:
       - 'bug'
