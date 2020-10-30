@@ -114,7 +114,8 @@ body {
 .author-profile img {
   height: 120px;
   width: 120px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   background-color: #f9fafc;
   padding: 5px;
 }
