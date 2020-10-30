@@ -1,5 +1,7 @@
 # Toha
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0436f0e6-da35-430d-bec1-2eaa9473dbca/deploy-status)](https://app.netlify.com/sites/toha/deploys) ![Repository Size](https://img.shields.io/github/repo-size/hossainemruz/toha) ![Last Commit](https://img.shields.io/github/last-commit/hossainemruz/toha) ![Contributor](https://img.shields.io/github/contributors/hossainemruz/toha) ![License](https://img.shields.io/github/license/hossainemruz/toha)
+
 A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist design and responsiveness.
 
 ![Thumbnail](https://github.com/hossainemruz/toha/blob/master/images/tn.png)
