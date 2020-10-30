@@ -64,6 +64,7 @@ body {
 }
 
 .toc ul {
+  list-style: none;
   padding-left: 0.5rem;
   width: 100%;
 }
