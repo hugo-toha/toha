@@ -31,5 +31,5 @@ jobs:
             This PR runs [postcss/autoprefixer](https://github.com/postcss/autoprefixer) to update vendor specific CSS prefixes.
 
             >This PR has been created automatically by Github Action [peter-evans/create-pull-request](https://github.com/peter-evans/create-pull-request).
-          labels: enhancement
+          labels: "enhancement,automerge"
           reviewers: hossainemruz
