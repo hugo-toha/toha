@@ -31,16 +31,7 @@
     <div class="collapse navbar-collapse" id="top-nav-items">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a
-            class="nav-link"
-            href="#home"
-            data-toggle="collapse"
-            data-target=".navbar-collapse"
-            aria-controls="collapseExample"
-            role="button"
-          >
-            {{ i18n "home" }}
-          </a>
+          <a class="nav-link" href="#home">{{ i18n "home" }}</a>
         </li>
         {{ if $sections }}
           {{ range sort $sections "section.weight" }}
@@ -50,15 +41,7 @@
                 {{ $sectionID = .section.id }}
               {{ end }}
               <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="#{{ $sectionID }}"
-                  data-toggle="collapse"
-                  data-target=".navbar-collapse"
-                  aria-controls="collapseExample"
-                >
-                  {{ .section.name }}
-                </a>
+                <a class="nav-link" href="#{{ $sectionID }}">{{ .section.name }}</a>
               </li>
             {{ end }}
           {{- end }}
