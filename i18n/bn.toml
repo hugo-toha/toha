@@ -5,6 +5,9 @@ other = "হোম"
 [posts]
 other = "পোষ্ট সমূহ"
 
+[toc_heading]
+other = "সুচিপত্র"
+
 [resume]
 other = "আমার জীবনবৃত্তান্ত"
 
@@ -13,6 +16,12 @@ other = "নেভিগেশন"
 
 [contact_me]
 other = "আমার সাথে যোগাযোগ করুনঃ"
+
+[email]
+other = "ইমেইল"
+
+[phone]
+other = "ফোন"
 
 [newsletter_text]
 other = "ইমেইল নোটিফিকেশান এর মাধ্যমে সর্বশেষ তথ্য জানুন"
@@ -28,3 +37,12 @@ other = "জমা দিন"
 
 [hugoAttributionText]
 other = "পাওয়ারড বাই"
+
+[prev]
+other = "পূর্ববর্তী"
+
+[next]
+other = "পরবর্তী"
+
+[improve_this_page]
+other = "এই পৃষ্ঠাটি উন্নত করুন"

@@ -66,6 +66,7 @@ body {
 .toc ul {
   list-style: none;
   padding-left: 0.5rem;
+  margin-bottom: 0rem;
   width: 100%;
 }
 
@@ -308,6 +309,10 @@ mark {
   text-align: right;
 }
 
+.languageSelector{
+  display: none;
+}
+
 /* ============= Device specific fixes ======= */
 
 /* Large screens such as TV */
@@ -371,8 +376,13 @@ mark {
   .navbar-toggler {
     display: block;
   }
+
   .navbar-collapse.lang-selector {
     display: none;
+  }
+
+  .languageSelector{
+    display: block;
   }
 
   .hero-area {

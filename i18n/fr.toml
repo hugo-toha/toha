@@ -5,6 +5,9 @@ other = "Accueil"
 [posts]
 other = "Des postes"
 
+[toc_heading]
+other = "Table des matières"
+
 [at]
 other = "chez"
 
@@ -16,6 +19,12 @@ other = "Naviguation"
 
 [contact_me]
 other = "Contactez moi :"
+
+[email]
+other = "Email"
+
+[phone]
+other = "Téléphone"
 
 [newsletter_text]
 other = "Restez à jour par e-mail"
@@ -31,3 +40,12 @@ other = "Envoyer"
 
 [hugoAttributionText]
 other = "Alimenté par"
+
+[prev]
+other = "Précédent"
+
+[next]
+other = "Suivant"
+
+[improve_this_page]
+other = "Améliorez cette page"
