@@ -1,10 +1,10 @@
 # Toha
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0436f0e6-da35-430d-bec1-2eaa9473dbca/deploy-status)](https://app.netlify.com/sites/toha/deploys) ![Repository Size](https://img.shields.io/github/repo-size/hossainemruz/toha) ![Last Commit](https://img.shields.io/github/last-commit/hossainemruz/toha) ![Contributor](https://img.shields.io/github/contributors/hossainemruz/toha) ![License](https://img.shields.io/github/license/hossainemruz/toha)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0436f0e6-da35-430d-bec1-2eaa9473dbca/deploy-status)](https://app.netlify.com/sites/toha/deploys) ![Repository Size](https://img.shields.io/github/repo-size/hugo-toha/toha) ![Last Commit](https://img.shields.io/github/last-commit/hugo-toha/toha) ![Contributor](https://img.shields.io/github/contributors/hugo-toha/toha) ![License](https://img.shields.io/github/license/hugo-toha/toha)
 
 A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist design and responsiveness.
 
-![Thumbnail](https://github.com/hossainemruz/toha/blob/master/images/tn.png)
+![Thumbnail](https://github.com/hugo-toha/toha/blob/master/images/tn.png)
 
 Example Site: [Toha Example Site](https://toha.netlify.app)
 
@@ -39,7 +39,7 @@ git init
 - Add the theme as git sub-module
 
 ```console
-git submodule add https://github.com/hossainemruz/toha.git themes/toha
+git submodule add https://github.com/hugo-toha/toha.git themes/toha
 ```
 
 >Don't use SSH URL of the theme during adding as git sub-module. Also, don't clone the theme in your `themes` directory using `git clone`. They don't work well with Github Action or Netlify.
@@ -105,7 +105,7 @@ params:
     favicon: /assets/images/favicon.png
 
   # GitHub repo URL of your site
-  gitRepo: https://github.com/hossainemruz/toha-example-site
+  gitRepo: https://github.com/hugo-toha/toha-example-site
 
   # specify whether you want to write blog post or not
   enableBlogPost: true
@@ -235,7 +235,7 @@ Here, are the current plan and progress of various components of this theme. The
 
 ## Contributing
 
-You can contribute to this theme in various ways. You can report a [bug](https://github.com/hossainemruz/toha/issues/new?template=bug.md), file an [feature request](https://github.com/hossainemruz/toha/issues/new?template=feature_request.md), send a PR, [share your thoughts](https://github.com/hossainemruz/toha/issues/new?template=question.md) etc.
+You can contribute to this theme in various ways. You can report a [bug](https://github.com/hugo-toha/toha/issues/new?template=bug.md), file an [feature request](https://github.com/hugo-toha/toha/issues/new?template=feature_request.md), send a PR, [share your thoughts](https://github.com/hugo-toha/toha/issues/new?template=question.md) etc.
 
 Pull requests are most welcome and I will be happy to review. Just follow the following principles:
 
@@ -248,10 +248,10 @@ Pull requests are most welcome and I will be happy to review. Just follow the fo
 
 ## Local Development
 
-For local development, you can run your own site or the [example site](https://github.com/hossainemruz/toha-example-site) locally and make changes in the theme submodule.
+For local development, you can run your own site or the [example site](https://github.com/hugo-toha/toha-example-site) locally and make changes in the theme submodule.
 
 ### Fork
-Fork [this repo](https://github.com/hossainemruz/toha) and setup your local submodule with the following from the site's folder by running the following
+Fork [this repo](https://github.com/hugo-toha/toha) and setup your local submodule with the following from the site's folder by running the following
 
 ```sh
 git submodule update --init --recursive --remote
