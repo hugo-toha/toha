@@ -19,7 +19,7 @@
         <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
-            <li id="list-heading"><a href="{{ site.BaseURL | absLangURL }}posts" data-filter="all">Posts</a></li>
+            <li id="list-heading"><a href="{{ "/posts" | relLangURL }}" data-filter="all">{{ i18n "posts" }}</a></li>
             <div class="subtree">
                 {{ partial "navigators/sidebar.html" (dict "menus" site.Menus.sidebar "ctx" .) }}
             </div>
@@ -59,7 +59,7 @@
           <div class="btn-improve-page">
               <a href="{{ site.Params.GitRepo }}/edit/master/content/{{ .File.Path }}">
                 <i class="fas fa-code-branch"></i>
-                Improve This Page
+                {{ i18n "improve_this_page" }}
               </a>
           </div>
         {{ end }}
@@ -85,7 +85,7 @@
   <section class="toc-section" id="toc-section">
     {{ if site.Params.enableTOC }}
     <div class="toc-holder">
-      <h5 class="text-center pl-3">Table of Contents</h5>
+      <h5 class="text-center pl-3">{{ i18n "toc_heading" }}</h5>
       <hr>
       <div class="toc">
         {{ .TableOfContents }}

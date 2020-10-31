@@ -5,6 +5,9 @@ other = "Home"
 [posts]
 other = "Beiträge"
 
+[toc_heading]
+other = "Inhoudsopgave"
+
 [at]
 other = "bei"
 
@@ -16,6 +19,12 @@ other = "Navigation"
 
 [contact_me]
 other = "Kontakt aufnehmen"
+
+[email]
+other = "E-mail"
+
+[phone]
+other = "Telefoon"
 
 [newsletter_text]
 other = "Mit dem Newsletter auf dem neuesten Stand bleiben"
@@ -31,3 +40,12 @@ other = "Absenden"
 
 [hugoAttributionText]
 other = "Powered by"
+
+[prev]
+other = "Vorige"
+
+[next]
+other = "De volgende"
+
+[improve_this_page]
+other = "Verbeter deze pagina"
