@@ -5,7 +5,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="languageSelector">
     {{ range site.Home.AllTranslations }}
-    <a class="dropdown-item nav-link languages-item" href="{{ .Permalink }}">
+    <a class="dropdown-item nav-link languages-item" href="{{ .RelPermalink }}">
         <img class="flag" src="https://www.countryflags.io/{{ partial "helpers/country-code.html" .Language }}/flat/24.png">
         {{ .Language.LanguageName }}
     </a>
