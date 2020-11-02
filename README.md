@@ -1,12 +1,13 @@
 # Toha
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b1b93b02-f278-440b-ae1b-304e9f4c4ab5/deploy-status)](https://app.netlify.com/sites/toha/deploys) ![Repository Size](https://img.shields.io/github/repo-size/hugo-toha/toha) ![Last Commit](https://img.shields.io/github/last-commit/hugo-toha/toha) ![Contributor](https://img.shields.io/github/contributors/hugo-toha/toha) ![License](https://img.shields.io/github/license/hugo-toha/toha)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b1b93b02-f278-440b-ae1b-304e9f4c4ab5/deploy-status)](https://app.netlify.com/sites/toha/deploys) ![Repository Size](https://img.shields.io/github/repo-size/hugo-toha/toha) ![Lines of Codes](https://img.shields.io/tokei/lines/github/hugo-toha/toha) ![Contributor](https://img.shields.io/github/contributors/hugo-toha/toha) ![Latest Release](https://img.shields.io/github/v/release/hugo-toha/toha?include_prereleases) ![Last Commit](https://img.shields.io/github/last-commit/hugo-toha/toha) ![Open Issues](https://img.shields.io/github/issues-raw/hugo-toha/toha) ![Open Pull Requests](https://img.shields.io/github/issues-pr-raw/hugo-toha/toha)  ![License](https://img.shields.io/github/license/hugo-toha/toha) ![Security Headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fhugo-toha.github.io%2F)
 
 A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist design and responsiveness.
 
 ![Thumbnail](https://github.com/hugo-toha/toha/blob/master/images/tn.png)
 
-Example Site: [Toha Example Site](https://toha.netlify.app)
+Example Site: [hugo-toha.github.io](https://hugo-toha.github.io)
+Documentation: [toha-guides.netlify.app](https://toha-guides.netlify.app/posts)
 
 ## Features
 
@@ -20,7 +21,7 @@ Example Site: [Toha Example Site](https://toha.netlify.app)
 - Google Analytics Support
 - Disqus Comment Support
 
-For more details about the features please visit [here](https://toha.netlify.app/posts/features/).
+For more details about the features please visit [here](https://toha-guides.netlify.app/posts/features/).
 
 ## Requirements
 
