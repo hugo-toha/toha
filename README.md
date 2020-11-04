@@ -6,9 +6,8 @@ A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist desi
 
 ![Thumbnail](https://raw.githubusercontent.com/hugo-toha/toha/master/images/screenshot.png)
 
-**Example Site:** [hugo-toha.github.io](https://hugo-toha.github.io)
-**Documentation:** [toha-guides.netlify.app](https://toha-guides.netlify.app/posts)
-
+- **Example Site:** [hugo-toha.github.io](https://hugo-toha.github.io)
+- **Documentation:** [toha-guides.netlify.app](https://toha-guides.netlify.app/posts)
 
 ## Features
 
@@ -24,6 +23,17 @@ A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist desi
 - Disqus Comment Support
 
 For more details about the features please visit [here](https://toha-guides.netlify.app/posts/features/).
+
+## Available Translations
+
+- English
+- বাংলা
+- Français
+- Indonesian
+- Deutsch
+- Spanish
+
+To know more about how to translate your site, please visit [here](https://toha-guides.netlify.app/posts/translation/). Follow, the data and post format from this [example site](https://hugo-toha.github.io).
 
 ## Screenshots
 
@@ -41,11 +51,11 @@ Here, are few screenshot from the [example site](https://hugo-toha.github.io).
 
 ![Reading Page](https://raw.githubusercontent.com/hugo-toha/toha/master/images/single.png)
 
-### Requirements
+## Requirements
 
 - Hugo Version 0.68.0 or higher
 
-### Usage
+## Usage
 
 In order to use this theme, follow the following steps:
 
