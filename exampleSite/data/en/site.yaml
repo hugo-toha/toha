@@ -2,10 +2,10 @@
 copyright: © 2020 Copyright.
 
 # Meta description for your site.  This will help the search engines to find your site.
-description: Portfolio and personal blog of Jane Doe.
+description: Portfolio and personal blog of John Doe.
 
 # specify the list of custom menus that you want to show in the top navbar.
 # they will be separated by a divider from the main menus.
 customMenus:
-- name: Notes
-  url: https://hossainemruz.gitbook.io/
+- name: Docs
+  url: https://toha-guides.netlify.app/posts/

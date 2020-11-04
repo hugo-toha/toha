@@ -1,13 +1,13 @@
 # some information about you
-name: "জেইন ডো"
-nickname: "জেইন"
+name: "জন ডো"
+nickname: "জন"
 # greeting message before your name. it will default to "Hi! I am" if not provided
 greeting: "হ্যালো, আমি হলাম"
-image: "images/avatar.png"
+image: "images/author/john.png"
 # give your some contact information. they will be used in the footer
 contactInfo:
-  email: "janedoe@example.com"
-  phone: "+0123456789"
+  ইমেইল: "johndoe@example.com"
+  ফোন: "+0123456789"
 
 # some summary about what you do
 summary:

@@ -14,52 +14,52 @@ experiences:
 - company:
     name: Example Co.
     url: "https://www.example.com"
-    location: Dhaka Branch
+    location: ঢাকা ব্রাঞ্চ
     # company overview
-    overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+    overview: Example Co. হচ্ছে ক্লাউড নেটিভ ডেভেলপমেন্টের জন্যে একটি স্বীকৃত প্রতিষ্ঠান । এটি Kubernetes এর জন্যে বিভিন্ন সফটওয়্যার বানায়।
   positions:
-  - designation: Senior Software Engineer
+  - designation: সিনিয়র সফটওয়্যার ইঞ্জিনিয়ার
     start: Nov 2019
     # don't provide end date if you are currently working there. It will be replaced by "Present"
     # end: Dec 2020
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Design and develop XYZ tool for ABC task
-    - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
-    - Lead backend team.
+    - ABC কাজের জন্য XYZ টুল ডিজাইন ও ডেভেলপ করা ।
+    - Kubernetes এর ভলিউম, ডাটাবেজ ইত্যাদি ব্যাকআপ নেওয়ার জন্যে বিপর্যয় পুনরুদ্ধার টুল ডিজাইন, ডেভেলপ এবং পরিচালনা করা। 
+    - বাকেন্ড টিমের নেতৃত্ব দেওয়া।
 
-  - designation: Junior Software Engineer
+  - designation: জুনিয়র সফটওয়্যার ইঞ্জিনিয়ার
     start: Nov 2017
     end: Oct 2019
     responsibilities:
-    - Implement and test xyz feature for abc tool.
-    - Support client for abc tool.
-    - Learn k,d,w technology for xyz.
+    - ABC টুল এর জন্য XYZ ফিচার বাস্তবায়ন করা এবং টেস্ট করা।
+    - ABC টুলের ক্লায়েন্ট সাপোর্ট দেওয়া।
+    - XYZ এর জন্য K, D, W টেকনোলজি শিখা।
 
 - company:
     name: PreExample Co.
     url: "https://www.preexample.com"
     location: Nowhere
-    overview: PreExample Co. is a gateway company to enter into Example co. So, nothing special here.
+    overview: PreExample Co. হচ্ছে Example co.  তে যাওয়ার মাধ্যম। সুতারাং, এখানে বিশেষ কিছু নেই।
   positions:
-  - designation: Software Engineer
+  - designation: সফটওয়্যার ইঞ্জিনিয়ার
     start: March 2016
     end: May 2017
     responsibilities:
-    - Write lots of example codes.
-    - Read lots of examples.
-    - See lots of example videos.
+    - প্রচুর পরিমাণে উদাহারন কোড লিখা ।
+    - প্রচুর পরিমাণে উদাহারন পড়া।
+    - প্রচুর পরিমাণে উদাহারন ভিডিও দেখা ।
 
 - company:
     name: Intern Counting Company (ICC).
     url: "https://www.intern.com"
     location: Intern Land
-    overview: Intern counting Company (ICC) is responsible for counting worldwide intern Engineers.
+    overview: Intern counting Company (ICC) বিশ্বব্যাপী ইন্টার্ন ইঞ্জিনিয়ারদের গণনার জন্য দায়ী ।
   positions:
-  - designation: Intern
+  - designation: ইন্টার্ন
     start: Jun 2015
     end: Jan 2016
     responsibilities:
-    - Count lost of interns.
-    - Count more interns.
-    - Count me as an intern.
+    - প্রচুর ইন্টার্ন গণনা করা।
+    - আরও ইন্টার্ন গণনা করা।
+    - নিজেকে  ইন্টার্ন হিসেবে গণনা করা ।

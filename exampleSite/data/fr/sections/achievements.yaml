@@ -12,14 +12,14 @@ section:
 # Your achievements achievements
 achievements:
 - title: Meilleur présentateur
-  image: images/achievements/presenter.jpg
+  image: /images/sections/achievements/presenter.jpg
   summary: Meilleur présentateur de la conférence XYZ 2020.
 - title: Champion
-  image: images/achievements/sport.jpg
+  image: /images/sections/achievements/sport.jpg
   summary: Champion du championnat cycliste interurbain 2020.
 - title: Remise des diplômes
-  image: images/achievements/graduation-cap.jpg
+  image: /images/sections/achievements/graduation-cap.jpg
   summary: J'ai obtenu une licence en sciences (B.Sc.) en informatique et en ingénierie à l'université XYZ.
 - title: Lauréat du prix
-  image: images/achievements/woman-winner.jpg
+  image: /images/sections/achievements/woman-winner.jpg
   summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus architecto minus facere vero?

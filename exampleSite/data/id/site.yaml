@@ -7,5 +7,5 @@ description: Portofolio dan blog pribadi dari Jane Doe.
 # specify the list of custom menus that you want to show in the top navbar.
 # they will be separated by a divider from the main menus.
 customMenus:
-- name: Catatan
-  url: https://hossainemruz.gitbook.io/
+- name: Docs
+  url: https://toha-guides.netlify.app/posts/
