@@ -9,19 +9,21 @@ languages:
   en:
     languageName: English
     weight: 1
-  fr:
-    languageName: Français
-    weight: 2
   bn:
     languageName: বাংলা
+    weight: 2
+  fr:
+    languageName: Français
     weight: 3
-  de:
-    languageName: Deutsch
-    weight: 4
   id: 
     languageName: Indonesian
+    weight: 4
+  de:
+    languageName: Deutsch
     weight: 5
-
+  es:
+    languageName: Spanish
+    weight: 6
 
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
 # DefaultContentLanguage: fr
@@ -45,23 +47,23 @@ disqusShortname: does-not-exist
 # Enable global emoji support
 enableEmoji: true
 
-# Custom parameters
+# Site parameters
 params:
-  # background image of the landing page
-  background: "images/background.jpg"
+  # Background image of the landing page
+  background: /images/site/background.jpg
 
   # Provide logos for your site. The inverted logo will be used in the initial
   # transparent navbar and the main logo will be used in the non-transparent navbar.
-  # It will be default to the theme logos if not provided.
+  # It will default to the theme logos if not provided.
   logo:
-    main: /assets/images/main-logo.png
-    inverted: /assets/images/inverted-logo.png
-    favicon: /assets/images/favicon.png
+    main: /images/site/main-logo.png
+    inverted: /images/site/inverted-logo.png
+    favicon: /images/site/favicon.png
 
   # GitHub repo URL of your site
-  gitRepo: https://github.com/hossainemruz/toha-example-site
+  gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
 
-  # specify whether you want to write blog post or not
+  # specify whether you want to write some blog posts or not
   enableBlogPost: true
 
   # specify whether you want to show Table of Contents in reading page

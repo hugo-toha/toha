@@ -22,7 +22,7 @@ buttons:
 # your projects
 projects:
 - name: Kubernetes
-  logo: images/projects/kubernetes.png
+  logo: /images/sections/projects/kubernetes.png
   role: Contributor
   timeline: "March 2018 - Present"
   repo: https://github.com/kubernetes/kubernetes # If your project is a public repo on GitHub, then provide this link. it will show star count.
@@ -31,7 +31,7 @@ projects:
   tags: ["professional", "kubernetes", "cloud"]
 
 - name: Tensorflow
-  logo: images/projects/tensorflow.png
+  logo: /images/sections/projects/tensorflow.png
   role: Developer
   timeline: "Jun 2018 - Present"
   repo: https://github.com/tensorflow/tensorflow
@@ -47,7 +47,7 @@ projects:
   tags: ["academic","iot"]
 
 - name: Nocode
-  logo: images/projects/no-code.png
+  logo: /images/sections/projects/no-code.png
   role: Nothing
   timeline: "Oct 2019 - Dec 2019"
   repo: https://github.com/kelseyhightower/nocode
@@ -56,7 +56,7 @@ projects:
   tags: ["hobby", "fun"]
 
 - name: Toha
-  logo: images/projects/toha.png
+  logo: /images/sections/projects/toha.png
   role: Owner
   timeline: "Jun 2019 - Present"
   repo: https://github.com/hossainemruz/toha
