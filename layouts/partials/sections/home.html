@@ -28,7 +28,7 @@
 <div class="container-fluid home" id="home">
   <div
     class="background container-fluid"
-    style="background-image: url('{{ strings.TrimSuffix "/" site.BaseURL }}{{ $backgroundImage | relURL }}');"
+    style="background-image: url('{{ $backgroundImage | relURL }}');"
   ></div>
   <div class="container content text-center">
     <img src="{{ $authorImage | relURL }}"
