@@ -37,7 +37,7 @@ var isMobile = false, isTablet = false, isLaptop = false;
             location.hostname == this.hostname
           ) {
             // Figure out element to scroll to
-            var target = $(this.hash);
+            var target = $(decodeURI(this.hash));
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             // Does a scroll target exist?
             if (target.length) {
