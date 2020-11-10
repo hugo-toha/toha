@@ -1,12 +1,12 @@
 # More documentation here: https://github.com/nicksnyder/go-i18n
 [home]
-other = "Home"
+other = "Startseite"
 
 [posts]
 other = "Beiträge"
 
 [toc_heading]
-other = "Inhoudsopgave"
+other = "Inhaltsverzeichnis"
 
 [at]
 other = "bei"
@@ -21,10 +21,10 @@ other = "Navigation"
 other = "Kontakt aufnehmen"
 
 [email]
-other = "E-mail"
+other = "E-Mail"
 
 [phone]
-other = "Telefoon"
+other = "Telefon"
 
 [newsletter_text]
 other = "Mit dem Newsletter auf dem neuesten Stand bleiben"
@@ -39,13 +39,13 @@ other = "Wir werden Ihre E-Mail-Adresse nicht an Dritte weitergeben."
 other = "Absenden"
 
 [hugoAttributionText]
-other = "Powered by"
+other = "Unterstützt von"
 
 [prev]
-other = "Vorige"
+other = "Vorherige"
 
 [next]
-other = "De volgende"
+other = "Nächste"
 
 [improve_this_page]
-other = "Verbeter deze pagina"
+other = "Diese Seite verbessern"
