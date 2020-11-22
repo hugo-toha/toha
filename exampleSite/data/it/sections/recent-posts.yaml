@@ -1,0 +1,11 @@
+# informazioni sulla sezione
+section:
+  name: Post recenti
+  id: recent-posts
+  enable: true
+  weight: 5
+  showOnNavbar: true
+  # Se lo desideri, puoi nascondere i titoli nelle sezioni
+  # hideTitle: true
+
+# non è richiesta alcuna configurazione aggiuntiva

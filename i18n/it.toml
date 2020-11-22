@@ -1,0 +1,51 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Home"
+
+[posts]
+other = "Post"
+
+[toc_heading]
+other = "Contenuti"
+
+[at]
+other = "presso"
+
+[resume]
+other = "Il mio curriculum"
+
+[navigation]
+other = "Navigazione"
+
+[contact_me]
+other = "Contattami:"
+
+[email]
+other = "Email"
+
+[phone]
+other = "Telefono"
+
+[newsletter_text]
+other = "Resta aggiornato con la notifica di email"
+
+[newsletter_input_placeholder]
+other = "Inserisci l'email"
+
+[newsletter_warning]
+other = "Non condivideremo l'email con altri."
+
+[submit]
+other = "Invia"
+
+[hugoAttributionText]
+other = "Creato con"
+
+[prev]
+other = "Precedente"
+
+[next]
+other = "Successivo"
+
+[improve_this_page]
+other = "Migliora questa pagina"
