@@ -1,0 +1,78 @@
+# informazioni sulla sezione
+section:
+  name: Informazioni personali
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/about.html
+
+# la tua qualifica
+designation: Ingegnere del software
+# informazioni sulla tua azienda
+company:
+  name: Example Co.
+  url: "https://www.example.com"
+
+# il tuo cv. il percorso di questo file deve essere formulato in termini relativi rispetto alla tua directory "static"
+resume: "files/resume.pdf"
+
+# una breve sintesi su di te
+summary: 'Sono un appassionato ingegnere del software con x anni di esperienzia lavorativa. Ho sviluppato strumenti OSS per [Kubernetes](https://kubernetes.io/) usando GO. I miei prodotti permettono di distribuire i carichi di lavoro in Kubernetes. A volte lavoro su progetti divertenti come svillupare un tema per Hugo, etc.'
+
+# i tuoi link social
+# inserisci tutti i link che ritieni utili. Usa i caratteri font-awesome per le icone.
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "example@gmail.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://www.github.com/example"
+
+- name: Stackoverflow
+  icon: "fab fa-stack-overflow"
+  url: "#"
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "#"
+
+- name: Twitter
+  icon: "fab fa-twitter"
+  url: "#"
+
+- name: Facebook
+  icon: "fab fa-facebook"
+  url: "#"
+
+# le tue soft skill
+# inserisci le percentuali tra 50 e 100.
+# colori attualmente supportati: blue, yellow, pink, green, sky, orange
+softSkills:
+- name: Leadership
+  percentage: 85
+  color: blue
+- name: Team Work
+  percentage: 90
+  color: yellow
+- name: Communication
+  percentage: 85
+  color: pink
+- name: Hard Working
+  percentage: 85
+  color: green
+- name: Fast Learner
+  percentage: 85
+  color: sky
+- name: Problem Solving
+  percentage: 85
+  color: orange
+# puoi anche specificare i colori usando i codici invece che i nomi pre-definiti
+# - name: Example 1
+#   percentage: 75
+#   color: "#00adb5"
+# - name: Example 2
+#   percentage: 65
+#   color: "#8b8383"
