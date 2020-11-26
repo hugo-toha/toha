@@ -6,6 +6,17 @@
 {{ if site.Params.logo.inverted }}
   {{ $invertedLogo = site.Params.logo.inverted }}
 {{ end }}
+{{ $mainLogo:= resources.Get $mainLogo}}
+{{ if $mainLogo }}
+{{ $mainLogo = $mainLogo.Resize "42x" }}
+{{ $mainLogo = $mainLogo.RelPermalink}}
+
+{{ end }}
+{{ $invertedLogo:= resources.Get $invertedLogo}}
+{{ if $invertedLogo }}
+{{ $invertedLogo = $invertedLogo.Resize "42x" }}
+{{ $invertedLogo = $invertedLogo.RelPermalink}}
+{{ end }}
 
 {{ $sections:= site.Data.sections }}
 {{ if (index site.Data site.Language.Lang).sections }}
@@ -15,7 +26,7 @@
 <nav class="navbar navbar-expand-xl top-navbar initial-navbar" id="top-navbar">
   <div class="container">
     <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
-      <img src="{{ $invertedLogo | relURL }}" id="logo">
+      <img src="{{ $invertedLogo }}" id="logo">
       {{- site.Title -}}
     </a>
     <button
@@ -72,6 +83,6 @@
     </div>
   </div>
   <!-- Store the logo information in a hidden img for the JS -->
-  <img src="{{ $mainLogo | relURL }}" class="d-none" id="main-logo">
-  <img src="{{ $invertedLogo | relURL }}" class="d-none" id="inverted-logo">
+  <img src="{{ $mainLogo }}" class="d-none" id="main-logo">
+  <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo">
 </nav>

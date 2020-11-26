@@ -14,4 +14,9 @@
         {{ end }}
     {{ end }}
 {{ end }}
-{{ return $authorImage }}
+{{ $authorImage:= resources.Get $authorImage}}
+{{ if $authorImage }}
+{{ $authorImage := $authorImage.Fit "120x120" }}
+{{ return $authorImage.RelPermalink }}
+{{ end }}
+

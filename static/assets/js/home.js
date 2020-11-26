@@ -329,6 +329,19 @@ var projectCards;
           this.parentElement.classList.toggle("col-lg-12");
           this.parentElement.classList.toggle("col-md-12");
           this.parentElement.classList.toggle("col-sm-12");
+          if (this.children["SmallImage"].hasAttribute("active")) {
+            let mainLogo = this.children["LargeImage"].getAttribute("Style");
+            this.children["LargeImage"].setAttribute("active",true);
+            this.children["SmallImage"].removeAttribute("active");
+
+            this.setAttribute("Style", mainLogo);
+          } else {
+            let mainLogo = this.children["SmallImage"].getAttribute("Style");
+            this.children["SmallImage"].setAttribute("active",true);
+            this.children["LargeImage"].removeAttribute("active");
+            this.setAttribute("Style", mainLogo);
+          }
+         
           if (this.children["caption"] != undefined) {
             this.children["caption"].classList.toggle("hidden");
           }
