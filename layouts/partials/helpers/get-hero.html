@@ -1,5 +1,15 @@
-{{ $heroImage:= "/assets/images/default-hero.jpg"}}
-{{ if  .Params.hero }}
-    {{ $heroImage = .Params.hero }}
+{{ $heroImage := .Page.Resources.GetMatch "hero.{jpg,png}"}}
+{{ .Scratch.Set "heroScratch" $heroImage }}
+
+{{ if not $heroImage }}
+
+{{ $heroImage:= resources.Get "default-hero.jpg"}}
+{{ .Scratch.Set "heroScratch" $heroImage }}
+
 {{ end }}
-{{ return $heroImage }}
+
+{{ $heroImage := .Scratch.Get "heroScratch" }}
+{{ if $heroImage }}
+{{ $heroImage := $heroImage.Resize "148x" }}
+{{ return $heroImage.RelPermalink }}
+{{ end }}

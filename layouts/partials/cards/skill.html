@@ -2,8 +2,14 @@
   <a class="skill-card-link" href="{{ if .url }}{{ .url }}{{ else }}#{{ end }}">
     <div class="card">
       <div class="card-head d-flex">
-        {{ if .icon }}
-        <img class="card-img-xs" src="{{ .icon | relURL }}" alt="{{ .name }}" />
+        {{ if .logo }}
+
+        {{ $logoImage:= resources.Get .logo}}
+        {{ if $logoImage }}
+        {{ $logoImage := $logoImage.Fit "24x24" }}
+
+        <img class="card-img-xs" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+        {{ end }}
         {{ end }}
         <h5 class="card-title">{{ .name }}</h5>
       </div>
