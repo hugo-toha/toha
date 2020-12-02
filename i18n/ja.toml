@@ -1,0 +1,48 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "ホーム"
+
+[posts]
+other = "記事"
+
+[toc_heading]
+other = "目次"
+
+[resume]
+other = "職務経歴書"
+
+[navigation]
+other = "メニュー"
+
+[contact_me]
+other = "連絡先"
+
+[email]
+other = "メール"
+
+[phone]
+other = "電話番号"
+
+[newsletter_text]
+other = "メールで最新情報を受け取る"
+
+[newsletter_input_placeholder]
+other = "ここにメールアドレスを入力"
+
+[newsletter_warning]
+other = "ご入力いただいたメールアドレスが他人に開示されることは決してございません。"
+
+[submit]
+other = "登録"
+
+[hugoAttributionText]
+other = "Powered by"
+
+[prev]
+other = "前"
+
+[next]
+other = "次"
+
+[improve_this_page]
+other = "編集リクエストを送る"
