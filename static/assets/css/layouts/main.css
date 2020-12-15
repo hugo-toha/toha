@@ -6,6 +6,14 @@ Secondary:   #C0CCDA
 Dirty Snow:  #E5E9F2
 Snow:        #F9FAFC
 
+Emerald:     #3BC265
+Rose Red:    #C12F5A
+Dark Liver:  #46444D
+Sonic Silver:#6F6F6F
+Sonic Silver2: #5f5e66
+Fuzzy Wuzzy: #BC645F
+Fuzzy Wuzzy Light: #d68b87
+
 Magenta: #7551E9
 Orange:  #FF7D51
 Pink:    #ED63D2
@@ -23,23 +31,23 @@ h2,
 h3,
 h4,
 h5 {
-  color: #1c2d41;
+  color: #E5E9F2;
 }
 
 strong {
-  color: #1c2d41 !important;
+  color: #E5E9F2 !important;
 }
 
 p {
-  color: #3c4858;
+  color: #F9FAFC;
 }
 
 a {
-  color: #248aaa;
+  color: #BC645F;
 }
 
 a:hover {
-  color: #207089;
+  color: #d68b87;
 }
 
 .nav-button {
@@ -50,26 +58,26 @@ a:hover {
 }
 
 .btn-dark {
-  background-color: #3c4858;
-  border-color: #3c4858;
+  background-color: #BC645F;
+  border-color: #BC645F;
   color: #e5e9f2;
   transition: all 0.3s ease-out;
 }
 
 .btn-dark:hover,
 .btn-dark:focus {
-  background-color: #248aaa;
-  border-color: #248aaa;
+  background-color: #d68b87;
+  border-color: #d68b87;
   transition: all 0.3s ease-out;
 }
 
 .btn-outline-info {
-  color: #2098d1 !important;
-  border-color: #2098d1 !important;
+  color: #46444D !important;
+  border-color: #46444D !important;
 }
 
 .btn-outline-info:hover {
-  background-color: #2098d1 !important;
+  background-color: #C12F5A !important;
   color: #e5e9f2 !important;
 }
 
@@ -84,11 +92,11 @@ a:hover {
 }
 
 .bg-white {
-  background-color: #f9fafc !important;
+  background-color: #46444D !important;
 }
 
 .bg-dimmed {
-  background-color: #e5e9f2;
+  background-color: #5f5e66;
 }
 
 .anchor {
@@ -164,7 +172,7 @@ img.right {
 
 .footer {
   color: #8392a5 !important;
-  background-color: #1c2d41;
+  background-color: #46444D;
   position: relative;
   z-index: 9999;
 }

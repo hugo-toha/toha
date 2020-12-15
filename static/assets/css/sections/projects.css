@@ -1,5 +1,28 @@
+/* ========= Colors ============
+Heading:     #1C2D41
+Paragraph:   #3C4858
+Iconography: #8392A5
+Secondary:   #C0CCDA
+Dirty Snow:  #E5E9F2
+Snow:        #F9FAFC
+
+Emerald:     #3BC265
+Rose Red:    #C12F5A
+Dark Liver:  #46444D
+Sonic Silver:#6F6F6F
+Sonic Silver2: #5f5e66
+Fuzzy Wuzzy: #BC645F
+Fuzzy Wuzzy Light: #d68b87
+
+Magenta: #7551E9
+Orange:  #FF7D51
+Pink:    #ED63D2
+Green:   #2DCA73
+Yellow:  #FFC212
+*/
+
 .projects-section .card .card-header {
-  background-color: #f9fafc;
+  background-color: #BC645F;
   padding: 0.7rem;
   padding-bottom: 0rem;
   text-decoration: none;
@@ -21,7 +44,7 @@
 }
 
 .projects-section .card .card-header .sub-title {
-  color: #8392a5;
+  color: #46444D;
   margin-top: 0.4rem;
 }
 

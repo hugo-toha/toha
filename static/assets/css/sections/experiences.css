@@ -1,3 +1,26 @@
+/* ========= Colors ============
+Heading:     #1C2D41
+Paragraph:   #3C4858
+Iconography: #8392A5
+Secondary:   #C0CCDA
+Dirty Snow:  #E5E9F2
+Snow:        #F9FAFC
+
+Emerald:     #3BC265
+Rose Red:    #C12F5A
+Dark Liver:  #46444D
+Sonic Silver:#6F6F6F
+Sonic Silver2: #5f5e66
+Fuzzy Wuzzy: #BC645F
+Fuzzy Wuzzy Light: #d68b87
+
+Magenta: #7551E9
+Orange:  #FF7D51
+Pink:    #ED63D2
+Green:   #2DCA73
+Yellow:  #FFC212
+*/
+
 .experiences-section {
   padding-bottom: 1rem;
 }
@@ -12,7 +35,7 @@
 
 .experiences-section ul > li {
   margin-left: 0;
-  color: #3c4858;
+  color: #E5E9F2;
 }
 
 .experiences-section .designation {
@@ -22,7 +45,7 @@
 .circle {
   padding: 13px 20px;
   border-radius: 50%;
-  background-color: #248aaa;
+  background-color: #C12F5A;
   color: #f9fafc;
   max-height: 50px;
   z-index: 2;
@@ -35,7 +58,7 @@
 .timeline .vertical-line::after {
   content: "";
   position: absolute;
-  border-left: 3px solid #248aaa;
+  border-left: 3px solid #C12F5A;
   z-index: 1;
   height: 100%;
   left: 50%;
@@ -51,7 +74,7 @@
 }
 
 .timeline .horizontal-line hr {
-  border-top: 3px solid #248aaa;
+  border-top: 3px solid #C12F5A;
   margin: 0;
   top: 17px;
   position: relative;
@@ -63,7 +86,7 @@
 }
 
 .timeline .horizontal-line .corner {
-  border: 3px solid #248aaa;
+  border: 3px solid #C12F5A;
   width: 100%;
   position: relative;
   border-radius: 15px;
