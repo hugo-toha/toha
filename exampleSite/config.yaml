@@ -15,7 +15,7 @@ languages:
   fr:
     languageName: Français
     weight: 3
-  id: 
+  id:
     languageName: Indonesian
     weight: 4
   de:
@@ -24,7 +24,7 @@ languages:
   es:
     languageName: Spanish
     weight: 6
-  es:
+  it:
     languageName: Italian
     weight: 7
 
