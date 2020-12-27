@@ -9,5 +9,5 @@ description: Portfolio and personal blog of John Doe.
 customMenus:
   - name: 文档
     url: https://toha-guides.netlify.app/posts/
-  - name: 关于 #这里可以放个人说明页
-    url: about
+  # - name: 关于 #这里可以放个人说明页
+  #   url: about
