@@ -27,6 +27,9 @@ languages:
   it:
     languageName: Italian
     weight: 7
+  cn:
+    languageName: 中文
+    weight: 8
 
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
 # DefaultContentLanguage: fr
