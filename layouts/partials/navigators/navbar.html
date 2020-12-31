@@ -11,19 +11,19 @@
 {{ end }}
 
 {{/* resize the logos. don't resize svg because it is not supported */}}
-{{ $mainLogo:= resources.Get $mainLogo}}
+{{ $mainLogo := resources.Get $mainLogo}}
 {{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
   {{ $mainLogo = $mainLogo.Resize "42x" }}
 {{ end }}
 {{ $mainLogo = $mainLogo.RelPermalink}}
 
-{{ $invertedLogo:= resources.Get $invertedLogo}}
+{{ $invertedLogo := resources.Get $invertedLogo}}
 {{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg")}}
   {{ $invertedLogo = $invertedLogo.Resize "42x" }}
 {{ end }}
 {{ $invertedLogo = $invertedLogo.RelPermalink}}
 
-{{ $sections:= site.Data.sections }}
+{{ $sections := site.Data.sections }}
 {{ if (index site.Data site.Language.Lang).sections }}
   {{ $sections = (index site.Data site.Language.Lang).sections }}
 {{ end }}

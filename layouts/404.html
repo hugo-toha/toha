@@ -13,7 +13,7 @@
 {{/* resize the image. don't resize svg because it is not supported */}}
 {{ $notFoundImage := resources.Get $notFoundImage}}
 {{ if and $notFoundImage (ne $notFoundImage.MediaType.SubType "svg") }}
-  {{ $notFoundImage = $notFoundImage.Resize "42x" }}
+  {{ $notFoundImage = $notFoundImage.Resize "1500x" }}
 {{ end }}
 {{ $notFoundImage = $notFoundImage.RelPermalink}}
 

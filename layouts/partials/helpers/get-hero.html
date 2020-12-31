@@ -4,7 +4,7 @@
 
 {{/* if hero image is not provided, then use the default hero image */}}
 {{ if not $heroImage }}
-  {{ $heroImage:= resources.Get "images/default-hero.jpg"}}
+  {{ $heroImage := resources.Get "images/default-hero.jpg"}}
   {{ .Scratch.Set "heroScratch" $heroImage }}
 {{ end }}
 
