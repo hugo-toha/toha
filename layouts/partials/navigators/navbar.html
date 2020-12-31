@@ -1,22 +1,27 @@
-{{ $mainLogo:="/assets/images/main-logo.png" }}
-{{ $invertedLogo:="/assets/images/inverted-logo.png" }}
+{{/*  default logos  */}}
+{{ $mainLogo := "/images/site/main-logo.png" }}
+{{ $invertedLogo := "/images/inverted-logo.png" }}
+
+{{/*  if custom logo is used, them  */}}
 {{ if site.Params.logo.main }}
   {{ $mainLogo = site.Params.logo.main }}
 {{ end }}
 {{ if site.Params.logo.inverted }}
   {{ $invertedLogo = site.Params.logo.inverted }}
 {{ end }}
+
+{{/* resize the logos. don't resize svg because it is not supported */}}
 {{ $mainLogo:= resources.Get $mainLogo}}
-{{ if $mainLogo }}
-{{ $mainLogo = $mainLogo.Resize "42x" }}
+{{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
+  {{ $mainLogo = $mainLogo.Resize "42x" }}
+{{ end }}
 {{ $mainLogo = $mainLogo.RelPermalink}}
 
-{{ end }}
 {{ $invertedLogo:= resources.Get $invertedLogo}}
-{{ if $invertedLogo }}
-{{ $invertedLogo = $invertedLogo.Resize "42x" }}
-{{ $invertedLogo = $invertedLogo.RelPermalink}}
+{{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg")}}
+  {{ $invertedLogo = $invertedLogo.Resize "42x" }}
 {{ end }}
+{{ $invertedLogo = $invertedLogo.RelPermalink}}
 
 {{ $sections:= site.Data.sections }}
 {{ if (index site.Data site.Language.Lang).sections }}

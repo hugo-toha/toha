@@ -2,7 +2,7 @@
 {{ if (index site.Data site.Language.Lang).author }}
   {{ $author = (index site.Data site.Language.Lang).author }}
 {{ end }}
-{{ $authorImage:= "/assets/images/default-avatar.png" }}
+{{ $authorImage:= "/images/default-avatar.png" }}
 {{ if $author.image }}
   {{ $authorImage = $author.image }}
 {{ end }}
