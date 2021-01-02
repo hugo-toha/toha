@@ -36,11 +36,11 @@
                             </div>
                             <h6>{{ .name }}</h6>
                             {{ if .grade }}
-                                <h6><span>{{ .grade.scale }}: </span><span>{{ .grade.achieved }}</span> out of <span>{{ .grade.outOf }}</span></h6>
+                                <h6><span class="text-muted">{{ .grade.scale }}: </span><span>{{ .grade.achieved }}</span> {{ i18n "out_of"}} <span>{{ .grade.outOf }}</span></h6>
                             {{ end }}
                             {{ if .publications }}
                                 <div class="publications">
-                                    <h6>Publications</h6>
+                                    <h6 class="text-muted">{{ i18n "publications"}}</h6>
                                     <ul>
                                         {{ range .publications }}
                                             <li><a href="{{ .url }} ">{{ .title }}</a></li>
@@ -50,13 +50,13 @@
                             {{ end }}
                             {{ if .takenCourses }}
                             <div class="taken-courses">
-                                <h6>Taken Courses</h6>
+                                <h6 class="text-muted">{{ i18n "taken_courses"}}</h6>
                                 {{ if .takenCourses.showGrades }}    
                                 <table>
                                     <thead>
-                                        <th>Course Name</th>
-                                        <th>Total Credit</th>
-                                        <th>Obtained Credit</th>
+                                        <th>{{ i18n "course_name"}}</th>
+                                        <th>{{ i18n "total_credit"}}</th>
+                                        <th>{{ i18n "obtained_credit"}}</th>
                                     </thead>
                                     <tbody>
                                         {{ range $index,$course := .takenCourses.courses }}
@@ -75,13 +75,15 @@
                                         {{ end }}
                                     </ul>
                                 {{ end }}
-                                <button type="button" class="btn btn-link show-more-btn pt-0 {{ if .takenCourses.showGrades }}ml-1{{ else }}ml-2{{ end }}"
-                                    onclick="showMoreCourses(this);">Show More</button>
+                                {{ if gt (len .takenCourses.courses ) 2 }}
+                                    <button type="button" class="btn btn-link show-more-btn pt-0 {{ if .takenCourses.showGrades }}ml-1{{ else }}ml-2{{ end }}"
+                                    onclick="showMoreCourses(this);">{{ i18n "see_more"}}</button>
+                                {{ end }}
                             </div>
                             {{ end }}
                             {{ if .extracurricularActivities }}
                             <div class="extracurricular-activities">
-                                <h6>Extracurricular Activities</h6>
+                                <h6 class="text-muted">{{ i18n "extracurricular_activities"}}</h6>
                                 <ul>
                                 {{ range .extracurricularActivities }}
                                     <li>{{ . }}</li>
