@@ -49,3 +49,27 @@ other = "Next"
 
 [improve_this_page]
 other = "Improve this page"
+
+[out_of]
+other = "out of"
+
+[publications]
+other = "Publications"
+
+[taken_courses]
+other = "Taken Courses"
+
+[course_name]
+other = "Course Name"
+
+[total_credit]
+other = "Total Credit"
+
+[obtained_credit]
+other = "Obtained Credit"
+
+[extracurricular_activities]
+other = "Extracurricular Activities"
+
+[see_more]
+other = "See More"

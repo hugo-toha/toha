@@ -138,3 +138,27 @@ function toggleTOC() {
   }
 }
 
+// Show more rows in the taken courses table
+function showMoreCourses(elem) {
+
+  // find the courses
+  let courses = elem.parentNode.getElementsByClassName("course");
+  if (courses == null) {
+    return
+  }
+
+  // toggle hidden-course class from the third elements
+  for (var i = 0; i < courses.length; i++) {
+    if (i > 1 && courses[i].classList !== null) {
+      courses[i].classList.toggle("hidden-course");
+    }
+  }
+
+  // toggle the button text
+  let btnText = elem.innerText;
+  if (btnText == "Show More") {
+    elem.innerText = "Show Less";
+  } else {
+    elem.innerText = "Show More";
+  }
+}
