@@ -4,7 +4,7 @@
   "description": "A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist design and responsiveness.",
   "main": "index.js",
   "scripts": {
-    "autoprefixer": "postcss static/assets/css/*/*.css --use autoprefixer -r --no-map"
+    "autoprefixer": "postcss static/css/*/*.css --use autoprefixer -r --no-map"
   },
   "repository": {
     "type": "git",
