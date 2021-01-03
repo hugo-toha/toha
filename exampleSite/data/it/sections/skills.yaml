@@ -1,0 +1,49 @@
+# informazioni sulla sezione
+section:
+  name: Skills
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: true
+  # Se lo desideri, puoi nascondere i titoli nelle sezioni
+  # hideTitle: true
+
+# Le tue competenze.
+# Fornisci una sintesi delle tue competenze per la sezione di sintesi.
+skills:
+- name: Kubernetes
+  logo: "/images/sections/skills/kubernetes.png"
+  summary: "Capacità di distribuzione e gestione di applicazioni su Kubernetes. Esperienza nello sviluppo di controller CRD per Kubernetes."
+  url: "https://kubernetes.io/"
+
+- name: Sviluppo Go
+  logo: "/images/sections/skills/go.png"
+  summary: "Utilizzato come linguaggio principale per lo sviluppo professionale. Capacità di scrivere programmi scalabili, testabili e manutenibili."
+  url: "https://golang.org/"
+
+- name: Cloud Computing
+  logo: "/images/sections/skills/cloud.png"
+  summary: "Ha lavorato con la maggior parte dei principali sistemi cloud: GCP, AWS, Azure etc."
+
+- name: Docker
+  logo: "/images/sections/skills/docker.svg"
+  summary: "Scittura di programmi come container dockerized. Esperienza con processi multi-stage e multi-arch."
+  url: "https://www.docker.com/"
+
+- name: Prometheus
+  logo: "/images/sections/skills/prometheus.png"
+  summary: "Capacità di impostare e configurare metriche Prometheus. Esperienza con PromQL, AlertManager."
+  url: "https://prometheus.io/"
+
+- name: Linux
+  logo: "/images/sections/skills/linux.png"
+  summary: "Utilizzato come principale sistema operativo. Capacità di scrivere script bash/shell."
+
+- name: Git
+  logo: "/images/sections/skills/git.png"
+  summary: "Esperienza con lo sviluppo git, ed in particolare usando Github. Esperienza anche con GitLab."
+  url: "https://git-scm.com/"
+
+- name: C++
+  logo: "/images/sections/skills/c++.png"
+  summary: "Conoscenza della programmazione di base C/C++, utilizzata per vari progetti di programmazione e problem solving."

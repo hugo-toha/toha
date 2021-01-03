@@ -1,0 +1,75 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Home"
+
+[posts]
+other = "Post"
+
+[toc_heading]
+other = "Contenuti"
+
+[at]
+other = "presso"
+
+[resume]
+other = "Il mio curriculum"
+
+[navigation]
+other = "Navigazione"
+
+[contact_me]
+other = "Contattami:"
+
+[email]
+other = "Email"
+
+[phone]
+other = "Telefono"
+
+[newsletter_text]
+other = "Resta aggiornato con la notifica di email"
+
+[newsletter_input_placeholder]
+other = "Inserisci l'email"
+
+[newsletter_warning]
+other = "Non condivideremo l'email con altri."
+
+[submit]
+other = "Invia"
+
+[hugoAttributionText]
+other = "Creato con"
+
+[prev]
+other = "Precedente"
+
+[next]
+other = "Successivo"
+
+[improve_this_page]
+other = "Migliora questa pagina"
+
+[out_of]
+other = "su"
+
+[publications]
+other = "Pubblicazioni"
+
+[taken_courses]
+other = "Corsi presi"
+
+[course_name]
+other = "Nome del corso"
+
+[total_credit]
+other = "Credito totale"
+
+[obtained_credit]
+other = "Credito ottenuto"
+
+[extracurricular_activities]
+other = "Attività extracurriculari"
+
+[see_more]
+other = "Vedi altro"

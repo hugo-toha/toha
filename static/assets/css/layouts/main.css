@@ -91,6 +91,14 @@ a:hover {
   color: #e5e9f2 !important;
 }
 
+.btn-link{
+  color: #248aaa;
+}
+
+.btn-link:hover{
+  color: #207089;
+}
+
 .bg-white {
   background-color: #46444D !important;
 }
