@@ -49,3 +49,27 @@ other = "下一篇"
 
 [improve_this_page]
 other = "改善此页面"
+
+[out_of]
+other = "/"
+
+[publications]
+other = "刊物"
+
+[taken_courses]
+other = "选修课程"
+
+[course_name]
+other = "课程名"
+
+[total_credit]
+other = "满分"
+
+[obtained_credit]
+other = "获得分数"
+
+[extracurricular_activities]
+other = "课外活动"
+
+[see_more]
+other = "查看更多"

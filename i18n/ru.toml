@@ -49,3 +49,27 @@ other = "Следующий"
 
 [improve_this_page]
 other = "Улучшить эту страницу"
+
+[out_of]
+other = "из"
+
+[publications]
+other = "Публикации"
+
+[taken_courses]
+other = "Пройденные курсы"
+
+[course_name]
+other = "Название курса"
+
+[total_credit]
+other = "Общий кредит"
+
+[obtained_credit]
+other = "Полученный кредит"
+
+[extracurricular_activities]
+other = "Внеклассные занятия"
+
+[see_more]
+other = "Узнать больше"

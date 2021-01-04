@@ -36,7 +36,7 @@ other = "ご入力いただいたメールアドレスが他人に開示され�
 other = "登録"
 
 [hugoAttributionText]
-other = "Powered by"
+other = "搭載"
 
 [prev]
 other = "前"
@@ -46,3 +46,27 @@ other = "次"
 
 [improve_this_page]
 other = "編集リクエストを送る"
+
+[out_of]
+other = "のうち"
+
+[publications]
+other = "出版物"
+
+[taken_courses]
+other = "受講したコース"
+
+[course_name]
+other = "コース名"
+
+[total_credit]
+other = "合計クレジット"
+
+[obtained_credit]
+other = "取得したクレジット"
+
+[extracurricular_activities]
+other = "課外活動"
+
+[see_more]
+other = "続きを見る"
