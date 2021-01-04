@@ -49,3 +49,27 @@ other = "Successivo"
 
 [improve_this_page]
 other = "Migliora questa pagina"
+
+[out_of]
+other = "su"
+
+[publications]
+other = "Pubblicazioni"
+
+[taken_courses]
+other = "Corsi presi"
+
+[course_name]
+other = "Nome del corso"
+
+[total_credit]
+other = "Credito totale"
+
+[obtained_credit]
+other = "Credito ottenuto"
+
+[extracurricular_activities]
+other = "Attività extracurriculari"
+
+[see_more]
+other = "Vedi altro"

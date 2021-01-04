@@ -1,0 +1,110 @@
+{{ $sectionID := replace (lower .section.name) " " "-"  }}
+{{ if .section.id }}
+{{ $sectionID = .section.id }}
+{{ end }}
+
+<div class="container-fluid anchor pb-5 education-section education-alt" id="{{ $sectionID }}">
+    {{ if not (.section.hideTitle) }}
+    <h1 class="text-center">{{ .section.name }}</h1>
+    {{ end }}
+
+    <div class="container">
+        <table class="education-info-table">
+            <tbody>
+                {{ range .degrees}}
+                <tr>
+                    <td class="icon">
+                        <div class="hline"></div>
+                        <div class="icon-holder">
+                            <i class="fas {{ .icon }}"></i>
+                        </div>
+                    </td>
+                    <td class="line">
+                        <div></div>
+                    </td>
+                    <td class="details">
+                        <div class="degree-info card">
+                            <div class="row">
+                                <div class="col-lg-10 col-md-8">
+                                    {{ if .institution.url }}
+                                        <h5><a href="{{ .institution.url }}">{{ .institution.name }}</a></h5>
+                                    {{ else }}
+                                        <h5>{{ .institution.name }}</h5>
+                                    {{ end }}
+                                </div>
+                                <div class="timeframe col-lg-2 col-md-4">{{ .timeframe }}</div>
+                            </div>
+                            <h6>{{ .name }}</h6>
+                            {{ if .grade }}
+                                <h6><span>{{ .grade.scale }}: </span><span>{{ .grade.achieved }}</span> {{ i18n "out_of" }} <span>{{ .grade.outOf }}</span></h6>
+                            {{ end }}
+                            {{ if .publications }}
+                                <div class="publications">
+                                    <h6 class="text-muted">{{i18n "publications"}}</h6>
+                                    <ul>
+                                        {{ range .publications }}
+                                            <li><a href="{{ .url }} ">{{ .title }}</a></li>
+                                        {{ end }}
+                                    </ul>
+                                </div>
+                            {{ end }}
+                            {{ if .takenCourses }}
+                            <div class="taken-courses">
+                                <h6 class="text-muted">{{ i18n "taken_courses" }}</h6>
+                                {{ if .takenCourses.showGrades }}    
+                                <table>
+                                    <thead>
+                                        <th>{{ i18n "course_name" }}</th>
+                                        <th>{{ i18n "total_credit" }}</th>
+                                        <th>{{ i18n "obtained_credit" }}</th>
+                                    </thead>
+                                    <tbody>
+                                        {{ range $index,$course := .takenCourses.courses }}
+                                        <tr class="course {{ if gt $index 1 }}hidden-course{{ end}}">
+                                            <td>{{ $course.name }}</td>
+                                            <td>{{ $course.outOf }}</td>
+                                            <td>{{ $course.achieved }}</td>
+                                        </tr>
+                                        {{ end }}
+                                    </tbody>
+                                </table>
+                                {{ else }}
+                                    <ul>
+                                        {{ range $index,$course := .takenCourses.courses }}
+                                        <li class="course {{ if gt $index 1 }}hidden-course{{ end}}">{{ $course.name }}</li>
+                                        {{ end }}
+                                    </ul>
+                                {{ end }}
+                                {{ if gt (len .takenCourses.courses) 2 }}
+                                    <button type="button" class="btn btn-link show-more-btn pt-0 {{ if .takenCourses.showGrades }}ml-1{{ else }}ml-2{{ end }}"
+                                    onclick="showMoreCourses(this);">{{ i18n "see_more"}}</button>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            {{ if .extracurricularActivities }}
+                            <div class="extracurricular-activities">
+                                <h6 class="text-muted">{{ i18n "extracurricular_activities" }}</h6>
+                                <ul>
+                                {{ range .extracurricularActivities }}
+                                    <li>{{ . }}</li>
+                                {{ end }}
+                                </ul>
+                            </div>
+                            {{ end }}
+                        </div>
+                    </td>
+                    <td class="line">
+                        <div></div>
+                    </td>
+                    <td class="icon">
+                        <div class="hline"></div>
+                        <div class="icon-holder">
+                            <i class="fas {{ .icon }}"></i>
+                        </div>
+                    </td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </div>
+</div>

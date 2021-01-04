@@ -1,19 +1,34 @@
+{{/* default favicon */}}
+{{ $favicon := "/images/favicon.png" }}
+
+{{/* if favicon is provided in the config, then use that */}}
+{{ if site.Params.logo.favicon }}
+  {{ $favicon = site.Params.logo.favicon }}
+{{ end }}
+
+{{/* resize the favicon. don't resize svg because it is not supported */}}
+{{ $favicon := resources.Get $favicon }}
+{{ if and $favicon (ne $favicon.MediaType.SubType "svg") }}
+  {{ $favicon = $favicon.Resize "42x" }}
+{{ end }}
+{{ $favicon = $favicon.RelPermalink}}
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
 <!-- ============ import common css ========== -->
-<link rel="stylesheet" href="{{ "/assets/css/bootstrap.min.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/assets/css/layouts/main.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/assets/css/style.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/assets/css/navigators/navbar.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "/css/layouts/main.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "/css/style.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "/css/navigators/navbar.css" | relURL }}"/>
 
 <!--=================== cdn ==============================-->
 <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
 
 <!--================= fab-icon =========================-->
-<link rel="icon" type="image/png" href="{{ site.Params.logo.favicon | default "/assets/images/favicon.png" | relURL }}" />
+<link rel="icon" type="image/png" href="{{ $favicon }}" />
 
 <!--================= custom style overrides =========================-->
-<link rel="stylesheet" href="{{ "/assets/css/style.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "/css/style.css" | relURL }}"/>

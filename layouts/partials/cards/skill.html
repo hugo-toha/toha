@@ -1,9 +1,16 @@
 <div class="col-xs-12 col-sm-6 col-lg-4 pt-2">
-  <a class="skill-card-link" href="{{ if .url }}{{ .url }}{{ else }}#{{ end }}">
+  <a class="skill-card-link" href="{{ if .url }}{{ .url }}{{ else }}javascript:void(0){{ end }}">
     <div class="card">
       <div class="card-head d-flex">
-        {{ if .icon }}
-        <img class="card-img-xs" src="{{ .icon | relURL }}" alt="{{ .name }}" />
+        {{ if .logo }}
+          {{ $logoImage := resources.Get .logo }}
+
+          {{/*  svg don't support "Fit" operation   */}}
+          {{ if ne $logoImage.MediaType.SubType "svg" }}
+            {{ $logoImage := $logoImage.Fit "24x24" }}
+          {{ end }}
+
+          <img class="card-img-xs" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
         {{ end }}
         <h5 class="card-title">{{ .name }}</h5>
       </div>

@@ -49,3 +49,27 @@ other = "Lanjut"
 
 [improve_this_page]
 other = "Perbaiki halaman ini"
+
+[out_of]
+other = "dari"
+
+[publications]
+other = "Publikasi"
+
+[taken_courses]
+other = "Kursus yang Diambil"
+
+[course_name]
+other = "Nama kursus"
+
+[total_credit]
+other = "Total Kredit"
+
+[obtained_credit]
+other = "Memperoleh Kredit"
+
+[extracurricular_activities]
+other = "Kegiatan ekstrakulikuler"
+
+[see_more]
+other = "Lihat Selengkapnya"
