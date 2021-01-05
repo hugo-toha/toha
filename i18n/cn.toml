@@ -51,7 +51,7 @@ other = "下一篇"
 other = "改善此页面"
 
 [out_of]
-other = "之"
+other = "/"
 
 [publications]
 other = "刊物"
@@ -63,10 +63,10 @@ other = "选修课程"
 other = "课程名"
 
 [total_credit]
-other = "总信用"
+other = "满分"
 
 [obtained_credit]
-other = "获得信贷"
+other = "获得分数"
 
 [extracurricular_activities]
 other = "课外活动"
