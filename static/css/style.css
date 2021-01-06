@@ -44,3 +44,14 @@
 /* iPhone 5 or before */
 @media only screen and (max-width: 320px) {
 }
+
+/* Back to top */
+.backtop {
+    color: #b3b1b1;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    width: 32px;
+    height: 32px;
+    z-index: 999998;
+}
