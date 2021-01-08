@@ -1,0 +1,75 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "होम"
+
+[posts]
+other = "पोस्ट"
+
+[toc_heading]
+other = "विषयसूची"
+
+[at]
+other = "अन्य"
+
+[resume]
+other = "बायोडाटा"
+
+[navigation]
+other = "पथ प्रदर्शन"
+
+[contact_me]
+other = "मुझसे संपर्क करो:"
+
+[email]
+other = "ईमेल"
+
+[phone]
+other = "फ़ोन"
+
+[newsletter_text]
+other = "ईमेल अधिसूचना से अवगत रहें"
+ 
+[newsletter_input_placeholder]
+other = "ईमेल दर्ज करें"
+
+[newsletter_warning]
+other = "हम आपके ईमेल को कभी भी किसी और के साथ साझा नहीं करेंगे"
+
+[submit]
+other = "जमा करें"
+
+[hugoAttributionText]
+other = "द्वारा संचालित"
+
+[prev]
+other = "पिछला"
+
+[next]
+other = "आगे"
+
+[improve_this_page]
+other = "इस पृष्ठ को सुधारें"
+
+[out_of]
+other = "में से बाहर"
+
+[publications]
+other = "प्रकाशन"
+
+[taken_courses]
+other = "पाठ्यक्रम लिया"
+
+[course_name]
+other = "कोर्स का नाम"
+
+[total_credit]
+other = "कुल क्रेडिट"
+
+[obtained_credit]
+other = "श्रेय प्राप्त किया"
+
+[extracurricular_activities]
+other = "अतिरिक्त पाठयक्रम गतिविधियों"
+
+[see_more]
+other = "और देखें"
