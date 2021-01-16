@@ -1,6 +1,6 @@
 {{ define "header" }}
-    <link rel="stylesheet" href="{{ "/assets/css/layouts/list.css" | relURL }}">
-    <link rel="stylesheet" href="{{ "/assets/css/navigators/sidebar.css" | relURL}}">
+    <link rel="stylesheet" href="{{ "/css/layouts/list.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "/css/navigators/sidebar.css" | relURL}}">
 {{ end }}
 
 {{ define "navbar" }}
@@ -10,7 +10,7 @@
 {{ define "sidebar" }}
   {{ $blogHome:="#" }}
   {{ if site.IsMultiLingual }}
-    {{ $blogHome = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) "posts") }}
+    {{ $blogHome = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) .Type) }}
   {{ end }}
 
   <section class="sidebar-section" id="sidebar-section">
@@ -19,7 +19,7 @@
         <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
-            <li id="list-heading"><a href="{{ "/posts" | relLangURL }}" data-filter="all">{{ i18n "posts" }}</a></li>
+            <li id="list-heading"><a href="{{ .Type | relLangURL }}" data-filter="all">{{ i18n .Type }}</a></li>
             <div class="subtree">
                 {{ partial "navigators/sidebar.html" (dict "menus" site.Menus.sidebar "ctx" .) }}
             </div>
@@ -47,5 +47,5 @@
 {{ end }}
 
 {{ define "scripts" }}
-    <script src="{{ "/assets/js/list.js" | relURL }}"></script>
+    <script src="{{ "/js/list.js" | relURL }}"></script>
 {{ end }}

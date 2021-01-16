@@ -13,38 +13,38 @@ section:
 # Give a summary of you each skill in the summary section.
 skills:
 - name: Kubernetes
-  icon: "/images/sections/skills/kubernetes.png"
+  logo: "/images/sections/skills/kubernetes.png"
   summary: "Capable de déployer, de gérer l'application sur Kubernetes. Expérimenté dans la rédaction de contrôleurs Kubernetes pour les CRD."
   url: "https://kubernetes.io/"
 
 - name: Go
-  icon: "/images/sections/skills/go.png"
+  logo: "/images/sections/skills/go.png"
   summary: "Utiliser comme langue principale pour le développement professionnel. Capable d'écrire des programmes évolutifs, testables et maintenables."
   url: "https://golang.org/"
 
 - name: Cloud Computing
-  icon: "/images/sections/skills/cloud.png"
+  logo: "/images/sections/skills/cloud.png"
   summary: "A travaillé avec la plupart des principaux nuages tels que GCP, AWS, Azure, etc."
 
 - name: Docker
-  icon: "/images/sections/skills/docker.svg"
+  logo: "/images/sections/skills/docker.svg"
   summary: "Inscrivez la plupart des programmes en tant que conteneur déchargé. Expérimenté dans le processus de construction en plusieurs étapes et en plusieurs arcs."
   url: "https://www.docker.com/"
 
 - name: Prometheus
-  icon: "/images/sections/skills/prometheus.png"
+  logo: "/images/sections/skills/prometheus.png"
   summary: "Capable d'installation, de configurer les métriques de Prometheus. Expérimenté avec PromQL, AlertManager. Expérimenté également dans la rédaction d'exportateurs de métriques."
   url: "https://prometheus.io/"
 
 - name: Linux
-  icon: "/images/sections/skills/linux.png"
+  logo: "/images/sections/skills/linux.png"
   summary: "Utilisé comme système d'exploitation principal. Capable d'écrire des scripts bash/shell."
 
 - name: Git
-  icon: "/images/sections/skills/git.png"
+  logo: "/images/sections/skills/git.png"
   summary: "Expérimenté dans le développement basé sur les GIT. Surtout, utilisez Github. Avoir également une expérience de travail avec GitLab."
   url: "https://git-scm.com/"
 
 - name: C++
-  icon: "/images/sections/skills/c++.png"
+  logo: "/images/sections/skills/c++.png"
   summary: "Connaître les bases de la programmation C/C++. Utilisé pour la programmation de concours et la résolution de problèmes."

@@ -15,13 +15,14 @@
     {{- partial "header.html" . -}}
 
     <!-- import index page specific headers -->
-    <link rel="stylesheet" href="{{ "/assets/css/sections/home.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/assets/css/sections/about.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/assets/css/sections/skills.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/assets/css/sections/experiences.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/assets/css/sections/projects.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/assets/css/sections/recent-posts.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/assets/css/sections/achievements.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/home.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/about.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/skills.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/experiences.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/education.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/projects.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/recent-posts.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/achievements.css" | relURL }}"/>
 
     <!-- Add Google Analytics if enabled in configuration -->
     {{ if site.GoogleAnalytics }}
@@ -70,9 +71,9 @@
     {{ partial "scripts.html" . }}
 
     <!--- ADD INDEX PAGE SPECIFIC SCRIPTS -->
-    <script src="{{ "/assets/js/itype.min.js" | relURL }}"></script>
-    <script src="{{ "/assets/js/github-button.js" | relURL }}"></script>
-    <script src="{{ "/assets/js/home.js" | relURL }}"></script>
-    <script src="{{ "/assets/js/jquery.filterizr.min.js" | relURL }}"></script>
+    <script src="{{ "/js/itype.min.js" | relURL }}"></script>
+    <script src="{{ "/js/github-button.js" | relURL }}"></script>
+    <script src="{{ "/js/home.js" | relURL }}"></script>
+    <script src="{{ "/js/jquery.filterizr.min.js" | relURL }}"></script>
   </body>
 </html>

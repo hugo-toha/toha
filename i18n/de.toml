@@ -49,3 +49,27 @@ other = "Nächste"
 
 [improve_this_page]
 other = "Diese Seite verbessern"
+
+[out_of]
+other = "van de"
+
+[publications]
+other = "Publicaties"
+
+[taken_courses]
+other = "Cursussen gevolgd"
+
+[course_name]
+other = "Cursus naam"
+
+[total_credit]
+other = "Totaal krediet"
+
+[obtained_credit]
+other = "Krediet verkregen"
+
+[extracurricular_activities]
+other = "Buitenschoolse activiteiten"
+
+[see_more]
+other = "Bekijk meer"

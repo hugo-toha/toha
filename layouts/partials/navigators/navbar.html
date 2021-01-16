@@ -1,5 +1,8 @@
-{{ $mainLogo:="/assets/images/main-logo.png" }}
-{{ $invertedLogo:="/assets/images/inverted-logo.png" }}
+{{/*  default logos  */}}
+{{ $mainLogo := "/images/main-logo.png" }}
+{{ $invertedLogo := "/images/inverted-logo.png" }}
+
+{{/*  if custom logo is used, them  */}}
 {{ if site.Params.logo.main }}
   {{ $mainLogo = site.Params.logo.main }}
 {{ end }}
@@ -7,7 +10,20 @@
   {{ $invertedLogo = site.Params.logo.inverted }}
 {{ end }}
 
-{{ $sections:= site.Data.sections }}
+{{/* resize the logos. don't resize svg because it is not supported */}}
+{{ $mainLogo := resources.Get $mainLogo}}
+{{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
+  {{ $mainLogo = $mainLogo.Resize "42x" }}
+{{ end }}
+{{ $mainLogo = $mainLogo.RelPermalink}}
+
+{{ $invertedLogo := resources.Get $invertedLogo}}
+{{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg")}}
+  {{ $invertedLogo = $invertedLogo.Resize "42x" }}
+{{ end }}
+{{ $invertedLogo = $invertedLogo.RelPermalink}}
+
+{{ $sections := site.Data.sections }}
 {{ if (index site.Data site.Language.Lang).sections }}
   {{ $sections = (index site.Data site.Language.Lang).sections }}
 {{ end }}
@@ -15,7 +31,7 @@
 <nav class="navbar navbar-expand-xl top-navbar initial-navbar" id="top-navbar">
   <div class="container">
     <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
-      <img src="{{ $invertedLogo | relURL }}" id="logo">
+      <img src="{{ $invertedLogo }}" id="logo">
       {{- site.Title -}}
     </a>
     <button
@@ -72,6 +88,6 @@
     </div>
   </div>
   <!-- Store the logo information in a hidden img for the JS -->
-  <img src="{{ $mainLogo | relURL }}" class="d-none" id="main-logo">
-  <img src="{{ $invertedLogo | relURL }}" class="d-none" id="inverted-logo">
+  <img src="{{ $mainLogo }}" class="d-none" id="main-logo">
+  <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo">
 </nav>

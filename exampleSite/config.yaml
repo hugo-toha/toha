@@ -1,5 +1,6 @@
 baseURL: http://example.org/
 languageCode: en-us
+defaultContentLanguage: en
 title: "Toha"
 theme: "toha"
 
@@ -15,7 +16,7 @@ languages:
   fr:
     languageName: Français
     weight: 3
-  id: 
+  id:
     languageName: Indonesian
     weight: 4
   de:
@@ -24,9 +25,12 @@ languages:
   es:
     languageName: Spanish
     weight: 6
-  es:
+  it:
     languageName: Italian
     weight: 7
+  cn:
+    languageName: 中文
+    weight: 8
 
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
 # DefaultContentLanguage: fr

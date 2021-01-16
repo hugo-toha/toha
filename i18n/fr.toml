@@ -15,7 +15,7 @@ other = "chez"
 other = "Mon Curriculum vitæ"
 
 [navigation]
-other = "Naviguation"
+other = "Navigation"
 
 [contact_me]
 other = "Contactez moi :"
@@ -49,3 +49,27 @@ other = "Suivant"
 
 [improve_this_page]
 other = "Améliorez cette page"
+
+[out_of]
+other = "sur"
+
+[publications]
+other = "Publications"
+
+[taken_courses]
+other = "Taken Courses"
+
+[course_name]
+other = "Cours suivis"
+
+[total_credit]
+other = "Crédit total"
+
+[obtained_credit]
+other = "Crédit obtenu"
+
+[extracurricular_activities]
+other = "Activités extra-scolaires"
+
+[see_more]
+other = "En savoir plus"

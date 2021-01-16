@@ -15,23 +15,97 @@
   {{ $sections = (index site.Data site.Language.Lang).sections }}
 {{ end }}
 
-{{ $backgroundImage:= "/assets/images/default-background.jpg" }}
+{{ $backgroundImage:= "/images/default-background.jpg" }}
 {{ if site.Params.background }}
   {{ $backgroundImage = site.Params.background }}
 {{ end }}
 
-{{ $authorImage:= "/assets/images/default-avatar.png" }}
+
+{{ $authorImage:= "/images/default-avatar.png" }}
 {{ if $author.image }}
   {{ $authorImage = $author.image }}
 {{ end }}
+{{ $authorImage := resources.Get $authorImage }}
+{{ $authorImage := $authorImage.Fit "148x148" }}
+
+{{/* get file that matches the filename as specified as src="" in shortcode */}}
+{{ $src := resources.Get $backgroundImage }}
+
+{{/* set image sizes, these are hardcoded for now, x dictates that images are resized to this width */}}
+
+{{ $tinyw := default "500x" }}
+{{ $smallw := default "800x" }}
+{{ $mediumw := default "1200x" }}
+{{ $largew := default "1500x" }}
+
+{{/* resize the src image to the given sizes */}}
+
+{{ $tiny := $src.Resize $tinyw }}
+{{ $small := $src.Resize $smallw }}
+{{ $medium := $src.Resize $mediumw }}
+{{ $large := $src.Resize $largew }}
+
+{{/* only use images smaller than or equal to the src (original) image size, as Hugo will upscale small images */}}
+{{/* set the sizes attribute to (min-width: 35em) 1200px, 100vw unless overridden in shortcode */}}
+
+{{ if lt $src.Width "500" }}
+  {{ $tiny := $src}}
+  {{ $small := $src}}
+  {{ $medium := $src}}
+  {{ $large := $src}}
+{{ end }}
+
+{{ if lt $src.Width "800" }}
+  {{ $small := $src}}
+  {{ $medium := $src}}
+  {{ $large := $src}}
+{{ end }}
+
+{{ if lt $src.Width "1200" }}
+  {{ $medium := $src}}
+  {{ $large := $src}}
+{{ end }}
+
+{{ if lt $src.Width "1500" }}
+  {{ $large := $src}}
+{{ end }}
 
 <div class="container-fluid home" id="home">
+  <style>
+    /* 0 to 299 */
+    #homePageBackgroundImageDivStyled {
+      /*background-image: url('{{ $tiny.RelPermalink }}'); This does not work on https://themes.gohugo.io/ */
+      background-image: url('{{ $tiny.RelPermalink }}');
+    }
+    /* 300 to X */
+    @media (min-width: 500px) and (max-width: 800px) { /* or 301 if you want really the same as previously.  */
+      #homePageBackgroundImageDivStyled {   
+          background-image: url('{{ $small.RelPermalink }}');
+        }
+    }
+    @media (min-width: 801px) and (max-width: 1200px) { /* or 301 if you want really the same as previously.  */
+      #homePageBackgroundImageDivStyled {   
+          background-image: url('{{ $medium.RelPermalink }}');
+        }
+    }
+    @media (min-width: 1201px) and (max-width: 1500px) { /* or 301 if you want really the same as previously.  */
+      #homePageBackgroundImageDivStyled {   
+          background-image: url('{{ $large.RelPermalink }}');
+        }
+    }
+    @media (min-width: 1501px) { /* or 301 if you want really the same as previously.  */
+      #homePageBackgroundImageDivStyled {   
+          background-image: url('{{ $src.RelPermalink }}');
+        }
+    }
+    </style>
+    <span class="on-the-fly-behavior"></span>
   <div
+    id="homePageBackgroundImageDivStyled"
     class="background container-fluid"
-    style="background-image: url('{{ $backgroundImage | relURL }}');"
   ></div>
   <div class="container content text-center">
-    <img src="{{ $authorImage | relURL }}"
+    <img src="{{ $authorImage.RelPermalink }}"
       class="rounded-circle mx-auto d-block img-fluid"
     />
     <h1 class="greeting"> {{ $author.greeting }} {{ $name }}</h1>
