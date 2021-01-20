@@ -51,25 +51,25 @@ other = "Nächste"
 other = "Diese Seite verbessern"
 
 [out_of]
-other = "van de"
+other = "aus dem"
 
 [publications]
-other = "Publicaties"
+other = "Veröffentlichungen"
 
 [taken_courses]
-other = "Cursussen gevolgd"
+other = "Kurse besucht"
 
 [course_name]
-other = "Cursus naam"
+other = "Kursname"
 
 [total_credit]
-other = "Totaal krediet"
+other = "Gesamtpunktzahl"
 
 [obtained_credit]
-other = "Krediet verkregen"
+other = "Erhaltene Punkte"
 
 [extracurricular_activities]
-other = "Buitenschoolse activiteiten"
+other = "Außerschulische Aktivitäten"
 
 [see_more]
-other = "Bekijk meer"
+other = "Mehr ansehen"
