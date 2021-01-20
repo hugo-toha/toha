@@ -69,6 +69,7 @@ params:
 
   # GitHub repo URL of your site
   gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
+  gitBranch: main
 
   # specify whether you want to write some blog posts or not
   enableBlogPost: true
