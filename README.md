@@ -1,6 +1,6 @@
 # Toha
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b1b93b02-f278-440b-ae1b-304e9f4c4ab5/deploy-status)](https://app.netlify.com/sites/toha/deploys) [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fhugo-toha%2Ftoha%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/hugo-toha/toha/goto?ref=master) ![Repository Size](https://img.shields.io/github/repo-size/hugo-toha/toha) ![Lines of Codes](https://img.shields.io/tokei/lines/github/hugo-toha/toha) ![Contributor](https://img.shields.io/github/contributors/hugo-toha/toha) ![Latest Release](https://img.shields.io/github/v/release/hugo-toha/toha?include_prereleases) ![Last Commit](https://img.shields.io/github/last-commit/hugo-toha/toha) ![Open Issues](https://img.shields.io/github/issues/hugo-toha/toha?color=important) ![Open Pull Requests](https://img.shields.io/github/issues-pr/hugo-toha/toha?color=yellowgreen)  ![License](https://img.shields.io/github/license/hugo-toha/toha) ![Security Headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fhugo-toha.github.io%2F) [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/b7cb60ab/hugo-toha.github.io)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b1b93b02-f278-440b-ae1b-304e9f4c4ab5/deploy-status)](https://app.netlify.com/sites/toha/deploys) [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fhugo-toha%2Ftoha%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/hugo-toha/toha/goto?ref=master) ![Repository Size](https://img.shields.io/github/repo-size/hugo-toha/toha) ![Lines of Codes](https://img.shields.io/tokei/lines/github/hugo-toha/toha) ![Contributor](https://img.shields.io/github/contributors/hugo-toha/toha) ![Latest Release](https://img.shields.io/github/v/release/hugo-toha/toha?include_prereleases) ![Last Commit](https://img.shields.io/github/last-commit/hugo-toha/toha) ![Open Issues](https://img.shields.io/github/issues/hugo-toha/toha?color=important) ![Open Pull Requests](https://img.shields.io/github/issues-pr/hugo-toha/toha?color=yellowgreen) ![License](https://img.shields.io/github/license/hugo-toha/toha) ![Security Headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fhugo-toha.github.io%2F) [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/b7cb60ab/hugo-toha.github.io)
 
 A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist design and responsiveness.
 
@@ -68,7 +68,7 @@ At first, add [Toha](https://github.com/hugo-toha/toha) theme as git submodule t
 $ git submodule add https://github.com/hugo-toha/toha.git themes/toha
 ```
 
->Don't use SSH URL of the theme during adding as git sub-module. Also, don't clone the theme in your `themes` directory using `git clone`. They don't work well with Github Action or Netlify.
+> Don't use SSH URL of the theme during adding as git sub-module. Also, don't clone the theme in your `themes` directory using `git clone`. They don't work well with Github Action or Netlify.
 
 If you don't already have a hugo site, create one by following the step by step guide from [here](https://toha-guides.netlify.app/posts/getting-started/prepare-site/).
 
@@ -102,8 +102,9 @@ enableEmoji: true
 
 # Site parameters
 params:
-  # GitHub repo URL of your site
+  # GitHub repo URL and branch of your site
   gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
+  gitBranch: main
 
   # specify whether you want to write some blog posts or not
   enableBlogPost: true
@@ -145,12 +146,14 @@ Here, are the current plan and progress of various components of this theme. The
 ### Sections
 
 - [x] **Home**
+
   - [x] Configurable Background
   - [x] Author Image
   - [x] Greeting
   - [x] Typing Carousel
 
 - [x] **About**
+
   - [x] Name and Designation
   - [x] Summary
     - [x] Markdown Support
@@ -160,16 +163,19 @@ Here, are the current plan and progress of various components of this theme. The
   - [x] Soft Skills Indicator
 
 - [x] **Skills**
+
   - [x] Skill Cards
   - [x] Markdown Support
 
 - [x] **Experiences**
+
   - [x] Designation
   - [x] Timeline
   - [x] Company Overview
   - [x] Responsibilities
 
 - [ ] **Projects**
+
   - [x] Category Filter
   - [ ] Project Card
     - [x] Overview
@@ -181,6 +187,7 @@ Here, are the current plan and progress of various components of this theme. The
 - [x] **Recent Posts**
 
 - [ ] **Academic Career**
+
   - [ ] Degree
   - [ ] Institution
   - [ ] Timeline
@@ -189,6 +196,7 @@ Here, are the current plan and progress of various components of this theme. The
   - [ ] Extracurricular Activities
 
 - [ ] **Publications**
+
   - [ ] Category Filter
   - [ ] Card
   - [ ] Abstract
@@ -198,6 +206,7 @@ Here, are the current plan and progress of various components of this theme. The
   - [ ] Gallery
 
 - [ ] **Accomplishment / Courses**
+
   - [ ] Overview
   - [ ] Certificate
 
@@ -246,7 +255,7 @@ Pull requests are most welcome and I will be happy to review. Just follow the fo
 - Use as few dependencies as possible.
 - Have patience.
 
->I am not a web developer. I have created this theme for my personal needs. So, it is reasonable to have some flaws in the codes. Feel free to open issues and PRs acknowledging the problems.
+> I am not a web developer. I have created this theme for my personal needs. So, it is reasonable to have some flaws in the codes. Feel free to open issues and PRs acknowledging the problems.
 
 ## Local Development
 
