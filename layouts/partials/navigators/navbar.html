@@ -45,6 +45,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="top-nav-items">
+      <form class="mx-auto" method="get" action="{{ "search" | absURL }}"><input type="text" name="s" value="" placeholder="Search" data-search="" style="width: 175px" id="search-box" /></form>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="#home">{{ i18n "home" }}</a>
