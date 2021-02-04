@@ -49,3 +49,18 @@
   <img src="{{ $mainLogo  }}" class="d-none" id="main-logo">
   <img src="{{ $invertedLogo  }}" class="d-none" id="inverted-logo">
 </nav>
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form method="get" action="{{ "search" | absURL }}"><input type="text" name="s" value="" placeholder="Search" data-search="" id="search-box" /></form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="{{ .Type | relLangURL }}" data-filter="all">{{ i18n .Type }}</a></li>
+            <div class="subtree">
+                {{ partial "navigators/sidebar.html" (dict "menus" site.Menus.sidebar "ctx" .) }}
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
