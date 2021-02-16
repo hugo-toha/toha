@@ -51,18 +51,19 @@
                             {{ if .takenCourses }}
                             <div class="taken-courses">
                                 <h6 class="text-muted">{{ i18n "taken_courses"}}</h6>
-                                {{ if .takenCourses.showGrades }}    
+                                {{ if .takenCourses.showGrades }}
+                                {{ $isScale := .takenCourses.isScale }}
                                 <table>
                                     <thead>
                                         <th>{{ i18n "course_name"}}</th>
-                                        <th>{{ i18n "total_credit"}}</th>
+                                        {{ if $isScale }}<th>{{ i18n "total_credit"}}</th>{{ end }}
                                         <th>{{ i18n "obtained_credit"}}</th>
                                     </thead>
                                     <tbody>
                                         {{ range $index,$course := .takenCourses.courses }}
                                         <tr class="course {{ if gt $index 1 }}hidden-course{{ end}}">
                                             <td>{{ $course.name }}</td>
-                                            <td>{{ $course.outOf }}</td>
+                                            {{ if $isScale }}<td>{{ $course.outOf }}</td>{{ end }}
                                             <td>{{ $course.achieved }}</td>
                                         </tr>
                                         {{ end }}
