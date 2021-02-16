@@ -45,7 +45,7 @@
               data-icon="octicon-standard"
               data-show-count="true"
               aria-label="Star {{ .name }}"
-              >Star</a
+              >{{ i18n "project_star" }}</a
             >
             {{ else if .url }}
             <span>
@@ -53,7 +53,7 @@
                 class="btn btn-outline-info btn-sm"
                 href="{{ .url }}"
                 target="#"
-                >Details</a
+                >{{ i18n "project_details" }}</a
               >
             </span>
             {{ end }}

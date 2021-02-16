@@ -7,7 +7,7 @@
         {{ $oldestPosition := index (last 1 .positions) 0}}
         {{ $mostRecentPosition := index (first 1 .positions) 0}}
         <p class="text-muted">
-            {{ $oldestPosition.start }} - {{ if $mostRecentPosition.end }}{{ $mostRecentPosition.end }}{{ else }}Present{{ end }},
+            {{ $oldestPosition.start }} - {{ if $mostRecentPosition.end }}{{ $mostRecentPosition.end }}{{ else }}{{ i18n "present" }}{{ end }},
             {{ .company.location }}
         </p>
         <!-- Add company overview -->
@@ -17,7 +17,7 @@
     <div class="positions">
     {{ range $index,$position:= .positions }}
         <h6 class="designation">{{ $position.designation }}</h6>
-        <p class="text-muted">{{ $position.start }} - {{if $position.end }} {{ $position.end }} {{else}} Present {{end}}</p>
+        <p class="text-muted">{{ $position.start }} - {{if $position.end }} {{ $position.end }} {{else}} {{ i18n "present" }} {{end}}</p>
         <!-- Add the responsibilities handled at this position -->
         <ul class="justify-content-around">
         {{ range $position.responsibilities }}
