@@ -26,6 +26,14 @@
       </a>
       <div class="card-body text-justify pt-1 pb-1">
         <p>{{ .summary | markdownify }}</p>
+        <!-- Display project card technology tags -->
+        <span>
+            {{ range $index,$tag:= .tags }}
+                <a target="#">
+                  {{ $tag }}
+                </a>
+            {{ end }}
+        </span>
         <span class="float-right">
           {{ if .repo }}
           <a
