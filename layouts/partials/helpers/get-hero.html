@@ -1,5 +1,5 @@
 {{/* check if there is any hero image in the same folder as the markdown file */}}
-{{ $heroImage := .Page.Resources.GetMatch "hero.{jpg,png,svg}"}}
+{{ $heroImage := .Page.Resources.GetMatch .Params.hero}}
 {{ .Scratch.Set "heroScratch" $heroImage }}
 
 {{/* if hero image is not provided, then use the default hero image */}}
