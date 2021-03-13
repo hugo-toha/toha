@@ -16,7 +16,9 @@
   <section class="sidebar-section" id="sidebar-section">
     <div class="sidebar-holder">
       <div class="sidebar" id="sidebar">
-        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <form class="mx-auto" method="get" action="{{ "search" | absURL }}">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
             <li id="list-heading"><a href="{{ "/posts" | relLangURL }}" data-filter="all">{{ i18n "posts" }}</a></li>
