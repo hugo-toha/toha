@@ -33,8 +33,6 @@
 {{ end }}
 
 {{ define "content" }}
-<!--back to top-->
-<a href="#top" class="backtop">{{ partial "arrow.html" . }}</a>
 <section class="content-section" id="content-section">
   <div class="content">
     <div class="container p-0 read-area">
@@ -79,6 +77,8 @@
       </div>
     </div>
   </div>
+  <!--scroll back to top-->
+  <a id="scroll-to-top" class="btn"><i class="fas fa-chevron-circle-up"></i></a>
   {{ if .IsTranslated }}
     {{ partial "navigators/floating-lang-selector.html" . }}
   {{ end }}
