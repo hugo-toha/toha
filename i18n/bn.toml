@@ -70,3 +70,27 @@ other = "পাঠক্রম বহির্ভূত কার্যক্র
 
 [see_more]
 other = "আরো দেখুন"
+
+[responsibilities]
+other = "দায়িত্বসমুহ:"
+
+[present]
+other = "বর্তমান"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+# [project_details]
+# other = "Details"
+
+# [err_404]
+# other = "The page you are looking for is not there yet."
