@@ -29,6 +29,26 @@
   padding: 1rem !important;
 }
 
+.project-card-footer {
+  display: flex;
+}
+
+.project-tags-holder {
+  width: 70%;
+}
+
+.project-btn-holder {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.project-btn-holder span {
+  justify-content: flex-end;
+  display: flex;
+}
+
 /* ============= Device specific fixes ======= */
 
 /* Large screens such as TV */
