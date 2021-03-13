@@ -32,6 +32,14 @@ languages:
     languageName: 中文
     weight: 8
 
+# At least HTML and JSON are required for the main HTML content and
+# client-side JavaScript search
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
 # DefaultContentLanguage: fr
 
@@ -69,6 +77,7 @@ params:
 
   # GitHub repo URL of your site
   gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
+  gitBranch: main
 
   # specify whether you want to write some blog posts or not
   enableBlogPost: true
