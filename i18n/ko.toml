@@ -1,75 +1,78 @@
 # More documentation here: https://github.com/nicksnyder/go-i18n
 [home]
-other = "ホーム"
+other = "Home"
 
 [posts]
-other = "記事"
+other = "게시글"
 
 [toc_heading]
-other = "目次"
+other = "목차"
+
+[at]
+other = "at"
 
 [resume]
-other = "職務経歴書"
+other = "이력서"
 
 [navigation]
-other = "メニュー"
+other = "바로가기"
 
 [contact_me]
-other = "連絡先"
+other = "Contact me:"
 
 [email]
-other = "メール"
+other = "Email"
 
 [phone]
-other = "電話番号"
+other = "Phone"
 
 [newsletter_text]
-other = "メールで最新情報を受け取る"
+other = "이메일 알림으로 최신 상태를 유지해보세요"
 
 [newsletter_input_placeholder]
-other = "ここにメールアドレスを入力"
+other = "이메일을 입력하세요"
 
 [newsletter_warning]
-other = "ご入力いただいたメールアドレスが他人に開示されることは決してございません。"
+other = "이메일을 다른 목적으로 사용하지 않습니다."
 
 [submit]
-other = "登録"
+other = "제출"
 
 [hugoAttributionText]
-other = "搭載"
+other = "Powered by"
 
 [prev]
-other = "前"
+other = "이전"
 
 [next]
-other = "次"
+other = "다음"
 
 [improve_this_page]
-other = "編集リクエストを送る"
+other = "이 페이지를 개선"
 
 [out_of]
-other = "のうち"
+other = "out of"
 
 [publications]
-other = "出版物"
+other = "Publications"
 
 [taken_courses]
-other = "受講したコース"
+other = "이수 과목"
 
 [course_name]
-other = "コース名"
+other = "과목명"
 
 [total_credit]
-other = "合計クレジット"
+other = "총 수익"
 
 [obtained_credit]
-other = "取得したクレジット"
+other = "획득한 수익"
 
 [extracurricular_activities]
-other = "課外活動"
+other = "기타 활동"
 
 [see_more]
-other = "続きを見る"
+other = "더보기"
 
 # [responsibilities]
 # other = "Responsibilities:"

@@ -38,7 +38,7 @@ projects:
   repo: https://github.com/tensorflow/tensorflow
   #url: ""
   summary: An Open Source Machine Learning Framework for Everyone.
-  tags: ["professional", "machine-learning","academic"]
+  tags: ["professional", "machine-learning"]
 
 - name: A sample academic paper
   role: Team Lead
