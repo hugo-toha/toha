@@ -31,8 +31,14 @@ For more details about the features please visit [here](https://toha-guides.netl
 - Français
 - Indonesian
 - Deutsch
-- Spanish
+- Español
 - 简体中文
+- हिन्दी
+- Italiano
+- 日本語
+- 한국어
+- русский
+- Tiếng Việt
 
 To know more about how to translate your site, please visit [here](https://toha-guides.netlify.app/posts/translation/). Follow, the data and post format from this [example site](https://hugo-toha.github.io).
 
@@ -96,6 +102,14 @@ markup:
     startLevel: 2
     endLevel: 6
     ordered: false
+
+# At least HTML and JSON are required for the main HTML content and
+# client-side JavaScript search
+outputs:
+  home:
+  - HTML
+  - RSS
+  - JSON
 
 # Enable global emoji support
 enableEmoji: true
@@ -174,26 +188,26 @@ Here, are the current plan and progress of various components of this theme. The
   - [x] Company Overview
   - [x] Responsibilities
 
-- [ ] **Projects**
+- [x] **Projects**
 
   - [x] Category Filter
-  - [ ] Project Card
+  - [x] Project Card
     - [x] Overview
       - [x] Markdown Support
     - [x] Github Stars
     - [x] External URL Support
-    - [ ] Technology Tags
+    - [x] Technology Tags
 
 - [x] **Recent Posts**
 
-- [ ] **Academic Career**
+- [x] **Academic Career**
 
-  - [ ] Degree
-  - [ ] Institution
-  - [ ] Timeline
-  - [ ] Taken Courses
-  - [ ] CGPA
-  - [ ] Extracurricular Activities
+  - [x] Degree
+  - [x] Institution
+  - [x] Timeline
+  - [x] Taken Courses
+  - [x] CGPA
+  - [x] Extracurricular Activities
 
 - [ ] **Publications**
 
