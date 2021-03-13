@@ -10,9 +10,26 @@
 {{ define "sidebar" }}
   {{ $blogHome:="#" }}
   {{ if site.IsMultiLingual }}
-    {{ $blogHome = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) "posts") }}
+    {{ $blogHome = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) .Type) }}
   {{ end }}
 
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="{{ "search" | absURL }}">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="{{ .Type | relLangURL }}" data-filter="all">{{ i18n .Type }}</a></li>
+            <div class="subtree">
+                {{ partial "navigators/sidebar.html" (dict "menus" site.Menus.sidebar "ctx" .) }}
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 {{ end }}
 
 {{ define "content" }}
@@ -37,7 +54,7 @@
                   <a href="${link}" class="float-right btn btn-outline-info btn-sm">Read</a>
                 </div>
               </div>
-	    </a>
+	          </a>
           </div>
         </script>
 
@@ -50,5 +67,5 @@
 {{ define "scripts" }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
-<script src="{{ "js/search.js" | absURL }}"></script>
+<script src="{{ "/js/search.js" | absURL }}"></script>
 {{ end }}
