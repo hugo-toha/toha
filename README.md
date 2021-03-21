@@ -44,7 +44,7 @@ To know more about how to translate your site, please visit [here](https://toha-
 
 ## Screenshots
 
-Here, are few screenshot from the [example site](https://hugo-toha.github.io).
+Here are few screenshots from the [example site](https://hugo-toha.github.io).
 
 ##### Home Page Sections
 
@@ -76,7 +76,7 @@ $ git submodule add https://github.com/hugo-toha/toha.git themes/toha
 
 > Don't use SSH URL of the theme during adding as git sub-module. Also, don't clone the theme in your `themes` directory using `git clone`. They don't work well with Github Action or Netlify.
 
-If you don't already have a hugo site, create one by following the step by step guide from [here](https://toha-guides.netlify.app/posts/getting-started/prepare-site/).
+If you don't already have a hugo site, create one by following the step-by-step guide from [here](https://toha-guides.netlify.app/posts/getting-started/prepare-site/).
 
 #### Configuring Site
 
