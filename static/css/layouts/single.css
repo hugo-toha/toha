@@ -295,6 +295,10 @@ mark {
   transition: all 0.3s ease-out;
 }
 
+.next-prev-navigator .next-prev-text{
+  white-space: break-spaces;
+}
+
 .next-prev-navigator .btn-outline-info:hover {
   color: #3c4858 !important;
   background-color: #e5e9f2 !important;
