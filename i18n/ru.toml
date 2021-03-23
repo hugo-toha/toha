@@ -71,8 +71,11 @@ other = "Полученный кредит"
 [extracurricular_activities]
 other = "Внеклассные занятия"
 
-[see_more]
+[show_more]
 other = "Узнать больше"
+
+[show_less]
+other = "Показывай меньше"
 
 # [responsibilities]
 # other = "Responsibilities:"

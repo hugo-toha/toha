@@ -68,8 +68,11 @@ other = "অর্জিত ক্রেডিট"
 [extracurricular_activities]
 other = "পাঠক্রম বহির্ভূত কার্যক্রম"
 
-[see_more]
-other = "আরো দেখুন"
+[show_more]
+other = "আরো দেখান"
+
+[show_less]
+other = "কম দেখান"
 
 [responsibilities]
 other = "দায়িত্বসমুহ:"

@@ -71,8 +71,11 @@ other = "Krediet verkregen"
 [extracurricular_activities]
 other = "Buitenschoolse activiteiten"
 
-[see_more]
+[show_more]
 other = "Bekijk meer"
+
+[show_less]
+other = "Laat minder zien"
 
 # [responsibilities]
 # other = "Responsibilities:"

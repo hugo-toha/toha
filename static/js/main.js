@@ -139,7 +139,7 @@ function toggleTOC() {
 }
 
 // Show more rows in the taken courses table
-function showMoreCourses(elem) {
+function toggleCourseVisibility(elem) {
 
   // find the courses
   let courses = elem.parentNode.getElementsByClassName("course");
@@ -154,11 +154,12 @@ function showMoreCourses(elem) {
     }
   }
 
-  // toggle the button text
-  let btnText = elem.innerText;
-  if (btnText == "Show More") {
-    elem.innerText = "Show Less";
-  } else {
-    elem.innerText = "Show More";
+  // toggle the current button visibility
+  elem.classList.toggle("hidden");
+  // toggle the alternate button visibility
+  if  (elem.id === "show-more-btn"){
+    document.getElementById("show-less-btn").classList.toggle("hidden");
+  }else{
+    document.getElementById("show-more-btn").classList.toggle("hidden");
   }
 }
