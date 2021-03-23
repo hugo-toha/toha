@@ -71,8 +71,11 @@ other = "Tín dụng thu được"
 [extracurricular_activities]
 other = "Các hoạt động ngoại khóa"
 
-[see_more]
+[show_more]
 other = "Xem thêm"
+
+[show_less]
+other = "Hiện ít hơn"
 
 # [responsibilities]
 # other = "Responsibilities:"

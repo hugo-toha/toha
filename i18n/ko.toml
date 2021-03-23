@@ -71,8 +71,11 @@ other = "획득한 수익"
 [extracurricular_activities]
 other = "기타 활동"
 
-[see_more]
+[show_more]
 other = "더보기"
+
+[show_less]
+other = "간단히보기"
 
 # [responsibilities]
 # other = "Responsibilities:"

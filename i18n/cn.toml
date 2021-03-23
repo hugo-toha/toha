@@ -71,8 +71,11 @@ other = "获得分数"
 [extracurricular_activities]
 other = "课外活动"
 
-[see_more]
+[show_more]
 other = "查看更多"
+
+[show_less]
+other = "显示较少"
 
 # [responsibilities]
 # other = "Responsibilities:"

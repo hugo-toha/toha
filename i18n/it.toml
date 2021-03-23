@@ -71,8 +71,11 @@ other = "Credito ottenuto"
 [extracurricular_activities]
 other = "Attività extracurriculari"
 
-[see_more]
+[show_more]
 other = "Vedi altro"
+
+[show_less]
+other = "Mostra meno"
 
 # [responsibilities]
 # other = "Responsibilities:"

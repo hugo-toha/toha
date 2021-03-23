@@ -68,8 +68,11 @@ other = "取得したクレジット"
 [extracurricular_activities]
 other = "課外活動"
 
-[see_more]
+[show_more]
 other = "続きを見る"
+
+[show_less]
+other = "表示を減らす"
 
 # [responsibilities]
 # other = "Responsibilities:"

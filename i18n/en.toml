@@ -71,8 +71,11 @@ other = "Obtained Credit"
 [extracurricular_activities]
 other = "Extracurricular Activities"
 
-[see_more]
-other = "See More"
+[show_more]
+other = "Show More"
+
+[show_less]
+other = "Show Less"
 
 [responsibilities]
 other = "Responsibilities:"

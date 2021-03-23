@@ -71,8 +71,11 @@ other = "Memperoleh Kredit"
 [extracurricular_activities]
 other = "Kegiatan ekstrakulikuler"
 
-[see_more]
+[show_more]
 other = "Lihat Selengkapnya"
+
+[show_less]
+other = "Tampilkan Lebih Sedikit"
 
 # [responsibilities]
 # other = "Responsibilities:"

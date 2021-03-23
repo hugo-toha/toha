@@ -71,8 +71,11 @@ other = "श्रेय प्राप्त किया"
 [extracurricular_activities]
 other = "अतिरिक्त पाठयक्रम गतिविधियों"
 
-[see_more]
+[show_more]
 other = "और देखें"
+
+[show_less]
+other = "कम दिखाएं"
 
 # [responsibilities]
 # other = "Responsibilities:"
