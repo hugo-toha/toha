@@ -1,0 +1,7 @@
+<div class="card note-card">
+    <div class="card-header">{{.Get "title"}}</div>
+    <div class="card-body">{{ .Inner | markdownify }}</div>
+    {{ if .Get "footer" }}
+    <div class="card-footer">{{ .Get "footer" }}</div>
+    {{end}}
+</div>

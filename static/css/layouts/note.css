@@ -1,0 +1,34 @@
+.wrapper {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.content-section {
+  flex: 80%;
+  order: 2;
+  /* background-color: lightseagreen; */
+  padding: 0;
+  position: relative;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.content {
+  padding: 0;
+  position: relative;
+  padding-top: 2rem;
+  min-height: 130vh;
+}
+
+.note-card-holder {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+}
+
+.note-card {
+  margin: 1rem;
+  align-self: flex-start;
+}

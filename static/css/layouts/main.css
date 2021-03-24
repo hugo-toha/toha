@@ -168,6 +168,16 @@ img.right {
   font-size: 10pt;
 }
 
+/* ====== codeblocks ====== */
+pre {
+  margin: 5px;
+}
+
+pre > code {
+  padding: 10px !important;
+}
+
+
 /* --- FOOTER START --- */
 
 .footer {
