@@ -56,16 +56,29 @@
         </li>
         {{ if $sections }}
           {{ range sort $sections "section.weight" }}
-            {{ if and (.section.enable) (.section.showOnNavbar)}}
-              {{ $sectionID := replace (lower .section.name) " " "-"  }}
-              {{ if .section.id }}
-                {{ $sectionID = .section.id }}
-              {{ end }}
-              <li class="nav-item">
-                <a class="nav-link" href="#{{ $sectionID }}">{{ .section.name }}</a>
-              </li>
+            {{ if and (.section.enable) (.section.showOnNavbar) }}          
+                  {{ $sectionID := replace (lower .section.name) " " "-"  }}
+                  {{ if .section.id }}
+                    {{ $sectionID = .section.id }}
+                  {{ end }}
+                  {{ if lt .section.weight 7 }}
+                    <li class="nav-item">
+                      <a class="nav-link" href="#{{ $sectionID }}">{{ .section.name }}</a>
+                    </li>
+                  {{ end }}
             {{ end }}
           {{- end }}
+    
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              More
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#achievements">Achievements</a>
+              <a class="dropdown-item" href="#recent-posts">Recent Posts</a>
+            </div>
+          </li>
+          
         {{- end }}
         {{ $hasCustomMenus:= false }}
         {{ if $customMenus }}
