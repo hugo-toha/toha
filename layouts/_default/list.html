@@ -8,9 +8,9 @@
 {{ end }}
 
 {{ define "sidebar" }}
-  {{ $blogHome:="#" }}
+  {{ $homePage:="#" }}
   {{ if site.IsMultiLingual }}
-    {{ $blogHome = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) .Type) }}
+    {{ $homePage = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) .Type) }}
   {{ end }}
 
   <section class="sidebar-section" id="sidebar-section">
@@ -38,7 +38,11 @@
     <div class="container-fluid post-card-holder" id="post-card-holder">
       {{ $paginator := .Paginate .RegularPagesRecursive 12 }}
       {{ range $paginator.Pages }}
-        {{ partial "cards/post.html" . }}
+        {{ if .Layout }}
+          {{/* ignore the search.md file*/}}
+        {{ else }}
+          {{ partial "cards/post.html" . }}
+        {{ end }}
       {{ end }}
     </div>
     <div class="paginator">

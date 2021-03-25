@@ -1,0 +1,18 @@
+{{ $paginator := .Paginate .RegularPagesRecursive 10 }}
+{{ range $paginator.Pages }}
+    {{ if .Layout }}
+        {{/* ignore search.md file*/}}
+    {{ else }}
+        {{$id := .Params.Menu.Notes.Identifier }}
+        <h4 class="note-collection-title" id="{{ $id }}">
+            <a href="#{{ $id }}"># {{ .Title }}</a>
+            {{$badges:= split .File.Dir "/"}}
+            {{ range after 1 $badges }}
+            <span class="badge btn-info note-badge">{{ . }}</span>
+            {{ end }}
+        </h4>
+        <div class="note-collection">
+            {{ .Content }}
+        </div>
+    {{ end }}
+{{ end }}

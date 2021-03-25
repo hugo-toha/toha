@@ -1,5 +1,7 @@
 ---
 title: "Search Results"
+date: 2010-06-08T08:06:25+06:00
+weight: 999999
 sitemap:
   priority : 0.1
 layout: "search"

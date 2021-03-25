@@ -12,9 +12,9 @@
 {{ end }}
 
 {{ define "sidebar" }}
-  {{ $blogHome:="#" }}
+  {{ $homePage:="#" }}
   {{ if site.IsMultiLingual }}
-    {{ $blogHome = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) .Type) }}
+    {{ $homePage = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) .Type) }}
   {{ end }}
 
   <section class="sidebar-section" id="sidebar-section">
@@ -40,12 +40,9 @@
 <section class="content-section" id="content-section">
   <div class="content container-fluid" id="content">
     <div class="container-fluid note-card-holder" id="note-card-holder">
-        {{ range .RegularPagesRecursive  }}
-          {{ if .Layout }}
-          {{ else }}
-            {{ .Content }}
-          {{ end }}
-        {{ end }}
+      <div class="note-collection">
+        {{ .Content }}
+      </div>
     </div>
   </div>
 </section>

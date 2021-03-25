@@ -22,13 +22,47 @@
   min-height: 130vh;
 }
 
-.note-card-holder {
+.note-card-holder{
+  padding-top: 2rem;
+}
+
+.note-collection {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 2rem;
 }
 
 .note-card {
   margin: 1rem;
   align-self: flex-start;
+}
+
+.note-title{
+  font-weight: 800;
+}
+
+.note-card .card-body{
+  padding: 1rem;
+}
+
+.note-card pre {
+  margin: 0;
+  border-radius: 3px;
+}
+
+.small-note{
+  max-width: 15rem;
+}
+
+.medium-note{
+  max-width: 25rem;
+}
+
+.large-note{
+  max-width: 40rem;
+}
+
+.huge-note{}
+
+.note-badge{
+  font-size: 10pt;
 }

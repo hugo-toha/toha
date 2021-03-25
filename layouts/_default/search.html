@@ -8,9 +8,9 @@
 {{ end }}
 
 {{ define "sidebar" }}
-  {{ $blogHome:="#" }}
+  {{ $homePage:="#" }}
   {{ if site.IsMultiLingual }}
-    {{ $blogHome = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) .Type) }}
+    {{ $homePage = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) .Type) }}
   {{ end }}
 
   <section class="sidebar-section" id="sidebar-section">
