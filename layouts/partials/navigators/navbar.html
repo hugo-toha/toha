@@ -60,12 +60,8 @@
             {{ if and (.section.enable) (.section.showOnNavbar)}}
               {{ $sectionCount  = add $sectionCount 1}}
               {{ if lt $sectionCount 5 }}
-                {{ $sectionID := replace (lower .section.name) " " "-"  }}
-                {{ if .section.id }}
-                  {{ $sectionID = .section.id }}
-                {{ end }}
                 <li class="nav-item">
-                  <a class="nav-link" href="#{{ $sectionID }}">{{ .section.name }}</a>
+                  <a class="nav-link" href="#{{ partial "helpers/get-section-id.html" . }} }}">{{ .section.name }}</a>
                 </li>
               {{ end }}
             {{ end }}
@@ -78,12 +74,8 @@
                 {{ range sort $sections "section.weight" }}
                   {{ if and (.section.enable) (.section.showOnNavbar) }}
                     {{ $sectionCount  = add $sectionCount 1}}
-                    {{ $sectionID := replace (lower .section.name) " " "-"  }}
-                    {{ if .section.id }}
-                      {{ $sectionID = .section.id }}
-                    {{ end }}
                     {{ if gt $sectionCount 5 }}
-                      <a class="dropdown-item" href="#{{ $sectionID }}">{{ .section.name }}</a>
+                      <a class="dropdown-item" href="#{{ partial "helpers/get-section-id.html" . }}">{{ .section.name }}</a>
                     {{ end }}
                   {{ end }}
                 {{- end }}
