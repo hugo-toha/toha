@@ -100,3 +100,9 @@ other = "Показывай меньше"
 
 # [err_404]
 # other = "The page you are looking for is not there yet."
+
+[more]
+other = "Более"
+
+[view_certificate]
+other = "Просмотреть сертификат"

@@ -100,3 +100,9 @@ other = "Mostra meno"
 
 # [err_404]
 # other = "The page you are looking for is not there yet."
+
+[more]
+other = "Di più"
+
+[view_certificate]
+other = "Féach ar an Teastas"

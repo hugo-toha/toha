@@ -100,3 +100,9 @@ other = "कम दिखाएं"
 
 # [err_404]
 # other = "The page you are looking for is not there yet."
+
+[more]
+other = "अधिक"
+
+[view_certificate]
+other = "प्रमाणपत्र देखें"

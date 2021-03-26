@@ -100,3 +100,9 @@ other = "Muestra menos"
 
 # [err_404]
 # other = "The page you are looking for is not there yet."
+
+[more]
+other = "Más"
+
+[view_certificate]
+other = "Ver Certificado"

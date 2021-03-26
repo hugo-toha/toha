@@ -97,3 +97,9 @@ other = "表示を減らす"
 
 # [err_404]
 # other = "The page you are looking for is not there yet."
+
+[more]
+other = "もっと"
+
+[view_certificate]
+other = "ビューの証明書"
