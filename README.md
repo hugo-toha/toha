@@ -219,10 +219,10 @@ Here, are the current plan and progress of various components of this theme. The
   - [ ] Links
   - [ ] Gallery
 
-- [ ] **Accomplishment / Courses**
+- [x] **Accomplishment / Courses**
 
-  - [ ] Overview
-  - [ ] Certificate
+  - [x] Overview
+  - [x] Certificate
 
 - [x] **Achievements Gallery**
   - [x] Image

@@ -100,3 +100,9 @@ other = "Hiện ít hơn"
 
 # [err_404]
 # other = "The page you are looking for is not there yet."
+
+[more]
+other = "Hơn"
+
+[view_certificate]
+other = "Xem chứng chỉ"

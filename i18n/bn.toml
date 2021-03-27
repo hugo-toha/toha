@@ -97,3 +97,9 @@ other = "বর্তমান"
 
 # [err_404]
 # other = "The page you are looking for is not there yet."
+
+[more]
+other = "আরো"
+
+[view_certificate]
+other = "সার্টিফিকেট দেখুন"

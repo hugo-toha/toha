@@ -100,3 +100,9 @@ other = "간단히보기"
 
 # [err_404]
 # other = "The page you are looking for is not there yet."
+
+[more]
+other = "더"
+
+[view_certificate]
+other = "인증서보기"

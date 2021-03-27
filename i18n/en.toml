@@ -100,3 +100,9 @@ other = "Details"
 
 [err_404]
 other = "The page you are looking for is not there yet."
+
+[more]
+other = "More"
+
+[view_certificate]
+other = "View Certificate"
