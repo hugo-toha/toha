@@ -106,3 +106,6 @@ other = "더"
 
 [view_certificate]
 other = "인증서보기"
+
+[notes]
+other = "메모"
