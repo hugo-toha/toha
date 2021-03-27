@@ -1,6 +1,10 @@
 {{ define "header" }}
-    <link rel="stylesheet" href="{{ "/css/layouts/list.css" | relURL }}">
-    <link rel="stylesheet" href="{{ "/css/navigators/sidebar.css" | relURL}}">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+  />
+  <link rel="stylesheet" href="{{ "/css/layouts/notes.css" | relURL}}">
+  <link rel="stylesheet" href="{{ "/css/navigators/sidebar.css" | relURL}}">
 {{ end }}
 
 {{ define "navbar" }}
@@ -23,7 +27,7 @@
           <ul class="tree" id="tree">
             <li id="list-heading"><a href="{{ .Type | relLangURL }}" data-filter="all">{{ i18n .Type }}</a></li>
             <div class="subtree">
-                {{ partial "navigators/sidebar.html" (dict "menuName" "sidebar" "menuItems" site.Menus.sidebar "ctx" .) }}
+                {{ partial "navigators/sidebar.html" (dict "menuName" "notes" "menuItems" site.Menus.notes  "ctx" . ) }}
             </div>
           </ul>
         </div>
@@ -35,15 +39,8 @@
 {{ define "content" }}
 <section class="content-section" id="content-section">
   <div class="content container-fluid" id="content">
-    <div class="container-fluid post-card-holder" id="post-card-holder">
-      {{ $paginator := .Paginate .RegularPagesRecursive 12 }}
-      {{ range $paginator.Pages }}
-        {{ if .Layout }}
-          {{/* ignore the search.md file*/}}
-        {{ else }}
-          {{ partial "cards/post.html" . }}
-        {{ end }}
-      {{ end }}
+    <div class="container-fluid note-card-holder" id="note-card-holder">
+        {{ partial "note-aggregator.html" . }}
     </div>
     <div class="paginator">
       {{ template "_internal/pagination.html" . }}
@@ -53,5 +50,11 @@
 {{ end }}
 
 {{ define "scripts" }}
-    <script src="{{ "/js/list.js" | relURL }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  {{ if .Params.math }}
+      {{ partial "math.html" . }}
+  {{ end }}
 {{ end }}

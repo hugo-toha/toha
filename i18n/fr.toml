@@ -106,3 +106,6 @@ other = "Suite"
 
 [view_certificate]
 other = "Afficher le certificat"
+
+[notes]
+other = "Remarques"

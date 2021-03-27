@@ -1,0 +1,11 @@
+<div class="note-card {{if .Get "size" }}{{.Get "size"}}-note{{end}}">
+    <div class="card">
+        <div class="card-header" style="background-color: {{ site.Params.notes.headerBackground | default "transparent" }};">
+            <span class="note-title" style="color: {{ site.Params.notes.headerTextColor | default "#1c2d41" }};">{{.Get "title"}}</span>
+        </div>
+        <div class="card-body">{{ .Inner | markdownify }}</div>
+        {{ if .Get "footer" }}
+        <div class="card-footer">{{ .Get "footer" }}</div>
+        {{end}}
+    </div>
+</div>

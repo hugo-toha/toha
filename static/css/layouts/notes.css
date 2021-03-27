@@ -7,6 +7,7 @@
 
 .content-section {
   flex: 80%;
+  max-width: 80%;
   order: 2;
   /* background-color: lightseagreen; */
   padding: 0;
@@ -22,79 +23,54 @@
   min-height: 130vh;
 }
 
-.post-card-holder {
-  margin-top: 32px;
-  margin-left: auto;
-  padding: 0;
+.note-card-holder{
+  padding-top: 2rem;
+}
+
+.note-collection {
   display: flex;
-  flex-flow: wrap;
+  flex-wrap: wrap;
 }
 
-.post-card-holder .post-card {
-  width: calc(100% / 3);
-  display: inline-flex;
+.note-card {
+  align-self: flex-start;
 }
 
-.post-card-holder .card {
-  margin: 5px;
-  position: relative;
+.note-card .card{
+  margin: 0.5rem;
 }
 
-.post-card-holder .card .card-footer span {
+.note-title{
+  font-weight: 800;
+}
+
+.note-card .card-body{
+  padding: 1rem;
+}
+
+.note-card pre {
+  margin: 0;
+  border-radius: 3px;
+}
+
+.small-note{
+  max-width: 15rem;
+}
+
+.medium-note{
+  max-width: 25rem;
+}
+
+.large-note{
+  max-width: 40rem;
+}
+
+.huge-note{}
+
+.note-badge{
   font-size: 10pt;
-  color: #6c757d !important;
-  padding-top: 5px;
 }
 
-.post-card-holder .card .card-footer {
-  background: #fff;
-  margin-top: auto;
-}
-
-.post-summary {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  max-height: 144px;
-  /* fallback */
-  -webkit-line-clamp: 5;
-  /* number of lines to show */
-  -webkit-box-orient: vertical;
-}
-
-.post-card-holder .post-card-link {
-  text-decoration: none;
-}
-
-.paginator {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: auto;
-}
-
-.paginator .page-item > a {
-  color: #248aaa;
-}
-
-.paginator .page-item.active > a {
-  background-color: #248aaa;
-  color: #f9fafc;
-}
-
-.navbar-toggler {
-  display: none;
-}
-
-.pagination {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
 
 /* ============= Device specific fixes ======= */
 
@@ -106,23 +82,19 @@
     flex: 85%;
     max-width: 85%;
   }
-  .post-card-holder .post-card {
-    width: calc(100% / 5);
-  }
 }
+
 
 /* Extra large devices (large desktops, 1200px and up) */
 
 @media (max-width: 1400px) {
-  .post-card-holder {
+  .note-card-holder {
     margin-left: 0px;
-  }
-  .post-card-holder .post-card {
-    width: calc(100% / 3);
   }
 }
 
 @media (max-width: 1200px) {
+
 }
 
 /* IPad Pro */
@@ -133,9 +105,15 @@
   }
   .content-section {
     padding: 0;
-    flex: 60%;
+    max-width: 100%;
     order: 2;
     padding-bottom: 0.5rem;
+    transition: all ease-out 0.3s;
+  }
+
+  .content-section.hide {
+    max-width: 60%;
+    transition: all ease-out 0.3s;
   }
 
   .content {
@@ -159,7 +137,7 @@
     top: 0.5rem;
   }
 
-  .post-card-holder {
+  .note-card-holder {
     margin: 0;
     margin-top: 1.5rem;
     padding-left: 0.5rem;
@@ -168,30 +146,32 @@
     transition: all ease-out 0.3s;
   }
 
-  .post-card-holder .post-card {
-    width: calc(100% / 3);
-  }
-
-  .content-section.hide .post-card-holder .post-card {
-    width: 50%;
+  .content-section.hide .note-card-holder .note-card {
+    max-width: 100%;
+    transition: all ease-out 0.3s;
   }
 }
 
 /*  Large devices (desktops, 992px and up) */
 
 @media (max-width: 992px) {
-  .post-card-holder .post-card {
-    width: 50%;
+  .note-card-holder .note-card {
+    max-width: 100%;
+    min-width: 50%;
+    transition: all ease-out 0.3s;
   }
 
-  .content-section.hide .post-card-holder .post-card {
-    width: 100%;
+  .content-section.hide .note-card-holder .note-card {
+    max-width: 100%;
+    min-width: 100%;
+    transition: all ease-out 0.3s;
   }
 }
 
 /* Medium devices (tablets, 768px and up) */
 
 @media only screen and (max-width: 768px) {
+
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -203,11 +183,12 @@
     flex-flow: column;
     overflow: hidden;
   }
-  .content-section {
+  .content-section, .content-section.hide {
     flex: 100%;
     max-width: 100%;
     padding-left: 0;
     width: 100%;
+    transition: all ease-out 0.3s;
   }
 
   .content {
@@ -223,15 +204,17 @@
     transition: all ease-out 0.3s;
   }
 
-  .content-section.hide .post-card-holder {
+  .content-section.hide .note-card-holder {
     margin-top: 0.5rem;
     transition: all ease-out 0.3s;
   }
 
-  .post-card-holder .post-card {
+  .note-card-holder .note-card, .content-section.hide .note-card-holder .note-card {
     margin-left: 1%;
     margin-right: 1%;
-    width: 98%;
+    max-width: 98%;
+    min-width: 98%;
+    transition: all ease-out 0.3s;
   }
 }
 

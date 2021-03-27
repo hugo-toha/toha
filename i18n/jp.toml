@@ -103,3 +103,6 @@ other = "もっと"
 
 [view_certificate]
 other = "ビューの証明書"
+
+[notes]
+other = "ノート"

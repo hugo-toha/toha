@@ -106,3 +106,6 @@ other = "Более"
 
 [view_certificate]
 other = "Просмотреть сертификат"
+
+[notes]
+other = "Ноты"

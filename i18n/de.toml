@@ -106,3 +106,6 @@ other = "Meer"
 
 [view_certificate]
 other = "Bekijk certificaat"
+
+[notes]
+other = "Opmerkingen"

@@ -106,3 +106,6 @@ other = "更多的"
 
 [view_certificate]
 other = "查看证书"
+
+[notes]
+other = "笔记"

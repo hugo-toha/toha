@@ -168,6 +168,34 @@ img.right {
   font-size: 10pt;
 }
 
+/* ====== codeblocks ====== */
+pre {
+  margin: 5px;
+}
+
+pre > code {
+  padding: 10px !important;
+}
+
+
+/* ======= Paginator ========= */
+.paginator {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  vertical-align: bottom;
+}
+
+.paginator .page-item > a {
+  color: #248aaa;
+}
+
+.paginator .page-item.active > a {
+  background-color: #248aaa;
+  color: #f9fafc;
+}
+
 /* --- FOOTER START --- */
 
 .footer {
