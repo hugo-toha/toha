@@ -30,7 +30,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
-      <img src="{{ $mainLogo  }}">
+      <img src="{{ $mainLogo  }}" alt="Logo">
       {{- site.Title -}}
     </a>
     <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
@@ -46,6 +46,6 @@
     </div>
   </div>
   <!-- Store the logo information in a hidden img for the JS -->
-  <img src="{{ $mainLogo  }}" class="d-none" id="main-logo">
-  <img src="{{ $invertedLogo  }}" class="d-none" id="inverted-logo">
+  <img src="{{ $mainLogo  }}" class="d-none" id="main-logo" alt="Logo">
+  <img src="{{ $invertedLogo  }}" class="d-none" id="inverted-logo" alt="Inverted Logo">
 </nav>
