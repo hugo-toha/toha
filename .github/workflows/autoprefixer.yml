@@ -2,7 +2,7 @@ name: Autoprefixer
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   autoprefixer:
     runs-on: ubuntu-latest
