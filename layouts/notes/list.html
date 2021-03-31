@@ -40,7 +40,14 @@
 <section class="content-section" id="content-section">
   <div class="content container-fluid" id="content">
     <div class="container-fluid note-card-holder" id="note-card-holder">
-        {{ partial "note-aggregator.html" . }}
+      {{ $paginator := .Paginate .RegularPagesRecursive 10 }}
+      {{ range $paginator.Pages }}
+        {{ if .Layout }}
+        {{/* ignore search.md file*/}}
+        {{ else }}
+          {{ .Content }}
+        {{ end }}
+      {{ end }}
     </div>
     <div class="paginator">
       {{ template "_internal/pagination.html" . }}
@@ -51,6 +58,8 @@
 
 {{ define "scripts" }}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script src="{{ "/js/imagesloaded.pkgd.min.js" | relURL }}"></script>
+  <script src="{{ "/js/note.js" | relURL }}"></script>
   <script>
     hljs.initHighlightingOnLoad();
   </script>
