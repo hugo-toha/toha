@@ -1,11 +1,10 @@
 <div class="note-card {{if .Get "size" }}{{.Get "size"}}-note{{end}}">
     <div class="item">
         <h5 class="note-title"><span>{{ .Get "title" }}</span></h5>
-        <div class="card">
-            <div class="card-body">{{ .Inner | markdownify }}</div>
-            {{ if .Get "footer" }}
-            <div class="card-footer">{{ .Get "footer" }}</div>
-            {{end}}
-        </div>
+        {{ range $idx, $val := split .Inner "---" }}
+            <div class="card">
+                <div class="card-body">{{ $val | markdownify }}</div>
+            </div>
+        {{ end }}
     </div>
 </div>
