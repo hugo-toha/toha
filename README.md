@@ -1,10 +1,10 @@
 # Toha
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b1b93b02-f278-440b-ae1b-304e9f4c4ab5/deploy-status)](https://app.netlify.com/sites/toha/deploys) [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fhugo-toha%2Ftoha%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/hugo-toha/toha/goto?ref=master) ![Repository Size](https://img.shields.io/github/repo-size/hugo-toha/toha) ![Lines of Codes](https://img.shields.io/tokei/lines/github/hugo-toha/toha) ![Contributor](https://img.shields.io/github/contributors/hugo-toha/toha) ![Latest Release](https://img.shields.io/github/v/release/hugo-toha/toha?include_prereleases) ![Last Commit](https://img.shields.io/github/last-commit/hugo-toha/toha) ![Open Issues](https://img.shields.io/github/issues/hugo-toha/toha?color=important) ![Open Pull Requests](https://img.shields.io/github/issues-pr/hugo-toha/toha?color=yellowgreen) ![License](https://img.shields.io/github/license/hugo-toha/toha) ![Security Headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fhugo-toha.github.io%2F) [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/b7cb60ab/hugo-toha.github.io)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b1b93b02-f278-440b-ae1b-304e9f4c4ab5/deploy-status)](https://app.netlify.com/sites/toha/deploys) [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fhugo-toha%2Ftoha%2Fbadge%3Fref%3Dmain&style=flat)](https://actions-badge.atrox.dev/hugo-toha/toha/goto?ref=main) ![Repository Size](https://img.shields.io/github/repo-size/hugo-toha/toha) ![Lines of Codes](https://img.shields.io/tokei/lines/github/hugo-toha/toha) ![Contributor](https://img.shields.io/github/contributors/hugo-toha/toha) ![Latest Release](https://img.shields.io/github/v/release/hugo-toha/toha?include_prereleases) ![Last Commit](https://img.shields.io/github/last-commit/hugo-toha/toha) ![Open Issues](https://img.shields.io/github/issues/hugo-toha/toha?color=important) ![Open Pull Requests](https://img.shields.io/github/issues-pr/hugo-toha/toha?color=yellowgreen) ![License](https://img.shields.io/github/license/hugo-toha/toha) ![Security Headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fhugo-toha.github.io%2F) [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/b7cb60ab/hugo-toha.github.io)
 
 A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist design and responsiveness.
 
-![Thumbnail](https://raw.githubusercontent.com/hugo-toha/toha/master/images/screenshot.png)
+![Thumbnail](https://raw.githubusercontent.com/hugo-toha/toha/main/images/screenshot.png)
 
 - **Example Site:** [hugo-toha.github.io](https://hugo-toha.github.io)
 - **Documentation:** [toha-guides.netlify.app](https://toha-guides.netlify.app/posts)
@@ -48,15 +48,15 @@ Here are few screenshots from the [example site](https://hugo-toha.github.io).
 
 ##### Home Page Sections
 
-![Home Page Sections](https://raw.githubusercontent.com/hugo-toha/toha/master/images/about.png)
+![Home Page Sections](https://raw.githubusercontent.com/hugo-toha/toha/main/images/about.png)
 
 ##### List Page
 
-![List Page](https://raw.githubusercontent.com/hugo-toha/toha/master/images/list.png)
+![List Page](https://raw.githubusercontent.com/hugo-toha/toha/main/images/list.png)
 
 ##### Reading Page
 
-![Reading Page](https://raw.githubusercontent.com/hugo-toha/toha/master/images/single.png)
+![Reading Page](https://raw.githubusercontent.com/hugo-toha/toha/main/images/single.png)
 
 ## Requirements
 
@@ -157,7 +157,9 @@ Here, are some handy shortcodes you can use with this theme.
 
 Here, are the current plan and progress of various components of this theme. The components will be prioritized based on users requests.
 
-### Sections
+### 1. Portfolio Mode
+
+Here is the check list for portfolio mode,
 
 - [x] **Home**
 
@@ -228,28 +230,52 @@ Here, are the current plan and progress of various components of this theme. The
   - [x] Image
   - [x] Summary
 
-### List Page
+### 2. Blog Mode
 
-- [x] Post Cards
-- [x] Sidebar
-- [x] Pagination
+Here is the checklist for blog mode,
 
-### Reading Page
+- [ ] **Dedicated Home page**
 
-- [x] Hero Image
-- [x] Author Information
-- [x] Sidebar
-- [x] Table of Contents
-- [x] Next & Previous Page Navigation
-- [x] `Improve This Page` Button
-- [x] Disqus Comment
+- [x] **List Page**
 
-### Tracking and Comments
+  - [x] Post Cards
+  - [x] Sidebar
+  - [x] Pagination
+
+- [x] **Reading Page**
+
+  - [x] Hero Image
+  - [x] Author Information
+  - [x] Sidebar
+  - [x] Table of Contents
+  - [x] Next & Previous Page Navigation
+  - [x] `Improve This Page` Button
+  - [x] Disqus Comment
+
+### 3. Documentation Mode
+
+Here is the check list for documentation mode,
+
+- [ ] **Dedicated Home Page**
+- [ ] **Doc Page**
+  - [ ] Redesign sidebar
+  - [ ] Redesign TOC menu
+  - [ ] Search Capability
+
+### 4. Note Mode
+
+- [ ] **Dedicated Home Page**
+- [ ] **Note Page**
+  - [x] Add note view
+  - [ ] Redesign sidebar
+  - [ ] Add search capability
+
+### 5. Tracking and Comments
 
 - [x] Google Analytics
 - [x] Disqus Comment
 
-### Shortcodes
+### 6. Shortcodes
 
 - [x] Image
 - [x] Split Page into Multiple Column
@@ -257,6 +283,7 @@ Here, are the current plan and progress of various components of this theme. The
 - [x] Alert
 - [ ] Figure & sub-figure
 - [ ] Tabs
+- [x] Notes
 
 ## Contributing
 
@@ -324,7 +351,7 @@ $ git commit -m "A meaningful commit message"
 $ git push my-fork my-feature-branch
 ```
 
-Then, open a PR against `master` branch of [hugo-toha/toha](https://github.com/hugo-toha/toha) from the `my-feature-branch` branch of your own fork.
+Then, open a PR against `main` branch of [hugo-toha/toha](https://github.com/hugo-toha/toha) from the `my-feature-branch` branch of your own fork.
 
 ## Attribution
 
