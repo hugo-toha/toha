@@ -59,7 +59,7 @@
           {{ range sort $sections "section.weight" }}
             {{ if and (.section.enable) (.section.showOnNavbar)}}
               {{ $sectionCount  = add $sectionCount 1}}
-              {{ if lt $sectionCount 5 }}
+              {{ if le $sectionCount 5 }}
                 <li class="nav-item">
                   <a class="nav-link" href="#{{ partial "helpers/get-section-id.html" . }}">{{ .section.name }}</a>
                 </li>
