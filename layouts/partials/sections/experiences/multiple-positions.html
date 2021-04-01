@@ -1,7 +1,7 @@
 <div class="col-10 col-lg-8">
     <div class="experience-entry-heading">
         <!-- For multiple positions, give emphasis on the company name-->
-        <h5>{{ if .company.url }}<a href={{.company.url}}>{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h5>
+        <h5>{{ if .company.url }}<a href={{.company.url}} target="_blank">{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h5>
 
         <!-- Total experience duration on a company is time between the starting date of the oldest position and ending date of most recent position -->
         {{ $oldestPosition := index (last 1 .positions) 0}}

@@ -17,7 +17,7 @@
       <h5 class="p-1">
         {{ .designation }}
         {{ if .company }}
-        {{ i18n "at"}} <a href="{{ .company.url }}">{{ .company.name }}</a>
+        {{ i18n "at"}} <a href="{{ .company.url }}" target="_blank">{{ .company.name }}</a>
         {{ end }}
       </h5>
       {{ end }}
