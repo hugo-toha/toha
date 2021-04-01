@@ -3,7 +3,7 @@
         {{ $position:= index .positions 0 }}
         <!-- For single position, give emphasis on the designation-->
         <h5>{{ $position.designation }}</h5>
-        <h6>{{ if .company.url }}<a href={{.company.url}}>{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h6>
+        <h6>{{ if .company.url }}<a href={{.company.url}} target="_blank">{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h6>
         <!-- Add experience duration info -->
         <p class="text-muted">{{ $position.start }} - {{ if $position.end }}{{ $position.end }}{{ else }}{{ i18n "present" }}{{ end }},
             {{ .company.location }}
