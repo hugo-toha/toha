@@ -43,7 +43,11 @@
                                     <h6 class="text-muted">{{ i18n "publications"}}</h6>
                                     <ul>
                                         {{ range .publications }}
-                                            <li><a href="{{ .url }} " target="_blank">{{ .title }}</a></li>
+                                            {{ if .url }}
+                                                <li><a href="{{ .url }}" target="_blank">{{ .title }}</a></li>
+                                            {{ else }}
+                                                <li>{{ .title }}</li>
+                                            {{ end }}
                                         {{ end }}
                                     </ul>
                                 </div>

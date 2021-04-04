@@ -27,7 +27,7 @@
                             <div class="row">
                                 <div class="col-lg-10 col-md-8">
                                     {{ if .institution.url }}
-                                        <h5><a href="{{ .institution.url }}">{{ .institution.name }}</a></h5>
+                                        <h5><a href="{{ .institution.url }}" target="_blank">{{ .institution.name }}</a></h5>
                                     {{ else }}
                                         <h5>{{ .institution.name }}</h5>
                                     {{ end }}
@@ -43,7 +43,11 @@
                                     <h6 class="text-muted">{{i18n "publications"}}</h6>
                                     <ul>
                                         {{ range .publications }}
-                                            <li><a href="{{ .url }} ">{{ .title }}</a></li>
+                                            {{ if .url }}
+                                                <li><a href="{{ .url }}" target="_blank">{{ .title }}</a></li>
+                                            {{ else }}
+                                                <li>{{ .title }}</li>
+                                            {{ end }}
                                         {{ end }}
                                     </ul>
                                 </div>

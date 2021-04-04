@@ -11,7 +11,9 @@
       <p>{{ .courseOverview | markdownify }}</p>
     </div>
     <div class="card-footer">
-      <a class="btn btn-outline-info ml-1 pl-2 mb-2" href="{{ .certificateURL | default "#"}}" target="_blank" role="button">{{ i18n "view_certificate"}}</a>
+      {{ if .certificateURL }}
+        <a class="btn btn-outline-info ml-1 pl-2 mb-2" href="{{ .certificateURL }}" target="_blank" role="button">{{ i18n "view_certificate"}}</a>
+      {{ end }}
     </div>
   </div>
 </div>
