@@ -29,11 +29,11 @@
           {{ range .socialLinks }}
           <li>
             {{ if eq .name "Email" }}
-              <a href="mailto:{{ .url }}" target="/"><i class="{{ .icon }}"></i></a>
+              <a href="mailto:{{ .url }}" target="_blank"><i class="{{ .icon }}"></i></a>
             {{ else if eq .name "Phone" }}
-              <a href="tel:{{ .url }}" target="/"><i class="{{ .icon }}"></i></a>
+              <a href="tel:{{ .url }}" target="_blank"><i class="{{ .icon }}"></i></a>
             {{ else }}
-              <a href="{{ .url }}" target="/"><i class="{{ .icon }}"></i></a>
+              <a href="{{ .url }}" target="_blank"><i class="{{ .icon }}"></i></a>
             {{ end }}
           </li>
           {{ end }}
