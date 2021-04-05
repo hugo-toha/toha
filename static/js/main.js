@@ -72,6 +72,16 @@ var isMobile = false, isTablet = false, isLaptop = false;
     }
     addSmoothScroll();
 
+    // ===================== Video Player ==================
+    function renderVideoPlayer(){
+      var videos = document.getElementsByClassName("video-player");
+      for (var i =0; i< videos.length; i++ ){
+        const player = new Plyr("#"+videos[i].id);
+      }
+
+    }
+    renderVideoPlayer();
+
     // re-render custom functions on window resize
     window.onresize = function () {
       detectDevice();
