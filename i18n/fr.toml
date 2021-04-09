@@ -3,7 +3,7 @@
 other = "Accueil"
 
 [posts]
-other = "Des postes"
+other = "Articles"
 
 [toc_heading]
 other = "Table des matières"
@@ -77,29 +77,29 @@ other = "En savoir plus"
 [show_less]
 other = "Montrer moins"
 
-# [responsibilities]
-# other = "Responsibilities:"
+[responsibilities]
+other = "Responsabilités :"
 
 # [present]
 # other = "Present"
 
-# [comments_javascript]
-# other = "Please enable JavaScript to view the"
+[comments_javascript]
+other = "Merci d'activer JavaScript pour voir"
 
-# [comments_by]
-# other = "comments powered by"
+[comments_by]
+other = "commentaires gérés par"
 
-# [read]
-# other = "Read"
+[read]
+other = "Lire"
 
 # [project_star]
 # other = "Star"
 
-# [project_details]
-# other = "Details"
+[project_details]
+other = "Détails"
 
-# [err_404]
-# other = "The page you are looking for is not there yet."
+[err_404]
+other = "La page que vous recherchez n'est pas disponnible ou inexistante."
 
 [more]
 other = "Suite"
