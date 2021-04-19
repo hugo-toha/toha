@@ -27,7 +27,7 @@
                             <div class="row">
                                 <div class="col-lg-10 col-md-8">
                                     {{ if .institution.url }}
-                                        <h5><a href="{{ .institution.url }}" target="_blank">{{ .institution.name }}</a></h5>
+                                        <h5><a href="{{ .institution.url }}" title="{{ .institution.name }}" target="_blank" rel="noopener">{{ .institution.name }}</a></h5>
                                     {{ else }}
                                         <h5>{{ .institution.name }}</h5>
                                     {{ end }}
@@ -44,7 +44,7 @@
                                     <ul>
                                         {{ range .publications }}
                                             {{ if .url }}
-                                                <li><a href="{{ .url }}" target="_blank">{{ .title }}</a></li>
+                                                <li><a href="{{ .url }}" title="{{ .title }}" target="_blank" rel="noopener">{{ .title }}</a></li>
                                             {{ else }}
                                                 <li>{{ .title }}</li>
                                             {{ end }}
@@ -82,9 +82,9 @@
                                 {{ end }}
                                 {{ if gt (len .takenCourses.courses) 2 }}
                                     <button type="button" class="btn btn-link show-more-btn pt-0 {{ if .takenCourses.showGrades }}ml-1{{ else }}ml-2{{ end }}"
-                                    onclick="toggleCourseVisibility(this);" id="show-more-btn">{{ i18n "show_more"}}</button>
+                                    onclick="toggleCourseVisibility(this);" id="show-more-btn" aria-label="{{ i18n "show_more"}}">{{ i18n "show_more"}}</button>
                                     <button type="button" class="btn btn-link show-more-btn hidden pt-0 {{ if .takenCourses.showGrades }}ml-1{{ else }}ml-2{{ end }}"
-                                    onclick="toggleCourseVisibility(this);" id="show-less-btn">{{ i18n "show_less"}}</button>
+                                    onclick="toggleCourseVisibility(this);" id="show-less-btn" aria-label="{{ i18n "show_less"}}">{{ i18n "show_less"}}</button>
                                 {{ end }}
                             </div>
                             {{ end }}

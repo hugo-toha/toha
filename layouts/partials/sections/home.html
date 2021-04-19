@@ -127,7 +127,7 @@
         {{ if .section.id }}
           {{ $sectionID = .section.id }}
         {{ end }}
-        <a href="#{{ $sectionID }}"><i class="arrow bounce fa fa-chevron-down"></i></a>
+        <a href="#{{ $sectionID }}" aria-label="{{ i18n "read" }} {{ i18n "more" }} - {{ $name }}"><i class="arrow bounce fa fa-chevron-down"></i></a>
       {{ end }}
     {{ end }}
   </div>
