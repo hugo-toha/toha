@@ -17,7 +17,7 @@
       <h5 class="p-1">
         {{ .designation }}
         {{ if .company }}
-        {{ i18n "at"}} <a href="{{ .company.url }}" target="_blank">{{ .company.name }}</a>
+        {{ i18n "at"}} <a href="{{ .company.url }}" title="{{ .company.name }}" target="_blank" rel="noopener">{{ .company.name }}</a>
         {{ end }}
       </h5>
       {{ end }}
@@ -29,18 +29,18 @@
           {{ range .socialLinks }}
           <li>
             {{ if eq .name "Email" }}
-              <a href="mailto:{{ .url }}" target="_blank"><i class="{{ .icon }}"></i></a>
+              <a href="mailto:{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
             {{ else if eq .name "Phone" }}
-              <a href="tel:{{ .url }}" target="_blank"><i class="{{ .icon }}"></i></a>
+              <a href="tel:{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
             {{ else }}
-              <a href="{{ .url }}" target="_blank"><i class="{{ .icon }}"></i></a>
+              <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
             {{ end }}
           </li>
           {{ end }}
         </ul>
       </div>
       {{ if .resume }}
-      <a href="{{ .resume | relURL }}" target="#"
+      <a href="{{ .resume | relURL }}" title="{{ i18n "resume"}}" target="#"
         ><button class="btn btn-dark">{{ i18n "resume"}}</button></a
       >
       {{ end }}

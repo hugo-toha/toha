@@ -5,7 +5,7 @@
     {{ else }}
         {{$id := .Params.Menu.Notes.Identifier }}
         <h4 class="note-collection-title" id="{{ $id }}">
-            <a href="#{{ $id }}"># {{ .Title }}</a>
+            <a href="#{{ $id }}" title="{{ .Title }}"># {{ .Title }}</a>
             {{$badges:= split .File.Dir "/"}}
             {{ range after 1 $badges }}
             <span class="badge btn-info note-badge">{{ . }}</span>
