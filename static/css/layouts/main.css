@@ -168,6 +168,11 @@ img.right {
   font-size: 10pt;
 }
 
+.flag-icon {
+  width: 16px !important;
+  margin-top: 5px;
+}
+
 /* ====== codeblocks ====== */
 table {
   border-radius: 0.1rem;
