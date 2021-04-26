@@ -139,7 +139,7 @@ Don't forget to update `title`, `baseURL`, and `gitRepo` fields with your own in
 Now, you can run your hugo site with `toha` theme locally with the following command:
 
 ```console
-$ hugo server -t toha -w
+$ hugo server --theme toha --watch
 ```
 
 When you run your site for first time, it will start with the default parameters. It should look similar to the [example site](https://hugo-toha.github.io). However, it will not have any sections in the homepage as we haven't configured them yet. You can configure your site by following the guides from [here](https://toha-guides.netlify.app/posts/configuration/).
