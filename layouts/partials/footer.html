@@ -1,4 +1,5 @@
 {{ $footerEnabled := site.Params.footer.enable | default true }}
+{{ $navigationEnabled := site.Params.footer.navigation.enable | default true }}
 {{ $contactMeEnabled := site.Params.footer.contactMe.enable | default true }}
 {{ $newsLetterEnabled := site.Params.newsletter.enable }}
 
@@ -41,6 +42,7 @@
   <footer class="container-fluid text-center align-content-center footer pb-2">
     <div class="container pt-5">
       <div class="row text-left">
+        {{ if $navigationEnabled }}
         <div class="col-md-4 col-sm-12">
           <h5>{{ i18n "navigation" }}</h5>
           {{ if $sections }}
@@ -58,8 +60,8 @@
             {{- end }}
           </ul>
           {{ end }}
-
         </div>
+        {{ end }}
         {{ if (and $contactMeEnabled $author) }}
         <div class="col-md-4 col-sm-12">
           <h5>{{ i18n "contact_me" }}</h5>
