@@ -2,6 +2,7 @@
 {{ $navigationEnabled := site.Params.footer.navigation.enable | default true }}
 {{ $contactMeEnabled := site.Params.footer.contactMe.enable | default true }}
 {{ $newsLetterEnabled := site.Params.newsletter.enable }}
+{{ $credentialsEnabled := site.Params.footer.credentials.enable | default true }}
 
 {{ if $footerEnabled }}
   {{ $author:= site.Data.author }}
@@ -95,6 +96,7 @@
         {{ end }}
       </div>
     </div>
+    {{ if $credentialsEnabled }}
     <hr />
     <div class="container">
       <div class="row text-left">
@@ -116,5 +118,6 @@
         </div>
       </div>
     </div>
+    {{ end }}
   </footer>
 {{end}}
