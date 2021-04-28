@@ -1,5 +1,6 @@
 {{ $footerEnabled := site.Params.footer.enable | default true }}
 {{ $contactMeEnabled := site.Params.footer.contactMe.enable | default true }}
+{{ $newsLetterEnabled := site.Params.newsletter.enable }}
 
 {{ if $footerEnabled }}
   {{ $author:= site.Data.author }}
@@ -69,7 +70,7 @@
           </ul>
         </div>
         {{ end }}
-        {{ if site.Params.newsletter.enable }}
+        {{ if $newsLetterEnabled }}
         <div class="col-md-4 col-sm-12">
           <!-- <h5>Newsletter</h5> -->
           <p>{{ i18n "newsletter_text" }}</p>
