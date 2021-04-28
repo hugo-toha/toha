@@ -1,4 +1,5 @@
 {{ $footerEnabled := site.Params.footer.enable | default true }}
+{{ $contactMeEnabled := site.Params.footer.contactMe.enable | default true }}
 
 {{ if $footerEnabled }}
   {{ $author:= site.Data.author }}
@@ -58,7 +59,7 @@
           {{ end }}
 
         </div>
-        {{ if $author }}
+        {{ if (and $contactMeEnabled $author) }}
         <div class="col-md-4 col-sm-12">
           <h5>{{ i18n "contact_me" }}</h5>
           <ul>
