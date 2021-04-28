@@ -1,7 +1,8 @@
-{{ $footerEnabled := site.Params.footer.enable | default true }}
-{{ $navigationEnabled := site.Params.footer.navigation.enable | default true }}
-{{ $contactMeEnabled := site.Params.footer.contactMe.enable | default true }}
-{{ $newsLetterEnabled := site.Params.newsletter.enable }}
+{{/*  variables for enabling/disabling parts of the footer  */}}
+{{ $footerEnabled      := site.Params.footer.enable             | default true }}
+{{ $navigationEnabled  := site.Params.footer.navigation.enable  | default true }}
+{{ $contactMeEnabled   := site.Params.footer.contactMe.enable   | default true }}
+{{ $newsLetterEnabled  := site.Params.newsletter.enable         | default false }}
 {{ $credentialsEnabled := site.Params.footer.credentials.enable | default true }}
 
 {{ if $footerEnabled }}
