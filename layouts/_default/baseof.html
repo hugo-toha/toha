@@ -30,7 +30,8 @@
     </div>
 
     <!------- ADD FOOTER ------------>
-    {{- partial "footer.html" . -}}
+    {{ $footerTemplate:= site.Params.footer.template | default "footer.html" }}
+    {{- partial $footerTemplate . -}}
 
     <!------- ADD COMMON SCRIPTS ------->
     {{ partial "scripts.html" . }}
