@@ -40,9 +40,7 @@
 <section class="content-section" id="content-section">
   <div class="content container-fluid" id="content">
     <div class="container-fluid note-card-holder" id="note-card-holder">
-      <div class="note-collection">
-        {{ .Content }}
-      </div>
+      {{ .Content }}
     </div>
   </div>
 </section>
@@ -50,6 +48,8 @@
 
 {{ define "scripts" }}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script src="{{ "/js/imagesloaded.pkgd.min.js" | relURL }}"></script>
+  <script src="{{ "/js/note.js" | relURL }}"></script>
   <script>
     hljs.initHighlightingOnLoad();
   </script>

@@ -1,3 +1,12 @@
+{{/*  variables for enabling/disabling various features  */}}
+{{ $blogEnabled   := site.Params.features.blog.enable   | default false }}
+{{ $notesEnabled  := site.Params.features.notes.enable  | default false }}
+
+{{/*  keep backward compatibility for blog post  */}}
+{{ if site.Params.enableBlogPost }}
+  {{ $blogEnabled = true }}
+{{ end }}
+
 {{/*  default logos  */}}
 {{ $mainLogo := "/images/main-logo.png" }}
 {{ $invertedLogo := "/images/inverted-logo.png" }}
@@ -84,18 +93,18 @@
             </li>
           {{ end }}
         {{- end }}
-        {{ $hasCustomMenus:= false }}
-        {{ if $customMenus }}
-          {{ if gt (len $customMenus) 0 }}
-            {{ $hasCustomMenus = true }}
-          {{ end }}
-        {{ end }}
-        {{ if (or site.Params.enableBlogPost $hasCustomMenus) }}
+        {{ $shouldAddSeparator:= partial "helpers/add-navbar-separator.html" . }}
+        {{ if $shouldAddSeparator }}
           <div class="dropdown-divider" id="top-navbar-divider"></div>
         {{ end }}
-        {{ if site.Params.enableBlogPost }}
+        {{ if $blogEnabled }}
           <li class="nav-item">
             <a class="nav-link" id="blog-link" href="{{ "/posts" | relLangURL }}">{{ i18n "posts" }}</a>
+          </li>
+        {{ end }}
+        {{ if $notesEnabled }}
+          <li class="nav-item">
+            <a class="nav-link" id="note-link" href="{{ "/notes" | relLangURL }}">{{ i18n "notes" }}</a>
           </li>
         {{ end }}
         {{ range $customMenus }}
