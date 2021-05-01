@@ -2,8 +2,13 @@
 {{ $footerEnabled      := site.Params.footer.enable             | default true }}
 {{ $navigationEnabled  := site.Params.footer.navigation.enable  | default true }}
 {{ $contactMeEnabled   := site.Params.footer.contactMe.enable   | default true }}
-{{ $newsLetterEnabled  := site.Params.newsletter.enable         | default false }}
+{{ $newsletterEnabled  := site.Params.footer.newsletter.enable  | default true }}
 {{ $credentialsEnabled := site.Params.footer.credentials.enable | default true }}
+
+{{/*  Keep backward compatibility for the newsletter function */}}
+{{ if site.Params.newsletter.enable }}
+  {{ $newsletterEnabled = true }}
+{{ end }}
 
 {{ if $footerEnabled }}
   {{ $author:= site.Data.author }}
@@ -16,7 +21,7 @@
     {{ $sections = (index site.Data site.Language.Lang).sections }}
   {{ end }}
 
-  {{ $copyrightNotice := "© 2020 Copyright."}}
+  {{ $copyrightNotice := "© 2021 Copyright."}}
   {{ if (index site.Data site.Language.Lang).site }}
     {{ $siteConfig := (index site.Data site.Language.Lang).site }}
     {{ if $siteConfig.copyright }}
@@ -74,7 +79,7 @@
           </ul>
         </div>
         {{ end }}
-        {{ if $newsLetterEnabled }}
+        {{ if $newsletterEnabled }}
         <div class="col-md-4 col-sm-12">
           <!-- <h5>Newsletter</h5> -->
           <p>{{ i18n "newsletter_text" }}</p>
