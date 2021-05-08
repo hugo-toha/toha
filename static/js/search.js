@@ -31,7 +31,7 @@ if(searchQuery){
 
 
 function executeSearch(searchQuery){
-  $.getJSON( "/index.json", function( data ) {
+  $.getJSON( window.location.href.split("/search/")[0] + "/index.json", function( data ) {
     var pages = data;
     var fuse = new Fuse(pages, fuseOptions);
     var result = fuse.search(searchQuery);
