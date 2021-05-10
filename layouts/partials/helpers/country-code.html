@@ -1,14 +1,18 @@
+{{/*  if there is no custom flag provided, we define the flag with the country code  */}}
 {{ $languageCode:= .Lang }}
-{{/*  by default the language code and the country code are same  */}}
 {{ $countryCode:= $languageCode }}
-
-{{/*  language code and country code are not same for some countries. we need to fix them.  */}}
-{{ if eq $languageCode "en" }}
-   {{ $countryCode = "gb" }}
-{{ else if  eq $languageCode "bn" }}
-    {{ $countryCode = "bd" }}
-{{ else if  eq $languageCode "hi" }}
-    {{ $countryCode = "in" }}
+{{/*  if the user has selected a custom flag, display it  */}}
+{{ if isset .Site.Params "flag" }}
+    {{ $countryCode = .Param "flag" }}
+{{ else }}
+    {{/*  but some language codes dont have an equivalent country code. we need to fix them.  */}}
+    {{ if eq $languageCode "en" }}
+        {{ $countryCode = "gb" }}
+    {{ else if  eq $languageCode "bn" }}
+            {{ $countryCode = "bd" }}
+    {{ else if  eq $languageCode "hi" }}
+        {{ $countryCode = "in" }}
+    {{ end }}
 {{ end }}
 
 {{/*  return the country code  */}}
