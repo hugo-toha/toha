@@ -83,12 +83,20 @@
         <div class="col-md-4 col-sm-12">
           <!-- <h5>Newsletter</h5> -->
           <p>{{ i18n "newsletter_text" }}</p>
-          <form>
+          <form
+            action="{{ .Site.Params.mailchimpURL }}"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="validate"
+            target="_blank"
+            novalidate >
             <div class="form-group">
               <input
                 type="email"
                 class="form-control"
-                id="exampleInputEmail1"
+                id="mce-EMAIL"
+                name="EMAIL"
                 aria-describedby="emailHelp"
                 placeholder="{{ i18n "newsletter_input_placeholder" }}"
               />
