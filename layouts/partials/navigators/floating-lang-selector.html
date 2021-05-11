@@ -1,0 +1,21 @@
+{{ $pageURL:= .RelPermalink }}
+{{ if site.IsMultiLingual }}
+    {{ $pageURL = strings.TrimPrefix (path.Join "/" .Language.Lang) $pageURL }}
+{{ end }}
+
+<div class="dropdown languageSelector">
+    <a class="btn dropdown-toggle" href="#" id="languageSelector" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{ $countryCode := partial "helpers/country-code.html" .Language }}
+        <img class="flag" src="https://www.countryflags.io/{{ $countryCode }}/flat/16.png" alt="{{ $countryCode }}">
+        {{ site.Language.LanguageName }}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        {{ range .Translations }}
+        <a class="dropdown-item nav-link languages-item" href="{{ path.Join "/" (cond (eq .Language.Lang "en") "" .Language.Lang) $pageURL }}">
+            {{ $countryCode := partial "helpers/country-code.html" .Language }}
+            <img class="flag" src="https://www.countryflags.io/{{ $countryCode }}/flat/24.png" alt="{{ $countryCode }}">
+            {{ .Language.LanguageName }}
+        </a>
+        {{ end }}
+    </div>
+</div>

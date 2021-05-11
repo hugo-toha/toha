@@ -1,0 +1,111 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Startseite"
+
+[posts]
+other = "Beiträge"
+
+[toc_heading]
+other = "Inhaltsverzeichnis"
+
+[at]
+other = "bei"
+
+[resume]
+other = "Mein Lebenslauf"
+
+[navigation]
+other = "Navigation"
+
+[contact_me]
+other = "Kontakt aufnehmen"
+
+[email]
+other = "E-Mail"
+
+[phone]
+other = "Telefon"
+
+[newsletter_text]
+other = "Mit dem Newsletter auf dem neuesten Stand bleiben"
+
+[newsletter_input_placeholder]
+other = "E-Mail-Adresse eingeben"
+
+[newsletter_warning]
+other = "Wir werden Ihre E-Mail-Adresse nicht an Dritte weitergeben."
+
+[submit]
+other = "Absenden"
+
+[hugoAttributionText]
+other = "Unterstützt von"
+
+[prev]
+other = "Vorherige"
+
+[next]
+other = "Nächste"
+
+[improve_this_page]
+other = "Diese Seite verbessern"
+
+[out_of]
+other = "van de"
+
+[publications]
+other = "Publicaties"
+
+[taken_courses]
+other = "Cursussen gevolgd"
+
+[course_name]
+other = "Cursus naam"
+
+[total_credit]
+other = "Totaal krediet"
+
+[obtained_credit]
+other = "Krediet verkregen"
+
+[extracurricular_activities]
+other = "Buitenschoolse activiteiten"
+
+[show_more]
+other = "Bekijk meer"
+
+[show_less]
+other = "Laat minder zien"
+
+# [responsibilities]
+# other = "Responsibilities:"
+
+# [present]
+# other = "Present"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+# [project_details]
+# other = "Details"
+
+# [err_404]
+# other = "The page you are looking for is not there yet."
+
+[more]
+other = "Meer"
+
+[view_certificate]
+other = "Bekijk certificaat"
+
+[notes]
+other = "Opmerkingen"

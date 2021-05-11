@@ -1,0 +1,5 @@
+{{ if gt (len .positions) 1 }}
+  {{ partial "sections/experiences/multiple-positions" . }}
+{{ else }}
+  {{ partial "sections/experiences/single-position.html" . }}
+{{ end }}

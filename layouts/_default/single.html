@@ -1,86 +1,107 @@
 {{ define "header" }}
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Title }}{{ end }}" />
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
 />
-<link rel="stylesheet" href="/assets/css/single.css" />
+<link rel="stylesheet" href="{{ "/css/layouts/single.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "/css/navigators/sidebar.css" | relURL }}">
 {{ end }}
 
 {{ define "navbar" }}
-    {{ partial "navbar-2.html" (dict "baseURL" .Site.BaseURL "title" .Site.Title "hasToggleButton" false) }}
+    {{ partial "navigators/navbar-2.html" . }}
+{{ end }}
+
+{{ define "sidebar" }}
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="{{ "search" | absURL }}">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="{{ "/posts" | relLangURL }}" data-filter="all">{{ i18n "posts" }}</a></li>
+            <div class="subtree">
+                {{ partial "navigators/sidebar.html" (dict "menuName" "sidebar" "menuItems" site.Menus.sidebar "ctx" .) }}
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 {{ end }}
 
 {{ define "content" }}
-<div class="container p-0 read-area">
-  <!--Hero Area-->
-  <div class="hero-area col-sm-12" style='background-image: url({{ partial "helpers/get-hero.html" . }});'>
-  </div>
-
-  <!--Content Start-->
-  <div class="page-content">
-    <div class="author-profile ml-auto align-self-lg-center">
-      <img class="rounded-circle" src='{{ partial "helpers/get-author-image.html" . }}'/>
-      <h5 class="author-name">{{ partial "helpers/get-author-name.html" . }}</h5>
-      <p>{{ .Page.Date.Format "January 2, 2006" }}</p>
-    </div>
-
-    <div class="title">
-      <h1>{{ .Page.Title }}</h1>
-    </div>
-
-    <div class="post-content" id="post-content">
-      {{ .Page.Content }}
-    </div>
-
-    <!--- Improve this page button --->
-    {{ if .Site.Params.GitRepo }}
-      <div class="btn-improve-page">
-          <a href="{{ .Site.Params.GitRepo }}/edit/master/content/{{ .File.Path }}">
-            <i class="fas fa-code-branch"></i>
-            Improve This Page
-          </a>
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      <!--Hero Area-->
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url({{ strings.TrimSuffix "/" site.BaseURL }}{{ partial "helpers/get-hero.html" . }});'>
       </div>
-    {{ end }}
 
-    <!---Next and Previous Navigator -->
-  <hr />
-  <div class="row next-prev-navigator">
-    {{ $currentPage := . }}
-    {{ range .Site.RegularPages.ByDate }}
-      {{ if eq .RelPermalink  $currentPage.RelPermalink }}
-        {{ if .Next }}
-        <div class="col-md-6 previous-article">
-          <a href="{{.Next.RelPermalink}}" class="btn btn-outline-info">
-            <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
-            <br />
-            <span>{{ .Next.Title }}</span>
-          </a>
+      <!--Content Start-->
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='{{ partial "helpers/get-author-image.html" . }}' alt="Author Image">
+          <h5 class="author-name">{{ partial "helpers/get-author-name.html" . }}</h5>
+          <p>{{ .Page.Date.Format "January 2, 2006" }}</p>
         </div>
-        {{ end }}
-        {{ if .Prev }}
-        <div class="{{ if .Next }}col-md-6{{ else }}col-md-12{{ end }} next-article">
-          <a href="{{ .Prev.RelPermalink }}" class="btn btn-outline-info">
-            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
-            <br />
-            <span>{{ .Prev.Title }}</span>
-          </a>
+
+        <div class="title">
+          <h1>{{ .Page.Title }}</h1>
         </div>
+
+        <div class="post-content" id="post-content">
+          {{ .Page.Content }}
+        </div>
+
+        <!--- Improve this page button --->
+        {{ if site.Params.GitRepo }}
+          <div class="btn-improve-page">
+              <a href="{{ site.Params.GitRepo }}/edit/{{ site.Params.GitBranch }}/content/{{ .File.Path }}" title="{{ i18n "improve_this_page" }}" target="_blank" rel="noopener">
+                <i class="fas fa-code-branch"></i>
+                {{ i18n "improve_this_page" }}
+              </a>
+          </div>
         {{ end }}
+
+        <!---Next and Previous Navigator -->
+      <hr />
+        {{ partial "navigators/next-prev-navigator.html" . }}
+      <hr />
+      <!-- Add Disqus forum  -->
+      {{ if site.DisqusShortname }}
+          {{ partial "disqus.html" . }}
       {{ end }}
-    {{ end }}
+      </div>
+    </div>
   </div>
-  <hr />
-  <!-- Add Disqus forum  -->
-  {{ if .Site.DisqusShortname }}
-      {{ partial "disqus.html" . }}
+  <!--scroll back to top-->
+  <a id="scroll-to-top" class="btn"><i class="fas fa-chevron-circle-up"></i></a>
+  {{ if .IsTranslated }}
+    {{ partial "navigators/floating-lang-selector.html" . }}
   {{ end }}
-</div>
+</section>
 {{ end }}
 
+{{ define "toc" }}
+  <section class="toc-section" id="toc-section">
+    {{ if site.Params.enableTOC }}
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">{{ i18n "toc_heading" }}</h5>
+      <hr>
+      <div class="toc">
+        {{ .TableOfContents }}
+      </div>
+    </div>
+    {{ end }}
+  </section>
+{{ end }}
 
 {{ define "scripts" }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-<script src="/assets/js/single.js"></script>
+<script src="{{ "/js/single.js" | relURL }}"></script>
 <script>
   hljs.initHighlightingOnLoad();
 </script>

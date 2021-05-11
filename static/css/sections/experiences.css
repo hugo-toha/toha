@@ -1,0 +1,165 @@
+.experiences-section {
+  padding-bottom: 1rem;
+}
+
+.experiences-section .timeline {
+  margin-top: 1.5rem !important;
+}
+
+.experiences-section ul {
+  padding-left: 1rem;
+}
+
+.experiences-section ul > li {
+  margin-left: 0;
+  color: #3c4858;
+}
+
+.experiences-section .designation {
+  font-weight: 600;
+}
+
+.circle {
+  padding: 13px 20px;
+  border-radius: 50%;
+  background-color: #248aaa;
+  color: #f9fafc;
+  max-height: 50px;
+  z-index: 2;
+}
+
+.timeline .vertical-line {
+  align-self: stretch;
+}
+
+.timeline .vertical-line::after {
+  content: "";
+  position: absolute;
+  border-left: 3px solid #248aaa;
+  z-index: 1;
+  height: 100%;
+  left: 50%;
+}
+
+.vertical-line-left-adjustment::after {
+  left: calc(50% - 3px) !important;
+}
+
+.timeline .horizontal-line div {
+  padding: 0;
+  height: 40px;
+}
+
+.timeline .horizontal-line hr {
+  border-top: 3px solid #248aaa;
+  margin: 0;
+  top: 17px;
+  position: relative;
+}
+
+.timeline .horizontal-line .timeline-side-div {
+  display: flex;
+  overflow: hidden;
+}
+
+.timeline .horizontal-line .corner {
+  border: 3px solid #248aaa;
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+
+.top-left {
+  left: -50%;
+  top: -50%;
+}
+
+.top-right {
+  left: 50%;
+  top: -50%;
+}
+
+.bottom-left {
+  left: -50%;
+  top: calc(50% - 3px);
+}
+
+.bottom-right {
+  left: 50%;
+  top: calc(50% - 3px);
+}
+
+/* ============= Device specific fixes ======= */
+
+/* Large screens such as TV */
+@media only screen and (min-width: 1824px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (max-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+/* IPad Pro */
+@media (max-width: 1024px) {
+}
+
+/*  Large devices (desktops, 992px and up) */
+
+@media (max-width: 992px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media only screen and (max-width: 768px) {
+  .experiences-section .container {
+    max-width: 100%;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media only screen and (max-width: 576px) {
+}
+
+/* iPhoneX, iPhone 6,7,8 */
+@media only screen and (max-width: 375px) {
+  .top-left {
+    left: -52%;
+    top: -50%;
+  }
+
+  .top-right {
+    left: 52%;
+    top: -50%;
+  }
+}
+
+/* Galaxy S5, Moto G4 */
+@media only screen and (max-width: 360px) {
+  .top-left {
+    left: -56%;
+    top: -50%;
+  }
+
+  .top-right {
+    left: 56%;
+    top: -50%;
+  }
+}
+
+/* iPhone 5 or before */
+@media only screen and (max-width: 320px) {
+  .top-left {
+    left: -64%;
+    top: -50%;
+  }
+
+  .top-right {
+    left: 64%;
+    top: -50%;
+  }
+}

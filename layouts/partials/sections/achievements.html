@@ -1,0 +1,20 @@
+{{ $sectionID := replace (lower .section.name) " " "-"  }}
+{{ if .section.id }}
+  {{ $sectionID = .section.id }}
+{{ end }}
+
+<div class="container-fluid anchor pb-5 achievements-section" id="{{ $sectionID }}">
+  {{ if not (.section.hideTitle) }}
+    <h1 class="text-center">{{ .section.name }}</h1>
+  {{ end }}
+  <div class="container">
+    <div class="row" id="gallery">
+    </div>
+  </div>
+  <!-- achievements-holder holds achievement-entry -->
+  <div class="d-none" id="achievements-holder">
+    {{ range .achievements }}
+      {{ partial "sections/achievements/entry.html" . }}
+    {{ end }}
+  </div>
+</div>

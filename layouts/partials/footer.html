@@ -1,66 +1,129 @@
-<footer class="container-fluid text-center align-content-center footer pb-2">
-  <div class="container pt-5">
-    <div class="row text-left">
-      <div class="col-md-4 col-sm-12">
-        <h5>Navigation</h5>
-        {{ if .Site.Data.site }}
+{{/*  variables for enabling/disabling parts of the footer  */}}
+{{ $footerEnabled      := site.Params.footer.enable             | default true }}
+{{ $navigationEnabled  := site.Params.footer.navigation.enable  | default true }}
+{{ $contactMeEnabled   := site.Params.footer.contactMe.enable   | default true }}
+{{ $newsletterEnabled  := site.Params.footer.newsletter.enable  | default true }}
+{{ $credentialsEnabled := site.Params.footer.credentials.enable | default true }}
+
+{{/*  Keep backward compatibility for the newsletter function */}}
+{{ if site.Params.newsletter.enable }}
+  {{ $newsletterEnabled = true }}
+{{ end }}
+
+{{ if $footerEnabled }}
+  {{ $author:= site.Data.author }}
+  {{ if (index site.Data site.Language.Lang).author }}
+    {{ $author = (index site.Data site.Language.Lang).author }}
+  {{ end }}
+
+  {{ $sections:= site.Data.sections }}
+  {{ if (index site.Data site.Language.Lang).sections }}
+    {{ $sections = (index site.Data site.Language.Lang).sections }}
+  {{ end }}
+
+  {{ $copyrightNotice := "© 2021 Copyright."}}
+  {{ if (index site.Data site.Language.Lang).site }}
+    {{ $siteConfig := (index site.Data site.Language.Lang).site }}
+    {{ if $siteConfig.copyright }}
+      {{ $copyrightNotice = $siteConfig.copyright }}
+    {{ end }}
+  {{ end }}
+
+  {{/*  footer logos  */}}
+  {{ $themeLogo := "/images/theme-logo.png" }}
+  {{ $hugoLogo := "/images/hugo-logo.svg" }}
+
+  {{/* resize the logos. don't resize svg because it is not supported */}}
+  {{ $themeLogo:= resources.Get $themeLogo}}
+  {{ if and $themeLogo (ne $themeLogo.MediaType.SubType "svg") }}
+    {{ $themeLogo = $themeLogo.Resize "32x" }}
+  {{ end }}
+  {{ $themeLogo = $themeLogo.RelPermalink}}
+
+  {{ $hugoLogo:= resources.Get $hugoLogo}}
+  {{ if and $hugoLogo (ne $hugoLogo.MediaType.SubType "svg")}}
+    {{ $hugoLogo = $hugoLogo.Resize "32x" }}
+  {{ end }}
+  {{ $hugoLogo = $hugoLogo.RelPermalink}}
+
+  <footer class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-left">
+        {{ if $navigationEnabled }}
+        <div class="col-md-4 col-sm-12">
+          <h5>{{ i18n "navigation" }}</h5>
+          {{ if $sections }}
           <ul>
-            {{ range .Site.Data.site.menus }}
-            <li class="nav-item">
-              <a class="smooth-scroll" href="{{ .url }}">{{ .name }}</a>
-            </li>
+            {{- range sort $sections "section.weight" }}
+              {{ if and (.section.enable) (.section.showOnNavbar)}}
+                {{ $sectionID := replace (lower .section.name) " " "-"  }}
+                {{ if .section.id }}
+                  {{ $sectionID = .section.id }}
+                {{ end }}
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#{{ $sectionID }}">{{ .section.name }}</a>
+                </li>
+              {{ end }}
+            {{- end }}
+          </ul>
+          {{ end }}
+        </div>
+        {{ end }}
+        {{ if (and $contactMeEnabled $author) }}
+        <div class="col-md-4 col-sm-12">
+          <h5>{{ i18n "contact_me" }}</h5>
+          <ul>
+            {{ range $key,$value:= $author.contactInfo }}
+            <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
             {{ end }}
           </ul>
+        </div>
+        {{ end }}
+        {{ if $newsletterEnabled }}
+        <div class="col-md-4 col-sm-12">
+          <!-- <h5>Newsletter</h5> -->
+          <p>{{ i18n "newsletter_text" }}</p>
+          <form>
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="{{ i18n "newsletter_input_placeholder" }}"
+              />
+              <small id="emailHelp" class="form-text text-muted"
+                >{{ i18n "newsletter_warning" }}</small
+              >
+            </div>
+            <button type="submit" class="btn btn-info">{{ i18n "submit" }}</button>
+          </form>
+        </div>
         {{ end }}
       </div>
-      <div class="col-md-4 col-sm-12">
-        <h5>Contact Me</h5>
-        <ul>
-          {{ range $key,$value:=.Site.Data.site.author.contactInfo }}
-          <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
-          {{ end }}
-        </ul>
-      </div>
-      <div class="col-md-4 col-sm-12">
-        <!-- <h5>Newsletter</h5> -->
-        <p>Stay up to date with email notification</p>
-        <form>
-          <div class="form-group">
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-            />
-            <small id="emailHelp" class="form-text text-muted"
-              >We'll never share your email with anyone else.</small
-            >
-          </div>
-          <button type="submit" class="btn btn-info">Submit</button>
-        </form>
+    </div>
+    {{ if $credentialsEnabled }}
+    <hr />
+    <div class="container">
+      <div class="row text-left">
+        <div class="col-md-4">
+          <a id="theme" href="https://github.com/hossainemruz/toha" target="_blank" rel="noopener">
+            <img src="{{ $themeLogo }}" alt="Toha Theme Logo">
+            Toha
+          </a>
+        </div>
+        <div class="col-md-4 text-center">{{ $copyrightNotice | markdownify }}</div>
+        <div class="col-md-4 text-right">
+          <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">{{ i18n "hugoAttributionText" }}
+          <img
+            src="{{ $hugoLogo }}"
+            alt="Hugo Logo"
+            height="18"
+          />
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-  <hr />
-  <div class="container">
-    <div class="row text-left">
-      <div class="col-md-4">
-        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
-          <img src="/assets/images/logo-inverted.png">
-          Toha
-        </a>
-      </div>
-      <div class="col-md-4">© 2020 Copyright.</div>
-      <div class="col-md-4">
-        Powered by <a href="https://gohugo.io/">Hugo
-        <img
-          src="/assets/images/hugo-logo-wide.svg"
-          alt="Hugo Logo"
-          height="18"
-        />
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
+    {{ end }}
+  </footer>
+{{end}}

@@ -1,0 +1,17 @@
+{{ $sectionID := replace (lower .section.name) " " "-"  }}
+{{ if .section.id }}
+  {{ $sectionID = .section.id }}
+{{ end }}
+
+<div class="container-fluid anchor pb-5 skills-section" id="{{ $sectionID }}">
+  {{ if not (.section.hideTitle) }}
+    <h1 class="text-center">{{ .section.name }}</h1>
+  {{ end }}
+  <div class="container d-flex-block">
+    <div class="row" id="primary-skills">
+      {{ range .skills }}
+        {{ partial "cards/skill.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</div>

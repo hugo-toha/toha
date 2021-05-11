@@ -1,0 +1,41 @@
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+template: |
+  I am very excited to announce [Hugo](https://gohugo.io/) theme [Toha](https://themes.gohugo.io/toha/) **v$RESOLVED_VERSION**. This release incorporates some improvements and fixes. Please, read the release note and update your theme to enjoy the new changes.
+  
+  Thanks to $CONTRIBUTORS	for their valuable contribution in this release.
+  $CHANGES
+
+  This release note has been generated automatically by [Release Drafter](https://github.com/marketplace/actions/release-drafter).
+
+categories:
+- title: 'Breaking Changes'
+  label: 'breaking-change'
+
+- title: 'New Features & Enhancements'
+  labels:
+  - 'feature'
+  - 'enhancement'
+
+- title: 'New Translations'
+  label: 'translation'
+
+- title: 'Bug Fixes'
+  labels:
+  - 'bug'
+  - 'bug-fix'
+
+version-resolver:
+  major:
+    labels:
+    - 'breaking-change'
+    - 'breaking'
+  minor:
+    labels:
+    - 'feature'
+    - 'enhancement'
+    - 'translation'
+  patch:
+    labels:
+    - 'bug'
+    - 'bug-fix'

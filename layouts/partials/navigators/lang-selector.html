@@ -1,0 +1,16 @@
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{ $countryCode := partial "helpers/country-code.html" .Language }}
+    <span class="flag-icon flag-icon-{{$countryCode}}"></span>
+    {{ site.Language.LanguageName }}
+</a>
+<div class="dropdown-menu" aria-labelledby="languageSelector">
+    {{ range site.Home.AllTranslations }}
+    <a class="dropdown-item nav-link languages-item" href="{{ .RelPermalink }}">
+        {{ $countryCode := partial "helpers/country-code.html" .Language }}
+        <span class="flag-icon flag-icon-{{$countryCode}}"></span>
+        {{ .Language.LanguageName }}
+    </a>
+    {{ end }}
+</div>
+</li>

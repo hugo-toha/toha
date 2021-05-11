@@ -1,18 +1,28 @@
 {{ define "header" }}
-    <link rel="stylesheet" href="/assets/css/404.css">
+    <link rel="stylesheet" href="{{ "/css/404.css" | relURL }}">
 {{ end }}
 
 {{ define "navbar" }}
-    {{ partial "navbar-2.html" (dict "baseURL" .Site.BaseURL "title" .Site.Title "hasToggleButton" false) }}
+    {{ partial "navigators/navbar-2.html" (dict "baseURL" site.BaseURL "title" site.Title "hasToggleButton" false) }}
 {{ end }}
 
 {{ define "content" }}
+{{/* not found image */}}
+{{ $notFoundImage := "/images/404.png" }}
+
+{{/* resize the image. don't resize svg because it is not supported */}}
+{{ $notFoundImage := resources.Get $notFoundImage}}
+{{ if and $notFoundImage (ne $notFoundImage.MediaType.SubType "svg") }}
+  {{ $notFoundImage = $notFoundImage.Resize "1500x" }}
+{{ end }}
+{{ $notFoundImage = $notFoundImage.RelPermalink}}
+
 <div class="container">
     <div class="notFound">
-        <img src="/assets/images/404.png" alt="">
+        <img src="{{ $notFoundImage }}" alt="Page Not Found">
         <div class="message">
             <h1>404</h1>
-            <h4>The page you are looking for is not there yet.</h4>
+            <h4>{{ i18n "err_404" }}</h4>
         </div>
     </div>
 </div>

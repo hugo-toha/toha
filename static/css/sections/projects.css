@@ -1,0 +1,134 @@
+.projects-section .card .card-header {
+  background-color: #f9fafc;
+  padding: 0.7rem;
+  padding-bottom: 0rem;
+  text-decoration: none;
+}
+
+.projects-section .card .card-img-xs {
+  margin-right: 0.5rem;
+}
+
+.card .card-header .sub-title span:nth-child(1) {
+  float: left;
+}
+.card .card-header .sub-title span:nth-child(2) {
+  float: right;
+}
+
+.projects-section .card .card-body {
+  padding: 0.7rem;
+}
+
+.projects-section .card .card-header .sub-title {
+  color: #8392a5;
+  margin-top: 0.4rem;
+}
+
+.filtr-projects {
+  padding: 1rem !important;
+}
+
+.project-card-footer {
+  display: flex;
+}
+
+.project-tags-holder {
+  width: 70%;
+}
+
+.project-btn-holder {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.project-btn-holder span {
+  justify-content: flex-end;
+  display: flex;
+}
+
+/* ============= Device specific fixes ======= */
+
+/* Large screens such as TV */
+@media only screen and (min-width: 1824px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (max-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+/* IPad Pro */
+@media (max-width: 1024px) {
+  .projects-section {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+  .projects-section .container {
+    max-width: 100%;
+  }
+  .projects-section .filtr-projects {
+    padding: 0;
+  }
+  .projects-section .filtr-item {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+}
+
+/*  Large devices (desktops, 992px and up) */
+
+@media (max-width: 992px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media only screen and (max-width: 768px) {
+  .projects-section {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+  .projects-section .container {
+    max-width: 100%;
+  }
+  .projects-section .filtr-projects {
+    padding: 0;
+  }
+  .projects-section .filtr-item {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    flex: 50%;
+    max-width: calc(100% / 2 - 0.2rem);
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media only screen and (max-width: 576px) {
+  .projects-section .btn {
+    margin-top: 0.3125rem;
+  }
+  .projects-section .filtr-item {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* iPhoneX, iPhone 6,7,8 */
+@media only screen and (max-width: 375px) {
+}
+
+/* Galaxy S5, Moto G4 */
+@media only screen and (max-width: 360px) {
+}
+
+/* iPhone 5 or before */
+@media only screen and (max-width: 320px) {
+}

@@ -1,0 +1,111 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Beranda"
+
+[posts]
+other = "Artikel"
+
+[toc_heading]
+other = "Daftar Isi"
+
+[at]
+other = "at"
+
+[resume]
+other = "Resume saya"
+
+[navigation]
+other = "Navigasi"
+
+[contact_me]
+other = "Hubungi saya:"
+
+[email]
+other = "Surel"
+
+[phone]
+other = "Telepon"
+
+[newsletter_text]
+other = "Ingin selalu update dengan notifikasi email"
+
+[newsletter_input_placeholder]
+other = "Masukkan email"
+
+[newsletter_warning]
+other = "Kami tidak pernah berbagi data email dengan siapapun."
+
+[submit]
+other = "Kirim"
+
+[hugoAttributionText]
+other = "Didukung oleh"
+
+[prev]
+other = "Sebelumnya"
+
+[next]
+other = "Lanjut"
+
+[improve_this_page]
+other = "Perbaiki halaman ini"
+
+[out_of]
+other = "dari"
+
+[publications]
+other = "Publikasi"
+
+[taken_courses]
+other = "Kursus yang Diambil"
+
+[course_name]
+other = "Nama kursus"
+
+[total_credit]
+other = "Total Kredit"
+
+[obtained_credit]
+other = "Memperoleh Kredit"
+
+[extracurricular_activities]
+other = "Kegiatan ekstrakulikuler"
+
+[show_more]
+other = "Lihat Selengkapnya"
+
+[show_less]
+other = "Tampilkan Lebih Sedikit"
+
+# [responsibilities]
+# other = "Responsibilities:"
+
+# [present]
+# other = "Present"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+# [project_details]
+# other = "Details"
+
+# [err_404]
+# other = "The page you are looking for is not there yet."
+
+[more]
+other = "Lebih"
+
+[view_certificate]
+other = "Lihat Sertifikat"
+
+[notes]
+other = "Catatan"

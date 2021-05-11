@@ -1,41 +1,57 @@
 {{ define "header" }}
-    <link rel="stylesheet" href="/assets/css/list.css">
+    <link rel="stylesheet" href="{{ "/css/layouts/list.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "/css/navigators/sidebar.css" | relURL}}">
 {{ end }}
 
 {{ define "navbar" }}
-    {{ partial "navbar-2.html" (dict "baseURL" .Site.BaseURL "title" .Site.Title "hasToggleButton" true) }}
+    {{ partial "navigators/navbar-2.html" . }}
+{{ end }}
+
+{{ define "sidebar" }}
+  {{ $homePage:="#" }}
+  {{ if site.IsMultiLingual }}
+    {{ $homePage = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) .Type) }}
+  {{ end }}
+
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="{{ "search" | absURL }}">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="{{ .Type | relLangURL }}" data-filter="all">{{ i18n .Type }}</a></li>
+            <div class="subtree">
+                {{ partial "navigators/sidebar.html" (dict "menuName" "sidebar" "menuItems" site.Menus.sidebar "ctx" .) }}
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 {{ end }}
 
 {{ define "content" }}
-<div class="sidebar" id="sidebar">
-    <div class="sidebar-tree">
-      <input type="text" name="filtr-search" value="" placeholder="Search" data-search="" id="search-box" />
-      <ul class="tree" id="tree">
-        <li id="list-heading"><a href="#" data-filter="all">{{.Title}}</a></li>
-        <div class="subtree">
-            {{ partial "sections.html" .Sections }}
-        </div>
-      </ul>
-    </div>
-  </div>
+<section class="content-section" id="content-section">
   <div class="content container-fluid" id="content">
-    <div class="content-cards">
-      <div class="container-fluid filtr-container post-cards" id="post-cards">
-        {{ range (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+    <div class="container-fluid post-card-holder" id="post-card-holder">
+      {{ $paginator := .Paginate .RegularPagesRecursive 12 }}
+      {{ range $paginator.Pages }}
+        {{ if .Layout }}
+          {{/* ignore the search.md file*/}}
+        {{ else }}
           {{ partial "cards/post.html" . }}
         {{ end }}
-        {{/*  {{ $paginator := .Paginate .Site.RegularPages 120 }}
-        {{ range $paginator.Pages }}
-          {{ partial "cards/post.html" . }}
-        {{ end }}  */}}
-      </div>
-      {{/*  <div class="paginator">
-        {{ template "_internal/pagination.html" . }}
-      </div>  */}}
+      {{ end }}
+    </div>
+    <div class="paginator">
+      {{ template "_internal/pagination.html" . }}
     </div>
   </div>
+</section>
 {{ end }}
 
 {{ define "scripts" }}
-    <script src="/assets/js/list.js"></script>
+    <script src="{{ "/js/list.js" | relURL }}"></script>
 {{ end }}

@@ -1,0 +1,111 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Home"
+
+[posts]
+other = "Post"
+
+[toc_heading]
+other = "Contenuti"
+
+[at]
+other = "presso"
+
+[resume]
+other = "Il mio curriculum"
+
+[navigation]
+other = "Navigazione"
+
+[contact_me]
+other = "Contattami:"
+
+[email]
+other = "Email"
+
+[phone]
+other = "Telefono"
+
+[newsletter_text]
+other = "Resta aggiornato con la notifica di email"
+
+[newsletter_input_placeholder]
+other = "Inserisci l'email"
+
+[newsletter_warning]
+other = "Non condivideremo l'email con altri."
+
+[submit]
+other = "Invia"
+
+[hugoAttributionText]
+other = "Creato con"
+
+[prev]
+other = "Precedente"
+
+[next]
+other = "Successivo"
+
+[improve_this_page]
+other = "Migliora questa pagina"
+
+[out_of]
+other = "su"
+
+[publications]
+other = "Pubblicazioni"
+
+[taken_courses]
+other = "Corsi presi"
+
+[course_name]
+other = "Nome del corso"
+
+[total_credit]
+other = "Credito totale"
+
+[obtained_credit]
+other = "Credito ottenuto"
+
+[extracurricular_activities]
+other = "Attività extracurriculari"
+
+[show_more]
+other = "Vedi altro"
+
+[show_less]
+other = "Mostra meno"
+
+# [responsibilities]
+# other = "Responsibilities:"
+
+# [present]
+# other = "Present"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+# [project_details]
+# other = "Details"
+
+# [err_404]
+# other = "The page you are looking for is not there yet."
+
+[more]
+other = "Di più"
+
+[view_certificate]
+other = "Féach ar an Teastas"
+
+[notes]
+other = "Appunti"

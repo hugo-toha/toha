@@ -1,7 +1,15 @@
-{{ $authorImage:= "/assets/images/default-avatar.png"}}
-{{ if .Site.Data.site.author}}
-    {{ $authorImage = .Site.Data.site.author.image | relURL }}
-{{ end}}
+{{ $author:= site.Data.author }}
+{{ if (index site.Data site.Language.Lang).author }}
+  {{ $author = (index site.Data site.Language.Lang).author }}
+{{ end }}
+
+{{/* default author image */}}
+{{ $authorImage:= "/images/default-avatar.png" }}
+{{ if $author.image }}
+  {{ $authorImage = $author.image }}
+{{ end }}
+
+{{/* if author image is provided in author's data, then use that */}}
 {{ if eq (printf "%T" .Params.author ) "maps.Params" }}
     {{ with .Params.author }}
         {{ if .image }}
@@ -9,4 +17,13 @@
         {{ end }}
     {{ end }}
 {{ end }}
-{{ return $authorImage }}
+
+{{/* apply image processing. don't use "Fit" in svg because its not supported */}}
+{{ $authorImage:= resources.Get $authorImage}}
+{{ if and $authorImage (ne $authorImage.MediaType.SubType "svg") }}
+  {{ $authorImage := $authorImage.Fit "120x120" }}
+{{ end }}
+
+{{/*  return the author image link  */}}
+{{ return $authorImage.RelPermalink }}
+

@@ -9,22 +9,29 @@
     {{ block "header" . }} {{ end }}
 
     <!-- ADD GOOGLE ANALYTICS IF ENABLED -->
-    {{ if .Site.GoogleAnalytics }}
+    {{ if site.GoogleAnalytics }}
       {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
     <div class="container-fluid bg-dimmed wrapper">
       <!----- ADD NAVBAR --------------->
       {{ block "navbar" . }} {{ end }}
 
+      <!----- ADD SIDEBAR --------------->
+      {{ block "sidebar" . }} {{ end }}
+
       <!----- ADD PAGE CONTENT --------->
       {{ block "content" . }} {{ end }}
+
+      <!----- ADD TABLE OF CONTENTS ----------->
+      {{ block "toc" . }} {{ end }}
     </div>
 
     <!------- ADD FOOTER ------------>
-    {{- partial "footer.html" . -}}
+    {{ $footerTemplate:= site.Params.footer.template | default "footer.html" }}
+    {{- partial $footerTemplate . -}}
 
     <!------- ADD COMMON SCRIPTS ------->
     {{ partial "scripts.html" . }}

@@ -1,0 +1,108 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "হোম"
+
+[posts]
+other = "পোষ্ট সমূহ"
+
+[toc_heading]
+other = "সুচিপত্র"
+
+[resume]
+other = "আমার জীবনবৃত্তান্ত"
+
+[navigation]
+other = "নেভিগেশন"
+
+[contact_me]
+other = "আমার সাথে যোগাযোগ করুনঃ"
+
+[email]
+other = "ইমেইল"
+
+[phone]
+other = "ফোন"
+
+[newsletter_text]
+other = "ইমেইল নোটিফিকেশান এর মাধ্যমে সর্বশেষ তথ্য জানুন"
+
+[newsletter_input_placeholder]
+other = "ইমেইল প্রবেশ করান"
+
+[newsletter_warning]
+other = "আমরা আপনার ইমেল অন্য কারও সাথে শেয়ার করব না।"
+
+[submit]
+other = "জমা দিন"
+
+[hugoAttributionText]
+other = "পাওয়ারড বাই"
+
+[prev]
+other = "পূর্ববর্তী"
+
+[next]
+other = "পরবর্তী"
+
+[improve_this_page]
+other = "এই পৃষ্ঠাটি উন্নত করুন"
+
+[out_of]
+other = "এর মধ্যে"
+
+[publications]
+other = "প্রকাশনা সমূহ"
+
+[taken_courses]
+other = "গৃহীত কোর্সসমূহ"
+
+[course_name]
+other = "কোর্সের নাম"
+
+[total_credit]
+other = "মোট ক্রেডিট"
+
+[obtained_credit]
+other = "অর্জিত ক্রেডিট"
+
+[extracurricular_activities]
+other = "পাঠক্রম বহির্ভূত কার্যক্রম"
+
+[show_more]
+other = "আরো দেখান"
+
+[show_less]
+other = "কম দেখান"
+
+[responsibilities]
+other = "দায়িত্বসমুহ:"
+
+[present]
+other = "বর্তমান"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+# [project_details]
+# other = "Details"
+
+# [err_404]
+# other = "The page you are looking for is not there yet."
+
+[more]
+other = "আরো"
+
+[view_certificate]
+other = "সার্টিফিকেট দেখুন"
+
+[notes]
+other = "নোট সমূহ"

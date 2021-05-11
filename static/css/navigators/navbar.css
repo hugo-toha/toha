@@ -1,0 +1,301 @@
+.top-navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 99999;
+  transition: all 0.4s ease-out;
+  margin: 0;
+  padding-top: 0.1rem;
+  text-align: center;
+}
+
+/* --- initial state start ------ */
+
+.initial-navbar {
+  background-color: transparent;
+}
+
+.initial-navbar .navbar-brand {
+  color: #c0ccda;
+  font-weight: 600;
+}
+
+.initial-navbar li a {
+  color: #c0ccda;
+}
+
+.initial-navbar .navbar-nav .active,
+.initial-navbar li a:hover {
+  color: #f9fafc;
+  transition: all 0.3s ease-out;
+}
+
+.navbar-collapse {
+  margin-top: -5px;
+}
+
+.navbar-collapse.show,
+.navbar-collapse.collapsing {
+  background-color: #f9fafc;
+  padding-left: 1rem;
+}
+
+/* --- initial state end ------ */
+
+/* --- state after scroll start --- */
+
+.final-navbar {
+  background-color: #f9fafc;
+  color: #1c2d41;
+  transition: all 0.3s ease-out;
+}
+
+.final-navbar .navbar-brand {
+  color: #1c2d41;
+  font-weight: 600;
+}
+
+.final-navbar li a {
+  color: #1c2d41;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+  border-bottom: 2px solid#F9FAFC;
+}
+
+.final-navbar .navbar-nav .active,
+.final-navbar li a:hover {
+  color: #2098d1;
+  transition: all 0.3s ease-out;
+  border-bottom: 2px solid #2098d1;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(34, 136, 168, 0.1) 0%
+  );
+}
+
+.navbar-collapse.show li a,
+.navbar-collapse.collapsing li a {
+  color: #1c2d41;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+}
+
+.navbar-collapse.show .navbar-nav .active,
+.navbar-collapse.show .navbar-nav a:hover {
+  color: #2098d1;
+}
+
+#top-navbar-divider {
+  margin-top: 10px;
+}
+
+/* --- state after scroll end --- */
+
+#top-navbar-divider {
+  background: rgba(192, 204, 218, 0.8);
+  height: 20px;
+  width: 2px;
+}
+
+.final-navbar #top-navbar-divider {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#top-navbar-divider {
+  height: 20px;
+  width: 2px;
+}
+
+.navbar-brand img {
+  width: 42px;
+  padding: 5px;
+  margin-left: -10px;
+}
+
+.top-navbar .dropdown-menu {
+  box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
+  border: 1px solid #fff;
+  max-height: 0vh;
+  overflow: hidden;
+  display: block;
+  visibility: hidden;
+  transition: all 0.3s ease-out;
+}
+
+.top-navbar .dropdown-menu.show {
+  max-height: 100vh;
+  visibility: visible;
+  transition: all 0.3s ease-in;
+}
+
+.top-navbar .dropdown-menu a {
+  color: #1c2d41;
+  border-bottom: none;
+}
+
+.top-navbar .dropdown-menu a:hover {
+  color: #2098d1;
+  transition: all 0.3s ease-out;
+  border-bottom: none;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(34, 136, 168, 0.2) 0%
+  );
+}
+
+/* ============= Device specific fixes ======= */
+
+/* Large screens such as TV */
+@media only screen and (min-width: 1824px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (max-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+/* IPad Pro */
+@media (max-width: 1024px) {
+  .top-navbar {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+
+  .top-navbar .container {
+    max-width: 100%;
+  }
+
+  .initial-navbar .navbar-nav .active,
+  .initial-navbar li a:hover {
+    color: #2098d1;
+    transition: all 0.3s ease-out;
+  }
+
+  .final-navbar .navbar-nav .active,
+  .final-navbar li a:hover {
+    color: #2098d1;
+    transition: none;
+
+    border-bottom: none;
+    background: transparent;
+  }
+
+  .final-navbar li a {
+    border-bottom: none;
+  }
+
+  .dropdown-divider {
+    border-top: 1px solid #c0ccda;
+  }
+  #top-navbar-divider {
+    background: rgba(0, 0, 0, 0.6);
+    height: auto;
+    width: auto;
+    margin-right: 15px;
+  }
+  .top-navbar .dropdown-menu {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-right: 1rem;
+    transition: all 0.3s ease-out;
+  }
+}
+
+/*  Large devices (desktops, 992px and up) */
+
+@media (max-width: 992px) {
+  .initial-navbar .navbar-nav .active,
+  .initial-navbar li a:hover {
+    color: #2098d1;
+    transition: all 0.3s ease-out;
+  }
+
+  .final-navbar .navbar-nav .active,
+  .final-navbar li a:hover {
+    color: #2098d1;
+    transition: none;
+
+    border-bottom: none;
+    background: transparent;
+  }
+
+  .final-navbar li a {
+    border-bottom: none;
+  }
+
+  .dropdown-divider {
+    border-top: 1px solid #c0ccda;
+  }
+  #top-navbar-divider {
+    background: rgba(0, 0, 0, 0.6);
+    height: auto;
+    width: auto;
+    margin-right: 15px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media only screen and (max-width: 768px) {
+  .initial-navbar .navbar-nav .active,
+  .initial-navbar li a:hover {
+    color: #2098d1;
+    transition: all 0.3s ease-out;
+  }
+
+  .final-navbar .navbar-nav .active,
+  .final-navbar li a:hover {
+    color: #2098d1;
+    transition: none;
+
+    border-bottom: none;
+    background: transparent;
+  }
+
+  .final-navbar li a {
+    border-bottom: none;
+  }
+
+  .dropdown-divider {
+    border-top: 1px solid #c0ccda;
+  }
+  #top-navbar-divider {
+    background: rgba(0, 0, 0, 0.6);
+    height: auto;
+    width: auto;
+    margin-right: 15px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media only screen and (max-width: 576px) {
+  .top-navbar .dropdown-menu {
+    margin-left: -1rem;
+    margin-right: 0rem;
+  }
+}
+
+/* iPhoneX, iPhone 6,7,8 */
+@media only screen and (max-width: 375px) {
+}
+
+/* Galaxy S5, Moto G4 */
+@media only screen and (max-width: 360px) {
+}
+
+/* iPhone 5 or before */
+@media only screen and (max-width: 320px) {
+}

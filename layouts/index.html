@@ -1,58 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ .Site.Language.Lang }}">
   <head>
     <title>{{- .Site.Title -}}</title>
+    {{ $siteDescription := .Site.Params.description }}
+    {{ if (index .Site.Data .Site.Language.Lang).site }}
+      {{ $siteConfig := (index .Site.Data .Site.Language.Lang).site }}
+      {{ if $siteConfig.description }}
+        {{ $siteDescription = $siteConfig.description }}
+      {{ end }}
+    {{ end }}
+    <meta name="description" content="{{ $siteDescription }}" />
+    
     <!-- import common headers -->
     {{- partial "header.html" . -}}
 
     <!-- import index page specific headers -->
-    <link rel="stylesheet" href="/assets/css/home.css" />
-    <link rel="stylesheet" href="/assets/css/about.css" />
-    <link rel="stylesheet" href="/assets/css/skills.css" />
-    <link rel="stylesheet" href="/assets/css/experiences.css" />
-    <link rel="stylesheet" href="/assets/css/projects.css" />
-    <link rel="stylesheet" href="/assets/css/recent-posts.css" />
-    <link rel="stylesheet" href="/assets/css/achievements.css" />
-
+    <link rel="stylesheet" href="{{ "/css/sections/home.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/about.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/skills.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/experiences.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/education.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/projects.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/recent-posts.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/achievements.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/accomplishments.css" | relURL }}"/>
+    
     <!-- Add Google Analytics if enabled in configuration -->
-    {{ if .Site.GoogleAnalytics }}
+    {{ if site.GoogleAnalytics }}
         {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
   </head>
-  <body data-spy="scroll" data-target="#top-navbar" data-offset="50">
+  <body data-spy="scroll" data-target="#top-navbar" data-offset="100">
+
     <!--- NAVBAR ------------------------->
-    {{- partial "navbar.html" . -}}
+    {{- partial "navigators/navbar.html" . -}}
 
     <!--- ADD HOME SECTION ---------------->
-    {{- partial "home.html" . -}}
+    {{- partial "sections/home.html" . -}}
 
-    <!--- ADD ABOUT SECTION --------------->
-    {{- partial "about.html" . -}}
+    <!--- ADD OPTIONAL SECTIONS ----------->
+    {{ $sections:= site.Data.sections }}
+    {{ if (index site.Data site.Language.Lang).sections }}
+      {{ $sections = (index site.Data site.Language.Lang).sections }}
+    {{ end }}
 
-    <!--- ADD SKILLS SECTION -------------->
-    {{- partial "skills.html" . -}}
-
-    <!--- ADD EXPERIENCE SECTION ----------->
-    {{- partial "experiences.html" . -}}
-
-    <!--- ADD PROJECT SECTION -------------->
-    {{- partial "projects.html" . -}}
-
-    <!--- ADD RECENT-POSTS SECTION --------->
-    {{- partial "recent-posts.html" . -}}
-
-    <!--- ADD ACHIEVEMENT SECTION ---------->
-    {{- partial "achievements.html" . -}}
+    {{ if $sections }}
+      {{ $background:= "bg-white"}}
+      {{ range sort $sections "section.weight" }}
+        {{ if .section.enable }}
+          <div class="container-fluid section-holder d-flex {{ $background }}">
+            {{ if .section.template }}
+              {{- partial .section.template . -}}
+            {{ else }}
+              {{- partial (printf "sections/%s.html" (replace (lower .section.id) " " "-")) . -}}
+            {{ end }}
+          </div>
+          <!--- alter background color for next section --->
+          {{ if eq $background "bg-white" }}
+            {{ $background = "bg-dimmed" }}
+          {{ else }}
+            {{ $background = "bg-white" }}
+          {{end}}
+        {{ end }}
+      {{ end }}
+    {{ end }}
 
     <!--- ADD FOOTER ----------------------->
-    {{- partial "footer.html" . -}}
+    {{ $footerTemplate:= site.Params.footer.template | default "footer.html" }}
+    {{- partial $footerTemplate . -}}
 
     <!--- ADD COMMON SCRIPTS --------------->
     {{ partial "scripts.html" . }}
 
     <!--- ADD INDEX PAGE SPECIFIC SCRIPTS -->
-    <script src="/assets/js/itype.min.js"></script>
-    <script src="/assets/js/github-button.js"></script>
-    <script src="/assets/js/home.js"></script>
+    <script src="{{ "/js/itype.min.js" | relURL }}"></script>
+    <script src="{{ "/js/github-button.js" | relURL }}"></script>
+    <script src="{{ "/js/home.js" | relURL }}"></script>
+    <script src="{{ "/js/jquery.filterizr.min.js" | relURL }}"></script>
   </body>
 </html>

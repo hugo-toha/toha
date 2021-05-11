@@ -1,0 +1,33 @@
+<div class="row next-prev-navigator">
+{{ $currentPage := . }}
+{{ range (where site.RegularPages.ByDate "Type" "in" site.Params.mainSections )}}
+  {{ if eq .RelPermalink  $currentPage.RelPermalink }}
+    {{ if .Next }}
+      {{ if (in site.Params.mainSections .Next.Type) }}
+      <div class="col-md-6 previous-article">
+        <a href="{{.Next.RelPermalink}}" title="{{ .Next.Title }}" class="btn btn-outline-info">
+          <div><i class="fas fa-chevron-circle-left"></i> {{ i18n "prev" }}</div>
+          <div class="next-prev-text">{{ .Next.Title }}</div>
+        </a>
+      </div>
+      {{ end }}
+    {{ end }}
+    {{ if .Prev }}
+      {{ if (in site.Params.mainSections .Prev.Type)  }}
+        {{ $columnWidth:="col-md-12" }}
+        {{ if .Next }}
+          {{ if (in site.Params.mainSections .Next.Type) }}
+              {{ $columnWidth = "col-md-6" }}
+          {{ end }}
+        {{ end}}
+        <div class="{{ $columnWidth }} next-article">
+          <a href="{{ .Prev.RelPermalink }}" title="{{ .Prev.Title }}" class="btn btn-outline-info">
+            <div>{{ i18n "next" }} <i class="fas fa-chevron-circle-right"></i></div>
+            <div class="next-prev-text">{{ .Prev.Title }}</div>
+          </a>
+        </div>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+</div>

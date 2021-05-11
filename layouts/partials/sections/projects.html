@@ -1,0 +1,26 @@
+{{ $sectionID := replace (lower .section.name) " " "-"  }}
+{{ if .section.id }}
+  {{ $sectionID = .section.id }}
+{{ end }}
+
+<div class="container-fluid anchor pb-5 projects-section" id="{{ $sectionID }}">
+  {{ if not (.section.hideTitle) }}
+    <h1 class="text-center">{{ .section.name }}</h1>
+  {{ end }}
+  <div class="container ml-auto text-center">
+    <div class="btn-group flex-wrap" role="group" id="project-filter-buttons">
+      {{ range .buttons }}
+      <button type="button" class="btn btn-dark" data-filter="{{ .filter }}">
+        {{ .name }}
+      </button>
+      {{ end }}
+    </div>
+  </div>
+  <div class="container filtr-projects">
+    <div class="row" id="project-card-holder">
+      {{ range .projects }}
+        {{ partial "cards/project" . }}
+      {{ end }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "主页"
+
+[posts]
+other = "博文"
+
+[toc_heading]
+other = "目录"
+
+[at]
+other = "at"
+
+[resume]
+other = "我的简历"
+
+[navigation]
+other = "导航"
+
+[contact_me]
+other = "联系方式:"
+
+[email]
+other = "邮箱"
+
+[phone]
+other = "电话"
+
+[newsletter_text]
+other = "通过电子邮件接收最新信息"
+
+[newsletter_input_placeholder]
+other = "填入 E-mail"
+
+[newsletter_warning]
+other = "我们绝不会与任何人共享您的电子邮件。"
+
+[submit]
+other = "提交"
+
+[hugoAttributionText]
+other = "Powered by"
+
+[prev]
+other = "上一篇"
+
+[next]
+other = "下一篇"
+
+[improve_this_page]
+other = "改善此页面"
+
+[out_of]
+other = "/"
+
+[publications]
+other = "刊物"
+
+[taken_courses]
+other = "选修课程"
+
+[course_name]
+other = "课程名"
+
+[total_credit]
+other = "满分"
+
+[obtained_credit]
+other = "获得分数"
+
+[extracurricular_activities]
+other = "课外活动"
+
+[show_more]
+other = "查看更多"
+
+[show_less]
+other = "显示较少"
+
+# [responsibilities]
+# other = "Responsibilities:"
+
+# [present]
+# other = "Present"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+# [project_details]
+# other = "Details"
+
+# [err_404]
+# other = "The page you are looking for is not there yet."
+
+[more]
+other = "更多的"
+
+[view_certificate]
+other = "查看证书"
+
+[notes]
+other = "笔记"
