@@ -8,6 +8,8 @@
 {{/*  Keep backward compatibility for the newsletter function */}}
 {{ if site.Params.newsletter.enable }}
   {{ $newsletterEnabled = true }}
+{{ else }}
+  {{ $newsletterEnabled = false }}
 {{ end }}
 
 {{ if $footerEnabled }}
