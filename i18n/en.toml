@@ -38,6 +38,9 @@ other = "We'll never share your email with anyone else."
 [submit]
 other = "Submit"
 
+[disclaimer_text]
+other = "Liability Note"
+
 [hugoAttributionText]
 other = "Powered by"
 
