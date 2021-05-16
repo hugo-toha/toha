@@ -339,6 +339,14 @@ mark {
   background-color: #e5e9f2;
 }
 
+.footer #disclaimer{
+  color: #8392a5 !important;
+  text-align: justify;
+}
+.footer #disclaimer>strong{
+  color: #c0ccda!important;
+}
+
 .footer #theme {
   color: #c0ccda;
 }
