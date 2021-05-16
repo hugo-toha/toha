@@ -37,7 +37,6 @@ body {
 }
 
 .toc-holder {
-  position: -webkit-sticky;
   position: sticky;
   top: 4.5rem;
   overflow-x: hidden;

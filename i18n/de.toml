@@ -38,9 +38,6 @@ other = "Wir werden Ihre E-Mail-Adresse nicht an Dritte weitergeben."
 [submit]
 other = "Absenden"
 
-[disclaimer_text]
-other = "Haftungshinweis"
-
 [hugoAttributionText]
 other = "Unterstützt von"
 
@@ -112,3 +109,6 @@ other = "Bekijk certificaat"
 
 [notes]
 other = "Opmerkingen"
+
+[disclaimer_text]
+other = "Haftungshinweis" 
