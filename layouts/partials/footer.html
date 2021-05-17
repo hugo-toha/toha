@@ -7,10 +7,12 @@
 {{ $disclaimerEnabled  := site.Params.footer.disclaimer.enable  | default false }}
 
 {{/*  Keep backward compatibility for the newsletter function */}}
-{{ if site.Params.newsletter.enable }}
-  {{ $newsletterEnabled = true }}
-{{ else }}
-  {{ $newsletterEnabled = false }}
+{{ if site.Params.newsletter }}
+  {{ if site.Params.newsletter.enable }}
+    {{ $newsletterEnabled = true }}
+  {{ else }}
+      {{ $newsletterEnabled = false }}
+  {{ end }}
 {{ end }}
 
 {{ if $footerEnabled }}
@@ -89,34 +91,46 @@
           </ul>
         </div>
         {{ end }}
+        <!-------------- Newsletter --------------->
         {{ if $newsletterEnabled }}
-        <div class="col-md-4 col-sm-12">
-          <!-- <h5>Newsletter</h5> -->
-          <p>{{ i18n "newsletter_text" }}</p>
-          <form
-            action="{{ .Site.Params.mailchimpURL }}"
-            method="post"
-            id="mc-embedded-subscribe-form"
-            name="mc-embedded-subscribe-form"
-            class="validate"
-            target="_blank"
-            novalidate >
-            <div class="form-group">
-              <input
-                type="email"
-                class="form-control"
-                id="mce-EMAIL"
-                name="EMAIL"
-                aria-describedby="emailHelp"
-                placeholder="{{ i18n "newsletter_input_placeholder" }}"
-              />
-              <small id="emailHelp" class="form-text text-muted"
-                >{{ i18n "newsletter_warning" }}</small
-              >
-            </div>
-            <button type="submit" class="btn btn-info">{{ i18n "submit" }}</button>
-          </form>
-        </div>
+          {{ $provider := site.Params.footer.newsletter.provider }}
+          <div class="col-md-4 col-sm-12">
+            <p>{{ i18n "newsletter_text" }}</p>
+            {{ if and (eq $provider "mailchimp") site.Params.footer.newsletter.mailchimpURL }}  <!-- mailchimp -->
+              <form
+                action="{{ site.Params.footer.newsletter.mailchimpURL }}"
+                method="post"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
+                class="validate"
+                target="_blank"
+                novalidate >
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="mce-EMAIL"
+                    name="EMAIL"
+                    aria-describedby="emailHelp"
+                    placeholder="{{ i18n "newsletter_input_placeholder" }}"
+                  />
+                  <small id="emailHelp" class="form-text text-muted"
+                    >{{ i18n "newsletter_warning" }}</small
+                  >
+                </div>
+                <button type="submit" class="btn btn-info">{{ i18n "submit" }}</button>
+              </form>
+            {{ else }}
+             <!-- a dummy form -->
+              <form>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ i18n "newsletter_input_placeholder" }}"/>
+                  <small id="emailHelp" class="form-text text-muted">{{ i18n "newsletter_warning" }}</small>
+                </div>
+                <button type="submit" class="btn btn-info">{{ i18n "submit" }}</button>
+              </form>
+            {{ end }}
+          </div>
         {{ end }}
       </div>
     </div>
