@@ -48,9 +48,11 @@
     <!-- soft skills circular-progressbar -->
     <div class="col-sm-6 pt-5 pl-md-4 pl-sm-3 pt-sm-0">
       <div class="row">
-        {{ range .certifications }}
-          {{ partial "misc/certifications.html" . }}
+        {{ range .badges }}
+          {{ partial "misc/badge.html" . }}
         {{ end }}
+        <!-- TODO: Remove this part in version v4+ -->
+        <!-- Keep backward compatibility with old configuration -->
         {{ range .softSkills }}
           {{ partial "misc/soft-skills.html" . }}
         {{ end }}
