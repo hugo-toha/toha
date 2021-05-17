@@ -1,5 +1,6 @@
 {{/*  if there is no custom flag provided, we define the flag with the country code  */}}
 {{ $languageCode:= .Lang }}
+{{/* by default the language code and the country code are same */}}
 {{ $countryCode:= $languageCode }}
 
 {{/* language code and country code are not same for some countries. we need to fix them.  */}}
