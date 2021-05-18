@@ -17,7 +17,7 @@ jobs:
 
       - name: Run autoprefixer
         run: |
-          npm install postcss-cli autoprefixer --save-dev
+          npm install postcss postcss-cli autoprefixer --save-dev
           npm run autoprefixer
 
       - name: Create Pull Request
