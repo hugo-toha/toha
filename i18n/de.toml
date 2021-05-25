@@ -1,6 +1,6 @@
 # More documentation here: https://github.com/nicksnyder/go-i18n
 [home]
-other = "Startseite"
+other = "Home"
 
 [posts]
 other = "Beiträge"
@@ -18,7 +18,7 @@ other = "Mein Lebenslauf"
 other = "Navigation"
 
 [contact_me]
-other = "Kontakt aufnehmen"
+other = "Kontaktiere mich:"
 
 [email]
 other = "E-Mail"
@@ -30,10 +30,10 @@ other = "Telefon"
 other = "Mit dem Newsletter auf dem neuesten Stand bleiben"
 
 [newsletter_input_placeholder]
-other = "E-Mail-Adresse eingeben"
+other = "E-Mail Adresse eingeben"
 
 [newsletter_warning]
-other = "Wir werden Ihre E-Mail-Adresse nicht an Dritte weitergeben."
+other = "Wir geben deine E-Mail Adresse nicht an Dritte weiter."
 
 [submit]
 other = "Absenden"
@@ -51,64 +51,64 @@ other = "Nächste"
 other = "Diese Seite verbessern"
 
 [out_of]
-other = "van de"
+other = "aus"
 
 [publications]
-other = "Publicaties"
+other = "Publikationen"
 
 [taken_courses]
-other = "Cursussen gevolgd"
+other = "Belegte Kurse"
 
 [course_name]
-other = "Cursus naam"
+other = "Kursname"
 
 [total_credit]
-other = "Totaal krediet"
+other = "Gesamtguthaben"
 
 [obtained_credit]
-other = "Krediet verkregen"
+other = "Erhaltenes Guthaben"
 
 [extracurricular_activities]
-other = "Buitenschoolse activiteiten"
+other = "Außerschulische Aktivitäten"
 
 [show_more]
-other = "Bekijk meer"
+other = "Mehr anzeigen"
 
 [show_less]
-other = "Laat minder zien"
+other = "Weniger anzeigen"
 
-# [responsibilities]
-# other = "Responsibilities:"
+[responsibilities]
+other = "Verantwortlichkeiten:"
 
-# [present]
-# other = "Present"
+[present]
+other = "heute"
 
-# [comments_javascript]
-# other = "Please enable JavaScript to view the"
+[comments_javascript]
+other = "Bitte aktiviere JavaScript um die Kommentare zu sehen"
 
-# [comments_by]
-# other = "comments powered by"
+[comments_by]
+other = "Kommentare Unterstützt von"
 
-# [read]
-# other = "Read"
+[read]
+other = "Lesen"
 
-# [project_star]
-# other = "Star"
+[project_star]
+other = "Star"
 
-# [project_details]
-# other = "Details"
+[project_details]
+other = "Details"
 
-# [err_404]
-# other = "The page you are looking for is not there yet."
+[err_404]
+other = "Die Seite nach der Seite ist noch nicht vorhanden."
 
 [more]
-other = "Meer"
+other = "Mehr"
 
 [view_certificate]
-other = "Bekijk certificaat"
+other = "Zertifikat ansehen"
 
 [notes]
-other = "Opmerkingen"
+other = "Notizen"
 
 [disclaimer_text]
-other = "Haftungshinweis" 
+other = "Haftungshinweis"
