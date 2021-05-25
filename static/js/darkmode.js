@@ -2,8 +2,8 @@ function enableDarkTheme() {
   localStorage.setItem('color-scheme', "dark");
   DarkReader.enable({
       brightness: 100,
-      contrast: 90,
-      sepia: 10
+      contrast: 100,
+      sepia: 0
   });
 }
 
@@ -16,8 +16,8 @@ function useSystemTheme() {
   localStorage.setItem('color-scheme', "system");
   DarkReader.auto({
     brightness: 100,
-    contrast: 90,
-    sepia: 10
+    contrast: 100,
+    sepia: 0
   });
 }
 
