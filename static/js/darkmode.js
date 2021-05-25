@@ -22,11 +22,11 @@ function useSystemTheme() {
 }
 
 function initializeColorScheme() {
-  // We're using the themeSelector attributes as a 'hack' for setting up the
+  // We're using the themeInitialization attributes as a 'hack' for setting up the
   // default color scheme becauase we don't want to complicate this further by
   // creating custom javascript output in Hugo.
-  themeSelector = document.getElementById("themeSelector");
-  defaultColorScheme = themeSelector.getAttribute('default-theme');
+  themeInitialization = document.getElementById("themeInitialization");
+  defaultColorScheme = themeInitialization.getAttribute('default-theme');
   // If the user has already selected a preferred theme then use that instead
   // of the default theme. Also, the default theme gets loaded to localStorage
   // on the first visit.
