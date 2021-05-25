@@ -14,24 +14,16 @@ function enableLightTheme() {
 
 function useSystemTheme() {
   localStorage.setItem('color-scheme', "system");
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    enableDarkTheme();
-  } else {
-    enableLightTheme();
-  }
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    if (e.matches) {
-      enableDarkTheme();
-    } else {
-      enableLightTheme();
-    }
+  DarkReader.auto({
+    brightness: 100,
+    contrast: 90,
+    sepia: 10
   });
 }
 
-// Initialize. Use dark as default.
 function initializeColorScheme() {
-  // We're using the themeSelector attributes as a workaround for setting up
-  // the default coor scheme since we don't want to complicate this further by
+  // We're using the themeSelector attributes as a 'hack' for setting up the
+  // default color scheme becauase we don't want to complicate this further by
   // creating custom javascript output in Hugo.
   themeSelector = document.getElementById("themeSelector");
   defaultColorScheme = themeSelector.getAttribute('default-theme');
@@ -41,13 +33,15 @@ function initializeColorScheme() {
   if (!localStorage.getItem('color-scheme'))
     localStorage.setItem('color-scheme', defaultColorScheme);
   storedColorScheme = localStorage.getItem('color-scheme');
-  if (storedColorScheme == "light") {
-    enableLightTheme();
+  if (storedColorScheme == "dark") {
+    enableDarkTheme();
   } else if (storedColorScheme == "system") {
     useSystemTheme();
   } else {
-    // Use dark theme as fallback since it is my default.
-    enableDarkTheme();
+    // We use light theme for the two conditions below.
+    // 1. the selected theme is light
+    // 2. no default theme is found - fall back to original behavior
+    enableLightTheme();
   }
 }
 initializeColorScheme()
