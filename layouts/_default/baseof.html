@@ -4,6 +4,7 @@
     <title>{{ .Page.Title }}</title>
     <!------ ADD COMMON HEADERS -------->
     {{- partial "header.html" . -}}
+    {{ template "_internal/opengraph.html" . }}
 
     <!------ ADD PAGE SPECIFIC HEADERS ------->
     {{ block "header" . }} {{ end }}
