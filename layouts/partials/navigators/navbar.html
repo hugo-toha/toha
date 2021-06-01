@@ -1,6 +1,7 @@
 {{/*  variables for enabling/disabling various features  */}}
 {{ $blogEnabled   := site.Params.features.blog.enable   | default false }}
 {{ $notesEnabled  := site.Params.features.notes.enable  | default false }}
+{{ $logoEnabled   := site.Params.logo.enable            | default false }}
 
 {{/*  keep backward compatibility for blog post  */}}
 {{ if site.Params.enableBlogPost }}
@@ -45,7 +46,9 @@
 <nav class="navbar navbar-expand-xl top-navbar initial-navbar" id="top-navbar">
   <div class="container">
     <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
-      <img src="{{ $invertedLogo }}" id="logo" alt="Logo">
+      {{ if $logoEnabled }}
+        <img src="{{ $invertedLogo }}" id="logo" alt="Logo">
+      {{ end }}
       {{- site.Title -}}
     </a>
     <button
@@ -118,7 +121,9 @@
       </ul>
     </div>
   </div>
-  <!-- Store the logo information in a hidden img for the JS -->
-  <img src="{{ $mainLogo }}" class="d-none" id="main-logo" alt="Logo">
-  <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  {{ if $logoEnabled }}
+    <!-- Store the logo information in a hidden img for the JS -->
+    <img src="{{ $mainLogo }}" class="d-none" id="main-logo" alt="Logo">
+    <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  {{ end }}
 </nav>

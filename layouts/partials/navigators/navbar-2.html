@@ -1,3 +1,5 @@
+{{ $logoEnabled   := site.Params.logo.enable  | default false }}
+
 {{/* default logos  */}}
 {{ $mainLogo := "/images/main-logo.png" }}
 {{ $invertedLogo := "/images/inverted-logo.png" }}
@@ -30,7 +32,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
-      <img src="{{ $mainLogo  }}" alt="Logo">
+      {{ if $logoEnabled }}
+        <img src="{{ $mainLogo  }}" alt="Logo">
+      {{ end }}
       {{- site.Title -}}
     </a>
     <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
@@ -45,7 +49,9 @@
       </ul>
     </div>
   </div>
-  <!-- Store the logo information in a hidden img for the JS -->
-  <img src="{{ $mainLogo  }}" class="d-none" id="main-logo" alt="Logo">
-  <img src="{{ $invertedLogo  }}" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  {{ if $logoEnabled }}
+    <!-- Store the logo information in a hidden img for the JS -->
+    <img src="{{ $mainLogo  }}" class="d-none" id="main-logo" alt="Logo">
+    <img src="{{ $invertedLogo  }}" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  {{ end }}
 </nav>
