@@ -496,6 +496,11 @@
   .about-section.container {
     max-width: 100%;
   }
+
+  .circular-progress {
+    width: 140px;
+    height: 140px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
