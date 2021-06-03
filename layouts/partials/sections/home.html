@@ -26,7 +26,7 @@
   {{ $authorImage = $author.image }}
 {{ end }}
 {{ $authorImage := resources.Get $authorImage }}
-{{ $authorImage := $authorImage.Fit "148x148" }}
+{{ $authorImage = $authorImage.Fit "148x148" }}
 
 {{/* get file that matches the filename as specified as src="" in shortcode */}}
 {{ $src := resources.Get $backgroundImage }}

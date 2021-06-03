@@ -11,7 +11,7 @@
 
             {{ $logoImage:= resources.Get .logo}}
             {{ if $logoImage }}
-            {{ $logoImage := $logoImage.Fit "24x24" }}
+            {{ $logoImage = $logoImage.Fit "24x24" }}
 
             <img class="card-img-xs" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
             {{ end }}
