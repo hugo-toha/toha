@@ -7,11 +7,11 @@
   {{ $blogEnabled = true }}
 {{ end }}
 
-{{/*  default logos  */}}
-{{ $mainLogo := "/images/main-logo.png" }}
-{{ $invertedLogo := "/images/inverted-logo.png" }}
+{{/* by default, don't use any logo */}}
+{{ $mainLogo := "" }}
+{{ $invertedLogo := "" }}
 
-{{/*  if custom logo is used, them  */}}
+{{/*  if custom logo has been provided, use them  */}}
 {{ if site.Params.logo.main }}
   {{ $mainLogo = site.Params.logo.main }}
 {{ end }}
@@ -20,17 +20,21 @@
 {{ end }}
 
 {{/* resize the logos. don't resize svg because it is not supported */}}
-{{ $mainLogo := resources.Get $mainLogo}}
-{{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
-  {{ $mainLogo = $mainLogo.Resize "42x" }}
+{{ if $mainLogo }}
+  {{ $mainLogo = resources.Get $mainLogo}}
+  {{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
+    {{ $mainLogo = $mainLogo.Resize "42x" }}
+  {{ end }}
+  {{ $mainLogo = $mainLogo.RelPermalink}}
 {{ end }}
-{{ $mainLogo = $mainLogo.RelPermalink}}
 
-{{ $invertedLogo := resources.Get $invertedLogo}}
-{{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg")}}
-  {{ $invertedLogo = $invertedLogo.Resize "42x" }}
+{{ if $invertedLogo }}
+  {{ $invertedLogo = resources.Get $invertedLogo}}
+  {{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg")}}
+    {{ $invertedLogo = $invertedLogo.Resize "42x" }}
+  {{ end }}
+  {{ $invertedLogo = $invertedLogo.RelPermalink}}
 {{ end }}
-{{ $invertedLogo = $invertedLogo.RelPermalink}}
 
 {{ $customMenus := site.Params.customMenus }}
 {{ if (index site.Data site.Language.Lang).site.customMenus }}
@@ -45,7 +49,9 @@
 <nav class="navbar navbar-expand-xl top-navbar initial-navbar" id="top-navbar">
   <div class="container">
     <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
-      <img src="{{ $invertedLogo }}" id="logo" alt="Logo">
+      {{ if $invertedLogo }}
+        <img src="{{ $invertedLogo }}" id="logo" alt="Logo">
+      {{ end }}
       {{- site.Title -}}
     </a>
     <button
@@ -119,6 +125,10 @@
     </div>
   </div>
   <!-- Store the logo information in a hidden img for the JS -->
-  <img src="{{ $mainLogo }}" class="d-none" id="main-logo" alt="Logo">
-  <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  {{ if $mainLogo }}
+    <img src="{{ $mainLogo }}" class="d-none" id="main-logo" alt="Logo">
+  {{ end }}
+  {{ if $invertedLogo }}
+    <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  {{ end }}
 </nav>
