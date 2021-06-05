@@ -63,28 +63,6 @@ var projectCards;
       }
     }
 
-    // ==================== Adjust height of the skills card =============
-    function adjustSkillCardsHeight() {
-      if (!isMobile) { // no need to adjust height for mobile devices
-        // primary skills
-        var skillCards = document.getElementById("primary-skills");
-        if (skillCards != null) {
-          var cardElems = skillCards.getElementsByClassName("card");
-          var maxHeight = 0;
-          for (let i = 0; i < cardElems.length; i++) {
-            if (cardElems.item(i).clientHeight > maxHeight) {
-              maxHeight = cardElems.item(i).clientHeight;
-            }
-          }
-          for (let i = 0; i < cardElems.length; i++) {
-            cardElems.item(i).setAttribute("style", "min-height: " + maxHeight + "px;");
-          }
-        }
-      }
-    }
-    $(window).on("load", function () {
-      adjustSkillCardsHeight();
-    });
 
     // ================== Project cards =====================
     // Add click action on project category selector buttons
@@ -331,17 +309,17 @@ var projectCards;
           this.parentElement.classList.toggle("col-sm-12");
           if (this.children["SmallImage"].hasAttribute("active")) {
             let mainLogo = this.children["LargeImage"].getAttribute("Style");
-            this.children["LargeImage"].setAttribute("active",true);
+            this.children["LargeImage"].setAttribute("active", true);
             this.children["SmallImage"].removeAttribute("active");
 
             this.setAttribute("Style", mainLogo);
           } else {
             let mainLogo = this.children["SmallImage"].getAttribute("Style");
-            this.children["SmallImage"].setAttribute("active",true);
+            this.children["SmallImage"].setAttribute("active", true);
             this.children["LargeImage"].removeAttribute("active");
             this.setAttribute("Style", mainLogo);
           }
-         
+
           if (this.children["caption"] != undefined) {
             this.children["caption"].classList.toggle("hidden");
           }
