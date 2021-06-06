@@ -1,28 +1,31 @@
-{{/* default logos  */}}
-{{ $mainLogo := "/images/main-logo.png" }}
-{{ $invertedLogo := "/images/inverted-logo.png" }}
+{{/* by default, don't use any logo */}}
+{{ $mainLogo := "" }}
+{{ $invertedLogo := "" }}
 
-{{/* if custom logo has been provided in the config file, then use them */}}
+{{/*  if custom logo has been provided, use them  */}}
 {{ if site.Params.logo.main }}
   {{ $mainLogo = site.Params.logo.main }}
 {{ end }}
-
 {{ if site.Params.logo.inverted }}
   {{ $invertedLogo = site.Params.logo.inverted }}
 {{ end }}
 
 {{/* resize the logos. don't resize svg because it is not supported */}}
-{{ $mainLogo := resources.Get $mainLogo}}
-{{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
-  {{ $mainLogo = $mainLogo.Resize "42x" }}
+{{ if $mainLogo }}
+  {{ $mainLogo = resources.Get $mainLogo}}
+  {{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
+    {{ $mainLogo = $mainLogo.Resize "42x" }}
+  {{ end }}
+  {{ $mainLogo = $mainLogo.RelPermalink}}
 {{ end }}
-{{ $mainLogo = $mainLogo.RelPermalink}}
 
-{{ $invertedLogo := resources.Get $invertedLogo}}
-{{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg") }}
-  {{ $invertedLogo = $invertedLogo.Resize "42x" }}
+{{ if $invertedLogo }}
+  {{ $invertedLogo = resources.Get $invertedLogo}}
+  {{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg")}}
+    {{ $invertedLogo = $invertedLogo.Resize "42x" }}
+  {{ end }}
+  {{ $invertedLogo = $invertedLogo.RelPermalink}}
 {{ end }}
-{{ $invertedLogo = $invertedLogo.RelPermalink}}
 
 <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
   <div class="container">
@@ -30,7 +33,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
-      <img src="{{ $mainLogo  }}" alt="Logo">
+      {{ if $mainLogo }}
+        <img src="{{ $mainLogo  }}" alt="Logo">
+      {{ end }}
       {{- site.Title -}}
     </a>
     <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
@@ -46,6 +51,10 @@
     </div>
   </div>
   <!-- Store the logo information in a hidden img for the JS -->
-  <img src="{{ $mainLogo  }}" class="d-none" id="main-logo" alt="Logo">
-  <img src="{{ $invertedLogo  }}" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  {{ if $mainLogo }}
+    <img src="{{ $mainLogo }}" class="d-none" id="main-logo" alt="Logo">
+  {{ end }}
+  {{ if $invertedLogo }}
+    <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  {{ end }}
 </nav>
