@@ -45,7 +45,7 @@
   margin-bottom: 10px;
 }
 
-.home .greeting {
+.home .greeting, .home .greeting-subtitle {
   color: #f9fafc;
 }
 
