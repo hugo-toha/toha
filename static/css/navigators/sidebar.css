@@ -8,7 +8,6 @@
 
 .sidebar-holder {
   top: 2.5rem;
-  position: -webkit-sticky;
   position: sticky;
   background-color: #f9fafc;
   height: 100vh;
@@ -192,7 +191,6 @@ a.focused {
     transition: all ease-out 0.3s;
   }
   .sidebar-holder {
-    position: -webkit-sticky;
     position: sticky;
     top: 2.5rem;
     width: 100%;
@@ -222,7 +220,6 @@ a.focused {
     transition: all ease-out 0.3s;
   }
   .sidebar-holder {
-    position: -webkit-sticky;
     position: sticky;
     top: 2.5rem;
     width: 100%;

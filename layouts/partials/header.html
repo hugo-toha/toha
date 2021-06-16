@@ -1,18 +1,3 @@
-{{/* default favicon */}}
-{{ $favicon := "/images/favicon.png" }}
-
-{{/* if favicon is provided in the config, then use that */}}
-{{ if site.Params.logo.favicon }}
-  {{ $favicon = site.Params.logo.favicon }}
-{{ end }}
-
-{{/* resize the favicon. don't resize svg because it is not supported */}}
-{{ $favicon := resources.Get $favicon }}
-{{ if and $favicon (ne $favicon.MediaType.SubType "svg") }}
-  {{ $favicon = $favicon.Resize "42x" }}
-{{ end }}
-{{ $favicon = $favicon.RelPermalink}}
-
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -20,7 +5,6 @@
 <!-- ============ import common css ========== -->
 <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | relURL }}"/>
 <link rel="stylesheet" href="{{ "/css/layouts/main.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/css/style.css" | relURL }}"/>
 <link rel="stylesheet" href="{{ "/css/navigators/navbar.css" | relURL }}"/>
 <link rel="stylesheet" href="{{ "/css/plyr.css" | relURL }}"/>
 <link rel="stylesheet" href="{{ "/css/flag-icon.min.css" | relURL }}"/>
@@ -30,7 +14,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
 
 <!--================= fab-icon =========================-->
-<link rel="icon" type="image/png" href="{{ $favicon }}" />
+{{/* add favicon only if the site author has provided the the favicon */}}
+{{ if site.Params.logo.favicon }}
+  {{ $favicon := site.Params.logo.favicon }}
 
-<!--================= custom style overrides =========================-->
-<link rel="stylesheet" href="{{ "/css/style.css" | relURL }}"/>
+  {{/* resize the favicon. don't resize svg because it is not supported */}}
+  {{ $favicon = resources.Get $favicon }}
+  {{ if and $favicon (ne $favicon.MediaType.SubType "svg") }}
+    {{ $favicon = $favicon.Resize "42x" }}
+  {{ end }}
+  {{ $favicon = $favicon.RelPermalink}}
+
+  <link rel="icon" type="image/png" href="{{ $favicon }}" />
+{{end}}

@@ -13,6 +13,7 @@
     
     <!-- import common headers -->
     {{- partial "header.html" . -}}
+    {{- partial "opengraph.html" . -}}
 
     <!-- import index page specific headers -->
     <link rel="stylesheet" href="{{ "/css/sections/home.css" | relURL }}"/>
@@ -24,10 +25,13 @@
     <link rel="stylesheet" href="{{ "/css/sections/recent-posts.css" | relURL }}"/>
     <link rel="stylesheet" href="{{ "/css/sections/achievements.css" | relURL }}"/>
     <link rel="stylesheet" href="{{ "/css/sections/accomplishments.css" | relURL }}"/>
+
+    <!--================= custom style overrides =========================-->
+    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}"/>
     
     <!-- Add Google Analytics if enabled in configuration -->
     {{ if site.GoogleAnalytics }}
-        {{ template "_internal/google_analytics_async.html" . }}
+        {{ template "_internal/google_analytics.html" . }}
     {{ end }}
   </head>
   <body data-spy="scroll" data-target="#top-navbar" data-offset="100">

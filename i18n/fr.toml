@@ -3,7 +3,7 @@
 other = "Accueil"
 
 [posts]
-other = "Des postes"
+other = "Articles"
 
 [toc_heading]
 other = "Table des matières"
@@ -89,8 +89,8 @@ other = "Montrer moins"
 # [comments_by]
 # other = "comments powered by"
 
-# [read]
-# other = "Read"
+[read]
+other = "Lire"
 
 # [project_star]
 # other = "Star"
@@ -109,3 +109,6 @@ other = "Afficher le certificat"
 
 [notes]
 other = "Remarques"
+
+[disclaimer_text]
+other = "Avis de responsabilité"

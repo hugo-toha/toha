@@ -170,7 +170,7 @@ img.right {
 
 .flag-icon {
   width: 16px !important;
-  margin-top: 5px;
+  margin-top: 3px;
   margin-right: 3px;
 }
 
@@ -339,6 +339,14 @@ mark {
   background-color: #e5e9f2;
 }
 
+.footer #disclaimer{
+  color: #8392a5 !important;
+  text-align: justify;
+}
+.footer #disclaimer>strong{
+  color: #c0ccda!important;
+}
+
 .footer #theme {
   color: #c0ccda;
 }
@@ -424,16 +432,29 @@ mark {
   code {
     padding: 0px;
   }
+
+  h1 {
+    font-size: 2.2rem;
+  }
 }
 
 /* iPhoneX, iPhone 6,7,8 */
 @media only screen and (max-width: 375px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
 
 /* Galaxy S5, Moto G4 */
 @media only screen and (max-width: 360px) {
+  h1 {
+    font-size: 1.8rem;
+  }
 }
 
 /* iPhone 5 or before */
 @media only screen and (max-width: 320px) {
+  h1 {
+    font-size: 1.5rem;
+  }
 }
