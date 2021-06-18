@@ -6,7 +6,7 @@
 {{ $pages := slice }}
 
 {{ if isset site "Menus" }}
-  {{ $pages := partial "helpers/get-pages.html" site.Menus.sidebar }}
+  {{ $pages = partial "helpers/get-pages.html" site.Menus.sidebar }}
 {{ end }}
 
 <!-- Now, find the current page index in the pages list. Then, find previous page and next page. -->
