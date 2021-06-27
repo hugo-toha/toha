@@ -11,7 +11,13 @@
 
     <!-- ADD GOOGLE ANALYTICS IF ENABLED -->
     {{ if site.GoogleAnalytics }}
-      {{ template "_internal/google_analytics.html" . }}
+        <!-- Google Analytics v3  ID -->
+        {{ if hasPrefix site.GoogleAnalytics "UA-"}}
+          {{ template "_internal/google_analytics_async.html" . }}
+        {{ else }}
+          <!-- Google Analytics v4  ID -->
+          {{ template "_internal/google_analytics.html" . }}
+        {{ end }}
     {{ end }}
   </head>
 
