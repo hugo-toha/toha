@@ -33,7 +33,7 @@ other = "Subscribirse"
 other = "Ingrese email"
 
 [newsletter_warning]
-other = "Jamás compartiremos tus datos con alguién mas"
+other = "Al ingresar su dirección de correo electrónico, acepta recibir el boletín de este sitio web."
 
 [submit]
 other = "Enviar"

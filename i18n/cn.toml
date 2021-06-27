@@ -33,7 +33,7 @@ other = "通过电子邮件接收最新信息"
 other = "填入 E-mail"
 
 [newsletter_warning]
-other = "我们绝不会与任何人共享您的电子邮件。"
+other = "输入您的电子邮件地址，即表示您同意接收本网站的时事通讯"
 
 [submit]
 other = "提交"
