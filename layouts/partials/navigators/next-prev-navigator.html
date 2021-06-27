@@ -5,7 +5,7 @@
 <!-- List all the pages. It uses the sidebar menu to discover the page order. -->
 {{ $pages := slice }}
 
-{{ if isset site "Menus" }}
+{{ if isset site.Menus "sidebar" }}
   {{ $pages = partial "helpers/get-pages.html" site.Menus.sidebar }}
 {{ end }}
 
