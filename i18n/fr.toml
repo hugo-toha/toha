@@ -33,7 +33,7 @@ other = "Restez à jour par e-mail"
 other = "Entrez une adresse e-mail"
 
 [newsletter_warning]
-other = "Nous ne partagerons jamais votre courriel avec quelqu'un d'autre."
+other = "En renseignant votre adresse e-mail, vous acceptez de recevoir la newsletter de ce site."
 
 [submit]
 other = "Envoyer"
