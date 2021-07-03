@@ -11,8 +11,8 @@
 <div class="container anchor p-lg-5 about-section" id="{{ $sectionID }}">
   <div class="row pt-sm-2 pt-md-4 align-self-center">
     <!-- summary -->
-    <!-- takes up full section width if no soft skills are specified -->
-    {{ if .softSkills }} <div class="col-sm-6"> {{ else }} <div class="col-sm-12"> {{ end }}
+    <!-- takes up full section width if no badges/soft skills are specified -->
+    {{ if or (.softSkills) (.badges) }} <div class="col-sm-6"> {{ else }} <div class="col-sm-12"> {{ end }}
       <h3 class="p-1">{{ $author.name }}</h3>
       {{ if .designation }}
       <h5 class="p-1">
