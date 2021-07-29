@@ -27,7 +27,7 @@
                             <div class="row">
                                 <div class="col-lg-10 col-md-8">
                                     {{ if .institution.url }}
-                                        <h5><a href="{{ .institution.url }}">{{ .institution.name }}</a></h5>
+                                        <h5><a href="{{ .institution.url }}" title="{{ .institution.name }}" target="_blank" rel="noopener">{{ .institution.name }}</a></h5>
                                     {{ else }}
                                         <h5>{{ .institution.name }}</h5>
                                     {{ end }}
@@ -43,7 +43,11 @@
                                     <h6 class="text-muted">{{i18n "publications"}}</h6>
                                     <ul>
                                         {{ range .publications }}
-                                            <li><a href="{{ .url }} ">{{ .title }}</a></li>
+                                            {{ if .url }}
+                                                <li><a href="{{ .url }}" title="{{ .title }}" target="_blank" rel="noopener">{{ .title }}</a></li>
+                                            {{ else }}
+                                                <li>{{ .title }}</li>
+                                            {{ end }}
                                         {{ end }}
                                     </ul>
                                 </div>
@@ -51,18 +55,19 @@
                             {{ if .takenCourses }}
                             <div class="taken-courses">
                                 <h6 class="text-muted">{{ i18n "taken_courses" }}</h6>
-                                {{ if .takenCourses.showGrades }}    
+                                {{ if .takenCourses.showGrades }}
+                                {{ $hideScale  := .takenCourses.hideScale }}
                                 <table>
                                     <thead>
                                         <th>{{ i18n "course_name" }}</th>
-                                        <th>{{ i18n "total_credit" }}</th>
+                                        {{ if not $hideScale  }}<th>{{ i18n "total_credit" }}</th>{{ end }}
                                         <th>{{ i18n "obtained_credit" }}</th>
                                     </thead>
                                     <tbody>
                                         {{ range $index,$course := .takenCourses.courses }}
                                         <tr class="course {{ if gt $index 1 }}hidden-course{{ end}}">
                                             <td>{{ $course.name }}</td>
-                                            <td>{{ $course.outOf }}</td>
+                                            {{ if not $hideScale  }}<td>{{ $course.outOf }}</td>{{ end }}
                                             <td>{{ $course.achieved }}</td>
                                         </tr>
                                         {{ end }}
@@ -77,7 +82,9 @@
                                 {{ end }}
                                 {{ if gt (len .takenCourses.courses) 2 }}
                                     <button type="button" class="btn btn-link show-more-btn pt-0 {{ if .takenCourses.showGrades }}ml-1{{ else }}ml-2{{ end }}"
-                                    onclick="showMoreCourses(this);">{{ i18n "see_more"}}</button>
+                                    onclick="toggleCourseVisibility(this);" id="show-more-btn" aria-label="{{ i18n "show_more"}}">{{ i18n "show_more"}}</button>
+                                    <button type="button" class="btn btn-link show-more-btn hidden pt-0 {{ if .takenCourses.showGrades }}ml-1{{ else }}ml-2{{ end }}"
+                                    onclick="toggleCourseVisibility(this);" id="show-less-btn" aria-label="{{ i18n "show_less"}}">{{ i18n "show_less"}}</button>
                                 {{ end }}
                             </div>
                             {{ end }}

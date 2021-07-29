@@ -33,7 +33,7 @@ other = "Subscribirse"
 other = "Ingrese email"
 
 [newsletter_warning]
-other = "Jamás compartiremos tus datos con alguién mas"
+other = "Al ingresar su dirección de correo electrónico, acepta recibir el boletín de este sitio web."
 
 [submit]
 other = "Enviar"
@@ -71,5 +71,44 @@ other = "Crédito obtenido"
 [extracurricular_activities]
 other = "Actividades extracurriculares"
 
-[see_more]
+[show_more]
 other = "Ver más"
+
+[show_less]
+other = "Muestra menos"
+
+# [responsibilities]
+# other = "Responsibilities:"
+
+# [present]
+# other = "Present"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+# [project_details]
+# other = "Details"
+
+# [err_404]
+# other = "The page you are looking for is not there yet."
+
+[more]
+other = "Más"
+
+[view_certificate]
+other = "Ver Certificado"
+
+[notes]
+other = "Notas"
+
+[disclaimer_text]
+other = "Aviso de responsabilidad"

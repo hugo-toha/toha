@@ -33,7 +33,7 @@ other = "通过电子邮件接收最新信息"
 other = "填入 E-mail"
 
 [newsletter_warning]
-other = "我们绝不会与任何人共享您的电子邮件。"
+other = "输入您的电子邮件地址，即表示您同意接收本网站的时事通讯"
 
 [submit]
 other = "提交"
@@ -71,5 +71,44 @@ other = "获得分数"
 [extracurricular_activities]
 other = "课外活动"
 
-[see_more]
+[show_more]
 other = "查看更多"
+
+[show_less]
+other = "显示较少"
+
+# [responsibilities]
+# other = "Responsibilities:"
+
+# [present]
+# other = "Present"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+# [project_details]
+# other = "Details"
+
+# [err_404]
+# other = "The page you are looking for is not there yet."
+
+[more]
+other = "更多的"
+
+[view_certificate]
+other = "查看证书"
+
+[notes]
+other = "笔记"
+
+[disclaimer_text]
+other = "责任通知"

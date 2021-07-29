@@ -30,7 +30,7 @@ other = "メールで最新情報を受け取る"
 other = "ここにメールアドレスを入力"
 
 [newsletter_warning]
-other = "ご入力いただいたメールアドレスが他人に開示されることは決してございません。"
+other = "メールアドレスを入力すると、このウェブサイトのニュースレターを受け取ることに同意したことになります。"
 
 [submit]
 other = "登録"
@@ -68,5 +68,44 @@ other = "取得したクレジット"
 [extracurricular_activities]
 other = "課外活動"
 
-[see_more]
+[show_more]
 other = "続きを見る"
+
+[show_less]
+other = "表示を減らす"
+
+# [responsibilities]
+# other = "Responsibilities:"
+
+# [present]
+# other = "Present"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+# [project_details]
+# other = "Details"
+
+# [err_404]
+# other = "The page you are looking for is not there yet."
+
+[more]
+other = "もっと"
+
+[view_certificate]
+other = "ビューの証明書"
+
+[notes]
+other = "ノート"
+
+[disclaimer_text]
+other = "責任通知"

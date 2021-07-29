@@ -21,7 +21,7 @@
 {{/* apply image processing. don't use "Fit" in svg because its not supported */}}
 {{ $authorImage:= resources.Get $authorImage}}
 {{ if and $authorImage (ne $authorImage.MediaType.SubType "svg") }}
-  {{ $authorImage := $authorImage.Fit "120x120" }}
+  {{ $authorImage = $authorImage.Fit "120x120" }}
 {{ end }}
 
 {{/*  return the author image link  */}}

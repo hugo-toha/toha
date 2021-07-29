@@ -1,8 +1,17 @@
-{{/*  default logos  */}}
-{{ $mainLogo := "/images/site/main-logo.png" }}
-{{ $invertedLogo := "/images/inverted-logo.png" }}
+{{/*  variables for enabling/disabling various features  */}}
+{{ $blogEnabled   := site.Params.features.blog.enable   | default false }}
+{{ $notesEnabled  := site.Params.features.notes.enable  | default false }}
 
-{{/*  if custom logo is used, them  */}}
+{{/*  keep backward compatibility for blog post  */}}
+{{ if site.Params.enableBlogPost }}
+  {{ $blogEnabled = true }}
+{{ end }}
+
+{{/* by default, don't use any logo */}}
+{{ $mainLogo := "" }}
+{{ $invertedLogo := "" }}
+
+{{/*  if custom logo has been provided, use them  */}}
 {{ if site.Params.logo.main }}
   {{ $mainLogo = site.Params.logo.main }}
 {{ end }}
@@ -11,17 +20,26 @@
 {{ end }}
 
 {{/* resize the logos. don't resize svg because it is not supported */}}
-{{ $mainLogo := resources.Get $mainLogo}}
-{{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
-  {{ $mainLogo = $mainLogo.Resize "42x" }}
+{{ if $mainLogo }}
+  {{ $mainLogo = resources.Get $mainLogo}}
+  {{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
+    {{ $mainLogo = $mainLogo.Resize "42x" }}
+  {{ end }}
+  {{ $mainLogo = $mainLogo.RelPermalink}}
 {{ end }}
-{{ $mainLogo = $mainLogo.RelPermalink}}
 
-{{ $invertedLogo := resources.Get $invertedLogo}}
-{{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg")}}
-  {{ $invertedLogo = $invertedLogo.Resize "42x" }}
+{{ if $invertedLogo }}
+  {{ $invertedLogo = resources.Get $invertedLogo}}
+  {{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg")}}
+    {{ $invertedLogo = $invertedLogo.Resize "42x" }}
+  {{ end }}
+  {{ $invertedLogo = $invertedLogo.RelPermalink}}
 {{ end }}
-{{ $invertedLogo = $invertedLogo.RelPermalink}}
+
+{{ $customMenus := site.Params.customMenus }}
+{{ if (index site.Data site.Language.Lang).site.customMenus }}
+  {{ $customMenus = (index site.Data site.Language.Lang).site.customMenus }}
+{{ end }}
 
 {{ $sections := site.Data.sections }}
 {{ if (index site.Data site.Language.Lang).sections }}
@@ -31,7 +49,9 @@
 <nav class="navbar navbar-expand-xl top-navbar initial-navbar" id="top-navbar">
   <div class="container">
     <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
-      <img src="{{ $invertedLogo }}" id="logo">
+      {{ if $invertedLogo }}
+        <img src="{{ $invertedLogo }}" id="logo" alt="Logo">
+      {{ end }}
       {{- site.Title -}}
     </a>
     <button
@@ -40,6 +60,7 @@
       type="button"
       data-toggle="collapse"
       data-target="#top-nav-items"
+      aria-label="menu"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -50,33 +71,49 @@
           <a class="nav-link" href="#home">{{ i18n "home" }}</a>
         </li>
         {{ if $sections }}
+          {{ $sectionCount := 0}}
           {{ range sort $sections "section.weight" }}
             {{ if and (.section.enable) (.section.showOnNavbar)}}
-              {{ $sectionID := replace (lower .section.name) " " "-"  }}
-              {{ if .section.id }}
-                {{ $sectionID = .section.id }}
+              {{ $sectionCount  = add $sectionCount 1}}
+              {{ if le $sectionCount 5 }}
+                <li class="nav-item">
+                  <a class="nav-link" href="#{{ partial "helpers/get-section-id.html" . }}">{{ .section.name }}</a>
+                </li>
               {{ end }}
-              <li class="nav-item">
-                <a class="nav-link" href="#{{ $sectionID }}">{{ .section.name }}</a>
-              </li>
             {{ end }}
           {{- end }}
-        {{- end }}
-        {{ $hasCustomMenus:= false }}
-        {{ if and site.Params.customMenus }}
-          {{ if gt (len site.Params.customMenus) 0 }}
-            {{ $hasCustomMenus = true }}
+          {{ if gt $sectionCount 5 }}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{i18n "more" }}</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {{ $sectionCount := 0 }}
+                {{ range sort $sections "section.weight" }}
+                  {{ if and (.section.enable) (.section.showOnNavbar) }}
+                    {{ $sectionCount  = add $sectionCount 1}}
+                    {{ if gt $sectionCount 5 }}
+                      <a class="dropdown-item" href="#{{ partial "helpers/get-section-id.html" . }}">{{ .section.name }}</a>
+                    {{ end }}
+                  {{ end }}
+                {{- end }}
+              </div>
+            </li>
           {{ end }}
-        {{ end }}
-        {{ if (or site.Params.enableBlogPost $hasCustomMenus) }}
+        {{- end }}
+        {{ $shouldAddSeparator:= partial "helpers/add-navbar-separator.html" . }}
+        {{ if $shouldAddSeparator }}
           <div class="dropdown-divider" id="top-navbar-divider"></div>
         {{ end }}
-        {{ if site.Params.enableBlogPost }}
+        {{ if $blogEnabled }}
           <li class="nav-item">
             <a class="nav-link" id="blog-link" href="{{ "/posts" | relLangURL }}">{{ i18n "posts" }}</a>
           </li>
         {{ end }}
-        {{ range  (index site.Data site.Language.Lang).site.customMenus }}
+        {{ if $notesEnabled }}
+          <li class="nav-item">
+            <a class="nav-link" id="note-link" href="{{ "/notes" | relLangURL }}">{{ i18n "notes" }}</a>
+          </li>
+        {{ end }}
+        {{ range $customMenus }}
           <li class="nav-item">
             <a class="nav-link" href="{{ .url }}">{{ .name }}</a>
           </li>
@@ -88,6 +125,10 @@
     </div>
   </div>
   <!-- Store the logo information in a hidden img for the JS -->
-  <img src="{{ $mainLogo }}" class="d-none" id="main-logo">
-  <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo">
+  {{ if $mainLogo }}
+    <img src="{{ $mainLogo }}" class="d-none" id="main-logo" alt="Logo">
+  {{ end }}
+  {{ if $invertedLogo }}
+    <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  {{ end }}
 </nav>

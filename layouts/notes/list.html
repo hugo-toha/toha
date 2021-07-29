@@ -1,0 +1,69 @@
+{{ define "header" }}
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+  />
+  <link rel="stylesheet" href="{{ "/css/layouts/notes.css" | relURL}}">
+  <link rel="stylesheet" href="{{ "/css/navigators/sidebar.css" | relURL}}">
+{{ end }}
+
+{{ define "navbar" }}
+    {{ partial "navigators/navbar-2.html" . }}
+{{ end }}
+
+{{ define "sidebar" }}
+  {{ $homePage:="#" }}
+  {{ if site.IsMultiLingual }}
+    {{ $homePage = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) .Type) }}
+  {{ end }}
+
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="{{ "search" | relLangURL }}">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="{{ .Type | relLangURL }}" data-filter="all">{{ i18n .Type }}</a></li>
+            <div class="subtree">
+                {{ partial "navigators/sidebar.html" (dict "menuName" "notes" "menuItems" site.Menus.notes  "ctx" . ) }}
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
+
+{{ define "content" }}
+<section class="content-section" id="content-section">
+  <div class="content container-fluid" id="content">
+    <div class="container-fluid note-card-holder" id="note-card-holder">
+      {{ $paginator := .Paginate .RegularPagesRecursive 10 }}
+      {{ range $paginator.Pages }}
+        {{ if .Layout }}
+        {{/* ignore search.md file*/}}
+        {{ else }}
+          {{ .Content }}
+        {{ end }}
+      {{ end }}
+    </div>
+    <div class="paginator">
+      {{ template "_internal/pagination.html" . }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ define "scripts" }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script src="{{ "/js/imagesloaded.pkgd.min.js" | relURL }}"></script>
+  <script src="{{ "/js/note.js" | relURL }}"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  {{ if .Params.math }}
+      {{ partial "math.html" . }}
+  {{ end }}
+{{ end }}

@@ -72,6 +72,16 @@ var isMobile = false, isTablet = false, isLaptop = false;
     }
     addSmoothScroll();
 
+    // ===================== Video Player ==================
+    function renderVideoPlayer(){
+      var videos = document.getElementsByClassName("video-player");
+      for (var i =0; i< videos.length; i++ ){
+        const player = new Plyr("#"+videos[i].id);
+      }
+
+    }
+    renderVideoPlayer();
+
     // re-render custom functions on window resize
     window.onresize = function () {
       detectDevice();
@@ -139,7 +149,7 @@ function toggleTOC() {
 }
 
 // Show more rows in the taken courses table
-function showMoreCourses(elem) {
+function toggleCourseVisibility(elem) {
 
   // find the courses
   let courses = elem.parentNode.getElementsByClassName("course");
@@ -154,11 +164,12 @@ function showMoreCourses(elem) {
     }
   }
 
-  // toggle the button text
-  let btnText = elem.innerText;
-  if (btnText == "Show More") {
-    elem.innerText = "Show Less";
-  } else {
-    elem.innerText = "Show More";
+  // toggle the current button visibility
+  elem.classList.toggle("hidden");
+  // toggle the alternate button visibility
+  if  (elem.id === "show-more-btn"){
+    document.getElementById("show-less-btn").classList.toggle("hidden");
+  }else{
+    document.getElementById("show-more-btn").classList.toggle("hidden");
   }
 }

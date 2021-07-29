@@ -9,7 +9,7 @@
   {{ end }}
   <div class="container">
     <div class="row" id="recent-post-cards">
-      {{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections )}}
+      {{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "in" "posts" )}}
         {{ partial "cards/recent-post.html" . }}
       {{ end }}
     </div>

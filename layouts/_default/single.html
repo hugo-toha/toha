@@ -6,6 +6,9 @@
 />
 <link rel="stylesheet" href="{{ "/css/layouts/single.css" | relURL }}"/>
 <link rel="stylesheet" href="{{ "/css/navigators/sidebar.css" | relURL }}">
+<!--================= custom style overrides =========================-->
+<link rel="stylesheet" href="{{ "/css/style.css" | relURL }}"/>
+
 {{ end }}
 
 {{ define "navbar" }}
@@ -16,12 +19,14 @@
   <section class="sidebar-section" id="sidebar-section">
     <div class="sidebar-holder">
       <div class="sidebar" id="sidebar">
-        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <form class="mx-auto" method="get" action="{{ "search" | relLangURL }}">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
             <li id="list-heading"><a href="{{ "/posts" | relLangURL }}" data-filter="all">{{ i18n "posts" }}</a></li>
             <div class="subtree">
-                {{ partial "navigators/sidebar.html" (dict "menus" site.Menus.sidebar "ctx" .) }}
+                {{ partial "navigators/sidebar.html" (dict "menuName" "sidebar" "menuItems" site.Menus.sidebar "ctx" .) }}
             </div>
           </ul>
         </div>
@@ -41,7 +46,7 @@
       <!--Content Start-->
       <div class="page-content">
         <div class="author-profile ml-auto align-self-lg-center">
-          <img class="rounded-circle" src='{{ partial "helpers/get-author-image.html" . }}'/>
+          <img class="rounded-circle" src='{{ partial "helpers/get-author-image.html" . }}' alt="Author Image">
           <h5 class="author-name">{{ partial "helpers/get-author-name.html" . }}</h5>
           <p>{{ .Page.Date.Format "January 2, 2006" }}</p>
         </div>
@@ -57,7 +62,7 @@
         <!--- Improve this page button --->
         {{ if site.Params.GitRepo }}
           <div class="btn-improve-page">
-              <a href="{{ site.Params.GitRepo }}/edit/master/content/{{ .File.Path }}">
+              <a href="{{ site.Params.GitRepo }}/edit/{{ site.Params.GitBranch }}/content/{{ .File.Path }}" title="{{ i18n "improve_this_page" }}" target="_blank" rel="noopener">
                 <i class="fas fa-code-branch"></i>
                 {{ i18n "improve_this_page" }}
               </a>
@@ -75,6 +80,8 @@
       </div>
     </div>
   </div>
+  <!--scroll back to top-->
+  <a id="scroll-to-top" class="btn"><i class="fas fa-chevron-circle-up"></i></a>
   {{ if .IsTranslated }}
     {{ partial "navigators/floating-lang-selector.html" . }}
   {{ end }}

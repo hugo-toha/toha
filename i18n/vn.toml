@@ -33,7 +33,7 @@ other = "Nhận email cập nhật thông tin"
 other = "Nhập email"
 
 [newsletter_warning]
-other = "Chúng tôi sẽ không bao giờ chia sẻ email của bạn."
+other = "Bằng cách nhập địa chỉ email của bạn, bạn đồng ý nhận bản tin của trang web này."
 
 [submit]
 other = "Gửi"
@@ -71,5 +71,44 @@ other = "Tín dụng thu được"
 [extracurricular_activities]
 other = "Các hoạt động ngoại khóa"
 
-[see_more]
+[show_more]
 other = "Xem thêm"
+
+[show_less]
+other = "Hiện ít hơn"
+
+# [responsibilities]
+# other = "Responsibilities:"
+
+# [present]
+# other = "Present"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+# [project_details]
+# other = "Details"
+
+# [err_404]
+# other = "The page you are looking for is not there yet."
+
+[more]
+other = "Hơn"
+
+[view_certificate]
+other = "Xem chứng chỉ"
+
+[notes]
+other = "Ghi chú"
+
+[disclaimer_text]
+other = "Thông báo trách nhiệm"

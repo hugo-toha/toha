@@ -66,18 +66,18 @@
   text-decoration: none;
 }
 
-.content-cards .paginator {
+.paginator {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
 }
 
-.content-cards .paginator .page-item > a {
+.paginator .page-item > a {
   color: #248aaa;
 }
 
-.content-cards .paginator .page-item.active > a {
+.paginator .page-item.active > a {
   background-color: #248aaa;
   color: #f9fafc;
 }
@@ -114,9 +114,6 @@
 /* Extra large devices (large desktops, 1200px and up) */
 
 @media (max-width: 1400px) {
-  .content-cards {
-    padding-left: 0px;
-  }
   .post-card-holder {
     margin-left: 0px;
   }
@@ -160,12 +157,6 @@
     position: absolute;
     right: 0;
     top: 0.5rem;
-  }
-
-  .content-cards {
-    padding-top: 20px;
-    width: 100%;
-    padding-left: 0px;
   }
 
   .post-card-holder {
@@ -229,12 +220,6 @@
   .content-section.hide .content {
     margin-top: 0;
     padding-top: 0;
-    transition: all ease-out 0.3s;
-  }
-
-  .content-cards {
-    padding-top: 20px;
-    padding-left: 0px;
     transition: all ease-out 0.3s;
   }
 
