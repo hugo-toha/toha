@@ -137,7 +137,7 @@
     {{ if and $disclaimerEnabled $disclaimer}}
     <hr />
     <div class="container">
-      <p id="disclaimer"><strong>{{ i18n "disclaimer_text" }}:</strong> {{ $disclaimer }}</p>
+      <p id="disclaimer"><strong>{{ i18n "disclaimer_text" }}:</strong> {{ $disclaimer | markdownify }}</p>
     </div>
     {{ end }}
     {{ if $credentialsEnabled }}
