@@ -137,10 +137,16 @@ params:
   # specify whether you want to show Table of Contents in reading page
   enableTOC: true
 
-  # Provide newsletter configuration. This feature hasn't been implemented yet.
-  # Currently, you can just hide it from the footer.
+  # Provide newsletter configuration. 
+  # This feature has been implemented for Mailchimp only for now.
+  # You can also hide it from the footer.
   newsletter:
+    # specify whether you want to display the newsletter form 
     enable: true
+    # specify which newsletter provider you want to use
+    provider: mailchimp
+    # specify the target URL for the subscription form
+    mailchimpURL: https://github.us1.list-manage.com/subscribe/post?u=19de52a4603135aae97163fd8&amp;id=094a24c76e
 ```
 
 Don't forget to update `title`, `baseURL`, and `gitRepo` fields with your own information. To know about more available configuration options, please visit [here](https://toha-guides.netlify.app/posts/configuration/site-parameters/).
