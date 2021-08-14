@@ -11,7 +11,10 @@
 
             {{ $logoImage:= resources.Get .logo}}
             {{ if $logoImage }}
-            {{ $logoImage := $logoImage.Fit "24x24" }}
+            {{/*  svg don't support "Fit" operation   */}}
+            {{ if ne $logoImage.MediaType.SubType "svg" }}
+              {{ $logoImage = $logoImage.Fit "24x24" }}
+            {{ end }}
 
             <img class="card-img-xs" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
             {{ end }}

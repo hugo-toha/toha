@@ -496,11 +496,24 @@
   .about-section.container {
     max-width: 100%;
   }
+  
+  .circular-progress {
+    width: 135px;
+    height: 135px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
 
 @media only screen and (max-width: 576px) {
+  .circular-progress {
+    width: 150px;
+    height: 150px;
+  }
+
+  .circular-progress .circular-progress-value {
+    font-size: 1rem;
+  }
 }
 
 /* iPhoneX, iPhone 6,7,8 */
@@ -513,4 +526,12 @@
 
 /* iPhone 5 or before */
 @media only screen and (max-width: 320px) {
+  .col-6 {
+    flex: auto;
+    max-width: 100%;
+  }
+
+  .social-link {
+    flex-wrap: wrap;
+  }
 }

@@ -1,39 +1,39 @@
 # More documentation here: https://github.com/nicksnyder/go-i18n
 [home]
-other = "主页"
+other = "首頁"
 
 [posts]
-other = "博文"
+other = "文章"
 
 [toc_heading]
-other = "目录"
+other = "目錄"
 
 [at]
 other = "at"
 
 [resume]
-other = "我的简历"
+other = "履歷"
 
 [navigation]
-other = "导航"
+other = "導覽列"
 
 [contact_me]
-other = "联系方式:"
+other = "聯絡方式:"
 
 [email]
-other = "邮箱"
+other = "信箱"
 
 [phone]
-other = "电话"
+other = "電話"
 
 [newsletter_text]
-other = "通过电子邮件接收最新信息"
+other = "通過電子郵件接收最新消息"
 
 [newsletter_input_placeholder]
-other = "填入 E-mail"
+other = "在此輸入您的電子郵件地址"
 
 [newsletter_warning]
-other = "我们绝不会与任何人共享您的电子邮件。"
+other = "輸入您的電子郵件地址，即表示您同意接受本網站的最新消息"
 
 [submit]
 other = "提交"
@@ -48,34 +48,34 @@ other = "上一篇"
 other = "下一篇"
 
 [improve_this_page]
-other = "改善此页面"
+other = "改善此頁面"
 
 [out_of]
 other = "/"
 
 [publications]
-other = "刊物"
+other = "出版"
 
 [taken_courses]
-other = "选修课程"
+other = "修習課程"
 
 [course_name]
-other = "课程名"
+other = "課程名稱"
 
 [total_credit]
-other = "满分"
+other = "總分"
 
 [obtained_credit]
-other = "获得分数"
+other = "獲得學分"
 
 [extracurricular_activities]
-other = "课外活动"
+other = "課外活動"
 
 [show_more]
 other = "查看更多"
 
 [show_less]
-other = "显示较少"
+other = "顯示較少"
 
 # [responsibilities]
 # other = "Responsibilities:"
@@ -105,10 +105,10 @@ other = "显示较少"
 other = "更多的"
 
 [view_certificate]
-other = "查看证书"
+other = "查看證書"
 
 [notes]
-other = "笔记"
+other = "筆記"
 
 [disclaimer_text]
-other = "责任通知"
+other = "免責聲明"

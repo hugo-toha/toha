@@ -33,7 +33,7 @@ other = "Ingin selalu update dengan notifikasi email"
 other = "Masukkan email"
 
 [newsletter_warning]
-other = "Kami tidak pernah berbagi data email dengan siapapun."
+other = "Dengan memasukkan alamat email Anda, Anda setuju untuk menerima buletin situs web ini."
 
 [submit]
 other = "Kirim"

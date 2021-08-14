@@ -33,7 +33,7 @@ other = "Stay up to date with email notification"
 other = "Enter email"
 
 [newsletter_warning]
-other = "We'll never share your email with anyone else."
+other = "By entering your email address, you agree to receive the newsletter of this website."
 
 [submit]
 other = "Submit"

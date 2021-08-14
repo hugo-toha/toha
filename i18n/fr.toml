@@ -3,7 +3,7 @@
 other = "Accueil"
 
 [posts]
-other = "Des postes"
+other = "Articles"
 
 [toc_heading]
 other = "Table des matières"
@@ -33,7 +33,7 @@ other = "Restez à jour par e-mail"
 other = "Entrez une adresse e-mail"
 
 [newsletter_warning]
-other = "Nous ne partagerons jamais votre courriel avec quelqu'un d'autre."
+other = "En renseignant votre adresse e-mail, vous acceptez de recevoir la newsletter de ce site."
 
 [submit]
 other = "Envoyer"
@@ -89,8 +89,8 @@ other = "Montrer moins"
 # [comments_by]
 # other = "comments powered by"
 
-# [read]
-# other = "Read"
+[read]
+other = "Lire"
 
 # [project_star]
 # other = "Star"
