@@ -54,7 +54,15 @@
         <div class="title">
           <h1>{{ .Page.Title }}</h1>
         </div>
-
+        {{ if site.Params.enableTags }}
+        <div class="taxonomy-terms">
+            <ul class="taxonomy-terms">
+            {{ range .Params.tags }}
+            <li><a href="/tags/{{ . | urlize }}"><span class="tag-item">{{ . }}</span></a></li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
         <div class="post-content" id="post-content">
           {{ .Page.Content }}
         </div>
