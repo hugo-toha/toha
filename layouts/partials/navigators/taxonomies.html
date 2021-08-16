@@ -1,6 +1,5 @@
 {{ $context := .context  }}
 {{ $taxo := .taxo  }}
-{{ $title := .title  }}
 {{ $class:= "" }}
 {{ if isset $context.Site.Taxonomies ( lower $taxo ) }}
   {{ $taxonomy := index $context.Site.Taxonomies ( lower $taxo ) }}
@@ -8,6 +7,8 @@
         {{ range $taxonomy }}
           {{if eq $context.Title .Page.Title}}
             {{ $class = "active" }}
+          {{else}}
+            {{$class = ""}}
           {{end}}
           <li><a class="taxonomy-term {{ $class }}" href="{{ .Page.Permalink }}" data-taxonomy-term="{{ urlize .Page.Title }}"><span class="taxonomy-label">{{ .Page.Title }}</span></a></li>
         {{ end }}
