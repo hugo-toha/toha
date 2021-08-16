@@ -243,30 +243,11 @@ h6 {
   font-size: .8em;
   list-style-type: none;
   display: inline-block;
-  padding: .5em;
-  min-width: 5em;
-  margin: 0 .5em;
-	position: relative;
-	background: #8dd6dd;
-	border-radius: .4em;
-}
-
-.taxonomy-terms li:after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 10px solid transparent;
-	border-right-color: #8dd6dd;
-	border-left: 0;
-	margin-top: -10px;
-	margin-left: -10px;
+	background: #248aaa;
 }
 
 .taxonomy-terms a{
-  color: black;
+  color: #f9fafc;
 }
 
 /* ============= Device specific fixes ======= */

@@ -56,9 +56,9 @@
         </div>
         {{ if site.Params.enableTags }}
         <div class="taxonomy-terms">
-            <ul class="taxonomy-terms">
+            <ul>
             {{ range .Params.tags }}
-            <li><a href="/tags/{{ . | urlize }}"><span class="tag-item">{{ . }}</span></a></li>
+            <li class="rounded"><a href="/tags/{{ . | urlize }}" class="btn, btn-sm">{{ . }}</a></li>
             {{ end }}
           </ul>
         </div>
