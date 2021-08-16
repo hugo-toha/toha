@@ -8,6 +8,12 @@ other = "文章"
 [toc_heading]
 other = "目錄"
 
+[tags]
+other = "标签"
+
+[categories]
+other = "类别"
+
 [at]
 other = "at"
 

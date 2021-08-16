@@ -8,6 +8,12 @@ other = "Bài viết"
 [toc_heading]
 other = "Mục lục"
 
+[tags]
+other = "Thẻ"
+
+[categories]
+other = "Thể loại"
+
 [at]
 other = "tại"
 

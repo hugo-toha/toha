@@ -8,6 +8,12 @@ other = "Articles"
 [toc_heading]
 other = "Table des matières"
 
+[tags]
+other = "Mots clés"
+
+[categories]
+other = "Catégories"
+
 [at]
 other = "chez"
 

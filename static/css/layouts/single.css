@@ -236,6 +236,19 @@ h6 {
 #scroll-to-top.show {
   visibility: visible;
 }
+.taxonomy-terms {
+  text-align: center;
+}
+.taxonomy-terms li {
+  font-size: .8em;
+  list-style-type: none;
+  display: inline-block;
+	background: #248aaa;
+}
+
+.taxonomy-terms a{
+  color: #f9fafc;
+}
 
 /* ============= Device specific fixes ======= */
 

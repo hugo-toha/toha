@@ -54,7 +54,16 @@
         <div class="title">
           <h1>{{ .Page.Title }}</h1>
         </div>
-
+        {{ if site.Params.enableTags }}
+        <div class="taxonomy-terms">
+            <ul>
+            {{ range .Params.tags }}
+            {{ $url:= printf "tags/%s" . }}
+            <li class="rounded"><a href="{{ $url | urlize | relLangURL }}" class="btn, btn-sm">{{ . }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
         <div class="post-content" id="post-content">
           {{ .Page.Content }}
         </div>

@@ -7,6 +7,12 @@ other = "Beiträge"
 [toc_heading]
 other = "Inhaltsverzeichnis"
 
+[tags]
+other = "Tags"
+
+[categories]
+other = "Categorieën"
+
 [at]
 other = "bei"
 
