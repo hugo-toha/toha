@@ -8,6 +8,12 @@ other = "पोस्ट"
 [toc_heading]
 other = "विषयसूची"
 
+[tags]
+other = "टैग"
+
+[categories]
+other = "श्रेणियाँ"
+
 [at]
 other = "अन्य"
 

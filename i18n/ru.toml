@@ -8,6 +8,12 @@ other = "Посты"
 [toc_heading]
 other = "Оглавление"
 
+[tags]
+other = "Теги"
+
+[categories]
+other = "Категории"
+
 [at]
 other = "в"
 

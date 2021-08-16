@@ -8,6 +8,12 @@ other = "Posts"
 [toc_heading]
 other = "Contenido"
 
+[tags]
+other = "Etiquetas"
+
+[categories]
+other = "Categorías"
+
 [at]
 other = "en"
 

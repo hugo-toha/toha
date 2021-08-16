@@ -58,7 +58,8 @@
         <div class="taxonomy-terms">
             <ul>
             {{ range .Params.tags }}
-            <li class="rounded"><a href="/tags/{{ . | urlize }}" class="btn, btn-sm">{{ . }}</a></li>
+            {{ $url:= printf "tags/%s" . }}
+            <li class="rounded"><a href="{{ $url | urlize | relLangURL }}" class="btn, btn-sm">{{ . }}</a></li>
             {{ end }}
           </ul>
         </div>

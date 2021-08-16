@@ -8,6 +8,12 @@ other = "記事"
 [toc_heading]
 other = "目次"
 
+[tags]
+other = "タグ"
+
+[categories]
+other = "カテゴリ"
+
 [resume]
 other = "職務経歴書"
 

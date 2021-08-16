@@ -8,6 +8,12 @@ other = "পোষ্ট সমূহ"
 [toc_heading]
 other = "সুচিপত্র"
 
+[tags]
+other = "ট্যাগ সমুহ"
+
+[categories]
+other = "বিভাগ সমুহ"
+
 [resume]
 other = "আমার জীবনবৃত্তান্ত"
 
