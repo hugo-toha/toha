@@ -121,13 +121,13 @@
                 <button type="submit" class="btn btn-info">{{ i18n "submit" }}</button>
               </form>
             {{ else }}
-             <!-- a dummy form -->
-              <form>
-                <div class="form-group">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ i18n "newsletter_input_placeholder" }}"/>
-                  <small id="emailHelp" class="form-text text-muted">{{ i18n "newsletter_warning" }}</small>
-                </div>
-                <button type="submit" class="btn btn-info">{{ i18n "submit" }}</button>
+              <form method='post' action='https://blogtrottr.com'>
+              <div class="form-group">
+              <input type='email' class="form-control" name='btr_email' placeholder="{{ i18n "newsletter_input_placeholder" }}"/><br />
+              <input type='hidden' name='btr_url' value='{{ "" | absLangURL }}index.xml' />
+              <input type='hidden' name='schedule_type' value='1' />
+              <small id="emailHelp" class="form-text text-muted">{{ i18n "newsletter_warning" }}</small>
+              <button type="submit" class="btn btn-info"> {{ i18n "submit" }} </button>
               </form>
             {{ end }}
           </div>
