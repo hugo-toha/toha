@@ -71,7 +71,13 @@
         <!--- Improve this page button --->
         {{ if site.Params.GitRepo }}
           <div class="btn-improve-page">
-              <a href="{{ site.Params.GitRepo }}/edit/{{ site.Params.GitBranch }}/content/{{ .File.Path }}" title="{{ i18n "improve_this_page" }}" target="_blank" rel="noopener">
+            {{ if ( eq site.Params.GitForge "gitlab" ) }}
+              <a href="{{ site.Params.GitRepo }}-/edit/{{ site.Params.GitBranch }}/{{ .File.Path }}" title="{{ i18n "improve_this_page" }}" target="_blank" rel="noopener">
+            {{ else if ( eq site.Params.GitForge "gitea" ) }}
+              <a href="{{ site.Params.GitRepo }}_edit/{{ site.Params.GitBranch }}/content/{{ .File.Path }}" title="{{ i18n "improve_this_page" }}" target="_blank" rel="noopener">
+            {{ else }} <!--- Make Github-style the default -->
+               <a href="{{ site.Params.GitRepo }}/edit/{{ site.Params.GitBranch }}/content/{{ .File.Path }}" title="{{ i18n "improve_this_page" }}" target="_blank" rel="noopener">
+            {{ end }}
                 <i class="fas fa-code-branch"></i>
                 {{ i18n "improve_this_page" }}
               </a>
