@@ -101,8 +101,8 @@ other = "Lire"
 # [project_star]
 # other = "Star"
 
-# [project_details]
-# other = "Détails"
+[project_details]
+other = "Détails"
 
 # [err_404]
 # other = "The page you are looking for is not there yet."
