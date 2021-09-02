@@ -18,7 +18,7 @@ other = "Catégories"
 other = "chez"
 
 [resume]
-other = "Mon Curriculum vitæ"
+other = "Mon Curriculum Vitæ"
 
 [navigation]
 other = "Navigation"
@@ -101,8 +101,8 @@ other = "Lire"
 # [project_star]
 # other = "Star"
 
-# [project_details]
-# other = "Details"
+[project_details]
+other = "Détails"
 
 # [err_404]
 # other = "The page you are looking for is not there yet."
