@@ -68,6 +68,45 @@
           {{ .Page.Content }}
         </div>
 
+
+        <!--Social Buttons-->
+
+        {{ if site.Params.SocialButtons }}
+          <div class="socialbuttons">
+            Share on:
+            {{ if site.Params.SocialButtons.facebook }}
+                <a href="https://www.facebook.com/sharer.php?u={{ .Permalink }}" target="_blank" style="color: #3b5998"> <i class="fab fa-facebook fa-lg"></i></a>
+            {{ end }}
+            {{ if site.Params.SocialButtons.twitter }}
+                <a href="https://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}&via={{- site.Title -}}" target="_blank" style="color: #55acee"><i class="fab fa-twitter fa-lg"></i></a>
+            {{ end }}
+            {{ if site.Params.SocialButtons.reddit }}
+                <a href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}" target="_blank" style="color: #ff4500"><i class="fab fa-reddit fa-lg"></i></a>
+            {{ end }}
+            {{ if site.Params.SocialButtons.tumblr }}
+                <a href="https://www.tumblr.com/share/link?url={{ .Permalink }}&name={{ .Title }}{{- with .Params.description -}}&description={{- . -}}{{- end -}}" target="_blank" style="color: #001935"><i class="fab fa-tumblr fa-lg"></i></a>
+            {{ end }}
+            {{ if site.Params.SocialButtons.pocket }}
+                <a href="https://getpocket.com/save?url={{ .Permalink }}&title={{ .Title }}" target="_blank"><i class="fab fa-get-pocket fa-lg" style="color: #ef4056"></i></a>
+            {{ end }}
+            {{ if site.Params.SocialButtons.linkedin }}
+                <a href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}&title={{ .Title }}" target="_blank" style="color: #0a66c2"><i class="fab fa-linkedin fa-lg"></i></a>
+            {{ end }}
+            {{ if site.Params.SocialButtons.diaspora }}
+                <a href="https://share.diasporafoundation.org/?title={{ .Title }}&url={{ .Permalink }}" rel="nofollow" target="_blank" style="color: #626262"><i class="fab fa-diaspora fa-lg"></i></a>
+            {{ end }}
+             {{ if site.Params.SocialButtons.mastodon }}
+                <a href="https://mastodon.social/share?text={{ .Title }} - {{ .Permalink }}" target="_blank" style="color: #3088d4"><i class="fab fa-mastodon fa-lg"></i></i></a>
+            {{ end }}
+            {{ if site.Params.SocialButtons.whatsapp }}
+                 <a href="https://api.whatsapp.com/send?text={{ .Title }} {{ .Permalink }}" target="_blank" style="color: #3bc04d"><i class="fab fa-whatsapp fa-lg"></i></a>
+            {{ end }}
+            {{ if site.Params.SocialButtons.email }}
+                <a href="mailto:?subject={{ .Title }}&body={{ .Permalink }}" target="_blank" style="color: #263163"><i class="fas fa-envelope-open-text fa-lg"></i></a>
+            {{ end }}
+          </div>
+        {{ end }}
+
         <!--- Improve this page button --->
         {{ if site.Params.GitRepo }}
           {{ if site.Params.GitBranch }}

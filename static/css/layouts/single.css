@@ -209,6 +209,12 @@ h6 {
   text-align: right;
 }
 
+.socialbuttons {
+  float: left;
+  margin-left: 1rem;
+
+}
+
 .languageSelector {
   display: none;
 }
