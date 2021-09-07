@@ -53,6 +53,9 @@ other = "Anterior"
 [next]
 other = "Siguiente"
 
+[share_on]
+other = "Compartir en"
+
 [improve_this_page]
 other = "Mejorar esta página"
 
