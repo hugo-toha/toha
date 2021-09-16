@@ -50,6 +50,9 @@ other = "前"
 [next]
 other = "次"
 
+# [share_on]
+# other = "Share on"
+
 [improve_this_page]
 other = "編集リクエストを送る"
 
