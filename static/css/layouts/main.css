@@ -50,17 +50,17 @@ a:hover {
 }
 
 .btn-dark {
-  background-color: #3c4858;
-  border-color: #3c4858;
-  color: #e5e9f2;
-  transition: all 0.3s ease-out;
+  background-color: #3c4858!important;
+  border-color: #3c4858!important;
+  color: #e5e9f2!important;
+  transition: all 0.3s ease-out!important;
 }
 
 .btn-dark:hover,
 .btn-dark:focus {
-  background-color: #248aaa;
-  border-color: #248aaa;
-  transition: all 0.3s ease-out;
+  background-color: #248aaa!important;
+  border-color: #248aaa!important;
+  transition: all 0.3s ease-out!important;
 }
 
 .btn-outline-info {

@@ -53,6 +53,9 @@ other = "이전"
 [next]
 other = "다음"
 
+# [share_on]
+# other = "Share on"
+
 [improve_this_page]
 other = "이 페이지를 개선"
 

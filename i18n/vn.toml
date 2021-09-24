@@ -53,6 +53,9 @@ other = "Trước"
 [next]
 other = "Tiếp theo"
 
+# [share_on]
+# other = "Share on"
+
 [improve_this_page]
 other = "Cải thiện trang này"
 
