@@ -71,8 +71,8 @@
         <!-- Share or Contribute -->
         <div class="row pl-3 pr-3">
         <!--Social Media Share Buttons-->
+        <div class="col-md-6 share-buttons">
         {{ if site.Params.features.blog.shareButtons }}
-          <div class="col-md-6 share-buttons">
             <strong>{{ i18n "share_on" }}:</strong>
             {{ if site.Params.features.blog.shareButtons.facebook }}
             <a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u={{ .Permalink }}" target="_blank">
@@ -124,8 +124,8 @@
                   <i class="fas fa-envelope-open-text"></i>
                 </a>
             {{ end }}
+          {{ end }}
           </div>
-        {{ end }}
 
         <!--- Improve this page button --->
         {{ if site.Params.GitRepo }}

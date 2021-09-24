@@ -206,77 +206,63 @@ h6 {
 }
 
 .share-buttons .btn {
-  background-color: #248aaa !important;
-  border-color: #248aaa !important;
   color: #e5e9f2 !important;
   transition: all 0.3s ease-out !important;
 }
 
-.share-buttons .facebook-btn:hover,
-.share-buttons .facebook-btn:focus {
+.share-buttons .btn:hover,
+.share-buttons .btn:focus {
+  background-color: #248aaa !important;
+  border-color: #248aaa !important;
+  transition: all 0.3s ease-out !important;
+}
+
+.share-buttons .facebook-btn {
   background-color: #4267b2 !important;
   border-color: #4267b2 !important;
-  transition: all 0.3s ease-out !important;
 }
 
-.share-buttons .twitter-btn:hover,
-.share-buttons .twitter-btn:focus {
+.share-buttons .twitter-btn {
   background-color: #1da1f2 !important;
   border-color: #1da1f2 !important;
-  transition: all 0.3s ease-out !important;
 }
 
-.share-buttons .reddit-btn:hover,
-.share-buttons .reddit-btn:focus {
+.share-buttons .reddit-btn {
   background-color: #ff4500 !important;
   border-color: #ff4500 !important;
-  transition: all 0.3s ease-out !important;
 }
 
-.share-buttons .tumblr-btn:hover,
-.share-buttons .tumblr-btn:focus {
+.share-buttons .tumblr-btn {
   background-color: #34465d !important;
   border-color: #34465d !important;
-  transition: all 0.3s ease-out !important;
 }
 
-.share-buttons .pocket-btn:hover,
-.share-buttons .pocket-btn:focus {
+.share-buttons .pocket-btn {
   background-color: #ef4056 !important;
   border-color: #ef4056 !important;
-  transition: all 0.3s ease-out !important;
 }
 
-.share-buttons .linkedin-btn:hover,
-.share-buttons .linkedin-btn:focus {
+.share-buttons .linkedin-btn {
   background-color: #2867b2 !important;
   border-color: #2867b2 !important;
-  transition: all 0.3s ease-out !important;
 }
 
-.share-buttons .diaspora-btn:hover,
-.share-buttons .diaspora-btn:focus {
+.share-buttons .diaspora-btn {
   background-color: #3c4858 !important;
   border-color: #3c4858 !important;
-  transition: all 0.3s ease-out !important;
 }
 
-.share-buttons .mastodon-btn:hover,
-.share-buttons .mastodon-btn:focus {
+.share-buttons .mastodon-btn {
   background-color: #2791da !important;
   border-color: #2791da !important;
-  transition: all 0.3s ease-out !important;
 }
 
-.share-buttons .whatsapp-btn:hover,
-.share-buttons .whatsapp-btn:focus {
+.share-buttons .whatsapp-btn {
   background-color: #4ac959 !important;
   border-color: #4ac959 !important;
-  transition: all 0.3s ease-out !important;
 }
 
-.share-buttons .email-btn:hover,
-.share-buttons .email-btn:focus {
+.share-buttons .email-btn {
   background-color: #3c4858 !important;
   border-color: #3c4858 !important;
   transition: all 0.3s ease-out !important;
