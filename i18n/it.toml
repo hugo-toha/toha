@@ -8,6 +8,12 @@ other = "Post"
 [toc_heading]
 other = "Contenuti"
 
+[tags]
+other = "Tags"
+
+[categories]
+other = "Categorie"
+
 [at]
 other = "presso"
 
@@ -33,7 +39,7 @@ other = "Resta aggiornato con la notifica di email"
 other = "Inserisci l'email"
 
 [newsletter_warning]
-other = "Non condivideremo l'email con altri."
+other = "Inserendo il tuo indirizzo email, accetti di ricevere la newsletter di questo sito."
 
 [submit]
 other = "Invia"
@@ -46,6 +52,9 @@ other = "Precedente"
 
 [next]
 other = "Successivo"
+
+# [share_on]
+# other = "Share on"
 
 [improve_this_page]
 other = "Migliora questa pagina"
@@ -105,7 +114,7 @@ other = "Mostra meno"
 other = "Di più"
 
 [view_certificate]
-other = "Féach ar an Teastas"
+other = "Vedi certificato"
 
 [notes]
 other = "Appunti"

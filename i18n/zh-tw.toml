@@ -1,90 +1,90 @@
 # More documentation here: https://github.com/nicksnyder/go-i18n
 [home]
-other = "Beranda"
+other = "首頁"
 
 [posts]
-other = "Artikel"
+other = "文章"
 
 [toc_heading]
-other = "Daftar Isi"
+other = "目錄"
 
 [tags]
-other = "Tags"
+other = "标签"
 
 [categories]
-other = "Kategori"
+other = "类别"
 
 [at]
 other = "at"
 
 [resume]
-other = "Resume saya"
+other = "履歷"
 
 [navigation]
-other = "Navigasi"
+other = "導覽列"
 
 [contact_me]
-other = "Hubungi saya:"
+other = "聯絡方式:"
 
 [email]
-other = "Surel"
+other = "信箱"
 
 [phone]
-other = "Telepon"
+other = "電話"
 
 [newsletter_text]
-other = "Ingin selalu update dengan notifikasi email"
+other = "通過電子郵件接收最新消息"
 
 [newsletter_input_placeholder]
-other = "Masukkan email"
+other = "在此輸入您的電子郵件地址"
 
 [newsletter_warning]
-other = "Dengan memasukkan alamat email Anda, Anda setuju untuk menerima buletin situs web ini."
+other = "輸入您的電子郵件地址，即表示您同意接受本網站的最新消息"
 
 [submit]
-other = "Kirim"
+other = "提交"
 
 [hugoAttributionText]
-other = "Didukung oleh"
+other = "Powered by"
 
 [prev]
-other = "Sebelumnya"
+other = "上一篇"
 
 [next]
-other = "Lanjut"
+other = "下一篇"
 
-# [share_on]
-# other = "Share on"
+[share_on]
+other = "分享"
 
 [improve_this_page]
-other = "Perbaiki halaman ini"
+other = "改善此頁面"
 
 [out_of]
-other = "dari"
+other = "/"
 
 [publications]
-other = "Publikasi"
+other = "出版"
 
 [taken_courses]
-other = "Kursus yang Diambil"
+other = "修習課程"
 
 [course_name]
-other = "Nama kursus"
+other = "課程名稱"
 
 [total_credit]
-other = "Total Kredit"
+other = "總分"
 
 [obtained_credit]
-other = "Memperoleh Kredit"
+other = "獲得學分"
 
 [extracurricular_activities]
-other = "Kegiatan ekstrakulikuler"
+other = "課外活動"
 
 [show_more]
-other = "Lihat Selengkapnya"
+other = "查看更多"
 
 [show_less]
-other = "Tampilkan Lebih Sedikit"
+other = "顯示較少"
 
 # [responsibilities]
 # other = "Responsibilities:"
@@ -111,13 +111,13 @@ other = "Tampilkan Lebih Sedikit"
 # other = "The page you are looking for is not there yet."
 
 [more]
-other = "Lebih"
+other = "更多的"
 
 [view_certificate]
-other = "Lihat Sertifikat"
+other = "查看證書"
 
 [notes]
-other = "Catatan"
+other = "筆記"
 
 [disclaimer_text]
-other = "Pemberitahuan Kewajiban"
+other = "免責聲明"
