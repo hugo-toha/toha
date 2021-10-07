@@ -3,7 +3,7 @@
 other = "Home"
 
 [posts]
-other = "게시글"
+other = "posts"
 
 [toc_heading]
 other = "목차"
@@ -111,7 +111,7 @@ other = "간단히보기"
 # other = "The page you are looking for is not there yet."
 
 [more]
-other = "더"
+other = "more"
 
 [view_certificate]
 other = "인증서보기"
