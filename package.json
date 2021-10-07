@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/hossainemruz/toha#readme",
   "devDependencies": {
-    "autoprefixer": "^10.3.6",
-    "postcss": "^8.3.8",
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.9",
     "postcss-cli": "^8.3.1"
   }
 }
