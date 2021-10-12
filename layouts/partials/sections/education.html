@@ -59,7 +59,7 @@
                                 {{ $hideScale  := .takenCourses.hideScale }}
                                 <table>
                                     <thead>
-                                        <th>{{ i18n "course_name"}}</th>
+                                        <th class="course-name-header">{{ i18n "course_name"}}</th>
                                         {{ if not $hideScale  }}<th>{{ i18n "total_credit"}}</th>{{ end }}
                                         <th>{{ i18n "obtained_credit"}}</th>
                                     </thead>
