@@ -19,6 +19,12 @@
   text-align: right;
 }
 
+.education-section h1 > span{
+  margin-top: -55px;  /* Size of fixed header */
+  padding-bottom:55px; 
+  display: block; 
+}
+
 .education-section .icon {
   width: 2rem;
   padding-left: 0;

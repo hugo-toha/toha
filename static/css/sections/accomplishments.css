@@ -1,3 +1,9 @@
+.accomplishments-section h1 > span{
+  margin-top: -55px;  /* Size of fixed header */
+  padding-bottom:55px; 
+  display: block; 
+}
+
 .accomplishments-section .card {
   background: #fff;
   border-top: 2px solid #248aaa;

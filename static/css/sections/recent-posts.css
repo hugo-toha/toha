@@ -2,6 +2,12 @@
   padding-top: 1rem;
 }
 
+.recent-posts-section h1 > span{
+  margin-top: -55px;  /* Size of fixed header */
+  padding-bottom:55px; 
+  display: block; 
+}
+
 .recent-posts-section .card .card-footer span {
   font-size: 10pt;
   color: #6c757d !important;
