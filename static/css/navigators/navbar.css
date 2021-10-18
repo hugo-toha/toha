@@ -6,7 +6,7 @@
   height: 50px;
   z-index: 99999;
   transition: all 0.4s ease-out;
-  margin: 3px;
+  margin: 0px;
   padding-top: 0.4rem;
   text-align: center;
 }
