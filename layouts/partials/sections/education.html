@@ -3,9 +3,10 @@
 {{ $sectionID = .section.id }}
 {{ end }}
 
-<div class="container-fluid anchor pb-5 education-section" id="{{ $sectionID }}">
+<div class="container-fluid anchor pb-5 education-section">
     {{ if not (.section.hideTitle) }}
-    <h1 class="text-center">{{ .section.name }}</h1>
+    <h1 class="text-center">
+        <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
     {{ end }}
 
     <div class="container">
@@ -59,7 +60,7 @@
                                 {{ $hideScale  := .takenCourses.hideScale }}
                                 <table>
                                     <thead>
-                                        <th>{{ i18n "course_name"}}</th>
+                                        <th class="course-name-header">{{ i18n "course_name"}}</th>
                                         {{ if not $hideScale  }}<th>{{ i18n "total_credit"}}</th>{{ end }}
                                         <th>{{ i18n "obtained_credit"}}</th>
                                     </thead>

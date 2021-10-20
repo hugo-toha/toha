@@ -53,6 +53,9 @@ other = "上一篇"
 [next]
 other = "下一篇"
 
+[share_on]
+other = "分享"
+
 [improve_this_page]
 other = "改善此頁面"
 

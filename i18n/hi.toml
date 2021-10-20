@@ -53,6 +53,9 @@ other = "पिछला"
 [next]
 other = "आगे"
 
+# [share_on]
+# other = "Share on"
+
 [improve_this_page]
 other = "इस पृष्ठ को सुधारें"
 

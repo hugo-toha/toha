@@ -53,6 +53,9 @@ other = "Предыдущий"
 [next]
 other = "Следующий"
 
+# [share_on]
+# other = "Share on"
+
 [improve_this_page]
 other = "Улучшить эту страницу"
 

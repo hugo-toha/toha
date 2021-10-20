@@ -53,6 +53,9 @@ other = "Precedente"
 [next]
 other = "Successivo"
 
+# [share_on]
+# other = "Share on"
+
 [improve_this_page]
 other = "Migliora questa pagina"
 
@@ -111,7 +114,7 @@ other = "Mostra meno"
 other = "Di più"
 
 [view_certificate]
-other = "Féach ar an Teastas"
+other = "Vedi certificato"
 
 [notes]
 other = "Appunti"

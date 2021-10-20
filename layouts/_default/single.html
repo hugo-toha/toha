@@ -68,17 +68,90 @@
           {{ .Page.Content }}
         </div>
 
+        <!-- Share or Contribute -->
+        <div class="row pl-3 pr-3">
+        <!--Social Media Share Buttons-->
+        <div class="col-md-6 share-buttons">
+        {{ if site.Params.features.blog.shareButtons }}
+            <strong>{{ i18n "share_on" }}:</strong>
+            {{ if site.Params.features.blog.shareButtons.facebook }}
+            <a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u={{ .Permalink }}" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+            {{ end }}
+            {{ if site.Params.features.blog.shareButtons.twitter }}
+                <a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}&via={{- site.Title -}}" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+            {{ end }}
+            {{ if site.Params.features.blog.shareButtons.reddit }}
+                <a  class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}" target="_blank">
+                  <i class="fab fa-reddit"></i>
+                </a>
+            {{ end }}
+            {{ if site.Params.features.blog.shareButtons.tumblr }}
+                <a class="btn btn-sm tumblr-btn" href="https://www.tumblr.com/share/link?url={{ .Permalink }}&name={{ .Title }}{{- with .Params.description -}}&description={{- . -}}{{- end -}}" target="_blank">
+                  <i class="fab fa-tumblr"></i>
+                </a>
+            {{ end }}
+            {{ if site.Params.features.blog.shareButtons.pocket }}
+                <a class="btn btn-sm pocket-btn" href="https://getpocket.com/save?url={{ .Permalink }}&title={{ .Title }}" target="_blank">
+                  <i class="fab fa-get-pocket"></i>
+                </a>
+            {{ end }}
+            {{ if site.Params.features.blog.shareButtons.linkedin }}
+                <a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}&title={{ .Title }}" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            {{ end }}
+            {{ if site.Params.features.blog.shareButtons.diaspora }}
+                <a class="btn btn-sm diaspora-btn" href="https://share.diasporafoundation.org/?title={{ .Title }}&url={{ .Permalink }}" rel="nofollow" target="_blank">
+                  <i class="fab fa-diaspora"></i>
+                </a>
+            {{ end }}
+             {{ if site.Params.features.blog.shareButtons.mastodon }}
+                <a class="btn btn-sm mastodon-btn" href="https://mastodon.social/share?text={{ .Title }} - {{ .Permalink }}" target="_blank">
+                  <i class="fab fa-mastodon"></i>
+                </a>
+            {{ end }}
+            {{ if site.Params.features.blog.shareButtons.whatsapp }}
+                 <a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text={{ .Title }} {{ .Permalink }}" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+            {{ end }}
+            {{ if site.Params.features.blog.shareButtons.email }}
+                <a class="btn btn-sm email-btn" href="mailto:?subject={{ .Title }}&body={{ .Permalink }}" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            {{ end }}
+          {{ end }}
+          </div>
+
         <!--- Improve this page button --->
         {{ if site.Params.GitRepo }}
-          <div class="btn-improve-page">
-              <a href="{{ site.Params.GitRepo }}/edit/{{ site.Params.GitBranch }}/content/{{ .File.Path }}" title="{{ i18n "improve_this_page" }}" target="_blank" rel="noopener">
+          {{ if site.Params.GitBranch }}
+            {{ .Scratch.Set "GitBranch" site.Params.GitBranch }}
+          {{ else }}
+            {{ .Scratch.Set "GitBranch" "main" }}
+          {{ end }}
+          <div class="col-md-6 btn-improve-page">
+            {{ if ( eq site.Params.GitForge "gitlab" ) }}
+              <a href="{{ site.Params.GitRepo }}/-/edit/{{ .Scratch.Get "GitBranch" }}/{{ .File.Path }}" title="{{ i18n "improve_this_page" }}" target="_blank" rel="noopener">
+            {{ else if ( eq site.Params.GitForge "gitea" ) }}
+              <a href="{{ site.Params.GitRepo }}/_edit/{{ .Scratch.Get "GitBranch" }}/content/{{ .File.Path }}" title="{{ i18n "improve_this_page" }}" target="_blank" rel="noopener">
+            {{ else }} <!--- Make Github-style the default -->
+               <a href="{{ site.Params.GitRepo }}/edit/{{ .Scratch.Get "GitBranch" }}/content/{{ .File.Path }}" title="{{ i18n "improve_this_page" }}" target="_blank" rel="noopener">
+            {{ end }}
                 <i class="fas fa-code-branch"></i>
                 {{ i18n "improve_this_page" }}
               </a>
           </div>
         {{ end }}
+        </div>
 
-        <!---Next and Previous Navigator -->
+
+
+      <!---Next and Previous Navigator -->
       <hr />
         {{ partial "navigators/next-prev-navigator.html" . }}
       <hr />
