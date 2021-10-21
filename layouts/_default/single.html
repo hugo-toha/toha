@@ -158,6 +158,9 @@
       <!-- Add Disqus forum  -->
       {{ if site.DisqusShortname }}
           {{ partial "disqus.html" . }}
+      <!-- Add valine -->
+      {{ else if site.Params.valine.enable }}
+          {{ partial "valine.html" . }}
       {{ end }}
       </div>
     </div>
