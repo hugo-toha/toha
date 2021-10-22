@@ -155,12 +155,22 @@
       <hr />
         {{ partial "navigators/next-prev-navigator.html" . }}
       <hr />
-      <!-- Add Disqus forum  -->
-      {{ if site.DisqusShortname }}
-          {{ partial "disqus.html" . }}
-      <!-- Add valine -->
-      {{ else if site.Params.valine.enable }}
-          {{ partial "valine.html" . }}
+
+      <!-- Add comment support  -->
+      {{ $commentEnabled:= false }}
+      {{ if or site.Params.features.comment.enabled site.DisqusShortname }}
+        {{ $commentEnabled = true }}
+      {{ end }}
+      {{ if $commentEnabled }}
+          {{ with site.Params.features.comment }}
+              <!-- Add Disqus forum  -->
+              {{ if or .disqus.shortName site.DisqusShortname }}
+                  {{ partial "disqus.html" . }}
+              <!-- Add valine -->
+              {{ else if .valine }}
+                  {{ partial "valine.html" . }}
+              {{ end }}
+          {{ end }}
       {{ end }}
       </div>
     </div>

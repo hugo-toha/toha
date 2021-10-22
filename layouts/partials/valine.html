@@ -10,8 +10,8 @@
       avatar:'{{ .Site.Params.valine.avatar }}',
       placeholder: '{{ .Site.Params.valine.placeholder }}',
       visitor: {{ .Site.Params.valine.visitor }},
-      lang: {{ .Site.Params.valine.lang }},
-      recordIP: true,
-      enableQQ: true
+      lang: '{{ .Site.Params.valine.lang }}',
+      recordIP: {{ .Site.Params.valine.recordIP }},
+      enableQQ: {{ .Site.Params.valine.enableQQ }}
   });
 </script>
