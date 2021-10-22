@@ -3,15 +3,15 @@
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <script type="text/javascript">
-  new Valine({
-      el: '#vcomments' ,
-      appId: '{{ .Site.Params.valine.appId }}',
-      appKey: '{{ .Site.Params.valine.appKey }}',
-      avatar:'{{ .Site.Params.valine.avatar }}',
-      placeholder: '{{ .Site.Params.valine.placeholder }}',
-      visitor: {{ .Site.Params.valine.visitor }},
-      lang: '{{ .Site.Params.valine.lang }}',
-      recordIP: {{ .Site.Params.valine.recordIP }},
-      enableQQ: {{ .Site.Params.valine.enableQQ }}
-  });
+new Valine({
+    el: '#vcomments' ,
+    appId: {{ site.Params.features.comment.valine.appId }},
+    appKey: {{ site.Params.features.comment.valine.appKey }},
+    avatar: {{ site.Params.features.comment.valine.avatar }},
+    placeholder: {{ site.Params.features.comment.valine.placeholder }},
+    visitor: {{ site.Params.features.comment.valine.visitor }},
+    lang: {{ site.Params.features.comment.valine.lang }},
+    recordIP: {{ site.Params.features.comment.valine.recordIP }},
+    enableQQ: {{ site.Params.features.comment.valine.enableQQ }}
+});
 </script>
