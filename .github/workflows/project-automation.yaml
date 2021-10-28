@@ -45,10 +45,10 @@ jobs:
 
           echo 'PROJECT_ID='$(jq '.data.organization.projectNext.id' project_data.json) >> $GITHUB_ENV
           echo 'TYPE_ID='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.id' project_data.json) >> $GITHUB_ENV
-          echo 'ITEM_FR='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Feature Requests") |.id' project_data.json) >> $GITHUB_ENV
-          echo 'ITEM_BUGS='$(jq '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Bugs")             |.id' project_data.json) >> $GITHUB_ENV
-          echo 'ITEM_DOC='$(jq '.data.organization.projectNext.fields.nodes[]    | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Documentation")    |.id' project_data.json) >> $GITHUB_ENV
-          echo 'ITEM_PR='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Pull Requests")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'OPTION_FR='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Feature Requests") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'OPTION_BUGS='$(jq '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Bugs")             |.id' project_data.json) >> $GITHUB_ENV
+          echo 'OPTION_DOC='$(jq '.data.organization.projectNext.fields.nodes[]    | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Documentation")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'OPTION_PR='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Pull Requests")    |.id' project_data.json) >> $GITHUB_ENV
           cat project_data.json
 
       - name: Add PR to project
@@ -72,20 +72,15 @@ jobs:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
         run: |
           gh api graphql -f query='
-            mutation (
-              $project: ID!
-              $item: ID!
-              $field: ID!
-              $value: String!
-            ) {
-              set_type: updateProjectNextItemField(input: {
+            mutation ($project: ID!, $item: ID!, $field: ID!, $opt_id: ID!) {
+              updateProjectNextItemField(input: {
                 projectId: $project
                 itemId: $item
                 fieldId: $field
-                value: $value
+                value: $opt_id
               }) {
                 projectNextItem {
                   id
                 }
               }
-            }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$TYPE_ID" -f value="$ITEM_PR" --silent
+            }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$TYPE_ID" -f opt_id="$OPTION_PR" --silent
