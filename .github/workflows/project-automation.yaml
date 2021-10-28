@@ -83,4 +83,4 @@ jobs:
                   id
                 }
               }
-            }' -F project="$PROJECT_ID" -F item="$ITEM_ID" -F field="$TYPE_ID" -F opt_id="$OPTION_PR" --silent
+            }' -f project="PN_kwDOBGUbq80zQA" -f item="PNI_lADOBGUbq80zQM4ABTbF" -f field="MDE2OlByb2plY3ROZXh0RmllbGQxNDE5OTg=" -f opt_id="3b994904" --silent
