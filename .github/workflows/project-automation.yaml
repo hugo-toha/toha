@@ -44,30 +44,29 @@ jobs:
             }' -f org=$ORGANIZATION -F number=$PROJECT_NUMBER > project_data.json
 
           echo 'PROJECT_ID='$(jq '.data.organization.projectNext.id' project_data.json) >> $GITHUB_ENV
-          echo 'TYPE_FR='$(jq '.data.organization.projectNext.fields.nodes[] | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Feature Requests") | .id' project_data.json) >> $GITHUB_ENV
-          echo 'TYPE_BUGS='$(jq '.data.organization.projectNext.fields.nodes[] |select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Bugs") | .id' project_data.json) >> $GITHUB_ENV
-          echo 'TYPE_DOC='$(jq '.data.organization.projectNext.fields.nodes[] | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Documentation") |.id' project_data.json) >> $GITHUB_ENV
-          echo 'TYPE_PR='$(jq '.data.organization.projectNext.fields.nodes[] | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Pull Requests") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_FR='$(jq '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Feature Requests") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_BUGS='$(jq '.data.organization.projectNext.fields.nodes[] | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Bugs")             |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_DOC='$(jq '.data.organization.projectNext.fields.nodes[]  | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Documentation")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_PR='$(jq '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Pull Requests")    |.id' project_data.json) >> $GITHUB_ENV
           cat project_data.json
 
+      - name: Add "Types" to PR
+        env:
+          GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
+          PR_ID: ${{ github.event.pull_request.node_id }}
+        run: |
           echo "PROJECT_ID = $PROJECT_ID"
           echo "FR_ID      = $TYPE_FR"
           echo "BUGS_ID    = $TYPE_BUGS"
           echo "DOC_ID     = $TYPE_DOC"
           echo "PR_ID      = $TYPE_PR"
-
-      # - name: Add "Types" to PR
-      #   env:
-      #     GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
-      #     PR_ID: ${{ github.event.pull_request.node_id }}
-      #   run: |
-      #     item_id="$( gh api graphql --header 'GraphQL-Features: projects_next_graphql' -f query='
-      #       mutation($project:ID!, $pr:ID!) {
-      #         addProjectNextItem(input: {projectId: $project, contentId: $pr}) {
-      #           projectNextItem {
-      #             id
-      #           }
-      #         }
-      #       }' -f project=$PROJECT_ID -f pr=$PR_ID --jq '.data.addProjectNextItem.projectNextItem.id')"
+          # item_id="$( gh api graphql --header 'GraphQL-Features: projects_next_graphql' -f query='
+          #   mutation($project:ID!, $pr:ID!) {
+          #     addProjectNextItem(input: {projectId: $project, contentId: $pr}) {
+          #       projectNextItem {
+          #         id
+          #       }
+          #     }
+          #   }' -f project=$PROJECT_ID -f pr=$PR_ID --jq '.data.addProjectNextItem.projectNextItem.id')"
           
-      #     echo 'ITEM_ID='$item_id >> $GITHUB_ENV
+          # echo 'ITEM_ID='$item_id >> $GITHUB_ENV
