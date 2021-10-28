@@ -45,11 +45,10 @@ jobs:
 
           echo 'PROJECT_ID='$(jq '.data.organization.projectNext.id' project_data.json) >> $GITHUB_ENV
           echo 'TYPE_ID='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.id' project_data.json) >> $GITHUB_ENV
-          echo 'OPTION_FR='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Feature Requests") |.id' project_data.json) >> $GITHUB_ENV
-          echo 'OPTION_BUGS='$(jq '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Bugs")             |.id' project_data.json) >> $GITHUB_ENV
-          echo 'OPTION_DOC='$(jq '.data.organization.projectNext.fields.nodes[]    | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Documentation")    |.id' project_data.json) >> $GITHUB_ENV
-          echo 'OPTION_PR='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Pull Requests")    |.id' project_data.json) >> $GITHUB_ENV
-          cat project_data.json
+          echo 'OPTION_FR='$(jq '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Feature Requests") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'OPTION_BUGS='$(jq '.data.organization.projectNext.fields.nodes[] | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Bugs")             |.id' project_data.json) >> $GITHUB_ENV
+          echo 'OPTION_DOC='$(jq '.data.organization.projectNext.fields.nodes[]  | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Documentation")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'OPTION_PR='$(jq '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Pull Requests")    |.id' project_data.json) >> $GITHUB_ENV
 
       - name: Add PR to project
         env:
@@ -83,4 +82,4 @@ jobs:
                   id
                 }
               }
-            }' -f project="PN_kwDOBGUbq80zQA" -f item="PNI_lADOBGUbq80zQM4ABTbF" -f field="MDE2OlByb2plY3ROZXh0RmllbGQxNDE5OTg=" -f opt_id="3b994904" --silent
+            }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$TYPE_ID" -f opt_id=\"$OPTION_PR\" --silent
