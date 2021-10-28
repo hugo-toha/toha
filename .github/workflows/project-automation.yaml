@@ -73,19 +73,19 @@ jobs:
         run: |
           gh api graphql -f query='
             mutation (
-              $project: ID!
-              $item: ID!
-              $field: ID!
-              $value: String!
+              $project: ID!,
+              $item: ID!,
+              $field: ID!,
+              $value: String!,
             ) {
               set_type: updateProjectNextItemField(input: {
-                projectId: $project
-                itemId: $item
-                fieldId: $field
-                value: $value
+                projectId: $project,
+                itemId: $item,
+                fieldId: $field,
+                value: $value,
               }) {
                 projectNextItem {
                   id
                 }
               }
-            }' -f project=$PROJECT_ID -f item=$ITEM_ID -f field=$TYPE_ID -f value=$ITEM_PR
+            }' -f project=$PROJECT_ID -f item=$ITEM_ID -f field=$TYPE_ID -f value=$ITEM_PR --silent
