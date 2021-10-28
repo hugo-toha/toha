@@ -70,6 +70,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
         run: |
+          export OPTION_PR=3b994904
           gh api graphql -f query='
             mutation ($project: ID!, $item: ID!, $field: ID!, $opt_id: ID!) {
               updateProjectNextItemField(input: {
@@ -82,7 +83,7 @@ jobs:
                   id
                 }
               }
-            }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$TYPE_ID" -f opt_id="${OPTION_PR}" --silent
+            }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$TYPE_ID" -f opt_id="$OPTION_PR" --silent
           
           echo " "
           echo "OPTION_PR=$OPTION_PR"
