@@ -45,10 +45,10 @@ jobs:
 
           echo 'PROJECT_ID='$(jq '.data.organization.projectNext.id' project_data.json) >> $GITHUB_ENV
           echo 'TYPE_ID='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.id' project_data.json) >> $GITHUB_ENV
-          echo 'ITEM_FR='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Feature Requests") |.id' project_data.json) >> $GITHUB_ENV
-          echo 'ITEM_BUGS='$(jq '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Bugs")             |.id' project_data.json) >> $GITHUB_ENV
-          echo 'ITEM_DOC='$(jq '.data.organization.projectNext.fields.nodes[]    | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Documentation")    |.id' project_data.json) >> $GITHUB_ENV
-          echo 'ITEM_PR='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Pull Requests")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'ITEM_FR='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Feature Requests") |.name' project_data.json) >> $GITHUB_ENV
+          echo 'ITEM_BUGS='$(jq '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Bugs")             |.name' project_data.json) >> $GITHUB_ENV
+          echo 'ITEM_DOC='$(jq '.data.organization.projectNext.fields.nodes[]    | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Documentation")    |.name' project_data.json) >> $GITHUB_ENV
+          echo 'ITEM_PR='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Pull Requests")    |.name' project_data.json) >> $GITHUB_ENV
           cat project_data.json
 
       - name: Add PR to project
