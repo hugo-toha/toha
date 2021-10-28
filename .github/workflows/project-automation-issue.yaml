@@ -51,7 +51,7 @@ jobs:
                   id
                 }
               }
-            }' -f project="$PROJECT_ID" -f pr="$ISSUE_ID" --jq '.data.addProjectNextItem.projectNextItem.id')"
+            }' -f project="$PROJECT_ID" -f issue="$ISSUE_ID" --jq '.data.addProjectNextItem.projectNextItem.id')"
 
           echo 'ITEM_ID='$item_id >> $GITHUB_ENV
 
