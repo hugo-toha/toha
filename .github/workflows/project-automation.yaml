@@ -41,7 +41,7 @@ jobs:
                   }
                 }
               }
-            }' -f org=$ORGANIZATION -F number=$PROJECT_NUMBER > project_data.json
+            }' -f org="$ORGANIZATION" -f number="$PROJECT_NUMBER" > project_data.json
 
           echo 'PROJECT_ID='$(jq '.data.organization.projectNext.id' project_data.json) >> $GITHUB_ENV
           echo 'TYPE_ID='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.id' project_data.json) >> $GITHUB_ENV
@@ -63,7 +63,7 @@ jobs:
                   id
                 }
               }
-            }' -f project=$PROJECT_ID -f pr=$PR_ID --jq '.data.addProjectNextItem.projectNextItem.id')"
+            }' -f project="$PROJECT_ID" -f pr="$PR_ID" --jq '.data.addProjectNextItem.projectNextItem.id')"
 
           echo 'ITEM_ID='$item_id >> $GITHUB_ENV
 
@@ -88,4 +88,4 @@ jobs:
                   id
                 }
               }
-            }' -f project=$PROJECT_ID -f item=$ITEM_ID -f field=$TYPE_ID -f value=$ITEM_PR --silent
+            }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$TYPE_ID" -f value="$ITEM_PR" --silent
