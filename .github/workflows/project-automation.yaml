@@ -78,7 +78,7 @@ jobs:
               $field: ID!
               $value: String!
             ) {
-              set_type_field: updateProjectNextItemField(input: {
+              set_type: updateProjectNextItemField(input: {
                 projectId: $project
                 itemId: $item
                 fieldId: $field
