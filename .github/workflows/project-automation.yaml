@@ -41,7 +41,7 @@ jobs:
                   }
                 }
               }
-            }' -f org="$ORGANIZATION" -f number=$PROJECT_NUMBER > project_data.json
+            }' -f org="$ORGANIZATION" -F number=$PROJECT_NUMBER > project_data.json
 
           echo 'PROJECT_ID='$(jq '.data.organization.projectNext.id' project_data.json) >> $GITHUB_ENV
           echo 'TYPE_ID='$(jq '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.id' project_data.json) >> $GITHUB_ENV
