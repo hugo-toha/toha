@@ -50,11 +50,11 @@ jobs:
           echo 'TYPE_PR='$(jq '.data.organization.projectNext.fields.nodes[] | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Pull Requests") |.id' project_data.json) >> $GITHUB_ENV
           cat project_data.json
 
-          echo $PROJECT_ID
-          echo $TYPE_FR
-          echo $TYPE_BUGS
-          echo $TYPE_DOC
-          echo $TYPE_PR
+          echo '$PROJECT_ID'
+          echo '$TYPE_FR'
+          echo '$TYPE_BUGS'
+          echo '$TYPE_DOC'
+          echo '$TYPE_PR'
 
       # - name: Add "Types" to PR
       #   env:
