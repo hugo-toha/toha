@@ -1,4 +1,4 @@
-name: Project Automation
+name: Project Automation (Issue)
 on:
   issues:
     types:
@@ -7,16 +7,6 @@ on:
       - closed
       - labeled
       - unlabeled
-  pull_request:
-    types:
-      - opened
-      - ready_for_review
-      - reopened
-      - review_requested
-      - closed
-      - labeled
-      - unlabeled
-
 jobs:
   track_pr:
     runs-on: ubuntu-latest
@@ -48,29 +38,28 @@ jobs:
           echo 'OPTION_FR='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Feature Requests") |.id' project_data.json) >> $GITHUB_ENV
           echo 'OPTION_BUGS='$(jq -r '.data.organization.projectNext.fields.nodes[] | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Bugs")             |.id' project_data.json) >> $GITHUB_ENV
           echo 'OPTION_DOC='$(jq -r '.data.organization.projectNext.fields.nodes[]  | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Documentation")    |.id' project_data.json) >> $GITHUB_ENV
-          echo 'OPTION_PR='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Pull Requests")    |.id' project_data.json) >> $GITHUB_ENV
 
-      - name: Add PR to project
+      - name: Add Issue to project
         env:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
-          PR_ID: ${{ github.event.pull_request.node_id }}
+          ISSUE_ID: ${{ github.event.issue.node_id }}
         run: |
           item_id="$( gh api graphql -f query='
-            mutation($project:ID!, $pr:ID!) {
-              addProjectNextItem(input: {projectId: $project, contentId: $pr}) {
+            mutation($project:ID!, $issue:ID!) {
+              addProjectNextItem(input: {projectId: $project, contentId: $issue}) {
                 projectNextItem {
                   id
                 }
               }
-            }' -f project="$PROJECT_ID" -f pr="$PR_ID" --jq '.data.addProjectNextItem.projectNextItem.id')"
+            }' -f project="$PROJECT_ID" -f pr="$ISSUE_ID" --jq '.data.addProjectNextItem.projectNextItem.id')"
 
           echo 'ITEM_ID='$item_id >> $GITHUB_ENV
 
-      - name: Set "Type" to the PR
+      - name: Set "Type" to the Issue
         env:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
         run: |
-          env
+          OPTION_ID=$OPTION_BUGS
           gh api graphql -f query='
             mutation ($project: ID!, $item: ID!, $field: ID!, $opt_id: ID!) {
               updateProjectNextItemField(input: {
@@ -83,4 +72,4 @@ jobs:
                   id
                 }
               }
-            }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$TYPE_ID" -f opt_id="$OPTION_PR" --silent
+            }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$TYPE_ID" -f opt_id="$OPTION_ID" --silent
