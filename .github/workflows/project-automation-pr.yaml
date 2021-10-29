@@ -61,12 +61,15 @@ jobs:
 
           echo 'ITEM_ID='$item_id >> $GITHUB_ENV
 
+      - name: Print Event Details
+        env:
+          EVENT_DETAILS: ${{ toJson(github.event) }}
+        run: echo "$EVENT_DETAILS"
+
       - name: Set "Type" field
         env:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
-          PR_EVENT_DATA: ${{ github.event.pull_request }}
         run: |
-          env
           gh api graphql -f query='
             mutation ($project: ID!, $item: ID!, $field: ID!, $opt_id: ID!) {
               updateProjectNextItemField(input: {
