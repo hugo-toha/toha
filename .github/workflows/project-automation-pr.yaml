@@ -63,7 +63,7 @@ jobs:
 
       - name: Print Labels
         run: |
-            PR_LABELS=(jq -r '${{github.event.pull_request.labels}} | .name')
+            PR_LABELS=($(jq -r '${{github.event.pull_request.labels}} | .name'))
             echo "$PR_LABELS"
 
       - name: Set "Type" field
