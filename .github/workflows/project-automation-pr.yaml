@@ -65,12 +65,11 @@ jobs:
         env:
           PR_DATA: ${{ toJson(github.event.pull_request) }}
         run: |
-          echo "================================ PR_DATA ================================="
-          echo "$PR_DATA"
           echo "================================ LABELS DETAILS =========================="
           echo "$PR_DATA" | jq '.labels[]'
           echo "================================= LABELS ================================="
-          echo "$PR_DATA" | jq '.labels[]' | jq -r '.name'
+          LABELS=($(echo "$PR_DATA" | jq '.labels[]' | jq -r '.name'))
+          echo "$LABELS"
           echo "================================== END ==================================="
 
       - name: Set "Type" field
