@@ -75,7 +75,7 @@ jobs:
         env:
           PR_DATA: ${{ toJson(github.event.pull_request) }}
         run: |
-          echo "LABELS=$(echo "$PR_DATA" | jq '.labels[]' | jq -r '.name')" >> $GITHUB_ENV
+          echo "LABELS=($(echo "$PR_DATA" | jq '.labels[]' | jq -r '.name'))" >> $GITHUB_ENV
 
       - name: Set "Type" field
         env:
