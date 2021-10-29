@@ -1,6 +1,6 @@
 {{ $disqusShortName := site.DisqusShortname }}
-{{ if site.Params.features.disqus.shortName }}
-  {{ $disqusShortName = site.Params.features.disqus.shortName }}
+{{ if site.Params.features.comment.disqus.shortName }}
+  {{ $disqusShortName = site.Params.features.comment.disqus.shortName }}
 {{ end }}
 
 <div id="disqus_thread"></div>
