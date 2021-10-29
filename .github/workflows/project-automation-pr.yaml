@@ -50,6 +50,7 @@ jobs:
 
           # Read the id of the "Status" field options
           echo 'STATUS_ID='$(jq -r '.data.organization.projectNext.fields.nodes[]     | select(.name== "Status") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'STATUS_TODO='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="Todo")    |.id' project_data.json) >> $GITHUB_ENV
           echo 'STATUS_IN_PROGRESS='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="In Progress")    |.id' project_data.json) >> $GITHUB_ENV
           echo 'STATUS_READY_FOR_REVIEW='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="Ready for Review")    |.id' project_data.json) >> $GITHUB_ENV
           echo 'STATUS_DONE='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="Done")    |.id' project_data.json) >> $GITHUB_ENV
@@ -128,13 +129,25 @@ jobs:
         run: |
           MERGED=${{github.event.pull_request.merged}}
           STATE=${{github.event.pull_request.state}}
-          REVIEWER=${{github.event.pull_request.requested_reviewers}}
+          REVIEWERS=${{github.event.pull_request.requested_reviewers}}
           DRAFT=${{github.event.pull_request.draft}}
 
           echo "Merged: $MERGED"
           echo "State: $STATE"
           echo "Draft: $DRAFT"
           echo "Reviewer: $REVIEWER"
+
+          OPTION_ID=$STATUS_TODO
+
+          if [[ ("${MERGED}" == "true") || ("${STATUS}" == "closed") ]]
+          then
+            OPTION_ID=$STATUS_DONE
+          elif [[ ${#REVIEWERS[@]} -gt 0 ]]
+          then 
+            OPTION_ID=$STATUS_READY_FOR_REVIEW
+          else
+            OPTION_ID=$STATUS_IN_PROGRESS
+          fi
 
           gh api graphql -f query='
             mutation ($project: ID!, $item: ID!, $field: ID!, $status_id: ID!) {
@@ -148,4 +161,4 @@ jobs:
                   id
                 }
               }
-            }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$STATUS_ID" -f status_id="$STATUS_IN_PROGRESS" --silent
+            }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$STATUS_ID" -f status_id="$OPTION_ID" --silent
