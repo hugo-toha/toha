@@ -61,10 +61,10 @@ jobs:
 
           echo 'ITEM_ID='$item_id >> $GITHUB_ENV
 
-      - name: Print Event Details
-        env:
-          EVENT_DETAILS: ${{ toJson(github.event) }}
-        run: echo "$EVENT_DETAILS"
+      - name: Print Labels
+        run: |
+            PR_LABELS=(${{github.event.pull_request.labels}} || jq -r '.name')`
+            echo "$PR_LABELS"
 
       - name: Set "Type" field
         env:
