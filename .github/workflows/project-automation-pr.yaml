@@ -69,7 +69,7 @@ jobs:
           echo "$PR_DATA" | jq '.labels[]'
           echo "================================= LABELS ================================="
           LABELS=($(echo "$PR_DATA" | jq '.labels[]' | jq -r '.name'))
-          echo "$LABELS"
+          echo "${LABELS[*]}"
           echo "================================== END ==================================="
 
       - name: Set "Type" field
