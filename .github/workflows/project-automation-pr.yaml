@@ -64,8 +64,8 @@ jobs:
       - name: Print Labels
         run: |
             echo '${{github.event.pull_request}}' > pr_data.json
-            PR_LABELS=('$(jq -r '.pull_request.labels[] | .name' pr_data.json)')
-            echo "$PR_LABELS"
+            cat pr_data.json
+            echo '$(jq -r '.pull_request.labels[] | .name' pr_data.json)'
 
       - name: Set "Type" field
         env:
