@@ -40,6 +40,11 @@ jobs:
           echo 'TYPE_ID='$(jq -r '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.id' project_data.json) >> $GITHUB_ENV
           echo 'OPTION_PR='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Pull Requests")    |.id' project_data.json) >> $GITHUB_ENV
 
+          echo 'STATUS_ID='$(jq -r '.data.organization.projectNext.fields.nodes[]     | select(.name== "STATUS") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'STATUS_IN_PROGRESS='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="In Progress")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'STATUS_READY_FOR_REVIEW='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="Ready for Review")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'STATUS_DONE='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="Done")    |.id' project_data.json) >> $GITHUB_ENV
+
       - name: Add PR to project
         env:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
@@ -56,10 +61,12 @@ jobs:
 
           echo 'ITEM_ID='$item_id >> $GITHUB_ENV
 
-      - name: Set "Type" to the PR
+      - name: Set "Type" field
         env:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
+          LABELS: ${{ github.event.pull_request.labels }}
         run: |
+          echo "Labels: $LABELS"
           gh api graphql -f query='
             mutation ($project: ID!, $item: ID!, $field: ID!, $opt_id: ID!) {
               updateProjectNextItemField(input: {
@@ -73,3 +80,21 @@ jobs:
                 }
               }
             }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$TYPE_ID" -f opt_id="$OPTION_PR" --silent
+
+      - name: Set "Status" field
+        env:
+          GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
+        run: |
+          gh api graphql -f query='
+            mutation ($project: ID!, $item: ID!, $field: ID!, $status_id: ID!) {
+              updateProjectNextItemField(input: {
+                projectId: $project
+                itemId: $item
+                fieldId: $field
+                value: $status_id
+              }) {
+                projectNextItem {
+                  id
+                }
+              }
+            }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$STATUS_ID" -f status_id="$STATUS_IN_PROGRESS" --silent
