@@ -64,9 +64,9 @@ jobs:
       - name: Set "Type" field
         env:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
-          LABELS: ${{ github.event.pull_request.labels }}
+          PR_EVENT_DATA: ${{ github.event.pull_request }}
         run: |
-          echo "Labels: $LABELS"
+          env
           gh api graphql -f query='
             mutation ($project: ID!, $item: ID!, $field: ID!, $opt_id: ID!) {
               updateProjectNextItemField(input: {
