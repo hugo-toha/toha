@@ -167,8 +167,8 @@ jobs:
         uses: FujiHaruka/issue-refs-parser-action@v1.1
         id: linked-issues
         with:
-          body: ${{ github.event.comment.body }}
-          self_slug: hugo-toha/toha
+          body: ${{ github.event.pull_request.body }}
+          # self_slug: hugo-toha/toha
       - name: Get The Outputs
         run: |
           echo "refs: ${{ steps.linked-issues.outputs.refs }}"
