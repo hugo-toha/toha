@@ -9,9 +9,8 @@ on:
       - closed
       - labeled
       - unlabeled
-
 jobs:
-  track_pr:
+  pr_automation:
     runs-on: ubuntu-latest
     steps:
       - name: Get project data
@@ -75,7 +74,7 @@ jobs:
         env:
           PR_DATA: ${{ toJson(github.event.pull_request) }}
         run: |
-          echo 'LABELS=($(echo "$PR_DATA" | jq '.labels[]' | jq -r '.name'))<<EOF' >> $GITHUB_ENV
+          echo 'LABELS='$(echo "$PR_DATA" | jq -r '[.labels[].name] | join(" ")') >> $GITHUB_ENV
 
       - name: Set "Type" field
         env:
@@ -143,7 +142,7 @@ jobs:
           then
             OPTION_ID=$STATUS_DONE
           elif [[ ${#REVIEWERS[@]} -gt 0 ]]
-          then 
+          then
             OPTION_ID=$STATUS_READY_FOR_REVIEW
           else
             OPTION_ID=$STATUS_IN_PROGRESS
