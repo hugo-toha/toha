@@ -9,9 +9,9 @@ on:
       - closed
       - labeled
       - unlabeled
-
+      - connected
 jobs:
-  track_pr:
+  pr_automation:
     runs-on: ubuntu-latest
     steps:
       - name: Get project data
