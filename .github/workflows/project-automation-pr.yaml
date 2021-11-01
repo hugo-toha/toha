@@ -9,6 +9,7 @@ on:
       - closed
       - labeled
       - unlabeled
+      - synchronize
 jobs:
   pr_automation:
     runs-on: ubuntu-latest
@@ -161,3 +162,11 @@ jobs:
                 }
               }
             }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$STATUS_ID" -f status_id="$OPTION_ID" --silent
+
+      - name: Find Linked Issues
+        uses:  boneskull/more-linked-issues-action@v0.2.1
+        with:
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+       # you likely won't need the output for anything, but here it is.
+      - name: Get comma-delimited list of found links
+        run: echo "${{ steps.link-issues.outputs.links }}"
