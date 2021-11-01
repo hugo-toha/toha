@@ -120,3 +120,43 @@ jobs:
                 }
               }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$TYPE_ID" -f opt_id="$OPTION_ID" --silent
           fi
+
+      # - name: Set "Status" field
+      #   env:
+      #     GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
+      #   run: |
+      #     MERGED=${{github.event.issue.merged}}
+      #     STATE=${{github.event.issue.state}}
+      #     REVIEWERS=${{github.event.issue.requested_reviewers}}
+      #     DRAFT=${{github.event.issue.draft}}
+
+      #     echo "Merged: $MERGED"
+      #     echo "State: $STATE"
+      #     echo "Draft: $DRAFT"
+      #     echo "Reviewer: $REVIEWER"
+
+      #     OPTION_ID=$STATUS_TODO
+
+      #     if [[ ("${MERGED}" == "true") || ("${STATUS}" == "closed") ]]
+      #     then
+      #       OPTION_ID=$STATUS_DONE
+      #     elif [[ ${#REVIEWERS[@]} -gt 0 ]]
+      #     then
+      #       OPTION_ID=$STATUS_READY_FOR_REVIEW
+      #     else
+      #       OPTION_ID=$STATUS_IN_PROGRESS
+      #     fi
+
+      #     gh api graphql -f query='
+      #       mutation ($project: ID!, $item: ID!, $field: ID!, $status_id: ID!) {
+      #         updateProjectNextItemField(input: {
+      #           projectId: $project
+      #           itemId: $item
+      #           fieldId: $field
+      #           value: $status_id
+      #         }) {
+      #           projectNextItem {
+      #             id
+      #           }
+      #         }
+      #       }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$STATUS_ID" -f status_id="$OPTION_ID" --silent

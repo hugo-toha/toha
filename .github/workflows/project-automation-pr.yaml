@@ -143,7 +143,7 @@ jobs:
           then
             OPTION_ID=$STATUS_DONE
           elif [[ ${#REVIEWERS[@]} -gt 0 ]]
-          then 
+          then
             OPTION_ID=$STATUS_READY_FOR_REVIEW
           else
             OPTION_ID=$STATUS_IN_PROGRESS
