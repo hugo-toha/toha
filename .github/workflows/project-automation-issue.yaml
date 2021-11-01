@@ -72,7 +72,7 @@ jobs:
         env:
           ISSUE_DATA: ${{ toJson(github.event.issue) }}
         run: |
-          echo 'LABELS='$(echo "$PR_DATA" | jq -r '[.labels[].name] | join(" ")') >> $GITHUB_ENV
+          echo 'LABELS='$(echo "$ISSUE_DATA" | jq -r '[.labels[].name] | join(" ")') >> $GITHUB_ENV
 
       - name: Set "Type" field
         env:
