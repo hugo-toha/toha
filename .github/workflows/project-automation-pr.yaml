@@ -138,7 +138,7 @@ jobs:
 
           OPTION_ID=$STATUS_TODO
 
-          if [[ ("${MERGED}" == "true") || ("${STATUS}" == "closed") ]]
+          if [[ ("${MERGED}" == "true") || ("${STATE}" == "closed") ]]
           then
             OPTION_ID=$STATUS_DONE
           elif [[ ${#REVIEWERS[@]} -gt 0 ]]
