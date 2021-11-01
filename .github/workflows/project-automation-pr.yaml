@@ -9,7 +9,6 @@ on:
       - closed
       - labeled
       - unlabeled
-      - connected
 jobs:
   pr_automation:
     runs-on: ubuntu-latest
@@ -75,7 +74,7 @@ jobs:
         env:
           PR_DATA: ${{ toJson(github.event.pull_request) }}
         run: |
-          echo 'LABELS=$(echo "$PR_DATA" | jq -r '[.labels[].name] | join(\" \")')' >> $GITHUB_ENV
+          echo 'LABELS='$(echo "$PR_DATA" | jq -r '[.labels[].name] | join(" ")') >> $GITHUB_ENV
 
       - name: Set "Type" field
         env:
