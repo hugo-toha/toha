@@ -8,7 +8,7 @@ on:
       - labeled
       - unlabeled
 jobs:
-  track_pr:
+  issue_automation:
     runs-on: ubuntu-latest
     steps:
       - name: Get project data
@@ -33,11 +33,24 @@ jobs:
               }
             }' -f org="$ORGANIZATION" -F number=$PROJECT_NUMBER > project_data.json
 
+           echo 'PROJECT_ID='$(jq -r '.data.organization.projectNext.id' project_data.json) >> $GITHUB_ENV
+
+          # Read the ID of the "Type" field options
+          echo 'TYPE_ID='$(jq -r '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.id' project_data.json) >> $GITHUB_ENV
           echo 'PROJECT_ID='$(jq -r '.data.organization.projectNext.id' project_data.json) >> $GITHUB_ENV
           echo 'TYPE_ID='$(jq -r '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.id' project_data.json) >> $GITHUB_ENV
-          echo 'OPTION_FR='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Feature Requests") |.id' project_data.json) >> $GITHUB_ENV
-          echo 'OPTION_BUGS='$(jq -r '.data.organization.projectNext.fields.nodes[] | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Bugs")             |.id' project_data.json) >> $GITHUB_ENV
-          echo 'OPTION_DOC='$(jq -r '.data.organization.projectNext.fields.nodes[]  | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Documentation")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_BUG='$(jq -r '.data.organization.projectNext.fields.nodes[] | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Bug")             |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_FEATURE='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Feature") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_ENHANCEMENT='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Enhancement") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_DOCUMENTATION='$(jq -r '.data.organization.projectNext.fields.nodes[]  | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Documentation")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_TRANSLATION='$(jq -r '.data.organization.projectNext.fields.nodes[]  | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Translation")    |.id' project_data.json) >> $GITHUB_ENV
+
+          # Read the id of the "Status" field options
+          echo 'STATUS_ID='$(jq -r '.data.organization.projectNext.fields.nodes[]     | select(.name== "Status") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'STATUS_TODO='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="Todo")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'STATUS_IN_PROGRESS='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="In Progress")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'STATUS_READY_FOR_REVIEW='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="Ready for Review")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'STATUS_DONE='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="Done")    |.id' project_data.json) >> $GITHUB_ENV
 
       - name: Add Issue to project
         env:
@@ -55,21 +68,54 @@ jobs:
 
           echo 'ITEM_ID='$item_id >> $GITHUB_ENV
 
-      - name: Set "Type" to the Issue
+      - name: Export Labels
+        env:
+          ISSUE_DATA: ${{ toJson(github.event.issue) }}
+        run: |
+          echo 'LABELS=($(echo "$ISSUE_DATA" | jq '.labels[]' | jq -r '.name'))<<EOF' >> $GITHUB_ENV
+
+      - name: Set "Type" field
         env:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
         run: |
-          OPTION_ID=$OPTION_BUGS
-          gh api graphql -f query='
-            mutation ($project: ID!, $item: ID!, $field: ID!, $opt_id: ID!) {
-              updateProjectNextItemField(input: {
-                projectId: $project
-                itemId: $item
-                fieldId: $field
-                value: $opt_id
-              }) {
-                projectNextItem {
-                  id
+          # Only execute this step if the Issue contains at least one label
+          if [ "${#LABELS[@]}" -gt 0 ]; then
+
+            # Let by default the type is "Bug"
+            OPTION_ID=$TYPE_BUG
+
+            # If it has "feature" label then set the type to "Feature"
+            if [[ "${LABELS[*]}" =~ "feature" ]]; then
+              OPTION_ID=$TYPE_FEATURE
+            fi
+
+            # If it has "enhancement" label then set the type to "Enhancement"
+            if [[ "${LABELS[*]}" =~ "enhancement" ]]; then
+              OPTION_ID=$TYPE_ENHANCEMENT
+            fi
+
+            # If it has "documentation" label then set the type to "Documentation"
+            if [[ "${LABELS[*]}" =~ "documentation" ]]; then
+              OPTION_ID=$TYPE_DOCUMENTATION
+            fi
+
+            # If it has "translation" label then set the type to "Translation"
+            if [[ "${LABELS[*]}" =~ "translation" ]]; then
+              OPTION_ID=$TYPE_TRANSLATION
+            fi
+
+            # Set the "Type" field to appropriate option
+            gh api graphql -f query='
+              mutation ($project: ID!, $item: ID!, $field: ID!, $opt_id: ID!) {
+                updateProjectNextItemField(input: {
+                  projectId: $project
+                  itemId: $item
+                  fieldId: $field
+                  value: $opt_id
+                }) {
+                  projectNextItem {
+                    id
+                  }
                 }
-              }
-            }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$TYPE_ID" -f opt_id="$OPTION_ID" --silent
+              }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$TYPE_ID" -f opt_id="$OPTION_ID" --silent
+          fi
