@@ -168,7 +168,7 @@ jobs:
         id: linked-issues
         with:
           body: ${{ github.event.pull_request.body }}
-          # self_slug: hugo-toha/toha
+          self_slug: hugo-toha/toha
       - name: Get The Outputs
         run: |
           echo "refs: ${{ steps.linked-issues.outputs.refs }}"
