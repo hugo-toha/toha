@@ -6,10 +6,10 @@ jobs:
     name: A job to say hello
     steps:
       - name: Find Linked Issues
-        id: pr_links
+        id: links
         uses: hossainemruz/linked-issues@main
         with:
           pr_url: ${{github.event.pull_request.html_url}}
 
       - name: Output linked Issue list
-        run: echo "${{ steps.pr_links.issues }}"
+        run: echo "${{ steps.links.outputs.issues }}"
