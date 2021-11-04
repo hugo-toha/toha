@@ -171,6 +171,7 @@ jobs:
         uses: hossainemruz/linked-issues@main
         with:
           pr_url: ${{github.event.pull_request.html_url}}
+          format: IssueNumber
 
       - name: Output linked Issue list
         run: echo "${{ steps.links.outputs.issues }}"
@@ -182,8 +183,9 @@ jobs:
           item_id="$( gh api graphql -f query='
             mutation($owner:String!, $name: String!, $issue_number: Int!) {
               repository(owner: $owner, name: $name) {
-              issue(number: $issue_number) {
-                id
+                issue(number: $issue_number) {
+                  id
+                }
               }
             }' -f owner="hugo-toha" -f name="toha" -f issue_number=459 --jq='.data.repository.issue.id')"
 
