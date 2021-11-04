@@ -181,7 +181,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
         run: |
           declare -a issues=(${{ steps.linked_issues.outputs.issues }})
-          
+
           # Loop through the every issues and update their Status to same as the PR Status
           for i in "${issues[@]}"
           do
@@ -195,7 +195,15 @@ jobs:
                 }
               }' -f owner="${{github.event.pull_request.head.repo.owner.login}}" -f name="${{github.event.pull_request.head.repo.name}}" -F issue_number=$i --jq='.data.repository.issue.id')"
 
-            echo "Issue ID: $issue_id"
+            # Find the id of the Issue at the project board
+            item_id="$( gh api graphql -f query='
+              mutation($project:ID!, $pr:ID!) {
+                addProjectNextItem(input: {projectId: $project, contentId: $pr}) {
+                  projectNextItem {
+                    id
+                  }
+                }
+              }' -f project="$PROJECT_ID" -f pr="$ISSUE_ID" --jq '.data.addProjectNextItem.projectNextItem.id')"
 
             # Update the Issue Status
             gh api graphql -f query='
@@ -210,5 +218,5 @@ jobs:
                   id
                 }
               }
-            }' -f project="$PROJECT_ID" -f item="$ISSUE_ID" -f field="$STATUS_ID" -f status_id="$PR_STATUS" --silent
+            }' -f project="$PROJECT_ID" -f item="$item_id" -f field="$STATUS_ID" -f status_id="$PR_STATUS" --silent
           done
