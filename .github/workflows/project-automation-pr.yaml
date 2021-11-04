@@ -149,6 +149,9 @@ jobs:
             OPTION_ID=$STATUS_IN_PROGRESS
           fi
 
+          # Expose the OPTION_ID so that it can be used in later steps
+          echo 'PR_STATUS='$OPTION_ID >> $GITHUB_ENV
+
           gh api graphql -f query='
             mutation ($project: ID!, $item: ID!, $field: ID!, $status_id: ID!) {
               updateProjectNextItemField(input: {
@@ -164,12 +167,24 @@ jobs:
             }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$STATUS_ID" -f status_id="$OPTION_ID" --silent
 
       - name: Find Linked Issues
-        uses: FujiHaruka/issue-refs-parser-action@v1.1
-        id: linked-issues
+        id: links
+        uses: hossainemruz/linked-issues@main
         with:
-          body: ${{ github.event.pull_request.body }}
-          self_slug: hugo-toha/toha
-      - name: Get The Outputs
+          pr_url: ${{github.event.pull_request.html_url}}
+
+      - name: Output linked Issue list
+        run: echo "${{ steps.links.outputs.issues }}"
+
+      - name: Find the Issue ID
+        env:
+          GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
         run: |
-          echo "refs: ${{ steps.linked-issues.outputs.refs }}"
-          echo "external_refs: ${{ steps.linked-issues.outputs.external_refs }}"
+          item_id="$( gh api graphql -f query='
+            repository(owner:$owner, name:$name) {
+              issue(number: $issue_number) {
+                id
+              }
+            }' -f owner="hugo-toha" -f name="toha" -f issue_number="459")"
+
+          echo 'ISSUE_ID='$item_id >> $GITHUB_ENV
+          echo "Issue ID: $ISSUE_ID"
