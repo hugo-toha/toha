@@ -167,27 +167,31 @@ jobs:
             }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$STATUS_ID" -f status_id="$OPTION_ID" --silent
 
       - name: Find Linked Issues
-        id: links
+        id: linked_issues
         uses: hossainemruz/linked-issues@main
         with:
           pr_url: ${{github.event.pull_request.html_url}}
           format: IssueNumber
 
       - name: Output linked Issue list
-        run: echo "${{ steps.links.outputs.issues }}"
+        run: echo "${{ steps.linked_issues.outputs.issues }}"
 
       - name: Find the Issue ID
         env:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
         run: |
-          item_id="$(gh api graphql -f query='
-            query($owner: String!, $name: String!, $issue_number: Int!) {
-              repository(owner: $owner, name: $name) {
-                issue(number: $issue_number) {
-                  id
-                }
-              }
-            }' -f owner="${{github.event.pull_request.head.repo.owner.login}}" -f name="${{github.event.pull_request.head.repo.name}}" -F issue_number=459 --jq='.data.repository.issue.id')"
+          declare -a issues=(${{ steps.linked_issues.outputs.issues }})
 
-          echo 'ISSUE_ID='$item_id >> $GITHUB_ENV
-          echo "Issue ID: $item_id"
+          for i in "${issues[@]}"
+          do
+            item_id="$(gh api graphql -f query='
+              query($owner: String!, $name: String!, $issue_number: Int!) {
+                repository(owner: $owner, name: $name) {
+                  issue(number: $issue_number) {
+                    id
+                  }
+                }
+              }' -f owner="${{github.event.pull_request.head.repo.owner.login}}" -f name="${{github.event.pull_request.head.repo.name}}" -F issue_number=$i --jq='.data.repository.issue.id')"
+
+            echo "Issue ID: $item_id"
+          done
