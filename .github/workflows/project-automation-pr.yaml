@@ -173,10 +173,7 @@ jobs:
           pr_url: ${{github.event.pull_request.html_url}}
           format: IssueNumber
 
-      - name: Output linked Issue list
-        run: echo "${{ steps.linked_issues.outputs.issues }}"
-
-      - name: Find the Issue ID
+      - name: Update Linked Issues Status
         env:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
         run: |
