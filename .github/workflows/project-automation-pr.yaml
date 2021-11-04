@@ -181,7 +181,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
         run: |
           item_id="$( gh api graphql -f query='
-            mutation($owner:String!, $name: String!, $issue_number: Int!) {
+            object($owner:String!, $name: String!, $issue_number: Int!) {
               repository(owner: $owner, name: $name) {
                 issue(number: $issue_number) {
                   id
