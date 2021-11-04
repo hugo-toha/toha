@@ -180,14 +180,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
         run: |
-          item_id="$( gh api graphql -f query='
+          item_id="$(gh api graphql -f query='
             query($owner: String!, $name: String!, $issue_number: Int!) {
               repository(owner: $owner, name: $name) {
                 issue(number: $issue_number) {
                   id
                 }
               }
-            }' -f owner="hugo-toha" -f name="toha" -F issue_number=459 --jq='.data.repository.issue.id')"
+            }' -f owner="${{github.event.pull_request.head.repo.owner.login}}" -f name="${{github.event.pull_request.head.repo.name}}" -F issue_number=459 --jq='.data.repository.issue.id')"
 
           echo 'ISSUE_ID='$item_id >> $GITHUB_ENV
-          echo "Issue ID: $ISSUE_ID"
+          echo "Issue ID: $item_id"
