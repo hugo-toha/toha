@@ -165,6 +165,9 @@
           <!-- Add valine -->
           {{ else if .valine }}
               {{ partial "valine.html" . }}
+          <!-- Add utteranc -->
+          {{ else if .utteranc }}
+              {{ partial "utteranc.html" . }}
           {{ end }}
         {{ end }}
       {{ end }}
