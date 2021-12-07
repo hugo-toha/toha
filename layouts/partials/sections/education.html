@@ -54,7 +54,7 @@
                                 </div>
                             {{ end }}
                             {{ if .takenCourses }}
-                            {{ $showFirst  := .takenCourses.showFirst | default 2 }}
+                            {{ $collapseAfter  := .takenCourses.collapseAfter | default 2 }}
                             <div class="taken-courses">
                                 <h6 class="text-muted">{{ i18n "taken_courses"}}</h6>
                                 {{ if .takenCourses.showGrades }}
@@ -67,7 +67,7 @@
                                     </thead>
                                     <tbody>
                                         {{ range $index,$course := .takenCourses.courses }}
-                                        <tr class="course {{ if ge $index $showFirst }}hidden-course{{ end}}">
+                                        <tr class="course {{ if ge $index $collapseAfter }}hidden-course{{ end}}">
                                             <td>{{ $course.name }}</td>
                                             {{ if not $hideScale  }}<td>{{ $course.outOf }}</td>{{ end }}
                                             <td>{{ $course.achieved }}</td>
@@ -78,11 +78,11 @@
                                 {{ else }}
                                     <ul>
                                         {{ range $index,$course := .takenCourses.courses }}
-                                        <li class="course {{ if ge $index $showFirst }}hidden-course{{ end}}">{{ $course.name }}</li>
+                                        <li class="course {{ if ge $index $collapseAfter }}hidden-course{{ end}}">{{ $course.name }}</li>
                                         {{ end }}
                                     </ul>
                                 {{ end }}
-                                {{ if gt (len .takenCourses.courses ) $showFirst }}
+                                {{ if gt (len .takenCourses.courses ) $collapseAfter }}
                                     <button type="button" class="btn btn-link show-more-btn pt-0 {{ if .takenCourses.showGrades }}ml-1{{ else }}ml-2{{ end }}"
                                     onclick="toggleCourseVisibility(this);" id="show-more-btn">{{ i18n "show_more"}}</button>
                                     <button type="button" class="btn btn-link show-more-btn hidden pt-0 {{ if .takenCourses.showGrades }}ml-1{{ else }}ml-2{{ end }}"
