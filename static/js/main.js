@@ -164,12 +164,9 @@ function toggleCourseVisibility(elem) {
     }
   }
 
-  // toggle the current button visibility
-  elem.classList.toggle("hidden");
-  // toggle the alternate button visibility
-  if  (elem.id === "show-more-btn"){
-    document.getElementById("show-less-btn").classList.toggle("hidden");
-  }else{
-    document.getElementById("show-more-btn").classList.toggle("hidden");
+  // toggle the buttons visibility
+  let buttonsToToggle = elem.parentNode.getElementsByClassName("show-more-btn");
+  for (var i = 0; i < buttonsToToggle.length; i++) {
+    buttonsToToggle[i].classList.toggle("hidden");
   }
 }
