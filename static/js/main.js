@@ -158,15 +158,16 @@ function toggleCourseVisibility(elem) {
   }
 
   // toggle hidden-course class from the third elements
-  for (var i = 0; i < courses.length; i++) {
-    if (i > 1 && courses[i].classList !== null) {
-      courses[i].classList.toggle("hidden-course");
+  for (const course of courses) {
+    if (course.classList.contains("hidden-course") || course.classList.contains("toggled-hidden-course")) {
+      course.classList.toggle("hidden-course");
+      course.classList.add("toggled-hidden-course");
     }
   }
 
   // toggle the buttons visibility
   let buttonsToToggle = elem.parentNode.getElementsByClassName("show-more-btn");
-  for (var i = 0; i < buttonsToToggle.length; i++) {
-    buttonsToToggle[i].classList.toggle("hidden");
+  for (const buttonToToggle of buttonsToToggle) {
+    buttonToToggle.classList.toggle("hidden");
   }
 }
