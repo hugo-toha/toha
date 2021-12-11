@@ -1,0 +1,96 @@
+{{ if .breakdown }}
+    {{ $parentId := .parentId }}
+    {{ $level := .level }}
+    <div class="container p-0 skill-list">
+        <div id="skill-list-accordion-{{ $parentId }}">
+            {{ range $index, $section := .breakdown }}
+                {{ $entryId := (printf "%s-%d" $parentId $index) }}
+                {{ $hasChildrenSections := (isset . "breakdown") }}
+                {{/* a suitable auto-open policy might be something like: $isOpened := or (eq $index 0) (and (gt $level 0) (lt $level 2)) */}}
+                {{ $isOpened := (.expandBreakdown | default false) }}
+                <div class="skill-row {{ if $hasChildrenSections }}skill-row-with-children{{end}}">
+                    <div class="skill-row-header" id="heading-{{ $entryId }}" data-toggle="collapse" data-target="#collapse-{{ $entryId }}" 
+                        {{ if $isOpened }} aria-expanded="true" {{ end }}
+                        aria-controls="collapse-{{ $entryId }}"
+                    >
+                        <div class="row">
+                            <div class="col-12 col-md-2 col-lg-1 pb-2">
+                                {{ if isset . "percentage" }}
+                                    {{ partial "partials/misc/circular-progress.html" (dict "ctx" . "size" "xs") }}
+                                {{ end }}
+            
+                                {{ if .logo }}
+                                    {{ $logoImage := "" }}
+                                    {{ $logoImage = resources.Get .logo }}
+                                    {{ if ne $logoImage.MediaType.SubType "svg" }}
+                                        {{ $logoImage = $logoImage.Fit "32x32" }}
+                                    {{ end }}
+                                    <img class="card-img-sm mr-2" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+                                {{ end }}
+                            </div>
+                            <div class="col-12 col-md-9 col-lg-10 pb-2">
+                                {{ with .name }}
+                                    {{ . }}
+                                {{ end }}
+            
+                                {{ if isset . "progress" }}
+                                    {{ $progressClass := "" }}
+                                    {{ if isset . "progressClass" }}
+                                        {{ $progressClass = .progressClass }}
+                                    {{ else }}
+                                        {{ if le .progress 30 }}
+                                            {{ $progressClass = "bg-danger" }}
+                                        {{ else if le .progress 75 }}
+                                            {{ $progressClass = "bg-warning" }}
+                                        {{ else }}
+                                            {{ $progressClass = "bg-success" }}
+                                        {{ end }}
+                                    {{ end }}
+                                    <div class="progress skill-progress">
+                                        <div 
+                                            class="progress-bar {{ $progressClass }}" 
+                                            role="progressbar" 
+                                            aria-valuemin="0" 
+                                            aria-valuemax="100"
+                                            style="width: {{ .progress }}%"
+                                            aria-valuenow="{{ .progress }}" 
+                                        ></div>
+                                    </div>
+                                {{ end }}
+            
+                                {{ with .summary }}
+                                    <p class="text-muted">
+                                        {{ . | markdownify }}
+                                    </p>
+                                {{ end }}
+                            </div>
+                            <div class="col-12 col-md-1 text-right skill-panel-indicator-cell">
+                                {{ if $hasChildrenSections }}
+                                <a class="skill-panel-indicator">
+                                    <span class="is-opened fas fa-caret-up"></span>
+                                    <span class="is-closed fas fa-caret-down"></span>
+                                </a>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                
+                    {{ if $hasChildrenSections }}
+                        <div id="collapse-{{ $entryId }}" class="collapse {{ if $isOpened }}show{{ end }}" aria-labelledby="heading-{{ $entryId }}" data-parent="#skill-list-accordion-{{ $parentId }}">
+                            <div class="skill-row-body">
+                                <div class="row">
+                                    <div class="col-12 col-sm-1">
+                                        <!-- EMPTY -->
+                                    </div>
+                                    <div class="col-12 col-sm-11">
+                                        {{ partial "partials/misc/skills-breakdown.html" (dict "breakdown" .breakdown "parentId" $entryId "level" (add $level 1)) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{ end }}
+                </div>
+            {{ end }}
+        </div>
+    </div>
+{{ end }}

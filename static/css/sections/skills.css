@@ -18,6 +18,10 @@
   text-decoration: none;
 }
 
+.skills-section .skill-card-link-with-popup {
+  cursor: pointer;
+}
+
 .skills-section .card .card-img-xs {
   margin-right: 0.5rem;
 }
@@ -31,6 +35,77 @@
 .skills-section .card .card-body {
   padding-top: 0.2rem;
   padding-left: 0.7rem;
+}
+
+.skills-section .skill-card-bottom-row {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 0.25em;
+}
+
+.skills-section .skill-card-icons {
+  text-align: left;
+  padding-top: 0.25em;
+}
+
+.skills-section .skill-card-icons img {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.50em;
+}
+
+.skills-section .card .skill-card-buttons {
+  text-align: right;
+  padding-top: 0;
+  padding-right: 0.20em;
+}
+
+/* ============= Skills drill-down popup ======= */
+
+.skill-modal .skill-popup-summary {
+  margin-bottom: 2.50em;
+}
+
+.skill-list .skill-progress {
+  height: 0.25rem;
+}
+
+.skill-list .skill-row p {
+  margin-bottom: 0.50rem;
+}
+
+.skill-list .skill-row:last-child {
+  margin-bottom: 1.25rem;
+}
+
+.skill-list .skill-row.skill-row-with-children {
+  cursor: pointer;
+}
+
+.skill-list .skill-row.skill-row-with-children .skill-panel-indicator-cell {
+  padding-top: 0.50em;
+}
+
+.skill-list .skill-row.skill-row-with-children .skill-panel-indicator {
+  cursor: pointer;
+  color: #6c757d!important;
+}
+
+.skill-list .skill-row .skill-row-header[aria-expanded="true"] .is-opened {
+  display: inline;
+}
+.skill-list .skill-row .skill-row-header[aria-expanded="true"] .is-closed {
+  display: none;
+}
+.skill-list .skill-row .skill-row-header:not([aria-expanded="true"]) .is-opened {
+  display: none;
+}
+.skill-list .skill-row .skill-row-header:not([aria-expanded="true"]) .is-closed {
+  display: inline;
 }
 
 /* ============= Device specific fixes ======= */
