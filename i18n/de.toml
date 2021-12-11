@@ -121,3 +121,6 @@ other = "Notizen"
 
 [disclaimer_text]
 other = "Haftungshinweis"
+
+[close]
+other = "Aus"

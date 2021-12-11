@@ -458,3 +458,10 @@ mark {
     font-size: 1.5rem;
   }
 }
+
+/* modals need to be shifted down to compensate for the header 
+  but only if the modal is not centered (has class .modal-dialog-centered)
+*/
+.modal-dialog {
+  padding-top: 2em;
+}
