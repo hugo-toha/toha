@@ -155,10 +155,27 @@
       <hr />
         {{ partial "navigators/next-prev-navigator.html" . }}
       <hr />
-      <!-- Add Disqus forum  -->
-      {{ if site.DisqusShortname }}
-          {{ partial "disqus.html" . }}
+
+      <!----- Add comment support  ----->
+      {{ with site.Params.features.comment }}
+        {{ if .enable }}
+          <!-- Add Disqus forum  -->
+          {{ if .disqus.shortName }}
+              {{ partial "disqus.html" . }}
+          <!-- Add valine -->
+          {{ else if .valine }}
+              {{ partial "valine.html" . }}
+          <!-- Add utteranc -->
+          {{ else if .utteranc }}
+              {{ partial "utteranc.html" . }}
+          {{ end }}
+        {{ end }}
       {{ end }}
+      <!-- Keep backward compatibility with old config.yaml -->
+      {{ if site.DisqusShortname }}
+        {{ partial "disqus.html" . }}
+      {{ end }}
+
       </div>
     </div>
   </div>
