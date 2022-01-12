@@ -1,6 +1,7 @@
 {{/*  variables for enabling/disabling various features  */}}
 {{ $blogEnabled   := site.Params.features.blog.enable   | default false }}
 {{ $notesEnabled  := site.Params.features.notes.enable  | default false }}
+{{ $maxnavitems := site.Params.features.maxnavitems | default 5 }}
 
 {{/*  keep backward compatibility for blog post  */}}
 {{ if site.Params.enableBlogPost }}
@@ -75,7 +76,7 @@
           {{ range sort $sections "section.weight" }}
             {{ if and (.section.enable) (.section.showOnNavbar)}}
               {{ $sectionCount  = add $sectionCount 1}}
-              {{ if le $sectionCount 5 }}
+              {{ if le $sectionCount $maxnavitems }}
                 <li class="nav-item">
                   <a class="nav-link" href="#{{ partial "helpers/get-section-id.html" . }}">{{ .section.name }}</a>
                 </li>
