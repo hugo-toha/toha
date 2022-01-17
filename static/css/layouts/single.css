@@ -37,6 +37,7 @@ body {
 }
 
 .toc-holder {
+  position: -webkit-sticky;
   position: sticky;
   top: 4.5rem;
   overflow-x: hidden;
@@ -205,6 +206,69 @@ h6 {
   padding: 10px;
 }
 
+.share-buttons .btn {
+  color: #e5e9f2 !important;
+  transition: all 0.3s ease-out !important;
+}
+
+.share-buttons .btn:hover,
+.share-buttons .btn:focus {
+  background-color: #248aaa !important;
+  border-color: #248aaa !important;
+  transition: all 0.3s ease-out !important;
+}
+
+.share-buttons .facebook-btn {
+  background-color: #4267b2 !important;
+  border-color: #4267b2 !important;
+}
+
+.share-buttons .twitter-btn {
+  background-color: #1da1f2 !important;
+  border-color: #1da1f2 !important;
+}
+
+.share-buttons .reddit-btn {
+  background-color: #ff4500 !important;
+  border-color: #ff4500 !important;
+}
+
+.share-buttons .tumblr-btn {
+  background-color: #34465d !important;
+  border-color: #34465d !important;
+}
+
+.share-buttons .pocket-btn {
+  background-color: #ef4056 !important;
+  border-color: #ef4056 !important;
+}
+
+.share-buttons .linkedin-btn {
+  background-color: #2867b2 !important;
+  border-color: #2867b2 !important;
+}
+
+.share-buttons .diaspora-btn {
+  background-color: #3c4858 !important;
+  border-color: #3c4858 !important;
+}
+
+.share-buttons .mastodon-btn {
+  background-color: #2791da !important;
+  border-color: #2791da !important;
+}
+
+.share-buttons .whatsapp-btn {
+  background-color: #4ac959 !important;
+  border-color: #4ac959 !important;
+}
+
+.share-buttons .email-btn {
+  background-color: #3c4858 !important;
+  border-color: #3c4858 !important;
+  transition: all 0.3s ease-out !important;
+}
+
 .btn-improve-page {
   text-align: right;
 }
@@ -235,6 +299,19 @@ h6 {
 
 #scroll-to-top.show {
   visibility: visible;
+}
+.taxonomy-terms {
+  text-align: center;
+}
+.taxonomy-terms li {
+  font-size: 0.8em;
+  list-style-type: none;
+  display: inline-block;
+  background: #248aaa;
+}
+
+.taxonomy-terms a {
+  color: #f9fafc;
 }
 
 /* ============= Device specific fixes ======= */

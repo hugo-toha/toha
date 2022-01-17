@@ -8,6 +8,12 @@ other = "博文"
 [toc_heading]
 other = "目录"
 
+[tags]
+other = "标签"
+
+[categories]
+other = "类别"
+
 [at]
 other = "at"
 
@@ -33,7 +39,7 @@ other = "通过电子邮件接收最新信息"
 other = "填入 E-mail"
 
 [newsletter_warning]
-other = "我们绝不会与任何人共享您的电子邮件。"
+other = "输入您的电子邮件地址，即表示您同意接收本网站的时事通讯"
 
 [submit]
 other = "提交"
@@ -46,6 +52,9 @@ other = "上一篇"
 
 [next]
 other = "下一篇"
+
+[share_on]
+other = "分享"
 
 [improve_this_page]
 other = "改善此页面"
@@ -77,29 +86,29 @@ other = "查看更多"
 [show_less]
 other = "显示较少"
 
-# [responsibilities]
-# other = "Responsibilities:"
+[responsibilities]
+other = "职责:"
 
-# [present]
-# other = "Present"
+[present]
+other = "至今"
 
-# [comments_javascript]
-# other = "Please enable JavaScript to view the"
+[comments_javascript]
+other = "请启用 JavaScript 以查看"
 
-# [comments_by]
-# other = "comments powered by"
+[comments_by]
+other = "评论支持 by"
 
-# [read]
-# other = "Read"
+[read]
+other = "阅读"
 
-# [project_star]
-# other = "Star"
+[project_star]
+other = "Star"
 
-# [project_details]
-# other = "Details"
+[project_details]
+other = "详情"
 
-# [err_404]
-# other = "The page you are looking for is not there yet."
+[err_404]
+other = "您查找的页面已私奔。"
 
 [more]
 other = "更多的"
@@ -111,4 +120,4 @@ other = "查看证书"
 other = "笔记"
 
 [disclaimer_text]
-other = "责任通知"
+other = "免责声明"

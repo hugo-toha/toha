@@ -8,6 +8,12 @@ other = "Posts"
 [toc_heading]
 other = "Table of Contents"
 
+[tags]
+other = "Tags"
+
+[categories]
+other = "Categories"
+
 [at]
 other = "at"
 
@@ -33,7 +39,7 @@ other = "Stay up to date with email notification"
 other = "Enter email"
 
 [newsletter_warning]
-other = "We'll never share your email with anyone else."
+other = "By entering your email address, you agree to receive the newsletter of this website."
 
 [submit]
 other = "Submit"
@@ -46,6 +52,9 @@ other = "Prev"
 
 [next]
 other = "Next"
+
+[share_on]
+other = "Share on"
 
 [improve_this_page]
 other = "Improve this page"

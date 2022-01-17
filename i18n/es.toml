@@ -8,6 +8,12 @@ other = "Posts"
 [toc_heading]
 other = "Contenido"
 
+[tags]
+other = "Etiquetas"
+
+[categories]
+other = "Categorías"
+
 [at]
 other = "en"
 
@@ -33,7 +39,7 @@ other = "Subscribirse"
 other = "Ingrese email"
 
 [newsletter_warning]
-other = "Jamás compartiremos tus datos con alguién mas"
+other = "Al ingresar su dirección de correo electrónico, acepta recibir el boletín de este sitio web."
 
 [submit]
 other = "Enviar"
@@ -46,6 +52,9 @@ other = "Anterior"
 
 [next]
 other = "Siguiente"
+
+[share_on]
+other = "Compartir en"
 
 [improve_this_page]
 other = "Mejorar esta página"
@@ -77,29 +86,29 @@ other = "Ver más"
 [show_less]
 other = "Muestra menos"
 
-# [responsibilities]
-# other = "Responsibilities:"
+[responsibilities]
+other = "Responsabilidades:"
 
-# [present]
-# other = "Present"
+[present]
+other = "Presente"
 
-# [comments_javascript]
-# other = "Please enable JavaScript to view the"
+[comments_javascript]
+other = "Por favor, activa JavaScript para ver el"
 
-# [comments_by]
-# other = "comments powered by"
+[comments_by]
+other = "comentarios cortesía de"
 
-# [read]
-# other = "Read"
+[read]
+other = "Leer"
 
-# [project_star]
-# other = "Star"
+[project_star]
+other = "Favorito"
 
-# [project_details]
-# other = "Details"
+[project_details]
+other = "Detalles"
 
-# [err_404]
-# other = "The page you are looking for is not there yet."
+[err_404]
+other = "La página que estás buscando no está aquí (todavía)"
 
 [more]
 other = "Más"

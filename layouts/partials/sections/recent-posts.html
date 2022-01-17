@@ -8,9 +8,11 @@
   {{ $numShow = .section.numShow }}
 {{ end }}
 
-<div class="container-fluid anchor pb-5 recent-posts-section" id="{{ $sectionID }}">
+
+<div class="container-fluid anchor pb-5 recent-posts-section">
   {{ if not (.section.hideTitle) }}
-    <h1 class="text-center">{{ .section.name }}</h1>
+    <h1 class="text-center">
+      <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
   {{ end }}
   <div class="container">
     <div class="row" id="recent-post-cards">

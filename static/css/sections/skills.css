@@ -8,6 +8,12 @@
   border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.125);
 }
 
+.skills-section h1 > span{
+  margin-top: -55px;  /* Size of fixed header */
+  padding-bottom:55px; 
+  display: block; 
+}
+
 .skills-section .skill-card-link {
   text-decoration: none;
 }
@@ -19,6 +25,7 @@
 .skills-section .card {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  height: 100%;
 }
 
 .skills-section .card .card-body {
@@ -57,7 +64,7 @@
     padding-right: 0;
   }
   .skills-section .container {
-    max-width: 100%;
+    max-width: 95%;
   }
 }
 

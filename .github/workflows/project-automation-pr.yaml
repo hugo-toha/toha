@@ -1,0 +1,219 @@
+name: Project Automation (PR)
+on:
+  pull_request:
+    types:
+      - opened
+      - ready_for_review
+      - reopened
+      - review_requested
+      - closed
+      - labeled
+      - unlabeled
+      - synchronize
+jobs:
+  pr_automation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get project data
+        env:
+          GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
+          ORGANIZATION: hugo-toha
+          PROJECT_NUMBER: 4
+        run: |
+          gh api graphql --header 'GraphQL-Features: projects_next_graphql' -f query='
+            query($org: String!, $number: Int!) {
+              organization(login: $org){
+                projectNext(number: $number) {
+                  id
+                  fields(first:20) {
+                    nodes {
+                      id
+                      name
+                      settings
+                    }
+                  }
+                }
+              }
+            }' -f org="$ORGANIZATION" -F number=$PROJECT_NUMBER > project_data.json
+
+          echo 'PROJECT_ID='$(jq -r '.data.organization.projectNext.id' project_data.json) >> $GITHUB_ENV
+
+          # Read the ID of the "Type" field options
+          echo 'TYPE_ID='$(jq -r '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'PROJECT_ID='$(jq -r '.data.organization.projectNext.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_ID='$(jq -r '.data.organization.projectNext.fields.nodes[]     | select(.name== "Type") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_BUG='$(jq -r '.data.organization.projectNext.fields.nodes[] | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Bug")             |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_FEATURE='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Feature") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_ENHANCEMENT='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Enhancement") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_DOCUMENTATION='$(jq -r '.data.organization.projectNext.fields.nodes[]  | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Documentation")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'TYPE_TRANSLATION='$(jq -r '.data.organization.projectNext.fields.nodes[]  | select(.name== "Type") |.settings | fromjson.options[] | select(.name=="Translation")    |.id' project_data.json) >> $GITHUB_ENV
+
+          # Read the id of the "Status" field options
+          echo 'STATUS_ID='$(jq -r '.data.organization.projectNext.fields.nodes[]     | select(.name== "Status") |.id' project_data.json) >> $GITHUB_ENV
+          echo 'STATUS_TODO='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="Todo")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'STATUS_IN_PROGRESS='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="In Progress")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'STATUS_READY_FOR_REVIEW='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="Ready for Review")    |.id' project_data.json) >> $GITHUB_ENV
+          echo 'STATUS_DONE='$(jq -r '.data.organization.projectNext.fields.nodes[]   | select(.name== "Status") |.settings | fromjson.options[] | select(.name=="Done")    |.id' project_data.json) >> $GITHUB_ENV
+
+      - name: Add PR to project
+        env:
+          GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
+          PR_ID: ${{ github.event.pull_request.node_id }}
+        run: |
+          item_id="$( gh api graphql -f query='
+            mutation($project:ID!, $pr:ID!) {
+              addProjectNextItem(input: {projectId: $project, contentId: $pr}) {
+                projectNextItem {
+                  id
+                }
+              }
+            }' -f project="$PROJECT_ID" -f pr="$PR_ID" --jq '.data.addProjectNextItem.projectNextItem.id')"
+
+          echo 'ITEM_ID='$item_id >> $GITHUB_ENV
+
+      - name: Export Labels
+        env:
+          PR_DATA: ${{ toJson(github.event.pull_request) }}
+        run: |
+          echo 'LABELS='$(echo "$PR_DATA" | jq -r '[.labels[].name] | join(" ")') >> $GITHUB_ENV
+
+      - name: Set "Type" field
+        env:
+          GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
+        run: |
+          # Only execute this step if the PR contains at least one label
+          if [ "${#LABELS[@]}" -gt 0 ]; then
+
+            # Let by default the type is "Bug"
+            OPTION_ID=$TYPE_BUG
+
+            # If it has "feature" label then set the type to "Feature"
+            if [[ "${LABELS[*]}" =~ "feature" ]]; then
+              OPTION_ID=$TYPE_FEATURE
+            fi
+
+            # If it has "enhancement" label then set the type to "Enhancement"
+            if [[ "${LABELS[*]}" =~ "enhancement" ]]; then
+              OPTION_ID=$TYPE_ENHANCEMENT
+            fi
+
+            # If it has "documentation" label then set the type to "Documentation"
+            if [[ "${LABELS[*]}" =~ "documentation" ]]; then
+              OPTION_ID=$TYPE_DOCUMENTATION
+            fi
+
+            # If it has "translation" label then set the type to "Translation"
+            if [[ "${LABELS[*]}" =~ "translation" ]]; then
+              OPTION_ID=$TYPE_TRANSLATION
+            fi
+
+            # Set the "Type" field to appropriate option
+            gh api graphql -f query='
+              mutation ($project: ID!, $item: ID!, $field: ID!, $opt_id: ID!) {
+                updateProjectNextItemField(input: {
+                  projectId: $project
+                  itemId: $item
+                  fieldId: $field
+                  value: $opt_id
+                }) {
+                  projectNextItem {
+                    id
+                  }
+                }
+              }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$TYPE_ID" -f opt_id="$OPTION_ID" --silent
+          fi
+
+      - name: Set "Status" field
+        env:
+          GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
+        run: |
+          MERGED=${{github.event.pull_request.merged}}
+          STATE=${{github.event.pull_request.state}}
+          REVIEWERS=${{github.event.pull_request.requested_reviewers}}
+          DRAFT=${{github.event.pull_request.draft}}
+
+          echo "Merged: $MERGED"
+          echo "State: $STATE"
+          echo "Draft: $DRAFT"
+          echo "Reviewer: $REVIEWER"
+
+          OPTION_ID=$STATUS_TODO
+
+          if [[ ("${MERGED}" == "true") || ("${STATE}" == "closed") ]]
+          then
+            OPTION_ID=$STATUS_DONE
+          elif [[ ${#REVIEWERS[@]} -gt 0 ]]
+          then
+            OPTION_ID=$STATUS_READY_FOR_REVIEW
+          else
+            OPTION_ID=$STATUS_IN_PROGRESS
+          fi
+
+          # Expose the OPTION_ID so that it can be used in later steps
+          echo 'PR_STATUS='$OPTION_ID >> $GITHUB_ENV
+
+          gh api graphql -f query='
+            mutation ($project: ID!, $item: ID!, $field: ID!, $status_id: ID!) {
+              updateProjectNextItemField(input: {
+                projectId: $project
+                itemId: $item
+                fieldId: $field
+                value: $status_id
+              }) {
+                projectNextItem {
+                  id
+                }
+              }
+            }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$STATUS_ID" -f status_id="$OPTION_ID" --silent
+
+      - name: Find Linked Issues
+        id: linked_issues
+        uses: hossainemruz/linked-issues@main
+        with:
+          pr_url: ${{github.event.pull_request.html_url}}
+          format: IssueNumber
+
+      - name: Update Linked Issues Status
+        env:
+          GITHUB_TOKEN: ${{secrets.PROJECT_AUTOMATION}}
+        run: |
+          declare -a issues=(${{ steps.linked_issues.outputs.issues }})
+
+          # Loop through the every issues and update their Status to same as the PR Status
+          for i in "${issues[@]}"
+          do
+            # Find the Issue ID
+            ISSUE_ID="$(gh api graphql -f query='
+              query($owner: String!, $name: String!, $issue_number: Int!) {
+                repository(owner: $owner, name: $name) {
+                  issue(number: $issue_number) {
+                    id
+                  }
+                }
+              }' -f owner="${{github.event.pull_request.head.repo.owner.login}}" -f name="${{github.event.pull_request.head.repo.name}}" -F issue_number=$i --jq='.data.repository.issue.id')"
+
+            # Find the id of the Issue at the project board
+            item_id="$( gh api graphql -f query='
+              mutation($project:ID!, $pr:ID!) {
+                addProjectNextItem(input: {projectId: $project, contentId: $pr}) {
+                  projectNextItem {
+                    id
+                  }
+                }
+              }' -f project="$PROJECT_ID" -f pr="$ISSUE_ID" --jq '.data.addProjectNextItem.projectNextItem.id')"
+
+            # Update the Issue Status
+            gh api graphql -f query='
+            mutation ($project: ID!, $item: ID!, $field: ID!, $status_id: ID!) {
+              updateProjectNextItemField(input: {
+                projectId: $project
+                itemId: $item
+                fieldId: $field
+                value: $status_id
+              }) {
+                projectNextItem {
+                  id
+                }
+              }
+            }' -f project="$PROJECT_ID" -f item="$item_id" -f field="$STATUS_ID" -f status_id="$PR_STATUS" --silent
+          done

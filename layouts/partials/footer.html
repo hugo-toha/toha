@@ -37,7 +37,7 @@
 
   {{ $disclaimer := "" }}
   {{ $siteConfig := (index site.Data site.Language.Lang).site }}
-  {{ if $siteConfig.disclaimer }} 
+  {{ if $siteConfig.disclaimer }}
     {{ $disclaimer = $siteConfig.disclaimer }}
   {{ end }}
 
@@ -73,7 +73,7 @@
                   {{ $sectionID = .section.id }}
                 {{ end }}
                 <li class="nav-item">
-                  <a class="smooth-scroll" href="/#{{ $sectionID }}">{{ .section.name }}</a>
+                  <a class="smooth-scroll" href="{{ "" | absLangURL }}#{{ $sectionID }}">{{ .section.name }}</a>
                 </li>
               {{ end }}
             {{- end }}
@@ -86,7 +86,23 @@
           <h5>{{ i18n "contact_me" }}</h5>
           <ul>
             {{ range $key,$value:= $author.contactInfo }}
-            <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
+              {{ if (eq $key "email") }}
+                <li><a href={{ printf "mailto:%s" $value }} target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>{{ $value }}</span>
+                </a></li>
+              {{ else if (eq $key "phone") }}
+                <li><span><i class="fas fa-phone-alt"></i></span> <span>{{ $value }}</span></li>
+              {{ else if (eq $key "linkedin") }}
+                <li><a href={{ printf "https://www.linkedin.com/in/%s" $value }} target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>{{ $author.name }}</span>
+                </a></li>
+              {{ else if (eq $key "github") }}
+                <li><a href={{ printf "https://github.com/%s" $value }} target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>{{ $value }}</span>
+                </a></li>
+              {{ else }}
+                <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
+              {{ end }}
             {{ end }}
           </ul>
         </div>
@@ -121,13 +137,14 @@
                 <button type="submit" class="btn btn-info">{{ i18n "submit" }}</button>
               </form>
             {{ else }}
-             <!-- a dummy form -->
-              <form>
-                <div class="form-group">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ i18n "newsletter_input_placeholder" }}"/>
-                  <small id="emailHelp" class="form-text text-muted">{{ i18n "newsletter_warning" }}</small>
-                </div>
-                <button type="submit" class="btn btn-info">{{ i18n "submit" }}</button>
+              <form method='post' action='https://blogtrottr.com'>
+              <div class="form-group">
+              <input type='email' class="form-control" name='btr_email' placeholder="{{ i18n "newsletter_input_placeholder" }}"/><br />
+              <input type='hidden' name='btr_url' value='{{ "" | absLangURL }}index.xml' />
+              <input type='hidden' name='schedule_type' value='1' />
+              <small id="emailHelp" class="form-text text-muted">{{ i18n "newsletter_warning" }}</small>
+              <button type="submit" class="btn btn-info"> {{ i18n "submit" }} </button>
+              </div>
               </form>
             {{ end }}
           </div>
@@ -137,7 +154,7 @@
     {{ if and $disclaimerEnabled $disclaimer}}
     <hr />
     <div class="container">
-      <p id="disclaimer"><strong>{{ i18n "disclaimer_text" }}:</strong> {{ $disclaimer }}</p>
+      <p id="disclaimer"><strong>{{ i18n "disclaimer_text" }}:</strong> {{ $disclaimer | markdownify }}</p>
     </div>
     {{ end }}
     {{ if $credentialsEnabled }}

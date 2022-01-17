@@ -4,7 +4,7 @@ description = "A simple hugo theme for personal portfolio"
 homepage = "https://hugo-toha.github.io/"
 license = "MIT"
 licenselink = "https://github.com/hugo-toha/toha/blob/master/LICENSE"
-min_version = "0.68.0"
+min_version = "0.87.0"
 name = "Toha"
 
 features = [
