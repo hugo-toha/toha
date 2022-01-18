@@ -2,15 +2,15 @@
   <a class="skill-card-link" {{ if .url }}href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"{{ end }}>
     <div class="card">
       <div class="card-head d-flex">
-        {{ if .logo }}
-          {{ $logoImage := resources.Get .logo }}
+        {{ if .icon }}
+          {{ $iconImage := resources.Get .icon }}
 
           {{/*  svg don't support "Fit" operation   */}}
-          {{ if ne $logoImage.MediaType.SubType "svg" }}
-            {{ $logoImage = $logoImage.Fit "24x24" }}
+          {{ if ne $iconImage.MediaType.SubType "svg" }}
+            {{ $iconImage = $iconImage.Fit "24x24" }}
           {{ end }}
 
-          <img class="card-img-xs" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+          <img class="card-img-xs" src="{{ $iconImage.RelPermalink }}" alt="{{ .name }}" />
         {{ end }}
         <h5 class="card-title">{{ .name }}</h5>
       </div>
