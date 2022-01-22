@@ -1,6 +1,7 @@
 .education-section .education-info-table {
   width: 100%;
   border: none;
+  background: none;
 }
 
 .education-section .education-info-table tr:hover {
@@ -12,6 +13,7 @@
 .education-section .education-info-table td {
   border: none;
   padding: 0;
+  background: none;
 }
 
 .education-section .timeframe {
@@ -21,8 +23,8 @@
 
 .education-section h1 > span{
   margin-top: -55px;  /* Size of fixed header */
-  padding-bottom:55px; 
-  display: block; 
+  padding-bottom:55px;
+  display: block;
 }
 
 .education-section .icon {
