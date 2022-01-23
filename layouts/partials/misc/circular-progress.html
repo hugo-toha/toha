@@ -1,0 +1,29 @@
+{{ if isset .ctx "percentage" }}
+{{ $predefinedColor:= true}}
+{{ if hasPrefix .ctx.color "#"}}
+    {{ $predefinedColor = false }}
+{{ end }}
+{{ $size := "" }}
+{{ if .size }}
+{{ $size = .size }}
+{{ end }}
+<div class="circular-progress circular-progress-{{ $size }} {{if $predefinedColor}}{{ .ctx.color }}{{end}}">
+    <span class="circular-progress-left">
+        <span
+        class="circular-progress-bar circular-progress-percentage-{{ .ctx.percentage }}"
+        {{ if not $predefinedColor }}
+            style="border-color: {{.ctx.color}};"
+        {{ end }}
+        ></span>
+    </span>
+    <span class="circular-progress-right">
+        <span
+        class="circular-progress-bar"
+        {{ if not $predefinedColor }}
+            style="border-color: {{.ctx.color}};"
+        {{ end }}
+        ></span>
+    </span>
+    <div class="circular-progress-value"></div>
+</div>
+{{ end }}

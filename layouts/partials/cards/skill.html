@@ -1,22 +1,59 @@
+{{ $skillID := replace (lower .name) " " "-"  }}
+{{ if .id }}
+  {{ $skillID = .id }}
+{{ end }}
+{{ $logoImage := "" }}
+{{ if .logo }}
+  {{ $logoImage = resources.Get .logo }}
+
+  {{/*  svg don't support "Fit" operation   */}}
+  {{ if ne $logoImage.MediaType.SubType "svg" }}
+    {{ $logoImage = $logoImage.Fit "24x24" }}
+  {{ end }}
+
+{{ end }}
 <div class="col-xs-12 col-sm-6 col-lg-4 pt-2">
-  <a class="skill-card-link" {{ if .url }}href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"{{ end }}>
+  <a class="skill-card-link {{ if .popup }} skill-card-link-with-popup {{end}}" 
+    {{ if and (.url) (not .popup) }}href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"{{ end }}
+    {{ if .popup }}data-toggle="modal" data-target="#skill-{{ $skillID }}-modal"{{ end }}
+  >
     <div class="card">
       <div class="card-head d-flex">
-        {{ if .logo }}
-          {{ $logoImage := resources.Get .logo }}
-
-          {{/*  svg don't support "Fit" operation   */}}
-          {{ if ne $logoImage.MediaType.SubType "svg" }}
-            {{ $logoImage = $logoImage.Fit "24x24" }}
-          {{ end }}
-
+        {{ if $logoImage }}
           <img class="card-img-xs" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
         {{ end }}
         <h5 class="card-title">{{ .name }}</h5>
       </div>
       <div class="card-body">
         <p class="card-text">{{ .summary | markdownify }}</p>
+        
+        {{ if or .popup .icons }}
+        <div class="row skill-card-bottom-row">
+          <div class="col-12 col-md-8 skill-card-icons">
+            {{ if .icons }}
+              {{ range $icon := .icons }}
+                {{ $iconImage := "" }}
+                {{ $iconImage = resources.Get $icon }}
+                {{ if ne $iconImage.MediaType.SubType "svg" }}
+                    {{ $iconImage = $iconImage.Fit "32x32" }}
+                {{ end }}
+                <img class="" src="{{ $iconImage.RelPermalink }}" />
+              {{ end }}
+            {{ end }}
+          </div>
+          {{ if and .popup ( .popup.showButton | default true ) }}
+            <div class="col-12 col-md-4 skill-card-buttons">
+              <button type="button" class="btn btn-link">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          {{ end }}
+        </div>
+        {{ end }}
       </div>
     </div>
   </a>
 </div>
+{{ if .popup }}
+{{ partial "partials/cards/skill-popup.html" (dict "skill" .) }}
+{{ end }}

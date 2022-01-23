@@ -121,3 +121,6 @@ other = "笔记"
 
 [disclaimer_text]
 other = "免责声明"
+
+[close]
+other = "关闭"

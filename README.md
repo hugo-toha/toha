@@ -199,6 +199,7 @@ Here is the check list for portfolio mode,
 
   - [x] Skill Cards
   - [x] Markdown Support
+  - [x] Skills breakdown popup
 
 - [x] **Experiences**
 
