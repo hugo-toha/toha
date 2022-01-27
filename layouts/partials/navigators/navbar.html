@@ -115,9 +115,11 @@
           </li>
         {{ end }}
         {{ range $customMenus }}
-          <li class="nav-item">
-            <a class="nav-link" href="{{ .url }}">{{ .name }}</a>
-          </li>
+            {{ if .showOnNavbar }}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ .url }}">{{ .name }}</a>
+              </li>
+            {{ end }}
         {{ end }}
         {{ if .IsTranslated }}
           {{ partial "navigators/lang-selector.html" . }}
