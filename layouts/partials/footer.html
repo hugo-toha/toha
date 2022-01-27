@@ -1,6 +1,7 @@
 {{/*  variables for enabling/disabling parts of the footer  */}}
 {{ $footerEnabled      := site.Params.footer.enable             | default true }}
 {{ $navigationEnabled  := site.Params.footer.navigation.enable  | default true }}
+{{ $customMenusEnabled := site.Params.footer.navigation.customMenus.enable | default true }}
 {{ $contactMeEnabled   := site.Params.footer.contactMe.enable   | default true }}
 {{ $newsletterEnabled  := site.Params.footer.newsletter.enable  | default true }}
 {{ $credentialsEnabled := site.Params.footer.credentials.enable | default true }}
@@ -24,6 +25,11 @@
   {{ $sections:= site.Data.sections }}
   {{ if (index site.Data site.Language.Lang).sections }}
     {{ $sections = (index site.Data site.Language.Lang).sections }}
+  {{ end }}
+
+  {{ $customMenus := site.Params.customMenus }}
+  {{ if (index site.Data site.Language.Lang).site.customMenus }}
+    {{ $customMenus = (index site.Data site.Language.Lang).site.customMenus }}
   {{ end }}
 
   {{ $copyrightNotice := "© 2021 Copyright."}}
@@ -77,6 +83,15 @@
                 </li>
               {{ end }}
             {{- end }}
+            {{ if $customMenusEnabled }}
+              {{ range $customMenus }}
+                {{ if .showOnFooter }}
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="{{ .url }}">{{ .name }}</a>
+                    </li>
+                {{ end }}
+              {{ end }}
+            {{ end }}
           </ul>
           {{ end }}
         </div>
