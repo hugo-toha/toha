@@ -81,7 +81,7 @@
 }
 
 .top-right {
-  left: calc(50% - 3px);
+  left: 50%;
   top: -50%;
 }
 
