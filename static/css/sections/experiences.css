@@ -6,6 +6,12 @@
   margin-top: 1.5rem !important;
 }
 
+.experiences-section h1 > span{
+  margin-top: -55px;  /* Size of fixed header */
+  padding-bottom:55px; 
+  display: block; 
+}
+
 .experiences-section ul {
   padding-left: 1rem;
 }

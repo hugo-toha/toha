@@ -1,6 +1,7 @@
 {{/*  variables for enabling/disabling parts of the footer  */}}
 {{ $footerEnabled      := site.Params.footer.enable             | default true }}
 {{ $navigationEnabled  := site.Params.footer.navigation.enable  | default true }}
+{{ $customMenusEnabled := site.Params.footer.navigation.customMenus | default true }}
 {{ $contactMeEnabled   := site.Params.footer.contactMe.enable   | default true }}
 {{ $newsletterEnabled  := site.Params.footer.newsletter.enable  | default true }}
 {{ $credentialsEnabled := site.Params.footer.credentials.enable | default true }}
@@ -26,6 +27,11 @@
     {{ $sections = (index site.Data site.Language.Lang).sections }}
   {{ end }}
 
+  {{ $customMenus := site.Params.customMenus }}
+  {{ if (index site.Data site.Language.Lang).site.customMenus }}
+    {{ $customMenus = (index site.Data site.Language.Lang).site.customMenus }}
+  {{ end }}
+
   {{ $copyrightNotice := "© 2021 Copyright."}}
   {{ if (index site.Data site.Language.Lang).site }}
     {{ $siteConfig := (index site.Data site.Language.Lang).site }}
@@ -37,7 +43,7 @@
 
   {{ $disclaimer := "" }}
   {{ $siteConfig := (index site.Data site.Language.Lang).site }}
-  {{ if $siteConfig.disclaimer }} 
+  {{ if $siteConfig.disclaimer }}
     {{ $disclaimer = $siteConfig.disclaimer }}
   {{ end }}
 
@@ -58,7 +64,7 @@
   {{ end }}
   {{ $hugoLogo = $hugoLogo.RelPermalink}}
 
-  <footer class="container-fluid text-center align-content-center footer pb-2">
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
     <div class="container pt-5">
       <div class="row text-left">
         {{ if $navigationEnabled }}
@@ -73,10 +79,19 @@
                   {{ $sectionID = .section.id }}
                 {{ end }}
                 <li class="nav-item">
-                  <a class="smooth-scroll" href="/#{{ $sectionID }}">{{ .section.name }}</a>
+                  <a class="smooth-scroll" href="{{ "" | absLangURL }}#{{ $sectionID }}">{{ .section.name }}</a>
                 </li>
               {{ end }}
             {{- end }}
+            {{ if $customMenusEnabled }}
+              {{ range $customMenus }}
+                {{ if .showOnFooter }}
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="{{ .url }}">{{ .name }}</a>
+                    </li>
+                {{ end }}
+              {{ end }}
+            {{ end }}
           </ul>
           {{ end }}
         </div>
@@ -86,7 +101,23 @@
           <h5>{{ i18n "contact_me" }}</h5>
           <ul>
             {{ range $key,$value:= $author.contactInfo }}
-            <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
+              {{ if (eq $key "email") }}
+                <li><a href={{ printf "mailto:%s" $value }} target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>{{ $value }}</span>
+                </a></li>
+              {{ else if (eq $key "phone") }}
+                <li><span><i class="fas fa-phone-alt"></i></span> <span>{{ $value }}</span></li>
+              {{ else if (eq $key "linkedin") }}
+                <li><a href={{ printf "https://www.linkedin.com/in/%s" $value }} target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>{{ $author.name }}</span>
+                </a></li>
+              {{ else if (eq $key "github") }}
+                <li><a href={{ printf "https://github.com/%s" $value }} target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>{{ $value }}</span>
+                </a></li>
+              {{ else }}
+                <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
+              {{ end }}
             {{ end }}
           </ul>
         </div>
@@ -128,6 +159,7 @@
               <input type='hidden' name='schedule_type' value='1' />
               <small id="emailHelp" class="form-text text-muted">{{ i18n "newsletter_warning" }}</small>
               <button type="submit" class="btn btn-info"> {{ i18n "submit" }} </button>
+              </div>
               </form>
             {{ end }}
           </div>

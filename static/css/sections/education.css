@@ -1,6 +1,7 @@
 .education-section .education-info-table {
   width: 100%;
   border: none;
+  background: none;
 }
 
 .education-section .education-info-table tr:hover {
@@ -12,11 +13,18 @@
 .education-section .education-info-table td {
   border: none;
   padding: 0;
+  background: none;
 }
 
 .education-section .timeframe {
   color: #8392a5;
   text-align: right;
+}
+
+.education-section h1 > span{
+  margin-top: -55px;  /* Size of fixed header */
+  padding-bottom:55px;
+  display: block;
 }
 
 .education-section .icon {
@@ -102,7 +110,9 @@
   border: none;
   color: #212529;
 }
-
+.education-section .taken-courses th.course-name-header{
+  width: 50%;
+}
 .education-section .taken-courses .hidden-course {
   display: none;
   transition: all 1s ease-out;

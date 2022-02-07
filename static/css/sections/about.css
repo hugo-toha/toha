@@ -87,11 +87,14 @@
   background: #3c4858;
   font-size: 1rem;
   color: #f9fafc;
-  line-height: 135px;
+  line-height: initial;
   text-align: center;
   position: absolute;
   top: 5%;
   left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .circular-progress.blue .circular-progress-bar {

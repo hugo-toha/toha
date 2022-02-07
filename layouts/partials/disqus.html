@@ -1,3 +1,8 @@
+{{ $disqusShortName := site.DisqusShortname }}
+{{ if site.Params.features.comment.disqus.shortName }}
+  {{ $disqusShortName = site.Params.features.comment.disqus.shortName }}
+{{ end }}
+
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   (function () {
@@ -8,7 +13,7 @@
     var dsq = document.createElement("script");
     dsq.type = "text/javascript";
     dsq.async = true;
-    var disqus_shortname = "{{ site.DisqusShortname }}";
+    var disqus_shortname = "{{ $disqusShortName }}";
     dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
     (
       document.getElementsByTagName("head")[0] ||
