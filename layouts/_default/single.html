@@ -48,7 +48,7 @@
         <div class="author-profile ml-auto align-self-lg-center">
           <img class="rounded-circle" src='{{ partial "helpers/get-author-image.html" . }}' alt="Author Image">
           <h5 class="author-name">{{ partial "helpers/get-author-name.html" . }}</h5>
-          <p>{{ .Page.Date.Format "January 2, 2006" }}</p>
+          <p>{{ .Page.Date | time.Format ":date_full" }}</p>
         </div>
 
         <div class="title">
