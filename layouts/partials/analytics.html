@@ -1,0 +1,33 @@
+<!-- Add Analytics if enabled in configuration -->
+{{ if site.Params.Analytics }}
+
+    <!-- Google Analytics -->
+    {{ if site.Params.Analytics.Google }}
+        <!-- Google Analytics v3  ID -->
+        {{ if hasPrefix site.Params.Analytics.Google "UA-"}}
+            {{ template "_internal/google_analytics_async.html" . }}
+        <!-- Google Analytics v4  ID -->
+        {{ else }}
+            {{ template "_internal/google_analytics.html" . }}
+        {{ end }}
+    {{ end }}
+
+    <!-- Counter.dev -->
+    {{ if site.Params.Analytics.CounterDev }}
+        <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"{{ site.Params.Analytics.CounterDev }}",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>
+    {{ end }}
+
+    <!-- Counter.dev -->
+    {{ if site.Params.Analytics.GoatCounter }}
+        <script data-goatcounter="https://{{ site.Params.Analytics.GoatCounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    {{ end }}
+
+
+<!-- Keep backwards compatibility and consistency with HUGO defaults -->
+{{ else if site.GoogleAnalytics }}
+    {{ if hasPrefix site.GoogleAnalytics "UA-"}}
+        {{ template "_internal/google_analytics_async.html" . }}
+    {{ else }}
+        {{ template "_internal/google_analytics.html" . }}
+    {{ end }}
+{{ end }}

@@ -29,16 +29,8 @@
     <!--================= custom style overrides =========================-->
     <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}"/>
     
-    <!-- Add Google Analytics if enabled in configuration -->
-    {{ if site.GoogleAnalytics }}
-        <!-- Google Analytics v3  ID -->
-        {{ if hasPrefix site.GoogleAnalytics "UA-"}}
-          {{ template "_internal/google_analytics_async.html" . }}
-        {{ else }}
-          <!-- Google Analytics v4  ID -->
-          {{ template "_internal/google_analytics.html" . }}
-        {{ end }}
-    {{ end }}
+    <!--================= add analytics if enabled =========================-->
+    {{- partial "analytics.html" . -}}
   </head>
   <body data-spy="scroll" data-target="#top-navbar" data-offset="100">
 
