@@ -1,10 +1,10 @@
 <!-- Add Analytics if enabled in configuration -->
-{{ if site.Params.Analytics }}
+{{ if eq site.Params.Features.analytics.enable true }}
 
     <!-- Google Analytics -->
-    {{ if site.Params.Analytics.Google }}
+    {{ if site.Params.Features.analytics.Google }}
         <!-- Google Analytics v3  ID -->
-        {{ if hasPrefix site.Params.Analytics.Google "UA-"}}
+        {{ if hasPrefix site.Params.Features.analytics.Google "UA-"}}
             {{ template "_internal/google_analytics_async.html" . }}
         <!-- Google Analytics v4  ID -->
         {{ else }}
@@ -13,13 +13,13 @@
     {{ end }}
 
     <!-- Counter.dev -->
-    {{ if site.Params.Analytics.CounterDev }}
-        <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"{{ site.Params.Analytics.CounterDev }}",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>
+    {{ if site.Params.Features.analytics.CounterDev }}
+        <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"{{ site.Params.Features.analytics.CounterDev }}",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>
     {{ end }}
 
     <!-- Counter.dev -->
-    {{ if site.Params.Analytics.GoatCounter }}
-        <script data-goatcounter="https://{{ site.Params.Analytics.GoatCounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    {{ if site.Params.Features.analytics.GoatCounter }}
+        <script data-goatcounter="https://{{ site.Params.Features.analytics.GoatCounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     {{ end }}
 
 
