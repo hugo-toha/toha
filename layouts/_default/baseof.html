@@ -12,6 +12,8 @@
     <!--================= add analytics if enabled =========================-->
     {{- partial "analytics.html" . -}}
 
+  </head>
+
   <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
     <div class="container-fluid bg-dimmed wrapper">
       <!----- ADD NAVBAR --------------->
@@ -36,5 +38,9 @@
 
     <!------- ADD PAGE SPECIFIC SCRIPTS ------>
     {{ block "scripts" . }} {{ end }}
+
+    <!------ IF WANTED, ADD SUPPORT LINKS -------->
+    {{- partial "misc/support.html" . -}}
+
   </body>
 </html>

@@ -1,0 +1,15 @@
+{{ if eq site.Params.Features.Support.enable true }}
+
+    <!-- Enable Ko-Fi floating button -->
+    {{ if site.Params.Features.Support.KoFi }}
+        <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+        <script>
+        kofiWidgetOverlay.draw('{{ site.Params.Features.Support.KoFi.user }}', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': '{{ site.Params.Features.Support.KoFi.text }}',
+            'floating-chat.donateButton.background-color': '{{ site.Params.Features.Support.KoFi.backgroundcolor }}',
+            'floating-chat.donateButton.text-color': '{{ site.Params.Features.Support.KoFi.textcolor }}'
+        });
+        </script>
+    {{ end }}
+{{ end }}
