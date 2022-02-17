@@ -121,3 +121,6 @@ other = "Notes"
 
 [disclaimer_text]
 other = "Liability Notice"
+
+[search]
+other = "Search"
