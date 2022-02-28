@@ -168,6 +168,9 @@
           <!-- Add utteranc -->
           {{ else if .utteranc }}
               {{ partial "utteranc.html" . }}
+          <!-- Add giscus -->
+          {{ else if .giscus }}
+              {{ partial "giscus.html" . }}
           {{ end }}
         {{ end }}
       {{ end }}
