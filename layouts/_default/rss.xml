@@ -1,10 +1,12 @@
 {{- $pctx := . -}}
 {{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
 {{- $pages := slice -}}
-{{- if or $.IsHome $.IsSection -}}
+{{- if $.IsHome -}}
+{{- $pages = $pctx.RegularPages -}}
+{{- else if $.IsSection -}}
 {{- $pages = $pctx.RegularPagesRecursive -}}
 {{- else -}}
-{{- $pages = $pctx.Pages -}}
+{{- $pages = $pctx.RegularPagesRecursive -}}
 {{- end -}}
 {{- $limit := .Site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
