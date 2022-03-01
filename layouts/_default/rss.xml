@@ -28,7 +28,7 @@
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{- end -}}
     {{ range $pages }}
-    {{- if ne .URL "search" -}}
+    {{- if ne .RelPermalink "/search/" -}}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
