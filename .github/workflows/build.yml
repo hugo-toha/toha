@@ -22,5 +22,7 @@ jobs:
         extended: true
 
     # build website
+    - name: Create Config
+      run: touch config.toml
     - name: Build
       run: hugo --minify
