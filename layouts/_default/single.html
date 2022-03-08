@@ -210,7 +210,15 @@
 <script>
   hljs.initHighlightingOnLoad();
 </script>
+
+<!-------------- Enable Math support for this page  ---------------->
 {{ if .Params.math }}
     {{ partial "math.html" . }}
 {{ end }}
+
+<!-------------- Enable Math support for this page  ---------------->
+{{ if .Params.mermaid }}
+    {{ partial "mermaid.html" . }}
+{{ end }}
+
 {{ end }}

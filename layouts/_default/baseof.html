@@ -5,9 +5,6 @@
     <!------ ADD COMMON HEADERS -------->
     {{- partial "header.html" . -}}
     {{ template "_internal/opengraph.html" . }}
-    {{ if site.Params.features.mermaid.enabled}}
-      {{ partial "mermaid.html" . }}
-    {{ end }}
 
     <!------ ADD PAGE SPECIFIC HEADERS ------->
     {{ block "header" . }} {{ end }}
