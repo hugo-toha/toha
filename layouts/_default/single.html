@@ -168,6 +168,9 @@
           <!-- Add utteranc -->
           {{ else if .utteranc }}
               {{ partial "utteranc.html" . }}
+          <!-- Add giscus -->
+          {{ else if .giscus }}
+              {{ partial "giscus.html" . }}
           {{ end }}
         {{ end }}
       {{ end }}
@@ -207,7 +210,15 @@
 <script>
   hljs.initHighlightingOnLoad();
 </script>
+
+<!-------------- Enable Math support for this page  ---------------->
 {{ if .Params.math }}
     {{ partial "math.html" . }}
 {{ end }}
+
+<!-------------- Enable mermaid support for this page  ---------------->
+{{ if .Params.mermaid }}
+    {{ partial "mermaid.html" . }}
+{{ end }}
+
 {{ end }}
