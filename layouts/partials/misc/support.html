@@ -1,15 +1,16 @@
-{{ if eq site.Params.Features.Support.enable true }}
-
-    <!-- Enable Ko-Fi floating button -->
-    {{ if site.Params.Features.Support.KoFi }}
-        <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-        <script>
-        kofiWidgetOverlay.draw('{{ site.Params.Features.Support.KoFi.user }}', {
-            'type': 'floating-chat',
-            'floating-chat.donateButton.text': '{{ site.Params.Features.Support.KoFi.text }}',
-            'floating-chat.donateButton.background-color': '{{ site.Params.Features.Support.KoFi.backgroundcolor }}',
-            'floating-chat.donateButton.text-color': '{{ site.Params.Features.Support.KoFi.textcolor }}'
-        });
-        </script>
+{{ with site.Params.features.support }}
+    {{ if .enabled }}
+        <!-- Enable Ko-Fi floating button -->
+        {{ with .kofi }}
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('{{ .user }}', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': '{{ .text }}',
+                'floating-chat.donateButton.text-color': '{{ .textColor }}',
+                'floating-chat.donateButton.background-color': '{{ .backgroundColor }}',
+            });
+            </script>
+        {{ end }}
     {{ end }}
 {{ end }}

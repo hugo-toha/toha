@@ -1,17 +1,15 @@
-<link rel="stylesheet" href="{{ "/css/katex.min.css" | relURL }}">
-<script type="text/javascript" defer src="{{ "/js/katex.min.js" | relURL }}"></script>
-<script type="text/javascript" defer src="{{ "/js/auto-render.min.js" | relURL }}" onload="renderMathInElement(document.body);"></script>
-
-<script>
-      renderMathInElement(
-          document.body,
-          {
-              delimiters: [
-                  {left: "$$", right: "$$", display: true},
-                  {left: "\\[", right: "\\]", display: true},
-                  {left: "$", right: "$", display: false},
-                  {left: "\\(", right: "\\)", display: false}
-              ]
-          }
-      );
+<link rel="stylesheet" href="{{ "/katex/katex.min.css" | relURL }}">
+<script type="text/javascript" defer src="{{ "/katex/katex.min.js" | relURL }}"></script>
+<script type="text/javascript" defer src="{{ "/katex/auto-render.min.js" | relURL }}" onload="renderMathInElement(document.body);">
+    renderMathInElement(
+        document.body,
+        {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ]
+        }
+    );
 </script>
