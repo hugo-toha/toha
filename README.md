@@ -30,8 +30,15 @@ A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist desi
 - Achievement Gallery
 - Sidebar to Categorize the Posts
 - Short Codes
-- Google Analytics Support
-- Disqus Comment Support
+- Analytics Support
+  - GoatCounter
+  - counter.dev
+  - Google Analytics
+- Comment Support
+  - [Disqus](https://disqus.com/)
+  - [Valine](https://valine.js.org/)
+  - [Uttarances](https://utteranc.es/)
+  - [Giscus](https://giscus.app/)
 
 For more details about the features please visit [here](https://toha-guides.netlify.app/posts/features/).
 
@@ -71,7 +78,7 @@ Here are few screenshots from the [example site](https://hugo-toha.github.io).
 
 ## Requirements
 
-- Hugo Version 0.68.0 or higher
+- Hugo Version 0.87.0 or higher
 
 ## Usage
 
@@ -165,10 +172,12 @@ When you run your site for first time, it will start with the default parameters
 
 Here, are some handy shortcodes you can use with this theme.
 
-- [Alert](https://toha-guides.netlify.app/posts/short-codes/alert/)
-- [Image](https://toha-guides.netlify.app/posts/short-codes/img/)
-- [Split](https://toha-guides.netlify.app/posts/short-codes/split/)
-- [Vertical Space](https://toha-guides.netlify.app/posts/short-codes/vs/)
+- [Alert](https://toha-guides.netlify.app/posts/shortcodes/#alert)
+- [Image](https://toha-guides.netlify.app/posts/shortcodes/#image)
+- [Split](https://toha-guides.netlify.app/posts/shortcodes/#split)
+- [Vertical Space](https://toha-guides.netlify.app/posts/shortcodes/#vertical-space)
+- [Video](https://toha-guides.netlify.app/posts/shortcodes/#video)
+- [Mermaid](https://hugo-toha.github.io/posts/shortcodes/#mermaid)
 
 ## Project Roadmap
 
