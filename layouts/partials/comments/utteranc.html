@@ -1,6 +1,7 @@
-{{ $repo := site.Params.features.comment.utteranc.repo }}
-{{ $issueTerm := site.Params.features.comment.utteranc.issueTerm }}
-{{ $theme := site.Params.features.comment.utteranc.theme }}
+{{ with .utteranc }}
+{{ $repo        := .repo }}
+{{ $issueTerm   := .issueTerm }}
+{{ $theme       := .theme }}
 
 <div id="utteranc_thread"></div>
 <div id="comments" class="comments">
@@ -20,3 +21,4 @@
         document.getElementById('comments-container').appendChild(utterances);
     })();
 </script>
+{{ end }}
