@@ -22,7 +22,10 @@
                     screen: screen.width + "x" + screen.height,
                     user: "{{ .id }}",
                     utcoffset: "1",
-                    })
+                    }),
+		    {{ with .referrerPolicy }}
+			    { referrerPolicy: "{{ . }}" }
+		    {{ end }}
                 );
             }
             sessionStorage.setItem("_swa", "1");
