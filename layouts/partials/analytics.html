@@ -23,8 +23,8 @@
                     user: "{{ .id }}",
                     utcoffset: "1",
                     }),
-		    {{ if .noReferrerWhenDowngrade }}
-			    { referrerPolicy: "no-referrer-when-downgrade" }
+		    {{ with .referrerPolicy }}
+			    { referrerPolicy: "{{ . }}" }
 		    {{ end }}
                 );
             }
