@@ -23,7 +23,9 @@
                     user: "{{ .id }}",
                     utcoffset: "1",
                     }),
-                    { referrerPolicy: "no-referrer-when-downgrade" }
+		    {{ if .noReferrerWhenDowngrade }}
+			    { referrerPolicy: "no-referrer-when-downgrade" }
+		    {{ end }}
                 );
             }
             sessionStorage.setItem("_swa", "1");
