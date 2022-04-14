@@ -2,11 +2,11 @@
 {{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
 {{- $pages := slice -}}
 {{- if $.IsHome -}}
-{{- $pages = $pctx.RegularPages -}}
+{{- $pages = sort $pctx.RegularPages "Date" "desc" -}}
 {{- else if $.IsSection -}}
-{{- $pages = $pctx.RegularPagesRecursive -}}
+{{- $pages = sort $pctx.RegularPagesRecursive "Date" "desc" -}}
 {{- else -}}
-{{- $pages = $pctx.RegularPagesRecursive -}}
+{{- $pages = sort $pctx.RegularPagesRecursive "Date" "desc" -}}
 {{- end -}}
 {{- $limit := .Site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
