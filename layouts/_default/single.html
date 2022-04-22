@@ -20,7 +20,7 @@
     <div class="sidebar-holder">
       <div class="sidebar" id="sidebar">
         <form class="mx-auto" method="get" action="{{ "search" | relLangURL }}">
-          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+          <input type="text" name="keyword" value="" placeholder="{{ i18n "search" }}" data-search="" id="search-box" />
         </form>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
@@ -136,7 +136,7 @@
           {{ end }}
           <div class="col-md-6 btn-improve-page">
             {{ if ( eq site.Params.GitForge "gitlab" ) }}
-              <a href="{{ site.Params.GitRepo }}/-/edit/{{ .Scratch.Get "GitBranch" }}/{{ .File.Path }}" title="{{ i18n "improve_this_page" }}" target="_blank" rel="noopener">
+              <a href="{{ site.Params.GitRepo }}/-/edit/{{ .Scratch.Get "GitBranch" }}/content/{{ .File.Path }}" title="{{ i18n "improve_this_page" }}" target="_blank" rel="noopener">
             {{ else if ( eq site.Params.GitForge "gitea" ) }}
               <a href="{{ site.Params.GitRepo }}/_edit/{{ .Scratch.Get "GitBranch" }}/content/{{ .File.Path }}" title="{{ i18n "improve_this_page" }}" target="_blank" rel="noopener">
             {{ else }} <!--- Make Github-style the default -->
@@ -157,23 +157,13 @@
       <hr />
 
       <!----- Add comment support  ----->
-      {{ with site.Params.features.comment }}
-        {{ if .enable }}
-          <!-- Add Disqus forum  -->
-          {{ if .disqus.shortName }}
-              {{ partial "disqus.html" . }}
-          <!-- Add valine -->
-          {{ else if .valine }}
-              {{ partial "valine.html" . }}
-          <!-- Add utteranc -->
-          {{ else if .utteranc }}
-              {{ partial "utteranc.html" . }}
-          {{ end }}
-        {{ end }}
+      {{ if site.Params.features.comment.enable }}
+        {{ partial "comments.html" site.Params.features.comment }}
       {{ end }}
+
       <!-- Keep backward compatibility with old config.yaml -->
       {{ if site.DisqusShortname }}
-        {{ partial "disqus.html" . }}
+        {{ partial "comments/disqus.html" (dict (slice "disqus" "shortName")  site.DisqusShortname) }}
       {{ end }}
 
       </div>
@@ -189,7 +179,7 @@
 
 {{ define "toc" }}
   <section class="toc-section" id="toc-section">
-    {{ if site.Params.enableTOC }}
+    {{ if and site.Params.enableTOC ( .Params.enableTOC | default true ) }}
     <div class="toc-holder">
       <h5 class="text-center pl-3">{{ i18n "toc_heading" }}</h5>
       <hr>
@@ -207,7 +197,15 @@
 <script>
   hljs.initHighlightingOnLoad();
 </script>
+
+<!-------------- Enable Math support for this page  ---------------->
 {{ if .Params.math }}
     {{ partial "math.html" . }}
 {{ end }}
+
+<!-------------- Enable mermaid support for this page  ---------------->
+{{ if .Params.mermaid }}
+    {{ partial "mermaid.html" . }}
+{{ end }}
+
 {{ end }}

@@ -87,7 +87,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{i18n "more" }}</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {{ $sectionCount := 0 }}
+                {{ $sectionCount := 1 }}
                 {{ range sort $sections "section.weight" }}
                   {{ if and (.section.enable) (.section.showOnNavbar) }}
                     {{ $sectionCount  = add $sectionCount 1}}
@@ -115,9 +115,11 @@
           </li>
         {{ end }}
         {{ range $customMenus }}
-          <li class="nav-item">
-            <a class="nav-link" href="{{ .url }}">{{ .name }}</a>
-          </li>
+            {{ if (not .hideFromNavbar) }}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ .url }}">{{ .name }}</a>
+              </li>
+            {{ end }}
         {{ end }}
         {{ if .IsTranslated }}
           {{ partial "navigators/lang-selector.html" . }}

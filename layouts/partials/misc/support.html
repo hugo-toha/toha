@@ -1,0 +1,16 @@
+{{ with site.Params.features.support }}
+    {{ if .enabled }}
+        <!-- Enable Ko-Fi floating button -->
+        {{ with .kofi }}
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('{{ .user }}', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': '{{ .text }}',
+                'floating-chat.donateButton.text-color': '{{ .textColor }}',
+                'floating-chat.donateButton.background-color': '{{ .backgroundColor }}',
+            });
+            </script>
+        {{ end }}
+    {{ end }}
+{{ end }}

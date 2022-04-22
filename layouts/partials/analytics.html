@@ -1,0 +1,49 @@
+<!-- Add Analytics if enabled in configuration -->
+{{ with site.Params.features.analytics }}
+    {{ if .enabled }}
+        <!-- Google Analytics -->
+        {{ with .google }}
+            {{ $privacyConfig:= dict (slice "Site" "Config" "Privacy" "GoogleAnalytics") $.Site.Config.Privacy.GoogleAnalytics }}
+            {{ $analyticsConfig := dict (slice "Site" "GoogleAnalytics") .id }}
+            {{ template "_internal/google_analytics.html" (merge $privacyConfig $analyticsConfig) }}
+        {{ end }}
+
+        <!-- Counter.dev -->
+        {{ with .counterDev }}
+            <script>
+            if (
+                !sessionStorage.getItem("_swa") &&
+                document.referrer.indexOf(location.protocol + "//" + location.host) !== 0
+            ) {
+                fetch(
+                "https://counter.dev/track?" +
+                    new URLSearchParams({
+                    referrer: document.referrer,
+                    screen: screen.width + "x" + screen.height,
+                    user: "{{ .id }}",
+                    utcoffset: "1",
+                    }),
+		    {{ with .referrerPolicy }}
+			    { referrerPolicy: "{{ . }}" }
+		    {{ end }}
+                );
+            }
+            sessionStorage.setItem("_swa", "1");
+            </script>
+        {{ end }}
+
+        <!-- GoatCounter -->
+        {{ with .goatCounter }}
+            <script
+            data-goatcounter="https://{{ .code }}.goatcounter.com/count"
+            async
+            src="//gc.zgo.at/count.js"
+            ></script>
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+<!-- Keep backwards compatibility and consistency with HUGO defaults -->
+{{ if site.GoogleAnalytics }}
+    {{ template "_internal/google_analytics.html" . }}
+{{ end }}

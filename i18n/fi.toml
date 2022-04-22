@@ -1,0 +1,126 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Koti"
+
+[posts]
+other = "Artikkelit"
+
+[toc_heading]
+other = "Sisällysluettelo"
+
+[tags]
+other = "Tagit"
+
+[categories]
+other = "Kategoriat"
+
+[at]
+other = "at"
+
+[resume]
+other = "Ansioluetteloni"
+
+[navigation]
+other = "Navigointi"
+
+[contact_me]
+other = "Ota yhteyttä minuun:"
+
+[email]
+other = "Sähköposti"
+
+[phone]
+other = "Puhelin"
+
+[newsletter_text]
+other = "Pysy ajan tasalla tilaamalla sähköposti-ilmoitukset"
+
+[newsletter_input_placeholder]
+other = "Syötä sähköpostiosoite"
+
+[newsletter_warning]
+other = "Syöttämällä sähköpostin, hyväksyt että haluat vastaanottaa uutiskirjeen tältä sivustolta."
+
+[submit]
+other = "Lähetä"
+
+[hugoAttributionText]
+other = "Voimanlähteenä"
+
+[prev]
+other = "Edellinen"
+
+[next]
+other = "Seuraava"
+
+[share_on]
+other = "Jaa"
+
+[improve_this_page]
+other = "Paranna tätä sivua"
+
+[out_of]
+other = "out of"
+
+[publications]
+other = "Julkaisut"
+
+[taken_courses]
+other = "Käydyt kurssit"
+
+[course_name]
+other = "Kurssin nimi"
+
+[total_credit]
+other = "Opintopisteet yhteensä"
+
+[obtained_credit]
+other = "Saadut opintopisteet"
+
+[extracurricular_activities]
+other = "Opetusohjelman ulkopuolinen toiminta"
+
+[show_more]
+other = "Näytä lisää"
+
+[show_less]
+other = "Näytä vähemmän"
+
+[responsibilities]
+other = "Työtehtävät:"
+
+[present]
+other = "Tämä päivä"
+
+[comments_javascript]
+other = "Ole hyvä ja enabloi JavaScript katsoaksesi"
+
+[comments_by]
+other = "kommentit mahdollistavat"
+
+[read]
+other = "Lue"
+
+[project_star]
+other = "Tähti"
+
+[project_details]
+other = "Yksityiskohdat"
+
+[err_404]
+other = "Sivua jota etsit ei löydy."
+
+[more]
+other = "Lisää"
+
+[view_certificate]
+other = "Katso todistus"
+
+[notes]
+other = "Muistiinpanot"
+
+[disclaimer_text]
+other = "Vastuuilmoitus"
+
+[search]
+other = "Haku"
