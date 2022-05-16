@@ -106,7 +106,7 @@ jobs:
 
             # Set the "Type" field to appropriate option
             gh api graphql -f query='
-              mutation ($project: ID!, $item: ID!, $field: ID!, $opt_id: ID!) {
+              mutation ($project: ID!, $item: ID!, $field: ID!, $opt_id: String!) {
                 updateProjectNextItemField(input: {
                   projectId: $project
                   itemId: $item
@@ -136,7 +136,7 @@ jobs:
           fi
 
           gh api graphql -f query='
-            mutation ($project: ID!, $item: ID!, $field: ID!, $status_id: ID!) {
+            mutation ($project: ID!, $item: ID!, $field: ID!, $status_id: String!) {
               updateProjectNextItemField(input: {
                 projectId: $project
                 itemId: $item
