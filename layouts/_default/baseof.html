@@ -18,11 +18,6 @@
 
     <div class="container-fluid bg-dimmed wrapper">
 
-      <!-- INITIALIZE DARK THEME -->
-      {{ if site.Params.darkTheme.enable }}
-        {{ partial "helpers/darkmode.html" }}
-      {{ end }}
-
       <!----- ADD NAVBAR --------------->
       {{ block "navbar" . }} {{ end }}
 

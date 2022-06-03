@@ -47,6 +47,9 @@
       {{ if .IsTranslated }}
         {{ partial "navigators/lang-selector-2.html" . }}
       {{ end }}
+      {{ if site.Params.darkTheme.enable }}
+        {{ partial "navigators/theme-selector.html" . }}
+      {{ end }}
       </ul>
     </div>
   </div>
