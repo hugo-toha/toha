@@ -107,8 +107,8 @@ other = "Star"
 [project_details]
 other = "詳情"
 
-# [err_404]
-# other = "您訪問的頁面不存在"
+[err_404]
+other = "您訪問的頁面不存在"
 
 [more]
 other = "更多的"
