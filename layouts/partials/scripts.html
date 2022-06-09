@@ -6,8 +6,8 @@
 <script type="text/javascript" src="{{ "/js/plyr.js" | relURL }}"></script>
 <script type="text/javascript" src="{{ "/js/main.js" | relURL }}"></script>
 
-{{ if site.Params.darkTheme.enable }}
-{{ if eq site.Params.darkTheme.provider "darkreader" }}
+{{ if site.Params.darkMode.enable }}
+{{ if eq site.Params.darkMode.provider "darkreader" }}
 <script type="text/javascript" src="{{ "/js/darkreader.js" | relURL }}"></script>
 <script type="text/javascript" src="{{ "/js/darkmode-darkreader.js" | relURL }}"></script>
 {{ end }}

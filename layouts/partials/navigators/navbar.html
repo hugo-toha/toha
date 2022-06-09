@@ -124,7 +124,7 @@
         {{ if .IsTranslated }}
           {{ partial "navigators/lang-selector.html" . }}
         {{ end }}
-        {{ if site.Params.darkTheme.enable }}
+        {{ if site.Params.darkMode.enable }}
           {{ partial "navigators/theme-selector.html" . }}
         {{ end }}
       </ul>
