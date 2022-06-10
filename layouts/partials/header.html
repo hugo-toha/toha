@@ -15,6 +15,11 @@
 <!--=================== icons ==============================-->
 <link rel="stylesheet" href="{{ "/fontawesome/css/all.min.css" | relURL }}"/>
 
+<!--=================== dark mode ==========================-->
+{{ if site.Params.darkMode.enable }}
+<link rel="stylesheet" href="{{ "/css/colortheme/colortheme.css" | relURL }}"/>
+{{ end }}
+
 <!--================= fab-icon =========================-->
 {{/* add favicon only if the site author has provided the the favicon */}}
 {{ if site.Params.logo.favicon }}
