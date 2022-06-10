@@ -25,7 +25,7 @@ function useSystemTheme() {
   });
 }
 
-function initializeColorScheme() {
+function initializeColorTheme() {
   // We're using the themeInitialization attributes as a 'hack' for setting up
   // the default color scheme because we don't want to complicate this further
   // by creating custom javascript output in Hugo.
@@ -50,4 +50,4 @@ function initializeColorScheme() {
     enableLightTheme();
   }
 }
-initializeColorScheme()
+initializeColorTheme()
