@@ -1,7 +1,7 @@
 /* Note: No need to invert when the screen is small because the navbar is
    collapsed to a hamburger menu. */
 @media only screen and (min-width: 1200px) {
-  .navbar-icon-svg-dark {
+  .dynamic-navbar .navbar-icon-svg-dark {
     filter: invert(1);
   };
 }
