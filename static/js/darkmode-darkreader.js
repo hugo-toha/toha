@@ -1,28 +1,27 @@
 const DARK = "dark";
 const LIGHT = "light";
 const SYSTEM = "system";
+const COLOR_THEME = "color-theme";
+const DARK_OPTIONS = {
+  brightness: 100,
+  contrast: 100,
+  sepia: 0
+};
+const SVG_INVERT = {invert: ['img[src$=".svg"]']};
 
 function enableDarkTheme() {
-  localStorage.setItem('color-theme', DARK);
-  DarkReader.enable({
-      brightness: 100,
-      contrast: 100,
-      sepia: 0
-  });
+  localStorage.setItem(COLOR_THEME, DARK);
+  DarkReader.enable(DARK_OPTIONS, SVG_INVERT);
 }
 
 function enableLightTheme() {
-  localStorage.setItem('color-theme', LIGHT);
+  localStorage.setItem(COLOR_THEME, LIGHT);
   DarkReader.disable();
 }
 
 function useSystemTheme() {
-  localStorage.setItem('color-theme', SYSTEM);
-  DarkReader.auto({
-    brightness: 100,
-    contrast: 100,
-    sepia: 0
-  });
+  localStorage.setItem(COLOR_THEME, SYSTEM);
+  DarkReader.auto(DARK_OPTIONS, SVG_INVERT);
 }
 
 function initializeColorTheme() {
@@ -34,7 +33,7 @@ function initializeColorTheme() {
   // If the user has already selected a preferred theme then use that instead
   // of the default theme. Also, the default theme gets loaded to localStorage
   // on the first visit.
-  let colorTheme = localStorage.getItem('color-theme');
+  let colorTheme = localStorage.getItem(COLOR_THEME);
   if (colorTheme == null || colorTheme.length == 0) {
     colorTheme = defaultColorScheme;
   }
