@@ -1,0 +1,20 @@
+<li class="nav-item dropdown">
+<!-- This is for initializing the color scheme selection for new visitors. See /js/darkmode.js -->
+<div id="theme-initialization" style="display: none;"
+  default-theme="{{ site.Params.darkMode.default }}"></div>
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" src="{{ "/icons/moon-svgrepo-com.svg" }}" width=20>
+</a>
+<div class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  <a class="dropdown-item nav-link" href="#" onclick="enableLightTheme()">
+    <img class="menu-icon-center" src="{{ "/icons/sun-svgrepo-com.svg" }}" width=20>
+  </a>
+  <a class="dropdown-item nav-link" href="#" onclick="enableDarkTheme()">
+    <img class="menu-icon-center" src="{{ "/icons/moon-svgrepo-com.svg" }}" width=20>
+  </a>
+  <a class="dropdown-item nav-link" href="#" onclick="useSystemTheme()">
+    <img class="menu-icon-center" src="{{ "/icons/computer-svgrepo-com.svg" }}" width=20>
+  </a>
+</div>
+</li>
