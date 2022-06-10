@@ -3,10 +3,18 @@
 <div id="themeInitialization" style="display: none;"
     default-theme="{{ site.Params.darkMode.default }}"></div>
 <a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
-    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Theme</a>
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img src="{{ "/images/moon-svgrepo-com.svg" }}" width=20>
+</a>
 <div class="dropdown-menu" aria-labelledby="themeSelector">
-    <a class="dropdown-item nav-link" href="#" onclick="enableLightTheme()">Light</a>
-    <a class="dropdown-item nav-link" href="#" onclick="enableDarkTheme()">Dark</a>
-    <a class="dropdown-item nav-link" href="#" onclick="useSystemTheme()">System</a>
+    <a class="dropdown-item nav-link" href="#" onclick="enableLightTheme()">
+        <img src="{{ "/images/sun-svgrepo-com.svg" }}" width=20>
+    </a>
+    <a class="dropdown-item nav-link" href="#" onclick="enableDarkTheme()">
+        <img src="{{ "/images/moon-svgrepo-com.svg" }}" width=20>
+    </a>
+    <a class="dropdown-item nav-link" href="#" onclick="useSystemTheme()">
+        <img src="{{ "/images/computer-svgrepo-com.svg" }}" width=20>
+    </a>
 </div>
 </li>
