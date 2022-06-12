@@ -1,7 +1,9 @@
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     {{ $countryCode := partial "helpers/country-code.html" . }}
+    {{ if ne $countryCode nil  }}
     <span class="flag-icon flag-icon-{{$countryCode}}"></span>
+    {{ end }}
     {{ site.Language.LanguageName }}
 </a>
 <div class="dropdown-menu" aria-labelledby="languageSelector">
