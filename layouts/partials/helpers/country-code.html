@@ -20,5 +20,10 @@
     {{ end }}
 {{ end }}
 
+{{/*  if specified via "params.showFlags" field, then countryCode is set to be empty. */}}
+{{ if eq site.Params.showFlags false }}
+    {{ $countryCode = "" }}
+{{ end }}
+
 {{/*  return the country code  */}}
 {{ return $countryCode }}
