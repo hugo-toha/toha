@@ -145,6 +145,9 @@ params:
   # specify whether you want to show Table of Contents in reading page
   enableTOC: true
 
+  # specify whether you want the language flags to be displayed. 
+  showFlags: true
+
   # Provide newsletter configuration. 
   # This feature has been implemented for Mailchimp only for now.
   # You can also hide it from the footer.
