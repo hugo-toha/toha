@@ -12,7 +12,7 @@
 {{/*  don't use "background-image: url('{{ $achievementImageSm }}');" Otherwise the images won't show in https://themes.gohugo.io/ */}}
 <div 
   class="achievement-entry text-center"
-  style="background-image: url('{{ strings.TrimSuffix "/" site.BaseURL }}{{ $achievementImageSm }}');"
+  style="background-image: url('{{ $achievementImageSm }}');"
 >
   <i class="fas fa-search-plus" id="enlarge-icon"></i>
   <h4 class="title" id="achievement-title">{{ .title }}</h4>
@@ -20,6 +20,6 @@
     <h4>{{ .title }}</h4>
     <p>{{ .summary | markdownify }}</p>
   </div>
-  <span style="background-image: url('{{ strings.TrimSuffix "/" site.BaseURL }}{{ $achievementImageSm }}');" class="d-none" id="SmallImage" active="true"></span>
-<span  style="background-image: url('{{ strings.TrimSuffix "/" site.BaseURL }}{{ $achievementImageLg }}');" class="d-none" id="LargeImage"></span>
+  <span style="background-image: url('{{ $achievementImageSm }}');" class="d-none" id="SmallImage" active="true"></span>
+<span  style="background-image: url('{{ $achievementImageLg }}');" class="d-none" id="LargeImage"></span>
 </div>
