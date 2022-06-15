@@ -174,7 +174,7 @@ img.right {
   margin-right: 3px;
 }
 
-/* ====== codeblocks ====== */
+/* ====== table ====== */
 table {
   border-radius: 0.1rem;
   background: #e5e9f2;
@@ -204,6 +204,42 @@ tbody tr:nth-child(odd) {
 
 tbody tr:hover {
   background: #c0ccda;
+}
+
+/* ====== don't apply css to tables inside gist ====== */
+.gist table {
+  border-radius: unset;
+  background: unset;
+  border: unset;
+  padding: unset;
+}
+
+.gist table tr {
+  height: unset !important;
+}
+
+.gist table th,
+td {
+  padding: unset;
+  border-left: unset;
+  border-bottom: unset;
+}
+
+.gist table thead tr {
+  background: unset;
+  color: unset;
+}
+
+.gist tbody tr:nth-child(odd) {
+  background-color: unset;
+}
+
+.gist tbody tr:hover {
+  background: unset;
+}
+
+.gist table td, .gist table tc{
+  border-right: 1px solid #eee;
 }
 
 figure {
