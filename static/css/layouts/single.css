@@ -308,6 +308,8 @@ h6 {
   list-style-type: none;
   display: inline-block;
   background: #248aaa;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
 }
 
 .taxonomy-terms a {
