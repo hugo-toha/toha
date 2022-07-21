@@ -1,0 +1,126 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Anasayfa"
+
+[posts]
+other = "Gönderiler"
+
+[toc_heading]
+other = "İçerik Tablous"
+
+[tags]
+other = "Etiketler"
+
+[categories]
+other = "Kategoriler"
+
+[at]
+other = ","
+
+[resume]
+other = "Özgeçmişim"
+
+[navigation]
+other = "Menü"
+
+[contact_me]
+other = "İletişime geç:"
+
+[email]
+other = "E-Posta"
+
+[phone]
+other = "Telefon"
+
+[newsletter_text]
+other = "Yeni içeriklerden haberdar olmak için E-Posta adresinizi giriniz."
+
+[newsletter_input_placeholder]
+other = "E-Posta adresi giriniz."
+
+[newsletter_warning]
+other = "E-Posta adresini girerseniz, bu web sitesinin haber bültenini almayı kabul ediyorsunuz."
+
+[submit]
+other = "Onayla"
+
+[hugoAttributionText]
+other = ""
+
+[prev]
+other = "Önceki"
+
+[next]
+other = "Sonraki"
+
+[share_on]
+other = "Paylaş"
+
+[improve_this_page]
+other = "Bu sayfaya katkıda bulunun"
+
+[out_of]
+other = "/"
+
+[publications]
+other = "Akademik Yayınlar"
+
+[taken_courses]
+other = "Alınan Dersler"
+
+[course_name]
+other = "Ders Adı"
+
+[total_credit]
+other = "Üzerinden"
+
+[obtained_credit]
+other = "Alınan Not"
+
+[extracurricular_activities]
+other = "Ders Dışı Aktiviteler"
+
+[show_more]
+other = "Devamını Göster"
+
+[show_less]
+other = "Gizle"
+
+[responsibilities]
+other = "Sorumluluklar:"
+
+[present]
+other = "Halen"
+
+[comments_javascript]
+other = "Görüntüleyebilmek için lüften Javascript etkinleştirin"
+
+[comments_by]
+other = "comments powered by"
+
+[read]
+other = "Oku"
+
+[project_star]
+other = "Star"
+
+[project_details]
+other = "Detaylar"
+
+[err_404]
+other = "Aradığınız sayfa bulunmamakta."
+
+[more]
+other = "Devamını Göster"
+
+[view_certificate]
+other = "Sertifikayı Görüntüle"
+
+[notes]
+other = "Notlar"
+
+[disclaimer_text]
+other = "Yükümlülük Bildirisi"
+
+[search]
+other = "Ara"
