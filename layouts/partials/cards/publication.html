@@ -1,0 +1,39 @@
+{{ $dataCategories:= slice "pub-all"}}
+{{ range .categories}}
+  {{ $dataCategories = $dataCategories | append (printf "pub-%s" .)}}
+{{end}}
+
+<div
+  class="col-12 p-2 pub-filtr-item"
+  data-category='{{ delimit $dataCategories ","}}'
+>
+  <div class="card mt-3">
+    <div class="card-header">
+      <h5 class="card-title mb-0">{{ .title }}</h5>
+      <div class="sub-title">
+        <span><a class="" href="{{.publishedIn.url}}">{{ .publishedIn.name }}</a></span>
+        <span class="ml-2">{{ .publishedIn.date }}</span>
+      </div>
+      <div class="authors">
+        {{ range $index,$author:= .authors }}
+          <span class="mr-2"><a class="" href="{{.url}}">{{ .name }}</a></span>
+        {{ end }}
+      </div>
+    </div>
+    <div class="card-body">
+      <p>{{ .paper.summary | markdownify }}</p>
+    </div>
+    <div class="card-footer">
+      <div class="tags">
+        {{ range $index,$tag:= .tags }}
+            <span class="btn badge btn-info ml-1 p-2">
+              {{ $tag }}
+            </span>
+        {{ end }}
+      </div>
+      <div class="details-btn">
+        <a class="btn btn-outline-info ml-1 pl-2 mb-2" href="{{ .paper.url }}" target="_blank" rel="noopener" role="button">{{ i18n "project_details"}}</a>
+      </div>
+    </div>
+  </div>
+</div>
