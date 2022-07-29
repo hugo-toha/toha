@@ -19,6 +19,9 @@
   <div class="caption hidden col-lg-6 text-left" id="caption">
     <h4>{{ .title }}</h4>
     <p>{{ .summary | markdownify }}</p>
+    {{ if .url }}
+      <a class="btn btn-info ml-1 pl-2 mb-2" href="{{ .url }}" target="_blank" rel="noopener" role="button">{{ i18n "project_details"}}</a>
+    {{ end }}
   </div>
   <span style="background-image: url('{{ $achievementImageSm }}');" class="d-none" id="SmallImage" active="true"></span>
 <span  style="background-image: url('{{ $achievementImageLg }}');" class="d-none" id="LargeImage"></span>
