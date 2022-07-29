@@ -48,6 +48,9 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
+.publications-section .card .card-footer .tags .badge {
+  cursor: auto;
+}
 
 .filtr-publications {
   padding: 1rem !important;
