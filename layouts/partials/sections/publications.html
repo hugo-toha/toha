@@ -3,7 +3,7 @@
   {{ $sectionID = .section.id }}
 {{ end }}
 
-<div class="container-fluid anchor pb-5 projects-section" id="{{ $sectionID }}">
+<div class="container-fluid anchor pb-5 publications-section" id="{{ $sectionID }}">
   {{ if not (.section.hideTitle) }}
     <h1 class="text-center">
         <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
@@ -12,18 +12,18 @@
         <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
   {{ end }}
   <div class="container ml-auto text-center">
-    <div class="btn-group flex-wrap" role="group" id="project-filter-buttons">
+    <div class="btn-group flex-wrap" role="pub-group" id="publication-filter-buttons">
       {{ range .buttons }}
-      <button type="button" class="btn btn-dark project-filtr-control" data-filter="{{ .filter }}">
+      <button type="button" class="btn btn-dark pub-filtr-control" data-filter="pub-{{ .filter }}">
         {{ .name }}
       </button>
       {{ end }}
     </div>
   </div>
-  <div class="container filtr-projects">
-    <div class="row" id="project-card-holder">
-      {{ range .projects }}
-        {{ partial "cards/project" . }}
+  <div class="container filtr-publications">
+    <div class="row" id="publication-card-holder">
+      {{ range .publications }}
+        {{ partial "cards/publication" . }}
       {{ end }}
     </div>
   </div>
