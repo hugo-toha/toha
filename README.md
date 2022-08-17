@@ -34,6 +34,7 @@ A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist desi
   - GoatCounter
   - counter.dev
   - Google Analytics
+  - Matomo/Piwik
 - Comment Support
   - [Disqus](https://disqus.com/)
   - [Valine](https://valine.js.org/)
