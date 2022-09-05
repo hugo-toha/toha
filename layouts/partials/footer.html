@@ -115,6 +115,20 @@
                 <li><a href={{ printf "https://github.com/%s" $value }} target="_blank" rel="noopener">
                   <span><i class="fab fa-github"></i></span> <span>{{ $value }}</span>
                 </a></li>
+              {{ else if reflect.IsMap $value }}
+                <li>
+                  {{ if (and (isset $value "url") (isset $value "icon"))}}
+                  <a href={{ $value.url }} target="_blank" rel="noopener">
+                    <span><i class={{ printf "fab fa-%s" $value.icon }}></i></span> <span>{{ $value.text }}</span>
+                  </a>
+                  {{ else if isset $value "icon" }}
+                    <span><i class={{ printf "fab fa-%s" $value.icon }}></i></span> <span>{{ $value.text }}</span>
+                  {{ else }}
+                    <a href={{ $value.url }} target="_blank" rel="noopener">
+                      <span>{{ title $key }}: </span> <span>{{ $value.text }}</span>
+                    </a>
+                  {{ end }}
+                </li>
               {{ else }}
                 <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
               {{ end }}
