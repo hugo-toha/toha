@@ -246,13 +246,14 @@ Here is the check list for portfolio mode,
 
 - [ ] **Publications**
 
-  - [ ] Category Filter
-  - [ ] Card
-  - [ ] Abstract
-  - [ ] Authors
-  - [ ] Tags
-  - [ ] Links
-  - [ ] Gallery
+  - [x] Category Filter
+  - [x] Card
+  - [x] Tags
+  - [x] Links
+  - [ ] Dedicated Page
+    - [ ] Abstract
+    - [ ] Authors
+    - [ ] Gallery
 
 - [x] **Accomplishment / Courses**
 
