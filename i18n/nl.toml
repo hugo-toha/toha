@@ -1,11 +1,11 @@
 [home]
-other = "Startseite"
+other = "Hoofdpagina"
 
 [posts]
-other = "Beiträge"
+other = "Posts"
 
 [toc_heading]
-other = "Inhaltsverzeichnis"
+other = "Inhoudsopgave"
 
 [tags]
 other = "Tags"
@@ -14,49 +14,49 @@ other = "Tags"
 other = "Categorieën"
 
 [at]
-other = "bei"
+other = "bij"
 
 [resume]
-other = "Mein Lebenslauf"
+other = "Curriculum Vitae"
 
 [navigation]
-other = "Navigation"
+other = "Navigatie"
 
 [contact_me]
-other = "Kontakt aufnehmen"
+other = "Contactgegevens"
 
 [email]
 other = "E-Mail"
 
 [phone]
-other = "Telefon"
+other = "Telefoon"
 
 [newsletter_text]
-other = "Mit dem Newsletter auf dem neuesten Stand bleiben"
+other = "Ontvang updates via email"
 
 [newsletter_input_placeholder]
-other = "E-Mail-Adresse eingeben"
+other = "Email ingeven"
 
 [newsletter_warning]
 other = "Door uw e-mailadres in te voeren, gaat u akkoord met het ontvangen van de nieuwsbrief van deze website."
 
 [submit]
-other = "Absenden"
+other = "Opslaan"
 
 [hugoAttributionText]
-other = "Unterstützt von"
+other = "Mogelijk gemaakt met"
 
 [prev]
-other = "Vorherige"
+other = "Vorige"
 
 [next]
-other = "Nächste"
+other = "Volgende"
 
-# [share_on]
-# other = "Share on"
+[share_on]
+other = "Delen op"
 
 [improve_this_page]
-other = "Diese Seite verbessern"
+other = "Deze pagina verbeteren"
 
 [out_of]
 other = "van de"
@@ -65,7 +65,7 @@ other = "van de"
 other = "Publicaties"
 
 [taken_courses]
-other = "Cursussen gevolgd"
+other = "Gevolgde cursussen"
 
 [course_name]
 other = "Cursus naam"
@@ -85,11 +85,11 @@ other = "Bekijk meer"
 [show_less]
 other = "Laat minder zien"
 
-# [responsibilities]
-# other = "Responsibilities:"
+[responsibilities]
+other = "Verantwoordelijkheden:"
 
-# [present]
-# other = "Present"
+[present]
+other = "Heden"
 
 # [comments_javascript]
 # other = "Please enable JavaScript to view the"
@@ -103,11 +103,11 @@ other = "Laat minder zien"
 # [project_star]
 # other = "Star"
 
-# [project_details]
-# other = "Details"
+[project_details]
+other = "Details"
 
-# [err_404]
-# other = "The page you are looking for is not there yet."
+[err_404]
+other = "De pagina waar je voor zoekt bestaat nog niet."
 
 [more]
 other = "Meer"
@@ -119,6 +119,7 @@ other = "Bekijk certificaat"
 other = "Opmerkingen"
 
 [disclaimer_text]
-other = "Haftungshinweis"
+other = "Aansprakelijkheidsverklaring"
+
 [search]
-other = "Zoekopdracht"
+other = "Zoek"
