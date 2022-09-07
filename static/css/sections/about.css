@@ -83,6 +83,7 @@
 .circular-progress .circular-progress-value {
   width: 90%;
   height: 90%;
+  padding: 1rem;
   border-radius: 50%;
   background: #3c4858;
   font-size: 1rem;
