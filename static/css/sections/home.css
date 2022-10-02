@@ -19,7 +19,7 @@
 }
 
 /*
-  Resolves https://github.com/hossainemruz/toha/issues/70
+  Resolves https://github.com/hugo-toha/toha/issues/70
 
   fixed attached images use the whole <body> size. On mobile this can get really
   tall which blows your image out. Setting the attachment back to scroll allows
