@@ -6,8 +6,8 @@ title: 'Feature Request'
 
 <!---
 Before filing an issue, please review the following:
-  Existing Features: https://github.com/hossainemruz/toha#features
-  Project Roadmap: https://github.com/hossainemruz/toha#project-roadmap
+  Existing Features: https://github.com/hugo-toha/toha#features
+  Project Roadmap: https://github.com/hugo-toha/toha#project-roadmap
 -->
 
 ### Describe the solution you'd like
