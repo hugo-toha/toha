@@ -438,7 +438,6 @@ h6 {
   .toc-section {
     order: 2;
     width: 100%;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     max-height: 0;
@@ -451,7 +450,6 @@ h6 {
     position: relative;
     /* height: fit-content; */
     flex: 100%;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     max-height: 200vh;
