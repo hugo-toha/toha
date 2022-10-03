@@ -67,7 +67,6 @@
 }
 
 .paginator {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
@@ -91,7 +90,6 @@
   margin-right: auto;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }

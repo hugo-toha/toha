@@ -244,10 +244,8 @@ td {
 
 figure {
   border: 1px solid #c0ccda;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   align-self: center;
@@ -312,7 +310,6 @@ mark {
 
 /* ======= Paginator ========= */
 .paginator {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
