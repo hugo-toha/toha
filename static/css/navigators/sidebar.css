@@ -25,7 +25,6 @@
 .sidebar-tree {
   padding-left: 1rem;
   position: relative;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
@@ -247,7 +246,6 @@ a.focused {
   .sidebar-section.hide {
     margin-top: 2rem;
     position: relative;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     flex: none;
@@ -258,7 +256,6 @@ a.focused {
 
   .sidebar-holder {
     max-height: 0;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     overflow: hidden;
@@ -273,10 +270,8 @@ a.focused {
 
   .sidebar {
     position: relative;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    max-height: -webkit-fit-content;
     max-height: -moz-fit-content;
     max-height: fit-content;
     width: 100vw;
