@@ -18,6 +18,11 @@
   background-size: cover;
 }
 
+.arrow-center {
+  display: flex;
+  justify-content: center;
+}
+
 /*
   Resolves https://github.com/hugo-toha/toha/issues/70
 
