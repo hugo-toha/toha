@@ -1,0 +1,126 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Início"
+
+[posts]
+other = "Artigos"
+
+[toc_heading]
+other = "Tabela de conteúdos"
+
+[tags]
+other = "Etiquetas"
+
+[categories]
+other = "Categorias"
+
+[at]
+other = "em"
+
+[resume]
+other = "O meu Currículo"
+
+[navigation]
+other = "Navegação"
+
+[contact_me]
+other = "Contacte-me:"
+
+[email]
+other = "Email"
+
+[phone]
+other = "Telefone"
+
+[newsletter_text]
+other = "Mantenha-se actualizado com notificações por email"
+
+[newsletter_input_placeholder]
+other = "Inserir email"
+
+[newsletter_warning]
+other = "Ao submeter o seu endereço de email, concorda em receber a newsletter deste website."
+
+[submit]
+other = "Enviar"
+
+[hugoAttributionText]
+other = "Desenvolvido por"
+
+[prev]
+other = "Anterior"
+
+[next]
+other = "Próximo"
+
+[share_on]
+other = "Partilha"
+
+[improve_this_page]
+other = "Melhore esta página"
+
+[out_of]
+other = "de"
+
+[publications]
+other = "Publicações"
+
+[taken_courses]
+other = "Cursos frequentados"
+
+[course_name]
+other = "Nome do Curso"
+
+[total_credit]
+other = "Créditos Totais"
+
+[obtained_credit]
+other = "Créditos Obtidos"
+
+[extracurricular_activities]
+other = "Actividades Extracurriculares"
+
+[show_more]
+other = "Ver Mais"
+
+[show_less]
+other = "Ver Menos"
+
+[responsibilities]
+other = "Responsabilidades:"
+
+[present]
+other = "Presente"
+
+[comments_javascript]
+other = "Por favor active JavaScript para ver o"
+
+[comments_by]
+other = "comentários por"
+
+[read]
+other = "Ler"
+
+[project_star]
+other = "Star"
+
+[project_details]
+other = "Detalhes"
+
+[err_404]
+other = "A página que procura ainda não está aqui."
+
+[more]
+other = "Mais"
+
+[view_certificate]
+other = "Ver Certificado"
+
+[notes]
+other = "Notas"
+
+[disclaimer_text]
+other = "Nota legal"
+
+[search]
+other = "Pesquisar"
