@@ -3,7 +3,7 @@
 
 {{/*  if hero image is specified in the page front-matter, then use that  */}}
 {{ if .Params.hero }}
-  {{ $heroImage = .Page.Resources.GetMatch .Params.hero }}
+  {{ $heroImage = resources.Get .Params.hero }}
 {{ end }}
 {{ .Scratch.Set "heroScratch" $heroImage }}
 
