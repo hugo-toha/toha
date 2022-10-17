@@ -7,12 +7,19 @@
 <link rel="stylesheet" href="{{ "/css/layouts/main.css" | relURL }}"/>
 <link rel="stylesheet" href="{{ "/css/navigators/navbar.css" | relURL }}"/>
 <link rel="stylesheet" href="{{ "/css/plyr.css" | relURL }}"/>
+{{ if ne site.Params.showFlags false }}
 <link rel="stylesheet" href="{{ "/css/flag-icon.min.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/css/katex.min.css" | relURL }}">
+{{ end }}
+<!--=================== fonts ==============================-->
+<link rel="stylesheet" href="{{ "/google-fonts/Mulish/mulish.css" | relURL }}"/>
 
-<!--=================== cdn ==============================-->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+<!--=================== icons ==============================-->
+<link rel="stylesheet" href="{{ "/fontawesome/css/all.min.css" | relURL }}"/>
+
+<!--=================== dark mode ==========================-->
+{{ if site.Params.darkMode.enable }}
+<link rel="stylesheet" href="{{ "/css/colortheme/colortheme.css" | relURL }}"/>
+{{ end }}
 
 <!--================= fab-icon =========================-->
 {{/* add favicon only if the site author has provided the the favicon */}}

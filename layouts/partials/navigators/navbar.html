@@ -66,7 +66,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="top-nav-items">
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="#home">{{ i18n "home" }}</a>
@@ -123,6 +123,9 @@
         {{ end }}
         {{ if .IsTranslated }}
           {{ partial "navigators/lang-selector.html" . }}
+        {{ end }}
+        {{ if site.Params.darkMode.enable }}
+          {{ partial "navigators/theme-selector.html" . }}
         {{ end }}
       </ul>
     </div>

@@ -37,7 +37,6 @@ body {
 }
 
 .toc-holder {
-  position: -webkit-sticky;
   position: sticky;
   top: 4.5rem;
   overflow-x: hidden;
@@ -308,6 +307,8 @@ h6 {
   list-style-type: none;
   display: inline-block;
   background: #248aaa;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
 }
 
 .taxonomy-terms a {
@@ -437,7 +438,6 @@ h6 {
   .toc-section {
     order: 2;
     width: 100%;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     max-height: 0;
@@ -450,7 +450,6 @@ h6 {
     position: relative;
     /* height: fit-content; */
     flex: 100%;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     max-height: 200vh;

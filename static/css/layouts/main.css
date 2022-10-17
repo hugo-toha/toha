@@ -174,7 +174,7 @@ img.right {
   margin-right: 3px;
 }
 
-/* ====== codeblocks ====== */
+/* ====== table ====== */
 table {
   border-radius: 0.1rem;
   background: #e5e9f2;
@@ -206,12 +206,46 @@ tbody tr:hover {
   background: #c0ccda;
 }
 
+/* ====== don't apply css to tables inside gist ====== */
+.gist table {
+  border-radius: unset;
+  background: unset;
+  border: unset;
+  padding: unset;
+}
+
+.gist table tr {
+  height: unset !important;
+}
+
+.gist table th,
+td {
+  padding: unset;
+  border-left: unset;
+  border-bottom: unset;
+}
+
+.gist table thead tr {
+  background: unset;
+  color: unset;
+}
+
+.gist tbody tr:nth-child(odd) {
+  background-color: unset;
+}
+
+.gist tbody tr:hover {
+  background: unset;
+}
+
+.gist table td, .gist table tc{
+  border-right: 1px solid #eee;
+}
+
 figure {
   border: 1px solid #c0ccda;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   align-self: center;
@@ -276,7 +310,6 @@ mark {
 
 /* ======= Paginator ========= */
 .paginator {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
@@ -408,7 +441,8 @@ mark {
 
 @media only screen and (max-width: 576px) {
   .skills-section .container,
-  .projects-section .container {
+  .projects-section .container,
+  .publications-section .container {
     padding-left: 0.3rem;
     padding-right: 0.3rem;
   }
@@ -421,7 +455,8 @@ mark {
   .skills-section,
   .projects-section,
   .recent-posts-section,
-  .achievements-section {
+  .achievements-section,
+  .publications-section {
     padding-left: 0;
     padding-right: 0;
   }

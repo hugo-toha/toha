@@ -86,29 +86,29 @@ other = "查看更多"
 [show_less]
 other = "顯示較少"
 
-# [responsibilities]
-# other = "Responsibilities:"
+[responsibilities]
+other = "職責:"
 
-# [present]
-# other = "Present"
+[present]
+other = "現在"
 
-# [comments_javascript]
-# other = "Please enable JavaScript to view the"
+[comments_javascript]
+other = "請開啟 JavaScript 查看"
 
-# [comments_by]
-# other = "comments powered by"
+[comments_by]
+other = "評論由"
 
-# [read]
-# other = "Read"
+[read]
+other = "閱讀"
 
-# [project_star]
-# other = "Star"
+[project_star]
+other = "Star"
 
-# [project_details]
-# other = "Details"
+[project_details]
+other = "詳情"
 
-# [err_404]
-# other = "The page you are looking for is not there yet."
+[err_404]
+other = "您訪問的頁面不存在"
 
 [more]
 other = "更多的"
@@ -121,3 +121,6 @@ other = "筆記"
 
 [disclaimer_text]
 other = "免責聲明"
+
+[search]
+other = "搜索"

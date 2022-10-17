@@ -121,3 +121,6 @@ other = "Ноты"
 
 [disclaimer_text]
 other = "Уведомление об ответственности"
+
+[search]
+other = "Поиск"

@@ -72,10 +72,10 @@ other = "Belegte Kurse"
 other = "Kursname"
 
 [total_credit]
-other = "Gesamtguthaben"
+other = "Mögliche Punktzahl"
 
 [obtained_credit]
-other = "Erhaltenes Guthaben"
+other = "Note"
 
 [extracurricular_activities]
 other = "Außerschulische Aktivitäten"
@@ -108,7 +108,7 @@ other = "Star"
 other = "Details"
 
 [err_404]
-other = "Die Seite nach der Seite ist noch nicht vorhanden."
+other = "Die von Ihnen gesuchte Seite ist noch nicht vorhanden."
 
 [more]
 other = "Mehr"
@@ -121,3 +121,6 @@ other = "Notizen"
 
 [disclaimer_text]
 other = "Haftungshinweis"
+
+[search]
+other = "Suche"

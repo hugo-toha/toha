@@ -77,28 +77,27 @@
   <style>
     /* 0 to 299 */
     #homePageBackgroundImageDivStyled {
-      /*background-image: url('{{ $tiny.RelPermalink }}'); This does not work on https://themes.gohugo.io/ */
-      background-image: url('{{ strings.TrimSuffix "/" site.BaseURL }}{{ $tiny.RelPermalink }}');
+      background-image: url('{{ $tiny.RelPermalink }}');
     }
     /* 300 to X */
     @media (min-width: 500px) and (max-width: 800px) { /* or 301 if you want really the same as previously.  */
       #homePageBackgroundImageDivStyled {   
-          background-image: url('{{ strings.TrimSuffix "/" site.BaseURL }}{{ $small.RelPermalink }}');
+          background-image: url('{{ $small.RelPermalink }}');
         }
     }
     @media (min-width: 801px) and (max-width: 1200px) { /* or 301 if you want really the same as previously.  */
       #homePageBackgroundImageDivStyled {   
-          background-image: url('{{ strings.TrimSuffix "/" site.BaseURL }}{{ $medium.RelPermalink }}');
+          background-image: url('{{ $medium.RelPermalink }}');
         }
     }
     @media (min-width: 1201px) and (max-width: 1500px) { /* or 301 if you want really the same as previously.  */
       #homePageBackgroundImageDivStyled {   
-          background-image: url('{{ strings.TrimSuffix "/" site.BaseURL }}{{ $large.RelPermalink }}');
+          background-image: url('{{ $large.RelPermalink }}');
         }
     }
     @media (min-width: 1501px) { /* or 301 if you want really the same as previously.  */
       #homePageBackgroundImageDivStyled {   
-          background-image: url('{{ strings.TrimSuffix "/" site.BaseURL }}{{ $src.RelPermalink }}');
+          background-image: url('{{ $src.RelPermalink }}');
         }
     }
     </style>
@@ -133,7 +132,7 @@
         {{ if .section.id }}
           {{ $sectionID = .section.id }}
         {{ end }}
-        <a href="#{{ $sectionID }}" aria-label="{{ i18n "read" }} {{ i18n "more" }} - {{ $name }}"><i class="arrow bounce fa fa-chevron-down"></i></a>
+        <a href="#{{ $sectionID }}" class="arrow-center" aria-label="{{ i18n "read" }} {{ i18n "more" }} - {{ $name }}"><i class="arrow bounce fa fa-chevron-down"></i></a>
       {{ end }}
     {{ end }}
   </div>

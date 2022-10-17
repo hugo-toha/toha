@@ -1,0 +1,67 @@
+<!-- Add Analytics if enabled in configuration -->
+{{ with site.Params.features.analytics }}
+    {{ if .enabled }}
+        <!-- Google Analytics -->
+        {{ with .google }}
+            {{ $privacyConfig:= dict (slice "Site" "Config" "Privacy" "GoogleAnalytics") $.Site.Config.Privacy.GoogleAnalytics }}
+            {{ $analyticsConfig := dict (slice "Site" "GoogleAnalytics") .id }}
+            {{ template "_internal/google_analytics.html" (merge $privacyConfig $analyticsConfig) }}
+        {{ end }}
+
+        <!-- Counter.dev -->
+        {{ with .counterDev }}
+            <script>
+            if (
+                !sessionStorage.getItem("_swa") &&
+                document.referrer.indexOf(location.protocol + "//" + location.host) !== 0
+            ) {
+                fetch(
+                "https://counter.dev/track?" +
+                    new URLSearchParams({
+                    referrer: document.referrer,
+                    screen: screen.width + "x" + screen.height,
+                    user: "{{ .id }}",
+                    utcoffset: "1",
+                    }),
+		    {{ with .referrerPolicy }}
+			    { referrerPolicy: "{{ . }}" }
+		    {{ end }}
+                );
+            }
+            sessionStorage.setItem("_swa", "1");
+            </script>
+        {{ end }}
+
+        <!-- GoatCounter -->
+        {{ with .goatCounter }}
+            <script
+            data-goatcounter="https://{{ .code }}.goatcounter.com/count"
+            async
+            src="//gc.zgo.at/count.js"
+            ></script>
+        {{ end }}
+
+        <!-- Piwik/Matomo -->
+        {{ with .matomo }}
+        <!-- Matomo -->
+            <script>
+            var _paq = window._paq = window._paq || [];
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u="//{{ .instance }}/";
+                _paq.push(['setTrackerUrl', u+'matomo.php']);
+                _paq.push(['setSiteId', '{{ .siteId }}']);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+            })();
+            </script>
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+<!-- Keep backwards compatibility and consistency with HUGO defaults -->
+{{ if site.GoogleAnalytics }}
+    {{ template "_internal/google_analytics.html" . }}
+{{ end }}
