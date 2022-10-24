@@ -16,7 +16,7 @@ jobs:
 
     # install Hugo
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2.5.0
+      uses: peaceiris/actions-hugo@v2.6.0
       with:
         hugo-version: 'latest'
         extended: true
