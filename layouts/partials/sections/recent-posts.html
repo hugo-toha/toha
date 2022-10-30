@@ -24,4 +24,13 @@
       {{ end }}
     </div>
   </div>
+  {{ if (.section.showMoreButton) }}
+  <div class="container" style="
+  display: flex;
+  align-items: center;
+  justify-content: center;">
+    <a href="/posts/" title="Show More" class="float-right btn btn-outline-info btn-sm" >
+    {{ i18n "show_more"}}</a>
+  </div>
+  {{ end }}
 </div>
