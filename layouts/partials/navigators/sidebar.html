@@ -17,6 +17,6 @@
     </li>
   {{ else }}
     <!-- No sub-tree. So, only add current entry -->
-    <li><a class="{{$class}}" href="{{ .URL }}" title="{{ .Name }}">{{.Name}}</a></li>
+    <li><a class="{{$class}}" href="{{ .PageRef | default .URL }}" title="{{ .Name }}">{{.Name}}</a></li>
   {{ end }}
 {{ end }}
