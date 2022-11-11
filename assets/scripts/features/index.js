@@ -17,3 +17,7 @@ if (process.env.FEATURE_FLOWCHART) {
 if (process.env.FEATURE_SYNTAXHIGHLIGHT) {
   import('./syntaxhighlight');
 }
+
+if (process.env.FEATURE_MATH) {
+  import('./math');
+}

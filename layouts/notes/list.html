@@ -57,7 +57,7 @@
 {{ end }}
 
 {{ define "scripts" }}
-  {{ if .Params.math }}
+  {{ if site.Params.features.math.enable }}
       {{ partial "math.html" . }}
   {{ end }}
 {{ end }}

@@ -193,7 +193,7 @@
 
 {{ define "scripts" }}
 <!-------------- Enable Math support for this page  ---------------->
-{{ if .Params.math }}
+{{ if site.Params.features.math.enable }}
     {{ partial "math.html" . }}
 {{ end }}
 
