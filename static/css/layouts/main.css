@@ -13,16 +13,29 @@ Green:   #2DCA73
 Yellow:  #FFC212
 */
 
+/* 
+  Removed smooth scrolling implementation in main.js in favor of
+  simpler css approach.
+  See: https://css-tricks.com/snippets/jquery/smooth-scrolling/ 
+*/
+*, html {
+  scroll-behavior: smooth !important;
+}
+
+/*
+Fixes anchor overlapping with header.
+See: https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors 
+*/
+:target::before {
+  content: "";
+  display: block;
+  height: 2em; /* fixed header height*/
+  margin: -2em 0 0; /* negative fixed header height */
+}
+
 body {
   background-color: #f9fafc;
   font-family: "Muli";
-
-  /* 
-    Removed smooth scrolling implementation in main.js in favor of
-    simpler css approach.
-    See: https://css-tricks.com/snippets/jquery/smooth-scrolling/ 
-  */
-  scroll-behavior: smooth;
 }
 
 h1,
@@ -283,13 +296,13 @@ a.header-anchor {
   color: #1c2d41;
 }
 
-a.header-anchor i {
+a.header-anchor i, a.header-anchor svg {
   font-size: 10pt;
   color: #3c4858;
   display: none;
   margin-left: 0.5rem;
 }
-a.header-anchor:hover i {
+a.header-anchor:hover i, a.header-anchor:hover svg {
   display: inline-block;
 }
 a.header-anchor code {

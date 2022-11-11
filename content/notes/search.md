@@ -41,7 +41,7 @@ i.e. add `category`
 \```
 
 ### Edit fuse.js options to Search
-`static/js/search.js`
+`assets/scripts/pages/search.js`
 \```
 keys: [
   "title",
