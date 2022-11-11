@@ -47,7 +47,7 @@
       {{ if .IsTranslated }}
         {{ partial "navigators/lang-selector-2.html" . }}
       {{ end }}
-      {{ if site.Params.darkMode.enable }}
+      {{ if site.Params.features.darkMode.enable }}
         {{ partial "navigators/theme-selector.html" . }}
       {{ end }}
       </ul>

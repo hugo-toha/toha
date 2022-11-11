@@ -5,3 +5,7 @@ if (process.env.FEATURE_VIDEOPLAYER) {
 if (process.env.FEATURE_TOC) {
   import('./toc');
 }
+
+if (process.env.FEATURE_DARKMODE) {
+  import('./darkmode');
+}
