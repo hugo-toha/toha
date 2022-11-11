@@ -13,3 +13,7 @@ if (process.env.FEATURE_DARKMODE) {
 if (process.env.FEATURE_FLOWCHART) {
   import('./flowchart');
 }
+
+if (process.env.FEATURE_SYNTAXHIGHLIGHT) {
+  import('./syntaxhighlight');
+}

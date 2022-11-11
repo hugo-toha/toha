@@ -192,11 +192,6 @@
 {{ end }}
 
 {{ define "scripts" }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-
 <!-------------- Enable Math support for this page  ---------------->
 {{ if .Params.math }}
     {{ partial "math.html" . }}
