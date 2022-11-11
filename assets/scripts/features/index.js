@@ -9,3 +9,7 @@ if (process.env.FEATURE_TOC) {
 if (process.env.FEATURE_DARKMODE) {
   import('./darkmode');
 }
+
+if (process.env.FEATURE_FLOWCHART) {
+  import('./flowchart');
+}

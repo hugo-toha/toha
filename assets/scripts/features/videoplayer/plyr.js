@@ -1,5 +1,5 @@
 import Plyr from 'plyr';
-import { videoplayer } from '@params';
+import * as params from '@params';
 
-const { plyr: options } = videoplayer;
+const options = params.videoplayer?.plyr;
 window.addEventListener('DOMContentLoaded', () => Plyr.setup('.js-player', options));
