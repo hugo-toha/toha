@@ -179,7 +179,7 @@
 
 {{ define "toc" }}
   <section class="toc-section" id="toc-section">
-    {{ if and site.Params.enableTOC ( .Params.enableTOC | default true ) }}
+    {{ if and site.Params.features.toc.enable ( .Params.enableTOC | default true ) }}
     <div class="toc-holder">
       <h5 class="text-center pl-3">{{ i18n "toc_heading" }}</h5>
       <hr>

@@ -49,9 +49,6 @@ var isMobile = false, isTablet = false, isLaptop = false;
     elems = toc.getElementsByTagName("li");
     for (let i = 0; i < elems.length; i++) {
       elems[i].classList.add("nav-item");
-      if (isMobile) {
-        elems[i].setAttribute("onclick", "toggleTOC()");
-      }
     }
     // add "nav-link" class to the "a" elements
     elems = toc.getElementsByTagName("a");
