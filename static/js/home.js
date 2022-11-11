@@ -24,45 +24,6 @@ var projectCards, publicationCards;
     }
     detectDevice();
 
-    // =========== Typing Carousel ================
-    // get data from hidden ul and set as typing data
-    if (document.getElementById('typing-carousel-data') != undefined) {
-      var ul = document.getElementById('typing-carousel-data').children;
-
-      if (ul.length != 0) {
-        var data = [];
-        Array.from(ul).forEach(el => {
-          data.push(el.textContent);
-        })
-
-        ityped.init('#ityped', {
-          strings: data,
-          startDelay: 200,
-          loop: true
-        });
-      }
-    }
-
-    // ============== Fix Timelines Horizontal Lines =========
-    var hLines = document.getElementsByClassName("horizontal-line");
-    for (let i = 0; i < hLines.length; i++) {
-      if (i % 2) {
-        hLines[i].children[0].children[0].classList.add("bottom-right");
-        hLines[i].children[2].children[0].classList.add("top-left");
-      } else {
-        hLines[i].children[0].children[0].classList.add("top-right");
-        hLines[i].children[2].children[0].classList.add("bottom-left");
-      }
-    }
-
-    // ============== Fix Timelines Vertical lines =========
-    var vLines = document.getElementsByClassName("vertical-line");
-    for (let i = 0; i < vLines.length; i++) {
-      if (i % 2) {
-        vLines[i].classList.add("vertical-line-left-adjustment");
-      }
-    }
-
 
     // ================== Project cards =====================
     // Add click action on project category selector buttons

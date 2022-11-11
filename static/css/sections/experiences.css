@@ -47,7 +47,7 @@
   left: 50%;
 }
 
-.vertical-line-left-adjustment::after {
+.timeline .vertical-line:nth-child(even)::after {
   left: calc(50% - 3px) !important;
 }
 
@@ -75,24 +75,24 @@
   border-radius: 15px;
 }
 
-.top-left {
-  left: -50%;
-  top: -50%;
-}
-
-.top-right {
+.timeline .row:nth-child(2n) div:nth-child(1) .corner {
   left: 50%;
   top: -50%;
 }
 
-.bottom-left {
+.timeline .row:nth-child(2n) div:nth-child(3) .corner {
   left: -50%;
   top: calc(50% - 3px);
 }
 
-.bottom-right {
+.timeline .row:nth-child(4n) div:nth-child(1) .corner {
   left: 50%;
   top: calc(50% - 3px);
+}
+
+.timeline .row:nth-child(4n) div:nth-child(3) .corner {
+  left: -50%;
+  top: -50%;
 }
 
 /* ============= Device specific fixes ======= */
