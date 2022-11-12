@@ -21,3 +21,7 @@ if (process.env.FEATURE_SYNTAXHIGHLIGHT) {
 if (process.env.FEATURE_MATH) {
   import('./math');
 }
+
+if (process.env.FEATURE_EMBEDPDF) {
+  import('./embedpdf');
+}
