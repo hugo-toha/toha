@@ -24,7 +24,7 @@
         </form>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
-            <li id="list-heading"><a href="{{ "/posts" | relLangURL }}" data-filter="all">{{ i18n "posts" }}</a></li>
+            <li id="list-heading"><a href="{{ "/posts/" | relLangURL }}" data-filter="all">{{ i18n "posts" }}</a></li>
             <div class="subtree">
                 {{ partial "navigators/sidebar.html" (dict "menuName" "sidebar" "menuItems" site.Menus.sidebar "ctx" .) }}
             </div>
@@ -58,7 +58,7 @@
         <div class="taxonomy-terms">
           <ul style="padding-left: 0;">
             {{ range .Params.tags }}
-            {{ $url:= printf "tags/%s" . }}
+            {{ $url:= printf "tags/%s/" . }}
             <li class="rounded"><a href="{{ $url | urlize | relLangURL }}" class="btn, btn-sm">{{ . }}</a></li>
             {{ end }}
           </ul>
