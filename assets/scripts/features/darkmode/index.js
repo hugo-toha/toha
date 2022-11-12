@@ -1,9 +1,11 @@
 const PERSISTENCE_KEY = 'darkmode:color-scheme';
 
 async function getService() {
-  if(process.env.FEATURE_DARKMODE_DARKREADER) {
+  if(process.env.FEATURE_DARKMODE_DARKREADER === '1') {
     return await import('./darkreader');
   }
+
+  throw Error(' No service defined for feature markMode.');
 }
 
 window.addEventListener('DOMContentLoaded', async () => {

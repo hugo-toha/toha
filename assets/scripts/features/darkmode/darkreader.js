@@ -1,4 +1,4 @@
-import { enable, disable, auto } from 'darkreader';
+import { enable, disable, auto, setFetchMethod } from 'darkreader';
 import { darkmode } from "@params";
 
 const {
@@ -6,6 +6,8 @@ const {
   theme,
   fixes,
 } = darkmode.darkreader;
+
+setFetchMethod(window.fetch)
 
 export function setSchemeDark() {
   enable(theme, fixes);
