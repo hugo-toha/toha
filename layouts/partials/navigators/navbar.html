@@ -106,12 +106,12 @@
         {{ end }}
         {{ if $blogEnabled }}
           <li class="nav-item">
-            <a class="nav-link" id="blog-link" href="{{ "/posts" | relLangURL }}">{{ i18n "posts" }}</a>
+            <a class="nav-link" id="blog-link" href="{{ "/posts/" | relLangURL }}">{{ i18n "posts" }}</a>
           </li>
         {{ end }}
         {{ if $notesEnabled }}
           <li class="nav-item">
-            <a class="nav-link" id="note-link" href="{{ "/notes" | relLangURL }}">{{ i18n "notes" }}</a>
+            <a class="nav-link" id="note-link" href="{{ "/notes/" | relLangURL }}">{{ i18n "notes" }}</a>
           </li>
         {{ end }}
         {{ range $customMenus }}
