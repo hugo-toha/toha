@@ -1,4 +1,12 @@
 import hljs from 'highlight.js'
 import * as params from '@params'
 
-hljs.highlightAll(params.syntaxhighlight?.hljs)
+const defaultOptions = {
+  ignoreUnescapedHTML: true
+}
+
+hljs.configure({
+    ...defaultOptions,
+    ...(params.syntaxhighlight?.hljs || {}),
+});
+hljs.highlightAll();
