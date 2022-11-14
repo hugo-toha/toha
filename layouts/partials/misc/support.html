@@ -1,5 +1,6 @@
 {{ with site.Params.features.support }}
-    {{ if .enabled }}
+    {{ if .enable }}
+        {{ with .services }}
         <!-- Enable Ko-Fi floating button -->
         {{ with .kofi }}
             <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
