@@ -19,3 +19,9 @@ syntaxhighlight:
     hljs:
       styles:
       - highlight.js/scss/atom-one-dark
+
+math:
+  services:
+    katex:
+      styles:
+      - katex/dist/katex

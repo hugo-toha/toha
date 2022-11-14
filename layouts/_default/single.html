@@ -181,11 +181,3 @@
     {{ end }}
   </section>
 {{ end }}
-
-{{ define "scripts" }}
-<!-------------- Enable Math support for this page  ---------------->
-{{ if site.Params.features.math.enable }}
-    {{ partial "math.html" . }}
-{{ end }}
-
-{{ end }}

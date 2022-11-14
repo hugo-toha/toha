@@ -46,9 +46,3 @@
   </div>
 </section>
 {{ end }}
-
-{{ define "scripts" }}
-  {{ if site.Params.features.math.enable }}
-      {{ partial "math.html" . }}
-  {{ end }}
-{{ end }}
