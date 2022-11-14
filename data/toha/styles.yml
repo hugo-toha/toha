@@ -13,3 +13,9 @@ darkmode:
     darkreader:
       styles:
       - ./colortheme/colortheme
+
+syntaxhighlight:
+  services:
+    hljs:
+      styles:
+      - highlight.js/scss/atom-one-dark
