@@ -2,3 +2,8 @@ flags:
   styles:
     - flag-icon-css/css/flag-icons
 
+videoplayer:
+  services:
+    plyr:
+      styles:
+      - plyr/dist/plyr

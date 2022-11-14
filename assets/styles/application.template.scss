@@ -2,6 +2,10 @@
 
 @import './layouts/main';
 
+@import './navigators/navbar';
+
+
+
 {{ range $feature, $featureDef := site.Params.features }}
   {{ with $featureDef }}
     {{ $featureEnabled := or (not (isset . "enable")) .enable }}
@@ -14,9 +18,11 @@
 
       {{ range $service, $config := .services }}
         {{ with (index site.Data.toha.styles $feature) }}
-          {{ with index $service }}
-            {{ range .styles }}
-            @import '{{.}}';
+          {{ with .services }}
+            {{ with (index . $service) }}
+              {{ range .styles }}
+              @import '{{ . }}';
+              {{ end }}
             {{ end }}
           {{ end }}
         {{ end }}
