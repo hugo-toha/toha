@@ -1,5 +1,7 @@
 @import 'bootstrap/scss/bootstrap.scss';
 
+@import './layouts/main';
+
 {{ range $feature, $featureDef := site.Params.features }}
   {{ with $featureDef }}
     {{ $featureEnabled := or (not (isset . "enable")) .enable }}
