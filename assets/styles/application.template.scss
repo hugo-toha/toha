@@ -11,6 +11,12 @@
 
 // layouts
 @import './layouts/main';
+@import './layouts/list';
+
+// navigators
+@import './navigators/navbar';
+@import './navigators/sidebar';
+
 
 // sections
 @import './sections/home';
@@ -24,9 +30,6 @@
 @import './sections/accomplishments';
 @import './sections/publications';
 
-
-// navigators
-@import './navigators/navbar';
 
 // override
 @import './override';
