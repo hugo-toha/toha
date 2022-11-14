@@ -7,3 +7,9 @@ videoplayer:
     plyr:
       styles:
       - plyr/dist/plyr
+
+darkmode:
+  services:
+    darkreader:
+      styles:
+      - ./colortheme/colortheme

@@ -1,11 +1,21 @@
+// loading bootstrap
+// TODO: Refactor to use bootstrap sass variable for theming.
 @import 'bootstrap/scss/bootstrap.scss';
 
+// The Mulish font, we use font-weight 300 - 700
+@import '@fontsource/mulish/300';
+@import '@fontsource/mulish/index'; // 400
+@import '@fontsource/mulish/500';
+@import '@fontsource/mulish/600';
+@import '@fontsource/mulish/700';
+
+// layouts
 @import './layouts/main';
 
+// navigators
 @import './navigators/navbar';
 
-
-
+// features and services, only imported if enabled.
 {{ range $feature, $featureDef := site.Params.features }}
   {{ with $featureDef }}
     {{ $featureEnabled := or (not (isset . "enable")) .enable }}
