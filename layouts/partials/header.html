@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{{ "/css/layouts/main.css" | relURL }}"/>
 <link rel="stylesheet" href="{{ "/css/navigators/navbar.css" | relURL }}"/>
 <link rel="stylesheet" href="{{ "/css/plyr.css" | relURL }}"/>
-{{ if ne site.Params.showFlags false }}
+{{ if ne site.Params.features.flags.enable false }}
 <link rel="stylesheet" href="{{ "/css/flag-icon.min.css" | relURL }}"/>
 {{ end }}
 <!--=================== fonts ==============================-->

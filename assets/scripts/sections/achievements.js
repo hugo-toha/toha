@@ -1,3 +1,5 @@
+import { getDeviceState } from '../core';
+
 function fourColumRow(gallery, entries, i) {
   let entry1 = document.createElement("div");
   entry1.classList.add("col-lg-6", "m-0", "p-0");
@@ -123,6 +125,7 @@ function singleColumnRow(gallery, entries, i) {
 }
 
 function showAchievements() {
+  const { isLaptop, isTablet } = getDeviceState()
   // show achievements from achievements-holder div
   let gallery = document.getElementById("gallery");
   if (gallery == null) {
@@ -204,8 +207,8 @@ function showAchievements() {
         this.children["caption"].classList.toggle("hidden");
       }
       if (this.children["enlarge-icon"] != undefined) {
-        this.children["enlarge-icon"].classList.toggle("fa-search-plus");
-        this.children["enlarge-icon"].classList.toggle("fa-times");
+        this.getElementsByClassName('fa-xmark')[0].classList.toggle('hidden');
+        this.getElementsByClassName('fa-magnifying-glass-plus')[0].classList.toggle('hidden');
       }
       if (this.children["achievement-title"] != undefined) {
         this.children["achievement-title"].classList.toggle("hidden");

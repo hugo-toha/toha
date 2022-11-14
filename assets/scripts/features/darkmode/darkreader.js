@@ -1,13 +1,19 @@
 import { enable, disable, auto, setFetchMethod } from 'darkreader';
-import { darkmode } from "@params";
+import * as params from "@params";
 
-const {
-  defaultColorScheme,
-  theme,
-  fixes,
-} = darkmode.darkreader;
-
-setFetchMethod(window.fetch)
+const darkreader = params?.darkmode?.darkreader || {};
+const defaultColorScheme = darkreader.defaultColorScheme || 'system';
+const theme = {
+  brightness: 100,
+  contrast: 100,
+  sepia: 0,
+  ...(darkreader.theme || {}),
+};
+const fixes = {
+  invert: ['img[src$=".svg"]'],
+  ...(darkreader.fixes || {}),
+};
+setFetchMethod(window.fetch);
 
 export function setSchemeDark() {
   enable(theme, fixes);
