@@ -1,6 +1,6 @@
 // loading bootstrap
 // TODO: Refactor to use bootstrap sass variable for theming.
-@import 'bootstrap/scss/bootstrap.scss';
+@import 'bootstrap/scss/bootstrap';
 
 // The Mulish font, we use font-weight 300 - 700
 @import '@fontsource/mulish/300';
@@ -12,8 +12,24 @@
 // layouts
 @import './layouts/main';
 
+// sections
+@import './sections/home';
+@import './sections/about';
+@import './sections/skills';
+@import './sections/experiences';
+@import './sections/education';
+@import './sections/projects';
+@import './sections/recent-posts';
+@import './sections/achievements';
+@import './sections/accomplishments';
+@import './sections/publications';
+
+
 // navigators
 @import './navigators/navbar';
+
+// override
+@import './override';
 
 // features and services, only imported if enabled.
 {{ range $feature, $featureDef := site.Params.features }}
