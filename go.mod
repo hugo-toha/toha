@@ -1,6 +1,6 @@
-module github.com/hugo-toha/toha
+module github.com/hugo-toha/toha/v3
 
-go 1.12
+go 1.19
 
 // require(
 
