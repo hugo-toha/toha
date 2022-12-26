@@ -6,7 +6,7 @@ other = "Anasayfa"
 other = "Gönderiler"
 
 [toc_heading]
-other = "İçerik Tablous"
+other = "İçerik Tablosu"
 
 [tags]
 other = "Etiketler"
@@ -108,7 +108,7 @@ other = "Star"
 other = "Detaylar"
 
 [err_404]
-other = "Aradığınız sayfa bulunmamakta."
+other = "Aradığınız sayfa bulunamadı."
 
 [more]
 other = "Devamını Göster"
