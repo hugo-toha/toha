@@ -62,6 +62,7 @@ For more details about the features please visit [here](https://toha-guides.netl
 - Turkish
 - Arabic (العربية)
 - Português
+- Català
 
 To know more about how to translate your site, please visit [here](https://toha-guides.netlify.app/posts/translation/). Follow, the data and post format from this [example site](https://hugo-toha.github.io).
 
