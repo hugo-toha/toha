@@ -1,60 +1,60 @@
-const PERSISTENCE_KEY = 'darkmode:color-scheme';
+const PERSISTENCE_KEY = 'darkmode:color-scheme'
 
-async function getService() {
-  if(process.env.FEATURE_DARKMODE_DARKREADER === '1') {
-    return await import('./darkreader');
+async function getService () {
+  if (process.env.FEATURE_DARKMODE_DARKREADER === '1') {
+    return await import('./darkreader')
   }
 
-  throw Error(' No service defined for feature markMode.');
+  throw Error(' No service defined for feature darkMode.')
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
-  const $menu = document.getElementById('themeMenu');
-  const $icon = document.getElementById('navbar-theme-icon-svg');
-  if ($menu == null || $icon == null) return;
+  const menu = document.getElementById('themeMenu')
+  const $icon = document.getElementById('navbar-theme-icon-svg')
+  if (menu == null || $icon == null) return
 
-  const $btns = $menu.getElementsByTagName('a');
-  const iconMap = Array.from($btns).reduce((map, $btn) => {
-    $img = $btn.getElementsByTagName('img')[0];
-    map[$btn.dataset.scheme] = $img.src;
-    return map;
-  }, {});
+  const btns = menu.getElementsByTagName('a')
+  const iconMap = Array.from(btns).reduce((map, btn) => {
+    const $img = btn.getElementsByTagName('img')[0]
+    map[btn.dataset.scheme] = $img.src
+    return map
+  }, {})
 
   const {
     setSchemeDark,
     setSchemeLight,
     setSchemeSystem,
-    defaultColorScheme,
-  } = await getService();
+    defaultColorScheme
+  } = await getService()
 
-  function loadScheme() {
-    return localStorage.getItem(PERSISTENCE_KEY) || defaultColorScheme;
+  function loadScheme () {
+    return localStorage.getItem(PERSISTENCE_KEY) || defaultColorScheme
   }
-  
-  function saveScheme(scheme) {
-    localStorage.setItem(PERSISTENCE_KEY, scheme);
+
+  function saveScheme (scheme) {
+    localStorage.setItem(PERSISTENCE_KEY, scheme)
   }
-  
-  function setScheme(newScheme) {
-    $icon.src = iconMap[newScheme];  
+
+  function setScheme (newScheme) {
+    $icon.src = iconMap[newScheme]
 
     if (newScheme === 'dark') {
-      setSchemeDark();
+      setSchemeDark()
     } else if (newScheme === 'system') {
-      setSchemeSystem();
+      setSchemeSystem()
     } else {
-      setSchemeLight();
+      setSchemeLight()
     }
-  
-    saveScheme(newScheme);
+
+    saveScheme(newScheme)
   }
 
-  setScheme(loadScheme());
+  setScheme(loadScheme())
 
-  Array.from($menu.getElementsByTagName('a')).forEach(($btn) => {
-    $btn.addEventListener('click', () => {
-      const { scheme } = $btn.dataset;
-      setScheme(scheme);
-    });
-  });
-});
+  Array.from(menu.getElementsByTagName('a')).forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const { scheme } = btn.dataset
+      setScheme(scheme)
+    })
+  })
+})

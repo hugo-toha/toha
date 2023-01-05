@@ -1,61 +1,60 @@
-import $ from 'jquery';
-
 const updateNavBar = () => {
-  if ($(document).scrollTop() > 40) {
-    $('#top-navbar').removeClass('initial-navbar');
-    $('#top-navbar').addClass('final-navbar shadow');
+  const topNavbar = document.getElementById('top-navbar')
+  const navbarToggler = document.getElementById('navbar-toggler')
+  const themeIcon = document.getElementById('navbar-theme-icon-svg')
 
-    $('#navbar-toggler').removeClass('navbar-dark');
-    $('#navbar-toggler').addClass('navbar-light');
+  if (window.scrollY > 40) {
+    topNavbar.classList.remove('initial-navbar')
+    topNavbar.classList.add('final-navbar', 'shadow')
+
+    navbarToggler.classList.remove('navbar-dark')
+    navbarToggler.classList.add('navbar-light')
 
     // color theme selector a.k.a. dark mode
-    $('#navbar-theme-icon-svg').removeClass('navbar-icon-svg-dark');
+    themeIcon.classList.remove('navbar-icon-svg-dark')
 
     // get the main logo from hidden img tag
-    let mainLogo = document.getElementById("main-logo")
+    const mainLogo = document.getElementById('main-logo')
     if (mainLogo !== null) {
-      let logoURL = mainLogo.getAttribute("src");
-      $('#logo').attr("src", logoURL);
+      const logoURL = mainLogo.getAttribute('src')
+      document.getElementById('logo').setAttribute('src', logoURL)
     }
-
   } else {
-    $('#top-navbar').removeClass('final-navbar shadow');
-    $('#top-navbar').addClass('initial-navbar');
+    topNavbar.classList.remove('final-navbar', 'shadow')
+    topNavbar.classList.add('initial-navbar')
 
-    $('#navbar-toggler').removeClass('navbar-light');
-    $('#navbar-toggler').addClass('navbar-dark');
+    navbarToggler.classList.remove('navbar-light')
+    navbarToggler.classList.add('navbar-dark')
 
     // color theme selector a.k.a. dark mode
-    $('#navbar-theme-icon-svg').addClass('navbar-icon-svg-dark');
+    themeIcon.classList.add('navbar-icon-svg-dark')
 
     // get the inverted logo from hidden img tag
-    let invertedLogo = document.getElementById("inverted-logo")
+    const invertedLogo = document.getElementById('inverted-logo')
     if (invertedLogo !== null) {
-      let logoURL = invertedLogo.getAttribute("src");
-      $('#logo').attr("src", logoURL);
+      const logoURL = invertedLogo.getAttribute('src')
+      document.getElementById('logo').setAttribute('src', logoURL)
     }
   }
-};
+}
 
-$(document).ready(function () {
-
+document.addEventListener('DOMContentLoaded', function () {
   // change navbar style on scroll
   // ==================================================
-  // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-  // $.onscroll = function() {scrollFunction()};
-  $(document).scroll(function () {
-    updateNavBar();
-  });
+  // When the user scrolls down 80px from the top of the document,
+  // resize the navbar's padding and the logo's font size
+  document.addEventListener('scroll', updateNavBar)
 
   // Creates a click handler to collapse the navigation when
   // anchors in the mobile nav pop up are clicked
-  var navMain = $(".navbar-collapse");
-  if (navMain) {
-    navMain.on("click", "a", null, function (e) {
-      $('.navbar-collapse').collapse('hide');
-    });
+  const navMain = document.getElementsByClassName('navbar-collapse')
+  for (const el of navMain) {
+    el.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        navMain.collapse('hide')
+      }
+    })
   }
 
-  updateNavBar();
-});
-
+  updateNavBar()
+})

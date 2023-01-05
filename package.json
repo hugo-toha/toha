@@ -4,6 +4,8 @@
   "description": "A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist design and responsiveness.",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "autoprefixer": "postcss static/css/*/*.css --use autoprefixer -r --no-map"
   },
   "repository": {
@@ -18,6 +20,13 @@
   "homepage": "https://github.com/hugo-toha/toha#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-no-jquery": "^2.7.0",
+    "eslint-plugin-promise": "^6.1.1",
     "postcss": "^8.4.20",
     "postcss-cli": "^8.3.1"
   }

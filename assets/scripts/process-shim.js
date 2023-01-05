@@ -1,3 +1,3 @@
 export const process = {
-  env: {},
-};
+  env: {}
+}
