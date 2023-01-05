@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
   } else {
     const node = document.createElement('p')
     node.textContent = 'Please enter a word or phrase above'
-    window.getElementById('search-results').append(node)
+    document.getElementById('search-results')?.append(node)
   }
 
   function executeSearch (searchQuery) {
@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
       } else {
         const node = document.createElement('p')
         node.textContent = 'No matches found'
-        window.getElementById('search-results').append(node)
+        document.getElementById('search-results')?.append(node)
       }
     })
   }

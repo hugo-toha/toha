@@ -4,36 +4,36 @@ const updateNavBar = () => {
   const themeIcon = document.getElementById('navbar-theme-icon-svg')
 
   if (window.scrollY > 40) {
-    topNavbar.classList.remove('initial-navbar')
-    topNavbar.classList.add('final-navbar', 'shadow')
+    topNavbar?.classList.remove('initial-navbar')
+    topNavbar?.classList.add('final-navbar', 'shadow')
 
-    navbarToggler.classList.remove('navbar-dark')
-    navbarToggler.classList.add('navbar-light')
+    navbarToggler?.classList.remove('navbar-dark')
+    navbarToggler?.classList.add('navbar-light')
 
     // color theme selector a.k.a. dark mode
-    themeIcon.classList.remove('navbar-icon-svg-dark')
+    themeIcon?.classList.remove('navbar-icon-svg-dark')
 
     // get the main logo from hidden img tag
     const mainLogo = document.getElementById('main-logo')
-    if (mainLogo !== null) {
+    if (mainLogo) {
       const logoURL = mainLogo.getAttribute('src')
-      document.getElementById('logo').setAttribute('src', logoURL)
+      document.getElementById('logo')?.setAttribute('src', logoURL)
     }
   } else {
-    topNavbar.classList.remove('final-navbar', 'shadow')
-    topNavbar.classList.add('initial-navbar')
+    topNavbar?.classList.remove('final-navbar', 'shadow')
+    topNavbar?.classList.add('initial-navbar')
 
-    navbarToggler.classList.remove('navbar-light')
-    navbarToggler.classList.add('navbar-dark')
+    navbarToggler?.classList.remove('navbar-light')
+    navbarToggler?.classList.add('navbar-dark')
 
     // color theme selector a.k.a. dark mode
-    themeIcon.classList.add('navbar-icon-svg-dark')
+    themeIcon?.classList.add('navbar-icon-svg-dark')
 
     // get the inverted logo from hidden img tag
     const invertedLogo = document.getElementById('inverted-logo')
-    if (invertedLogo !== null) {
+    if (invertedLogo) {
       const logoURL = invertedLogo.getAttribute('src')
-      document.getElementById('logo').setAttribute('src', logoURL)
+      document.getElementById('logo')?.setAttribute('src', logoURL)
     }
   }
 }
@@ -47,14 +47,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Creates a click handler to collapse the navigation when
   // anchors in the mobile nav pop up are clicked
-  const navMain = document.getElementsByClassName('navbar-collapse')
-  for (const el of navMain) {
+  const navMain =document.getElementsByClassName('navbar-collapse')
+  Array.from(navMain).forEach(function(el) {
     el.addEventListener('click', function (e) {
       if (e.target.tagName === 'A') {
-        navMain.collapse('hide')
+        el.classList.add('collapse')
       }
     })
-  }
+  })
 
   updateNavBar()
 })
