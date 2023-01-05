@@ -90,9 +90,9 @@
                                 {{ end }}
                                 {{ if gt (len .takenCourses.courses ) $collapseAfter }}
                                     <button type="button" class="btn btn-link show-more-btn pt-0 {{ if .takenCourses.showGrades }}ml-1{{ else }}ml-2{{ end }}"
-                                    onclick="toggleCourseVisibility(this);" id="show-more-btn">{{ i18n "show_more"}}</button>
+                                    id="show-more-btn">{{ i18n "show_more"}}</button>
                                     <button type="button" class="btn btn-link show-more-btn hidden pt-0 {{ if .takenCourses.showGrades }}ml-1{{ else }}ml-2{{ end }}"
-                                    onclick="toggleCourseVisibility(this);" id="show-less-btn">{{ i18n "show_less"}}</button>
+                                    id="show-less-btn">{{ i18n "show_less"}}</button>
                                 {{ end }}
                             </div>
                             {{ end }}

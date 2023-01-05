@@ -7,6 +7,7 @@
 .accomplishments-section .card {
   background: #fff;
   border-top: 2px solid #248aaa;
+  height: 100%;
 }
 .accomplishments-section .card .card-header {
   background: none;

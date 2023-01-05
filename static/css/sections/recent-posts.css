@@ -8,6 +8,11 @@
   display: block; 
 }
 
+.recent-posts-section .card {
+  height: 100%;
+  min-height: 100%;
+}
+
 .recent-posts-section .card .card-footer span {
   font-size: 10pt;
   color: #6c757d !important;

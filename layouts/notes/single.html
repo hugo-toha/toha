@@ -47,13 +47,7 @@
 {{ end }}
 
 {{ define "scripts" }}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-  <script src="{{ "/js/imagesloaded.pkgd.min.js" | relURL }}"></script>
-  <script src="{{ "/js/note.js" | relURL }}"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
-  {{ if .Params.math }}
+  {{ if site.Params.features.math.enable }}
       {{ partial "math.html" . }}
   {{ end }}
 {{ end }}

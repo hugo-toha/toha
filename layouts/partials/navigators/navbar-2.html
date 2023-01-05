@@ -29,7 +29,7 @@
 
 <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
   <div class="container">
-      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
@@ -38,7 +38,7 @@
       {{ end }}
       {{- site.Title -}}
     </a>
-    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -47,7 +47,7 @@
       {{ if .IsTranslated }}
         {{ partial "navigators/lang-selector-2.html" . }}
       {{ end }}
-      {{ if site.Params.darkMode.enable }}
+      {{ if site.Params.features.darkMode.enable }}
         {{ partial "navigators/theme-selector.html" . }}
       {{ end }}
       </ul>

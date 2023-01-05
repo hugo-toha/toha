@@ -1,6 +1,7 @@
 <!-- Add Analytics if enabled in configuration -->
 {{ with site.Params.features.analytics }}
     {{ if .enabled }}
+        {{ with .services }}
         <!-- Google Analytics -->
         {{ with .google }}
             {{ $privacyConfig:= dict (slice "Site" "Config" "Privacy" "GoogleAnalytics") $.Site.Config.Privacy.GoogleAnalytics }}
@@ -21,7 +22,7 @@
             <script
             data-goatcounter="https://{{ .code }}.goatcounter.com/count"
             async
-            src="/js/goat-counter.js"
+            src="//gc.zgo.at/count.js"
             ></script>
         {{ end }}
 
@@ -41,6 +42,7 @@
                 g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
             })();
             </script>
+        {{ end }}
         {{ end }}
     {{ end }}
 {{ end }}
