@@ -6,7 +6,7 @@ on: [pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     # checkout to the commit that has been pushed
     - uses: actions/checkout@v3.2.0
@@ -14,15 +14,21 @@ jobs:
         submodules: true  # Fetch Hugo themes (true OR recursive)
         fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-    # install Hugo
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Install node modules
+      run: npm install
+
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2.6.0
       with:
         hugo-version: 'latest'
         extended: true
 
-    # build website
-    - name: Create Config
-      run: touch config.toml
     - name: Build
-      run: hugo --minify
+      run: |
+        cd exampleSite
+        hugo --minify
