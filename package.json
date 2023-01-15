@@ -27,7 +27,7 @@
     "eslint-plugin-n": "^15.6.0",
     "eslint-plugin-no-jquery": "^2.7.0",
     "eslint-plugin-promise": "^6.1.1",
-    "postcss": "^8.4.20",
+    "postcss": "^8.4.21",
     "postcss-cli": "^8.3.1"
   }
 }
