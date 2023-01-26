@@ -87,95 +87,70 @@ Here are few screenshots from the [example site](https://hugo-toha.github.io).
 
 ## Requirements
 
-- Hugo Version 0.87.0 or higher
+- Hugo Version 0.109.0 (extended) or higher
+- Go language 1.18 or higher (require for hugo modules)
+- Node version v18.x or later and npm 8.x or later.
 
 ## Usage
 
-In order to use this theme, follow the following steps:
+The easiest way to use this theme is to fork [hugo-toha.github.io](https://github.com/hugo-toha/hugo-toha.github.io) sample repo.Then change the configurations according to your need.
 
-#### Add theme as git submodule
+If you want to start from scratch, then follow these steps:
 
-At first, add [Toha](https://github.com/hugo-toha/toha) theme as git submodule to your hugo-site.
+##### 1. Initialize Hugo module on you repo
 
-```console
-$ git submodule add https://github.com/hugo-toha/toha.git themes/toha
+At first, initialize [Hugo modules](https://gohugo.io/hugo-modules/) in your repo. This will create a `go.mod` file.
+
+```bash
+hugo mod init github.com/<your username>/<your repo name>
 ```
 
-> Don't use SSH URL of the theme during adding as git sub-module. Also, don't clone the theme in your `themes` directory using `git clone`. They don't work well with Github Action or Netlify.
+##### 2. Add this theme as your module dependency
 
-If you don't already have a hugo site, create one by following the step-by-step guide from [here](https://toha-guides.netlify.app/posts/getting-started/prepare-site/).
-
-#### Configuring Site
-
-Now, configure your site to use `toha` theme by adding the following configuration in `config.yaml` file of your site.
+Now, in your `config.yaml` file, add a `module` section.
 
 ```yaml
-baseURL: https://hugo-toha.github.io
-
-languageCode: en-us
-title: "John's Blog"
-theme: "toha"
-
-# Manage languages
-# For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
-languages:
-  en:
-    languageName: English
-    weight: 1
-
-# Control TOC depth
-markup:
-  tableOfContents:
-    startLevel: 2
-    endLevel: 6
-    ordered: false
-
-# At least HTML and JSON are required for the main HTML content and
-# client-side JavaScript search
-outputs:
-  home:
-  - HTML
-  - RSS
-  - JSON
-
-# Enable global emoji support
-enableEmoji: true
-
-# Site parameters
-params:
-  # GitHub repo URL and branch of your site
-  gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
-  gitBranch: main
-
-  # specify whether you want to write some blog posts or not
-  enableBlogPost: true
-
-  # specify whether you want to show Table of Contents in reading page
-  enableTOC: true
-
-  # specify whether you want the language flags to be displayed. 
-  showFlags: true
-
-  # Provide newsletter configuration. 
-  # This feature has been implemented for Mailchimp only for now.
-  # You can also hide it from the footer.
-  newsletter:
-    # specify whether you want to display the newsletter form 
-    enable: true
-    # specify which newsletter provider you want to use
-    provider: mailchimp
-    # specify the target URL for the subscription form
-    mailchimpURL: https://github.us1.list-manage.com/subscribe/post?u=19de52a4603135aae97163fd8&amp;id=094a24c76e
+# Use Hugo modules to add theme
+module:
+  imports:
+  - path: github.com/hugo-toha/toha/v4
 ```
 
-Don't forget to update `title`, `baseURL`, and `gitRepo` fields with your own information. To know about more available configuration options, please visit [here](https://toha-guides.netlify.app/posts/configuration/site-parameters/).
+Check this sample [config.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/config.yaml) for further reference.
+
+##### 3. Update your module
+
+Now, run this command to load this theme as your module.
+
+```bash
+hugo mod tidy
+```
 
 #### Running Locally
 
-Now, you can run your hugo site with `toha` theme locally with the following command:
+Now, you can run your hugo site locally with the following steps:
 
-```console
-$ hugo server --theme toha --watch
+##### 1. Generate node dependency configuration
+
+Now run the following command to generate node dependency configuration. This will create the a `package.json` file in you repo.
+
+```bash
+hugo mod npm pack
+```
+
+##### 2. Install dependencies
+
+Install the node dependencies using following command:
+```bash
+npm install
+```
+
+##### 3. Run your site
+
+Now, run you site locally using following command.
+
+```bash
+hugo server -w
 ```
 
 When you run your site for first time, it will start with the default parameters. It should look similar to the [example site](https://hugo-toha.github.io). However, it will not have any sections in the homepage as we haven't configured them yet. You can configure your site by following the guides from [here](https://toha-guides.netlify.app/posts/configuration/).
@@ -190,139 +165,6 @@ Here, are some handy shortcodes you can use with this theme.
 - [Vertical Space](https://toha-guides.netlify.app/posts/shortcodes/#vertical-space)
 - [Video](https://toha-guides.netlify.app/posts/shortcodes/#video)
 - [Mermaid](https://hugo-toha.github.io/posts/shortcodes/#mermaid)
-
-## Project Roadmap
-
-Here, are the current plan and progress of various components of this theme. The components will be prioritized based on users requests.
-
-### 1. Portfolio Mode
-
-Here is the check list for portfolio mode,
-
-- [x] **Home**
-
-  - [x] Configurable Background
-  - [x] Author Image
-  - [x] Greeting
-  - [x] Typing Carousel
-
-- [x] **About**
-
-  - [x] Name and Designation
-  - [x] Summary
-    - [x] Markdown Support
-  - [x] Social Links
-    - [x] Font Awesome Support
-  - [x] Resume Link
-  - [x] Soft Skills Indicator
-
-- [x] **Skills**
-
-  - [x] Skill Cards
-  - [x] Markdown Support
-
-- [x] **Experiences**
-
-  - [x] Designation
-  - [x] Timeline
-  - [x] Company Overview
-  - [x] Responsibilities
-
-- [x] **Projects**
-
-  - [x] Category Filter
-  - [x] Project Card
-    - [x] Overview
-      - [x] Markdown Support
-    - [x] Github Stars
-    - [x] External URL Support
-    - [x] Technology Tags
-
-- [x] **Recent Posts**
-
-- [x] **Academic Career**
-
-  - [x] Degree
-  - [x] Institution
-  - [x] Timeline
-  - [x] Taken Courses
-  - [x] CGPA
-  - [x] Extracurricular Activities
-
-- [ ] **Publications**
-
-  - [x] Category Filter
-  - [x] Card
-  - [x] Tags
-  - [x] Links
-  - [ ] Dedicated Page
-    - [ ] Abstract
-    - [ ] Authors
-    - [ ] Gallery
-
-- [x] **Accomplishment / Courses**
-
-  - [x] Overview
-  - [x] Certificate
-
-- [x] **Achievements Gallery**
-  - [x] Image
-  - [x] Summary
-
-### 2. Blog Mode
-
-Here is the checklist for blog mode,
-
-- [ ] **Dedicated Home page**
-
-- [x] **List Page**
-
-  - [x] Post Cards
-  - [x] Sidebar
-  - [x] Pagination
-
-- [x] **Reading Page**
-
-  - [x] Hero Image
-  - [x] Author Information
-  - [x] Sidebar
-  - [x] Table of Contents
-  - [x] Next & Previous Page Navigation
-  - [x] `Improve This Page` Button
-  - [x] Disqus Comment
-
-### 3. Documentation Mode
-
-Here is the check list for documentation mode,
-
-- [ ] **Dedicated Home Page**
-- [ ] **Doc Page**
-  - [ ] Redesign sidebar
-  - [ ] Redesign TOC menu
-  - [ ] Search Capability
-
-### 4. Note Mode
-
-- [ ] **Dedicated Home Page**
-- [ ] **Note Page**
-  - [x] Add note view
-  - [ ] Redesign sidebar
-  - [ ] Add search capability
-
-### 5. Tracking and Comments
-
-- [x] Google Analytics
-- [x] Disqus Comment
-
-### 6. Shortcodes
-
-- [x] Image
-- [x] Split Page into Multiple Column
-- [x] Vertical space between two sections
-- [x] Alert
-- [ ] Figure & sub-figure
-- [ ] Tabs
-- [x] Notes
 
 ## Contributing
 
