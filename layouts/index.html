@@ -14,21 +14,6 @@
     <!-- import common headers -->
     {{- partial "header.html" . -}}
     {{- partial "opengraph.html" . -}}
-
-    <!-- import index page specific headers -->
-    <link rel="stylesheet" href="{{ "/css/sections/home.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/about.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/skills.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/experiences.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/education.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/projects.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/recent-posts.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/achievements.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/accomplishments.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/publications.css" | relURL }}"/>
-
-    <!--================= custom style overrides =========================-->
-    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}"/>
     
     <!--================= add analytics if enabled =========================-->
     {{- partial "analytics.html" . -}}
