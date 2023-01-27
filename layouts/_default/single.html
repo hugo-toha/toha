@@ -1,14 +1,5 @@
 {{ define "header" }}
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Title }}{{ end }}" />
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
-/>
-<link rel="stylesheet" href="{{ "/css/layouts/single.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/css/navigators/sidebar.css" | relURL }}">
-<!--================= custom style overrides =========================-->
-<link rel="stylesheet" href="{{ "/css/style.css" | relURL }}"/>
-
 {{ end }}
 
 {{ define "navbar" }}
@@ -189,12 +180,4 @@
     </div>
     {{ end }}
   </section>
-{{ end }}
-
-{{ define "scripts" }}
-<!-------------- Enable Math support for this page  ---------------->
-{{ if site.Params.features.math.enable }}
-    {{ partial "math.html" . }}
-{{ end }}
-
 {{ end }}
