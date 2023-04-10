@@ -164,8 +164,9 @@ Yellow:  #FFC212
   
   .card .card-head {
     height: 172px;
-    -o-object-fit: cover;
-    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
   }
   
