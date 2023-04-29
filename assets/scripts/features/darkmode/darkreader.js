@@ -2,7 +2,7 @@ import { enable, disable, auto, setFetchMethod } from 'darkreader'
 import * as params from '@params'
 
 const darkreader = params?.darkmode?.darkreader || {}
-const defaultColorScheme = darkreader.defaultColorScheme || 'system'
+const defaultColorScheme = darkreader.defaultcolorscheme || 'system'
 const theme = {
   brightness: 100,
   contrast: 100,
