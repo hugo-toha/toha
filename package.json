@@ -33,7 +33,9 @@
       "postcss-cli": "project"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.6.4"
+  },
   "description": "A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist design and responsiveness.",
   "devDependencies": {
     "@fontsource/mulish": "4.5.13",
