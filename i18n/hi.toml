@@ -1,0 +1,126 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "होम"
+
+[posts]
+other = "पोस्ट"
+
+[toc_heading]
+other = "विषयसूची"
+
+[tags]
+other = "टैग"
+
+[categories]
+other = "श्रेणियाँ"
+
+[at]
+other = "अन्य"
+
+[resume]
+other = "बायोडाटा"
+
+[navigation]
+other = "पथ प्रदर्शन"
+
+[contact_me]
+other = "मुझसे संपर्क करो:"
+
+[email]
+other = "ईमेल"
+
+[phone]
+other = "फ़ोन"
+
+[newsletter_text]
+other = "ईमेल अधिसूचना से अवगत रहें"
+ 
+[newsletter_input_placeholder]
+other = "ईमेल दर्ज करें"
+
+[newsletter_warning]
+other = "अपना ईमेल पता दर्ज करके, आप इस वेबसाइट का न्यूज़लेटर प्राप्त करने के लिए सहमत होते हैं।"
+
+[submit]
+other = "जमा करें"
+
+[hugoAttributionText]
+other = "द्वारा संचालित"
+
+[prev]
+other = "पिछला"
+
+[next]
+other = "आगे"
+
+# [share_on]
+# other = "Share on"
+
+[improve_this_page]
+other = "इस पृष्ठ को सुधारें"
+
+[out_of]
+other = "में से बाहर"
+
+[publications]
+other = "प्रकाशन"
+
+[taken_courses]
+other = "पाठ्यक्रम लिया"
+
+[course_name]
+other = "कोर्स का नाम"
+
+[total_credit]
+other = "कुल क्रेडिट"
+
+[obtained_credit]
+other = "श्रेय प्राप्त किया"
+
+[extracurricular_activities]
+other = "अतिरिक्त पाठयक्रम गतिविधियों"
+
+[show_more]
+other = "और देखें"
+
+[show_less]
+other = "कम दिखाएं"
+
+# [responsibilities]
+# other = "Responsibilities:"
+
+# [present]
+# other = "Present"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+# [project_details]
+# other = "Details"
+
+# [err_404]
+# other = "The page you are looking for is not there yet."
+
+[more]
+other = "अधिक"
+
+[view_certificate]
+other = "प्रमाणपत्र देखें"
+
+[notes]
+other = "टिप्पणियाँ"
+
+[disclaimer_text]
+other = "दायित्व सूचना"
+
+[search]
+other = "खोज"

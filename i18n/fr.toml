@@ -1,0 +1,126 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Accueil"
+
+[posts]
+other = "Articles"
+
+[toc_heading]
+other = "Table des matières"
+
+[tags]
+other = "Mots clés"
+
+[categories]
+other = "Catégories"
+
+[at]
+other = "chez"
+
+[resume]
+other = "Mon Curriculum Vitæ"
+
+[navigation]
+other = "Navigation"
+
+[contact_me]
+other = "Contactez moi :"
+
+[email]
+other = "Email"
+
+[phone]
+other = "Téléphone"
+
+[newsletter_text]
+other = "Restez à jour par e-mail"
+
+[newsletter_input_placeholder]
+other = "Entrez une adresse e-mail"
+
+[newsletter_warning]
+other = "En renseignant votre adresse e-mail, vous acceptez de recevoir la newsletter de ce site."
+
+[submit]
+other = "Envoyer"
+
+[hugoAttributionText]
+other = "Alimenté par"
+
+[prev]
+other = "Précédent"
+
+[next]
+other = "Suivant"
+
+[share_on]
+other = "Partager sur"
+
+[improve_this_page]
+other = "Améliorez cette page"
+
+[out_of]
+other = "sur"
+
+[publications]
+other = "Publications"
+
+[taken_courses]
+other = "Cours suivis"
+
+[course_name]
+other = "Intitulé du cours"
+
+[total_credit]
+other = "Crédit total"
+
+[obtained_credit]
+other = "Crédit obtenu"
+
+[extracurricular_activities]
+other = "Activités extra-scolaires"
+
+[show_more]
+other = "En savoir plus"
+
+[show_less]
+other = "Montrer moins"
+
+[responsibilities]
+other = "Responsabilités :"
+
+[present]
+other = "Aujourd'hui"
+
+[comments_javascript]
+other = "Merci d'activer JavaScript pour voir le"
+
+[comments_by]
+other = "commentaires fournis par"
+
+[read]
+other = "Lire"
+
+# [project_star]
+# other = "Star"
+
+[project_details]
+other = "Détails"
+
+[err_404]
+other = "La page que vous recherchez n'est pas disponible."
+
+[more]
+other = "Suite"
+
+[view_certificate]
+other = "Afficher le certificat"
+
+[notes]
+other = "Remarques"
+
+[disclaimer_text]
+other = "Avis de responsabilité"
+
+[search]
+other = "Chercher"

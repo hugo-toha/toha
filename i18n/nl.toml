@@ -1,0 +1,125 @@
+[home]
+other = "Hoofdpagina"
+
+[posts]
+other = "Posts"
+
+[toc_heading]
+other = "Inhoudsopgave"
+
+[tags]
+other = "Tags"
+
+[categories]
+other = "Categorieën"
+
+[at]
+other = "bij"
+
+[resume]
+other = "Curriculum Vitae"
+
+[navigation]
+other = "Navigatie"
+
+[contact_me]
+other = "Contactgegevens"
+
+[email]
+other = "E-Mail"
+
+[phone]
+other = "Telefoon"
+
+[newsletter_text]
+other = "Ontvang updates via email"
+
+[newsletter_input_placeholder]
+other = "Email ingeven"
+
+[newsletter_warning]
+other = "Door uw e-mailadres in te voeren, gaat u akkoord met het ontvangen van de nieuwsbrief van deze website."
+
+[submit]
+other = "Opslaan"
+
+[hugoAttributionText]
+other = "Mogelijk gemaakt met"
+
+[prev]
+other = "Vorige"
+
+[next]
+other = "Volgende"
+
+[share_on]
+other = "Delen op"
+
+[improve_this_page]
+other = "Deze pagina verbeteren"
+
+[out_of]
+other = "van de"
+
+[publications]
+other = "Publicaties"
+
+[taken_courses]
+other = "Gevolgde cursussen"
+
+[course_name]
+other = "Cursus naam"
+
+[total_credit]
+other = "Totaal krediet"
+
+[obtained_credit]
+other = "Krediet verkregen"
+
+[extracurricular_activities]
+other = "Buitenschoolse activiteiten"
+
+[show_more]
+other = "Bekijk meer"
+
+[show_less]
+other = "Laat minder zien"
+
+[responsibilities]
+other = "Verantwoordelijkheden:"
+
+[present]
+other = "Heden"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+[project_details]
+other = "Details"
+
+[err_404]
+other = "De pagina waar je voor zoekt bestaat nog niet."
+
+[more]
+other = "Meer"
+
+[view_certificate]
+other = "Bekijk certificaat"
+
+[notes]
+other = "Opmerkingen"
+
+[disclaimer_text]
+other = "Aansprakelijkheidsverklaring"
+
+[search]
+other = "Zoek"

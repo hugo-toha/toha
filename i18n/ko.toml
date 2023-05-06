@@ -1,0 +1,126 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Home"
+
+[posts]
+other = "게시글"
+
+[toc_heading]
+other = "목차"
+
+[tags]
+other = "태그"
+
+[categories]
+other = "카테고리"
+
+[at]
+other = "at"
+
+[resume]
+other = "이력서"
+
+[navigation]
+other = "바로가기"
+
+[contact_me]
+other = "Contact me:"
+
+[email]
+other = "Email"
+
+[phone]
+other = "Phone"
+
+[newsletter_text]
+other = "이메일 알림으로 최신 상태를 유지해보세요"
+
+[newsletter_input_placeholder]
+other = "이메일을 입력하세요"
+
+[newsletter_warning]
+other = "이메일 주소를 입력하면이 웹 사이트의 뉴스 레터 수신에 동의하는 것입니다."
+
+[submit]
+other = "제출"
+
+[hugoAttributionText]
+other = "Powered by"
+
+[prev]
+other = "이전"
+
+[next]
+other = "다음"
+
+# [share_on]
+# other = "Share on"
+
+[improve_this_page]
+other = "이 페이지를 개선"
+
+[out_of]
+other = "out of"
+
+[publications]
+other = "Publications"
+
+[taken_courses]
+other = "이수 과목"
+
+[course_name]
+other = "과목명"
+
+[total_credit]
+other = "총 수익"
+
+[obtained_credit]
+other = "획득한 수익"
+
+[extracurricular_activities]
+other = "기타 활동"
+
+[show_more]
+other = "더보기"
+
+[show_less]
+other = "간단히보기"
+
+# [responsibilities]
+# other = "Responsibilities:"
+
+# [present]
+# other = "Present"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+# [project_details]
+# other = "Details"
+
+# [err_404]
+# other = "The page you are looking for is not there yet."
+
+[more]
+other = "더"
+
+[view_certificate]
+other = "인증서보기"
+
+[notes]
+other = "메모"
+
+[disclaimer_text]
+other = "책임 고지"
+
+[search]
+other = "찾다"

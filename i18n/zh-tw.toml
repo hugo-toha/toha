@@ -1,0 +1,126 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "首頁"
+
+[posts]
+other = "文章"
+
+[toc_heading]
+other = "目錄"
+
+[tags]
+other = "标签"
+
+[categories]
+other = "类别"
+
+[at]
+other = "at"
+
+[resume]
+other = "履歷"
+
+[navigation]
+other = "導覽列"
+
+[contact_me]
+other = "聯絡方式:"
+
+[email]
+other = "信箱"
+
+[phone]
+other = "電話"
+
+[newsletter_text]
+other = "通過電子郵件接收最新消息"
+
+[newsletter_input_placeholder]
+other = "在此輸入您的電子郵件地址"
+
+[newsletter_warning]
+other = "輸入您的電子郵件地址，即表示您同意接受本網站的最新消息"
+
+[submit]
+other = "提交"
+
+[hugoAttributionText]
+other = "Powered by"
+
+[prev]
+other = "上一篇"
+
+[next]
+other = "下一篇"
+
+[share_on]
+other = "分享"
+
+[improve_this_page]
+other = "改善此頁面"
+
+[out_of]
+other = "/"
+
+[publications]
+other = "出版"
+
+[taken_courses]
+other = "修習課程"
+
+[course_name]
+other = "課程名稱"
+
+[total_credit]
+other = "總分"
+
+[obtained_credit]
+other = "獲得學分"
+
+[extracurricular_activities]
+other = "課外活動"
+
+[show_more]
+other = "查看更多"
+
+[show_less]
+other = "顯示較少"
+
+[responsibilities]
+other = "職責:"
+
+[present]
+other = "現在"
+
+[comments_javascript]
+other = "請開啟 JavaScript 查看"
+
+[comments_by]
+other = "評論由"
+
+[read]
+other = "閱讀"
+
+[project_star]
+other = "Star"
+
+[project_details]
+other = "詳情"
+
+[err_404]
+other = "您訪問的頁面不存在"
+
+[more]
+other = "更多的"
+
+[view_certificate]
+other = "查看證書"
+
+[notes]
+other = "筆記"
+
+[disclaimer_text]
+other = "免責聲明"
+
+[search]
+other = "搜索"

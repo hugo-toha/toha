@@ -1,0 +1,126 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "主页"
+
+[posts]
+other = "博文"
+
+[toc_heading]
+other = "目录"
+
+[tags]
+other = "标签"
+
+[categories]
+other = "类别"
+
+[at]
+other = "at"
+
+[resume]
+other = "我的简历"
+
+[navigation]
+other = "导航"
+
+[contact_me]
+other = "联系方式:"
+
+[email]
+other = "邮箱"
+
+[phone]
+other = "电话"
+
+[newsletter_text]
+other = "通过电子邮件接收最新信息"
+
+[newsletter_input_placeholder]
+other = "填入 E-mail"
+
+[newsletter_warning]
+other = "输入您的电子邮件地址，即表示您同意接收本网站的时事通讯"
+
+[submit]
+other = "提交"
+
+[hugoAttributionText]
+other = "Powered by"
+
+[prev]
+other = "上一篇"
+
+[next]
+other = "下一篇"
+
+[share_on]
+other = "分享"
+
+[improve_this_page]
+other = "改善此页面"
+
+[out_of]
+other = "/"
+
+[publications]
+other = "刊物"
+
+[taken_courses]
+other = "选修课程"
+
+[course_name]
+other = "课程名"
+
+[total_credit]
+other = "满分"
+
+[obtained_credit]
+other = "获得分数"
+
+[extracurricular_activities]
+other = "课外活动"
+
+[show_more]
+other = "查看更多"
+
+[show_less]
+other = "显示较少"
+
+[responsibilities]
+other = "职责:"
+
+[present]
+other = "至今"
+
+[comments_javascript]
+other = "请启用 JavaScript 以查看"
+
+[comments_by]
+other = "评论支持 by"
+
+[read]
+other = "阅读"
+
+[project_star]
+other = "Star"
+
+[project_details]
+other = "详情"
+
+[err_404]
+other = "您查找的页面已私奔。"
+
+[more]
+other = "更多的"
+
+[view_certificate]
+other = "查看证书"
+
+[notes]
+other = "笔记"
+
+[disclaimer_text]
+other = "免责声明"
+
+[search]
+other = "搜索"

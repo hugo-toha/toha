@@ -1,0 +1,292 @@
+
+baseURL: http://example.org/
+languageCode: en-us
+title: Example Site
+
+module:
+  imports:
+  - path: github.com/hugo-toha/hugo-toha.github.io
+    disable: false
+    mounts:
+    - source: content
+      target: content
+    - source: layouts
+      target: layouts
+    - source: data
+      target: data
+    - source: assets
+      target: assets
+    - source: static
+      target: static
+  - path: github.com/hugo-toha/toha/v4
+
+# Manage languages
+# For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
+languages:
+  en:
+    languageName: English
+    weight: 1
+  bn:
+    languageName: বাংলা
+    weight: 3
+
+# Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
+# DefaultContentLanguage: bn
+
+# Allow raw html in markdown file
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
+    ordered: false
+
+# At least HTML and JSON are required for the main HTML content and
+# client-side JavaScript search
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# Enable global emoji support
+enableEmoji: true
+
+# Site parameters
+params:
+  # Background image of the landing page
+  background: /images/site/background.jpg
+
+  # Provide logos for your site. The inverted logo will be used in the initial
+  # transparent navbar and the main logo will be used in the non-transparent navbar.
+  logo:
+    main: /images/site/main-logo.png
+    inverted: /images/site/inverted-logo.png
+    favicon: /images/site/favicon.png
+
+  # GitHub repo of your site
+  gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
+  # Default branch of your Git repo
+  gitBranch: main
+
+  # Configure the number of section title visible in the top navbar
+  topNavbar:
+    maxVisibleSections: 5
+
+  # Configure various features of this theme
+  features:
+
+    # Enable dark theme
+    darkMode:
+      enable: false
+      services:
+        darkreader:
+          defaultColorScheme: system # options are 'system', 'dark', 'light'
+          fixes:
+            invert: ['img[src$=".svg"]'] # inverts svg colors.
+          theme:
+            brightness: 100
+            contrast: 100
+            sepia: 0
+
+    # Enable and configure portfolio
+    portfolio:
+      enable: true
+
+    # Enable and configure blog posts
+    blog:
+      enable: true
+      # Share post on different social media
+      shareButtons:
+        facebook: true
+        twitter: true
+        linkedin: true
+        reddit: true
+        whatsapp: true
+        email: true
+        # tumblr: true
+        # pocket: true
+        # diaspora: true
+        # mastodon: true
+
+    # Enable & configure "Notes" features
+    notes:
+      enable: true
+
+    # Enable comment feature. There, should be only one of them.
+    comment:
+      enable: false
+      services:
+        disqus:
+          shortName: toha-example-site
+        # valine:
+        #   appId: HTV6askWxVo3vOxlqjjaq2hd-MsYXbMMI
+        #   appKey: pVrT3C85KGIuk27t07eh6bUC
+        #   avatar: retro
+        #   placeholder: Share your thought.
+        #   lang: en
+        #   recordIP: true
+        #   enableQQ: true
+        # utteranc:
+        #   repo: github.com/hugo-toha/hugo-toha.github.io
+        #   issueTerm: title
+        #   theme: github-light
+        # giscus:
+        #   repo: your-repo/name
+        #   repoID: your-repo-id
+        #   category: your-category
+        #   categoryID: your-category-id
+          # theme: light
+          # map: url
+          # reaction: 1
+          # metadata: 0
+          # inputPosition: bottom
+          # crossOrigin: anonymous
+        # commento:
+        #   serverURL: cdn.commento.io
+        #   autoInit: true
+        #   hideDeleted: false
+
+    # Enable Analytics
+    analytics:
+      enabled: false
+      services:
+        # Google Analytics
+        google:
+          id: G-H4LBG7NDFZ
+        # # CounterDev
+        # counterDev:
+        #   id: <your counterdev id>
+        # # GoatCounter
+        # goatCounter:
+        #   code: <your goat counter code>
+        # # Matomo / Piwik
+        # matomo:
+        #   instance: matomo.example.com
+        #   siteId: 1 # Or any other number
+
+    # Enable Support
+    support:
+      enable: false
+      services:
+        kofi:
+          user: hossainemruz
+          text: Tip Me
+          textColor: '#f9fafc'
+          backgroundColor: '#248aaa'
+        # buymeacoffee:
+        #   user: <your buymeacoffee.com user>
+        #   text: Support me on Buy me a coffee!
+        #   info: Buy me a coffee!
+        #   color: '#FFDD00'
+
+    # specify whether you want to show Table of Contents in reading page
+    toc:
+      enable: true
+
+    # Show tags under the post title
+    tags:
+      enable: true
+
+    # Specify whether to show flag in the language selector. Default is true.
+    flags:
+      enable: true
+      # # If you want to use different country flag for a language, specify them here.
+      # flagOverwrites:
+      #   - languageCode: en
+      #     countryCode: us
+
+    # Enable this to use `embed-pdf` shortcode.
+    embedpdf:
+      enable: false
+
+    # Enable this to create flowcharts using shortcodes.
+    flowchart:
+      enable: false
+      services:
+        # Uncomment for `mermaid` shortcode.
+        mermaid:
+          # For config options, see: https://mermaid-js.github.io/mermaid/#/Setup?id=configuration
+          # theme: dark
+
+    # Enable this to create mathematic expressions using `$$` blocks
+    math:
+      enable: false
+      services:
+        # https://katex.org/docs/autorender.html#api for more configurations
+        katex:
+          delimiters:
+            - left: $$
+              right: $$
+              display: true
+            - left: \\[
+              right: \\]
+              display: true
+            - left: $
+              right: $
+              display: false
+            - left: \\(
+              right: \\)
+              display: false
+
+    # Enable to use custom syntax highlight
+    # Please note, Hugo comes with it's own html based syntax highlighter.
+    # Your code block will still be syntax highlighted by hugo.
+    # For more details: https://gohugo.io/content-management/syntax-highlighting/
+    # To disable Hugo's builtin syntax highlight,
+    # see: https://gohugo.io/getting-started/configuration-markup#highlight
+    # ```
+    # # config.yaml
+    # markup:
+    #   # this disables hugo's syntax highlighting.
+    #   codeFences: false
+    # ```
+    syntaxHighlight:
+      enable: true
+      services:
+        hljs:
+          # see: https://highlightjs.readthedocs.io/en/latest/api.html#configure
+          noHighlightRe: /^no-highlight$/i
+
+    # Enable to use `video-player` shortcode
+    videoPlayer:
+      enable: false
+      services:
+        # convert .js-player class into video player via https://plyr.io/
+        # Can play HTML5 Video, Audio, Youtube, Vimeo.
+        # For more info on setup: https://github.com/sampotts/plyr#quick-setup
+        plyr:
+          # options doc: https://github.com/sampotts/plyr#options
+          # fullscreen: true
+
+
+  # Provide footer configuration.
+  footer:
+    enable: true
+    # You can provide your custom footer template using this option.
+    # Put your template in "layouts/partials" folder of your repo.
+    template: footer.html
+    # Show/hide navigation in the footer. Default is "true".
+    navigation:
+      enable: true
+      # show custom menus in the footer
+      customMenus: true
+    # Show/hide "Contact Me" section in the footer. Default is "true".
+    contactMe:
+      enable: true
+    # Show/hide credentials section in the footer. Default is "true".
+    credentials:
+      enable: true
+
+    # Show/hide newsletter section in the footer. Default is "true".
+    # Currently, it supports "mailchimp".
+    newsletter:
+      enable: true
+      provider: mailchimp
+      mailchimpURL: https://github.us1.list-manage.com/subscribe/post?u=19de52a4603135aae97163fd8&amp;id=094a24c76e
+
+    # Show/hide disclaimer notice in the footer. Default is "false".
+    disclaimer:
+      enable: true

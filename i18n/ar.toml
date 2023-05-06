@@ -1,0 +1,126 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "الصفحة الرئيسية"
+
+[posts]
+other = "المنشورات"
+
+[toc_heading]
+other = "قائمة المحتويات"
+
+[tags]
+other = "الوسوم"
+
+[categories]
+other = "الأقسام"
+
+[at]
+other = "at"
+
+[resume]
+other = "سيرتي الذاتية"
+
+[navigation]
+other = "التصفح"
+
+[contact_me]
+other = "اتصل بي:"
+
+[email]
+other = "البريد الإلكتروني"
+
+[phone]
+other = "الهاتف"
+
+[newsletter_text]
+other = "ابق على اتصال من خلال القائمة البريدية"
+
+[newsletter_input_placeholder]
+other = "ادخل بريدك الالكتروني"
+
+[newsletter_warning]
+other = "بإدخال بريدك الإلكتروني، أنت توافق على تلقي رسائل إلكترونية دورية من هذا الموقع."
+
+[submit]
+other = "إرسال"
+
+[hugoAttributionText]
+other = "صنع باستخدام"
+
+[prev]
+other = "السابق"
+
+[next]
+other = "التالي"
+
+[share_on]
+other = "المشاركة على"
+
+[improve_this_page]
+other = "ساعد في تحسين هذه الصفحة"
+
+[out_of]
+other = "من"
+
+[publications]
+other = "المنشورات"
+
+[taken_courses]
+other = "الدروس"
+
+[course_name]
+other = "اسم المادة"
+
+[total_credit]
+other = "العلامة العامة"
+
+[obtained_credit]
+other = "العلامة"
+
+[extracurricular_activities]
+other = "نشاطات خارجية"
+
+[show_more]
+other = "إظهار المزيد"
+
+[show_less]
+other = "إخفاء"
+
+[responsibilities]
+other = "المسؤوليات:"
+
+[present]
+other = "حاليا"
+
+[comments_javascript]
+other = "من فضلك قم بتفعيل جافاسكريب لإظهار"
+
+[comments_by]
+other = "التعليقات موفرة بواسطة"
+
+[read]
+other = "قراءة"
+
+[project_star]
+other = "نجمة"
+
+[project_details]
+other = "التفاصيل"
+
+[err_404]
+other = "الصفحة التي تبحث عنها ليست بعد هناك."
+
+[more]
+other = "المزيد"
+
+[view_certificate]
+other = "إظهار الشهادة"
+
+[notes]
+other = "ملاحظات"
+
+[disclaimer_text]
+other = "إشعار بالمسؤولية"
+
+[search]
+other = "بحث"

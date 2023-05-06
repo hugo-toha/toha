@@ -1,0 +1,126 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Home"
+
+[posts]
+other = "Beiträge"
+
+[toc_heading]
+other = "Inhaltsverzeichnis"
+
+[tags]
+other = "Stichworte"
+
+[categories]
+other = "Kategorien"
+
+[at]
+other = "bei"
+
+[resume]
+other = "Mein Lebenslauf"
+
+[navigation]
+other = "Navigation"
+
+[contact_me]
+other = "Kontaktiere mich:"
+
+[email]
+other = "E-Mail"
+
+[phone]
+other = "Telefon"
+
+[newsletter_text]
+other = "Mit dem Newsletter auf dem neuesten Stand bleiben"
+
+[newsletter_input_placeholder]
+other = "E-Mail Adresse eingeben"
+
+[newsletter_warning]
+other = "Mit der Eingabe Ihrer E-Mail-Adresse erklären Sie sich damit einverstanden, den Newsletter dieser Website zu erhalten."
+
+[submit]
+other = "Absenden"
+
+[hugoAttributionText]
+other = "Unterstützt von"
+
+[prev]
+other = "Vorherige"
+
+[next]
+other = "Nächste"
+
+# [share_on]
+# other = "Share on"
+
+[improve_this_page]
+other = "Diese Seite verbessern"
+
+[out_of]
+other = "aus"
+
+[publications]
+other = "Publikationen"
+
+[taken_courses]
+other = "Belegte Kurse"
+
+[course_name]
+other = "Kursname"
+
+[total_credit]
+other = "Mögliche Punktzahl"
+
+[obtained_credit]
+other = "Note"
+
+[extracurricular_activities]
+other = "Außerschulische Aktivitäten"
+
+[show_more]
+other = "Mehr anzeigen"
+
+[show_less]
+other = "Weniger anzeigen"
+
+[responsibilities]
+other = "Verantwortlichkeiten:"
+
+[present]
+other = "heute"
+
+[comments_javascript]
+other = "Bitte aktiviere JavaScript um die Kommentare zu sehen"
+
+[comments_by]
+other = "Kommentare Unterstützt von"
+
+[read]
+other = "Lesen"
+
+[project_star]
+other = "Star"
+
+[project_details]
+other = "Details"
+
+[err_404]
+other = "Die von Ihnen gesuchte Seite ist noch nicht vorhanden."
+
+[more]
+other = "Mehr"
+
+[view_certificate]
+other = "Zertifikat ansehen"
+
+[notes]
+other = "Notizen"
+
+[disclaimer_text]
+other = "Haftungshinweis"
+
+[search]
+other = "Suche"

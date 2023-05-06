@@ -1,0 +1,126 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Главная"
+
+[posts]
+other = "Посты"
+
+[toc_heading]
+other = "Оглавление"
+
+[tags]
+other = "Теги"
+
+[categories]
+other = "Категории"
+
+[at]
+other = "в"
+
+[resume]
+other = "Резюме"
+
+[navigation]
+other = "Навигация"
+
+[contact_me]
+other = "Контакты:"
+
+[email]
+other = "Email"
+
+[phone]
+other = "Телефон"
+
+[newsletter_text]
+other = "Подпишитесь на уведомления, чтобы не пропустить новый пост"
+
+[newsletter_input_placeholder]
+other = "Введите email"
+
+[newsletter_warning]
+other = "Вводя свой адрес электронной почты, вы соглашаетесь получать информационный бюллетень этого веб-сайта."
+
+[submit]
+other = "Подтвердить"
+
+[hugoAttributionText]
+other = "Создано при помощи"
+
+[prev]
+other = "Предыдущий"
+
+[next]
+other = "Следующий"
+
+# [share_on]
+# other = "Share on"
+
+[improve_this_page]
+other = "Улучшить эту страницу"
+
+[out_of]
+other = "из"
+
+[publications]
+other = "Публикации"
+
+[taken_courses]
+other = "Пройденные курсы"
+
+[course_name]
+other = "Название курса"
+
+[total_credit]
+other = "Общий кредит"
+
+[obtained_credit]
+other = "Полученный кредит"
+
+[extracurricular_activities]
+other = "Внеклассные занятия"
+
+[show_more]
+other = "Узнать больше"
+
+[show_less]
+other = "Показывай меньше"
+
+# [responsibilities]
+# other = "Responsibilities:"
+
+# [present]
+# other = "Present"
+
+# [comments_javascript]
+# other = "Please enable JavaScript to view the"
+
+# [comments_by]
+# other = "comments powered by"
+
+# [read]
+# other = "Read"
+
+# [project_star]
+# other = "Star"
+
+# [project_details]
+# other = "Details"
+
+# [err_404]
+# other = "The page you are looking for is not there yet."
+
+[more]
+other = "Более"
+
+[view_certificate]
+other = "Просмотреть сертификат"
+
+[notes]
+other = "Ноты"
+
+[disclaimer_text]
+other = "Уведомление об ответственности"
+
+[search]
+other = "Поиск"
