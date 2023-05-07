@@ -137,6 +137,7 @@ The followings are valuable source of knowledge and inspiration for both the *Py
 * [Uniplot Python library](https://github.com/olavolav/uniplot)
 * [Machine Learning Mastery cGAN](https://machinelearningmastery.com/how-to-develop-a-conditional-generative-adversarial-network-from-scratch/)
 * [Exercise Threshold](https://www.exercisethresholds.com/)
+* Header photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com/s/photos/data?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
