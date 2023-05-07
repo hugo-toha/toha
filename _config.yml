@@ -1,5 +1,5 @@
 title: Oxynet
 description: Where AI meets CPET
 show_downloads: false
-google_analytics:
+google_analytics: false
 theme: jekyll-theme-cayman
