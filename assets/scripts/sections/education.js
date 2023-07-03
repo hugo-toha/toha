@@ -22,12 +22,9 @@ function toggleCourseVisibility (elem) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  const els = [
-    document.getElementById('show-more-btn'),
-    document.getElementById('show-less-btn')
-  ]
+  const els = Array.from(document.getElementsByClassName('btn'));
 
-  els.filter((el) => el != null).forEach((el) =>
+  els.filter((el) => el != null && (el.id == 'show-more-btn' || el.id == 'show-less-btn')).forEach((el) =>
     el.addEventListener('click', ({ target }) =>
       toggleCourseVisibility(target)))
 })
