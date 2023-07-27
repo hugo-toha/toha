@@ -1,7 +1,7 @@
 // in Hugo, Page kind can be either "section" or "page".
 // if it is section, then it's a page with a list of items, for example /posts
 // if it is page, then it is a single page.
-body.kind-section {
+body.kind-section, body.kind-term {
   .wrapper {
     display: flex;
     padding: 0;
