@@ -101,7 +101,7 @@
                                 <h6 class="text-muted">{{ i18n "extracurricular_activities"}}</h6>
                                 <ul>
                                 {{ range .extracurricularActivities }}
-                                    <li>{{ . }}</li>
+                                    <li>{{ . | markdownify }}</li>
                                 {{ end }}
                                 </ul>
                             </div>
