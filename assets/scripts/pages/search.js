@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
   function executeSearch (searchQuery) {
     const url = window.location.href.split('/search/')[0] + '/index.json'
 
-    fetch(url).then(function (data) {
+    fetch(url).then(response => response.json()).then(function (data) {
       const pages = data
       const fuse = new Fuse(pages, fuseOptions)
       const results = fuse.search(searchQuery)
@@ -91,8 +91,8 @@ window.addEventListener('DOMContentLoaded', () => {
         snippet
       })
 
-      const doc = new DOMParser().parseFromString(output, 'text/html')
-      document.getElementById('search-results').append(doc)
+      const dom = new DOMParser().parseFromString(output, 'text/html')
+      document.getElementById('search-results').append(dom.getElementsByClassName('post-card')[0])
 
       snippetHighlights.forEach(function (snipvalue) {
         const context = document.getElementById('#summary-' + key)
