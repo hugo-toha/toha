@@ -11,6 +11,16 @@
         <p class="card-text post-summary"> {{ .Summary }}</p>
       </div>
       <div class="card-footer">
+        {{ if and site.Params.features.tags.enable site.Params.features.tags.on_card }}
+        <div class="taxonomy-terms">
+          <ul style="padding-left: 0;">
+            {{ range .Params.tags }}
+            {{ $url:= printf "tags/%s/" . }}
+            <li class="rounded"><a href="{{ $url | urlize | relLangURL }}" class="btn, btn-sm">{{ . }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
         <span class="float-left">{{ .Date.Format "January 2, 2006" }}</span>
         <a href="{{ .RelPermalink }}" title="{{ i18n "read" }}" class="float-right btn btn-outline-info btn-sm">{{ i18n "read" }}</a>
       </div>
