@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const searchQuery = param('keyword')
   if (searchQuery) {
-    document.getElementById('search-query').value = searchQuery
+    document.getElementById('search-box').value = searchQuery
     executeSearch(searchQuery)
   } else {
     const node = document.createElement('p')
