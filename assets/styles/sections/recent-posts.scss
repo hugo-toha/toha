@@ -38,6 +38,22 @@
     -webkit-line-clamp: 5; /* number of lines to show */
     -webkit-box-orient: vertical;
   }
+
+  .taxonomy-terms {
+    text-align: left;
+  }
+  .taxonomy-terms li {
+    font-size: 0.5em;
+    list-style-type: none;
+    display: inline-block;
+    background: #248aaa;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+  }
+  
+  .taxonomy-terms a {
+    color: #f9fafc;
+  }
   
   /* ============= Device specific fixes ======= */
   

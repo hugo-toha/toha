@@ -1,7 +1,7 @@
 // in Hugo, Page kind can be either "section" or "page".
 // if it is section, then it's a page with a list of items, for example /posts
 // if it is page, then it is a single page.
-body.kind-section {
+body.kind-section, body.kind-term, body.kind-page{
   .wrapper {
     display: flex;
     padding: 0;
@@ -98,6 +98,22 @@ body.kind-section {
     width: fit-content;
   }
   
+  .taxonomy-terms-card {
+    text-align: left;
+  }
+  .taxonomy-terms-card li {
+    font-size: 0.5em;
+    list-style-type: none;
+    display: inline-block;
+    background: #248aaa;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+  }
+  
+  .taxonomy-terms-card a {
+    color: #f9fafc;
+  }
+
   /* ============= Device specific fixes ======= */
   
   /* Large screens such as TV */
