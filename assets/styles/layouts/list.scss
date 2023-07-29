@@ -98,6 +98,22 @@ body.kind-section, body.kind-term, body.kind-page{
     width: fit-content;
   }
   
+  .taxonomy-terms-card {
+    text-align: left;
+  }
+  .taxonomy-terms-card li {
+    font-size: 0.5em;
+    list-style-type: none;
+    display: inline-block;
+    background: #248aaa;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+  }
+  
+  .taxonomy-terms-card a {
+    color: #f9fafc;
+  }
+
   /* ============= Device specific fixes ======= */
   
   /* Large screens such as TV */
