@@ -153,6 +153,9 @@ params:
     analytics:
       enabled: false
       services:
+        # cloudflare web analytics
+        # cloudflare:
+        #   token: "<token>"
         # Google Analytics
         google:
           id: G-H4LBG7NDFZ
