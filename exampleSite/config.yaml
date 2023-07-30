@@ -264,6 +264,9 @@ params:
         plyr:
           # options doc: https://github.com/sampotts/plyr#options
           # fullscreen: true
+    
+    readingTime:
+      enable: true
 
 
   # Provide footer configuration.
