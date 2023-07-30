@@ -265,6 +265,7 @@ params:
           # options doc: https://github.com/sampotts/plyr#options
           # fullscreen: true
     
+    # Enable reading time support in post cards and in post pages
     readingTime:
       enable: true
 
