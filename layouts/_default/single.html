@@ -39,7 +39,7 @@
         <div class="author-profile ml-auto align-self-lg-center">
           <img class="rounded-circle" src='{{ partial "helpers/get-author-image.html" . }}' alt="Author Image">
           <h5 class="author-name">{{ partial "helpers/get-author-name.html" . }}</h5>
-          <p>{{ .Page.Date | time.Format ":date_full" }}</p>
+          <p>{{ .Page.Date | time.Format ":date_full" }}{{ if site.Params.features.readingTime }} | {{ .ReadingTime }} minute{{ if (ne .ReadingTime 1) }}s{{ end }}{{ end }}</p>
         </div>
 
         <div class="title">

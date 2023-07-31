@@ -21,7 +21,7 @@
           </ul>
         </div>
         {{ end }}
-        <span class="float-left">{{ .Date.Format "January 2, 2006" }}</span>
+        <span class="float-left">{{ .Date.Format "January 2, 2006" }}{{ if site.Params.features.readingTime }} | {{ .ReadingTime }} minute{{ if (ne .ReadingTime 1) }}s{{ end }}{{ end }}</span>
         <a href="{{ .RelPermalink }}" title="{{ i18n "read" }}" class="float-right btn btn-outline-info btn-sm">{{ i18n "read" }}</a>
       </div>
     </div>
