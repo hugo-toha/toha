@@ -299,22 +299,10 @@ body.kind-page {
   #scroll-to-top.show {
     visibility: visible;
   }
-  .taxonomy-terms {
+  .tags {
     text-align: center;
   }
-  .taxonomy-terms li {
-    font-size: 0.8em;
-    list-style-type: none;
-    display: inline-block;
-    background: #248aaa;
-    margin-left: 0.2em;
-    margin-right: 0.2em;
-  }
-  
-  .taxonomy-terms a {
-    color: #f9fafc;
-  }
-  
+
   /* ============= Device specific fixes ======= */
   
   /* Large screens such as TV */
