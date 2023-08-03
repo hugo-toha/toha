@@ -166,24 +166,24 @@ body.kind-page {
     }
 
   }
-  @include media('<=small') {
+  @include media('<medium') {
     .post-card {
       margin-left: 1%;
       margin-right: 1%;
       width: 98%;
     }
   }
-  @include media('>=medium') {
+  @include media('>=medium','<large') {
     .post-card {
       width: calc(100% / 2);
     }
   }
-  @include media('>=large') {
+  @include media('>=large','<very-large') {
     .post-card {
       width: calc(100% / 3);
     }
   }
-  @include media('>=very-large') {
+  @include media('>=very-large','<extra-large') {
     .post-card {
       width: calc(100% / 4);
     }

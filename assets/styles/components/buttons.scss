@@ -1,3 +1,56 @@
+.btn-dark {
+  background-color: #3c4858 !important;
+  border-color: #3c4858 !important;
+  color: #e5e9f2 !important;
+  transition: all 0.3s ease-out !important;
+
+  &:hover,
+  &:focus {
+    background-color: #248aaa !important;
+    border-color: #248aaa !important;
+    transition: all 0.3s ease-out !important;
+  }
+}
+
+.btn-info {
+  background-color: #248aaa !important;
+  color: #e5e9f2 !important;
+
+  &:hover,
+  &:focus {
+    background-color: #2098d1 !important;
+    color: #e5e9f2 !important;
+  }
+}
+
+.btn-outline-info {
+  color: #2098d1 !important;
+  border-color: #2098d1 !important;
+
+  &:hover,
+  &:focus {
+    background-color: #2098d1 !important;
+    color: #e5e9f2 !important;
+  }
+}
+
+.btn-link {
+  color: #248aaa;
+
+  &:hover,
+  &:focus {
+    color: #207089;
+  }
+}
+
+.nav-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #8392a5;
+}
+
+
 .tags {
   text-align: left;
 

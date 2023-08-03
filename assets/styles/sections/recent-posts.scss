@@ -8,14 +8,15 @@
     padding-bottom: 55px;
     display: block;
   }
-  @include media('<=small') {
+
+  @include media('<medium') {
     .post-card {
       margin-left: 1%;
       margin-right: 1%;
       width: 98%;
     }
   }
-  @include media('<=medium') {
+  @include media('>=medium','<large') {
     .container {
       max-width: 100%;
     }
@@ -23,13 +24,9 @@
       width: calc(100% / 2);
     }
   }
-  @include media('<=large') {
+  @include media('>=large') {
     .post-card {
       width: calc(100% / 3);
     }
-  }
-  @include media('<=very-large') {
-  }
-  @include media('<=extra-large') {
   }
 }
