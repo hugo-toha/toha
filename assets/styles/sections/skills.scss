@@ -11,22 +11,17 @@
       padding: 0.7rem;
       padding-bottom: 0rem;
       border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.125);
+
+      .card-img-xs {
+        margin-right: 0.5rem;
+        margin-bottom: 0.75rem;
+      }
     }
 
     .card-body {
       padding-top: 0.2rem;
       padding-left: 0.7rem;
     }
-    .card-img-xs {
-      margin-right: 0.5rem;
-      margin-bottom: 0.75rem;
-    }
-  }
-
-  h1 > span {
-    margin-top: -55px; /* Size of fixed header */
-    padding-bottom: 55px;
-    display: block;
   }
 
   @include media('<=medium') {
