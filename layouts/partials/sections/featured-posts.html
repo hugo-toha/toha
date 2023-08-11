@@ -3,13 +3,6 @@
   {{ $sectionID = .section.id }}
 {{ end }}
 
-{{ $numShow := 3}}
-{{ if .section.numShow }}
-  {{ $numShow = .section.numShow }}
-{{ end }}
-
-{{ $posts := .posts}}
-
 <div class="container-fluid anchor pb-5 recent-posts-section">
   {{ if not (.section.hideTitle) }}
     <h1 class="text-center">
