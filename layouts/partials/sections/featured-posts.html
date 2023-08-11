@@ -20,8 +20,8 @@
   {{ end }}
   <div class="container">
     <div class="row" id="recent-post-cards">
-      {{ range (where (where site.RegularPages.ByDate.Reverse "Type" "posts" ) "Layout" "!=" "search") }}
-        {{if in $posts (.Title)}}
+      {{ range $post := .posts}}
+        {{ with site.GetPage $post }}
           {{ partial "cards/recent-post.html" . }}
         {{ end }}
       {{ end }}
