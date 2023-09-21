@@ -7,3 +7,11 @@ $breakpoints: (
   extra-large: 1536px,
   ultra-large: 2560px,
 );
+
+@mixin section-title-adjustment(){
+  h1 > span {
+    margin-top: -55px; /* Size of fixed header */
+    padding-bottom: 55px;
+    display: block;
+  }
+}

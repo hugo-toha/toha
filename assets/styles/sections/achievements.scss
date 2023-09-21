@@ -1,12 +1,8 @@
 .achievements-section {
+  @include section-title-adjustment();
+
   .container {
     padding-top: 0.5rem;
-  }
-
-  h1 > span {
-    margin-top: -55px; /* Size of fixed header */
-    padding-bottom: 55px;
-    display: block;
   }
 
   #gallery {

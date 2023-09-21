@@ -1,11 +1,7 @@
 .experiences-section {
-  padding-bottom: 1rem;
+  @include section-title-adjustment();
 
-  h1 > span {
-    margin-top: -55px; /* Size of fixed header */
-    padding-bottom: 55px;
-    display: block;
-  }
+  padding-bottom: 1rem;
 
   ul {
     padding-left: 1rem;
