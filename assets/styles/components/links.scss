@@ -1,0 +1,15 @@
+.list-link {
+    text-decoration: none;
+    color: #131313;
+    transition: all 0.3s ease-out;
+    &.active {
+      display: inline;
+      color: #2098d1;
+    }
+  
+    &:hover {
+      margin-left: 3px;
+      color: #2098d1;
+      transition: all 0.3s ease-out;
+    }
+  }
