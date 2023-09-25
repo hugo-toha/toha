@@ -110,10 +110,6 @@ body.kind-page {
       display: block;
     }
 
-    #toc-toggler {
-      visibility: hidden;
-    }
-
     .navbar-collapse.lang-selector {
       display: block !important;
       position: absolute;
@@ -164,7 +160,6 @@ body.kind-page {
       margin-top: 0.5rem;
       transition: all ease-out 0.3s;
     }
-
   }
   @include media('<medium') {
     .post-card {
@@ -173,17 +168,17 @@ body.kind-page {
       width: 98%;
     }
   }
-  @include media('>=medium','<large') {
+  @include media('>=medium', '<large') {
     .post-card {
       width: calc(100% / 2);
     }
   }
-  @include media('>=large','<very-large') {
+  @include media('>=large', '<very-large') {
     .post-card {
       width: calc(100% / 3);
     }
   }
-  @include media('>=very-large','<extra-large') {
+  @include media('>=very-large', '<extra-large') {
     .post-card {
       width: calc(100% / 4);
     }

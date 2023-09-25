@@ -44,6 +44,7 @@
     "mermaid": "^9.2.1",
     "plyr": "^3.7.2",
     "popper.js": "^1.16.1",
-    "include-media": "^1.4.10"
+    "include-media": "^1.4.10",
+    "feather-icons": "^4.29.1"
   }
 }

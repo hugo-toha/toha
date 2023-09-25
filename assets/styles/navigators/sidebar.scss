@@ -87,13 +87,13 @@
               &:before {
                 content: '';
                 display: block;
-                width: 20px;
+                width: 18px;
                 height: 0;
                 border-top: 1px solid;
                 margin-top: -1px;
                 position: absolute;
                 top: 18px;
-                left: -3px;
+                left: -2px;
               }
               &:last-child:before {
                 background: #f9fafc;
@@ -116,9 +116,9 @@
                   display: block;
                   width: 0;
                   position: absolute;
-                  top: -10px;
-                  left: 0.3rem;
-                  bottom: 0.9rem;
+                  top: -8px;
+                  left: 6px;
+                  bottom: 0.8rem;
                   border-left: 1px solid;
                 }
               }
@@ -246,4 +246,10 @@
       }
     }
   }
+}
+
+.feather-plus-circle,
+.feather-minus-circle {
+  width: 1rem;
+  height: 1rem;
 }
