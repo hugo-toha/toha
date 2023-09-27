@@ -50,7 +50,6 @@
   color: #8392a5;
 }
 
-
 .tags {
   text-align: left;
 
@@ -64,5 +63,32 @@
   }
   a {
     color: #f9fafc;
+  }
+}
+
+.icon-button {
+  background-color: #3c4858;
+  color: #e5e9f2 !important;
+  padding: 0.25rem 0.5rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: #248aaa !important;
+    transition: all 0.3s ease-out !important;
+  }
+}
+
+.filled-button {
+  color: #f9fafc !important;
+  background-color: #248aaa !important;
+  transition: all 0.3s ease-out;
+
+  &:hover,
+  &:active {
+    background-color: #0cafe1 !important;
+    transition: all 0.3 ease-out;
   }
 }

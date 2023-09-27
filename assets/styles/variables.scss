@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 $breakpoints: (
   tiny: 320px,
   small: 640px,
@@ -8,10 +10,35 @@ $breakpoints: (
   ultra-large: 2560px,
 );
 
-@mixin section-title-adjustment(){
+$brand-colors: (
+  'facebook': #3b5998,
+  'twitter': #1da1f2,
+  'linkedin': #0077b5,
+  'reddit': #ff4500,
+  'tumblr': #35465c,
+  'pocket': #ef4056,
+  'diaspora': #1e1e1e,
+  'whatsapp': #25d366,
+);
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin section-title-adjustment() {
   h1 > span {
     margin-top: -55px; /* Size of fixed header */
     padding-bottom: 55px;
     display: block;
+  }
+}
+
+@mixin brand-background() {
+  @each $brand, $color in $brand-colors {
+    .bg-#{$brand} {
+      background-color: $color;
+    }
   }
 }
