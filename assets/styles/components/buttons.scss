@@ -1,45 +1,44 @@
 .btn-dark {
-  background-color: #3c4858 !important;
-  border-color: #3c4858 !important;
-  color: #e5e9f2 !important;
-  transition: all 0.3s ease-out !important;
+  background-color: $text-color !important;
+  border-color: $text-color !important;
+  color: $text-over-accent-color !important;
+  @include transition();
 
   &:hover,
   &:focus {
-    background-color: #248aaa !important;
-    border-color: #248aaa !important;
-    transition: all 0.3s ease-out !important;
+    background-color: $accent-color !important;
+    border-color: $accent-color !important;
+    @include transition();
   }
 }
 
 .btn-info {
-  background-color: #248aaa !important;
-  color: #e5e9f2 !important;
+  background-color: $accent-color !important;
+  color: $text-over-accent-color !important;
 
   &:hover,
   &:focus {
-    background-color: #2098d1 !important;
-    color: #e5e9f2 !important;
+    background-color: $hover-over-accent-color !important;
   }
 }
 
 .btn-outline-info {
-  color: #2098d1 !important;
-  border-color: #2098d1 !important;
+  color: $accent-color !important;
+  border-color: $accent-color !important;
 
   &:hover,
   &:focus {
-    background-color: #2098d1 !important;
-    color: #e5e9f2 !important;
+    background-color: $accent-color !important;
+    color: $text-over-accent-color !important;
   }
 }
 
 .btn-link {
-  color: #248aaa;
+  color: $accent-color;
 
   &:hover,
   &:focus {
-    color: #207089;
+    color: $hover-over-accent-color;
   }
 }
 
@@ -47,7 +46,7 @@
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  color: #8392a5;
+  color: $muted-text-color;
 }
 
 .tags {
@@ -57,18 +56,18 @@
     font-size: 0.5em;
     list-style-type: none;
     display: inline-block;
-    background: #248aaa;
+    background: $accent-color;
     margin-left: 0.1em;
     margin-right: 0.1em;
   }
   a {
-    color: #f9fafc;
+    color: $text-over-accent-color;
   }
 }
 
 .icon-button {
-  background-color: #3c4858;
-  color: #e5e9f2 !important;
+  background-color: $text-color;
+  color: $text-over-accent-color !important;
   padding: 0.25rem 0.5rem;
   line-height: 1.5;
   border-radius: 0.2rem;
@@ -76,19 +75,19 @@
 
   &:hover,
   &:focus {
-    background-color: #248aaa !important;
-    transition: all 0.3s ease-out !important;
+    background-color: $accent-color !important;
+    @include transition();
   }
 }
 
 .filled-button {
-  color: #f9fafc !important;
-  background-color: #248aaa !important;
-  transition: all 0.3s ease-out;
+  background-color: $accent-color !important;
+  color: $text-over-accent-color !important;
+  @include transition();
 
   &:hover,
   &:active {
-    background-color: #0cafe1 !important;
-    transition: all 0.3 ease-out;
+    background-color: $hover-over-accent-color !important;
+    @include transition();
   }
 }

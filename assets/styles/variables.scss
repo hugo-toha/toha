@@ -10,6 +10,36 @@ $breakpoints: (
   ultra-large: 2560px,
 );
 
+// Color are chosen from TailwindCSS color scheme
+// https://tailwindcss.com/docs/customizing-colors
+
+// accent-color
+$accent-color: #0891b2; // cyan 600
+$hover-over-accent-color: #06b6d4; // cyan 500
+$text-over-accent-color: #e4e4e7; // zinc 200
+
+// background-color
+$bg-primary: #f8fafc; // slate 50
+$bg-primary-inverse: #0f172a; // slate 900
+$bg-secondary: #e2e8f0; // slate 200
+$bg-card: #fff;
+
+// text-color
+$heading-color: #1e293b; // slate 800
+$text-color: #334155; // slate 700
+$inverse-text-color: #cbd5e1; // slate 300
+$muted-text-color: #64748b; // slate 500
+$inline-code-color: #dc2626; // red 600
+$highlight-color: #fde68a; // amber 200
+
+// transitions
+$transition-duration: 0.3s;
+$transition-type: ease-out;
+
+// borders and shadows
+$border-color: rgba($accent-color, 0.1);
+$box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
+
 $brand-colors: (
   'facebook': #3b5998,
   'twitter': #1da1f2,
@@ -20,25 +50,3 @@ $brand-colors: (
   'diaspora': #1e1e1e,
   'whatsapp': #25d366,
 );
-
-@mixin reset-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-@mixin section-title-adjustment() {
-  h1 > span {
-    margin-top: -55px; /* Size of fixed header */
-    padding-bottom: 55px;
-    display: block;
-  }
-}
-
-@mixin brand-background() {
-  @each $brand, $color in $brand-colors {
-    .bg-#{$brand} {
-      background-color: $color;
-    }
-  }
-}

@@ -16,7 +16,7 @@
       width: 98%;
     }
   }
-  @include media('>=medium','<large') {
+  @include media('>=medium', '<large') {
     .container {
       max-width: 100%;
     }

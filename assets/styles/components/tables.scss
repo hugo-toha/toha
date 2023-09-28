@@ -1,0 +1,74 @@
+table {
+  border-radius: 0.1rem;
+  border: 1px solid $border-color;
+  min-width: 10rem;
+  padding: 0.1rem;
+  thead {
+    tr {
+      background: $accent-color;
+      color: $text-over-accent-color;
+    }
+  }
+
+  tbody {
+    tr {
+      height: 40px !important;
+      color: $text-color;
+      &:nth-child(odd) {
+        background-color: $bg-primary;
+      }
+      &:nth-child(even) {
+        background-color: rgba($accent-color, 0.05);
+      }
+    }
+  }
+  th,
+  td {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+.gist {
+  table {
+    border-radius: unset;
+    background: unset;
+    border: unset;
+    padding: unset;
+
+    tr {
+      height: unset !important;
+    }
+
+    th,
+    td {
+      padding: unset;
+      border-left: unset;
+      border-bottom: unset;
+    }
+    td,
+    tc {
+      border-right: 1px solid $border-color;
+    }
+
+    thead {
+      tr {
+        background: unset;
+        color: unset;
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: unset;
+        }
+        &:hover {
+          background: unset;
+        }
+      }
+    }
+  }
+}

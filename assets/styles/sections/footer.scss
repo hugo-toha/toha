@@ -1,19 +1,20 @@
 .footer {
-  color: #8392a5 !important;
-  background-color: #1c2d41;
+  color: $muted-text-color !important;
+  background-color: $bg-primary-inverse;
   position: relative;
   z-index: 9999;
 
   h5 {
-    color: #c0ccda;
+    color: $inverse-text-color;
   }
 
   a {
-    color: #8392a5;
-    transition: all 0.3s ease-out;
+    color: $muted-text-color;
+    @include transition();
     &:hover {
       margin-left: 5px;
-      transition: all 0.3s ease-out;
+      text-decoration: $muted-text-color underline;
+      @include transition();
     }
   }
 
@@ -27,37 +28,42 @@
   }
 
   hr {
-    background-color: #8392a5;
+    background-color: $muted-text-color;
   }
 
   p:first-child {
-    color: #c0ccda;
+    color: $inverse-text-color;
   }
 
   input {
-    background-color: #c0ccda;
+    background-color: $inverse-text-color;
     &:focus {
-      background-color: #e5e9f2;
+      background-color: $bg-secondary;
     }
   }
 
   #disclaimer {
-    color: #8392a5 !important;
+    color: $muted-text-color !important;
     text-align: justify;
     & > strong {
-      color: #c0ccda !important;
+      color: $inverse-text-color !important;
     }
   }
 
   #theme {
-    color: #c0ccda;
+    color: $inverse-text-color;
     img {
       width: 32px;
+      display: inline-block;
     }
   }
-
-  #hugo:hover {
-    margin-right: 5px;
-    transition: all 0.3s ease-out;
+  #hugo {
+    &:hover {
+      margin-right: 5px;
+      @include transition();
+    }
+    img {
+      display: inline-block;
+    }
   }
 }

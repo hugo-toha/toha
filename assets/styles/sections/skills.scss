@@ -5,12 +5,12 @@
     height: 100%;
 
     .card-head {
-      background-color: #f9fafc;
+      background-color: $bg-primary !important;
       height: -moz-fit-content;
       height: fit-content;
       padding: 0.7rem;
       padding-bottom: 0rem;
-      border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.125);
+      border-bottom: 0.0625rem solid rgba($accent-color, 0.4);
 
       .card-img-xs {
         margin-right: 0.5rem;

@@ -12,6 +12,16 @@
 @import '@fontsource/mulish/700';
 
 @import './variables';
+@import './mixins';
+
+// components
+@import './components/cards';
+@import './components/buttons';
+@import './components/links';
+@import './components/texts';
+@import './components/images';
+@import './components/tables';
+@import './components/misc';
 
 // layouts
 @import './layouts/main';
@@ -38,11 +48,6 @@
 @import './sections/publications';
 @import './sections/footer';
 
-
-// components
-@import './components/cards';
-@import './components/buttons';
-@import './components/links';
 
 
 // override

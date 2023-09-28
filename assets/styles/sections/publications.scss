@@ -2,12 +2,12 @@
   @include section-title-adjustment();
 
   .card {
-    background: #fff;
-    border-top: 2px solid #248aaa;
+    background: $bg-card;
+    border-top: 2px solid $accent-color;
 
     &:hover,
     &:focus {
-      border-top: 2px solid #248aaa;
+      border-top: 2px solid $accent-color;
     }
 
     .card-header {
@@ -17,7 +17,7 @@
       flex-direction: column;
 
       .sub-title {
-        color: #8392a5;
+        color: $muted-text-color;
         margin-top: 0.4rem;
 
         span:nth-child(2) {
@@ -33,7 +33,7 @@
     }
 
     .card-footer {
-      background: #fff;
+      background: $bg-card;
       border: none;
       padding: 0;
       padding-left: 1rem;

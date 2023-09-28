@@ -2,13 +2,13 @@
   @include section-title-adjustment();
 
   .card {
-    background: #fff;
-    border-top: 2px solid #248aaa;
+    background: $bg-card;
+    border-top: 2px solid $accent-color;
     height: 100%;
 
     &:hover,
     &:focus {
-      border-top: 2px solid #248aaa;
+      border-top: 2px solid $hover-over-accent-color;
     }
 
     .card-header {
@@ -16,7 +16,7 @@
       border: none;
 
       .sub-title {
-        color: #8392a5;
+        color: $muted-text-color;
         margin-top: 0.4rem;
       }
     }
@@ -28,7 +28,7 @@
     }
 
     .card-footer {
-      background: #fff;
+      background: $bg-card;
       border: none;
       padding: 0;
       padding-left: 0.7rem;

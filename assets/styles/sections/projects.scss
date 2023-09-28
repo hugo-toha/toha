@@ -1,7 +1,7 @@
 .projects-section {
   .card {
     .card-header {
-      background-color: #f9fafc;
+      background-color: $bg-card;
       padding: 0.7rem;
       padding-bottom: 0rem;
       text-decoration: none;
@@ -10,7 +10,7 @@
         margin-right: 0.5rem;
       }
       .sub-title {
-        color: #8392a5;
+        color: $muted-text-color;
         margin-top: 0.4rem;
 
         span {

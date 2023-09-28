@@ -49,12 +49,12 @@ body.kind-page {
 
           .page-item {
             & > a {
-              color: #248aaa;
+              color: $accent-color;
             }
 
             &.active > a {
-              background-color: #248aaa;
-              color: #f9fafc;
+              background-color: $accent-color;
+              color: $text-over-accent-color;
             }
           }
         }
@@ -84,18 +84,18 @@ body.kind-page {
           width: 100%;
           padding-left: 0;
           padding-right: 0;
-          transition: all ease-out 0.3s;
+          @include transition();
         }
 
         &.hide {
           .content {
             margin-top: 0;
             padding-top: 0;
-            transition: all ease-out 0.3s;
+            @include transition();
           }
           .post-card-holder {
             margin-top: 0.5rem;
-            transition: all ease-out 0.3s;
+            @include transition();
           }
         }
       }
@@ -136,7 +136,7 @@ body.kind-page {
             padding-left: 0.5rem;
             padding-right: 0.5rem;
             position: relative;
-            transition: all ease-out 0.3s;
+            @include transition();
           }
         }
         .container {

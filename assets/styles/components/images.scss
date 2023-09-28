@@ -1,0 +1,34 @@
+img {
+  display: block;
+  max-width: 100%;
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.left {
+    margin-right: auto;
+  }
+
+  &.right {
+    margin-left: auto;
+  }
+}
+
+figure {
+  border: 1px solid $border-color;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: center;
+  margin: auto;
+}
+
+caption,
+figcaption {
+  caption-side: bottom;
+  text-align: center;
+  color: $muted-text-color;
+}

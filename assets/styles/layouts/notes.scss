@@ -48,7 +48,7 @@ body.type-notes {
 
           .note-title {
             padding-left: 1rem;
-            color: #248aaa;
+            color: $accent-color;
 
             &:before {
               content: '';
@@ -56,11 +56,11 @@ body.type-notes {
               width: 98%;
               height: 100%;
               margin-bottom: -26px;
-              border-bottom: 1px solid #248aaa;
+              border-bottom: 1px solid $accent-color;
             }
 
             span {
-              background: #e5e9f2;
+              background: $bg-secondary;
               padding-right: 5px;
             }
           }
@@ -86,7 +86,7 @@ body.type-notes {
         max-width: 100%;
         order: 2;
         padding-bottom: 0.5rem;
-        transition: all ease-out 0.3s;
+        @include transition();
 
         .content {
           overflow: hidden;
@@ -97,7 +97,7 @@ body.type-notes {
             padding-left: 0.5rem;
             padding-right: 0.5rem;
             position: relative;
-            transition: all ease-out 0.3s;
+            @include transition();
             .note-card {
               flex: 50%;
             }
@@ -109,7 +109,7 @@ body.type-notes {
 
         &.hide {
           max-width: 60%;
-          transition: all ease-out 0.3s;
+          @include transition();
         }
       }
     }
@@ -119,13 +119,13 @@ body.type-notes {
     .note-card-holder .note-card {
       max-width: 50%;
       min-width: 50%;
-      transition: all ease-out 0.3s;
+      @include transition();
     }
 
     .content-section.hide .note-card-holder .note-card {
       max-width: 100%;
       min-width: 100%;
-      transition: all ease-out 0.3s;
+      @include transition();
     }
   }
 
@@ -141,16 +141,16 @@ body.type-notes {
           width: 100%;
           padding-left: 0;
           padding-right: 0;
-          transition: all ease-out 0.3s;
+          @include transition();
 
           .note-card-holder {
             margin-top: 0.5rem;
-            transition: all ease-out 0.3s;
+            @include transition();
 
             .note-card {
               flex: 100%;
               max-width: 100%;
-              transition: all ease-out 0.3s;
+              @include transition();
             }
           }
         }
@@ -159,13 +159,13 @@ body.type-notes {
           max-width: 100%;
           padding-left: 0;
           width: 100%;
-          transition: all ease-out 0.3s;
+          @include transition();
 
           .content {
             .note-card-holder {
               margin-top: 0;
               padding-top: 0;
-              transition: all ease-out 0.3s;
+              @include transition();
             }
           }
         }

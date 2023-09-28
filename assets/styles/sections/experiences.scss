@@ -7,7 +7,7 @@
     padding-left: 1rem;
     & > li {
       margin-left: 0;
-      color: #3c4858;
+      color: $text-color;
     }
   }
 
@@ -18,8 +18,8 @@
   .circle {
     padding: 13px 20px;
     border-radius: 50%;
-    background-color: #248aaa;
-    color: #f9fafc;
+    background-color: $accent-color;
+    color: $text-over-accent-color;
     max-height: 50px;
     z-index: 2;
   }
@@ -33,7 +33,7 @@
       &::after {
         content: '';
         position: absolute;
-        border-left: 3px solid #248aaa;
+        border-left: 3px solid $accent-color;
         z-index: 1;
         height: 100%;
         left: 50%;
@@ -48,7 +48,7 @@
         height: 40px;
       }
       hr {
-        border-top: 3px solid #248aaa;
+        border-top: 3px solid $accent-color;
         margin: 0;
         top: 17px;
         position: relative;
@@ -58,7 +58,7 @@
         overflow: hidden;
       }
       .corner {
-        border: 3px solid #248aaa;
+        border: 3px solid $accent-color;
         width: 100%;
         position: relative;
         border-radius: 15px;

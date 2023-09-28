@@ -1,0 +1,30 @@
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin section-title-adjustment() {
+  h1 > span {
+    margin-top: -55px; /* Size of fixed header */
+    padding-bottom: 55px;
+    display: block;
+  }
+}
+
+@mixin brand-background() {
+  @each $brand, $color in $brand-colors {
+    .bg-#{$brand} {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin transition() {
+  transition: all $transition-type $transition-duration;
+}
+
+@mixin selection-color() {
+  background: $accent-color;
+  color: $text-over-accent-color;
+}
