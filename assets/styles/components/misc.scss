@@ -1,0 +1,33 @@
+.paginator {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  vertical-align: bottom;
+
+  .page-item {
+    & > a {
+      color: $accent-color;
+    }
+    &.active,
+    &:hover > a {
+      background-color: $accent-color !important;
+      color: $text-over-accent-color !important;
+    }
+  }
+}
+
+pre {
+  margin: 5px;
+  & > code {
+    padding: 10px !important;
+  }
+}
+
+@include media('<=large') {
+  pre {
+    margin: 0px;
+    & > code {
+      padding: 0px !important;
+    }
+  }
+}

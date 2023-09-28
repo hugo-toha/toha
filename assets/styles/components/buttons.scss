@@ -1,0 +1,93 @@
+.btn-dark {
+  background-color: $text-color !important;
+  border-color: $text-color !important;
+  color: $text-over-accent-color !important;
+  @include transition();
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color !important;
+    border-color: $accent-color !important;
+    @include transition();
+  }
+}
+
+.btn-info {
+  background-color: $accent-color !important;
+  color: $text-over-accent-color !important;
+
+  &:hover,
+  &:focus {
+    background-color: $hover-over-accent-color !important;
+  }
+}
+
+.btn-outline-info {
+  color: $accent-color !important;
+  border-color: $accent-color !important;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color !important;
+    color: $text-over-accent-color !important;
+  }
+}
+
+.btn-link {
+  color: $accent-color;
+
+  &:hover,
+  &:focus {
+    color: $hover-over-accent-color;
+  }
+}
+
+.nav-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: $muted-text-color;
+}
+
+.tags {
+  text-align: left;
+
+  li {
+    font-size: 0.5em;
+    list-style-type: none;
+    display: inline-block;
+    background: $accent-color;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+  }
+  a {
+    color: $text-over-accent-color;
+  }
+}
+
+.icon-button {
+  background-color: $text-color;
+  color: $text-over-accent-color !important;
+  padding: 0.25rem 0.5rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color !important;
+    @include transition();
+  }
+}
+
+.filled-button {
+  background-color: $accent-color !important;
+  color: $text-over-accent-color !important;
+  @include transition();
+
+  &:hover,
+  &:active {
+    background-color: $hover-over-accent-color !important;
+    @include transition();
+  }
+}

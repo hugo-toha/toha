@@ -4,8 +4,8 @@ const updateNavBar = () => {
   const themeIcon = document.getElementById('navbar-theme-icon-svg')
 
   if (window.scrollY > 40) {
-    topNavbar?.classList.remove('initial-navbar')
-    topNavbar?.classList.add('final-navbar', 'shadow')
+    topNavbar?.classList.remove('transparent-navbar')
+    topNavbar?.classList.add('shadow')
 
     navbarToggler?.classList.remove('navbar-dark')
     navbarToggler?.classList.add('navbar-light')
@@ -20,8 +20,8 @@ const updateNavBar = () => {
       document.getElementById('logo')?.setAttribute('src', logoURL)
     }
   } else {
-    topNavbar?.classList.remove('final-navbar', 'shadow')
-    topNavbar?.classList.add('initial-navbar')
+    topNavbar?.classList.remove('shadow')
+    topNavbar?.classList.add('transparent-navbar')
 
     navbarToggler?.classList.remove('navbar-light')
     navbarToggler?.classList.add('navbar-dark')
@@ -43,18 +43,20 @@ document.addEventListener('DOMContentLoaded', function () {
   // ==================================================
   // When the user scrolls down 80px from the top of the document,
   // resize the navbar's padding and the logo's font size
-  document.addEventListener('scroll', updateNavBar)
+  const topNavbar = document.getElementById('top-navbar')
+  if (topNavbar?.classList.contains('homepage')) {
+    document.addEventListener('scroll', updateNavBar)
+    updateNavBar()
+  }
 
   // Creates a click handler to collapse the navigation when
   // anchors in the mobile nav pop up are clicked
-  const navMain =document.getElementsByClassName('navbar-collapse')
-  Array.from(navMain).forEach(function(el) {
+  const navMain = document.getElementsByClassName('navbar-collapse')
+  Array.from(navMain).forEach(function (el) {
     el.addEventListener('click', function (e) {
       if (e.target.tagName === 'A') {
         el.classList.add('collapse')
       }
     })
   })
-
-  updateNavBar()
 })

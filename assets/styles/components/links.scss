@@ -1,0 +1,52 @@
+a {
+  color: $accent-color;
+  @include transition();
+
+  &:hover,
+  &:focus {
+    text-decoration: $hover-over-accent-color underline;
+    color: $hover-over-accent-color;
+    @include transition();
+  }
+}
+
+.list-link {
+  text-decoration: none;
+  color: $text-color;
+  @include transition();
+  &.active {
+    display: inline;
+    color: $accent-color;
+  }
+
+  &:hover {
+    margin-left: 3px;
+    color: $accent-color;
+    @include transition();
+  }
+}
+
+a.header-anchor {
+  text-decoration: none;
+  color: $heading-color;
+  i,
+  svg {
+    font-size: 10pt;
+    color: $text-color;
+    display: none;
+    margin-left: 0.5rem;
+  }
+  &:hover {
+    i,
+    svg {
+      display: inline-block;
+    }
+  }
+  code {
+    color: $inline-code-color;
+  }
+}
+
+.anchor {
+  padding-top: 3.5rem;
+}

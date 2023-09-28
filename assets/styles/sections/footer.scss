@@ -1,0 +1,69 @@
+.footer {
+  color: $muted-text-color !important;
+  background-color: $bg-primary-inverse;
+  position: relative;
+  z-index: 9999;
+
+  h5 {
+    color: $inverse-text-color;
+  }
+
+  a {
+    color: $muted-text-color;
+    @include transition();
+    &:hover {
+      margin-left: 5px;
+      text-decoration: $muted-text-color underline;
+      @include transition();
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      margin-top: 5px;
+    }
+  }
+
+  hr {
+    background-color: $muted-text-color;
+  }
+
+  p:first-child {
+    color: $inverse-text-color;
+  }
+
+  input {
+    background-color: $inverse-text-color;
+    &:focus {
+      background-color: $bg-secondary;
+    }
+  }
+
+  #disclaimer {
+    color: $muted-text-color !important;
+    text-align: justify;
+    & > strong {
+      color: $inverse-text-color !important;
+    }
+  }
+
+  #theme {
+    color: $inverse-text-color;
+    img {
+      width: 32px;
+      display: inline-block;
+    }
+  }
+  #hugo {
+    &:hover {
+      margin-right: 5px;
+      @include transition();
+    }
+    img {
+      display: inline-block;
+    }
+  }
+}

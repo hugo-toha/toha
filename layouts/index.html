@@ -33,7 +33,7 @@
     {{ end }}
 
     {{ if $sections }}
-      {{ $background:= "bg-white"}}
+      {{ $background:= "bg-primary"}}
       {{ range sort $sections "section.weight" }}
         {{ if .section.enable }}
           <div class="container-fluid section-holder d-flex {{ $background }}">
@@ -44,10 +44,10 @@
             {{ end }}
           </div>
           <!--- alter background color for next section --->
-          {{ if eq $background "bg-white" }}
-            {{ $background = "bg-dimmed" }}
+          {{ if eq $background "bg-primary" }}
+            {{ $background = "bg-secondary" }}
           {{ else }}
-            {{ $background = "bg-white" }}
+            {{ $background = "bg-primary" }}
           {{end}}
         {{ end }}
       {{ end }}

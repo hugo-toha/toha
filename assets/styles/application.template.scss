@@ -2,12 +2,26 @@
 // TODO: Refactor to use bootstrap sass variable for theming.
 @import 'bootstrap/scss/bootstrap';
 
+@import 'include-media/dist/_include-media';
+
 // The Mulish font, we use font-weight 300 - 700
 @import '@fontsource/mulish/300';
 @import '@fontsource/mulish/index'; // 400
 @import '@fontsource/mulish/500';
 @import '@fontsource/mulish/600';
 @import '@fontsource/mulish/700';
+
+@import './variables';
+@import './mixins';
+
+// components
+@import './components/cards';
+@import './components/buttons';
+@import './components/links';
+@import './components/texts';
+@import './components/images';
+@import './components/tables';
+@import './components/misc';
 
 // layouts
 @import './layouts/main';
@@ -32,6 +46,8 @@
 @import './sections/achievements';
 @import './sections/accomplishments';
 @import './sections/publications';
+@import './sections/footer';
+
 
 
 // override

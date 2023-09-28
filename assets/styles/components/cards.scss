@@ -1,0 +1,88 @@
+.card {
+  box-shadow: none;
+  @include transition();
+  overflow: hidden;
+  background: $bg-card;
+
+  &:hover,
+  &:focus {
+    box-shadow: $box-shadow;
+    border: 1px solid $bg-primary;
+    @include transition();
+  }
+
+  .card-head {
+    height: 172px;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .card-body {
+    text-align: justify;
+  }
+
+  .card-img-top {
+    @include transition();
+  }
+
+  .card-img-sm {
+    width: 32px;
+    height: 32px;
+  }
+
+  .card-img-xs {
+    width: 24px;
+    height: 24px;
+  }
+
+  .card-footer {
+    background: $bg-card !important;
+  }
+}
+
+.post-card {
+  width: 24rem;
+  display: inline-flex;
+
+  .post-card-link {
+    text-decoration: none;
+  }
+
+  .card {
+    margin: 5px;
+    position: relative;
+
+    &:hover,
+    &:focus {
+      .card-img-top {
+        transform: scale(1.2);
+        @include transition();
+      }
+    }
+
+    .card-body {
+      padding: 1.25rem !important;
+      padding-bottom: 0 !important;
+
+      .post-summary {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        max-height: 144px;
+        /* fallback */
+        -webkit-line-clamp: 5;
+        /* number of lines to show */
+        -webkit-box-orient: vertical;
+      }
+    }
+    .card-footer {
+      margin-top: auto;
+
+      span {
+        font-size: 10pt;
+        color: $muted-text-color !important;
+        padding-top: 5px;
+      }
+    }
+  }
+}

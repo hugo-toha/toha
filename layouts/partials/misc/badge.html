@@ -1,7 +1,7 @@
 <div class="col-6 col-lg-4 p-2">
 {{ if eq .type "certification" }}
     {{/* Verifiable certificate badge from https://www.credly.com */}}
-    <div class="">
+    <div class="certificate-badge">
       <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
        <img src="{{ .badge }}" alt="{{ .name }}" />
       </a>
