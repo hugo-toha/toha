@@ -42,3 +42,7 @@ html[data-theme='dark'] {
     color: get-dark-color('muted-text-color');
   }
 }
+
+.svg-inverted {
+  filter: invert(1);
+}
