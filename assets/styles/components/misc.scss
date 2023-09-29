@@ -6,12 +6,12 @@
 
   .page-item {
     & > a {
-      color: $accent-color;
+      color: get-light-color('accent-color');
     }
     &.active,
     &:hover > a {
-      background-color: $accent-color !important;
-      color: $text-over-accent-color !important;
+      background-color: get-light-color('accent-color') !important;
+      color: get-light-color('text-over-accent-color') !important;
     }
   }
 }
@@ -28,6 +28,21 @@ pre {
     margin: 0px;
     & > code {
       padding: 0px !important;
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .paginator {
+    .page-item {
+      & > a {
+        color: get-dark-color('accent-color');
+      }
+      &.active,
+      &:hover > a {
+        background-color: get-dark-color('accent-color') !important;
+        color: get-dark-color('text-over-accent-color') !important;
+      }
     }
   }
 }

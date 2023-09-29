@@ -48,7 +48,7 @@ body.type-notes {
 
           .note-title {
             padding-left: 1rem;
-            color: $accent-color;
+            color: get-light-color('accent-color');
 
             &:before {
               content: '';
@@ -56,11 +56,11 @@ body.type-notes {
               width: 98%;
               height: 100%;
               margin-bottom: -26px;
-              border-bottom: 1px solid $accent-color;
+              border-bottom: 1px solid get-light-color('accent-color');
             }
 
             span {
-              background: $bg-secondary;
+              background: get-light-color('bg-secondary');
               padding-right: 5px;
             }
           }
@@ -166,6 +166,30 @@ body.type-notes {
               margin-top: 0;
               padding-top: 0;
               @include transition();
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  body.type-notes {
+    .wrapper {
+      .content-section {
+        .content {
+          .note-card-holder {
+            .note-title {
+              color: get-dark-color('accent-color');
+              &:before {
+                border-bottom: 1px solid get-dark-color('accent-color');
+              }
+
+              span {
+                background: get-dark-color('bg-secondary');
+                padding-right: 5px;
+              }
             }
           }
         }

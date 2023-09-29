@@ -20,16 +20,16 @@ html {
 }
 
 body {
-  background-color: $bg-primary;
+  background-color: get-light-color('bg-primary');
   font-family: 'Mulish';
 }
 
 .bg-primary {
-  background-color: $bg-primary !important;
+  background-color: get-light-color('bg-primary') !important;
 }
 
 .bg-secondary {
-  background-color: $bg-secondary !important;
+  background-color: get-light-color('bg-secondary') !important;
 }
 
 .flag-icon {
@@ -55,12 +55,12 @@ body {
 }
 
 kbd {
-  background-color: $accent-color;
-  color: $text-over-accent-color;
+  background-color: get-light-color('accent-color');
+  color: get-light-color('text-over-accent-color');
 }
 
 mark {
-  background-color: $highlight-color;
+  background-color: get-light-color('highlight-color');
   border-radius: 0.25rem;
 }
 
@@ -86,5 +86,26 @@ mark {
   .publications-section {
     padding-left: 0;
     padding-right: 0;
+  }
+}
+
+html[data-theme='dark'] {
+  body {
+    background-color: get-dark-color('bg-primary');
+    color: get-dark-color('text-color');
+  }
+
+  .bg-primary {
+    background-color: get-dark-color('bg-primary') !important;
+  }
+  .bg-secondary {
+    background-color: get-dark-color('bg-secondary') !important;
+  }
+  kbd {
+    background-color: get-dark-color('accent-color');
+    color: get-dark-color('text-over-accent-color');
+  }
+  mark {
+    background-color: get-dark-color('highlight-color');
   }
 }

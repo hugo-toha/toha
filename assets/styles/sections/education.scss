@@ -4,7 +4,7 @@
   .card {
     &:hover,
     &:focus {
-      border-left: 2px solid $accent-color;
+      border-left: 2px solid get-light-color('accent-color');
     }
   }
 
@@ -23,19 +23,19 @@
         position: absolute;
         left: 1rem;
         top: 0;
-        background-color: $accent-color;
+        background-color: get-light-color('accent-color');
         height: 100%;
         width: 2px;
       }
 
       .icon-holder {
-        background-color: $accent-color;
+        background-color: get-light-color('accent-color');
         border-radius: 50%;
         height: 2rem;
         width: 2rem;
         padding: 0.2rem;
         text-align: center;
-        color: $text-over-accent-color;
+        color: get-light-color('text-over-accent-color');
         position: relative;
       }
     }
@@ -43,14 +43,14 @@
     tr,
     th,
     td {
-      border: none;
+      border: none !important;
       padding: 0;
-      background: none;
+      background: none !important;
     }
 
     tr {
       &:hover {
-        background: none;
+        background: none !important;
       }
       &:first-child {
         .hline {
@@ -72,7 +72,7 @@
         div {
           height: 2px;
           margin-right: -1px;
-          background-color: $accent-color;
+          background-color: get-light-color('accent-color');
         }
       }
 
@@ -81,10 +81,10 @@
           padding: 1rem;
           margin-top: 0.5rem;
           margin-bottom: 0.5rem;
-          border-left: 2px solid $accent-color;
-          border-top: 1px solid $bg-primary;
-          border-bottom: 1px solid $bg-primary;
-          border-right: 1px solid $bg-primary;
+          border-left: 2px solid get-light-color('accent-color');
+          border-top: 1px solid get-light-color('bg-primary');
+          border-bottom: 1px solid get-light-color('bg-primary');
+          border-right: 1px solid get-light-color('bg-primary');
           border-radius: 5px;
 
           h5 {
@@ -92,7 +92,7 @@
           }
 
           .timeframe {
-            color: $muted-text-color;
+            color: get-light-color('muted-text-color');
             text-align: right;
           }
 
@@ -109,7 +109,7 @@
               th {
                 background: none;
                 border: none;
-                color: $text-color;
+                color: get-light-color('text-color');
               }
 
               tr {
@@ -167,5 +167,68 @@
 }
 
 .education-alt .degree-info {
-  border-right: 2px solid $accent-color;
+  border-right: 2px solid get-light-color('accent-color');
+}
+
+html[data-theme='dark'] {
+  .education-section {
+    .card {
+      &:hover,
+      &:focus {
+        border-left: 2px solid get-dark-color('accent-color');
+      }
+    }
+
+    .education-info-table {
+      .icon {
+        .hline {
+          background-color: get-dark-color('accent-color');
+        }
+
+        .icon-holder {
+          background-color: get-dark-color('accent-color');
+          color: get-dark-color('text-over-accent-color');
+        }
+      }
+      tr {
+        .line {
+          div {
+            background-color: get-dark-color('accent-color');
+          }
+        }
+
+        .details {
+          .degree-info {
+            border-left: 2px solid get-dark-color('accent-color');
+            border-top: 1px solid get-dark-color('bg-primary');
+            border-bottom: 1px solid get-dark-color('bg-primary');
+            border-right: 1px solid get-dark-color('bg-primary');
+
+            .timeframe {
+              color: get-dark-color('muted-text-color');
+            }
+
+            .taken-courses {
+              table {
+                tr,
+                td,
+                th {
+                  color: get-dark-color('text-color');
+                }
+              }
+            }
+
+            &:hover{
+              border: 1px solid rgba(get-dark-color('accent-color'),0.2);
+              border-left: 2px solid get-dark-color('accent-color');
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .education-alt .degree-info {
+    border-right: 2px solid get-dark-color('accent-color');
+  }
 }

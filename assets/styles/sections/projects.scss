@@ -1,7 +1,7 @@
 .projects-section {
   .card {
     .card-header {
-      background-color: $bg-card;
+      background-color: get-light-color('bg-card');
       padding: 0.7rem;
       padding-bottom: 0rem;
       text-decoration: none;
@@ -10,7 +10,7 @@
         margin-right: 0.5rem;
       }
       .sub-title {
-        color: $muted-text-color;
+        color: get-light-color('muted-text-color');
         margin-top: 0.4rem;
 
         span {
@@ -78,6 +78,19 @@
     }
     .filtr-item {
       max-width: 100%;
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .projects-section {
+    .card {
+      .card-header {
+        background-color: get-dark-color('bg-card');
+        .sub-title {
+          color: get-dark-color('muted-text-color');
+        }
+      }
     }
   }
 }

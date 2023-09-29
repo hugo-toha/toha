@@ -2,12 +2,12 @@
   box-shadow: none;
   @include transition();
   overflow: hidden;
-  background: $bg-card;
+  background: get-light-color('bg-card');
 
   &:hover,
   &:focus {
     box-shadow: $box-shadow;
-    border: 1px solid $bg-primary;
+    border: 1px solid get-light-color('bg-primary');
     @include transition();
   }
 
@@ -36,7 +36,10 @@
   }
 
   .card-footer {
-    background: $bg-card !important;
+    background: get-light-color('bg-card') !important;
+    a.btn {
+      text-decoration: none !important;
+    }
   }
 }
 
@@ -45,7 +48,7 @@
   display: inline-flex;
 
   .post-card-link {
-    text-decoration: none;
+    text-decoration: none !important;
   }
 
   .card {
@@ -80,8 +83,32 @@
 
       span {
         font-size: 10pt;
-        color: $muted-text-color !important;
+        color: get-light-color('muted-text-color') !important;
         padding-top: 5px;
+      }
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .card {
+    background: get-dark-color('bg-card');
+
+    &:hover,
+    &:focus {
+      border: 1px solid rgba(get-dark-color('accent-color'), 0.2);
+    }
+    .card-footer {
+      background: get-dark-color('bg-card') !important;
+    }
+  }
+
+  .post-card {
+    .card {
+      .card-footer {
+        span {
+          color: get-dark-color('muted-text-color') !important;
+        }
       }
     }
   }

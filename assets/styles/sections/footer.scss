@@ -1,19 +1,19 @@
 .footer {
-  color: $muted-text-color !important;
-  background-color: $bg-primary-inverse;
+  color: get-light-color('muted-text-color') !important;
+  background-color: get-light-color('bg-primary')-inverse;
   position: relative;
   z-index: 9999;
 
   h5 {
-    color: $inverse-text-color;
+    color: get-light-color('inverse-text-color');
   }
 
   a {
-    color: $muted-text-color;
+    color: get-light-color('muted-text-color');
     @include transition();
     &:hover {
       margin-left: 5px;
-      text-decoration: $muted-text-color underline;
+      text-decoration: get-light-color('muted-text-color') underline;
       @include transition();
     }
   }
@@ -28,30 +28,30 @@
   }
 
   hr {
-    background-color: $muted-text-color;
+    background-color: get-light-color('muted-text-color');
   }
 
   p:first-child {
-    color: $inverse-text-color;
+    color: get-light-color('inverse-text-color');
   }
 
   input {
-    background-color: $inverse-text-color;
+    background-color: get-light-color('inverse-text-color');
     &:focus {
-      background-color: $bg-secondary;
+      background-color: get-light-color('bg-secondary');
     }
   }
 
   #disclaimer {
-    color: $muted-text-color !important;
+    color: get-light-color('muted-text-color') !important;
     text-align: justify;
     & > strong {
-      color: $inverse-text-color !important;
+      color: get-light-color('inverse-text-color') !important;
     }
   }
 
   #theme {
-    color: $inverse-text-color;
+    color: get-light-color('inverse-text-color');
     img {
       width: 32px;
       display: inline-block;
@@ -64,6 +64,49 @@
     }
     img {
       display: inline-block;
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .footer {
+    color: get-dark-color('muted-text-color') !important;
+    background-color: get-dark-color('footer-color');
+    h5 {
+      color: get-dark-color('heading-color');
+    }
+
+    a {
+      color: get-dark-color('muted-text-color');
+      &:hover {
+        text-decoration: get-dark-color('muted-text-color') underline;
+      }
+    }
+
+    hr {
+      background-color: get-dark-color('muted-text-color');
+    }
+
+    p:first-child {
+      color: get-dark-color('muted-text-color');
+    }
+
+    input {
+      background-color: get-dark-color('bg-primary');
+      &:focus {
+        background-color: get-dark-color('bg-secondary');
+      }
+    }
+
+    #disclaimer {
+      color: get-dark-color('muted-text-color') !important;
+      & > strong {
+        color: get-dark-color('text-color') !important;
+      }
+    }
+
+    #theme {
+      color: get-dark-color('text-color');
     }
   }
 }
