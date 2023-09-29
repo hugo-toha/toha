@@ -5,6 +5,10 @@
   @include transition();
 }
 
+body {
+  position: relative;
+}
+
 .top-navbar {
   position: fixed;
   left: 0;
