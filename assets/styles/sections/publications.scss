@@ -2,12 +2,12 @@
   @include section-title-adjustment();
 
   .card {
-    background: $bg-card;
-    border-top: 2px solid $accent-color;
+    background: get-light-color('bg-card');
+    border-top: 2px solid get-light-color('accent-color');
 
     &:hover,
     &:focus {
-      border-top: 2px solid $accent-color;
+      border-top: 2px solid get-light-color('accent-color');
     }
 
     .card-header {
@@ -17,7 +17,7 @@
       flex-direction: column;
 
       .sub-title {
-        color: $muted-text-color;
+        color: get-light-color('muted-text-color');
         margin-top: 0.4rem;
 
         span:nth-child(2) {
@@ -33,7 +33,7 @@
     }
 
     .card-footer {
-      background: $bg-card;
+      background: get-light-color('bg-card');
       border: none;
       padding: 0;
       padding-left: 1rem;
@@ -102,6 +102,30 @@
             margin-top: 0.2rem;
           }
         }
+      }
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .publications-section {
+    .card {
+      background: get-dark-color('bg-card');
+      border-top: 2px solid get-dark-color('accent-color');
+
+      &:hover,
+      &:focus {
+        border-top: 2px solid get-dark-color('accent-color');
+      }
+
+      .card-header {
+        .sub-title {
+          color: get-dark-color('muted-text-color');
+        }
+      }
+
+      .card-footer {
+        background: get-dark-color('bg-card');
       }
     }
   }

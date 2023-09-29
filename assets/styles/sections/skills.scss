@@ -5,12 +5,12 @@
     height: 100%;
 
     .card-head {
-      background-color: $bg-primary !important;
+      background-color: get-light-color('bg-primary') !important;
       height: -moz-fit-content;
       height: fit-content;
       padding: 0.7rem;
       padding-bottom: 0rem;
-      border-bottom: 0.0625rem solid rgba($accent-color, 0.4);
+      border-bottom: 0.0625rem solid rgba(get-light-color('accent-color'), 0.4);
 
       .card-img-xs {
         margin-right: 0.5rem;
@@ -30,6 +30,17 @@
 
     .container {
       max-width: 95%;
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .skills-section {
+    .card {
+      .card-head {
+        background-color: get-dark-color('bg-card') !important;
+        border-bottom: 0.0625rem solid rgba(get-dark-color('accent-color'), 0.4);
+      }
     }
   }
 }

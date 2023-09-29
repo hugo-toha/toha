@@ -2,13 +2,13 @@
   @include section-title-adjustment();
 
   .card {
-    background: $bg-card;
-    border-top: 2px solid $accent-color;
+    background: get-light-color('bg-card');
+    border-top: 2px solid get-light-color('accent-color');
     height: 100%;
 
     &:hover,
     &:focus {
-      border-top: 2px solid $hover-over-accent-color;
+      border-top: 2px solid get-light-color('hover-over-accent-color');
     }
 
     .card-header {
@@ -16,7 +16,7 @@
       border: none;
 
       .sub-title {
-        color: $muted-text-color;
+        color: get-light-color('muted-text-color');
         margin-top: 0.4rem;
       }
     }
@@ -28,7 +28,7 @@
     }
 
     .card-footer {
-      background: $bg-card;
+      background: get-light-color('bg-card');
       border: none;
       padding: 0;
       padding-left: 0.7rem;
@@ -51,5 +51,28 @@
   @include media('<=small') {
     flex: 100%;
     max-width: 100%;
+  }
+}
+
+html[data-theme='dark'] {
+  .accomplishments-section {
+    .card {
+      background: get-dark-color('bg-card');
+      border-top: 2px solid get-dark-color('accent-color');
+
+      &:hover,
+      &:focus {
+        border-top: 2px solid get-dark-color('hover-over-accent-color');
+      }
+
+      .card-header {
+        .sub-title {
+          color: get-dark-color('muted-text-color');
+        }
+      }
+      .card-footer {
+        background: get-dark-color('bg-card');
+      }
+    }
   }
 }

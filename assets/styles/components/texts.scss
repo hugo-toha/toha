@@ -3,41 +3,41 @@ h2,
 h3,
 h4,
 h5 {
-  color: $heading-color;
+  color: get-light-color('heading-color');
 }
 
 strong {
-  color: $heading-color !important;
+  color: get-light-color('heading-color') !important;
 }
 
 p {
-  color: $text-color;
+  color: get-light-color('text-color');
 }
 
 blockquote {
-  border-left: 4px solid $accent-color;
-  background-color: rgba($accent-color, 0.05);
+  border-left: 4px solid get-light-color('accent-color');
+  background-color: rgba(get-light-color('accent-color'), 0.05);
   padding: 0.3rem;
   padding-left: 1rem;
 
   & > p {
-    color: $text-color;
+    color: get-light-color('text-color');
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
 }
 
 .text-muted {
-  color: $muted-text-color !important;
+  color: get-light-color('muted-text-color') !important;
 }
 
 .text-heading {
   font-weight: bold;
-  color: $muted-text-color;
+  color: get-light-color('muted-text-color');
 }
 
 .sub-title {
-  color: $muted-text-color;
+  color: get-light-color('muted-text-color');
   font-size: 10pt;
 }
 
@@ -58,5 +58,52 @@ blockquote {
 @include media('<=tiny') {
   h1 {
     font-size: 1.5rem;
+  }
+}
+
+html[data-theme='dark'] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: get-dark-color('heading-color');
+  }
+
+  strong {
+    color: get-dark-color('heading-color') !important;
+  }
+
+  p {
+    color: get-dark-color('text-color');
+  }
+
+  blockquote {
+    border-left: 4px solid get-dark-color('accent-color');
+    background-color: rgba(get-dark-color('accent-color'), 0.05);
+    color: get-dark-color('text-color');
+  }
+
+  .text-muted {
+    color: get-dark-color('muted-text-color') !important;
+  }
+
+  .text-heading {
+    color: get-dark-color('muted-text-color');
+  }
+
+  .sub-title {
+    color: get-dark-color('muted-text-color');
+  }
+  ::-moz-selection {
+    @include selection-color($theme: 'dark');
+  }
+
+  ::selection {
+    @include selection-color($theme: 'dark');
+  }
+  li,
+  ul {
+    color: get-dark-color('text-color');
   }
 }

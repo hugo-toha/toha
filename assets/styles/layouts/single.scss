@@ -1,5 +1,5 @@
 body.kind-page {
-  background-color: $bg-secondary;
+  background-color: get-light-color('bg-secondary');
   position: relative;
 
   .wrapper {
@@ -23,7 +23,7 @@ body.kind-page {
         padding-top: 1.5rem;
 
         .read-area {
-          background-color: $bg-primary;
+          background-color: get-light-color('bg-primary');
 
           .hero-area {
             margin-top: 3rem;
@@ -54,7 +54,7 @@ body.kind-page {
                 width: 120px;
                 -o-object-fit: cover;
                 object-fit: cover;
-                background-color: $bg-primary;
+                background-color: get-light-color('bg-primary');
                 padding: 5px;
               }
             }
@@ -93,6 +93,9 @@ body.kind-page {
               .next-prev-text {
                 white-space: break-spaces;
               }
+              a {
+                text-decoration: none !important;
+              }
             }
           }
         }
@@ -111,7 +114,7 @@ body.kind-page {
         padding-top: 1rem;
         overflow-x: hidden;
         overflow-y: auto;
-        background-color: $bg-primary;
+        background-color: get-light-color('bg-primary');
         margin-right: 0.5rem;
         @include transition();
 
@@ -138,16 +141,17 @@ body.kind-page {
             .nav-link {
               padding: 0;
               padding-left: 0.5rem;
+              text-decoration: none !important;
               @include transition();
-              color: $heading-color;
+              color: get-light-color('text-color');
 
               &:hover,
               &:focus,
               &.active {
                 padding-left: 1rem;
                 padding-right: 0.5rem;
-                background-color: $accent-color;
-                color: $text-over-accent-color;
+                background-color: get-light-color('accent-color');
+                color: get-light-color('text-over-accent-color');
                 @include transition();
               }
             }
@@ -176,13 +180,13 @@ body.kind-page {
     position: fixed;
     bottom: 0rem;
     right: 1rem;
-    color: $accent-color;
+    color: get-light-color('accent-color');
     font-size: 24pt;
     z-index: 900000;
     visibility: hidden;
 
     &:hover {
-      color: $hover-over-accent-color;
+      color: get-light-color('hover-over-accent-color');
     }
     &.show {
       visibility: visible;
@@ -190,7 +194,7 @@ body.kind-page {
 
     i {
       box-shadow: $box-shadow;
-      background-color: $bg-primary;
+      background-color: get-light-color('bg-primary');
       border-radius: 50%;
     }
   }
@@ -314,6 +318,64 @@ body.kind-page {
       #disqus_thread,
       .dsq-brlink {
         padding: 5px;
+      }
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  body.kind-page {
+    background-color: get-dark-color('bg-secondary');
+
+    .wrapper {
+      .content-section {
+        .content {
+          .read-area {
+            background-color: get-dark-color('bg-primary');
+
+            .page-content {
+              .author-profile {
+                img {
+                  background-color: get-dark-color('bg-primary');
+                }
+              }
+            }
+          }
+        }
+      }
+      .toc-section {
+        .toc-holder {
+          background-color: get-dark-color('bg-primary');
+          hr {
+            background-color: get-dark-color('muted-text-color');
+          }
+
+          .toc {
+            nav {
+              .nav-link {
+                color: get-dark-color('text-color');
+
+                &:hover,
+                &:focus,
+                &.active {
+                  background-color: get-dark-color('accent-color');
+                  color: get-dark-color('text-over-accent-color');
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #scroll-to-top {
+        color: get-dark-color('accent-color');
+        &:hover {
+          color: get-dark-color('hover-over-accent-color');
+        }
+
+        i {
+          background-color: get-dark-color('bg-primary');
+        }
       }
     }
   }

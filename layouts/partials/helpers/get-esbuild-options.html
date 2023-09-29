@@ -72,29 +72,12 @@ params:
     # The `darkMode` feature
     darkmode:
       enable: true
-      services:
-        # darkmode is realized by using DarkReader library
-        darkreader:
-          # options are 'system', 'dark', 'light'
-          defaultColorScheme: system
-          # For all available options, see `interface DynamicThemeFix`:
-          #   https://github.com/darkreader/darkreader/blob/main/index.d.ts#L125
-          fixes:
-            invert: ['img[src$=".svg"]'] # inverts svg colors.
-          # For all available options, see `interface Theme` in:
-          #   https://github.com/darkreader/darkreader/blob/main/index.d.ts#L45
-          theme:
-            brightness: 100
-            contrast: 100
-            sepia: 0
-```
 
 This helper will convert the above config into the following env vars:
 
   * `FEATURE_ANALYTICS=1`
   * `FEATURE_ANALYTICS_GOOGLE=1`
   * `FEATURE_DARKMODE=1`
-  * `FEATURE_DARKMODE_DARKREADER=1`
 
 In JS, you can use it like this:
 

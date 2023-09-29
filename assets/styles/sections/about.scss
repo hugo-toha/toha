@@ -54,11 +54,11 @@ $progress-bar-colors: (
 
     a {
       font-size: 1.5rem;
-      color: $text-color;
+      color: get-light-color('text-color');
       padding: 0.5rem;
 
       &:hover {
-        color: $accent-color;
+        color: get-light-color('accent-color');
         @include transition();
       }
     }
@@ -78,7 +78,7 @@ $progress-bar-colors: (
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      border: 12px solid $bg-primary;
+      border: 12px solid get-light-color('bg-primary');
       position: absolute;
       top: 0;
       left: 0;
@@ -130,9 +130,9 @@ $progress-bar-colors: (
       height: 90%;
       padding: 1rem;
       border-radius: 50%;
-      background: $text-color;
+      background: get-light-color('text-color');
       font-size: 1rem;
-      color: $bg-primary;
+      color: get-light-color('bg-primary');
       line-height: initial;
       text-align: center;
       position: absolute;
@@ -198,6 +198,31 @@ $progress-bar-colors: (
       .circular-progress-right .circular-progress-bar {
         border-top-left-radius: 100px;
         border-bottom-left-radius: 100px;
+      }
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .about-section {
+    .social-link {
+      a {
+        color: get-dark-color('text-color');
+
+        &:hover {
+          color: get-dark-color('accent-color');
+        }
+      }
+    }
+
+    .circular-progress {
+      &::after {
+        border: 12px solid get-dark-color('bg-primary');
+      }
+
+      .circular-progress-value {
+        background: get-dark-color('inverse-text-color');
+        color: get-dark-color('text-color');
       }
     }
   }

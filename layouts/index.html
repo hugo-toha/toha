@@ -17,6 +17,17 @@
     
     <!--================= add analytics if enabled =========================-->
     {{- partial "analytics.html" . -}}
+    <script>
+      theme = localStorage.getItem('darkmode:color-scheme') || 'system';
+      if (theme == 'system') {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+        } else {
+          theme = 'light';
+        }
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    </script>
   </head>
   <body data-spy="scroll" data-target="#top-navbar" data-offset="100">
 
