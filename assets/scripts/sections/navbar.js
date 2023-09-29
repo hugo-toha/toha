@@ -1,6 +1,7 @@
 const updateNavBar = () => {
   const topNavbar = document.getElementById('top-navbar')
   const navbarToggler = document.getElementById('navbar-toggler')
+  const themeIcon = document.getElementById('navbar-theme-icon-svg')
 
   if (window.scrollY > 40) {
     topNavbar?.classList.remove('transparent-navbar')
@@ -9,6 +10,8 @@ const updateNavBar = () => {
     navbarToggler?.classList.remove('navbar-dark')
     navbarToggler?.classList.add('navbar-light')
 
+    // color theme selector a.k.a. dark mode
+    themeIcon?.classList.remove('svg-inverted')
 
     // get the main logo from hidden img tag
     const mainLogo = document.getElementById('main-logo')
@@ -22,6 +25,9 @@ const updateNavBar = () => {
 
     navbarToggler?.classList.remove('navbar-light')
     navbarToggler?.classList.add('navbar-dark')
+
+    // color theme selector a.k.a. dark mode
+    themeIcon?.classList.add('svg-inverted')
 
     // get the inverted logo from hidden img tag
     const invertedLogo = document.getElementById('inverted-logo')
