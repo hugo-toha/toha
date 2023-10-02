@@ -1,19 +1,20 @@
 {{/*  if there is no custom flag provided, we define the flag with the country code  */}}
-{{ $languageCode:= .Lang }}
-{{/* by default the language code and the country code are same */}}
-{{ $countryCode:= $languageCode }}
+{{ $languageCode := .Lang }}
+{{/* by default, the language code and the country code are the same */}}
+{{ $countryCode := $languageCode }}
 
-{{/* language code and country code are not same for some countries. we need to fix them.  */}}
+{{/* language code and country code are not the same for some countries. we need to fix them.  */}}
 {{ if eq $languageCode "en" }}
    {{ $countryCode = "gb" }}
-{{ else if  eq $languageCode "bn" }}
+{{ else if eq $languageCode "bn" }}
     {{ $countryCode = "bd" }}
-{{ else if  eq $languageCode "hi" }}
+{{ else if eq $languageCode "hi" }}
     {{ $countryCode = "in" }}
+{{ else if eq $languageCode "si" }}
+    {{ $countryCode = "lk" }}  {{/* Add this line to set the country code for Sri Lanka */}}
 {{ end }}
 
-
-{{/*  if the user specify a country code for a language via "params.flagOverwrites" field, then use it.  */}}
+{{/*  if the user specifies a country code for a language via "params.flagOverwrites" field, then use it.  */}}
 {{ range site.Params.features.flags.flagOverwrites }}
     {{ if eq $languageCode .languageCode }}
         {{ $countryCode = .countryCode }}
