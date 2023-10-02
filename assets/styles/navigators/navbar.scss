@@ -23,6 +23,7 @@
   color: get-light-color('heading-color');
   text-align: center;
   background-color: get-light-color('bg-primary');
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   @include transition();
 
   .navbar-brand {
