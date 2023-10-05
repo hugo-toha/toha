@@ -1,5 +1,3 @@
-**Warning: This theme is going through a heavy re-write. The `main` branch contains some undocumented changes. Please, do not use `main` branch. Use latest release instead. We will release a new version once the re-write is done and the changes are documented.**
-
 # Toha
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b1b93b02-f278-440b-ae1b-304e9f4c4ab5/deploy-status)](https://app.netlify.com/sites/toha/deploys)
