@@ -2,7 +2,7 @@
   height: 100vh;
   padding: 0;
   margin: 0;
-  color: #f9fafc;
+  color: get-light-color('text-over-accent-color');
   overflow: hidden;
 
   .background {
@@ -16,12 +16,12 @@
     filter: blur(3px);
     background-size: cover;
   }
-  
+
   .arrow-center {
     display: flex;
     justify-content: center;
   }
-  
+
   /*
     Resolves https://github.com/hugo-toha/toha/issues/70
   
@@ -34,45 +34,46 @@
       background-attachment: scroll;
     }
   }
-  
+
   .content {
     position: relative;
     top: -65%;
     height: 60%;
   }
-  
+
   img {
     width: 148px;
     height: 148px;
-    background-color: #e7e7ef;
+    background-color: get-light-color('bg-secondary');
     padding: 5px;
     margin-bottom: 10px;
   }
-  
-  .greeting, .greeting-subtitle {
-    color: #f9fafc;
+
+  .greeting,
+  .greeting-subtitle {
+    color: get-light-color('text-over-accent-color');
   }
-  
+
   .typing-carousel {
     font-size: 14pt;
-    color: #f0f0f0;
+    color: get-light-color('text-over-accent-color');
   }
-  
+
   #typing-carousel-data {
     display: none;
   }
-  
+
   .arrow {
     position: absolute;
-    color: #f9fafc;
+    color: get-light-color('text-over-accent-color');
     font-size: 1.5rem;
     bottom: 0;
   }
-  
+
   .bounce {
     animation: bounce 2s infinite;
   }
-  
+
   @keyframes bounce {
     0%,
     20%,
@@ -88,64 +89,43 @@
       transform: translateY(-15px);
     }
   }
-  
-  /* ============= Device specific fixes ======= */
-  
-  /* Large screens such as TV */
-  @media only screen and (min-width: 1824px) {
-  }
-  
-  /* Extra large devices (large desktops, 1200px and up) */
-  
-  @media (max-width: 1400px) {
-  }
-  
-  @media (max-width: 1200px) {
-  }
-  
-  /* IPad Pro */
-  @media (max-width: 1024px) {
-  }
-  
-  /*  Large devices (desktops, 992px and up) */
-  
-  @media (max-width: 992px) {
-  }
-  
-  /* Medium devices (tablets, 768px and up) */
-  
-  @media only screen and (max-width: 768px) {
-  }
-  
-  /* Small devices (landscape phones, 576px and up) */
-  
-  @media only screen and (max-width: 576px) {
+
+  @include media('<=small') {
     .content {
       position: relative;
       top: -75%;
       height: 65%;
     }
-  
+
     img {
       width: 140px;
       max-width: 50%;
       height: auto;
     }
-  
+
     .greeting {
       font-size: 24pt;
     }
   }
-  
-  /* iPhoneX, iPhone 6,7,8 */
-  @media only screen and (max-width: 375px) {
+}
+
+html[data-theme='dark'] {
+  .home {
+    color: get-dark-color('text-over-accent-color');
+    img {
+      background-color: get-dark-color('bg-secondary');
+    }
+
+    .greeting,
+    .greeting-subtitle {
+      color: get-dark-color('text-over-accent-color');
+    }
+
+    .typing-carousel {
+      color: get-dark-color('text-over-accent-color');
+    }
+    .arrow {
+      color: get-dark-color('text-over-accent-color');
+    }
   }
-  
-  /* Galaxy S5, Moto G4 */
-  @media only screen and (max-width: 360px) {
-  }
-  
-  /* iPhone 5 or before */
-  @media only screen and (max-width: 320px) {
-  }  
 }

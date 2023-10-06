@@ -11,11 +11,21 @@
 
     <!--================= add analytics if enabled =========================-->
     {{- partial "analytics.html" . -}}
-
+    <script>
+      theme = localStorage.getItem('darkmode:color-scheme') || 'system';
+      if (theme == 'system') {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+        } else {
+          theme = 'light';
+        }
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    </script>
   </head>
 
   <body class="type-{{ .Page.Type }} kind-{{ .Page.Kind }}" data-spy="scroll" data-target="#TableOfContents" data-offset="80">
-    <div class="container-fluid bg-dimmed wrapper">
+    <div class="container-fluid bg-secondary wrapper">
       <!----- ADD NAVBAR --------------->
       {{ block "navbar" . }} {{ end }}
 

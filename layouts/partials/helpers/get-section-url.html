@@ -1,0 +1,5 @@
+{{- if page.IsHome -}}
+    #{{ partial "helpers/get-section-id.html" . }}
+{{- else -}}
+    {{ site.BaseURL | relLangURL }}#{{ partial "helpers/get-section-id.html" . }}
+{{- end -}}

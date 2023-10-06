@@ -1,171 +1,145 @@
 .experiences-section {
+  @include section-title-adjustment();
+
   padding-bottom: 1rem;
 
-  .timeline {
-    margin-top: 1.5rem !important;
-  }
-  
-  h1 > span{
-    margin-top: -55px;  /* Size of fixed header */
-    padding-bottom:55px; 
-    display: block; 
-  }
-  
   ul {
     padding-left: 1rem;
+    & > li {
+      margin-left: 0;
+      color: get-light-color('text-color');
+    }
   }
-  
-  ul > li {
-    margin-left: 0;
-    color: #3c4858;
-  }
-  
+
   .designation {
     font-weight: 600;
   }
-  
+
   .circle {
     padding: 13px 20px;
     border-radius: 50%;
-    background-color: #248aaa;
-    color: #f9fafc;
+    background-color: get-light-color('accent-color');
+    color: get-light-color('text-over-accent-color');
     max-height: 50px;
     z-index: 2;
   }
-  
-  .timeline .vertical-line {
-    align-self: stretch;
+
+  .timeline {
+    margin-top: 1.5rem !important;
+
+    .vertical-line {
+      align-self: stretch;
+
+      &::after {
+        content: '';
+        position: absolute;
+        border-left: 3px solid get-light-color('accent-color');
+        z-index: 1;
+        height: 100%;
+        left: 50%;
+      }
+      &:nth-child(even)::after {
+        left: calc(50% - 3px) !important;
+      }
+    }
+    .horizontal-line {
+      div {
+        padding: 0;
+        height: 40px;
+      }
+      hr {
+        border-top: 3px solid get-light-color('accent-color');
+        margin: 0;
+        top: 17px;
+        position: relative;
+      }
+      .timeline-side-div {
+        display: flex;
+        overflow: hidden;
+      }
+      .corner {
+        border: 3px solid get-light-color('accent-color');
+        width: 100%;
+        position: relative;
+        border-radius: 15px;
+      }
+    }
+    .row {
+      &:nth-child(2n) {
+        div {
+          &:nth-child(1) .corner {
+            left: 50%;
+            top: -50%;
+          }
+          &:nth-child(3) .corner {
+            left: -50%;
+            top: calc(50% - 3px);
+          }
+        }
+      }
+      &:nth-child(4n) {
+        div {
+          &:nth-child(1) .corner {
+            left: 50%;
+            top: calc(50% - 3px);
+          }
+          &:nth-child(3) .corner {
+            left: -50%;
+            top: -50%;
+          }
+        }
+      }
+    }
   }
-  
-  .timeline .vertical-line::after {
-    content: "";
-    position: absolute;
-    border-left: 3px solid #248aaa;
-    z-index: 1;
-    height: 100%;
-    left: 50%;
-  }
-  
-  .timeline .vertical-line:nth-child(even)::after {
-    left: calc(50% - 3px) !important;
-  }
-  
-  .timeline .horizontal-line div {
-    padding: 0;
-    height: 40px;
-  }
-  
-  .timeline .horizontal-line hr {
-    border-top: 3px solid #248aaa;
-    margin: 0;
-    top: 17px;
-    position: relative;
-  }
-  
-  .timeline .horizontal-line .timeline-side-div {
-    display: flex;
-    overflow: hidden;
-  }
-  
-  .timeline .horizontal-line .corner {
-    border: 3px solid #248aaa;
-    width: 100%;
-    position: relative;
-    border-radius: 15px;
-  }
-  
-  .timeline .row:nth-child(2n) div:nth-child(1) .corner {
-    left: 50%;
-    top: -50%;
-  }
-  
-  .timeline .row:nth-child(2n) div:nth-child(3) .corner {
-    left: -50%;
-    top: calc(50% - 3px);
-  }
-  
-  .timeline .row:nth-child(4n) div:nth-child(1) .corner {
-    left: 50%;
-    top: calc(50% - 3px);
-  }
-  
-  .timeline .row:nth-child(4n) div:nth-child(3) .corner {
-    left: -50%;
-    top: -50%;
-  }
-  
-  /* ============= Device specific fixes ======= */
-  
-  /* Large screens such as TV */
-  @media only screen and (min-width: 1824px) {
-  }
-  
-  /* Extra large devices (large desktops, 1200px and up) */
-  
-  @media (max-width: 1400px) {
-  }
-  
-  @media (max-width: 1200px) {
-  }
-  
-  /* IPad Pro */
-  @media (max-width: 1024px) {
-  }
-  
-  /*  Large devices (desktops, 992px and up) */
-  
-  @media (max-width: 992px) {
-  }
-  
-  /* Medium devices (tablets, 768px and up) */
-  
-  @media only screen and (max-width: 768px) {
+
+  @include media('<=medium') {
     .container {
       max-width: 100%;
     }
   }
-  
-  /* Small devices (landscape phones, 576px and up) */
-  
-  @media only screen and (max-width: 576px) {
-  }
-  
-  /* iPhoneX, iPhone 6,7,8 */
-  @media only screen and (max-width: 375px) {
-    .timeline .row:nth-child(4n) div:nth-child(3) .corner {
-      left: -55%;
-      top: -50%;
-    }
 
-    .timeline .row:nth-child(2n) div:nth-child(1) .corner {
-      left: 55%;
-      top: -50%;
+  @include media('<=small') {
+    .container {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .timeline {
+      .vertical-line {
+        visibility: hidden;
+      }
+      .horizontal-line {
+        visibility: hidden;
+      }
     }
   }
-  
-  /* Galaxy S5, Moto G4 */
-  @media only screen and (max-width: 360px) {
-    .timeline .row:nth-child(4n) div:nth-child(3) .corner {
-      left: -60%;
-      top: -50%;
+}
+
+html[data-theme='dark'] {
+  .experiences-section {
+    ul {
+      & > li {
+        color: get-dark-color('text-color');
+      }
+    }
+    .circle {
+      background-color: get-dark-color('accent-color');
+      color: get-dark-color('text-over-accent-color');
     }
 
-    .timeline .row:nth-child(2n) div:nth-child(1) .corner {
-      left: 60%;
-      top: -50%;
+    .timeline {
+      .vertical-line {
+        &::after {
+          border-left: 3px solid get-dark-color('accent-color');
+        }
+      }
+      .horizontal-line {
+        hr {
+          border-top: 3px solid get-dark-color('accent-color');
+        }
+        .corner {
+          border: 3px solid get-dark-color('accent-color');
+        }
+      }
     }
   }
-  
-  /* iPhone 5 or before */
-  @media only screen and (max-width: 320px) {
-    .timeline .row:nth-child(4n) div:nth-child(3) .corner {
-      left: -64%;
-      top: -50%;
-    }
-
-    .timeline .row:nth-child(2n) div:nth-child(1) .corner {
-      left: 64%;
-      top: -50%;
-    }
-  }  
 }

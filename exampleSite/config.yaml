@@ -81,15 +81,6 @@ params:
     # Enable dark theme
     darkMode:
       enable: false
-      services:
-        darkreader:
-          defaultColorScheme: system # options are 'system', 'dark', 'light'
-          fixes:
-            invert: ['img[src$=".svg"]'] # inverts svg colors.
-          theme:
-            brightness: 100
-            contrast: 100
-            sepia: 0
 
     # Enable and configure portfolio
     portfolio:

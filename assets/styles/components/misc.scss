@@ -1,0 +1,48 @@
+.paginator {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  vertical-align: bottom;
+
+  .page-item {
+    & > a {
+      color: get-light-color('accent-color');
+    }
+    &.active,
+    &:hover > a {
+      background-color: get-light-color('accent-color') !important;
+      color: get-light-color('text-over-accent-color') !important;
+    }
+  }
+}
+
+pre {
+  margin: 5px;
+  & > code {
+    padding: 10px !important;
+  }
+}
+
+@include media('<=large') {
+  pre {
+    margin: 0px;
+    & > code {
+      padding: 0px !important;
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .paginator {
+    .page-item {
+      & > a {
+        color: get-dark-color('accent-color');
+      }
+      &.active,
+      &:hover > a {
+        background-color: get-dark-color('accent-color') !important;
+        color: get-dark-color('text-over-accent-color') !important;
+      }
+    }
+  }
+}

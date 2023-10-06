@@ -22,7 +22,7 @@
 <div class="row next-prev-navigator">
   {{ if $prevPage }}
     <div class="col-md-6 previous-article">
-      <a href="{{ $prevPage.RelPermalink }}" title="{{ $prevPage.Title }}" class="btn btn-outline-info">
+      <a href="{{ $prevPage.RelPermalink }}" title="{{ $prevPage.Title }}" class="btn filled-button">
         <div><i class="fas fa-chevron-circle-left"></i> {{ i18n "prev" }}</div>
         <div class="next-prev-text">{{ $prevPage.Title }}</div>
       </a>
@@ -34,7 +34,7 @@
         {{ $columnWidth = "col-md-6" }}
       {{ end}}
       <div class="{{ $columnWidth }} next-article">
-        <a href="{{ $nextPage.RelPermalink }}" title="{{ $nextPage.Title }}" class="btn btn-outline-info">
+        <a href="{{ $nextPage.RelPermalink }}" title="{{ $nextPage.Title }}" class="btn filled-button">
           <div>{{ i18n "next" }} <i class="fas fa-chevron-circle-right"></i></div>
           <div class="next-prev-text">{{ $nextPage.Title }}</div>
         </a>
