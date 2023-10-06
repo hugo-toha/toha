@@ -79,7 +79,7 @@
     <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#home">{{ i18n "home" }}</a>
+          <a class="nav-link" href="{{ if .IsHome }}#home{{else}}{{ site.BaseURL | relLangURL }}#home{{end}}">{{ i18n "home" }}</a>
         </li>
         {{ if $sections }}
           {{ $sectionCount := 1 }}

@@ -8,6 +8,10 @@ html {
   scroll-behavior: smooth !important;
 }
 
+body {
+  position: relative;
+}
+
 /*
   Fixes anchor overlapping with header.
   See: https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors 
