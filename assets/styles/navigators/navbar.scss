@@ -145,7 +145,7 @@
     }
   }
 
-  @include media('<=large') {
+  @include media('<very-large') {
     height: -moz-fit-content;
     height: fit-content;
     padding-bottom: 0px;

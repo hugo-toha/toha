@@ -52,6 +52,8 @@ body.kind-page {
               img {
                 height: 120px;
                 width: 120px;
+                margin-left: auto;
+                margin-right: auto;
                 -o-object-fit: cover;
                 object-fit: cover;
                 background-color: get-light-color('bg-primary');
@@ -209,7 +211,7 @@ body.kind-page {
     }
   }
 
-  @include media('<=large') {
+  @include media('<very-large') {
     .container {
       max-width: 100%;
     }

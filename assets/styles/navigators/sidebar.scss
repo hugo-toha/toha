@@ -149,7 +149,7 @@
     }
   }
 
-  @include media('<=large') {
+  @include media('<very-large') {
     flex: 0%;
     max-width: 0%;
     min-height: 100vh;
