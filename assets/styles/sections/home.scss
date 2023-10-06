@@ -2,7 +2,7 @@
   height: 100vh;
   padding: 0;
   margin: 0;
-  color: $text-over-accent-color;
+  color: get-light-color('text-over-accent-color');
   overflow: hidden;
 
   .background {
@@ -44,19 +44,19 @@
   img {
     width: 148px;
     height: 148px;
-    background-color: $bg-secondary;
+    background-color: get-light-color('bg-secondary');
     padding: 5px;
     margin-bottom: 10px;
   }
 
   .greeting,
   .greeting-subtitle {
-    color: $text-over-accent-color;
+    color: get-light-color('text-over-accent-color');
   }
 
   .typing-carousel {
     font-size: 14pt;
-    color: $text-over-accent-color;
+    color: get-light-color('text-over-accent-color');
   }
 
   #typing-carousel-data {
@@ -65,7 +65,7 @@
 
   .arrow {
     position: absolute;
-    color: $text-over-accent-color;
+    color: get-light-color('text-over-accent-color');
     font-size: 1.5rem;
     bottom: 0;
   }
@@ -105,6 +105,27 @@
 
     .greeting {
       font-size: 24pt;
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .home {
+    color: get-dark-color('text-over-accent-color');
+    img {
+      background-color: get-dark-color('bg-secondary');
+    }
+
+    .greeting,
+    .greeting-subtitle {
+      color: get-dark-color('text-over-accent-color');
+    }
+
+    .typing-carousel {
+      color: get-dark-color('text-over-accent-color');
+    }
+    .arrow {
+      color: get-dark-color('text-over-accent-color');
     }
   }
 }

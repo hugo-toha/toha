@@ -7,14 +7,14 @@
   .sidebar-holder {
     top: 2.5rem;
     position: sticky;
-    background-color: $bg-primary;
+    background-color: get-light-color('bg-primary');
     height: 100vh;
     overflow: auto;
     box-shadow: $box-shadow;
     @include transition();
 
     .sidebar {
-      background: $bg-primary;
+      background: get-light-color('bg-primary');
       height: 100vh;
       @include transition();
 
@@ -27,12 +27,12 @@
         margin-top: 30px;
         margin-bottom: 10px;
         border-radius: 5px;
-        background-color: $bg-secondary;
+        background-color: get-light-color('bg-secondary');
         @include transition();
-        border: 1px solid $border-color;
+        border: 1px solid rgba(get-light-color('accent-color'), 0.1);
 
         &:focus {
-          border: 1pt solid $accent-color;
+          border: 1pt solid get-light-color('accent-color');
           outline: none;
         }
       }
@@ -56,11 +56,11 @@
             margin: 0;
             padding: 0 1em;
             line-height: 2em;
-            color: $heading-color;
+            color: get-light-color('heading-color');
             position: relative;
 
             i {
-              color: $heading-color;
+              color: get-light-color('heading-color');
               font-size: 12px;
               margin-right: 5px;
             }
@@ -80,7 +80,7 @@
               top: 2.5rem;
               left: 1.5rem;
               bottom: 0.9rem;
-              border-left: 1px solid $text-color;
+              border-left: 1px solid get-light-color('text-color');
             }
             li {
               &:before {
@@ -88,14 +88,14 @@
                 display: block;
                 width: 18px;
                 height: 0;
-                border-top: 1px solid $text-color;
+                border-top: 1px solid get-light-color('text-color');
                 margin-top: -1px;
                 position: absolute;
                 top: 18px;
                 left: -2px;
               }
               &:last-child:before {
-                background: $bg-primary;
+                background: get-light-color('bg-primary');
                 height: auto;
                 top: 1.1rem;
                 bottom: 0;
@@ -252,4 +252,50 @@
 .feather-minus-circle {
   width: 1rem;
   height: 1rem;
+}
+
+html[data-theme='dark'] {
+  .sidebar-section {
+    .sidebar-holder {
+      background-color: get-dark-color('bg-primary');
+
+      .sidebar {
+        background: get-dark-color('bg-primary');
+
+        #search-box {
+          background-color: get-dark-color('bg-secondary');
+          border: 1px solid rgba(get-dark-color('accent-color'), 0.1);
+
+          &:focus {
+            border: 1pt solid get-dark-color('accent-color');
+          }
+        }
+
+        .sidebar-tree {
+          .tree {
+            li {
+              color: get-dark-color('heading-color');
+
+              i {
+                color: get-dark-color('heading-color');
+              }
+            }
+            .subtree {
+              &:before {
+                border-left: 1px solid get-dark-color('text-color');
+              }
+              li {
+                &:before {
+                  border-top: 1px solid get-dark-color('text-color');
+                }
+                &:last-child:before {
+                  background: get-dark-color('bg-primary');
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -11,7 +11,7 @@ const updateNavBar = () => {
     navbarToggler?.classList.add('navbar-light')
 
     // color theme selector a.k.a. dark mode
-    themeIcon?.classList.remove('navbar-icon-svg-dark')
+    themeIcon?.classList.remove('svg-inverted')
 
     // get the main logo from hidden img tag
     const mainLogo = document.getElementById('main-logo')
@@ -27,7 +27,7 @@ const updateNavBar = () => {
     navbarToggler?.classList.add('navbar-dark')
 
     // color theme selector a.k.a. dark mode
-    themeIcon?.classList.add('navbar-icon-svg-dark')
+    themeIcon?.classList.add('svg-inverted')
 
     // get the inverted logo from hidden img tag
     const invertedLogo = document.getElementById('inverted-logo')

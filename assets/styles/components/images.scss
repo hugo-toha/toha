@@ -17,7 +17,7 @@ img {
 }
 
 figure {
-  border: 1px solid $border-color;
+  border: 1px solid rgba(get-light-color('accent-color'), 0.1);
   height: -moz-fit-content;
   height: fit-content;
   width: -moz-fit-content;
@@ -30,5 +30,19 @@ caption,
 figcaption {
   caption-side: bottom;
   text-align: center;
-  color: $muted-text-color;
+  color: get-light-color('muted-text-color');
+}
+
+html[data-theme='dark'] {
+  figure {
+    border: 1px solid rgba(get-dark-color('accent-color'), 0.1);
+  }
+  caption,
+  figcaption {
+    color: get-dark-color('muted-text-color');
+  }
+}
+
+.svg-inverted {
+  filter: invert(1);
 }
