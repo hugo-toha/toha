@@ -1,0 +1,10 @@
+{
+  "comments": {
+    "dependencies": {},
+    "devDependencies": {}
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "name": "exampleSite",
+  "version": "0.1.0"
+}

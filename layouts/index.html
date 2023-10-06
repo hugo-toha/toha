@@ -17,6 +17,17 @@
     
     <!--================= add analytics if enabled =========================-->
     {{- partial "analytics.html" . -}}
+    <script>
+      theme = localStorage.getItem('darkmode:color-scheme') || 'system';
+      if (theme == 'system') {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+        } else {
+          theme = 'light';
+        }
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    </script>
   </head>
   <body data-spy="scroll" data-target="#top-navbar" data-offset="100">
 
@@ -33,7 +44,7 @@
     {{ end }}
 
     {{ if $sections }}
-      {{ $background:= "bg-white"}}
+      {{ $background:= "bg-primary"}}
       {{ range sort $sections "section.weight" }}
         {{ if .section.enable }}
           <div class="container-fluid section-holder d-flex {{ $background }}">
@@ -44,10 +55,10 @@
             {{ end }}
           </div>
           <!--- alter background color for next section --->
-          {{ if eq $background "bg-white" }}
-            {{ $background = "bg-dimmed" }}
+          {{ if eq $background "bg-primary" }}
+            {{ $background = "bg-secondary" }}
           {{ else }}
-            {{ $background = "bg-white" }}
+            {{ $background = "bg-primary" }}
           {{end}}
         {{ end }}
       {{ end }}

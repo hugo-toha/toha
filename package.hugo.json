@@ -32,7 +32,6 @@
     "@fontsource/mulish": "4.5.13",
     "@fortawesome/fontawesome-free": "^6.2.0",
     "bootstrap": "^4.6.2",
-    "darkreader": "^4.9.58",
     "filterizr": "^2.2.4",
     "flag-icon-css": "^4.1.7",
     "fuse.js": "^6.6.2",
@@ -43,6 +42,8 @@
     "mark.js": "^8.11.1",
     "mermaid": "^9.2.1",
     "plyr": "^3.7.2",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "include-media": "^1.4.10",
+    "feather-icons": "^4.29.1"
   }
 }

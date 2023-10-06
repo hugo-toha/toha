@@ -1,0 +1,79 @@
+a {
+  color: get-light-color('accent-color');
+  @include transition();
+
+  &:hover,
+  &:focus {
+    text-decoration: get-light-color('hover-over-accent-color') underline;
+    color: get-light-color('hover-over-accent-color');
+    @include transition();
+  }
+}
+
+.list-link {
+  text-decoration: none !important;
+  color: get-light-color('text-color');
+  @include transition();
+  &.active {
+    display: inline;
+    color: get-light-color('accent-color');
+  }
+
+  &:hover {
+    margin-left: 3px;
+    color: get-light-color('accent-color');
+    @include transition();
+  }
+}
+
+a.header-anchor {
+  text-decoration: none;
+  color: get-light-color('heading-color');
+  i,
+  svg {
+    font-size: 10pt;
+    color: get-light-color('text-color');
+    display: none;
+    margin-left: 0.5rem;
+  }
+  &:hover {
+    i,
+    svg {
+      display: inline-block;
+    }
+  }
+  code {
+    color: get-light-color('inline-code-color');
+  }
+}
+
+.anchor {
+  padding-top: 3.5rem;
+}
+
+html[data-theme='dark'] {
+  a {
+    color: get-dark-color('accent-color');
+    &:hover,
+    &:focus {
+      text-decoration: get-dark-color('hover-over-accent-color') underline;
+      color: get-dark-color('hover-over-accent-color');
+    }
+  }
+  .list-link {
+    color: get-dark-color('text-color');
+    &:hover {
+      color: get-dark-color('accent-color');
+    }
+  }
+  a.header-anchor {
+    color: get-dark-color('heading-color');
+    i,
+    svg {
+      color: get-dark-color('text-color');
+    }
+    code {
+      color: get-dark-color('inline-code-color');
+    }
+  }
+}

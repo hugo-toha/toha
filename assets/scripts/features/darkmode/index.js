@@ -1,14 +1,6 @@
 const PERSISTENCE_KEY = 'darkmode:color-scheme'
 
-async function getService () {
-  if (process.env.FEATURE_DARKMODE_DARKREADER === '1') {
-    return await import('./darkreader')
-  }
-
-  throw Error(' No service defined for feature darkMode.')
-}
-
-window.addEventListener('DOMContentLoaded', async () => {
+window.addEventListener('load', async () => {
   const menu = document.getElementById('themeMenu')
   const $icon = document.getElementById('navbar-theme-icon-svg')
   if (menu == null || $icon == null) return
@@ -20,32 +12,32 @@ window.addEventListener('DOMContentLoaded', async () => {
     return map
   }, {})
 
-  const {
-    setSchemeDark,
-    setSchemeLight,
-    setSchemeSystem,
-    defaultColorScheme
-  } = await getService()
 
-  function loadScheme () {
-    return localStorage.getItem(PERSISTENCE_KEY) || defaultColorScheme
+  function loadScheme() {
+    return localStorage.getItem(PERSISTENCE_KEY) || "system"
   }
 
-  function saveScheme (scheme) {
+  function saveScheme(scheme) {
     localStorage.setItem(PERSISTENCE_KEY, scheme)
   }
 
-  function setScheme (newScheme) {
+  function getPreferredColorScheme() {
+    const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return isDarkMode ? "dark" : "light";
+  }
+
+  function setScheme(newScheme) {
+    let theme = newScheme
+    if (newScheme === 'system') {
+      theme = getPreferredColorScheme()
+    }
+    // set data-theme attribute on html tag
+    document.querySelector("html").dataset.theme = theme;
+
+    // update icon
     $icon.src = iconMap[newScheme]
 
-    if (newScheme === 'dark') {
-      setSchemeDark()
-    } else if (newScheme === 'system') {
-      setSchemeSystem()
-    } else {
-      setSchemeLight()
-    }
-
+    // save preference to local storage
     saveScheme(newScheme)
   }
 

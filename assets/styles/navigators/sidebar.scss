@@ -2,162 +2,133 @@
   order: 1;
   flex: 20%;
   max-width: 20%;
-  /* background-color: lightsalmon; */
-  transition: all ease-out 0.5s;
-  
+  @include transition();
+
   .sidebar-holder {
     top: 2.5rem;
     position: sticky;
-    background-color: #f9fafc;
+    background-color: get-light-color('bg-primary');
     height: 100vh;
     overflow: auto;
-    box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
-    transition: all ease-out 0.3s;
+    box-shadow: $box-shadow;
+    @include transition();
+
+    .sidebar {
+      background: get-light-color('bg-primary');
+      height: 100vh;
+      @include transition();
+
+      #search-box {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: -webkit-fill-available;
+        height: 35px;
+        padding-left: 15px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        background-color: get-light-color('bg-secondary');
+        @include transition();
+        border: 1px solid rgba(get-light-color('accent-color'), 0.1);
+
+        &:focus {
+          border: 1pt solid get-light-color('accent-color');
+          outline: none;
+        }
+      }
+
+      #list-heading {
+        padding-left: 0px !important;
+      }
+
+      .sidebar-tree {
+        padding-left: 1rem;
+        position: relative;
+        width: -moz-max-content;
+        width: max-content;
+
+        .tree {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          li {
+            margin: 0;
+            padding: 0 1em;
+            line-height: 2em;
+            color: get-light-color('heading-color');
+            position: relative;
+
+            i {
+              color: get-light-color('heading-color');
+              font-size: 12px;
+              margin-right: 5px;
+            }
+          }
+          .shift-right {
+            margin-left: 5px;
+          }
+
+          .subtree {
+            padding-left: 0.7rem;
+
+            &:before {
+              content: '';
+              display: block;
+              width: 0;
+              position: absolute;
+              top: 2.5rem;
+              left: 1.5rem;
+              bottom: 0.9rem;
+              border-left: 1px solid get-light-color('text-color');
+            }
+            li {
+              &:before {
+                content: '';
+                display: block;
+                width: 18px;
+                height: 0;
+                border-top: 1px solid get-light-color('text-color');
+                margin-top: -1px;
+                position: absolute;
+                top: 18px;
+                left: -2px;
+              }
+              &:last-child:before {
+                background: get-light-color('bg-primary');
+                height: auto;
+                top: 1.1rem;
+                bottom: 0;
+              }
+              ul {
+                position: relative;
+                padding-left: 0.5rem;
+                display: none;
+                list-style: none;
+
+                &.active {
+                  display: block;
+                }
+
+                &:before {
+                  content: '';
+                  display: block;
+                  width: 0;
+                  position: absolute;
+                  top: -8px;
+                  left: 6px;
+                  bottom: 0.8rem;
+                  border-left: 1px solid;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
-  
-  .sidebar {
-    background: #f9fafc;
-    height: 100vh;
-    transition: all ease-out 0.3s;
-  }
-  
-  .sidebar-tree {
-    padding-left: 1rem;
-    position: relative;
-    width: -moz-max-content;
-    width: max-content;
-  }
-  
-  #search-box {
-    margin-left: 5%;
-    margin-right: 5%;
-    width: -webkit-fill-available;
-    height: 35px;
-    padding-left: 15px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    background-color: #e5e9f2;
-    transition: all 0.3s ease-out;
-    border: 1px solid #c0ccda;
-  }
-  
-  #search-box:focus {
-    border: 1pt solid #248aaa;
-    outline: none;
-  }
-  
-  #list-heading {
-    padding-left: 0px !important;
-  }
-  
-  .tree,
-  .tree ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .tree li {
-    margin: 0;
-    padding: 0 1em;
-    line-height: 2em;
-    color: #3c4858;
-    position: relative;
-  }
-  
-  .tree li a {
-    text-decoration: none;
-    color: #131313;
-    transition: all 0.3s ease-out;
-  }
-  
-  .tree li a.active {
-    display: inline;
-    color: #2098d1;
-  }
-  
-  .tree li a:hover {
-    margin-left: 3px;
-    color: #2098d1;
-    transition: all 0.3s ease-out;
-  }
-  
-  .tree i {
-    color: #3c4858;
-    font-size: 12px;
-    margin-right: 5px;
-  }
-  
-  .tree .shift-right {
-    margin-left: 5px;
-  }
-  
-  .tree .active,
-  .tree .active > ul {
-    display: block;
-  }
-  
-  .subtree {
-    padding-left: 0.7rem;
-  }
-  
-  .subtree:before {
-    content: "";
-    display: block;
-    width: 0;
-    position: absolute;
-    top: 2.5rem;
-    left: 1.5rem;
-    bottom: 0.9rem;
-    border-left: 1px solid;
-  }
-  
-  .subtree ul,
-  ul > ul {
-    position: relative;
-    padding-left: 0.5rem;
-    display: none;
-  }
-  
-  .subtree ul:before {
-    content: "";
-    display: block;
-    width: 0;
-    position: absolute;
-    top: -10px;
-    left: 0.3rem;
-    bottom: 0.9rem;
-    border-left: 1px solid;
-  }
-  
-  .subtree li:before {
-    content: "";
-    display: block;
-    width: 20px;
-    height: 0;
-    border-top: 1px solid;
-    margin-top: -1px;
-    position: absolute;
-    top: 18px;
-    left: -3px;
-  }
-  
-  .subtree li:last-child:before {
-    background: #f9fafc;
-    height: auto;
-    top: 1.1rem;
-    bottom: 0;
-  }
-  
-  a.focused {
-    color: #2098d1 !important;
-  }
-  
-  /* ============= Device specific fixes ======= */
-  
-  /* Large screens such as TV */
-  @media only screen and (min-width: 1824px) {
+
+  @include media('<=ultra-large') {
     flex: 15%;
     max-width: 15%;
 
@@ -165,79 +136,96 @@
       max-width: 100%;
     }
   }
-  /* Extra large devices (large desktops, 1200px and up) */
-  
-  @media (max-width: 1400px) {
+
+  @include media('<=extra-large') {
     .sidebar-holder {
       max-width: 20rem;
     }
   }
-  
-  @media (max-width: 1200px) {
+
+  @include media('<=very-large') {
     .sidebar-tree {
       margin-left: 1rem;
     }
   }
-  
-  /* IPad Pro */
-  @media (max-width: 1024px) {   
+
+  @include media('<=large') {
     flex: 0%;
     max-width: 0%;
     min-height: 100vh;
-    transition: all ease-out 0.3s;
+    @include transition();
 
     .sidebar-holder {
       position: sticky;
       top: 2.5rem;
       width: 100%;
+      padding-bottom: 1rem;
       max-height: calc(100vh - 2.5rem);
     }
-  
-    &.hide {
+
+    &.expanded {
       flex: 30%;
       max-width: 30%;
       margin-right: 0.5rem;
-      transition: all ease-out 0.3s;
+      @include transition();
     }
   }
-  
-  /*  Large devices (desktops, 992px and up) */
-  
-  @media (max-width: 992px) {
-  }
-  
-  /* Medium devices (tablets, 768px and up) */
-  
-  @media only screen and (max-width: 768px) {
+
+  @include media('<=medium') {
     flex: 0%;
     max-width: 0%;
     min-height: 100vh;
-    transition: all ease-out 0.3s;
+    @include transition();
 
     .sidebar-holder {
       position: sticky;
       top: 2.5rem;
       width: 100%;
     }
-  
-    &.hide {
+
+    &.expanded {
       flex: 40%;
       max-width: 40%;
       margin-right: 0.5rem;
-      transition: all ease-out 0.3s;
+      @include transition();
     }
   }
-  
-  /* Small devices (landscape phones, 576px and up) */
-  
-  @media only screen and (max-width: 576px) {
+
+  @include media('<=small') {
     width: 100%;
     min-height: 0;
     max-height: 0;
     max-width: 100%;
-    transition: all ease-out 0.5s;
+    @include transition();
 
-    &.hide {
+    .sidebar-holder {
+      max-height: 0;
+      height: -moz-fit-content;
+      height: fit-content;
+      overflow: hidden;
+      max-width: 100%;
+      @include transition();
+
+      .sidebar {
+        position: relative;
+        height: -moz-fit-content;
+        height: fit-content;
+        max-height: -moz-fit-content;
+        max-height: fit-content;
+        width: 100vw;
+        min-height: 0;
+        overflow: hidden;
+        @include transition();
+
+        .sidebar-tree {
+          margin-left: 0rem;
+          max-height: 0;
+          @include transition();
+        }
+      }
+    }
+
+    &.expanded {
       margin-top: 2rem;
       position: relative;
       height: -moz-fit-content;
@@ -245,55 +233,69 @@
       flex: none;
       max-height: 300vh;
       max-width: 100%;
-      transition: all ease-out 0.5s;
+      @include transition();
+
+      .sidebar-holder {
+        max-height: 200vh;
+        @include transition();
+
+        .sidebar-tree {
+          max-height: 200vh;
+          @include transition();
+        }
+      }
     }
-  
+  }
+}
+
+.feather-plus-circle,
+.feather-minus-circle {
+  width: 1rem;
+  height: 1rem;
+}
+
+html[data-theme='dark'] {
+  .sidebar-section {
     .sidebar-holder {
-      max-height: 0;
-      height: -moz-fit-content;
-      height: fit-content;
-      overflow: hidden;
-      max-width: 100%;
-      transition: all ease-out 0.5s;
-    }
-  
-    &.hide .sidebar-holder {
-      max-height: 200vh;
-      transition: all ease-out 0.5s;
-    }
-  
-    .sidebar {
-      position: relative;
-      height: -moz-fit-content;
-      height: fit-content;
-      max-height: -moz-fit-content;
-      max-height: fit-content;
-      width: 100vw;
-      min-height: 0;
-      overflow: hidden;
-      transition: all ease-out 0.5s;
-    }
-  
-    .sidebar-tree {
-      margin-left: 0rem;
-      max-height: 0;
-      transition: all 0.5s ease-out;
-    }
-    &.hide .sidebar-tree {
-      max-height: 200vh;
-      transition: all 0.5s ease-out;
+      background-color: get-dark-color('bg-primary');
+
+      .sidebar {
+        background: get-dark-color('bg-primary');
+
+        #search-box {
+          background-color: get-dark-color('bg-secondary');
+          border: 1px solid rgba(get-dark-color('accent-color'), 0.1);
+
+          &:focus {
+            border: 1pt solid get-dark-color('accent-color');
+          }
+        }
+
+        .sidebar-tree {
+          .tree {
+            li {
+              color: get-dark-color('heading-color');
+
+              i {
+                color: get-dark-color('heading-color');
+              }
+            }
+            .subtree {
+              &:before {
+                border-left: 1px solid get-dark-color('text-color');
+              }
+              li {
+                &:before {
+                  border-top: 1px solid get-dark-color('text-color');
+                }
+                &:last-child:before {
+                  background: get-dark-color('bg-primary');
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
-  
-  /* iPhoneX, iPhone 6,7,8 */
-  @media only screen and (max-width: 375px) {
-  }
-  
-  /* Galaxy S5, Moto G4 */
-  @media only screen and (max-width: 360px) {
-  }
-  
-  /* iPhone 5 or before */
-  @media only screen and (max-width: 320px) {
-  }  
 }

@@ -1,0 +1,112 @@
+.footer {
+  color: get-light-color('muted-text-color') !important;
+  background-color: get-light-color('footer-color');
+  position: relative;
+  z-index: 9999;
+
+  h5 {
+    color: get-light-color('inverse-text-color');
+  }
+
+  a {
+    color: get-light-color('muted-text-color');
+    @include transition();
+    &:hover {
+      margin-left: 5px;
+      text-decoration: get-light-color('muted-text-color') underline;
+      @include transition();
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      margin-top: 5px;
+    }
+  }
+
+  hr {
+    background-color: get-light-color('muted-text-color');
+  }
+
+  p:first-child {
+    color: get-light-color('inverse-text-color');
+  }
+
+  input {
+    background-color: get-light-color('inverse-text-color');
+    &:focus {
+      background-color: get-light-color('bg-secondary');
+    }
+  }
+
+  #disclaimer {
+    color: get-light-color('muted-text-color') !important;
+    text-align: justify;
+    & > strong {
+      color: get-light-color('inverse-text-color') !important;
+    }
+  }
+
+  #theme {
+    color: get-light-color('inverse-text-color');
+    img {
+      width: 32px;
+      display: inline-block;
+    }
+  }
+  #hugo {
+    &:hover {
+      margin-right: 5px;
+      @include transition();
+    }
+    img {
+      display: inline-block;
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .footer {
+    color: get-dark-color('muted-text-color') !important;
+    background-color: get-dark-color('footer-color');
+    h5 {
+      color: get-dark-color('heading-color');
+    }
+
+    a {
+      color: get-dark-color('muted-text-color');
+      &:hover {
+        text-decoration: get-dark-color('muted-text-color') underline;
+      }
+    }
+
+    hr {
+      background-color: get-dark-color('muted-text-color');
+    }
+
+    p:first-child {
+      color: get-dark-color('muted-text-color');
+    }
+
+    input {
+      background-color: get-dark-color('bg-primary');
+      &:focus {
+        background-color: get-dark-color('bg-secondary');
+      }
+    }
+
+    #disclaimer {
+      color: get-dark-color('muted-text-color') !important;
+      & > strong {
+        color: get-dark-color('text-color') !important;
+      }
+    }
+
+    #theme {
+      color: get-dark-color('text-color');
+    }
+  }
+}

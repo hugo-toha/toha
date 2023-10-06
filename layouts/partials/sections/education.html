@@ -43,11 +43,11 @@
                             </div>
                             <h6>{{ .name }}</h6>
                             {{ if .grade }}
-                                <h6><span class="text-muted">{{ .grade.scale }}: </span><span>{{ .grade.achieved }}</span> {{ i18n "out_of"}} <span>{{ .grade.outOf }}</span></h6>
+                                <h6><span class="text-heading">{{ .grade.scale }}: </span><span>{{ .grade.achieved }}</span> {{ i18n "out_of"}} <span>{{ .grade.outOf }}</span></h6>
                             {{ end }}
                             {{ if .publications }}
                                 <div class="publications">
-                                    <h6 class="text-muted">{{ i18n "publications"}}</h6>
+                                    <h6 class="text-heading">{{ i18n "publications"}}:</h6>
                                     <ul>
                                         {{ range .publications }}
                                             {{ if .url }}
@@ -62,7 +62,7 @@
                             {{ if .takenCourses }}
                             {{ $collapseAfter  := .takenCourses.collapseAfter | default 2 }}
                             <div class="taken-courses">
-                                <h6 class="text-muted">{{ i18n "taken_courses"}}</h6>
+                                <h6 class="text-heading">{{ i18n "taken_courses"}}:</h6>
                                 {{ if .takenCourses.showGrades }}
                                 {{ $hideScale  := .takenCourses.hideScale }}
                                 <table>
@@ -98,7 +98,7 @@
                             {{ end }}
                             {{ if .extracurricularActivities }}
                             <div class="extracurricular-activities">
-                                <h6 class="text-muted">{{ i18n "extracurricular_activities"}}</h6>
+                                <h6 class="text-heading">{{ i18n "extracurricular_activities"}}:</h6>
                                 <ul>
                                 {{ range .extracurricularActivities }}
                                     <li>{{ . | markdownify }}</li>

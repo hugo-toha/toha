@@ -8,12 +8,6 @@ videoplayer:
       styles:
       - plyr/dist/plyr
 
-darkmode:
-  services:
-    darkreader:
-      styles:
-      - ./colortheme/colortheme
-
 syntaxhighlight:
   services:
     hljs:
