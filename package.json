@@ -61,7 +61,7 @@
     "mermaid": "^9.2.1",
     "plyr": "^3.7.2",
     "popper.js": "^1.16.1",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.31",
     "postcss-cli": "^8.3.1"
   },
   "homepage": "https://github.com/hugo-toha/toha#readme",
