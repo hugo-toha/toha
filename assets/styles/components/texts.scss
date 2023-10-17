@@ -12,6 +12,8 @@ strong {
 
 p {
   color: get-light-color('text-color');
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 input {
