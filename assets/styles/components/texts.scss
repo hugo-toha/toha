@@ -82,6 +82,8 @@ html[data-theme='dark'] {
 
   p {
     color: get-dark-color('text-color');
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   input {
