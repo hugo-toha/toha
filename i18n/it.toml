@@ -3,7 +3,7 @@
 other = "Home"
 
 [posts]
-other = "Post"
+other = "Articoli"
 
 [toc_heading]
 other = "Contenuti"
@@ -92,20 +92,20 @@ other = "Responsabilità:"
 [present]
 other = "Ad oggi"
 
-# [comments_javascript]
-# other = "Please enable JavaScript to view the"
+[comments_javascript]
+other = "Per favore attiva JavaScript per vedere il"
 
 # [comments_by]
 # other = "comments powered by"
 
-# [read]
-# other = "Read"
+[read]
+other = "Leggi"
 
 # [project_star]
 # other = "Star"
 
-# [project_details]
-# other = "Details"
+[project_details]
+other = "Dettagli"
 
 # [err_404]
 # other = "The page you are looking for is not there yet."
@@ -124,3 +124,9 @@ other = "Avviso di responsabilità"
 
 [search]
 other = "Ricerca"
+
+[minute]
+other = "minuto"
+
+[minutes]
+other = "minuti"
