@@ -1,6 +1,6 @@
 <!-- Add Analytics if enabled in configuration -->
 {{ with site.Params.features.analytics }}
-    {{ if .enabled }}
+    {{ if .enable }}
         {{ with .services }}
         <!-- Google Analytics -->
         {{ with .google }}
@@ -19,11 +19,11 @@
 
         <!-- GoatCounter -->
         {{ with .goatCounter }}
-            <script
-            data-goatcounter="https://{{ .code }}.goatcounter.com/count"
-            async
-            src="//gc.zgo.at/count.js"
-            ></script>
+            {{ if .selfHosted }}
+                <script data-goatcounter="https://{{ .url }}/count" async src="https://{{ .url }}/count.js"></script>
+            {{ else }}
+                <script data-goatcounter="https://{{ .code }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+            {{ end }}
         {{ end }}
 
         <!-- Piwik/Matomo -->
