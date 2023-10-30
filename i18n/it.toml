@@ -125,6 +125,6 @@ other = "Avviso di responsabilità"
 [search]
 other = "Ricerca"
 
-[minutes]
-one = "1 minuto"
-other = "{{.Count}} minuti"
+[minute]
+one = "minuto"
+other = "minuti"
