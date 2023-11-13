@@ -124,3 +124,7 @@ other = "Avis de responsabilité"
 
 [search]
 other = "Chercher"
+
+[minute]
+one = "minute"
+other = "minutes"
