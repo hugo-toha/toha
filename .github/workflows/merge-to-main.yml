@@ -1,4 +1,4 @@
-name: Release Drafter
+name: Merge to main workflows
 # Run action on push in mater branch
 on:
   push:

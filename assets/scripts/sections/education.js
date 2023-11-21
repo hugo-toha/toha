@@ -24,7 +24,7 @@ function toggleCourseVisibility (elem) {
 window.addEventListener('DOMContentLoaded', () => {
   const els = Array.from(document.getElementsByClassName('btn'));
 
-  els.filter((el) => el != null && (el.id == 'show-more-btn' || el.id == 'show-less-btn')).forEach((el) =>
+  els.filter((el) => el != null && (el.id === 'show-more-btn' || el.id === 'show-less-btn')).forEach((el) =>
     el.addEventListener('click', ({ target }) =>
       toggleCourseVisibility(target)))
 })
