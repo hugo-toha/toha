@@ -1,6 +1,6 @@
 [build]
 command = "cd exampleSite && hugo --gc --minify"
-publish = "public"
+publish = "exampleSite/public"
 
 [context.production.environment]
 HUGO_ENABLEGITINFO = "true"
