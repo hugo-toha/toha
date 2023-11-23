@@ -71,7 +71,7 @@ jobs:
         prCommentEnabled: true
         prCommentSaveOld: false
         timeout: 5
-        urls: "${{ steps.preview.outputs.url }},${{ steps.preview.outputs.url }}/posts/,${{ steps.preview.outputs.url }}/posts/writing-posts/markdown-syntax/"
+        urls: "${{ steps.preview.outputs.url }},${{ steps.preview.outputs.url }}/posts/,${{ steps.preview.outputs.url }}/posts/markdown-sample/,${{ steps.preview.outputs.url }}/posts/shortcodes/"
 
   # Ensure that PR has desired labels
   enforce-label:
