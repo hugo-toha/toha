@@ -38,7 +38,7 @@ class PDFViewer {
     this.loadingWrapper = el.getElementsByClassName('loading-wrapper')[0]
     this.next = el.getElementsByClassName('next')[0]
     this.prev = el.getElementsByClassName('prev')[0]
-    this.pageNum = el.getElementsByClassName('page-num')[0]
+    this.curPage = el.getElementsByClassName('page-num')[0]
     this.pageCount = el.getElementsByClassName('page-count')[0]
 
     // context
@@ -121,7 +121,7 @@ class PDFViewer {
       this.pageNumPending = null
     }
     // Update page counters
-    this.pageNum.textContent = num
+    this.curPage.textContent = num
   }
 
   /**
