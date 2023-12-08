@@ -11,9 +11,13 @@
   data-page-num="{{ $pageNum }}"
 >
   <div class="paginator">
-    <button class="prev">Previous</button>
-    <button class="next">Next</button>
-    <span>Page: <span class="page-num"></span> / <span class="page-count"></span></span>
+    <div class="page-number-indicator">
+      <span>Page: <span class="page-num"></span> / <span class="page-count"></span></span>
+    </div>
+    <div class="next-prev-btn">
+      <button class="prev btn btn-sm btn-info">Previous</button>
+      <button class="next btn btn-sm btn-info">Next</button>
+    </div>
   </div>
 
   <div class="embed-pdf-container">
