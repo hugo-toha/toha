@@ -14,24 +14,20 @@
     <!-- import common headers -->
     {{- partial "header.html" . -}}
     {{- partial "opengraph.html" . -}}
-
-    <!-- import index page specific headers -->
-    <link rel="stylesheet" href="{{ "/css/sections/home.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/about.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/skills.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/experiences.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/education.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/projects.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/recent-posts.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/achievements.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/accomplishments.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/css/sections/publications.css" | relURL }}"/>
-
-    <!--================= custom style overrides =========================-->
-    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}"/>
     
     <!--================= add analytics if enabled =========================-->
     {{- partial "analytics.html" . -}}
+    <script>
+      theme = localStorage.getItem('darkmode:color-scheme') || 'system';
+      if (theme == 'system') {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+        } else {
+          theme = 'light';
+        }
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    </script>
   </head>
   <body data-spy="scroll" data-target="#top-navbar" data-offset="100">
 
@@ -48,7 +44,7 @@
     {{ end }}
 
     {{ if $sections }}
-      {{ $background:= "bg-white"}}
+      {{ $background:= "bg-primary"}}
       {{ range sort $sections "section.weight" }}
         {{ if .section.enable }}
           <div class="container-fluid section-holder d-flex {{ $background }}">
@@ -59,10 +55,10 @@
             {{ end }}
           </div>
           <!--- alter background color for next section --->
-          {{ if eq $background "bg-white" }}
-            {{ $background = "bg-dimmed" }}
+          {{ if eq $background "bg-primary" }}
+            {{ $background = "bg-secondary" }}
           {{ else }}
-            {{ $background = "bg-white" }}
+            {{ $background = "bg-primary" }}
           {{end}}
         {{ end }}
       {{ end }}
@@ -74,12 +70,6 @@
 
     <!--- ADD COMMON SCRIPTS --------------->
     {{ partial "scripts.html" . }}
-
-    <!--- ADD INDEX PAGE SPECIFIC SCRIPTS -->
-    <script src="{{ "/js/itype.min.js" | relURL }}"></script>
-    <script src="{{ "/js/github-button.js" | relURL }}"></script>
-    <script src="{{ "/js/home.js" | relURL }}"></script>
-    <script src="{{ "/js/jquery.filterizr.min.js" | relURL }}"></script>
 
     <!------ ADD SUPPORT LINKS -------->
     {{- partial "misc/support.html" . -}}

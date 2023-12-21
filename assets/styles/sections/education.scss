@@ -1,0 +1,234 @@
+.education-section {
+  @include section-title-adjustment();
+
+  .card {
+    &:hover,
+    &:focus {
+      border-left: 2px solid get-light-color('accent-color');
+    }
+  }
+
+  .education-info-table {
+    width: 100%;
+    border: none;
+    background: none;
+
+    .icon {
+      width: 2rem;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+
+      .hline {
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        background-color: get-light-color('accent-color');
+        height: 100%;
+        width: 2px;
+      }
+
+      .icon-holder {
+        background-color: get-light-color('accent-color');
+        border-radius: 50%;
+        height: 2rem;
+        width: 2rem;
+        padding: 0.2rem;
+        text-align: center;
+        color: get-light-color('text-over-accent-color');
+        position: relative;
+      }
+    }
+
+    tr,
+    th,
+    td {
+      border: none !important;
+      padding: 0;
+      background: none !important;
+    }
+
+    tr {
+      &:hover {
+        background: none !important;
+      }
+      &:first-child {
+        .hline {
+          height: 65%;
+          top: auto;
+        }
+      }
+      &:last-child {
+        .hline {
+          height: 50%;
+        }
+      }
+
+      .line {
+        width: 5%;
+        padding-left: 0;
+        padding-right: 0;
+
+        div {
+          height: 2px;
+          margin-right: -1px;
+          background-color: get-light-color('accent-color');
+        }
+      }
+
+      .details {
+        .degree-info {
+          padding: 1rem;
+          margin-top: 0.5rem;
+          margin-bottom: 0.5rem;
+          border-left: 2px solid get-light-color('accent-color');
+          border-top: 1px solid get-light-color('bg-primary');
+          border-bottom: 1px solid get-light-color('bg-primary');
+          border-right: 1px solid get-light-color('bg-primary');
+          border-radius: 5px;
+
+          h5 {
+            margin-bottom: 0.3rem;
+          }
+
+          .timeframe {
+            color: get-light-color('muted-text-color');
+            text-align: right;
+          }
+
+          .taken-courses {
+            table {
+              margin-left: 1rem;
+              width: 100%;
+              @include transition();
+              background: none;
+              border: none;
+
+              tr,
+              td,
+              th {
+                background: none;
+                border: none;
+                color: get-light-color('text-color');
+              }
+
+              tr {
+                height: auto !important;
+              }
+              th {
+                .course-name-header {
+                  width: 50%;
+                }
+              }
+            }
+            .hidden-course {
+              display: none;
+              @include transition();
+            }
+            ul {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  @include media('<=large') {
+    .container {
+      padding-left: 0;
+    }
+  }
+
+  @include media('<=small') {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    .container {
+      padding-right: 0;
+    }
+
+    .icon {
+      display: none;
+    }
+
+    .line {
+      display: none;
+    }
+
+    .timeframe {
+      text-align: left;
+    }
+  }
+}
+
+.education-alt .degree-info {
+  border-right: 2px solid get-light-color('accent-color');
+}
+
+html[data-theme='dark'] {
+  .education-section {
+    .card {
+      &:hover,
+      &:focus {
+        border-left: 2px solid get-dark-color('accent-color');
+      }
+    }
+
+    .education-info-table {
+      .icon {
+        .hline {
+          background-color: get-dark-color('accent-color');
+        }
+
+        .icon-holder {
+          background-color: get-dark-color('accent-color');
+          color: get-dark-color('text-over-accent-color');
+        }
+      }
+      tr {
+        .line {
+          div {
+            background-color: get-dark-color('accent-color');
+          }
+        }
+
+        .details {
+          .degree-info {
+            border-left: 2px solid get-dark-color('accent-color');
+            border-top: 1px solid get-dark-color('bg-primary');
+            border-bottom: 1px solid get-dark-color('bg-primary');
+            border-right: 1px solid get-dark-color('bg-primary');
+
+            .timeframe {
+              color: get-dark-color('muted-text-color');
+            }
+
+            .taken-courses {
+              table {
+                tr,
+                td,
+                th {
+                  color: get-dark-color('text-color');
+                }
+              }
+            }
+
+            &:hover{
+              border: 1px solid rgba(get-dark-color('accent-color'),0.2);
+              border-left: 2px solid get-dark-color('accent-color');
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .education-alt .degree-info {
+    border-right: 2px solid get-dark-color('accent-color');
+  }
+}

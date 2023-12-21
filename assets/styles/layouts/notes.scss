@@ -1,0 +1,199 @@
+body.type-notes {
+  .wrapper {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    .content-section {
+      flex: 80%;
+      max-width: 80%;
+      order: 2;
+      /* background-color: lightseagreen; */
+      padding: 0;
+      position: relative;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+
+      .content {
+        padding: 0;
+        position: relative;
+        padding-top: 2rem;
+        min-height: 130vh;
+
+        .note-card-holder {
+          margin-top: 2rem;
+          display: flex;
+          flex-flow: wrap;
+          margin-left: auto;
+          padding: 0;
+
+          .note-card {
+            align-self: flex-start;
+            flex: auto;
+
+            .card {
+              margin: 0.5rem;
+
+              .card-body {
+                padding: 1rem;
+
+                pre {
+                  margin: 0;
+                  border-radius: 3px;
+                }
+              }
+            }
+          }
+
+          .note-title {
+            padding-left: 1rem;
+            color: get-light-color('accent-color');
+
+            &:before {
+              content: '';
+              display: inline-block;
+              width: 98%;
+              height: 100%;
+              margin-bottom: -26px;
+              border-bottom: 1px solid get-light-color('accent-color');
+            }
+
+            span {
+              background: get-light-color('bg-secondary');
+              padding-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media('<=extra-large') {
+    .note-card-holder {
+      .note-card {
+        flex: 30%;
+      }
+    }
+  }
+
+  @include media('<=large') {
+    .wrapper {
+      padding-left: 0px;
+      padding-right: 0px;
+      .content-section {
+        padding: 0;
+        max-width: 100%;
+        order: 2;
+        padding-bottom: 0.5rem;
+        @include transition();
+
+        .content {
+          overflow: hidden;
+
+          .note-card-holder {
+            margin: 0;
+            margin-top: 1.5rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            position: relative;
+            @include transition();
+            .note-card {
+              flex: 50%;
+            }
+          }
+        }
+        .container {
+          max-width: 100%;
+        }
+
+        &.hide {
+          max-width: 60%;
+          @include transition();
+        }
+      }
+    }
+  }
+
+  @include media('<=medium') {
+    .note-card-holder .note-card {
+      max-width: 50%;
+      min-width: 50%;
+      @include transition();
+    }
+
+    .content-section.hide .note-card-holder .note-card {
+      max-width: 100%;
+      min-width: 100%;
+      @include transition();
+    }
+  }
+
+  @include media('<=small') {
+    .wrapper {
+      padding-left: 0px;
+      padding-right: 0px;
+      flex-flow: column;
+      overflow: hidden;
+
+      .content-section {
+        .content {
+          width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+          @include transition();
+
+          .note-card-holder {
+            margin-top: 0.5rem;
+            @include transition();
+
+            .note-card {
+              flex: 100%;
+              max-width: 100%;
+              @include transition();
+            }
+          }
+        }
+        &.hide {
+          flex: 100%;
+          max-width: 100%;
+          padding-left: 0;
+          width: 100%;
+          @include transition();
+
+          .content {
+            .note-card-holder {
+              margin-top: 0;
+              padding-top: 0;
+              @include transition();
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  body.type-notes {
+    .wrapper {
+      .content-section {
+        .content {
+          .note-card-holder {
+            .note-title {
+              color: get-dark-color('accent-color');
+              &:before {
+                border-bottom: 1px solid get-dark-color('accent-color');
+              }
+
+              span {
+                background: get-dark-color('bg-secondary');
+                padding-right: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

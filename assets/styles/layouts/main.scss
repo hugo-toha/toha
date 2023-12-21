@@ -1,0 +1,115 @@
+/* 
+  Removed smooth scrolling implementation in main.js in favor of
+  simpler css approach.
+  See: https://css-tricks.com/snippets/jquery/smooth-scrolling/ 
+*/
+*,
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  position: relative;
+}
+
+/*
+  Fixes anchor overlapping with header.
+  See: https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors 
+  */
+:target::before {
+  content: '';
+  display: block;
+  height: 2em; /* fixed header height*/
+  margin: -2em 0 0; /* negative fixed header height */
+}
+
+body {
+  background-color: get-light-color('bg-primary');
+  font-family: 'Mulish';
+}
+
+.bg-primary {
+  background-color: get-light-color('bg-primary') !important;
+}
+
+.bg-secondary {
+  background-color: get-light-color('bg-secondary') !important;
+}
+
+.flag-icon {
+  width: 16px !important;
+  margin-top: 3px;
+  margin-right: 3px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.content {
+  ul > ol,
+  ol > ul,
+  ul > ul,
+  ol > ol,
+  li > ol,
+  li > ul {
+    -webkit-padding-start: 1rem;
+    padding-inline-start: 1rem;
+  }
+}
+
+kbd {
+  background-color: get-light-color('accent-color');
+  color: get-light-color('text-over-accent-color');
+}
+
+mark {
+  background-color: get-light-color('highlight-color');
+  border-radius: 0.25rem;
+}
+
+@include media('<=small') {
+  .skills-section,
+  .projects-section,
+  .publications-section {
+    .container {
+      padding-left: 0.3rem;
+      padding-right: 0.3rem;
+    }
+  }
+
+  .section-holder {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .skills-section,
+  .projects-section,
+  .recent-posts-section,
+  .achievements-section,
+  .publications-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+html[data-theme='dark'] {
+  body {
+    background-color: get-dark-color('bg-primary');
+    color: get-dark-color('text-color');
+  }
+
+  .bg-primary {
+    background-color: get-dark-color('bg-primary') !important;
+  }
+  .bg-secondary {
+    background-color: get-dark-color('bg-secondary') !important;
+  }
+  kbd {
+    background-color: get-dark-color('accent-color');
+    color: get-dark-color('text-over-accent-color');
+  }
+  mark {
+    background-color: get-dark-color('highlight-color');
+  }
+}

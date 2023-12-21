@@ -37,6 +37,11 @@
   {{ $invertedLogo = $invertedLogo.RelPermalink}}
 {{ end }}
 
+{{ $logo := $mainLogo }}
+{{ if .IsHome }}
+  {{ $logo = $invertedLogo }}
+{{ end }}
+
 {{ $customMenus := site.Params.customMenus }}
 {{ if (index site.Data site.Language.Lang).site.customMenus }}
   {{ $customMenus = (index site.Data site.Language.Lang).site.customMenus }}
@@ -47,29 +52,34 @@
   {{ $sections = (index site.Data site.Language.Lang).sections }}
 {{ end }}
 
-<nav class="navbar navbar-expand-xl top-navbar initial-navbar" id="top-navbar">
+<nav class="navbar navbar-expand-xl top-navbar shadow {{ if .IsHome}}transparent-navbar homepage{{end}}" id="top-navbar">
   <div class="container">
+    {{ if not .IsHome }}
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    {{ end }}
     <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
-      {{ if $invertedLogo }}
-        <img src="{{ $invertedLogo }}" id="logo" alt="Logo">
+      {{ if $logo }}
+        <img src="{{ $logo }}" id="logo" alt="Logo">
       {{ end }}
       {{- site.Title -}}
     </a>
     <button
-      class="navbar-toggler navbar-dark"
+      class="navbar-toggler {{if .IsHome}}navbar-dark{{else}}navbar-light{{end}}"
       id="navbar-toggler"
       type="button"
       data-toggle="collapse"
       data-target="#top-nav-items"
       aria-label="menu"
     >
-      <span class="navbar-toggler-icon"></span>
+      <i data-feather="menu"></i>
     </button>
 
     <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
-      <ul class="navbar-nav ml-auto">
+      <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#home">{{ i18n "home" }}</a>
+          <a class="nav-link" href="{{ if .IsHome }}#home{{else}}{{ site.BaseURL | relLangURL }}#home{{end}}">{{ i18n "home" }}</a>
         </li>
         {{ if $sections }}
           {{ $sectionCount := 1 }}
@@ -78,7 +88,7 @@
               {{ $sectionCount  = add $sectionCount 1}}
               {{ if le $sectionCount $maxVisibleSections }}
                 <li class="nav-item">
-                  <a class="nav-link" href="#{{ partial "helpers/get-section-id.html" . }}">{{ .section.name }}</a>
+                  <a class="nav-link" href="{{ partial "helpers/get-section-url.html" . }}">{{ .section.name }}</a>
                 </li>
               {{ end }}
             {{ end }}
@@ -92,7 +102,7 @@
                   {{ if and (.section.enable) (.section.showOnNavbar) }}
                     {{ $sectionCount  = add $sectionCount 1}}
                     {{ if gt $sectionCount $maxVisibleSections }}
-                      <a class="dropdown-item" href="#{{ partial "helpers/get-section-id.html" . }}">{{ .section.name }}</a>
+                      <a class="dropdown-item" href="{{ partial "helpers/get-section-url.html" . }}">{{ .section.name }}</a>
                     {{ end }}
                   {{ end }}
                 {{- end }}
@@ -102,16 +112,16 @@
         {{- end }}
         {{ $shouldAddSeparator:= partial "helpers/add-navbar-separator.html" . }}
         {{ if $shouldAddSeparator }}
-          <div class="dropdown-divider" id="top-navbar-divider"></div>
+          <div id="top-navbar-divider"></div>
         {{ end }}
         {{ if $blogEnabled }}
           <li class="nav-item">
-            <a class="nav-link" id="blog-link" href="{{ "/posts" | relLangURL }}">{{ i18n "posts" }}</a>
+            <a class="nav-link" id="blog-link" href="{{ path.Join (site.BaseURL | relLangURL) "posts" }}">{{ i18n "posts" }}</a>
           </li>
         {{ end }}
         {{ if $notesEnabled }}
           <li class="nav-item">
-            <a class="nav-link" id="note-link" href="{{ "/notes" | relLangURL }}">{{ i18n "notes" }}</a>
+            <a class="nav-link" id="note-link" href="{{ path.Join (site.BaseURL | relLangURL) "notes" }}">{{ i18n "notes" }}</a>
           </li>
         {{ end }}
         {{ range $customMenus }}
@@ -124,7 +134,7 @@
         {{ if .IsTranslated }}
           {{ partial "navigators/lang-selector.html" . }}
         {{ end }}
-        {{ if site.Params.darkMode.enable }}
+        {{ if site.Params.features.darkMode.enable }}
           {{ partial "navigators/theme-selector.html" . }}
         {{ end }}
       </ul>

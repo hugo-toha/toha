@@ -1,0 +1,64 @@
+body.kind-404 {
+  #sidebar-toggler {
+    display: none;
+  }
+
+  .notFound {
+    padding-top: 5rem;
+    text-align: center;
+    padding-bottom: 8rem;
+
+    img {
+      height: 500px;
+    }
+
+    h1 {
+      font-style: italic;
+    }
+
+    .message {
+      position: absolute;
+      max-width: 20rem;
+      top: 40%;
+      left: 30%;
+    }
+  }
+
+  @include media('<=very-large') {
+    .notFound .message {
+      top: 50%;
+      left: 25%;
+    }
+  }
+
+  @include media('<=large') {
+    .notFound .message {
+      top: 46%;
+      left: 25%;
+    }
+  }
+
+  @include media('<=medium') {
+    .notFound {
+      img {
+        height: 400px;
+      }
+      .message {
+        top: 20rem;
+        left: 4rem;
+      }
+    }
+  }
+
+  @include media('<=small') {
+    .notFound {
+      img {
+        height: 250px;
+      }
+      .message {
+        top: 20rem;
+        left: 2rem;
+      }
+    }
+  }
+}

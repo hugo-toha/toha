@@ -1,0 +1,25 @@
+flags:
+  styles:
+    - flag-icon-css/css/flag-icons
+
+videoplayer:
+  services:
+    plyr:
+      styles:
+      - plyr/dist/plyr
+
+syntaxhighlight:
+  services:
+    hljs:
+      styles:
+      - highlight.js/scss/atom-one-dark
+
+math:
+  services:
+    katex:
+      styles:
+      - katex/dist/katex
+
+embedpdf:
+  styles:
+  - ./sections/pdf-viewer

@@ -3,7 +3,7 @@
 other = "Home"
 
 [posts]
-other = "Post"
+other = "Articoli"
 
 [toc_heading]
 other = "Contenuti"
@@ -53,8 +53,8 @@ other = "Precedente"
 [next]
 other = "Successivo"
 
-# [share_on]
-# other = "Share on"
+[share_on]
+other = "Condividi su:"
 
 [improve_this_page]
 other = "Migliora questa pagina"
@@ -86,26 +86,26 @@ other = "Vedi altro"
 [show_less]
 other = "Mostra meno"
 
-# [responsibilities]
-# other = "Responsibilities:"
+[responsibilities]
+other = "Responsabilità:"
 
-# [present]
-# other = "Present"
+[present]
+other = "Ad oggi"
 
-# [comments_javascript]
-# other = "Please enable JavaScript to view the"
+[comments_javascript]
+other = "Per favore attiva JavaScript per vedere il"
 
 # [comments_by]
 # other = "comments powered by"
 
-# [read]
-# other = "Read"
+[read]
+other = "Leggi"
 
 # [project_star]
 # other = "Star"
 
-# [project_details]
-# other = "Details"
+[project_details]
+other = "Dettagli"
 
 # [err_404]
 # other = "The page you are looking for is not there yet."
@@ -124,3 +124,7 @@ other = "Avviso di responsabilità"
 
 [search]
 other = "Ricerca"
+
+[minute]
+one = "minuto"
+other = "minuti"

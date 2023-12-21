@@ -8,5 +8,7 @@
 <meta property="og:title" content="{{ $title }}"/>
 <meta property="og:type" content="{{ $type }}"/>
 <meta property="og:description" content="{{ $description }}"/>
-<meta property="og:image" content="{{ $image | absURL }}">
+<meta property="og:image" content="{{ $image | relURL }}">
 <meta property="og:url" content="{{ $url }}">
+
+{{ template "_internal/twitter_cards.html" . }}

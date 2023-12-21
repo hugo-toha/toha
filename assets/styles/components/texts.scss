@@ -1,0 +1,119 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: get-light-color('heading-color');
+}
+
+strong {
+  color: get-light-color('heading-color') !important;
+}
+
+p {
+  color: get-light-color('text-color');
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+input {
+  color: get-light-color('text-color');
+}
+
+blockquote {
+  border-left: 4px solid get-light-color('accent-color');
+  background-color: rgba(get-light-color('accent-color'), 0.05);
+  padding: 0.3rem;
+  padding-left: 1rem;
+
+  & > p {
+    color: get-light-color('text-color');
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.text-muted {
+  color: get-light-color('muted-text-color') !important;
+}
+
+.text-heading {
+  font-weight: bold;
+  color: get-light-color('muted-text-color');
+}
+
+.sub-title {
+  color: get-light-color('muted-text-color');
+  font-size: 10pt;
+}
+
+::-moz-selection {
+  @include selection-color();
+}
+
+::selection {
+  @include selection-color();
+}
+
+@include media('<=small') {
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@include media('<=tiny') {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+html[data-theme='dark'] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: get-dark-color('heading-color');
+  }
+
+  strong {
+    color: get-dark-color('heading-color') !important;
+  }
+
+  p {
+    color: get-dark-color('text-color');
+  }
+
+  input {
+    color: get-dark-color('text-color');
+  }
+
+  blockquote {
+    border-left: 4px solid get-dark-color('accent-color');
+    background-color: rgba(get-dark-color('accent-color'), 0.05);
+    color: get-dark-color('text-color');
+  }
+
+  .text-muted {
+    color: get-dark-color('muted-text-color') !important;
+  }
+
+  .text-heading {
+    color: get-dark-color('muted-text-color');
+  }
+
+  .sub-title {
+    color: get-dark-color('muted-text-color');
+  }
+  ::-moz-selection {
+    @include selection-color($theme: 'dark');
+  }
+
+  ::selection {
+    @include selection-color($theme: 'dark');
+  }
+  li,
+  ul {
+    color: get-dark-color('text-color');
+  }
+}

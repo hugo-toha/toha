@@ -1,0 +1,176 @@
+.btn-dark {
+  background-color: get-light-color('text-color') !important;
+  border-color: get-light-color('text-color') !important;
+  color: get-light-color('text-over-accent-color') !important;
+  @include transition();
+
+  &:hover,
+  &:focus {
+    background-color: get-light-color('accent-color') !important;
+    border-color: get-light-color('accent-color') !important;
+    @include transition();
+  }
+}
+
+.btn-info {
+  background-color: get-light-color('accent-color') !important;
+  color: get-light-color('text-over-accent-color') !important;
+
+  &:hover,
+  &:focus {
+    background-color: get-light-color('hover-over-accent-color') !important;
+  }
+}
+
+.btn-outline-info {
+  color: get-light-color('accent-color') !important;
+  border-color: get-light-color('accent-color') !important;
+
+  &:hover,
+  &:focus {
+    background-color: get-light-color('accent-color') !important;
+    color: get-light-color('text-over-accent-color') !important;
+  }
+}
+
+.btn-link {
+  color: get-light-color('accent-color');
+
+  &:hover,
+  &:focus {
+    color: get-light-color('hover-over-accent-color');
+  }
+}
+
+.nav-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: get-light-color('muted-text-color');
+}
+
+.tags {
+  text-align: left;
+  padding-top: 0.5em;
+  li {
+    font-size: 0.5em;
+    list-style-type: none;
+    display: inline-block;
+    background: get-light-color('accent-color');
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+  }
+  a {
+    color: get-light-color('text-over-accent-color');
+    text-decoration: none !important;
+  }
+}
+
+.icon-button {
+  background-color: get-light-color('text-color');
+  color: get-light-color('text-over-accent-color') !important;
+  padding: 0.25rem 0.5rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: get-light-color('accent-color') !important;
+    @include transition();
+  }
+}
+
+.filled-button {
+  background-color: get-light-color('accent-color') !important;
+  color: get-light-color('text-over-accent-color') !important;
+  @include transition();
+
+  &:hover,
+  &:active {
+    background-color: get-light-color('hover-over-accent-color') !important;
+    @include transition();
+  }
+}
+
+html[data-theme='dark'] {
+  .btn-dark {
+    background-color: get-dark-color('accent-color') !important;
+    border-color: get-dark-color('accent-color') !important;
+    color: get-dark-color('text-over-accent-color') !important;
+
+    &:hover,
+    &:focus {
+      background-color: get-dark-color('hover-over-accent-color') !important;
+      border-color: get-dark-color('hover-over-accent-color') !important;
+    }
+  }
+
+  .btn-info {
+    background-color: get-dark-color('bg-card') !important;
+    color: get-dark-color('text-color') !important;
+    border: 1px solid get-dark-color('muted-text-color') !important;
+
+    &:hover,
+    &:focus {
+      background-color: get-dark-color('hover-over-accent-color') !important;
+    }
+  }
+
+  .btn-outline-info {
+    color: get-dark-color('accent-color') !important;
+    border-color: get-dark-color('accent-color') !important;
+
+    &:hover,
+    &:focus {
+      background-color: get-dark-color('accent-color') !important;
+      color: get-dark-color('text-over-accent-color') !important;
+    }
+  }
+
+  .btn-link {
+    color: get-dark-color('accent-color');
+
+    &:hover,
+    &:focus {
+      color: get-dark-color('hover-over-accent-color');
+    }
+  }
+
+  .nav-button {
+    color: get-dark-color('muted-text-color');
+  }
+
+  .tags {
+    li {
+      background: get-dark-color('accent-color');
+      a {
+        background-color: get-dark-color('bg-card');
+        border: 1px solid get-dark-color('muted-text-color');
+        color: get-dark-color('text-over-accent-color');
+      }
+    }
+  }
+
+  .icon-button {
+    background-color: get-dark-color('muted-text-color');
+    color: get-dark-color('text-over-accent-color') !important;
+
+    &:hover,
+    &:focus {
+      background-color: get-dark-color('accent-color') !important;
+    }
+  }
+
+  .filled-button {
+    background-color: get-dark-color('accent-color') !important;
+    color: get-dark-color('text-over-accent-color') !important;
+
+    &:hover,
+    &:active {
+      background-color: get-dark-color('hover-over-accent-color') !important;
+    }
+  }
+}

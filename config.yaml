@@ -1,0 +1,22 @@
+module:
+  mounts:
+  - source: content
+    target: content
+  - source: static
+    target: static
+  - source: layouts
+    target: layouts
+  - source: data
+    target: data
+  - source: assets
+    target: assets
+  - source: i18n
+    target: i18n
+  - source: archetypes
+    target: archetypes
+  - source: ../../node_modules/flag-icon-css/flags
+    target: static/flags
+  - source: ../../node_modules/@fontsource/mulish/files
+    target: static/files
+  - source: ../../node_modules/katex/dist/fonts
+    target: static/fonts

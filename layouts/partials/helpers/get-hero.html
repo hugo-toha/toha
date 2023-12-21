@@ -3,7 +3,12 @@
 
 {{/*  if hero image is specified in the page front-matter, then use that  */}}
 {{ if .Params.hero }}
-  {{ $heroImage = .Page.Resources.GetMatch .Params.hero }}
+  {{/*  try to read from the page bundle  */}}
+  {{ $heroImage = .Resources.Get .Params.hero }}
+  {{/*  if the image does not exist in the page bundle,try looking in the assets folder  */}}
+  {{ if not $heroImage }}
+    {{ $heroImage = resources.Get .Params.hero }}
+  {{ end }}
 {{ end }}
 {{ .Scratch.Set "heroScratch" $heroImage }}
 

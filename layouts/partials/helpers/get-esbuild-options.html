@@ -1,0 +1,192 @@
+{{/*
+
+## Overview
+
+This helper returns options dictionary used to configure ESBuild.
+The following configurations are set:
+
+  * Enable JS minification.
+  * Enable source map if not building for production.
+  * Prepare `process.env.<ENVIRONMENT VARIABLE>` defines based on enabled features.
+    This allows ESBuild to optimize JS bundle size by removing code related 
+    to unused features.
+  * Added `process-shim.js` so `process.env` is defined. 
+    This way we don't have to explicitly specify every environment 
+    variable via `defines` value.
+  * Prepare `params` for feature and service configs used in JS.
+
+For more details on ESBuild configuration, see: https://gohugo.io/hugo-pipes/js/
+
+## Detailed Concepts
+
+### `feature` and `service`
+
+Features configured in site wide `config.yml` file under `params.features` section.
+A **feature** provides a certain functionality to the user via one or more services.
+A feature be can enabled or disabled.
+
+A **service** is a 3rd party service, or JS library that implements a feature.
+
+For example, `analytics` is considered a feature. 
+There are many services that can provide this feature, to name a few:
+  
+  * Google Analytics
+  * Counter.Dev
+  * GoatCounter
+
+To maximize extendibility and therefore usefulness as an open source project, 
+it is important to define a standard interface that is easy to understand, 
+configure, and extend.
+
+In this file, I took the liberty of standardizing this interface under `params.features`.
+Please note that this breaks compatibility with previous versions of `config.yaml`.
+I will provide sample `config.yaml` files with fully documented features, as well as
+documentation on migrating the `config.yaml` file to the new standard.
+
+Here is a sample config file for the new `params.features` section. Notice that each `service`
+is a dictionary with `enable` and `services` key. `services` is a dictionary with each key
+corresponding to a concrete service, and value as configuration / settings. In the case of
+services that need no configuration, an empty dictionary is created.
+
+```yml
+params:
+  features:
+
+    # This is the `analytics` feature
+    analytics:
+      # This feature is enabled      
+      enable: true
+      # List of services to enable    
+      services:
+
+        # Google Analytics is enabled
+        google:
+          # settings for Google Analytics   
+          id: G-xxxxx
+        
+        # # Counter Dev is disabled
+        # counterDev:   
+        #  id: foo
+        #  name: bar
+    
+    # The `darkMode` feature
+    darkmode:
+      enable: true
+
+This helper will convert the above config into the following env vars:
+
+  * `FEATURE_ANALYTICS=1`
+  * `FEATURE_ANALYTICS_GOOGLE=1`
+  * `FEATURE_DARKMODE=1`
+
+In JS, you can use it like this:
+
+```js
+import * as params from '@params';
+
+if (process.env.FEATURE_ANALYTICS) {
+  // Do things to enable this feature here
+
+  if (process.env.FEATURE_ANALYTICS_GOOGLE) {
+    // Do things things to enable google analytics
+  }
+}
+```
+
+You can also access service configs via params:
+
+```js
+import * as params from '@params';
+
+console.log(params);
+```
+
+You will see console output like below. Note, each service configuration is
+namespaced by their corresponding feature.
+
+```json
+{
+  "analytics": {
+    "google": {
+      "id": "G-xxxxx"
+    }
+  },
+  "darkmode": {
+    "darkreader": {
+      "defaultColorScheme": "system",
+      "fixes": {
+        "invert": "['img[src$=\".svg\"]']"
+      },
+      "theme": {
+        "brightness": 100,
+        "contrast": 100,
+        "sepia": 0
+      }
+    }
+  }
+}
+```
+*/}}
+
+{{/* Holds all the feature flag environment variables for `process.env.*` in JS land */}}
+{{ $defines := dict }}
+
+{{/* Holds all the feature configuration variables exposed to JS side */}}
+{{ $params := dict }}
+
+{{/*  set NODE_ENV depending on if we are building for production use. */}}
+{{ $defines = $defines | merge (dict
+  "process.env.NODE_ENV" (cond hugo.IsProduction `"production"`  `"development"` )
+)}}
+
+{{/*  Go through each feature defined in our config.yml/config.toml/config.json file. */}}
+{{ range $feature, $featureDef := site.Params.features }}
+  {{/*  Initialize a dictionary that will hold all service configs for this specific feature */}}
+  {{ $featureParams := dict }}
+
+  {{ with $featureDef }}
+    {{/*  convert feature name to uppercase and remove '_', e.g. `darkMode` becomes `DARKMODE`  */}}
+    {{ $featureName := replace $feature "_" "" | upper }}
+
+    {{/* The feature is enabled if the `enable` key is absent, or is set to `true` */}}
+    {{ $featureEnabled := or (not (isset . "enable")) .enable }}
+
+    {{/* Sets `FEATURE_<FEATURE_NAME>` env var to "1" or "0" depending on if the feature is enabled. */}}
+    {{ $defines = $defines | merge (dict 
+      (printf "process.env.FEATURE_%s" $featureName) (cond $featureEnabled `'1'` `'0'`)
+    ) }}
+
+    {{ if $featureEnabled }}
+      {{/* Loop through each service under this feature */}}
+      {{ range $service, $config := .services }}
+        {{/* 
+          We assume all services are enabled. To disable a service, 
+          simply comment it out from `config.yaml`.
+        */}}
+
+        {{/* Convert name to all uppercase, removing underscore */}}
+        {{ $serviceName := replace $service "_" "" | upper }}
+
+        {{/* let JS side know this service is enabled */}}
+        {{ $defines = $defines | merge (dict 
+          (printf "process.env.FEATURE_%s_%s" $featureName $serviceName) `'1'`
+        ) }}
+
+        {{/*  add service configuration to feature params  */}}
+        {{ $featureParams = $featureParams | merge (dict $service $config) }}
+      {{ end }}
+
+      {{/*  add feature params to top level params  */}}
+      {{ $params = $params | merge (dict $feature $featureParams) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{
+  return dict 
+    "defines" $defines 
+    "params" $params 
+    "minify" true
+    "sourceMap" (cond hugo.IsProduction "" "inline")
+    "inject" "scripts/process-shim.js"
+}}

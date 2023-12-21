@@ -7,14 +7,17 @@
       <div class="card-body">
         <h5 class="card-title">{{ .Title }}</h5>
         <p class="card-text post-summary">{{ .Summary }}</p>
+        {{ if and site.Params.features.tags.enable site.Params.features.tags.on_card }}
+          {{ partial "misc/tags.html" .Params.tags }}
+        {{ end }}
       </div>
       <div class="card-footer">
-        <span class="float-left">{{ .Date.Format "January 2, 2006" }}</span>
+        <span class="float-left">
+            {{ .Date | time.Format ":date_full" }}
+            {{ if site.Params.features.readingTime }} | {{.ReadingTime}} {{ i18n "minute" .ReadingTime }} {{ end }}</span>
         <a
         href="{{ .RelPermalink | relLangURL }}"
-        class="float-right btn btn-outline-info btn-sm"
-        >{{ i18n "read" }}</a
-        >
+        class="float-right btn btn-outline-info btn-sm">{{ i18n "read" }}</a>
       </div>
     </div>
   </a>

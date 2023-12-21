@@ -1,0 +1,117 @@
+.card {
+  box-shadow: none;
+  @include transition();
+  overflow: hidden;
+  background: get-light-color('bg-card');
+
+  &:hover,
+  &:focus {
+    box-shadow: $box-shadow;
+    border: 1px solid get-light-color('bg-primary');
+    @include transition();
+  }
+
+  .card-head {
+    height: 172px;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .card-body {
+    text-align: justify;
+  }
+
+  .card-img-top {
+    object-fit: cover;
+    @include transition();
+  }
+
+  .card-img-sm {
+    width: 32px;
+    height: 32px;
+  }
+
+  .card-img-xs {
+    width: 24px;
+    height: 24px;
+  }
+
+  .card-footer {
+    background: get-light-color('bg-card') !important;
+    a.btn {
+      text-decoration: none !important;
+    }
+  }
+}
+
+.post-card {
+  width: 24rem;
+  display: inline-flex;
+
+  .post-card-link {
+    text-decoration: none !important;
+  }
+
+  .card {
+    margin: 5px;
+    position: relative;
+
+    &:hover,
+    &:focus {
+      .card-img-top {
+        transform: scale(1.2);
+        object-fit: cover;
+        @include transition();
+      }
+    }
+
+    .card-body {
+      padding: 1.25rem !important;
+      padding-bottom: 0 !important;
+
+      .post-summary {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        max-height: 144px;
+        /* fallback */
+        -webkit-line-clamp: 5;
+        /* number of lines to show */
+        -webkit-box-orient: vertical;
+      }
+    }
+    .card-footer {
+      margin-top: auto;
+
+      span {
+        font-size: 10pt;
+        color: get-light-color('muted-text-color') !important;
+        padding-top: 5px;
+      }
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  .card {
+    background: get-dark-color('bg-card');
+
+    &:hover,
+    &:focus {
+      border: 1px solid rgba(get-dark-color('accent-color'), 0.2);
+    }
+    .card-footer {
+      background: get-dark-color('bg-card') !important;
+    }
+  }
+
+  .post-card {
+    .card {
+      .card-footer {
+        span {
+          color: get-dark-color('muted-text-color') !important;
+        }
+      }
+    }
+  }
+}

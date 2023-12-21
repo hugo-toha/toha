@@ -1,0 +1,80 @@
+// loading bootstrap
+// TODO: Refactor to use bootstrap sass variable for theming.
+@import 'bootstrap/scss/bootstrap';
+
+@import 'include-media/dist/_include-media';
+
+// The Mulish font, we use font-weight 300 - 700
+@import '@fontsource/mulish/300';
+@import '@fontsource/mulish/index'; // 400
+@import '@fontsource/mulish/500';
+@import '@fontsource/mulish/600';
+@import '@fontsource/mulish/700';
+
+@import './variables';
+@import './mixins';
+
+// components
+@import './components/cards';
+@import './components/buttons';
+@import './components/links';
+@import './components/texts';
+@import './components/images';
+@import './components/tables';
+@import './components/misc';
+
+// layouts
+@import './layouts/main';
+@import './layouts/list';
+@import './layouts/single';
+@import './layouts/notes';
+@import './layouts/404';
+
+// navigators
+@import './navigators/navbar';
+@import './navigators/sidebar';
+
+
+// sections
+@import './sections/home';
+@import './sections/about';
+@import './sections/skills';
+@import './sections/experiences';
+@import './sections/education';
+@import './sections/projects';
+@import './sections/recent-posts';
+@import './sections/achievements';
+@import './sections/accomplishments';
+@import './sections/publications';
+@import './sections/footer';
+
+
+
+// override
+@import './override';
+
+// features and services, only imported if enabled.
+{{ range $feature, $featureDef := site.Params.features }}
+  {{ with $featureDef }}
+    {{ $featureEnabled := or (not (isset . "enable")) .enable }}
+    {{ if $featureEnabled }}
+      {{ with (index site.Data.toha.styles $feature) }}
+        {{ range .styles }}
+        @import '{{.}}';
+        {{ end }}
+      {{ end }}
+
+      {{ range $service, $config := .services }}
+        {{ with (index site.Data.toha.styles $feature) }}
+          {{ with .services }}
+            {{ with (index . $service) }}
+              {{ range .styles }}
+              @import '{{ . }}';
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}

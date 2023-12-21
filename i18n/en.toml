@@ -124,3 +124,7 @@ other = "Liability Notice"
 
 [search]
 other = "Search"
+
+[minute]
+one = "minute"
+other = "minutes"

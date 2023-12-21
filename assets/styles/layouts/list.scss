@@ -1,0 +1,207 @@
+// in Hugo, Page kind can be either "section" or "page".
+// if it is section, then it's a page with a list of items, for example /posts
+// if it is page, then it is a single page.
+body.kind-section,
+body.kind-term,
+body.kind-page {
+  .wrapper {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    .content-section {
+      flex: 80%;
+      order: 2;
+      /* background-color: lightseagreen; */
+      padding: 0;
+      position: relative;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+
+      .content {
+        padding: 0;
+        position: relative;
+        padding-top: 2rem;
+        min-height: 130vh;
+
+        .post-card-holder {
+          margin-top: 32px;
+          margin-left: auto;
+          padding: 0;
+          display: flex;
+          flex-flow: wrap;
+        }
+
+        .paginator {
+          width: -moz-fit-content;
+          width: fit-content;
+          margin: auto;
+
+          .pagination {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            width: -moz-fit-content;
+            width: fit-content;
+          }
+
+          .page-item {
+            & > a {
+              color: get-light-color('accent-color');
+            }
+
+            &.active > a {
+              background-color: get-light-color('accent-color');
+              color: get-light-color('text-over-accent-color');
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media('<medium') {
+    .post-card {
+      margin-left: 1%;
+      margin-right: 1%;
+      width: 98%;
+    }
+    .wrapper {
+      padding-left: 0px;
+      padding-right: 0px;
+      flex-flow: column;
+      overflow: hidden;
+
+      .content-section {
+        flex: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        width: 100%;
+
+        .content {
+          width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+          @include transition();
+        }
+
+        &.hide {
+          .content {
+            margin-top: 0;
+            padding-top: 0;
+            @include transition();
+          }
+          .post-card-holder {
+            margin-top: 0.5rem;
+            @include transition();
+          }
+        }
+      }
+    }
+  }
+
+  @include media('>=medium', '<large') {
+    .post-card {
+      width: calc(100% / 2);
+    }
+    .content-section.hide {
+      .post-card {
+        width: 100%;
+      }
+    }
+  }
+
+  @include media('>=large', '<very-large') {
+    .post-card {
+      width: calc(100% / 3);
+    }
+    .wrapper {
+      padding-left: 0px;
+      padding-right: 0px;
+
+      .content-section {
+        padding: 0;
+        flex: 60%;
+        order: 2;
+        padding-bottom: 0.5rem;
+
+        .content {
+          overflow: hidden;
+
+          .post-card-holder {
+            margin: 0;
+            margin-top: 1.5rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            position: relative;
+            @include transition();
+          }
+        }
+        .container {
+          max-width: 100%;
+        }
+        &.hide {
+          .post-card {
+            width: calc(100% / 2);
+          }
+        }
+      }
+    }
+  }
+
+  @include media('>=very-large', '<extra-large') {
+    .post-card {
+      width: calc(100% / 4);
+    }
+    .post-card-holder {
+      margin-left: 0px;
+    }
+  }
+
+  @include media('>=extra-large') {
+    .post-card {
+      width: calc(100% / 5);
+    }
+    .content-section {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      flex: 85%;
+      max-width: 85%;
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  body.kind-section,
+  body.kind-term,
+  body.kind-page {
+    .wrapper {
+      .content-section {
+        .content {
+          .paginator {
+            .page-item {
+              & > a {
+                background-color: get-dark-color('bg-card') !important;
+                color: get-dark-color('text-color') !important;
+                border: 1px solid get-dark-color('muted-text-color') !important;
+                text-decoration: none !important;
+
+                &:hover {
+                  background-color: get-dark-color('hover-over-accent-color') !important;
+                  color: get-dark-color('text-over-accent-color') !important;
+                }
+              }
+
+              &.active > a {
+                background-color: get-dark-color('accent-color') !important;
+                color: get-dark-color('text-over-accent-color') !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

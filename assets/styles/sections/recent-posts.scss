@@ -1,0 +1,32 @@
+.recent-posts-section {
+  .container {
+    padding-top: 1rem;
+  }
+
+  h1 > span {
+    margin-top: -55px; /* Size of fixed header */
+    padding-bottom: 55px;
+    display: block;
+  }
+
+  @include media('<medium') {
+    .post-card {
+      margin-left: 1%;
+      margin-right: 1%;
+      width: 98%;
+    }
+  }
+  @include media('>=medium', '<large') {
+    .container {
+      max-width: 100%;
+    }
+    .post-card {
+      width: calc(100% / 2);
+    }
+  }
+  @include media('>=large') {
+    .post-card {
+      width: calc(100% / 3);
+    }
+  }
+}

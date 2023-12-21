@@ -1,18 +1,9 @@
 {{ define "header" }}
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Title }}{{ end }}" />
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
-/>
-<link rel="stylesheet" href="{{ "/css/layouts/single.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/css/navigators/sidebar.css" | relURL }}">
-<!--================= custom style overrides =========================-->
-<link rel="stylesheet" href="{{ "/css/style.css" | relURL }}"/>
-
 {{ end }}
 
 {{ define "navbar" }}
-    {{ partial "navigators/navbar-2.html" . }}
+    {{ partial "navigators/navbar.html" . }}
 {{ end }}
 
 {{ define "sidebar" }}
@@ -24,7 +15,7 @@
         </form>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
-            <li id="list-heading"><a href="{{ "/posts" | relLangURL }}" data-filter="all">{{ i18n "posts" }}</a></li>
+            <li id="list-heading"><a href="{{ "/posts/" | relLangURL }}" data-filter="all">{{ i18n "posts" }}</a></li>
             <div class="subtree">
                 {{ partial "navigators/sidebar.html" (dict "menuName" "sidebar" "menuItems" site.Menus.sidebar "ctx" .) }}
             </div>
@@ -48,21 +39,14 @@
         <div class="author-profile ml-auto align-self-lg-center">
           <img class="rounded-circle" src='{{ partial "helpers/get-author-image.html" . }}' alt="Author Image">
           <h5 class="author-name">{{ partial "helpers/get-author-name.html" . }}</h5>
-          <p>{{ .Page.Date | time.Format ":date_full" }}</p>
+          <p class="text-muted">{{ .Page.Date | time.Format ":date_full" }}{{ if site.Params.features.readingTime }} | {{ .ReadingTime }} {{i18n "minute" .ReadingTime }}{{ end }}</p>
         </div>
 
         <div class="title">
           <h1>{{ .Page.Title }}</h1>
         </div>
-        {{ if site.Params.enableTags }}
-        <div class="taxonomy-terms">
-            <ul>
-            {{ range .Params.tags }}
-            {{ $url:= printf "tags/%s" . }}
-            <li class="rounded"><a href="{{ $url | urlize | relLangURL }}" class="btn, btn-sm">{{ . }}</a></li>
-            {{ end }}
-          </ul>
-        </div>
+        {{ if site.Params.features.tags.enable }}
+          {{partial "misc/tags.html" .Params.tags }}
         {{ end }}
         <div class="post-content" id="post-content">
           {{ .Page.Content }}
@@ -71,56 +55,56 @@
         <!-- Share or Contribute -->
         <div class="row pl-3 pr-3">
         <!--Social Media Share Buttons-->
-        <div class="col-md-6 share-buttons">
-        {{ if site.Params.features.blog.shareButtons }}
+          <div class="col-md-6 share-buttons">
+          {{ if site.Params.features.blog.shareButtons }}
             <strong>{{ i18n "share_on" }}:</strong>
             {{ if site.Params.features.blog.shareButtons.facebook }}
-            <a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u={{ .Permalink }}" target="_blank">
+            <a class="btn icon-button bg-facebook" href="https://www.facebook.com/sharer.php?u={{ .Permalink }}" target="_blank">
               <i class="fab fa-facebook"></i>
             </a>
             {{ end }}
             {{ if site.Params.features.blog.shareButtons.twitter }}
-                <a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}&via={{- site.Title -}}" target="_blank">
+                <a class="btn icon-button bg-twitter" href="https://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}&via={{- site.Title -}}" target="_blank">
                   <i class="fab fa-twitter"></i>
                 </a>
             {{ end }}
             {{ if site.Params.features.blog.shareButtons.reddit }}
-                <a  class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}" target="_blank">
+                <a  class="btn icon-button bg-reddit" href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}" target="_blank">
                   <i class="fab fa-reddit"></i>
                 </a>
             {{ end }}
             {{ if site.Params.features.blog.shareButtons.tumblr }}
-                <a class="btn btn-sm tumblr-btn" href="https://www.tumblr.com/share/link?url={{ .Permalink }}&name={{ .Title }}{{- with .Params.description -}}&description={{- . -}}{{- end -}}" target="_blank">
+                <a class="btn icon-button bg-tumblr" href="https://www.tumblr.com/share/link?url={{ .Permalink }}&name={{ .Title }}{{- with .Params.description -}}&description={{- . -}}{{- end -}}" target="_blank">
                   <i class="fab fa-tumblr"></i>
                 </a>
             {{ end }}
             {{ if site.Params.features.blog.shareButtons.pocket }}
-                <a class="btn btn-sm pocket-btn" href="https://getpocket.com/save?url={{ .Permalink }}&title={{ .Title }}" target="_blank">
+                <a class="btn icon-button bg-pocket" href="https://getpocket.com/save?url={{ .Permalink }}&title={{ .Title }}" target="_blank">
                   <i class="fab fa-get-pocket"></i>
                 </a>
             {{ end }}
             {{ if site.Params.features.blog.shareButtons.linkedin }}
-                <a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}&title={{ .Title }}" target="_blank">
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}&title={{ .Title }}" target="_blank">
                   <i class="fab fa-linkedin"></i>
                 </a>
             {{ end }}
             {{ if site.Params.features.blog.shareButtons.diaspora }}
-                <a class="btn btn-sm diaspora-btn" href="https://share.diasporafoundation.org/?title={{ .Title }}&url={{ .Permalink }}" rel="nofollow" target="_blank">
+                <a class="btn icon-button bg-diaspora" href="https://share.diasporafoundation.org/?title={{ .Title }}&url={{ .Permalink }}" rel="nofollow" target="_blank">
                   <i class="fab fa-diaspora"></i>
                 </a>
             {{ end }}
              {{ if site.Params.features.blog.shareButtons.mastodon }}
-                <a class="btn btn-sm mastodon-btn" href="https://mastodon.social/share?text={{ .Title }} - {{ .Permalink }}" target="_blank">
+                <a class="btn icon-button bg-mastodon" href="https://mastodon.social/share?text={{ .Title }} - {{ .Permalink }}" target="_blank">
                   <i class="fab fa-mastodon"></i>
                 </a>
             {{ end }}
             {{ if site.Params.features.blog.shareButtons.whatsapp }}
-                 <a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text={{ .Title }} {{ .Permalink }}" target="_blank">
+                 <a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text={{ .Title }} {{ .Permalink }}" target="_blank">
                   <i class="fab fa-whatsapp"></i>
                 </a>
             {{ end }}
             {{ if site.Params.features.blog.shareButtons.email }}
-                <a class="btn btn-sm email-btn" href="mailto:?subject={{ .Title }}&body={{ .Permalink }}" target="_blank">
+                <a class="btn icon-button" href="mailto:?subject={{ .Title }}&body={{ .Permalink }}" target="_blank">
                   <i class="fas fa-envelope-open-text"></i>
                 </a>
             {{ end }}
@@ -158,7 +142,7 @@
 
       <!----- Add comment support  ----->
       {{ if site.Params.features.comment.enable }}
-        {{ partial "comments.html" site.Params.features.comment }}
+        {{ partial "comments.html" site.Params.features.comment.services }}
       {{ end }}
 
       <!-- Keep backward compatibility with old config.yaml -->
@@ -170,16 +154,15 @@
     </div>
   </div>
   <!--scroll back to top-->
-  <a id="scroll-to-top" class="btn"><i class="fas fa-chevron-circle-up"></i></a>
-  {{ if .IsTranslated }}
-    {{ partial "navigators/floating-lang-selector.html" . }}
-  {{ end }}
+  <a id="scroll-to-top" class="btn"  data-toggle="tooltip" data-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
 </section>
 {{ end }}
 
 {{ define "toc" }}
   <section class="toc-section" id="toc-section">
-    {{ if and site.Params.enableTOC ( .Params.enableTOC | default true ) }}
+    {{ if and site.Params.features.toc.enable ( .Params.enableTOC | default true ) }}
     <div class="toc-holder">
       <h5 class="text-center pl-3">{{ i18n "toc_heading" }}</h5>
       <hr>
@@ -189,23 +172,4 @@
     </div>
     {{ end }}
   </section>
-{{ end }}
-
-{{ define "scripts" }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-<script src="{{ "/js/single.js" | relURL }}"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-
-<!-------------- Enable Math support for this page  ---------------->
-{{ if .Params.math }}
-    {{ partial "math.html" . }}
-{{ end }}
-
-<!-------------- Enable mermaid support for this page  ---------------->
-{{ if .Params.mermaid }}
-    {{ partial "mermaid.html" . }}
-{{ end }}
-
 {{ end }}

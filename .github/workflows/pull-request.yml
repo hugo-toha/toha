@@ -1,0 +1,92 @@
+name: PR Workflows
+
+# Run action on pull request event
+on: [pull_request]
+
+
+jobs:
+  # Build exampleSite
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # checkout to the commit that has been pushed
+    - uses: actions/checkout@v4.1.1
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+
+    - name: Install node modules
+      run: npm install
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2.6.0
+      with:
+        hugo-version: 'latest'
+        extended: true
+
+    - name: Build
+      run: |
+        cd exampleSite
+        hugo --minify
+
+  # Run linter
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4.1.1
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+
+    - name: Install node modules
+      run: npm install
+
+    - name: Lint
+      run: |
+        npm run lint
+
+  lighthouse-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Waiting for Netlify Preview
+      uses: kamranayub/wait-for-netlify-action@v2.1.1
+      id: preview
+      with:
+        site_name: "toha-ci"
+        max_timeout: 300
+      env:
+        NETLIFY_TOKEN: ${{secrets.NETLIFY_TOKEN}}
+
+    - name: Run Lighthouse
+      uses: foo-software/lighthouse-check-action@v10.0.0
+      id: lighthouseCheck
+      with:
+        accessToken: ${{ secrets.LIGHTHOUSE_TOKEN }}
+        gitHubAccessToken: ${{secrets.GITHUB_TOKEN}}
+        emulatedFormFactor: 'all'
+        prCommentEnabled: true
+        prCommentSaveOld: false
+        timeout: 5
+        urls: "${{ steps.preview.outputs.url }},${{ steps.preview.outputs.url }}/posts/,${{ steps.preview.outputs.url }}/posts/markdown-sample/,${{ steps.preview.outputs.url }}/posts/shortcodes/"
+
+  # Ensure that PR has desired labels
+  enforce-label:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: yogevbd/enforce-label-action@2.2.2
+      with:
+        REQUIRED_LABELS_ANY: "automerge,breaking-change,bug-fix,enhancement,feature,translation"
+        REQUIRED_LABELS_ANY_DESCRIPTION: "The PR must have at least one these labels: ['automerge','breaking-change','bug-fix','enhancement','feature','translation']"
+
+  # Check for any broken links
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    # checkout to latest commit
+    - uses: actions/checkout@v4.1.1
+    # run markdown linter
+    - uses: gaurav-nelson/github-action-markdown-link-check@1.0.15

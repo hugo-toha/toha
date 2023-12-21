@@ -42,8 +42,9 @@
           {{ end }}
           <div class="project-btn-holder">
             {{ if .repo }}
+            <!-- Place this tag where you want the button to render. -->
             <a
-              class="github-button-inactive project-btn"
+              class="github-button project-btn d-none"
               href="{{ .repo }}"
               data-icon="octicon-standard"
               data-show-count="true"

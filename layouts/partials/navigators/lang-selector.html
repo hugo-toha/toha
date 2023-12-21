@@ -1,6 +1,10 @@
+{{ $pageURL:= .RelPermalink }}
+{{ if site.IsMultiLingual }}
+  {{ $pageURL = strings.TrimPrefix (path.Join "/" .Language.Lang) $pageURL }}
+{{ end }}
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{ if ne site.Params.showFlags false }}
+        {{ if ne site.Params.features.flags.enable false }}
             {{ $countryCode := partial "helpers/country-code.html" . }}
             <span class="flag-icon flag-icon-{{$countryCode}}"></span>
         {{ end }}
@@ -8,8 +12,8 @@
     </a>
     <div class="dropdown-menu" aria-labelledby="languageSelector">
         {{ range site.Home.AllTranslations }}
-        <a class="dropdown-item nav-link languages-item" href="{{ .RelPermalink }}">
-            {{ if ne site.Params.showFlags false }}
+        <a class="dropdown-item nav-link languages-item" href="{{ path.Join "/" (cond (eq .Language.Lang "en") "" .Language.Lang) $pageURL }}">
+            {{ if ne site.Params.features.flags.enable false }}
                 {{ $countryCode := partial "helpers/country-code.html" . }}
                 <span class="flag-icon flag-icon-{{$countryCode}}"></span>
             {{ end }}

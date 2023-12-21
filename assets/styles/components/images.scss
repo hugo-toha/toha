@@ -1,0 +1,48 @@
+img {
+  display: block;
+  max-width: 100%;
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.left {
+    margin-right: auto;
+  }
+
+  &.right {
+    margin-left: auto;
+  }
+}
+
+figure {
+  border: 1px solid rgba(get-light-color('accent-color'), 0.1);
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: center;
+  margin: auto;
+}
+
+caption,
+figcaption {
+  caption-side: bottom;
+  text-align: center;
+  color: get-light-color('muted-text-color');
+}
+
+html[data-theme='dark'] {
+  figure {
+    border: 1px solid rgba(get-dark-color('accent-color'), 0.1);
+  }
+  caption,
+  figcaption {
+    color: get-dark-color('muted-text-color');
+  }
+}
+
+.svg-inverted {
+  filter: invert(1);
+}
