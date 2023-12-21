@@ -124,3 +124,7 @@ other = "Nota legal"
 
 [search]
 other = "Pesquisar"
+
+[minute]
+one = "minuto"
+other = "minutos"
