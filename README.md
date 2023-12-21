@@ -61,7 +61,7 @@ For more details about the features please visit [here](https://toha-guides.netl
 - Tiếng Việt
 - Turkish
 - Arabic (العربية)
-- Português
+- Português Europeu
 - Català
 - Português Brasileiro
 
@@ -151,14 +151,14 @@ params:
   # specify whether you want to show Table of Contents in reading page
   enableTOC: true
 
-  # specify whether you want the language flags to be displayed. 
+  # specify whether you want the language flags to be displayed.
   showFlags: true
 
-  # Provide newsletter configuration. 
+  # Provide newsletter configuration.
   # This feature has been implemented for Mailchimp only for now.
   # You can also hide it from the footer.
   newsletter:
-    # specify whether you want to display the newsletter form 
+    # specify whether you want to display the newsletter form
     enable: true
     # specify which newsletter provider you want to use
     provider: mailchimp
