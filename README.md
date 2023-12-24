@@ -61,7 +61,7 @@ For more details about the features please visit [here](https://toha-guides.netl
 - Tiếng Việt
 - Turkish
 - Arabic (العربية)
-- Português
+- Português Europeu
 - Català
 - Português Brasileiro
 
