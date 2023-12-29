@@ -20,20 +20,25 @@ $progress-bar-colors: (
 }
 
 @mixin circular-progress-animation-breakpoints() {
-  $progress: 50;
+  $progress: 0;
   $duration: 0;
+  $delay: 1.8;
 
-  @for $i from 1 through 10 {
+  @for $i from 0 through 20 {
     .circular-progress-percentage-#{$progress} {
       animation: circular-loading-#{$progress} #{$duration}s linear forwards 1.8s;
     }
+    .circular-progress-percentage-#{$progress}-delay {
+        animation-delay: #{$delay}s;
+    }
     $progress: $progress + 5;
     $duration: $duration + 0.18;
+    $delay: $duration + 1.8;
   }
 }
 
 @mixin circular-progress-animation-keyframes($progress, $degree, $keyframes) {
-  @for $i from 1 through $keyframes {
+  @for $i from 0 through $keyframes {
     @keyframes circular-loading-#{$progress} {
       0% {
         transform: rotate(0);
@@ -122,7 +127,6 @@ $progress-bar-colors: (
         border-bottom-left-radius: 80px;
         border-right: 0;
         transform-origin: center right;
-        animation: circular-loading-1 1.8s linear forwards;
       }
     }
     .circular-progress-value {
@@ -144,8 +148,7 @@ $progress-bar-colors: (
     }
     @include circular-progress-bar-color();
     @include circular-progress-animation-breakpoints();
-    @include circular-progress-animation-keyframes($progress: 50, $degree: 0, $keyframes: 10);
-    @include circular-progress-animation-keyframes($progress: 1, $degree: 180, $keyframes: 5);
+    @include circular-progress-animation-keyframes($progress: 0, $degree: 0, $keyframes: 20);
   }
 
   @include media('<=large') {

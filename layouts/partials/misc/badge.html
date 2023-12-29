@@ -12,10 +12,16 @@
     {{ if hasPrefix .color "#"}}
         {{ $predefinedColor = false }}
     {{ end }}
+    {{ $leftProgress := 0 }}
+    {{ $rightProgress := .percentage }}
+    {{ if ge .percentage 50 }}
+        {{ $rightProgress = 50 }}
+        {{ $leftProgress = sub .percentage 50 }}
+    {{ end }}
     <div class="circular-progress {{if $predefinedColor}}{{ .color }}{{end}}">
     <span class="circular-progress-left">
         <span
-        class="circular-progress-bar circular-progress-percentage-{{ .percentage }}"
+        class="circular-progress-bar circular-progress-percentage-{{ $leftProgress }}  circular-progress-percentage-50-delay"
         {{ if not $predefinedColor }}
             style="border-color: {{.color}};"
         {{ end }}
@@ -23,7 +29,7 @@
     </span>
     <span class="circular-progress-right">
         <span
-        class="circular-progress-bar"
+        class="circular-progress-bar circular-progress-percentage-{{ $rightProgress }}"
         {{ if not $predefinedColor }}
             style="border-color: {{.color}};"
         {{ end }}
