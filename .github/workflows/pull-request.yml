@@ -121,4 +121,4 @@ jobs:
         with:
           directory: exampleSite/public
           enforce_https: false
-          url_ignore: "#"
+          ignore_url: "#"
