@@ -93,3 +93,30 @@ $brand-colors: (
   'diaspora': #1e1e1e,
   'whatsapp': #25d366,
 );
+
+$alerts: (
+  'success': (
+    // green 100
+    'bg-color': #dcfce7,
+    // green 800
+    'text-color': #166534,
+  ),
+  'info': (
+    // sky 100
+    'bg-color': #e0f2fe,
+    // sky 800
+    'text-color': #075985,
+  ),
+  'warning': (
+    // yellow 100
+    'bg-color': #fef9c3,
+    // yellow 800
+    'text-color': #854d0e,
+  ),
+  'danger': (
+    // red 100
+    'bg-color': #fee2e2,
+    // red 800
+    'text-color': #991b1b,
+  ),
+);
