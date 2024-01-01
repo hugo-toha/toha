@@ -31,6 +31,24 @@ pre {
     }
   }
 }
+ $alert-types: ('success', 'info', 'warning', 'danger');
+
+.alert {
+  @each $type in $alert-types {
+    &.#{$type} {
+      background: get-alert-bg-color($type, 'light');
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: get-alert-text-color($type, 'light') !important;
+      }
+      strong {
+        padding-left: 0.5rem;
+        color: get-alert-text-color($type, 'light') !important;
+      }
+    }
+  }
+}
 
 html[data-theme='dark'] {
   .paginator {
@@ -42,6 +60,19 @@ html[data-theme='dark'] {
       &:hover > a {
         background-color: get-dark-color('accent-color') !important;
         color: get-dark-color('text-over-accent-color') !important;
+      }
+    }
+  }
+  .alert {
+    @each $type in $alert-types {
+      &.#{$type} {
+        background: get-alert-bg-color($type, 'dark');
+        svg {
+          color: get-alert-text-color($type, 'dark') !important;
+        }
+        strong {
+          color: get-alert-text-color($type, 'dark') !important;
+        }
       }
     }
   }

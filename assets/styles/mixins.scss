@@ -50,3 +50,23 @@
     color: get-dark-color('text-over-accent-color');
   }
 }
+
+@function get-alert-bg-color($type, $mode) {
+  $colors: map-get($alerts, $type);
+  @if $mode == 'light' {
+    @return map-get($colors, 'bg-color');
+  } @else {
+    @return map-get($colors, 'text-color');
+  }
+  @return red;
+}
+
+@function get-alert-text-color($type, $mode) {
+  $colors: map-get($alerts, $type);
+  @if $mode == 'light' {
+    @return map-get($colors, 'text-color');
+  } @else {
+    @return map-get($colors, 'bg-color');
+  }
+  @return red;
+}
