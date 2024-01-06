@@ -1,4 +1,7 @@
 module:
+  hugoVersion:
+    min: "0.118.0"
+    extended: true
   mounts:
   - source: content
     target: content
