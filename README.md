@@ -1,4 +1,5 @@
-**If you are migrating from v3 (git submodule based) theme to v4 (hugo modules based) theme, please read this [migration guide](https://toha-guides.netlify.app/posts/update-v3-to-v4/).**
+> [!IMPORTANT]
+> If you are migrating from v3 (`git submodule` based) theme to v4 (`hugo modules` based) theme, please read this [migration guide](https://toha-guides.netlify.app/posts/update-v3-to-v4/).
 
 # Toha
 
