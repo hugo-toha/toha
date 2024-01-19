@@ -32,7 +32,11 @@
   <div class="content container-fluid" id="content">
     <div class="container-fluid post-card-holder" id="post-card-holder">
       {{ $posts := where .RegularPagesRecursive "Layout" "!=" "search" }}
-      {{ $paginator := .Paginate $posts 12 }}
+      {{ $numShow := 12}}
+      {{ if site.Params.postsPage.maxPostsPerPage}}
+        {{ $numShow = site.Params.postsPage.maxPostsPerPage }}
+      {{ end }}
+      {{ $paginator := .Paginate $posts $numShow }}
       {{ range $paginator.Pages }}
         {{ if .Layout }}
           {{/* ignore the search.md file*/}}
