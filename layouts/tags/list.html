@@ -33,7 +33,7 @@
   <div class="content container-fluid" id="content">
     <div class="container-fluid post-card-holder" id="post-card-holder">
       {{ $posts := where .RegularPagesRecursive "Layout" "!=" "search" }}
-      {{ $numShow = site.Params.features.pagination.maxPostsPerPage | default 12}}
+      {{ $numShow := site.Params.features.pagination.maxPostsPerPage | default 12}}
       {{ $paginator := .Paginate $posts $numShow }}
       {{ range $paginator.Pages }}
         {{ if .Layout }}
