@@ -50,7 +50,7 @@
           <h1>{{ .Page.Title }}</h1>
         </div>
 
-        {{ if not .Params.profile | default true }}
+        {{ if not (.Params.profile | default true) }}
         <div class="author-profile ml-auto align-self-lg-center">
           <p class="text-muted">{{ .Page.Date | time.Format ":date_full" }}{{ if site.Params.features.readingTime }} | {{ .ReadingTime }} {{i18n "minute" .ReadingTime }}{{ end }}</p>
         </div>
