@@ -188,34 +188,72 @@ For local development, you can make changes in the theme submodule and test the 
 
 At first, fork [this repo](https://github.com/hugo-toha/toha). Then, follow the following steps to use the forked theme for local developments,
 
-**Using the forked theme in your own site:**
-
-If you want to run your local development against your own site, follow the following steps:
-
-```bash
-# add the original theme as a submodule of your site if you haven't done already
-$ git submodule add https://github.com/hugo-toha/toha.git themes/toha
-# navigate into the toha theme folder
-$ cd themes/toha
-# add your own fork as a remote
-$ git remote add my-fork https://github.com/<your-github-user>/toha
-# create a new branch for your changes
-$ git checkout -b my-feature-branch
-```
-
-**Using the forked theme in the example site:**
+#### Running the forked theme against the example site
 
 If your want to run your local development against this [example site](https://github.com/hugo-toha/hugo-toha.github.io), follow the following steps:
 
 ```bash
-# clone the example site along with the submodules
-$ git clone git@github.com:hugo-toha/hugo-toha.github.io.git --recursive
-# navigate into the toha theme folder
-$ cd themes/toha
-# add your own fork as a remote
-$ git remote add my-fork https://github.com/<your-github-user>/toha
-# create a new branch for your changes
-$ git checkout -b my-feature-branch
+# go to exampleSite directory
+$ cd exampleSite
+# install hugo modules
+$ hugo mod tidy
+# install dependencies
+$ hugo mod npm pack
+$ npm install
+# run the example site locally
+$ hugo server -w
+```
+
+Now, you can make change in the theme and they will be reflected immediately on the running site. If you need to change any configuration, you can do that in the `config.yaml` file inside `exampleSite` folder. If you need to add any content or data, you can create the respective folder inside `exampleSite` directory and add your desired content or data there.
+
+#### Running the forked theme against your own site
+
+If you want to run your local development against your own site, follow the following steps:
+
+**Replace the theme module:**
+
+Open your site's `go.mod` file and replace the `github.com/hugo-toha/toha/v4` with your forked repo's path. For example, if your forked repo is `github.com/<your-github-user>/toha`, then replace the `github.com/hugo-toha/toha/v4` with `github.com/<your-github-user>/toha/v4`.
+
+```go
+module github.com/hugo-toha/hugo-toha.github.io
+
+go 1.19
+
+require github.com/hugo-toha/toha/v4 v4.0.1-0.20231229170427-d3968ca711ef // indirect
+
+replace(
+    github.com/hugo-toha/toha/v4 => github.com/<your-github-user>/toha <git branch>
+)
+```
+
+For interactive development, you can replace the theme with your locally cloned fork. For example, if you have cloned your fork in `/home/my-projects/toha`, then replace the `github.com/hugo-toha/toha/v4` with `/home/my-projects/toha`.
+
+```go
+module github.com/hugo-toha/hugo-toha.github.io
+
+go 1.19
+
+require github.com/hugo-toha/toha/v4 v4.0.1-0.20231229170427-d3968ca711ef // indirect
+
+replace(
+    github.com/hugo-toha/toha/v4 => /home/my-projects/toha
+)
+```
+
+**Update dependencies:**
+
+```bash
+# update hugo modules
+$ hugo mod tidy
+# install dependencies
+$ hugo mod npm pack
+$ npm install
+```
+
+**Run your site locally:**
+
+```bash
+$ hugo server -w
 ```
 
 From there you can make changes to the source code of the theme while testing with your running Hugo site or the example site.
