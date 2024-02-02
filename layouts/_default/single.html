@@ -36,15 +36,26 @@
 
       <!--Content Start-->
       <div class="page-content">
+        {{ if site.Params.features.blog.showAuthor | default true }}
         <div class="author-profile ml-auto align-self-lg-center">
           <img class="rounded-circle" src='{{ partial "helpers/get-author-image.html" . }}' alt="Author Image">
           <h5 class="author-name">{{ partial "helpers/get-author-name.html" . }}</h5>
           <p class="text-muted">{{ .Page.Date | time.Format ":date_full" }}{{ if site.Params.features.readingTime }} | {{ .ReadingTime }} {{i18n "minute" .ReadingTime }}{{ end }}</p>
         </div>
-
+        {{ else }}
+        <div style="margin-bottom: 80px;"></div>
+        {{ end }}
+        
         <div class="title">
           <h1>{{ .Page.Title }}</h1>
         </div>
+
+        {{ if not (site.Params.features.blog.showAuthor | default true) }}
+        <div class="author-profile ml-auto align-self-lg-center">
+          <p class="text-muted">{{ .Page.Date | time.Format ":date_full" }}{{ if site.Params.features.readingTime }} | {{ .ReadingTime }} {{i18n "minute" .ReadingTime }}{{ end }}</p>
+        </div>
+        {{ end }}
+
         {{ if site.Params.features.tags.enable }}
           {{partial "misc/tags.html" .Params.tags }}
         {{ end }}
