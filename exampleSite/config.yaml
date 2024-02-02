@@ -98,6 +98,7 @@ params:
     # Enable and configure blog posts
     blog:
       enable: true
+      showAuthor: true
       # Share post on different social media
       shareButtons:
         facebook: true
