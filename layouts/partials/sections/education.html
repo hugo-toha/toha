@@ -39,7 +39,9 @@
                               {{ $logoImage = $logoImage.Fit "300x300" }}
                             {{ end }}
                 
-                            <img class="company-logo" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+                            <div class="logo-holder">
+                                <img class="company-logo" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+                            </div>
                             {{ end }}
 
                             <div class="row">
