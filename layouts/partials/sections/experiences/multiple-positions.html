@@ -10,16 +10,18 @@
             <img class="company-logo" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
         </div>
         {{ end }}
-        <!-- For multiple positions, give emphasis on the company name-->
-        <h5>{{ if .company.url }}<a href={{.company.url}} title="{{ .company.name }}" target="_blank" rel="noopener">{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h5>
-
-        <!-- Total experience duration on a company is time between the starting date of the oldest position and ending date of most recent position -->
-        {{ $oldestPosition := index (last 1 .positions) 0}}
-        {{ $mostRecentPosition := index (first 1 .positions) 0}}
-        <p class="text-muted">
-            {{ $oldestPosition.start }} - {{ if $mostRecentPosition.end }}{{ $mostRecentPosition.end }}{{ else }}{{ i18n "present" }}{{ end }},
-            {{ .company.location }}
-        </p>
+       <!-- Total experience duration on a company is time between the starting date of the oldest position and ending date of most recent position -->
+       {{ $oldestPosition := index (last 1 .positions) 0}}
+       {{ $mostRecentPosition := index (first 1 .positions) 0}}
+       <div class="company-heading">
+           <h5>{{ if .company.url }}<a href={{.company.url}} title="{{ .company.name }}" target="_blank" rel="noopener">{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h5>
+           <p class="text-muted">
+               {{ $oldestPosition.start }} - {{ if $mostRecentPosition.end }}{{ $mostRecentPosition.end }}{{ else }}{{ i18n "present" }}{{ end }}
+           </p>
+       </div>
+       <p class="text-muted">
+           <i class="fa-solid fa-location-dot"></i> {{ .company.location }}
+       </p>
         <!-- Add company overview -->
         <p>{{ .company.overview | markdownify }}</p>
     </div>

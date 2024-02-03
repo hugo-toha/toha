@@ -92,6 +92,12 @@
     }
   }
 
+  .company-heading {
+    h5, p {
+      display: inline;
+    }
+  }
+
   @include media('<=medium') {
     .container {
       max-width: 100%;
