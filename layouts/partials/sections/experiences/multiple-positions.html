@@ -28,8 +28,10 @@
     <!-- Add the positions information -->
     <div class="positions">
     {{ range $index,$position:= .positions }}
-        <h5 class="designation">{{ $position.designation }}</h5>
-        <p class="text-muted">{{ $position.start }} - {{if $position.end }} {{ $position.end }} {{else}} {{ i18n "present" }} {{end}}</p>
+        <div class="company-heading">
+            <h5 class="designation">{{ $position.designation }}</h5>
+            <p class="text-muted">{{ $position.start }} - {{if $position.end }} {{ $position.end }} {{else}} {{ i18n "present" }} {{end}}</p>
+        </div>
         <!-- Add the responsibilities handled at this position -->
         <ul class="justify-content-around">
         {{ range $position.responsibilities }}
