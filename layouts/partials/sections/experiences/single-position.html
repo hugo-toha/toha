@@ -1,6 +1,16 @@
 <div class="col-10 col-lg-8">
     <div class="experience-entry-heading">
         {{ $position:= index .positions 0 }}
+        { $logoImage:= resources.Get .company.logo}}
+        {{ if $logoImage }}
+        {{/*  svg don't support "Fit" operation   */}}
+        {{ if ne $logoImage.MediaType.SubType "svg" }}
+            {{ $logoImage = $logoImage.Fit "300x300" }}
+        {{ end }}
+        <div class="logo-holder">
+            <img class="company-logo" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+        </div>
+        {{ end }}
         <!-- For single position, give emphasis on the designation-->
         <h5>{{ $position.designation }}</h5>
         <h6>{{ if .company.url }}<a href={{.company.url}} title="{{ .company.name }}" target="_blank" rel="noopener">{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h6>
