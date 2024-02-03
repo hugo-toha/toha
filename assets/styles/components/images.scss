@@ -47,8 +47,12 @@ html[data-theme='dark'] {
   filter: invert(1);
 }
 
-.company-logo {
-  height: auto;
-  width: 64px;
+.logo-holder {
+  height: 64px;
   margin-bottom: 1em;
+}
+
+.company-logo {
+  max-height: 100%;
+  width: auto;
 }
