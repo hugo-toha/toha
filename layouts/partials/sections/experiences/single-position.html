@@ -1,7 +1,7 @@
 <div class="col-10 col-lg-8">
     <div class="experience-entry-heading">
         {{ $position:= index .positions 0 }}
-        { $logoImage:= resources.Get .company.logo}}
+        {{} $logoImage:= resources.Get .company.logo}}
         {{ if $logoImage }}
         {{/*  svg don't support "Fit" operation   */}}
         {{ if ne $logoImage.MediaType.SubType "svg" }}
