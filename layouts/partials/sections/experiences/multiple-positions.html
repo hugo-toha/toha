@@ -15,8 +15,7 @@
        {{ $mostRecentPosition := index (first 1 .positions) 0}}
        <div class="company-heading">
            <h5>{{ if .company.url }}<a href={{.company.url}} title="{{ .company.name }}" target="_blank" rel="noopener">{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h5>
-           <p class="text-muted">
-               {{ $oldestPosition.start }} - {{ if $mostRecentPosition.end }}{{ $mostRecentPosition.end }}{{ else }}{{ i18n "present" }}{{ end }}
+           <p class="text-muted"> {{ $oldestPosition.start }} - {{ if $mostRecentPosition.end }}{{ $mostRecentPosition.end }}{{ else }}{{ i18n "present" }}{{ end }}
            </p>
        </div>
        <p class="text-muted">
@@ -30,7 +29,7 @@
     {{ range $index,$position:= .positions }}
         <div class="company-heading">
             <h5 class="designation">{{ $position.designation }}</h5>
-            <p class="text-muted">{{ $position.start }} - {{if $position.end }} {{ $position.end }} {{else}} {{ i18n "present" }} {{end}}</p>
+            <p class="text-muted"> {{ $position.start }} - {{if $position.end }} {{ $position.end }} {{else}} {{ i18n "present" }} {{end}}</p>
         </div>
         <!-- Add the responsibilities handled at this position -->
         <ul class="justify-content-around">

@@ -14,7 +14,7 @@
         {{ $position:= index .positions 0 }}
         <div class="company-heading">
             <h5>{{ if .company.url }}<a href={{.company.url}} title="{{ .company.name }}" target="_blank" rel="noopener">{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h5>
-            <p class="text-muted">{{ $position.start }} - {{ if $position.end }}{{ $position.end }}{{ else }}{{ i18n "present" }}{{ end }}
+            <p class="text-muted"> {{ $position.start }} - {{ if $position.end }}{{ $position.end }}{{ else }}{{ i18n "present" }}{{ end }}
             </p>
         </div>
         <p class="text-muted">
