@@ -1,30 +1,32 @@
 <div class="col-10 col-lg-8">
     <div class="experience-entry-heading">
-        {{ $position:= index .positions 0 }}
         {{ $logoImage:= resources.Get .company.logo}}
-        {{ if $logoImage }}
-        {{/*  svg don't support "Fit" operation   */}}
-        {{ if ne $logoImage.MediaType.SubType "svg" }}
-            {{ $logoImage = $logoImage.Fit "300x300" }}
-        {{ end }}
-        <div class="logo-holder">
-            <img class="company-logo" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
-        </div>
-        {{ end }}
+            {{ if $logoImage }}
+            {{/*  svg don't support "Fit" operation   */}}
+            {{ if ne $logoImage.MediaType.SubType "svg" }}
+              {{ $logoImage = $logoImage.Fit "300x300" }}
+            {{ end }}
+            <div class="logo-holder">
+                <img class="company-logo" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+            </div>
+            {{ end }}
         {{ $position:= index .positions 0 }}
         <div class="company-heading">
             <h5>{{ if .company.url }}<a href={{.company.url}} title="{{ .company.name }}" target="_blank" rel="noopener">{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h5>
-            <p class="text-muted"> {{ $position.start }} - {{ if $position.end }}{{ $position.end }}{{ else }}{{ i18n "present" }}{{ end }}
+            <p class="text-muted">{{ $position.start }} - {{ if $position.end }}{{ $position.end }}{{ else }}{{ i18n "present" }}{{ end }}
             </p>
         </div>
         <p class="text-muted">
             <i class="fa-solid fa-location-dot"></i> {{ .company.location }}
         </p>
+        <!-- Add company overview -->
+        <p>{{ .company.overview | markdownify }}</p>
         <!-- For single position, give emphasis on the designation-->
-        <h5>{{ $position.designation }}</h5>
+        <div class="company-heading">
+            <h5 class="designation">{{ $position.designation }}</h5>
+            <p class="text-muted">{{ $position.start }} - {{if $position.end }} {{ $position.end }} {{else}} {{ i18n "present" }} {{end}}</p>
+        </div>
     </div>
-    <!-- Add company overview -->
-    <p>{{ .company.overview | markdownify }}</p>
     <!-- Add the responsibilities handled at this position -->
     {{ if $position.responsibilities }}
     <h6 class="text-heading">{{ i18n "responsibilities" }}</h6>
