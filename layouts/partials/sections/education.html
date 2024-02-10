@@ -106,6 +106,13 @@
                                 </ul>
                             </div>
                             {{ end }}
+                            {{ if .custonSections }}
+                            <div class="extracurricular-activities">
+                                {{ range .custonSections }}
+                                    <h6><span class="text-heading">{{ .name }}: </span><span>{{ .content }}</span></h6>
+                                {{ end }}
+                            </div>
+                            {{ end }}
                         </div>
                     </td>
                 </tr>
