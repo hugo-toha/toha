@@ -59,12 +59,17 @@
     background: get-light-color('accent-color');
     margin-left: 0.2em;
     margin-right: 0.2em;
-    margin-top: 0.6em;
-    margin-bottom: 0.6em;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
   }
-  a {
+  button {
+    background-color: transparent;
+    border: none;
     color: get-light-color('text-over-accent-color');
-    text-decoration: none !important;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
 
@@ -146,7 +151,7 @@ html[data-theme='dark'] {
   .tags {
     li {
       background: get-dark-color('accent-color');
-      a {
+      button {
         background-color: get-dark-color('bg-card');
         border: 1px solid get-dark-color('muted-text-color');
         color: get-dark-color('text-over-accent-color');
