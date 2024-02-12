@@ -18,11 +18,11 @@
      {{ if eq (mod $index 2) 0 }}
        <div class="row align-items-center  d-flex">
          {{ partial "sections/experiences/vertical-line.html" $index }}
-         {{ partial "sections/experiences/experience-info.html" $experience }}
+         {{ partial "sections/experiences/positions.html" $experience }}
        </div>
      {{else}}
        <div class="row align-items-center justify-content-end d-flex">
-         {{ partial "sections/experiences/experience-info.html" $experience }}
+         {{ partial "sections/experiences/positions.html" $experience }}
          {{ partial "sections/experiences/vertical-line.html" $index }}
        </div>
      {{ end }}

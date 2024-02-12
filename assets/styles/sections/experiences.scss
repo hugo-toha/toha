@@ -92,6 +92,16 @@
     }
   }
 
+  .company-heading {
+    h5 {
+      display: inline;
+      margin-right: 0.25em;
+    }
+    p {
+      display: inline;
+    }
+  }
+
   @include media('<=medium') {
     .container {
       max-width: 100%;

@@ -31,6 +31,19 @@
                     </td>
                     <td class="details">
                         <div class="degree-info card">
+
+                            {{ $logoImage:= resources.Get .institution.logo}}
+                            {{ if $logoImage }}
+                            {{/*  svg don't support "Fit" operation   */}}
+                            {{ if ne $logoImage.MediaType.SubType "svg" }}
+                              {{ $logoImage = $logoImage.Fit "300x300" }}
+                            {{ end }}
+                
+                            <div class="logo-holder">
+                                <img class="company-logo" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+                            </div>
+                            {{ end }}
+
                             <div class="row">
                                 <div class="col-lg-10 col-md-8">
                                     {{ if .institution.url }}
