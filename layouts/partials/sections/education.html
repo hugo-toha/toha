@@ -107,9 +107,10 @@
                             </div>
                             {{ end }}
                             {{ if .custonSections }}
-                            <div class="extracurricular-activities">
+                            <div class="custom-section">
                                 {{ range .custonSections }}
-                                    <h6><span class="text-heading">{{ .name }}: </span><span>{{ .content }}</span></h6>
+                                    <h6 class="text-heading">{{ .name }}: </h6>
+                                    <div class="custom-content">{{ .content | markdownify }}</div>
                                 {{ end }}
                             </div>
                             {{ end }}
