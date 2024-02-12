@@ -35,6 +35,9 @@
 
   .project-card-footer {
     display: flex;
+    .badge {
+      margin-right: 0.1em;
+    }
   }
 
   .project-tags-holder {
