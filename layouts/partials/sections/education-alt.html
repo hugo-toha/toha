@@ -118,6 +118,14 @@
                                 </ul>
                             </div>
                             {{ end }}
+                            {{ if .custonSections }}
+                            <div class="custom-section">
+                                {{ range .custonSections }}
+                                    <h6 class="text-heading">{{ .name }}: </h6>
+                                    <div class="custom-content">{{ .content | markdownify }}</div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
                         </div>
                     </td>
                     <td class="line">
