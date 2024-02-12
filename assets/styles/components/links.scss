@@ -10,7 +10,7 @@ a {
   }
 }
 
-.list-link {
+.list-link, .taxonomy-term {
   text-decoration: none !important;
   color: get-light-color('text-color');
   @include transition();
@@ -67,7 +67,7 @@ html[data-theme='dark'] {
     }
   }
 
-  .list-link {
+  .list-link, .taxonomy-term {
     color: get-dark-color('text-color');
 
     &:hover,
