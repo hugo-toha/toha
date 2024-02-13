@@ -56,14 +56,12 @@
     font-size: 0.5em;
     list-style-type: none;
     display: inline-block;
-    background: get-light-color('accent-color');
     margin-left: 0.2em;
     margin-right: 0.2em;
     margin-top: 0.6em;
     margin-bottom: 0.6em;
   }
   a {
-    color: get-light-color('text-over-accent-color');
     text-decoration: none !important;
   }
 }
@@ -141,17 +139,6 @@ html[data-theme='dark'] {
 
   .nav-button {
     color: get-dark-color('muted-text-color');
-  }
-
-  .tags {
-    li {
-      background: get-dark-color('accent-color');
-      a {
-        background-color: get-dark-color('bg-card');
-        border: 1px solid get-dark-color('muted-text-color');
-        color: get-dark-color('text-over-accent-color');
-      }
-    }
   }
 
   .icon-button {
