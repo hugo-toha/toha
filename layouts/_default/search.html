@@ -35,21 +35,26 @@
 
         <script id="search-result-template" type="text/x-js-template">
           <div class="post-card">
-            <a href="${link}" class="post-card-link">
-              <div class="card" style="min-height: 352px;"><a href="${link}" class="post-card-link">
+              <div class="card">
                 <div class="card-head">
+                  <a href="${link}" class="post-card-link">
                   <img class="card-img-top" src="${hero}" alt="Card Heading Image">
+                  </a>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">${title}</h5>
-                  <p class="card-text post-summary">${summary}</p>
+                  <a href="${link}" class="post-card-link">
+                    <h5 class="card-title">${title}</h5>
+                    <p class="card-text post-summary">${summary}</p>
+                  </a>
+                  <div class="tags">
+                    ${tags}
+                  </div>
                 </div>
                 <div class="card-footer">
                   <span class="float-left">${date}</span>
                   <a href="${link}" class="float-right btn btn-outline-info btn-sm">Read</a>
                 </div>
               </div>
-	          </a>
           </div>
         </script>
 

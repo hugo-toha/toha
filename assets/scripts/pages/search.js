@@ -1,5 +1,6 @@
 import Fuse from 'fuse.js'
 import Mark from 'mark.js'
+import * as params from '@params'
 
 window.addEventListener('DOMContentLoaded', () => {
   const summaryInclude = 60
@@ -79,6 +80,15 @@ window.addEventListener('DOMContentLoaded', () => {
       // pull template from hugo template definition
       const templateDefinition = document.getElementById('search-result-template').innerHTML
       // replace values
+      function tagsHTML() {
+        if (!params.tags) return '';
+        const tags = value.item.tags;
+        let string = '<ul style="padding-left: 0;">';
+        tags.forEach((t) => {string += '<li class="rounded"><a href="/tags/' + t.toLowerCase() + '/" class="btn btn-sm btn-info">' + t + "</a></li>"});
+        string += "</ul>";
+        return string;
+      }
+
       const output = render(templateDefinition, {
         key,
         title: value.item.title,
@@ -86,7 +96,7 @@ window.addEventListener('DOMContentLoaded', () => {
         date: value.item.date,
         summary: value.item.summary,
         link: value.item.permalink,
-        tags: value.item.tags,
+        tags: tagsHTML(),
         categories: value.item.categories,
         snippet
       })
