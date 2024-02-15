@@ -40,3 +40,8 @@ features = [
 [author]
   homepage = "https://hossainemruz.github.io"
   name = "Emruz Hossain"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.118.0"
