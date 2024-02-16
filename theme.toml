@@ -1,24 +1,14 @@
-# theme.toml template for a Hugo theme
-# See https://github.com/gohugoio/hugoThemes#themetoml for an example
-description = "A simple hugo theme for personal portfolio"
-homepage = "https://hugo-toha.github.io/"
+name = "Toha"
 license = "MIT"
 licenselink = "https://github.com/hugo-toha/toha/blob/master/LICENSE"
-min_version = "0.118.0"
-name = "Toha"
+description = "A simple hugo theme for personal portfolio"
 
-features = [
-  "Minimalist Design",
-  "Fully Responsive",
-  "Multiple Language Support",
-  "Carefully Designed Cards",
-  "Experience Timeline",
-  "Achievement Gallery",
-  "Sidebar to Categorize the Posts",
-  "Short Codes",
-  "Google Analytics Support",
-  "Disqus Comment Support",
-]
+# The home page of the theme, where the source can be found.
+homepage = "https://github.com/hugo-toha/toha"
+
+# If you have a running demo of the theme.
+demosite = "https://hugo-toha.github.io/"
+
 tags = [
   "Portfolio",
   "Blog",
@@ -34,7 +24,24 @@ tags = [
   "Bootstrap",
   "Syntax highlighting",
 ]
+features = [
+  "Minimalist Design",
+  "Fully Responsive",
+  "Multiple Language Support",
+  "Carefully Designed Cards",
+  "Experience Timeline",
+  "Achievement Gallery",
+  "Sidebar to Categorize the Posts",
+  "Short Codes",
+  "Google Analytics Support",
+  "Disqus Comment Support",
+]
 
 [author]
-homepage = "https://hossainemruz.github.io"
-name = "Emruz Hossain"
+  homepage = "https://hossainemruz.github.io"
+  name = "Emruz Hossain"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.118.0"
