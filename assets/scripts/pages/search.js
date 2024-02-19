@@ -1,6 +1,5 @@
 import Fuse from 'fuse.js'
 import Mark from 'mark.js'
-import * as params from '@params'
 
 window.addEventListener('DOMContentLoaded', () => {
   const summaryInclude = 60
