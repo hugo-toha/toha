@@ -79,11 +79,10 @@ window.addEventListener('DOMContentLoaded', () => {
       // pull template from hugo template definition
       const templateDefinition = document.getElementById('search-result-template').innerHTML
       // replace values
-      function tagsHTML() {
+      function adaptTags() {
         const tags = value.item.tags;
-        let string = '<ul style="padding-left: 0;">';
+        let string = '';
         tags.forEach((t) => {string += '<li class="rounded"><a href="/tags/' + t.toLowerCase() + '/" class="btn btn-sm btn-info">' + t + "</a></li>"});
-        string += "</ul>";
         return string;
       }
 
@@ -94,7 +93,7 @@ window.addEventListener('DOMContentLoaded', () => {
         date: value.item.date,
         summary: value.item.summary,
         link: value.item.permalink,
-        tags: tagsHTML(),
+        tags: adaptTags(),
         categories: value.item.categories,
         snippet
       })
