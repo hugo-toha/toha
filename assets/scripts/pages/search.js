@@ -82,7 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
       function adaptTags() {
         const tags = value.item.tags;
         let string = '';
-        tags.forEach((t) => {string += '<li class="rounded"><a href="/tags/' + t.toLowerCase() + '/" class="btn btn-sm btn-info">' + t + "</a></li>"});
+        if (tags) tags.forEach((t) => {string += '<li class="rounded"><a href="/tags/' + t.toLowerCase() + '/" class="btn btn-sm btn-info">' + t + "</a></li>"});
         return string;
       }
 
