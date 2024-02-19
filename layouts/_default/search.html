@@ -46,9 +46,11 @@
                     <h5 class="card-title">${title}</h5>
                     <p class="card-text post-summary">${summary}</p>
                   </a>
+                  {{ if site.Params.features.tags.on_card }}
                   <div class="tags">
                     ${tags}
                   </div>
+                  {{ end }}
                 </div>
                 <div class="card-footer">
                   <span class="float-left">${date}</span>
