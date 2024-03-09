@@ -39,6 +39,8 @@ window.addEventListener('load', async () => {
 
     // save preference to local storage
     saveScheme(newScheme)
+
+    setImages(newScheme)
   }
 
   setScheme(loadScheme())
@@ -50,3 +52,19 @@ window.addEventListener('load', async () => {
     })
   })
 })
+
+function setImages(newScheme) {
+  const els = Array.from(document.getElementsByClassName('logo-holder'));
+  for (const el of els) {
+    const light = el.querySelector('.light-logo');
+    const dark = el.querySelector('.dark-logo');
+    if (newScheme === "dark" && dark !== null) {
+      if (light !== null) light.style.display = 'none'
+      dark.style.display = 'inline'
+    }
+    else {
+      if (light !== null) light.style.display = 'inline'
+      if (dark !== null) dark.style.display = 'none'
+    }
+  }
+}

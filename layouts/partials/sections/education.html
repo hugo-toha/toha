@@ -33,9 +33,13 @@
                         <div class="degree-info card">
 
                             {{ $logoImage:= resources.Get .institution.logo}}
+                            {{ $darkLogoImage:= resources.Get .institution.darkLogo}}
                             {{ if $logoImage }}
-                            <div class="logo-holder">
-                                <img class="company-logo" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+                            <div class="logo-holder"> 
+                                <img class="company-logo light-logo" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+                                {{ if $darkLogoImage }}
+                                <img class="company-logo dark-logo" src="{{ $darkLogoImage.RelPermalink }}" alt="{{ .name }}" />
+                                {{ end }}
                             </div>
                             {{ end }}
 

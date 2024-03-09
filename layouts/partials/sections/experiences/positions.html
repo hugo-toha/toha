@@ -1,11 +1,15 @@
 <div class="col-10 col-lg-8">
     <div class="experience-entry-heading">
         {{ $logoImage:= resources.Get .company.logo}}
-            {{ if $logoImage }}
-            <div class="logo-holder">
-                <img class="company-logo" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
-            </div>
+        {{ $darkLogoImage:= resources.Get .company.darkLogo}}
+        {{ if $logoImage }}
+        <div class="logo-holder"> 
+            <img class="company-logo light-logo" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+            {{ if $darkLogoImage }}
+            <img class="company-logo dark-logo" src="{{ $darkLogoImage.RelPermalink }}" alt="{{ .name }}" />
             {{ end }}
+        </div>
+        {{ end }}
         <!-- Total experience duration on a company is time between the starting date of the oldest position and ending date of most recent position -->
         {{ $oldestPosition := index (last 1 .positions) 0}}
         {{ $mostRecentPosition := index (first 1 .positions) 0}}
