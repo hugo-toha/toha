@@ -1,6 +1,6 @@
 import { getDeviceState } from '../core'
 
-function fourColumRow (gallery, entries, i) {
+function fourColumnRow (gallery, entries, i) {
   const entry1 = document.createElement('div')
   entry1.classList.add('col-lg-6', 'm-0', 'p-0')
   entry1.appendChild(entries[i].cloneNode(true))
@@ -140,7 +140,7 @@ function showAchievements () {
     if (isLaptop) {
       if (i + 4 <= len) {
         if (rowNumber % 2) {
-          fourColumRow(gallery, entries, i)
+          fourColumnRow(gallery, entries, i)
         } else {
           fourColumnReversedRow(gallery, entries, i)
         }

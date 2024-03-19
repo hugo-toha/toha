@@ -1,5 +1,5 @@
 ---
-title: "Search Results"
+title: "Suchergebnisse"
 date: 2010-06-08T08:06:25+06:00
 weight: 999999
 sitemap:
@@ -26,7 +26,7 @@ Search  depends on additional output content type of JSON in config.toml
   home = ["HTML", "JSON"]
 \```
 
-## Searching additional fileds
+## Searching additional fields
 
 To search additional fields defined in front matter, you must add it in 2 places.
 

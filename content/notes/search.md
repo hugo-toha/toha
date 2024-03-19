@@ -24,7 +24,7 @@ Search  depends on additional output content type of JSON in config.toml
   home = ["HTML", "JSON"]
 \```
 
-## Searching additional fileds
+## Searching additional fields
 
 To search additional fields defined in front matter, you must add it in 2 places.
 
