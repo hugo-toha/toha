@@ -1,5 +1,5 @@
 {{ $pageURL:= .RelPermalink }}
-{{ if site.IsMultiLingual }}
+{{ if hugo.IsMultilingual }}
   {{ $pageURL = strings.TrimPrefix (path.Join "/" .Language.Lang) $pageURL }}
 {{ end }}
 <li class="nav-item dropdown">

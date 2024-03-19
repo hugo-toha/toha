@@ -4,7 +4,7 @@
 
 {{ define "sidebar" }}
   {{ $homePage:="#" }}
-  {{ if site.IsMultiLingual }}
+  {{ if hugo.IsMultilingual }}
     {{ $homePage = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) .Type) }}
   {{ end }}
 
