@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // =============== Make TOC Compatible wit Bootstrap Scroll Spy ========
+  // =============== Make TOC Compatible with Bootstrap Scroll Spy ========
   // add "navbar" class to the "nav" element
   const toc = document.getElementById('TableOfContents')
   if (toc) {
