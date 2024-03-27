@@ -1,0 +1,126 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "בית"
+
+[posts]
+other = "פוסטים"
+
+[toc_heading]
+other = "תוכן העניינים"
+
+[tags]
+other = "תגים"
+
+[categories]
+other = "קטגוריות"
+
+[at]
+other = "ב"
+
+[resume]
+other = "הקורות החיים שלי"
+
+[navigation]
+other = "ניווט"
+
+[contact_me]
+other = "צור קשר:"
+
+[email]
+other = "דוא\"ל"
+
+[phone]
+other = "טלפון"
+
+[newsletter_text]
+other = "הישאר מעודכן עם התראות בדוא\"ל"
+
+[newsletter_input_placeholder]
+other = "הכנס דוא\"ל"
+
+[newsletter_warning]
+other = "על ידי הזנת כתובת הדוא\"ל שלך, אתה מסכים לקבל את הניוזלטר של אתר זה."
+
+[submit]
+other = "שלח"
+
+[hugoAttributionText]
+other = "מופעל ע\"י"
+
+[prev]
+other = "הקודם"
+
+[next]
+other = "הבא"
+
+[share_on]
+other = "שתף ב"
+
+[improve_this_page]
+other = "שפר את הדף הזה"
+
+[out_of]
+other = "מתוך"
+
+[publications]
+other = "פרסומים"
+
+[taken_courses]
+other = "קורסים"
+
+[course_name]
+other = "שם הקורס"
+
+[total_credit]
+other = "נקודות זכות סך הכל"
+
+[obtained_credit]
+other = "נקודות זכות שהושגו"
+
+[extracurricular_activities]
+other = "פעילויות חוץ לימודיות"
+
+[show_more]
+other = "הצג יותר"
+
+[show_less]
+other = "הצג פחות"
+
+[responsibilities]
+other = "אחריות:"
+
+[present]
+other = "נוכחי"
+
+[comments_javascript]
+other = "אנא הפעל את JavaScript כדי לראות את"
+
+[comments_by]
+other = "תגובות מופעלות ע\"י"
+
+[read]
+other = "קרא"
+
+[project_star]
+other = "כוכב"
+
+[project_details]
+other = "פרטים"
+
+[err_404]
+other = "הדף שאתה מחפש אינו קיים עדיין."
+
+[more]
+other = "עוד"
+
+[view_certificate]
+other = "צפה בתעודה"
+
+[notes]
+other = "הערות"
+
+[disclaimer_text]
+other = "הבהרת אחריות"
+
+[search]
+other = "חיפוש"
