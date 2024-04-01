@@ -15,12 +15,12 @@
       {{ end }}
     </div>
     <div class="card-footer">
-      <span class="float-left">
+      <span class="float-start">
           {{ .Date | time.Format ":date_full" }}
           {{ if site.Params.features.readingTime }} | {{.ReadingTime}} {{ i18n "minute" .ReadingTime }} {{ end }}</span>
       <a
       href="{{ .RelPermalink | relLangURL }}"
-      class="float-right btn btn-outline-info btn-sm">{{ i18n "read" }}</a>
+      class="float-end btn btn-outline-info btn-sm">{{ i18n "read" }}</a>
     </div>
   </div>
 </div>
