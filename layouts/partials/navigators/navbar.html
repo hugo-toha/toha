@@ -52,7 +52,7 @@
   {{ $sections = (index site.Data site.Language.Lang).sections }}
 {{ end }}
 
-{{ $navBarTitle := site.Params.navBarTitle }}
+{{ $navBarTitle := (index site.Data site.Language.Lang).site.navBarTitle }}
 {{ if not $navBarTitle }}
   {{ $navBarTitle = site.Title }}
 {{ end }}
