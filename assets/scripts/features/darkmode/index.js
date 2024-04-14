@@ -40,7 +40,7 @@ window.addEventListener('load', async () => {
     // save preference to local storage
     saveScheme(newScheme)
 
-    setImages(newScheme)
+    setImages(theme)
   }
 
   setScheme(loadScheme())
