@@ -52,6 +52,11 @@
   {{ $sections = (index site.Data site.Language.Lang).sections }}
 {{ end }}
 
+{{ $navBarTitle := (index site.Data site.Language.Lang).site.navBarTitle }}
+{{ if not $navBarTitle }}
+  {{ $navBarTitle = site.Title }}
+{{ end }}
+
 <nav class="navbar navbar-expand-xl top-navbar shadow {{ if .IsHome}}transparent-navbar homepage{{end}}" id="top-navbar">
   <div class="container">
     {{ if not .IsHome }}
@@ -63,7 +68,7 @@
       {{ if $logo }}
         <img src="{{ $logo }}" id="logo" alt="Logo">
       {{ end }}
-      {{- site.Title -}}
+      {{- $navBarTitle -}}
     </a>
     <button
       class="navbar-toggler {{if .IsHome}}navbar-dark{{else}}navbar-light{{end}}"
