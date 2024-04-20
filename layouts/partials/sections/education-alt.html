@@ -101,9 +101,9 @@
                                     </ul>
                                 {{ end }}
                                 {{ if gt (len .takenCourses.courses) $collapseAfter }}
-                                    <button type="button" class="btn btn-link show-more-btn pt-0 {{ if .takenCourses.showGrades }}ml-1{{ else }}ml-2{{ end }}"
+                                    <button type="button" class="btn btn-link show-more-btn pt-0 {{ if .takenCourses.showGrades }}ms-1{{ else }}ms-2{{ end }}"
                                     id="show-more-btn" aria-label="{{ i18n "show_more"}}">{{ i18n "show_more"}}</button>
-                                    <button type="button" class="btn btn-link show-more-btn hidden pt-0 {{ if .takenCourses.showGrades }}ml-1{{ else }}ml-2{{ end }}"
+                                    <button type="button" class="btn btn-link show-more-btn hidden pt-0 {{ if .takenCourses.showGrades }}ms-1{{ else }}ms-2{{ end }}"
                                     id="show-less-btn" aria-label="{{ i18n "show_less"}}">{{ i18n "show_less"}}</button>
                                 {{ end }}
                             </div>

@@ -74,15 +74,15 @@
       class="navbar-toggler {{if .IsHome}}navbar-dark{{else}}navbar-light{{end}}"
       id="navbar-toggler"
       type="button"
-      data-toggle="collapse"
-      data-target="#top-nav-items"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
       aria-label="menu"
     >
       <i data-feather="menu"></i>
     </button>
 
     <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
-      <ul class="nav navbar-nav ml-auto">
+      <ul class="nav navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" href="{{ if .IsHome }}#home{{else}}{{ site.BaseURL | relLangURL }}#home{{end}}">{{ i18n "home" }}</a>
         </li>
@@ -100,7 +100,7 @@
           {{- end }}
           {{ if gt $sectionCount $maxVisibleSections }}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{i18n "more" }}</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{i18n "more" }}</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {{ $sectionCount := 1 }}
                 {{ range sort $sections "section.weight" }}
