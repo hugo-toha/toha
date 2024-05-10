@@ -33,14 +33,18 @@ module:
 # For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
 languages:
   en:
+    languageCode: en
     languageName: English
+    title: "John's Blog"
     weight: 1
   bn:
+    languageCode: bn
     languageName: বাংলা
-    weight: 3
+    title: "জনের ব্লগ"
+    weight: 2
 
-# Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
-# DefaultContentLanguage: bn
+# default language for the content
+defaultContentLanguage: en
 
 # Allow raw html in markdown file
 markup:
