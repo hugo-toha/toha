@@ -4,7 +4,7 @@
       <h5 class="card-title mb-0">{{ .name }}</h5>
       <div class="sub-title">
         <span><a href="{{ .organization.url }}" title="{{ .organization.name }}" target="_blank" rel="noopener">{{ .organization.name }}</a></span>
-        <span class="ml-2">{{ .timeline }}</span>
+        <span class="ms-2">{{ .timeline }}</span>
       </div>
     </div>
     <div class="card-body">
@@ -12,7 +12,7 @@
     </div>
     <div class="card-footer">
       {{ if .certificateURL }}
-        <a class="btn btn-outline-info ml-1 pl-2 mb-2" href="{{ .certificateURL }}" target="_blank" rel="noopener" role="button">{{ i18n "view_certificate"}}</a>
+        <a class="btn btn-outline-info ms-1 ps-2 mb-2" href="{{ .certificateURL }}" target="_blank" rel="noopener" role="button">{{ i18n "view_certificate"}}</a>
       {{ end }}
     </div>
   </div>

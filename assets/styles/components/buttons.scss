@@ -49,6 +49,15 @@
   color: get-light-color('muted-text-color');
 }
 
+.navbar-toggler {
+  border: none;
+  &:focus {
+    border: none;
+    outline: none !important;
+    box-shadow: none;
+  }
+}
+
 .tags {
   text-align: left;
   padding-top: 0.5em;

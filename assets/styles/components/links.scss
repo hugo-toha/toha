@@ -2,6 +2,10 @@ a {
   color: get-light-color('accent-color');
   @include transition();
 
+  &:link {
+    text-decoration: none;
+  }
+
   &:hover,
   &:focus {
     text-decoration: get-light-color('hover-over-accent-color') underline;
