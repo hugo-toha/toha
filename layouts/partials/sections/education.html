@@ -118,9 +118,9 @@
                                 </ul>
                             </div>
                             {{ end }}
-                            {{ if .custonSections }}
+                            {{ if .customSections }}
                             <div class="custom-section">
-                                {{ range .custonSections }}
+                                {{ range .customSections }}
                                     <h6 class="text-heading">{{ .name }}: </h6>
                                     <div class="custom-content">{{ .content | markdownify }}</div>
                                 {{ end }}
