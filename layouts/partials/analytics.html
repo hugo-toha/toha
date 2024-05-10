@@ -5,7 +5,7 @@
         <!-- Google Analytics -->
         {{ with .google }}
             {{ $privacyConfig:= dict (slice "Site" "Config" "Privacy" "GoogleAnalytics") $.Site.Config.Privacy.GoogleAnalytics }}
-            {{ $analyticsConfig := dict (slice "Site" "GoogleAnalytics") .id }}
+            {{ $analyticsConfig := dict (slice "Site" "Config" "Services" "GoogleAnalytics" "ID") .id }}
             {{ template "_internal/google_analytics.html" (merge $privacyConfig $analyticsConfig) }}
         {{ end }}
 
