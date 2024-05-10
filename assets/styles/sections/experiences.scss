@@ -32,14 +32,14 @@
 
       &::after {
         content: '';
-        position: absolute;
+        position: relative;
         border-left: 3px solid get-light-color('accent-color');
         z-index: 1;
         height: 100%;
-        left: 50%;
+        left: -23px;
       }
       &:nth-child(even)::after {
-        left: calc(50% - 3px) !important;
+        left: -26px;
       }
     }
     .horizontal-line {
@@ -52,6 +52,7 @@
         margin: 0;
         top: 17px;
         position: relative;
+        opacity: 1;
       }
       .timeline-side-div {
         display: flex;

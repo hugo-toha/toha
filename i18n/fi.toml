@@ -124,3 +124,7 @@ other = "Vastuuilmoitus"
 
 [search]
 other = "Haku"
+
+[minute]
+one = "minuutti"
+other = "minuuttia"

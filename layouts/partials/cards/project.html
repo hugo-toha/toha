@@ -9,16 +9,24 @@
           <div class="d-flex">
             {{ if .logo }}
 
-            {{ $logoImage:= resources.Get .logo}}
-            {{ if $logoImage }}
-            {{/*  svg don't support "Fit" operation   */}}
-            {{ if ne $logoImage.MediaType.SubType "svg" }}
-              {{ $logoImage = $logoImage.Fit "24x24" }}
-            {{ end }}
+              {{ if eq (len (findRE ".*/.*" .logo) ) 0 }}
 
-            <img class="card-img-xs" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+                <i style="padding-right: 0.25em" class="{{.logo}} h4"></i>
+
+              {{ else }}
+
+                {{ $logoImage:= resources.Get .logo}}
+                  {{ if $logoImage }}
+                    {{/*  svg don't support "Fit" operation   */}}
+                    {{ if ne $logoImage.MediaType.SubType "svg" }}
+                      {{ $logoImage = $logoImage.Fit "24x24" }}
+                    {{ end }}
+                    <img class="card-img-xs" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+                  {{ end }}
+                {{ end }}
+
             {{ end }}
-            {{ end }}
+            
             <h5 class="card-title mb-0">{{ .name }}</h5>
           </div>
           <div class="sub-title">
