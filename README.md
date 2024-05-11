@@ -38,6 +38,7 @@ A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist desi
   - counter.dev
   - Google Analytics
   - Matomo/Piwik
+  - [Umami](https://umami.is/)
 - Comment Support
   - [Disqus](https://disqus.com/)
   - [Valine](https://valine.js.org/)
