@@ -54,7 +54,7 @@
 
             {{ with .umami }}
             <!-- Umami analytics -->
-            <script defer src="https://analytics.eu.umami.is/script.js" data-website-id="{{ .id }}"></script>
+            <script defer src='{{ or .proto "https" }}://{{ or .instance "analytics.eu.umami.is" }}/script.js' data-website-id="{{ .id }}"></script>
             <!-- End Umami analytics -->
             {{end}}
         {{ end }}

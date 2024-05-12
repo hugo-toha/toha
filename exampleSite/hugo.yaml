@@ -174,8 +174,10 @@ params:
         # matomo:
         #   instance: matomo.example.com
         #   siteId: 1 # Or any other number
-        # # Matomo / Piwik
+        # # Umami
         # umami:
+        #   proto: https
+        #   instance: umami.example.com
         #   id: <your umami site id>
 
     # Enable Support
