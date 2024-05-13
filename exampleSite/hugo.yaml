@@ -176,7 +176,7 @@ params:
         #   siteId: 1 # Or any other number
         # # Umami
         # umami:
-        #   proto: https
+        #   scheme: https
         #   instance: umami.example.com
         #   id: <your umami site id>
 
