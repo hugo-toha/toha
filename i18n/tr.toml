@@ -93,16 +93,16 @@ other = "Sorumluluklar:"
 other = "Halen"
 
 [comments_javascript]
-other = "Görüntüleyebilmek için lüften Javascript etkinleştirin"
+other = "Görüntüleyebilmek için lüften JavaScript etkinleştirin"
 
 [comments_by]
-other = "comments powered by"
+other = "Yorum sağlayıcı"
 
 [read]
 other = "Oku"
 
 [project_star]
-other = "Star"
+other = "Yıldız"
 
 [project_details]
 other = "Detaylar"
@@ -124,3 +124,7 @@ other = "Yükümlülük Bildirisi"
 
 [search]
 other = "Ara"
+
+[minute]
+one = "dakika"
+other = "dakika"
