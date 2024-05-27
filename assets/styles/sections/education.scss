@@ -229,6 +229,11 @@ html[data-theme='dark'] {
               border-left: 2px solid get-dark-color('accent-color');
             }
           }
+          .custom-section {
+            .custom-content {
+              color: get-dark-color('text-color');
+            }
+          }
         }
       }
     }
