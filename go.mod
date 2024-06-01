@@ -1,3 +1,3 @@
 module github.com/hugo-toha/toha/v4
 
-go 1.19
+go 1.22
