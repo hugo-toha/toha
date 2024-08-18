@@ -34,7 +34,12 @@
       "postcss-cli": "project"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "hugo": "^0.0.3",
+    "mod": "^0.0.0",
+    "npm": "^10.8.2",
+    "pack": "^2.2.0"
+  },
   "description": "A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist design and responsiveness.",
   "devDependencies": {
     "@fontsource/mulish": "4.5.13",

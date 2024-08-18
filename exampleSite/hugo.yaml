@@ -1,5 +1,5 @@
 
-baseURL: http://example.org/
+baseURL: http://ShangYi7.github.io
 languageCode: en-us
 title: Example Site
 
@@ -80,7 +80,7 @@ params:
     favicon: /images/site/favicon.png
 
   # GitHub repo of your site
-  gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
+  gitRepo: https://github.com/ShangYi7/ShangYi7.github.io
   # Default branch of your Git repo
   gitBranch: main
 
@@ -301,7 +301,7 @@ params:
     # Show/hide newsletter section in the footer. Default is "true".
     # Currently, it supports "mailchimp".
     newsletter:
-      enable: true
+      enable: false
       provider: mailchimp
       mailchimpURL: https://github.us1.list-manage.com/subscribe/post?u=19de52a4603135aae97163fd8&amp;id=094a24c76e
 
