@@ -96,7 +96,7 @@ other = "heute"
 other = "Bitte aktiviere JavaScript um die Kommentare zu sehen"
 
 [comments_by]
-other = "Kommentare Unterstützt von"
+other = "Kommentare unterstützt von"
 
 [read]
 other = "Lesen"
@@ -124,3 +124,7 @@ other = "Haftungshinweis"
 
 [search]
 other = "Suche"
+
+[minute]
+one = "Minute"
+other = "Minuten"
