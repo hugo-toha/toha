@@ -50,6 +50,18 @@ pre {
   }
 }
 
+.copy-code-button {
+  display: flex;
+  justify-content: right;
+  margin-right: 0.2em;
+  margin-bottom: -1.2em;
+  font-size: 20pt;
+}
+
+.highlight pre { 
+  margin: 0;
+}
+
 html[data-theme='dark'] {
   .paginator {
     .page-item {

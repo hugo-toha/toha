@@ -91,6 +91,10 @@ params:
   # Configure various features of this theme
   features:
 
+    # Enables copy code button
+    copyCodeButton:
+      enable: true
+
     # Enable dark theme
     darkMode:
       enable: true
