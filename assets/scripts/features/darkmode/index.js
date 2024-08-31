@@ -14,11 +14,7 @@ window.addEventListener('load', async () => {
 
 
   function loadScheme() {
-    return localStorage.getItem(PERSISTENCE_KEY) || loadDefaultScheme()
-  }
-
-  function loadDefaultScheme() {
-    return document.getElementById('defaultTheme').innerText || "system"
+    return localStorage.getItem(PERSISTENCE_KEY) || "system"
   }
 
   function saveScheme(scheme) {
