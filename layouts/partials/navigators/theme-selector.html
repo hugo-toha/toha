@@ -22,8 +22,10 @@
     <img class="theme-icon" src="{{ "icons/moon-svgrepo-com.svg" | relURL }}" width=20 alt="Dark Theme">
   </a>
   {{ end }}
+  {{ if and $lightEnabled $darkEnabled }}
   <a class="dropdown-item nav-link" href="#" data-scheme="system">
     <img class="theme-icon" src="{{ "icons/computer-svgrepo-com.svg" | relURL }}" width=20 alt="System Theme">
   </a>
+  {{ end }}
 </div>
 </li>

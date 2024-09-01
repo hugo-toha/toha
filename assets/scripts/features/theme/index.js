@@ -2,8 +2,8 @@ import * as params from '@params';
 const PERSISTENCE_KEY = 'theme-scheme'
 
 const themeOptions = params.theme || {}
-const THEME_DARK = typeof themeOptions.dark === 'undefined' ? false : themeOptions.dark;
-const THEME_LIGHT = typeof themeOptions.light === 'undefined' ? false : themeOptions.light;
+const THEME_DARK = typeof themeOptions.dark === 'undefined' ? true : themeOptions.dark;
+const THEME_LIGHT = typeof themeOptions.light === 'undefined' ? true : themeOptions.light;
 const THEME_DEFAULT = typeof themeOptions.default === 'undefined' ? "system" : themeOptions.default;
 
 window.addEventListener('load', async () => {
@@ -55,7 +55,7 @@ window.addEventListener('load', async () => {
 
     // save preference to local storage
     saveScheme(newScheme)
-
+  
     setImages(theme)
   }
 
