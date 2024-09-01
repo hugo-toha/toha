@@ -1,8 +1,10 @@
-const PERSISTENCE_KEY = 'lightmode:color-scheme'
+import * as params from '@params';
+const PERSISTENCE_KEY = 'theme-scheme'
 
-const THEME_DARK = typeof process.env.FEATURE_THEME_DARK === 'undefined' ? false : process.env.FEATURE_THEME_DARK;
-const THEME_LIGHT = typeof process.env.FEATURE_THEME_LIGHT === 'undefined' ? false : process.env.FEATURE_THEME_LIGHT;
-const THEME_DEFAULT = typeof process.env.FEATURE_THEME_DEFAULT === 'system' ? false : process.env.FEATURE_THEME_DEFAULT;
+const themeOptions = params.theme || {}
+const THEME_DARK = typeof themeOptions.dark === 'undefined' ? false : themeOptions.dark;
+const THEME_LIGHT = typeof themeOptions.light === 'undefined' ? false : themeOptions.light;
+const THEME_DEFAULT = typeof themeOptions.default === 'undefined' ? "system" : themeOptions.default;
 
 window.addEventListener('load', async () => {
   const menu = document.getElementById('themeMenu')
@@ -18,13 +20,9 @@ window.addEventListener('load', async () => {
 
 
   function checkScheme(scheme) {
-    if (scheme === "light" && THEME_LIGHT) {
-      return "light"
-    }
-    if (scheme === "dark" && THEME_DARK) {
-      return "dark"
-    }
-    return "system"
+    if (THEME_LIGHT == false) return "dark"
+    if (THEME_DARK == false) return "light"
+    return scheme
   }
 
   function loadScheme() {
@@ -61,7 +59,8 @@ window.addEventListener('load', async () => {
     setImages(theme)
   }
 
-  setScheme(loadScheme())
+  const checkedScheme = checkScheme(loadScheme())
+  setScheme(checkedScheme)
 
   Array.from(menu.getElementsByTagName('a')).forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -76,8 +75,6 @@ function setImages(newScheme) {
   for (const el of els) {
     const light = el.querySelector('.light-logo');
     const dark = el.querySelector('.dark-logo');
-
-
 
     if (newScheme === "dark" && dark !== null) {
       if (light !== null) light.style.display = 'none'
