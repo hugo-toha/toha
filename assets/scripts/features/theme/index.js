@@ -20,8 +20,8 @@ window.addEventListener('load', async () => {
 
 
   function checkScheme(scheme) {
-    if (THEME_LIGHT == false) return "dark"
-    if (THEME_DARK == false) return "light"
+    if (THEME_LIGHT === false) return "dark"
+    if (THEME_DARK === false) return "light"
     return scheme
   }
 
