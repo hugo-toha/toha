@@ -94,8 +94,8 @@ params:
     # [Deprecated] Enable dark theme
     # This is a deprecated setting, but has not been removed to maintain backward compatibility
     # If `theme` is set, the `darkMode` setting will be discarded.
-    darkMode:
-      enable: true
+    # darkMode:
+    #   enable: true
 
     # Configure theme color settings
     theme:
