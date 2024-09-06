@@ -56,6 +56,7 @@ For more details about the features please visit [here](https://toha-guides.netl
 - Deutsch
 - Español
 - 简体中文
+- 繁體中文
 - हिन्दी
 - Italiano
 - 日本語
