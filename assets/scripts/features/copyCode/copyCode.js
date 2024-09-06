@@ -3,6 +3,7 @@ addCopyButtons(navigator.clipboard)
 function addCopyButtons(clipboard) {
   document.querySelectorAll('pre > code').forEach(function (codeBlock) {
     const button = document.createElement('a')
+    button.title = "Copy"
     button.className = 'copy-code-button'
     button.innerHTML = "<i class='fa-regular fa-copy'></i>"
 
