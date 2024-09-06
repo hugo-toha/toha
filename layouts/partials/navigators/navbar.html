@@ -141,7 +141,7 @@
         {{ if .IsTranslated }}
           {{ partial "navigators/lang-selector.html" . }}
         {{ end }}
-        {{ if site.Params.features.darkMode.enable }}
+        {{ if or site.Params.features.darkMode.enable site.Params.features.theme.enable }}
           {{ partial "navigators/theme-selector.html" . }}
         {{ end }}
       </ul>
