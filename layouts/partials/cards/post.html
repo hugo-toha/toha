@@ -8,7 +8,7 @@
     <div class="card-body">
       <a href="{{ .RelPermalink | relLangURL }}" class="post-card-link">
         <h5 class="card-title">{{ .Title }}</h5>
-        <p class="card-text post-summary">{{ .Summary }}</p>
+        <p class="card-text post-summary">{{ .Summary | plainify }}</p>
       </a>
       {{ if and site.Params.features.tags.enable site.Params.features.tags.on_card }}
         {{ partial "misc/tags.html" .Params.tags }}

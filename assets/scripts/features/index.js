@@ -10,6 +10,10 @@ if (process.env.FEATURE_DARKMODE === '1') {
   import('./darkmode')
 }
 
+if (process.env.FEATURE_THEME === '1') {
+  import('./theme')
+}
+
 if (process.env.FEATURE_FLOWCHART === '1') {
   import('./flowchart')
 }

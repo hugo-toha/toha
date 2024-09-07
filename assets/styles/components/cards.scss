@@ -22,7 +22,8 @@
   }
 
   .card-img-top {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     @include transition();
   }
 
@@ -61,7 +62,8 @@
     &:focus {
       .card-img-top {
         transform: scale(1.2);
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
         @include transition();
       }
     }
