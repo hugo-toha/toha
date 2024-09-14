@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const fuseOptions = {
     shouldSort: true,
     includeMatches: true,
-    threshold: 0.0,
+    threshold: 0.1,
     tokenize: true,
     location: 0,
     distance: 100,
