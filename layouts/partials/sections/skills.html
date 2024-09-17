@@ -11,7 +11,7 @@
     <h1 class="text-center" style="display: none">
         <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
   {{ end }}
-  {{ if .section.category }}
+  {{ if .section.filter }}
   <div class="container ms-auto text-center">
     <div class="btn-group flex-wrap" role="group" id="skill-filter-buttons">
       {{ range .buttons }}
