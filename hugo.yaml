@@ -17,7 +17,7 @@ module:
     target: i18n
   - source: archetypes
     target: archetypes
-  - source: ../../node_modules/flag-icon-css/flags
+  - source: ../../node_modules/flag-icons/flags
     target: static/flags
   - source: ../../node_modules/@fontsource/mulish/files
     target: static/files
