@@ -64,6 +64,7 @@ For more details about the features please visit [here](https://toha-guides.netl
 - русский
 - suomi
 - Tiếng Việt
+- Azerbaijan
 - Turkish
 - Arabic (العربية)
 - Português Europeu
