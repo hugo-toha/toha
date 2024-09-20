@@ -1,6 +1,6 @@
 flags:
   styles:
-    - flag-icon-css/css/flag-icons
+    - flag-icons/css/flag-icons
 
 videoplayer:
   services:
