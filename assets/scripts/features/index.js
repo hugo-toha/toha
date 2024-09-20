@@ -29,3 +29,7 @@ if (process.env.FEATURE_MATH === '1') {
 if (process.env.FEATURE_EMBEDPDF === '1') {
   import('./embedpdf')
 }
+
+if (process.env.FEATURE_COPYCODEBUTTON === '1') {
+  import('./copyCode')
+}

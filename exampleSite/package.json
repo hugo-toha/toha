@@ -30,7 +30,6 @@
       "postcss-cli": "github.com/hugo-toha/toha/v4"
     }
   },
-  "dependencies": {},
   "devDependencies": {
     "@fontsource/mulish": "4.5.13",
     "@fortawesome/fontawesome-free": "^6.6.0",
@@ -53,7 +52,7 @@
     "ityped": "^1.0.3",
     "katex": "^0.16.11",
     "mark.js": "^8.11.1",
-    "mermaid": "^9.2.1",
+    "mermaid": "^11.2.1",
     "plyr": "^3.7.2",
     "popper.js": "^1.16.1",
     "postcss": "^8.4.41",
