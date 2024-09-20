@@ -1,0 +1,130 @@
+# More documentation here: https://github.com/nicksnyder/go-i18n
+[home]
+other = "Əsas Səhifə"
+
+[posts]
+other = "Yazılar"
+
+[toc_heading]
+other = "Məzmun Cədvəli"
+
+[tags]
+other = "Etiketlər"
+
+[categories]
+other = "Kateqoriyalar"
+
+[at]
+other = ","
+
+[resume]
+other = "CV"
+
+[navigation]
+other = "Menyu"
+
+[contact_me]
+other = "Əlaqə:"
+
+[email]
+other = "E-Poçt"
+
+[phone]
+other = "Telefon"
+
+[newsletter_text]
+other = "Yeni məzmunlardan xəbərdar olmaq üçün E-Poçt ünvanınızı daxil edin."
+
+[newsletter_input_placeholder]
+other = "E-Poçt ünvanını daxil edin."
+
+[newsletter_warning]
+other = "E-Poçt ünvanınızı daxil etsəniz, bu veb saytın xəbər bülletenini almağı qəbul etmiş olursunuz."
+
+[submit]
+other = "Təsdiqlə"
+
+[hugoAttributionText]
+other = ""
+
+[prev]
+other = "Əvvəlki"
+
+[next]
+other = "Sonraki"
+
+[share_on]
+other = "Paylaş"
+
+[improve_this_page]
+other = "Bu səhifəyə töhfə verin"
+
+[out_of]
+other = "/"
+
+[publications]
+other = "Akademik Nəşrlər"
+
+[taken_courses]
+other = "Keçirilmiş Kurslar"
+
+[course_name]
+other = "Kursun Adı"
+
+[total_credit]
+other = "Ümumi Kredit"
+
+[obtained_credit]
+other = "Qazandırılmış Kredit"
+
+[extracurricular_activities]
+other = "Kursdankənar Fəaliyyətlər"
+
+[show_more]
+other = "Daha Çox Göstər"
+
+[show_less]
+other = "Gizlət"
+
+[responsibilities]
+other = "Məsuliyyətlər:"
+
+[present]
+other = "Hal-hazırda"
+
+[comments_javascript]
+other = "Görmək üçün xahiş edirəm JavaScript-i aktiv edin"
+
+[comments_by]
+other = "Şərh edən"
+
+[read]
+other = "Oxu"
+
+[project_star]
+other = "Ulduz"
+
+[project_details]
+other = "Təfərrüatlar"
+
+[err_404]
+other = "Axtardığınız səhifə tapılmadı."
+
+[more]
+other = "Daha Çox"
+
+[view_certificate]
+other = "Sertifikatı Görüntülə"
+
+[notes]
+other = "Qeydlər"
+
+[disclaimer_text]
+other = "Məsuliyyət İnkarı"
+
+[search]
+other = "Axtar"
+
+[minute]
+one = "dəqiqə"
+other = "dəqiqə"
