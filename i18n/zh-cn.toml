@@ -124,3 +124,7 @@ other = "免责声明"
 
 [search]
 other = "搜索"
+
+[minute]
+one = "分钟"
+other = "分钟"
