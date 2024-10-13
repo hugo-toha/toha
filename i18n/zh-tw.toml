@@ -124,3 +124,7 @@ other = "免責聲明"
 
 [search]
 other = "搜尋"
+
+[minute]
+one = "分鐘"
+other = "分鐘"
