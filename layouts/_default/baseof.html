@@ -8,9 +8,7 @@
     {{ template "_internal/twitter_cards.html" . }}
     <!------ ADD PAGE SPECIFIC HEADERS ------->
     {{ block "header" . }} {{ end }}
-    {{ with .Params.relcanonical }}
-      {{ partial "misc/canonical.html" . }}
-    {{ end }}
+    
     <!--================= add analytics if enabled =========================-->
     {{- partial "analytics.html" . -}}
     <script>
