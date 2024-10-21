@@ -93,7 +93,7 @@ params:
 
     # Enable dark theme
     darkMode:
-    
+
     # [Deprecated] Enable dark theme
     # This is a deprecated setting, but has not been removed to maintain backward compatibility
     # If `theme` is set, the `darkMode` setting will be discarded.
@@ -192,7 +192,11 @@ params:
         #   scheme: https
         #   instance: umami.example.com
         #   id: <your umami site id>
-
+        # # Statcounter
+        # statcounter:
+        #   project: 1234567890
+        #   invisible: 1
+        #   security: deadbeef
     # Enable Support
     support:
       enable: false
@@ -287,7 +291,7 @@ params:
         plyr:
           # options doc: https://github.com/sampotts/plyr#options
           # fullscreen: true
-    
+
     # Enables copy code button
     copyCodeButton:
       enable: true
