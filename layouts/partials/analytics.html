@@ -55,6 +55,25 @@
             <script defer src='{{ or .scheme "https" }}://{{ or .instance "analytics.eu.umami.is" }}/script.js' data-website-id="{{ .id }}"></script>
             <!-- End Umami analytics -->
             {{end}}
+
+            {{ with .statcounter }}
+            <!-- Statcounter analytics -->
+            <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+            <script type="text/javascript">
+              var sc_project = {{ .project }};
+              var sc_invisible = {{ .invisible }};
+              var sc_security = "{{ .security }}";
+              var scJsHost = (("https:" == document.location.protocol) ?
+                "https://www.statcounter.com/js/" : "https://www.statcounter.com/js/");
+            </script>
+            <noscript>
+              <div class="statcounter"><a title="web counter" href="https://statcounter.com/" target="_blank"><img
+                    class="statcounter" src="https://c.statcounter.com/{{ .project }}/0/{{ .security }}/{{ .invisible }}/"
+                    alt="web counter" referrerPolicy="no-referrer-when-downgrade"></a></div>
+                <!-- End of Statcounter Code -->
+            </noscript>
+            <!-- End Statcounter analytics -->
+            {{ end }}
         {{ end }}
     {{ end }}
 {{ end }}
