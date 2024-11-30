@@ -11,6 +11,11 @@
 
     <!--================= add analytics if enabled =========================-->
     {{- partial "analytics.html" . -}}
+    {{ with resources.Get "scripts/core/theme-scheme.js" | fingerprint }}
+    <script integrity="{{.Data.Integrity}}">
+     {{ .Content | safeJS }}
+    </script>
+    {{ end }}
   </head>
 
   <body class="type-{{ .Page.Type }} kind-{{ .Page.Kind }}" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
