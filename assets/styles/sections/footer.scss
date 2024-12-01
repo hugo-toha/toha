@@ -97,6 +97,10 @@ html[data-theme='dark'] {
       background-color: get-dark-color('bg-primary');
       &:focus {
         background-color: get-dark-color('bg-secondary');
+        color: get-dark-color('text-color');
+      }
+      &::placeholder {
+        color: get-dark-color('muted-text-color');
       }
     }
 
