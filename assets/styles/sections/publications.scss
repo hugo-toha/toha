@@ -24,6 +24,14 @@
           float: right !important;
         }
       }
+
+      a[href] {
+        text-decoration: underline; /* Underline only when href is present */
+      }
+      
+      a:not([href]) {
+        text-decoration: none; /* No underline when href is absent */
+      }
     }
 
     .card-body {
