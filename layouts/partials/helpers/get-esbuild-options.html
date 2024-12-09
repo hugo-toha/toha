@@ -69,15 +69,26 @@ params:
         #  id: foo
         #  name: bar
     
-    # The `darkMode` feature
-    darkmode:
+    # [Deprecated] The `darkMode` feature
+    # This is a deprecated setting, but has not been removed to maintain backward compatibility
+    # If `theme` is set, the `darkMode` setting will be discarded.
+    darkMode:
       enable: true
+  
+    # The `theme` feature
+    theme:
+      enable: true
+      services:
+        light: true # enable light theme. default "true"
+        dark: true # enable dark theme. default "true"
+        default: system # can be either light, dark or system. default "system"
 
 This helper will convert the above config into the following env vars:
 
   * `FEATURE_ANALYTICS=1`
   * `FEATURE_ANALYTICS_GOOGLE=1`
   * `FEATURE_DARKMODE=1`
+  * `FEATURE_THEME=1`
 
 In JS, you can use it like this:
 

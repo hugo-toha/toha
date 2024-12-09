@@ -1,5 +1,8 @@
 {{ define "header" }}
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Title }}{{ end }}" />
+{{ with .Params.relcanonical }}
+<link rel="canonical" href="{{ . | relLangURL }}" itemprop="url" />
+{{ end }}
 {{ end }}
 
 {{ define "navbar" }}
@@ -45,7 +48,7 @@
         {{ else }}
         <div style="margin-bottom: 80px;"></div>
         {{ end }}
-        
+
         <div class="title">
           <h1>{{ .Page.Title }}</h1>
         </div>

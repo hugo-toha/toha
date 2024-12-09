@@ -56,6 +56,7 @@ For more details about the features please visit [here](https://toha-guides.netl
 - Deutsch
 - Español
 - 简体中文
+- 繁體中文
 - हिन्दी
 - Italiano
 - 日本語
@@ -63,6 +64,7 @@ For more details about the features please visit [here](https://toha-guides.netl
 - русский
 - suomi
 - Tiếng Việt
+- Azerbaijan
 - Turkish
 - Arabic (العربية)
 - Português Europeu
@@ -91,7 +93,7 @@ Here are few screenshots from the [example site](https://hugo-toha.github.io).
 
 ## Requirements
 
-- Hugo Version 0.118.0 (extended) or higher
+- Hugo Version 0.128.0 (extended) or higher
 - Go language 1.18 or higher (require for hugo modules)
 - Node version v18.x or later and npm 8.x or later.
 

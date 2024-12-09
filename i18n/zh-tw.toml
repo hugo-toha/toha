@@ -9,10 +9,10 @@ other = "文章"
 other = "目錄"
 
 [tags]
-other = "标签"
+other = "標籤"
 
 [categories]
-other = "类别"
+other = "類別"
 
 [at]
 other = "at"
@@ -42,7 +42,7 @@ other = "在此輸入您的電子郵件地址"
 other = "輸入您的電子郵件地址，即表示您同意接受本網站的最新消息"
 
 [submit]
-other = "提交"
+other = "送出"
 
 [hugoAttributionText]
 other = "Powered by"
@@ -63,10 +63,10 @@ other = "改善此頁面"
 other = "/"
 
 [publications]
-other = "出版"
+other = "著作"
 
 [taken_courses]
-other = "修習課程"
+other = "修課內容"
 
 [course_name]
 other = "課程名稱"
@@ -123,4 +123,8 @@ other = "筆記"
 other = "免責聲明"
 
 [search]
-other = "搜索"
+other = "搜尋"
+
+[minute]
+one = "分鐘"
+other = "分鐘"

@@ -15,7 +15,7 @@
       "eslint-plugin-promise": "github.com/hugo-toha/toha/v4",
       "feather-icons": "github.com/hugo-toha/toha/v4",
       "filterizr": "github.com/hugo-toha/toha/v4",
-      "flag-icon-css": "github.com/hugo-toha/toha/v4",
+      "flag-icons": "github.com/hugo-toha/toha/v4",
       "fuse.js": "github.com/hugo-toha/toha/v4",
       "highlight.js": "github.com/hugo-toha/toha/v4",
       "imagesloaded": "github.com/hugo-toha/toha/v4",
@@ -30,11 +30,10 @@
       "postcss-cli": "github.com/hugo-toha/toha/v4"
     }
   },
-  "dependencies": {},
   "devDependencies": {
     "@fontsource/mulish": "4.5.13",
-    "@fortawesome/fontawesome-free": "^6.2.0",
-    "autoprefixer": "^10.4.13",
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "autoprefixer": "^10.4.20",
     "bootstrap": "^5.3.3",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
@@ -45,19 +44,19 @@
     "eslint-plugin-promise": "^6.1.1",
     "feather-icons": "^4.29.1",
     "filterizr": "^2.2.4",
-    "flag-icon-css": "^4.1.7",
+    "flag-icons": "^7.2.3",
     "fuse.js": "^6.6.2",
     "highlight.js": "^11.6.0",
     "imagesloaded": "^5.0.0",
     "include-media": "^1.4.10",
     "ityped": "^1.0.3",
-    "katex": "^0.16.10",
+    "katex": "^0.16.11",
     "mark.js": "^8.11.1",
-    "mermaid": "^9.2.1",
+    "mermaid": "^11.4.1",
     "plyr": "^3.7.2",
     "popper.js": "^1.16.1",
-    "postcss": "^8.4.31",
-    "postcss-cli": "^8.3.1"
+    "postcss": "^8.4.41",
+    "postcss-cli": "^11.0.0"
   },
   "name": "exampleSite",
   "version": "0.1.0"

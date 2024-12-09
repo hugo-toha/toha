@@ -1,4 +1,6 @@
-<div class="col-xs-12 col-sm-6 col-lg-4 pt-2">
+<div class="col-xs-12 col-sm-6 col-lg-4 pt-2 filtr-item"
+  data-category='all, {{ with .categories }}{{ delimit . ","}}{{ end }}'
+>
   <a class="text-decoration-none" {{ if .url }}href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"{{ end }}>
     <div class="card">
       <div class="card-head d-flex">
@@ -18,7 +20,7 @@
           <h5 class="card-title">{{ .name }}</h5>
         {{ end }}
       </div>
-      <div class="card-body">
+      <div class="card-body text-justify pt-1 pb-1">
         <p class="card-text">{{ .summary | markdownify }}</p>
       </div>
     </div>

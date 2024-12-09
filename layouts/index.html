@@ -17,17 +17,11 @@
     
     <!--================= add analytics if enabled =========================-->
     {{- partial "analytics.html" . -}}
-    <script>
-      theme = localStorage.getItem('darkmode:color-scheme') || 'system';
-      if (theme == 'system') {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          theme = 'dark';
-        } else {
-          theme = 'light';
-        }
-      }
-      document.documentElement.setAttribute('data-theme', theme);
+    {{ with resources.Get "scripts/core/theme-scheme.js" | fingerprint }}
+    <script integrity="{{.Data.Integrity}}">
+     {{ .Content | safeJS }}
     </script>
+    {{ end }}
   </head>
   <body data-bs-spy="scroll" data-bs-target="#top-navbar" data-bs-offset="100">
 
