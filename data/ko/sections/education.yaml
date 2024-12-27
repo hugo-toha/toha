@@ -1,0 +1,59 @@
+# section information
+section:
+  name: Education
+  id: education
+  template: sections/education.html # Use "sections/education-alt.html for alternate template.
+  enable: true
+  weight: 3
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+degrees:
+- name: 지구시스템과학부 천문대기과학 전공 학사과정 졸업
+  icon: fa-binoculars 
+  timeframe: 2015.03-2018.02
+  institution:
+    name: 경북대학교
+    url: "https://en.knu.ac.kr/main/main.htm"
+    logo: images/sections/education/knu.png # Path of the logo image
+  grade: #(optional)
+    scale: CGPA
+    achieved: 4.2
+    outOf: 4.3
+  customSections:
+    - name: Coursework
+      content: 우주론, 계산 천체물리학, 관측 천문학, 천체물리학, 천체역학
+
+- name: 천문대기과학과 석사과정 졸업
+  icon: fa-search 
+  timeframe: 2018.03-2020.02
+  institution:
+    name: 경북대학교
+    url: "https://en.knu.ac.kr/main/main.htm"
+    logo: images/sections/education/knu.png # Path of the logo image
+  grade: #(optional)
+    scale: CGPA
+    achieved: 4.12
+    outOf: 4.3
+  publications: #(optional)
+  - title: ΛLT model solution for Hubble Tension
+    url: "https://dcollection.knu.ac.kr/srch/srchDetail/000000096069?navigationSize=10&query=%2B%28%2B%28all%3Aλltlambdalemaitretolman%2Bsolution%2Bfor%2Bthe%2Bhubble%2Btension%29%29&pageSize=10&insCode=222001&searchWhere1=all&searchTotalCount=0&sortDir=desc&pageNum=1&rows=10&searthTotalPage=0&treePageNum=1&sortField=score&start=0&ajax=false&searchText=%5B전체%3AΛLT%28Lambda-Lemaître-Tolman%29+solution+for+the+Hubble+Tension%5D&searchKeyWord1=ΛLT%28Lambda-Lemaître-Tolman%29+solution+for+the+Hubble+Tension"
+  customSections: #(optional)
+    - name: Major
+      content: Cosmology
+    
+- name: 박사학위 자퇴
+  icon: fa-computer
+  timeframe: 2020.03-2022.04
+  institution:
+    name: University of Science & Technology 
+    url: "https://www.ust.ac.kr/eng/"
+    logo: images/sections/education/ust.png # Path of the logo image
+  customSections: #(optional)
+    - name: Major
+      content: Numerical Relativity
+    - name: Research
+      content: Collapsing Black's Hole Ray Tracing Simulation Using Numerical General Relativity
+    - name: withdrawal reason
+      content: ⭐을 연구하는 것보다 💻와 함께 노는 것이 더 즐겁다는 것을 깨달았습니다.

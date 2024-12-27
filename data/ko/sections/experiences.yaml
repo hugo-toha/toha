@@ -1,0 +1,46 @@
+section:
+  name: Experiences # Titre de la section (par défaut: "" )
+  id: experiences # url id/slug of section *Required*
+  enable: true
+  weight: 4
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true 
+
+# Your experiences
+experiences:
+- company:
+    name: "포위즈시스템"
+    url: "http://www.forwiz.com"
+    location: "한국"
+    logo: "/images/experiences/forwizsystem.png"
+    overview: "포위즈시스템은 교육 관련 소프트웨어 솔루션 및 SI 기업입니다. 기업부설연구소에서 클라우드 컴퓨팅 관련 국책 프로젝트를 수행하였습니다."
+  positions:
+  - designation: "백엔드/서버개발 (전문연구요원)"
+    start: May 2022
+    end: Nov 2023
+    responsibilities:
+    - 자체 서비스 'CUBE' 기획 및 초기 개발
+    - K8S Agones를 활용한 게임 서버 배포 서비스 기획
+    - PoC 수준의 서비스 초기 풀스택 개발
+    - ATC+ 사업 3~4년 차 대응
+    - 프라이빗 클라우드 솔루션 개발
+    - OpenStack API 활용 관리 웹 페이지 풀스택 개발
+- company:
+    name: "파이오링크"
+    url: "https://www.piolink.com"
+    location: "한국"
+    logo: "/images/experiences/piolink.png"
+    overview: "파이오링크는 네트워크 및 보안 솔루션을 제공하는 회사입니다. 기업부설연구소에서 HCI 솔루션 개발을 담당했습니다."
+  positions:
+  - designation: "백엔드/서버개발 (전문연구요원)"
+    start: Nov 2023
+    responsibilities:
+    - HCI 솔루션 개발
+    - OpenStack 컴포넌트 코드 분석 및 기능 추가
+    - libvirt 라이브러리를 활용하여 USB 패스스루 기능 장착
+    - Rocky OS 커스텀 애드온 개발
+    - 솔루션 설치 과정 아키텍처 개선
+    - 솔루션 보안기능인증평가 대응
+    - 솔루션 CI/CD 환경 관리
+    - K8S 생태계 기술 분석

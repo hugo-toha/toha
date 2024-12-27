@@ -1,0 +1,71 @@
+# section information
+section:
+  name: About
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/about.html
+
+# your designation
+designation: Software Developer
+# your company information
+company:
+  name: PIOLINK, lnc. 
+  url: "https://www.piolink.com/kr/"
+
+# your resume. this file path should be relative to you "static" directory
+resume: "files/resume.pdf"
+
+# a summary about you
+summary: '안녕하세요, 저는 3년 차 소프트웨어 개발자입니다. 현재 HCI 솔루션 개발 팀에서 근무하며, 주로 Go와 Python을 사용하여 다양한 프로젝트를 개발하고 있습니다. Kubernetes와 OpenStack에 강한 관심을 가지고 있으며, 여가 시간에는 새로운 도구와 솔루션을 만드는 재미있는 사이드 프로젝트도 즐겨 합니다.'
+
+# your social links
+# give as many as you want. use font-awesome for the icons.
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "gkdlgkdl2040@gmail.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://github.com/Larshavin"
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/성연-양-71a87227a/"
+
+- name: Instagram
+  icon: "fab fa-instagram"
+  url: "https://www.instagram.com/larshavin/"
+
+# Show your badges
+# You can show your verifiable certificates from https://www.credly.com.
+# You can also show a circular bar indicating the level of expertise on a certain skill
+badges:
+
+- type: soft-skill-indicator
+  name: Leadership
+  percentage: 80
+  color: blue
+
+- type: soft-skill-indicator
+  name: Team Work
+  percentage: 85
+  color: yellow
+
+- type: soft-skill-indicator
+  name: Hard Working
+  percentage: 95
+  color: orange
+
+- type: certification
+  name: Certified Kubernetes Administrator
+  url: "https://www.credly.com/badges/023761e7-a93a-4625-bf96-703daf80df2b/public_url"
+  badge: "https://images.credly.com/size/220x220/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png"
+
+# you can also provide color code instead of the color name
+# - type: soft-skill-indicator
+#   name: Example 1
+#   percentage: 75
+#   color: "#00adb5"

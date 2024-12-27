@@ -1,25 +1,75 @@
+#baseURL: https://hugo-toha.github.io
+
+languageCode: ko-KR
+title: "양성연의 블로그"
+
+# Use Hugo modules to add theme
+
 module:
-  hugoVersion:
-    min: "0.128.0"
-    extended: true
+  imports:
+  - path: github.com/hugo-toha/toha/v4
   mounts:
-  - source: content
-    target: content
-  - source: static
-    target: static
-  - source: layouts
-    target: layouts
-  - source: data
-    target: data
-  - source: assets
-    target: assets
-  - source: i18n
-    target: i18n
-  - source: archetypes
-    target: archetypes
-  - source: ../../node_modules/flag-icons/flags
-    target: static/flags
-  - source: ../../node_modules/@fontsource/mulish/files
+  - source: static/files
     target: static/files
-  - source: ../../node_modules/katex/dist/fonts
+  - source: ./node_modules/flag-icon-css/flags
+    target: static/flags
+  - source: ./node_modules/@fontsource/mulish/files
+    target: static/files
+  - source: ./node_modules/katex/dist/fonts
     target: static/fonts
+
+# Manage languages
+# For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
+languages:
+  en:
+    languageName: English
+    weight: 2
+  ko:
+    languageName: 한국어
+    weight: 1
+
+# Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
+# DefaultContentLanguage: bn
+
+# Allow raw html in markdown file
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
+    ordered: false
+
+# At least HTML and JSON are required for the main HTML content and
+# client-side JavaScript search
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# Enable global emoji support
+enableEmoji: true
+
+# Site parameters
+params:
+  # GitHub repo URL of your site
+  gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
+
+  features:
+    # Enable portfolio section
+    portfolio:
+      enable: true
+
+    # Enable blog posts
+    blog:
+      enable: true
+
+    # Enable Table of contents in reading page
+    toc:
+      enable: true
+
+  # Configure footer
+  footer:
+    enable: true
