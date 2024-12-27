@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Searches on 양성연의 블로그</title><link>/ko/search/</link><description>Recent content in Searches on 양성연의 블로그</description><generator>Hugo -- gohugo.io</generator><language>ko</language><lastBuildDate>Tue, 08 Jun 2010 08:06:25 +0600</lastBuildDate><atom:link href="/ko/search/index.xml" rel="self" type="application/rss+xml"/><item><title>Search Results</title><link>/ko/search/</link><pubDate>Tue, 08 Jun 2010 08:06:25 +0600</pubDate><guid>/ko/search/</guid><description>&lt;p>This file exists solely to respond to /search URL with the related &lt;code>search&lt;/code> layout template.&lt;/p>
+&lt;p>No content shown here is rendered, all content is based in the template layouts/page/search.html&lt;/p>
+&lt;p>Setting a very low sitemap priority will tell search engines this is not important content.&lt;/p>
+&lt;p>This implementation uses Fusejs and mark.js&lt;/p>
+&lt;h2 id="initial-setup">Initial setup&lt;/h2>
+&lt;p>Search depends on additional output content type of JSON in config.toml
+```
+[outputs]
+home = [&amp;ldquo;HTML&amp;rdquo;, &amp;ldquo;JSON&amp;rdquo;]
+```&lt;/p></description></item></channel></rss>

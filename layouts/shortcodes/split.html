@@ -1,7 +1,0 @@
-<div class="row">
-    {{ range $idx, $val := split .Inner "---" }}
-       <div class="col col-sm-12 col-lg-{{ $.Get $idx }}">
-            {{ $val | markdownify }}
-        </div>
-    {{ end }}
-</div>

@@ -1,0 +1,41 @@
+<!doctype html><html lang=en><head><title>Search Results</title>
+<meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel=stylesheet href=/application.f7c6d0814a554f8fee8e3b474c382442409fc70969d716fbb2e9671cc83e3e64.css integrity="sha256-98bQgUpVT4/ujjtHTDgkQkCfxwlp1xb7sulnHMg+PmQ="><meta property="og:url" content="/search/"><meta property="og:site_name" content="양성연의 블로그"><meta property="og:title" content="Search Results"><meta property="og:description" content="This file exists solely to respond to /search URL with the related search layout template.
+No content shown here is rendered, all content is based in the template layouts/page/search.html
+Setting a very low sitemap priority will tell search engines this is not important content.
+This implementation uses Fusejs and mark.js
+Initial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [“HTML”, “JSON”] ```"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="search"><meta property="article:published_time" content="2010-06-08T08:06:25+06:00"><meta property="article:modified_time" content="2010-06-08T08:06:25+06:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Search Results"><meta name=twitter:description content="This file exists solely to respond to /search URL with the related search layout template.
+No content shown here is rendered, all content is based in the template layouts/page/search.html
+Setting a very low sitemap priority will tell search engines this is not important content.
+This implementation uses Fusejs and mark.js
+Initial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [“HTML”, “JSON”] ```"><script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">let theme=localStorage.getItem("theme-scheme")||localStorage.getItem("darkmode:color-scheme")||"light";theme==="system"&&(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?theme="dark":theme="light"),document.documentElement.setAttribute("data-theme",theme)</script></head><body class="type-search kind-page" data-bs-spy=scroll data-bs-target=#TableOfContents data-bs-offset=80><div class="container-fluid bg-secondary wrapper"><nav class="navbar navbar-expand-xl top-navbar shadow" id=top-navbar><div class=container><button class="navbar-toggler navbar-light" id=sidebar-toggler type=button>
+<i data-feather=sidebar></i>
+</button>
+<a class=navbar-brand href=/>양성연의 블로그</a>
+<button class="navbar-toggler navbar-light" id=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#top-nav-items aria-label=menu>
+<i data-feather=menu></i></button><div class="collapse navbar-collapse dynamic-navbar" id=top-nav-items><ul class="nav navbar-nav ms-auto"><li class=nav-item><a class=nav-link href=/#home>Home</a></li><li class=nav-item><a class=nav-link href=/#about>About</a></li><li class=nav-item><a class=nav-link href=/#skills>Skills</a></li><li class=nav-item><a class=nav-link href=/#education>Education</a></li><li class=nav-item><a class=nav-link href=/#experiences>Experiences</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false>More</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=/#recent-posts>Recent Posts</a></div></li><div id=top-navbar-divider></div><li class=nav-item><a class=nav-link id=blog-link href=/posts>Posts</a></li></ul></div></div></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/search data-filter=all>Search</a></li><div class=subtree></div></ul></div></div></div></section><script>document.body.classList.replace("kind-page","kind-section")</script><section class=content-section id=content-section><div class="content container-fluid" id=content><div class="container-fluid post-card-holder" id=post-card-holder><div id=search-results style=display:flex;flex-wrap:wrap><script id=search-result-template type=text/x-js-template>
+          <div class="post-card">
+              <div class="card">
+                <div class="card-head">
+                  <a href="${link}" class="post-card-link">
+                  <img class="card-img-top" src="${hero}" alt="Card Heading Image">
+                  </a>
+                </div>
+                <div class="card-body">
+                  <a href="${link}" class="post-card-link">
+                    <h5 class="card-title">${title}</h5>
+                    <p class="card-text post-summary">${summary}</p>
+                  </a>
+                  
+                </div>
+                <div class="card-footer">
+                  <span class="float-start">${date}</span>
+                  <a href="${link}" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+              </div>
+          </div>
+        </script></div></div></div></section></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-start"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=/#skills>Skills</a></li><li class=nav-item><a class=smooth-scroll href=/#education>Education</a></li><li class=nav-item><a class=smooth-scroll href=/#experiences>Experiences</a></li><li class=nav-item><a class=smooth-scroll href=/#recent-posts>Recent Posts</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:gkdlgkdl2040@gmail.com target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>gkdlgkdl2040@gmail.com</span></a></li><li><span><i class="fas fa-phone-alt"></i></span> <span>+82 010-4207-5229</span></li></ul></div><div class="col-md-4 col-sm-12"><p>Stay up to date with email notification</p><form method=post action=https://blogtrottr.com><div class=form-group><input type=email class=form-control name=btr_email placeholder="Enter email"><br><input type=hidden name=btr_url value=//index.xml>
+<input type=hidden name=schedule_type value=1>
+<small id=emailHelp class="form-text text-muted">By entering your email address, you agree to receive the newsletter of this website.</small>
+<button type=submit class="btn btn-info"> Submit</button></div></form></div></div></div><hr><div class=container><div class="row text-start"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu16779671404603505019.png alt="Toha Theme Logo">
+Toha</a></div><div class="col-md-4 text-center">© 2024 Copyright.</div><div class="col-md-4 text-end"><a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
+<img src=/images/hugo-logo.svg alt="Hugo Logo" height=18></a></div></div></div></footer><script src=/application.32c0a2ae0b834988045e542a9e891dc2c6b961afbd3ba5bb01e1c542d18bac36.js integrity="sha256-MsCirguDSYgEXlQqnokdwsa5Ya+9O6W7AeHFQtGLrDY=" defer></script></body></html>
