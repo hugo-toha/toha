@@ -23,7 +23,7 @@ window.addEventListener('load', async () => {
 
   function getPreferredColorScheme() {
     const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    return isDarkMode ? "dark" : "light";
+    return isDarkMode ? "dark" : "dark";
   }
 
   function setScheme(newScheme) {
