@@ -1,15 +1,17 @@
 @function get-color($mode, $key) {
   @if map-has-key($themes, $mode) {
     $theme: map-get($themes, $mode);
+
     @if map-has-key($theme, $key) {
       @return map-get($theme, $key);
     }
   }
+
   @return red; // default color for debugging purpose
 }
 
 @function get-light-color($key) {
-  @return get-color('light', $key);
+  @return get-color('dark', $key);
 }
 
 @function get-dark-color($key) {
@@ -23,8 +25,9 @@
 }
 
 @mixin section-title-adjustment() {
-  h1 > span {
-    margin-top: -55px; /* Size of fixed header */
+  h1>span {
+    margin-top: -55px;
+    /* Size of fixed header */
     padding-bottom: 55px;
     display: block;
   }
@@ -42,10 +45,11 @@
   transition: all $transition-type $transition-duration;
 }
 
-@mixin selection-color($theme: 'light') {
+@mixin selection-color($theme: 'dark') {
   background: get-light-color('accent-color');
   color: get-light-color('text-over-accent-color');
-  @if $theme == 'dark' {
+
+  @if $theme =='dark' {
     background: get-dark-color('accent-color');
     color: get-dark-color('text-over-accent-color');
   }
@@ -53,20 +57,28 @@
 
 @function get-alert-bg-color($type, $mode) {
   $colors: map-get($alerts, $type);
-  @if $mode == 'light' {
+
+  @if $mode =='light' {
     @return map-get($colors, 'bg-color');
-  } @else {
+  }
+
+  @else {
     @return map-get($colors, 'text-color');
   }
+
   @return red;
 }
 
 @function get-alert-text-color($type, $mode) {
   $colors: map-get($alerts, $type);
-  @if $mode == 'light' {
+
+  @if $mode =='light' {
     @return map-get($colors, 'text-color');
-  } @else {
+  }
+
+  @else {
     @return map-get($colors, 'bg-color');
   }
+
   @return red;
 }
