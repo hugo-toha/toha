@@ -9,6 +9,7 @@
     box-shadow: $box-shadow;
     border: 1px solid get-light-color('bg-primary');
     @include transition();
+
     .card-img-top {
       transform: scale(1.2);
       object-fit: cover;
@@ -32,7 +33,7 @@
 
   .card-img-top {
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     @include transition();
   }
 
@@ -48,6 +49,7 @@
 
   .card-footer {
     background: get-light-color('bg-card') !important;
+
     a.btn {
       text-decoration: none !important;
     }
@@ -72,7 +74,7 @@
       .card-img-top {
         transform: scale(1.2);
         -o-object-fit: cover;
-           object-fit: cover;
+        object-fit: cover;
         @include transition();
       }
     }
@@ -92,6 +94,7 @@
         -webkit-box-orient: vertical;
       }
     }
+
     .card-footer {
       margin-top: auto;
 
@@ -112,6 +115,7 @@ html[data-theme='dark'] {
     &:focus {
       border: 1px solid rgba(get-dark-color('accent-color'), 0.2);
     }
+
     .card-footer {
       background: get-dark-color('bg-card') !important;
     }

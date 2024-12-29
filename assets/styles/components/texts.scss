@@ -6,6 +6,10 @@ h5 {
   color: get-light-color('heading-color');
 }
 
+h6 {
+  color: get-light-color('text-color');
+}
+
 strong {
   color: get-light-color('heading-color') !important;
 }
@@ -26,7 +30,7 @@ blockquote {
   padding: 0.3rem;
   padding-left: 1rem;
 
-  & > p {
+  &>p {
     color: get-light-color('text-color');
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -68,6 +72,7 @@ blockquote {
 }
 
 html[data-theme='dark'] {
+
   h1,
   h2,
   h3,
@@ -106,6 +111,7 @@ html[data-theme='dark'] {
   .sub-title {
     color: get-dark-color('muted-text-color');
   }
+
   ::-moz-selection {
     @include selection-color($theme: 'dark');
   }
@@ -113,6 +119,7 @@ html[data-theme='dark'] {
   ::selection {
     @include selection-color($theme: 'dark');
   }
+
   li,
   ul {
     color: get-dark-color('text-color');
