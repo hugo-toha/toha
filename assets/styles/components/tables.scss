@@ -3,6 +3,7 @@ table {
   border: 1px solid rgba(get-light-color('accent-color'), 0.1);
   min-width: 10rem;
   padding: 0.1rem;
+
   thead {
     tr {
       background: get-light-color('accent-color');
@@ -14,14 +15,17 @@ table {
     tr {
       height: 40px !important;
       color: get-light-color('text-color');
+
       &:nth-child(odd) {
         background-color: get-light-color('bg-primary');
       }
+
       &:nth-child(even) {
         background-color: rgba(get-light-color('accent-color'), 0.05);
       }
     }
   }
+
   th,
   td {
     padding-top: 0.2rem;
@@ -48,6 +52,7 @@ table {
       border-left: unset !important;
       border-bottom: unset !important;
     }
+
     td,
     tc {
       border-right: 1px solid rgba(get-light-color('accent-color'), 0.1);
@@ -56,7 +61,7 @@ table {
     thead {
       tr {
         background: unset !important;
-        color: unset !important;
+        color: get-light-color('text-over-accent-color');
       }
     }
 
@@ -65,6 +70,7 @@ table {
         &:nth-child(odd) {
           background-color: unset !important;
         }
+
         &:hover {
           background: unset !important;
         }
@@ -76,6 +82,7 @@ table {
 html[data-theme='dark'] {
   table {
     border: 1px solid rgba(get-dark-color('accent-color'), 0.1);
+
     thead {
       tr {
         background: get-dark-color('accent-color');
@@ -86,25 +93,31 @@ html[data-theme='dark'] {
     tbody {
       tr {
         color: get-dark-color('text-color');
+
         &:nth-child(odd) {
           background-color: get-dark-color('bg-primary');
         }
+
         &:nth-child(even) {
           background-color: rgba(get-dark-color('accent-color'), 0.05);
         }
       }
     }
   }
+
   .gist {
-    &::-moz-selection{
+    &::-moz-selection {
       background: get-dark-color('text-color');
       color: get-dark-color('inverse-text-color');
     }
-    &::selection{
+
+    &::selection {
       background: get-dark-color('text-color');
       color: get-dark-color('inverse-text-color');
     }
+
     table {
+
       td,
       tc {
         border-right: 1px solid rgba(get-dark-color('accent-color'), 0.1);

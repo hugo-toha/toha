@@ -16,7 +16,7 @@
         </form>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
-            <li id="list-heading"><a href="{{ .Type | relLangURL }}" data-filter="all">{{ i18n .Type }}</a></li>
+            <li id="list-heading"><a style="color: white;" href="{{ .Type | relLangURL }}" data-filter="all">{{ i18n .Type }}</a></li>
             <div class="subtree taxonomy-terms">
               {{ $context := . }}
               {{ partial "navigators/taxonomies.html" (dict "context" $context "taxo" "tags" "title" ( humanize "tags" ) ) }}

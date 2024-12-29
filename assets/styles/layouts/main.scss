@@ -8,6 +8,9 @@ html {
   scroll-behavior: smooth !important;
 }
 
+$body-color: #ffffff;
+
+/* Custom body color */
 body {
   position: relative;
 }
@@ -19,13 +22,21 @@ body {
 :target::before {
   content: '';
   display: block;
-  height: 2em; /* fixed header height*/
-  margin: -2em 0 0; /* negative fixed header height */
+  height: 2em;
+  /* fixed header height*/
+  margin: -2em 0 0;
+  /* negative fixed header height */
 }
 
 body {
   background-color: get-light-color('bg-primary');
   font-family: 'Mulish';
+  color: #ffffff !important;
+}
+
+:root {
+  --bs-body-color: white;
+  /* Change the global default text color */
 }
 
 .bg-primary {
@@ -47,12 +58,13 @@ body {
 }
 
 .content {
-  ul > ol,
-  ol > ul,
-  ul > ul,
-  ol > ol,
-  li > ol,
-  li > ul {
+
+  ul>ol,
+  ol>ul,
+  ul>ul,
+  ol>ol,
+  li>ol,
+  li>ul {
     padding-inline-start: 1rem;
   }
 }
@@ -68,6 +80,7 @@ mark {
 }
 
 @include media('<=small') {
+
   .skills-section,
   .projects-section,
   .publications-section {
@@ -101,13 +114,16 @@ html[data-theme='dark'] {
   .bg-primary {
     background-color: get-dark-color('bg-primary') !important;
   }
+
   .bg-secondary {
     background-color: get-dark-color('bg-secondary') !important;
   }
+
   kbd {
     background-color: get-dark-color('accent-color');
     color: get-dark-color('text-over-accent-color');
   }
+
   mark {
     background-color: get-dark-color('highlight-color');
   }
