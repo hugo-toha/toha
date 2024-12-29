@@ -15,8 +15,8 @@
           <input type="tex xt" name="keyword" value="" placeholder="{{ i18n "search" }}" data-search="" id="search-box" />
         </form>
         <div class="sidebar-tree">
-          <ul style="color: white;" class="tree" id="tree">
-            <li style="color: white;" id="list-heading"><a href="{{ .Type | relLangURL }}" data-filter="all">{{ i18n .Type }}</a></li>
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="{{ .Type | relLangURL }}" data-filter="all">{{ i18n .Type }}</a></li>
             <div class="subtree taxonomy-terms">
               {{ $context := . }}
               {{ partial "navigators/taxonomies.html" (dict "context" $context "taxo" "tags" "title" ( humanize "tags" ) ) }}
