@@ -5,16 +5,17 @@
   z-index: 9999;
 
   h5 {
-    color: get-light-color('inverse-text-color');
+    color: get-light-color('text-color');
   }
 
   a {
     color: get-light-color('muted-text-color');
     @include transition();
+
     &:hover {
       margin-left: 5px;
       -webkit-text-decoration: get-light-color('muted-text-color') underline;
-              text-decoration: get-light-color('muted-text-color') underline;
+      text-decoration: get-light-color('muted-text-color') underline;
       @include transition();
     }
   }
@@ -38,6 +39,7 @@
 
   input {
     background-color: get-light-color('inverse-text-color');
+
     &:focus {
       background-color: get-light-color('bg-secondary');
     }
@@ -46,23 +48,27 @@
   #disclaimer {
     color: get-light-color('muted-text-color') !important;
     text-align: justify;
-    & > strong {
+
+    &>strong {
       color: get-light-color('inverse-text-color') !important;
     }
   }
 
   #theme {
     color: get-light-color('inverse-text-color');
+
     img {
       width: 32px;
       display: inline-block;
     }
   }
+
   #hugo {
     &:hover {
       margin-right: 5px;
       @include transition();
     }
+
     img {
       display: inline-block;
     }
@@ -73,15 +79,17 @@ html[data-theme='dark'] {
   .footer {
     color: get-dark-color('muted-text-color') !important;
     background-color: get-dark-color('footer-color');
+
     h5 {
       color: get-dark-color('heading-color');
     }
 
     a {
       color: get-dark-color('muted-text-color');
+
       &:hover {
         -webkit-text-decoration: get-dark-color('muted-text-color') underline;
-                text-decoration: get-dark-color('muted-text-color') underline;
+        text-decoration: get-dark-color('muted-text-color') underline;
       }
     }
 
@@ -95,10 +103,12 @@ html[data-theme='dark'] {
 
     input {
       background-color: get-dark-color('bg-primary');
+
       &:focus {
         background-color: get-dark-color('bg-secondary');
         color: get-dark-color('text-color');
       }
+
       &::placeholder {
         color: get-dark-color('muted-text-color');
       }
@@ -106,7 +116,8 @@ html[data-theme='dark'] {
 
     #disclaimer {
       color: get-dark-color('muted-text-color') !important;
-      & > strong {
+
+      &>strong {
         color: get-dark-color('text-color') !important;
       }
     }

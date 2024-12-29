@@ -2,6 +2,7 @@
   @include section-title-adjustment();
 
   .card {
+
     &:hover,
     &:focus {
       border-left: 2px solid get-light-color('accent-color');
@@ -52,12 +53,14 @@
       &:hover {
         background: none !important;
       }
+
       &:first-child {
         .hline {
           height: 65%;
           top: auto;
         }
       }
+
       &:last-child {
         .hline {
           height: 50%;
@@ -115,16 +118,19 @@
               tr {
                 height: auto !important;
               }
+
               th {
                 .course-name-header {
                   width: 50%;
                 }
               }
             }
+
             .hidden-course {
               display: none;
               @include transition();
             }
+
             ul {
               margin-bottom: 0;
             }
@@ -179,6 +185,7 @@
 html[data-theme='dark'] {
   .education-section {
     .card {
+
       &:hover,
       &:focus {
         border-left: 2px solid get-dark-color('accent-color');
@@ -196,6 +203,7 @@ html[data-theme='dark'] {
           color: get-dark-color('text-over-accent-color');
         }
       }
+
       tr {
         .line {
           div {
@@ -216,6 +224,7 @@ html[data-theme='dark'] {
 
             .taken-courses {
               table {
+
                 tr,
                 td,
                 th {
@@ -224,11 +233,12 @@ html[data-theme='dark'] {
               }
             }
 
-            &:hover{
-              border: 1px solid rgba(get-dark-color('accent-color'),0.2);
+            &:hover {
+              border: 1px solid rgba(get-dark-color('accent-color'), 0.2);
               border-left: 2px solid get-dark-color('accent-color');
             }
           }
+
           .custom-section {
             .custom-content {
               color: get-dark-color('text-color');
