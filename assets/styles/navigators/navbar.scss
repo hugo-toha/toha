@@ -4,7 +4,7 @@
   background: rgba(get-light-color('accent-color'), 0.1);
   @include transition();
 
-  @if $theme == 'dark' {
+  @if $theme =='dark' {
     color: get-dark-color('accent-color') !important;
     border-bottom: 2px solid get-dark-color('accent-color') !important;
     background: rgba(get-dark-color('accent-color'), 0.1);
@@ -29,6 +29,7 @@
     color: get-light-color('heading-color');
     text-decoration: none !important;
     font-weight: 600;
+
     img {
       width: 42px;
       padding: 5px;
@@ -53,6 +54,7 @@
       font-weight: 500;
       @include transition();
       border-bottom: 2px solid transparent;
+
       &:hover {
         @include nav-item-hover-effect();
       }
@@ -96,6 +98,7 @@
 
   .navbar-collapse {
     margin-top: -5px;
+
     &.show,
     &.collapsing {
       background-color: get-light-color('bg-primary');
@@ -108,10 +111,12 @@
           @include transition();
         }
       }
+
       .navbar-nav {
         .active {
           color: get-light-color('accent-color');
         }
+
         a:hover {
           color: get-light-color('accent-color');
         }
@@ -121,15 +126,18 @@
 
   &.transparent-navbar {
     background-color: transparent !important;
+
     .navbar-brand {
       color: get-light-color('inverse-text-color');
       font-weight: 600;
     }
+
     li {
       a {
-        color: get-light-color('inverse-text-color');
+        color: get-light-color('text-color');
       }
     }
+
     .feather-menu {
       stroke: get-light-color('inverse-text-color');
     }
@@ -157,6 +165,7 @@
     }
 
     &.transparent-navbar {
+
       .navbar-nav .active,
       li a:hover {
         color: get-light-color('accent-color');
@@ -185,6 +194,7 @@
       background-color: get-light-color('bg-primary');
       box-shadow: $box-shadow;
     }
+
     #themeMenu {
       width: 100%;
     }
@@ -213,6 +223,7 @@ html[data-theme='dark'] {
     .navbar-brand {
       color: get-dark-color('heading-color');
     }
+
     .sidebar-icon {
       filter: invert(0.5);
     }
@@ -240,6 +251,7 @@ html[data-theme='dark'] {
     }
 
     .navbar-collapse {
+
       &.show,
       &.collapsing {
         background-color: get-dark-color('bg-primary');
@@ -249,10 +261,12 @@ html[data-theme='dark'] {
             color: get-dark-color('heading-color');
           }
         }
+
         .navbar-nav {
           .active {
             color: get-dark-color('accent-color');
           }
+
           a:hover {
             color: get-dark-color('accent-color');
           }
@@ -264,11 +278,13 @@ html[data-theme='dark'] {
       .navbar-brand {
         color: get-dark-color('text-color');
       }
+
       li {
         a {
           color: get-dark-color('text-color');
         }
       }
+
       .feather-menu {
         stroke: get-dark-color('text-color');
       }
