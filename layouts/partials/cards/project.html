@@ -73,7 +73,8 @@
               aria-label="Star {{ .name }}"
               >{{ i18n "project_star" }}</a
             >
-            {{ else if .url }}
+            {{ end }}
+            {{ if .url }}
             <span>
               <a
                 class="btn btn-outline-info btn-sm"
