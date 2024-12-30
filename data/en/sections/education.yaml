@@ -30,9 +30,10 @@ degrees:
     - name: Machine Learning
     - name: Deep Learning
     - name: Theory of Dynamics
+    - name: Advanced Programming in C++
   # grade: #(optional)
-  #   scale: CGPA
-  #   achieved: 3.6
+  #   scale: GPA
+  #   achieved: 3.87
   #   outOf: 4
   # publications: #(optional)
   # - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -41,7 +42,7 @@ degrees:
   #   url: "#"
   # - title: Nullam vitae orci tincidunt purus viverra pulvinar.
   #   url: "#"
-- name: Bachelor of Science in Computer Engineering & Computer Science
+- name: Bachelor of Science in Computer Engineering & Computer Science, Minor in Robotics
   icon: fa-university
   timeframe: 2019-2024
   institution:
@@ -50,14 +51,14 @@ degrees:
     logo: /images/sections/education/university.jpg
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/education/university.jpg
-  grade: #(optional)
-    # scale: GPA
-    # achieved: 3.6
-    # outOf: 4
+  # grade: #(optional)
+  #   scale: GPA
+  #   achieved: 3.67
+  #   outOf: 4
   takenCourses: #(optional)
     # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
     showGrades: false
-    collapseAfter: 3
+    collapseAfter: 4
     courses:
     - name: Robot Sensing & Navigation
     - name: Robot Dynamics & Control
@@ -65,6 +66,8 @@ degrees:
     - name: Computer Systems
     - name: Artificial Intelligence
     - name: Algorithms & Data Structures
+    - name: Circuits & Signals
+    - name: Object-Oriented Design
   # publications: #(optional)
   # - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   #   url: "#"

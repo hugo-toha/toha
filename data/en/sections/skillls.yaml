@@ -1,0 +1,69 @@
+# section information
+section:
+  name: Skills
+  id: skills
+  enable: true
+  weight: 5
+  showOnNavbar: true
+  # filter: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# # filter buttons
+# buttons:
+# - name: All
+#   filter: "all"
+# - name: Programming Languages
+#   filter: "language"
+# - name: Container
+#   filter: "container"
+# - name: Others
+#   filter: "others"
+
+#NOTE: All Logos need to be SVG files
+
+skills:
+- name: Kubernetes
+  # logo: /images/hugo-logo.svg
+  summary: "Capable of deploying, managing application on Kubernetes. Experienced in writing Kubernetes controllers for CRDs."
+  categories: ["container"]
+  url: "https://kubernetes.io/"
+
+- name: Go Development
+  # logo: /images/hugo-logo.svg
+  summary: "Using as the main language for professional development. Capable of writing scalable, testable, and maintainable program."
+  categories: ["basic", "language"]
+  url: "https://golang.org/"
+
+- name: Cloud Computing
+  # logo: /images/hugo-logo.svg
+  summary: "Worked with most of the major clouds such as GCP, AWS, Azure etc."
+  categories: ["others"]
+
+- name: Docker
+  # logo: /images/hugo-logo.svg
+  summary: "Write most of the programs as dockerized container. Experienced with multi-stage, multi-arch build process."
+  categories: ["container"]
+  url: "https://www.docker.com/"
+
+- name: Prometheus
+  # logo: /images/hugo-logo.svg
+  summary: "Capable of setup, configure Prometheus metrics. Experienced with PromQL, AlertManager. Also, experienced with writing metric exporters."
+  categories: ["basic"]
+  url: "https://prometheus.io/"
+
+- name: Linux
+  # logo: /images/linux.png # Logo doesn't work
+  summary: "Using as the main operating system. Capable of writing bash/shell scripts."
+  categories: ["others"]
+
+- name: Git
+  logo: /images/git.png
+  summary: "Experienced with git-based development. Mostly, use Github. Also, have experience in working with GitLab."
+  categories: ["basic"]
+  url: "https://git-scm.com/"
+
+- name: C++
+  logo: /images/c++.png
+  summary: "Know basic C/C++ programming. Used for contest programming and problem solving."
+  categories: ["basic", "language"]
