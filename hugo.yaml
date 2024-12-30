@@ -23,3 +23,73 @@ module:
     target: static/files
   - source: ../../node_modules/katex/dist/fonts
     target: static/fonts
+
+
+# Site parameters
+params:
+  # Provide logos for your site. The inverted logo will be used in the initial
+  # transparent navbar and the main logo will be used in the non-transparent navbar.
+  logo:
+    main: /images/sharwin_portrait.jpg
+    inverted: /images/sharwin_portrait.jpg
+    # favicon: /images/favicon.png
+
+    # GitHub repo of your site
+  gitRepo: https://github.com/Sharwin24/toha
+  # Default branch of your Git repo
+  gitBranch: main
+
+  # Configure the number of section title visible in the top navbar
+  topNavbar:
+    maxVisibleSections: 5
+  
+  # Enable and configure blog posts
+  enableBlogPost: true
+  blog:
+    title: "Sharwin Blog"
+    enable: true
+    showAuthor: true
+    # Share post on different social media
+    shareButtons:
+      linkedin: true
+      email: true
+
+    # specify whether you want to show Table of Contents in reading page
+  toc:
+    enable: true
+
+    # Show tags under the post title
+  tags:
+    enable: true
+    on_card: true # enables tags in post cards
+
+  # Enable Analytics
+    # analytics:
+    #   enabled: false
+    #   services:
+    #     cloudflare web analytics
+    #     cloudflare:
+    #       token: "<token>"
+    #     Google Analytics
+    #     google:
+    #       id: G-H4LBG7NDFZ
+    #     # CounterDev
+    #     counterDev:
+    #       id: <your counterdev id>
+    #     # GoatCounter
+    #     goatCounter:
+    #       code: <your goat counter code>
+    #     # Matomo / Piwik
+    #     matomo:
+    #       instance: matomo.example.com
+    #       siteId: 1 # Or any other number
+    #     # Umami
+    #     umami:
+    #       scheme: https
+    #       instance: umami.example.com
+    #       id: <your umami site id>
+    #     # Statcounter
+    #     statcounter:
+    #       project: 1234567890
+    #       invisible: 1
+    #       security: deadbeef
