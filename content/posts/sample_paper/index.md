@@ -6,7 +6,7 @@ menu:
   sidebar:
     name: Introduction
     identifier: introduction
-    weight: 10
+    weight: 0
 tags: ["Basic", "Multi-lingual"]
 categories: ["Basic"]
 ---

@@ -1,5 +1,8 @@
+baseURL: "https://sharwin24.github.io/toha/"
+
 languageCode: en
 title: "Sharwin's Portfolio"
+
 
 module:
   hugoVersion:
@@ -47,15 +50,15 @@ params:
     maxVisibleSections: 5
   
   # Enable and configure blog posts
-  enableBlogPost: true
-  blog:
-    title: "Sharwin Blog"
-    enable: true
-    showAuthor: true
-    # Share post on different social media
-    shareButtons:
-      linkedin: true
-      email: true
+  features:
+    blog:
+      title: "Project Posts"
+      enable: true
+      showAuthor: true
+      # Share post on different social media
+      shareButtons:
+        linkedin: true
+        email: true
 
     # specify whether you want to show Table of Contents in reading page
   toc:
