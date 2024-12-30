@@ -35,7 +35,7 @@ body {
 }
 
 :root {
-  --bs-body-color: white;
+  --bs-body-color: get-light-color('text-color');
   /* Change the global default text color */
 }
 
