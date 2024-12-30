@@ -26,7 +26,7 @@
   @include transition();
 
   .navbar-brand {
-    color: get-light-color('heading-color');
+    color: get-light-color('text-color');
     text-decoration: none !important;
     font-weight: 600;
 
@@ -128,7 +128,7 @@
     background-color: transparent !important;
 
     .navbar-brand {
-      color: get-light-color('inverse-text-color');
+      color: get-light-color('muted-text-color');
       font-weight: 600;
     }
 
