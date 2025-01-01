@@ -1,11 +1,14 @@
 ---
-title: "Sample Paper"
-date: 2020-06-08T08:06:25+06:00
+title: "First Project"
+date: 2024-12-30T09:00:00+00:00
 description: Introduction to Sample Post
+hero: images/kavar_background.jpg
+author:
+  image: /images/sharwin_portrait.jpg
 menu:
   sidebar:
-    name: Introduction
-    identifier: introduction
+    name: Project 1
+    identifier: project1
     weight: 0
 tags: ["Basic", "Multi-lingual"]
 categories: ["Basic"]

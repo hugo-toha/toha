@@ -1,3 +1,3 @@
 ---
-title: Sharwin's Posts
+title: Project Posts
 ---
