@@ -38,7 +38,7 @@ params:
   logo:
     main: /images/sharwin_portrait.jpg
     inverted: /images/sharwin_portrait.jpg
-    # favicon: /images/favicon.png
+    favicon: /images/sharwin_portrait.jpg
 
     # GitHub repo of your site
   gitRepo: https://github.com/Sharwin24/toha
@@ -51,14 +51,16 @@ params:
   
   # Enable and configure blog posts
   features:
+    readingTime:
+      enable: true
     blog:
       title: "Project Posts"
       enable: true
       showAuthor: true
       # Share post on different social media
-      shareButtons:
-        linkedin: true
-        email: true
+      # shareButtons:
+      #   linkedin: true
+      #   email: true
 
     # specify whether you want to show Table of Contents in reading page
   toc:
@@ -134,10 +136,6 @@ params:
 
     # Enables copy code button
   copyCodeButton:
-    enable: true
-
-    # Enable reading time support in post cards and in post pages
-  readingTime:
     enable: true
 
   # Enable Analytics
