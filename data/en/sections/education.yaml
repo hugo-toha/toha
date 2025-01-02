@@ -60,12 +60,14 @@ degrees:
     courses:
     - name: Robot Sensing & Navigation
     - name: Robot Dynamics & Control
+    - name: Object-Oriented Design
     - name: Embedded Systems
     - name: Computer Systems
     - name: Artificial Intelligence
     - name: Algorithms & Data Structures
     - name: Circuits & Signals
-    - name: Object-Oriented Design
+    - name: Game Programming
+    - name: Robotic Science
   # publications: #(optional)
   # - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   #   url: "#"

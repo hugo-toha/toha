@@ -9,26 +9,26 @@ section:
   hideTitle: false
 
 # filter buttons
-buttons:
-- name: All
-  filter: "all"
-- name: Professional
-  filter: "professional"
-- name: Academic
-  filter: "academic"
-- name: Hobby
-  filter: "hobby"
+# buttons:
+# - name: All
+#   filter: "all"
+# - name: Professional
+#   filter: "professional"
+# - name: Academic
+#   filter: "academic"
+# - name: Hobby
+#   filter: "hobby"
 
 # your projects
 projects:
-- name: Kubernetes
-  logo: /images/sections/projects/kubernetes.png
-  role: Contributor
-  timeline: "March 2018 - Present"
-  repo: https://github.com/kubernetes/kubernetes # If your project is a public repo on GitHub, then provide this link. it will show star count.
-  url: "https://github.com/kubernetes"  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
-  summary: Production-Grade Container Scheduling and Management.
-  tags: ["professional", "kubernetes", "cloud"]
+- name: Mobile Manipulation
+  image: /images/kavar_background.jpg
+  role: Final Project for ME449-Robotic Manipulation
+  timeline: "Nov 2024 - Dec 2024"
+  repo: https://github.com/Sharwin24/Mobile-Manipulation
+  url: "/toha/posts/mobile-manipulation/"
+  summary: Simulating a pick and place task with the KUKA YouBot using a task-space feed-forward PID controller. 
+  tags: ["Mobile Robotics", "Python", "CoppeliaSim"]
 
 - name: A sample academic paper
   role: Team Lead
