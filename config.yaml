@@ -1,8 +1,17 @@
 baseURL: "https://sharwin24.github.io/toha/"
 
-languageCode: en
+languageCode: "en-us"
 title: "Sharwin's Portfolio"
+theme: "toha"
 
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
 
 module:
   hugoVersion:
