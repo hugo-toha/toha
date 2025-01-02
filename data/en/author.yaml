@@ -1,9 +1,10 @@
 # some information about you
 name: "Sharwin Patil"
-# nickname: "Sharwin"
+nickname: "Sharwin"
 # greeting message before your name. it will default to "Hi! I am" if not provided
-# greeting: "Hey I'm"
-# image: "images/author/sharwin_portrait.jpg"
+greeting: "Hey! I'm"
+subtitle: "Currently pursuing a Master's in Robotics at Northwestern University"
+image: "images/sharwin_portrait.jpg"
 # give your some contact information. they will be used in the footer
 contactInfo:
   email: "sharwin24@gmail.com"
@@ -13,7 +14,7 @@ contactInfo:
   # researchgate: john-doe
 
 # some summary about what you do
-# summary:
-#   - a Software Developer
-#   - an Open Source Contributor
-#   - a Roboticist
+summary:
+- a Roboticist
+- a Software Developer
+- an Open Source Contributor

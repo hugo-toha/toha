@@ -33,6 +33,8 @@ module:
 
 # Site parameters
 params:
+  # Background image of the landing page
+  background: /images/kavar_background.jpg
   # Provide logos for your site. The inverted logo will be used in the initial
   # transparent navbar and the main logo will be used in the non-transparent navbar.
   logo:

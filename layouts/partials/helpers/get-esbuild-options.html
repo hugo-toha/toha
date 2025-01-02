@@ -146,9 +146,7 @@ namespaced by their corresponding feature.
 {{ $params := dict }}
 
 {{/*  set NODE_ENV depending on if we are building for production use. */}}
-{{ $defines = $defines | merge (dict
-  "process.env.NODE_ENV" (cond hugo.IsProduction `"production"`  `"development"` )
-)}}
+{{ $defines = $defines | merge (dict "process.env.NODE_ENV" (cond hugo.IsProduction `"production"`  `"development"` ))}}
 
 {{/*  Go through each feature defined in our config.yml/config.toml/config.json file. */}}
 {{ range $feature, $featureDef := site.Params.features }}
