@@ -4,7 +4,7 @@ section:
   id: skills
   enable: true
   weight: 5
-  showOnNavbar: true
+  showOnNavbar: false
   # filter: true
   # Can optionally hide the title in sections
   # hideTitle: true
@@ -53,3 +53,6 @@ skills:
 
 - name: LaTeX
   logo: /images/latex.svg
+
+- name: SolidWorks
+  logo: /images/solidworks.svg
