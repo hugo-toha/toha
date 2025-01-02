@@ -22,7 +22,7 @@ section:
 
 skills:
 - name: Python
-  logo: /images/python.png
+  logo: /images/python.svg
 
 - name: Linux
   logo: /images/tux.svg
@@ -46,7 +46,7 @@ skills:
   logo: /images/ros2.svg
 
 - name: MATLAB
-  logo: /images/matlab.png
+  logo: /images/matlab.svg
 
 - name: Unity
   logo: /images/unity.svg
