@@ -12,13 +12,13 @@ section:
 experiences:
 - company:
     name: GreenSight Inc.
-    url: "https://www.example.com"
+    url: "https://www.greensightag.com/"
     location: Boston, MA
     logo: /images/sections/experiences/company1.jpg
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/experiences/company1.jpg
     # company overview
-    overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+    overview: Autonomous drone company building solutions for golf course maintenance, agriculture, Department of Defense, and more.
   positions:
   - designation: UAV Robotics Engineer Co-op
     start: June 2023
@@ -27,40 +27,40 @@ experiences:
     # end: Dec 2020
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Design and develop XYZ tool for ABC task
-    - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
-    - Lead backend team.
+    - Developed RTOS firmware for communications between a swarm of nano-drones and a ground station over a LoRa network.
+    - Implemented a Hardware-Abstraction-Layer (HAL) in C for the ESP32 platform to interface with a custom LoRa chipset.
+    - Wrote a custom SPI driver for the LoRa chip communicating with an ESP32.
 
 - company:
     name: Fulfil Solutions Inc.
-    url: "https://www.example.com"
+    url: "https://www.fulfil.com/"
     location: Redwood City, CA
     logo: /images/sections/experiences/company2.jpg
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/experiences/company2.jpg
-    overview: PreExample Co. is a gateway company to enter into Example co. So, nothing special here.
+    overview: A warehouse automation company that specializes in groceries, with zero labor pick and pack.
   positions:
-  - designation: Controls Software Engineer Co-op
+  - designation: Robotics Software Controls Engineer Co-op
     start: July 2022
     end: Dec 2022
     responsibilities:
-    - Write lots of example codes.
-    - Read lots of examples.
-    - See lots of example videos.
+    - Developed sequencing code in C# for high-level behavior planning and task assignment for heterogeneous robotic agents.
+    - Composed data fetching functons to bridge C# sequencing code with a MongoDB database.
+    - Optimized AGV planning and curated heuristics for maintaining the factory's health while improving throughput and efficiency.
+    - Deployed automated factory-wide alerts and notifications for operators to monitor the health of the storage and retrieval system.
 
 - company:
     name: Doble Engineering Company
-    url: "https://www.example.com"
+    url: "https://www.doble.com/"
     location: Marlborough, MA
     logo: /images/sections/experiences/company3.jpg
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/experiences/company3.jpg
-    overview: Intern counting Company (ICC) is responsible for counting worldwide intern Engineers.
+    overview: A hardware and software company that specializes in diagnostic test equipment, software, and services for the electric power industry.
   positions:
   - designation: Software Engineer Co-op
     start: July 2021
     end: Dec 2021
     responsibilities:
-    - Count lost of interns.
-    - Count more interns.
-    - Count me as an intern.
+    - Developed an external data persistance mechanism in C# running on the .NET framework for use across various Doble software applications.
+    - Designed and deployed a firmware installation wizard using Windows Presentaion Foundation (WPF) for Doble instruments.
