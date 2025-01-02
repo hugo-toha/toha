@@ -16,7 +16,7 @@ degrees:
   institution:
     name: Northwestern University
     url: "https://www.mccormick.northwestern.edu/robotics/"
-    logo: /images/sections/education/tech_college.png
+    logo: /images/nw_logo.png
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/education/tech_college.png
   takenCourses: #(optional)
@@ -31,6 +31,8 @@ degrees:
     - name: Deep Learning
     - name: Theory of Dynamics
     - name: Advanced Programming in C++
+  # extracurricularActivities: #(optional)
+  #   - Club Water Polo
   # grade: #(optional)
   #   scale: GPA
   #   achieved: 3.87
@@ -38,17 +40,13 @@ degrees:
   # publications: #(optional)
   # - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   #   url: "#"
-  # - title: Fusce eu augue ut odio porttitor pulvinar.
-  #   url: "#"
-  # - title: Nullam vitae orci tincidunt purus viverra pulvinar.
-  #   url: "#"
 - name: Bachelor of Science in Computer Engineering & Computer Science, Minor in Robotics
   icon: fa-university
   timeframe: 2019-2024
   institution:
     name: Northeastern University
     url: "https://www.northeastern.edu/"
-    logo: /images/sections/education/university.jpg
+    logo: /images/neu_logo.svg
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/education/university.jpg
   # grade: #(optional)
@@ -71,8 +69,6 @@ degrees:
   # publications: #(optional)
   # - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   #   url: "#"
-  # - title: Fusce eu augue ut odio porttitor pulvinar.
-  #   url: "#"
   extracurricularActivities: #(optional)
   - Club Water Polo President
   - NEU Robotics Club Lead Instructor
@@ -87,7 +83,7 @@ degrees:
   institution:
     name: Dougherty Valley High School
     url: "https://dvhs.srvusd.net/"
-    logo: /images/sections/education/science_college.png
+    # logo: /images/linux.png
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/education/science_college.png
   # grade: #(optional)
@@ -95,10 +91,9 @@ degrees:
     # achieved: 5
     # outOf: 5
   extracurricularActivities: #(optional)
-  - In vitae facilisis est, eget porta sem.
-  - Vestibulum consectetur lorem justo, at laoreet lorem feugiat et.
-  - Duis sed massa feugiat, ornare justo et, aliquam est.
-  - Pellentesque ut fringilla magna.
+  - Varsity Water Polo (MVP Award in 2018 & 2019)
+  - VEX Robotics Team Captain (Team 5776E)
+  - BSA Eagle Scout
 # - name: Secondary School Certificate
 #   icon: fa-school
 #   timeframe: 2005-2010
