@@ -2,7 +2,7 @@
   data-category='all, {{ with .categories }}{{ delimit . ","}}{{ end }}'
 >
   <a class="text-decoration-none" {{ if .url }}href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"{{ end }}>
-    <div class="card">
+    <div class="card" >
       <div class="card-head d-flex">
         {{ if .logo }}
           {{ $logoImage := resources.Get .logo }}
@@ -11,7 +11,7 @@
             {{ $logoImage = $logoImage.Fit "24x24" }}
           {{ end }}
         
-          <img class="card-img-xs" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" />
+          <img class="card-img-xs" src="{{ $logoImage.RelPermalink }}" alt="{{ .name }}" style="width: 80px; height: 80px;" />
           <h5 class="card-title">{{ .name }}</h5>
         {{ else if .icon }}
           {{ $iconName := .icon }}
@@ -20,9 +20,9 @@
           <h5 class="card-title">{{ .name }}</h5>
         {{ end }}
       </div>
-      <div class="card-body text-justify pt-1 pb-1">
+      <!-- <div class="card-body text-justify pt-1 pb-1">
         <p class="card-text">{{ .summary | markdownify }}</p>
-      </div>
+      </div> -->
     </div>
   </a>
 </div>

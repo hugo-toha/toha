@@ -25,10 +25,10 @@ skills:
   logo: /images/python.png
 
 - name: Linux
-  logo: /images/linux.png
+  logo: /images/tux.svg
 
 - name: Git
-  logo: /images/git.png
+  logo: /images/git.svg
 
 - name: C++
   logo: /images/C++_logo.svg
