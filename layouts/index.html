@@ -20,7 +20,7 @@
   {{- partial "analytics.html" . -}}
   {{ with resources.Get "scripts/core/theme-scheme.js" | fingerprint }}
   <script integrity="{{.Data.Integrity}}">
-    { { .Content | safeJS } }
+    {{ .Content | safeJS }}
   </script>
   {{ end }}
 </head>
