@@ -22,7 +22,7 @@ section:
 # your projects
 projects:
 - name: Mobile Manipulation
-  image: /images/kavar_background.jpg
+  image: /images/mobile_robot.gif
   role: Final Project for ME449-Robotic Manipulation
   timeline: "Nov 2024 - Dec 2024"
   repo: https://github.com/Sharwin24/Mobile-Manipulation
