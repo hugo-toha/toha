@@ -71,6 +71,11 @@ params:
       # shareButtons:
       #   linkedin: true
       #   email: true
+    analytics:
+      enabled: true
+      services:
+        google:
+          id: "G-D5RCC030C7"
 
     # specify whether you want to show Table of Contents in reading page
   toc:
@@ -147,34 +152,3 @@ params:
     # Enables copy code button
   copyCodeButton:
     enable: true
-
-  # Enable Analytics
-    # analytics:
-    #   enabled: false
-    #   services:
-    #     cloudflare web analytics
-    #     cloudflare:
-    #       token: "<token>"
-    #     Google Analytics
-    #     google:
-    #       id: G-H4LBG7NDFZ
-    #     # CounterDev
-    #     counterDev:
-    #       id: <your counterdev id>
-    #     # GoatCounter
-    #     goatCounter:
-    #       code: <your goat counter code>
-    #     # Matomo / Piwik
-    #     matomo:
-    #       instance: matomo.example.com
-    #       siteId: 1 # Or any other number
-    #     # Umami
-    #     umami:
-    #       scheme: https
-    #       instance: umami.example.com
-    #       id: <your umami site id>
-    #     # Statcounter
-    #     statcounter:
-    #       project: 1234567890
-    #       invisible: 1
-    #       security: deadbeef
