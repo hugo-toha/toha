@@ -62,27 +62,17 @@
               {{ end }}
             </div>
           {{ end }}
+          {{ if .repo }}
           <div class="project-btn-holder">
-            {{ if .repo }}
             <!-- Place this tag where you want the button to render. -->
             <a
               class="github-button project-btn d-none"
               href="{{ .repo }}"
               data-icon="octicon-standard"
               data-size="large"
-            >
-            {{ end }}
-            {{ if .url }}
-            <span>
-              <a
-                class="btn btn-outline-info btn-sm"
-                href="{{ .url }}"
-                target="#"
-                >Read More</a
-              >
-            </span>
-            {{ end }}
+            ></a>
           </div>
+          {{ end }}
         </div>
       </div>
     </div>
