@@ -4,7 +4,7 @@
 >
   <div class="card mt-1">
     <div class="card">
-      <a href="{{ if .repo }}{{ .repo }}{{ else if .url }}{{ .url }}{{ else }}javascript:void(0){{ end }}" {{ if or .repo .url }}target="_blank" rel="noopener"{{ end }}>
+      <a href="{{ if .url }}{{ .url }}{{ else if .repo }}{{ .repo }}{{ else }}javascript:void(0){{ end }}" {{ if or .repo .url }}target="_blank" rel="noopener"{{ end }}>
         {{ if .image }}
         <div class="card-head">
           {{ $imageImage:= resources.Get .image}}
@@ -69,9 +69,7 @@
               class="github-button project-btn d-none"
               href="{{ .repo }}"
               data-icon="octicon-standard"
-              data-show-count="true"
-              aria-label="Star {{ .name }}"
-              >{{ i18n "project_star" }}</a
+              data-size="large"
             >
             {{ end }}
             {{ if .url }}
@@ -80,7 +78,7 @@
                 class="btn btn-outline-info btn-sm"
                 href="{{ .url }}"
                 target="#"
-                >{{ i18n "project_details" }}</a
+                >Read More</a
               >
             </span>
             {{ end }}
