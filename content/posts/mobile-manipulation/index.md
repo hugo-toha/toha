@@ -1,8 +1,8 @@
 ---
 title: "Mobile Manipulation"
-date: 2024-12-30T09:00:00+00:00
+date: 2025-01-02T09:00:00+00:00
 description: Introduction to Sample Post
-hero: images/kavar_background.jpg
+hero: images/error_plot.png
 author:
   image: /images/sharwin_portrait.jpg
 menu:
@@ -30,8 +30,8 @@ where:
 - \\(u_i\\) is the wheel velocity
 - \\(r_i\\) is the wheel radius
 - \\(\gamma_i\\) is the angle of the roller relative to the wheel's driving direction
-- \\(\beta_i\\) is the angle of the wheel relative to the robot's x-axis
-- \\(x_i\\) and \\(y_i\\) are the x and y coordinates of the wheel relative to the robot's center
+- \\(\beta_i\\) is the angle of the wheel relative to the body frame
+- \\(x_i\\) and \\(y_i\\) are the x and y coordinates of the wheel relative to the body frame's origin
 - \\(V_b\\) is the robot's 3D body twist, composed of the linear and angular velocity: \\([v_x, v_y, \omega]\\)
 
 ![Mecanum Base](mecanum_base.png)
