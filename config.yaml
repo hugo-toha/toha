@@ -31,6 +31,8 @@ module:
     target: i18n
   - source: archetypes
     target: archetypes
+  - source: "dist/katex.js"
+    target: ../../assets/scripts/features/math/katex.js
   - source: ../../node_modules/flag-icons/flags
     target: static/flags
   - source: ../../node_modules/@fontsource/mulish/files
@@ -78,77 +80,46 @@ params:
           id: "G-D5RCC030C7"
 
     # specify whether you want to show Table of Contents in reading page
-  toc:
-    enable: true
+    toc:
+      enable: true
 
-    # Show tags under the post title
-  tags:
-    enable: true
-    on_card: true # enables tags in post cards
+    copyCodeButton:
+      enable: true
+
+    syntaxHighlight:
+      enable: true
+      services:
+        hljs:
+          # see: https://highlightjs.readthedocs.io/en/latest/api.html#configure
+          noHighlightRe: /^no-highlight$/i
   
-# Enable this to use `embed-pdf` shortcode.
-  embedpdf:
-    enable: false
+    # Enable this to use `embed-pdf` shortcode.
+    embedpdf:
+      enable: false
 
     # Enable this to create flowcharts using shortcodes.
-  flowchart:
-    enable: false
-    services:
-      # Uncomment for `mermaid` shortcode.
-      mermaid:
-        # For config options, see: https://mermaid-js.github.io/mermaid/#/Setup?id=configuration
-        # theme: dark
+    flowchart:
+      enable: false
+      services:
+        # Uncomment for `mermaid` shortcode.
+        mermaid:
+          # For config options, see: https://mermaid-js.github.io/mermaid/#/Setup?id=configuration
+          # theme: dark
 
     # Enable this to create mathematic expressions using `$$` blocks
-  math:
-    enable: true
-    services:
-      # https://katex.org/docs/autorender.html#api for more configurations
-      katex:
-        delimiters:
-          - left: $$
-            right: $$
-            display: true
-          - left: \\[
-            right: \\]
-            display: true
-          - left: $
-            right: $
-            display: false
-          - left: \\(
-            right: \\)
-            display: false
-
-    # Enable to use custom syntax highlight
-    # Please note, Hugo comes with it's own html based syntax highlighter.
-    # Your code block will still be syntax highlighted by hugo.
-    # For more details: https://gohugo.io/content-management/syntax-highlighting/
-    # To disable Hugo's builtin syntax highlight,
-    # see: https://gohugo.io/getting-started/configuration-markup#highlight
-    # ```
-    # # config.yaml
-    # markup:
-    #   # this disables hugo's syntax highlighting.
-    #   codeFences: false
-    # ```
-  syntaxHighlight:
-    enable: true
-    services:
-      hljs:
-        # see: https://highlightjs.readthedocs.io/en/latest/api.html#configure
-        noHighlightRe: /^no-highlight$/i
+    math:
+      enable: true
+      services:
+        katex: true
+        # https://katex.org/docs/autorender.html#api for more configurations
 
     # Enable to use `video-player` shortcode
-  videoPlayer:
-    enable: false
-    services:
-      # convert .js-player class into video player via https://plyr.io/
-      # Can play HTML5 Video, Audio, Youtube, Vimeo.
-      # For more info on setup: https://github.com/sampotts/plyr#quick-setup
-      plyr:
-        # options doc: https://github.com/sampotts/plyr#options
-        # fullscreen: true
-
-    # Enables copy code button
-  copyCodeButton:
-    enable: true
+    videoPlayer:
+      enable: false
+      services:
+        # convert .js-player class into video player via https://plyr.io/
+        # Can play HTML5 Video, Audio, Youtube, Vimeo.
+        # For more info on setup: https://github.com/sampotts/plyr#quick-setup
+        plyr:
+          # options doc: https://github.com/sampotts/plyr#options
+          # fullscreen: true

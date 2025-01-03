@@ -23,7 +23,7 @@ section:
 projects:
 - name: Mobile Manipulation
   image: /images/mobile_robot.gif
-  role: Final Project for ME449-Robotic Manipulation
+  role: "ME449: Robotic Manipulation Final Project"
   timeline: "Nov 2024 - Dec 2024"
   repo: https://github.com/Sharwin24/Mobile-Manipulation
   url: "/toha/posts/mobile-manipulation/"
