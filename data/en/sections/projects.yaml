@@ -26,7 +26,7 @@ projects:
   role: "ME449: Robotic Manipulation Final Project"
   timeline: "Nov 2024 - Dec 2024"
   repo: https://github.com/Sharwin24/Mobile-Manipulation
-  url: "/toha/posts/mobile-manipulation/"
+  url: "/posts/mobile-manipulation/"
   summary: Simulating a pick and place task with the KUKA YouBot using a task-space feed-forward PID controller. 
   tags: ["Mobile Robotics", "Python", "CoppeliaSim"]
 
