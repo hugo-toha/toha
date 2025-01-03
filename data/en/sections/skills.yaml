@@ -21,14 +21,17 @@ section:
 #   filter: "others"
 
 skills:
-- name: Python
-  logo: /images/python.svg
-
 - name: Linux
   logo: /images/tux.svg
 
 - name: Git
   logo: /images/git.svg
+
+- name: ROS2
+  logo: /images/ros2.svg
+
+- name: Python
+  logo: /images/python.svg
 
 - name: C++
   logo: /images/C++_logo.svg
@@ -41,9 +44,6 @@ skills:
 
 - name: Java
   logo: /images/java.svg
-
-- name: ROS2
-  logo: /images/ros2.svg
 
 - name: MATLAB
   logo: /images/matlab.svg
