@@ -74,7 +74,7 @@ params:
       #   linkedin: true
       #   email: true
     analytics:
-      enabled: true
+      enabled: false
       services:
         google:
           id: "G-D5RCC030C7"
