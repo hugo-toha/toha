@@ -97,9 +97,11 @@
     h5 {
       display: inline;
       margin-right: 0.25em;
+      color: get-light-color('text-color');
     }
     p {
       display: inline;
+      color: get-light-color('text-color');
     }
   }
 

@@ -15,9 +15,9 @@
         {{ $mostRecentPosition := index (first 1 .positions) 0}}
         <div class="company-heading">
             <h5>{{ if .company.url }}<a href={{.company.url}} title="{{ .company.name }}" target="_blank" rel="noopener">{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h5>
-            <p class="text-muted">
+            <!-- <p class="text-muted">
                 {{ $oldestPosition.start }} - {{ if $mostRecentPosition.end }}{{ $mostRecentPosition.end }}{{ else }}{{ i18n "present" }}{{ end }}
-            </p>
+            </p> -->
         </div>
         <p class="text-muted">
             <i class="fa-solid fa-location-dot"></i> {{ .company.location }}
