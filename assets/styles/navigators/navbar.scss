@@ -221,6 +221,7 @@ html[data-theme='dark'] {
     background-color: get-dark-color('bg-primary');
 
     .navbar-brand {
+      // Color of navbar when not transparent
       color: get-dark-color('heading-color');
     }
 
@@ -276,7 +277,8 @@ html[data-theme='dark'] {
 
     &.transparent-navbar {
       .navbar-brand {
-        color: get-dark-color('text-color');
+        // Color of navbar text when the navbar is transparent
+        color: get-dark-color('heading-color');
       }
 
       li {
