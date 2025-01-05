@@ -36,10 +36,20 @@ where:
 
 ![Mecanum Base](mecanum_base.png)
 
-## Odometry
-Odometry is the process of estimating the mobile robot's pose by integrating the wheel velocities. The robot's pose is represented by the chassis configuration \\([\phi, x, y]\\), where \\(\phi\\) is the orientation and \\(x, y\\) are the position in the world frame. 
+## Trajectory Generation
+There were two
 
-The odometry function computes the new chassis configuration based on the difference between the current and previous wheel configurations assuming a constant velocity between the two wheel configurations.
+## Odometry
+Odometry is the process of estimating the mobile robot's pose by integrating the wheel velocities. The robot's pose is represented by the chassis configuration \\([\phi, x, y]\\), where \\(\phi\\) is the orientation and \\(x, y\\) are the position in the world frame. We can compute the body twist \\(V_b\\) using the wheel velocities \\(\dot{\theta}\\), the timestep \\(\Delta t\\), and the chassis configuration \\( F=pinv(H(0))\\):
+
+$$
+\dot{\theta} = \Delta\theta / \Delta t \\\
+V_b = \underbrace{H(0)^{\dagger}}_{F} \cdot \dot{\theta}
+$$
+
+The body twist \\(V_b\\) can be integrated to get the displacement \\(T_{bk} = exp([V_b])\\), which is then applied to the chassis configuration to get the new pose.
+
+The odometry function computes the new chassis configuration based on the difference between the current and previous wheel configurations assuming a constant velocity between the two wheel configurations \\((\Delta t = 1)\\).
 ```python
 def odometry(chassis_config: np.array, delta_wheel_config: np.array) -> np.array:
     """
@@ -106,20 +116,66 @@ def feedback_control(X, Xd, Xd_next, Kp, Ki, control_type: str = 'FF+PI', dt: fl
         tuple: A tuple containing the twist V and the error X_err
     """
     X_err = mr.se3ToVec(mr.MatrixLog6(mr.TransInv(X) @ Xd))
-    # print(f'X_err:\n{np.round(X_err, 3)}')
     Vd = mr.se3ToVec((1/dt) * mr.MatrixLog6(mr.TransInv(Xd) @ Xd_next))
-    # print(f'Vd:\n{np.round(Vd, 3)}')
     if control_type == 'FF+PI':
-        V = mr.Adjoint(mr.TransInv(X) @ Xd) @ Vd + \
-            (Kp @ X_err) + (Ki @ (X_err * dt))
+        V = mr.Adjoint(mr.TransInv(X) @ Xd) @ Vd + (Kp @ X_err) + (Ki @ (X_err * dt))
     elif control_type == 'P':
         V = (Kp @ X_err)
     elif control_type == 'PI':
         V = (Kp @ X_err) + (Ki @ (X_err * dt))
     else:
         print(f'Invalid sim_type: {control_type}, using FF+PI')
-        V = mr.Adjoint(mr.TransInv(X) @ Xd) @ Vd + \
-            (Kp @ X_err) + (Ki @ (X_err * dt))
-    # print(f'V:\n{np.round(V, 3)}')
+        V = mr.Adjoint(mr.TransInv(X) @ Xd) @ Vd + (Kp @ X_err) + (Ki @ (X_err * dt))
     return V, X_err
+```
+
+## Singularity Avoidance
+During trajectory generation/planning, there are desired configurations that can bring the robot arm close to singularities in the robot's configuration space. To avoid any singularities, whenever the joint speeds are computed for the configuration at the next timestep, If the movement sends a joint past its limit, the column corresponding to that joint is set to zero within the Jacobian when computing the joint speeds to avoid using that joint to acheive the desired configuration.
+
+```python
+class RobotConstants:
+    @property
+    def F(self) -> np.array:
+        """F = pinv(H0)"""
+        R = self.R
+        L = self.L
+        W = self.W
+        return (R / 4) * np.array([
+            [-1 / (L + W), 1/(L + W), 1/(L + W), -1/(L + W)],
+            [1, 1, 1, 1],
+            [-1, 1, -1, 1]
+        ])
+    
+    def Je(self, arm_thetas: np.array, violated_joints: list[int] = []) -> np.array:
+        """
+        Compute the Mobile Manipulator Jacobian given the arm joint angles and the list of joints that break joint limits.
+
+        Args:
+            arm_thetas (np.array): The arm joint angles [rad]
+            violated_joints (list[int], optional): List of joints by ID that are out of joint limits. Defaults to [].
+
+        Returns:
+            np.array: The Mobile Manipulator Jacobian (6x9)
+        """
+        # 6x5 Jacobian Matrix for the arm
+        J_arm = mr.JacobianBody(self.B, arm_thetas)
+        # If any joints are violated, set the corresponding column to 0
+        for j in violated_joints:
+            J_arm[:, j] = 0
+        # 6x4 Jacobian Matrix for the base
+        F_6 = np.array([
+            np.zeros(4),
+            np.zeros(4),
+            self.F[0],
+            self.F[1],
+            self.F[2],
+            np.zeros(4)
+        ])
+        # J_base = [Adjoint(inv(T_0e) * inv(T_b0))] * F_6
+        J_base = mr.Adjoint(
+            mr.TransInv(self.T_0e(arm_thetas)) @ mr.TransInv(self.T_b0)
+        ) @ F_6
+        # Mobile Manipulator Jacobian
+        Je = np.hstack((J_base, J_arm))
+        return Je
 ```
