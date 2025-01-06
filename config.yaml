@@ -130,10 +130,6 @@ params:
       title: "Project Posts"
       enable: true
       showAuthor: true
-      # Share post on different social media
-      # shareButtons:
-      #   linkedin: true
-      #   email: true
     analytics:
       enabled: false
       services:

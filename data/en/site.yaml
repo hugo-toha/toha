@@ -13,12 +13,11 @@ description: Sharwin Patil's Portfolio and project showcases.
 # they will be separated by a divider from the main menus.
 customMenus:
 - name: Resume
-  url: static/files/main.pdf
-#   url: https://toha-guides.netlify.app/posts/
-#   # specify whether to hide the menu item from top navbar or not.
-#   hideFromNavbar: false
-#   # specify whether to show the menu item in footer or not.
-#   # if you set it to true, make sure you have set `footer.navigation.customMenus: true` in your config.yaml
+  url: post/files/main.pdf
+  showOnFooter: true
+
+- name: GitHub
+  url: https://github.com/Sharwin24
   showOnFooter: true
 
 # Specify OpenGraph Headers

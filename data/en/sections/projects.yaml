@@ -39,6 +39,7 @@ projects:
   tags: ["Python", "ROS", "Robotics", "Franka Robot Arm"]
 
 - name: Automated Poker Table
+  image: /images/bike_dealer.jpg
   role: "ECE 2023 Capstone"
   timeline: "Jan 2023 - May 2034"
   url: "/posts/automated-poker-table/"
@@ -46,21 +47,40 @@ projects:
   summary: An robotic system that faciliates a game of poker with automated shuffling, dealing, and game management.
   tags: ["Arduino", "Python", "Raspberry Pi", "I2C"]
 
-- name: Napkin.ai Code Assistant
-  role: "Hack@Brown 2024 Project"
-  timeline: "Feb 2024"
-  url: "/posts/napkin-ai/"
-  repo: "https://github.com/Sharwin24/HackAtBrown"
-  summary: A fast, lightweight graph retrieval-augmented generation tool for navigating codebases.
-  tags: ["Python", "PyTorch", "Retrieval-Augmented Generation", "Knowledge Graphs", "Language Models"]
+- name: Chess Robot
+  role: "NEU Robotics Club Project"
+  image: /images/chess.jpg
+  timeline: "Sept 2021 - Dec 2021"
+  url: "/posts/chess-robot/"
+  repo: "https://github.com/Connor205/Chess-Robot-NURobotics"
+  summary: A gantry robot with a camera that plays chess against a human opponent.
+  tags: ["Python", "OpenCV", "Arduino", "Stepper Motors"]
+
+- name: Robot Arm Educational Kit
+  image: /images/kavar_background.jpg
+  role: "Personal Project"
+  timeline: "May 2022 - May 2024"
+  url: "/posts/robot-arm-edu/"
+  repo: https://github.com/Shawin24/
+  summary: A 3D-printed robot arm kit for educational purposes.
+  tags: ["3D Printing", "Arduino"]
 
 - name: AGV Odometry & Motion Planning
+  image: /images/pure-pursuit.png
   role: "VEXU Team HSKY"
   timeline: "Sept 2022 - Dec 2022"
   url: "/posts/agv-hsky/"
   repo: https://github.com/Sharwin24/HSKY
   summary: Implemented Odometry from scratch in C++ for spline motions
   tags: ["C++", "Multi-threading", "Spline Interpolation"]
+
+- name: SLAM Simulation
+  role: "ME495: Embedded Systems Homework"
+  timeline: "Nov 2024 - Dec 2024"
+  url: "/posts/slam-simulation/"
+  repo: https://github.com/ME495-EmbeddedSystems/homework-4-Sharwin24
+  summary: A simulation of a robot navigating an environment using SLAM with frontier exploration.
+  tags: ["Python", "ROS", "Gazebo", "Nav2"]
 
 - name: Autonomous Drone Swarm Simulation
   role: "RoboTech 2022 Hackathon Project"
@@ -70,22 +90,6 @@ projects:
   summary: A simulation of a swarm of drones using ROS and Gazebo
   tags: ["Python", "RRT", "A*"]
 
-- name: Chess Robot
-  role: "NEU Robotics Club Project"
-  timeline: "Sept 2021 - Dec 2021"
-  url: "/posts/chess-robot/"
-  repo: "https://github.com/Connor205/Chess-Robot-NURobotics"
-  summary: A gantry robot with a camera that plays chess against a human opponent.
-  tags: ["Python", "OpenCV", "Arduino", "Stepper Motors"]
-
-- name: Robot Arm Educational Kit
-  role: "Personal Project"
-  timeline: "May 2022 - May 2024"
-  url: "/posts/robot-arm-edu/"
-  repo: https://github.com/Shawin24/
-  summary: A 3D-printed robot arm kit for educational purposes.
-  tags: ["3D Printing", "Arduino"]
-
 - name: Robot Pen Thief
   role: "Personal Project"
   timeline: "Sept 2024"
@@ -93,3 +97,11 @@ projects:
   repo: https://github.com/Sharwin24/Pen-Challenge
   summary: Combining a PincherX 100 robot arm with an Intel Realsense to identify and grab pens.
   tags: ["Python", "ROS", "Intel Realsense"]
+
+- name: Napkin.ai Code Assistant
+  role: "Hack@Brown 2024 Project"
+  timeline: "Feb 2024"
+  url: "/posts/napkin-ai/"
+  repo: "https://github.com/Sharwin24/HackAtBrown"
+  summary: A fast, lightweight graph retrieval-augmented generation tool for navigating codebases.
+  tags: ["Python", "PyTorch", "Retrieval-Augmented Generation", "Knowledge Graphs", "Language Models"]
