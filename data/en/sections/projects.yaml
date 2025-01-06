@@ -65,7 +65,7 @@ projects:
 - name: Autonomous Drone Swarm Simulation
   role: "RoboTech 2022 Hackathon Project"
   timeline: "April 2022"
-  url: "/posts/robotech/"
+  url: "/posts/robo-tech/"
   repo: https://github.com/Sharwin24/RoboTech
   summary: A simulation of a swarm of drones using ROS and Gazebo
   tags: ["Python", "RRT", "A*"]
@@ -81,7 +81,7 @@ projects:
 - name: Robot Arm Educational Kit
   role: "Personal Project"
   timeline: "May 2022 - May 2024"
-  url: "/posts/robot-arm/"
+  url: "/posts/robot-arm-edu/"
   repo: https://github.com/Shawin24/
   summary: A 3D-printed robot arm kit for educational purposes.
   tags: ["3D Printing", "Arduino"]
