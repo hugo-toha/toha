@@ -47,23 +47,6 @@
 {{ $disclaimer = $siteConfig.disclaimer }}
 {{ end }}
 
-{{/* footer logos */}}
-{{ $themeLogo := "/images/theme-logo.png" }}
-{{ $hugoLogo := "/images/hugo-logo.svg" }}
-
-{{/* resize the logos. don't resize svg because it is not supported */}}
-{{ $themeLogo:= resources.Get $themeLogo}}
-{{ if and $themeLogo (ne $themeLogo.MediaType.SubType "svg") }}
-{{ $themeLogo = $themeLogo.Resize "32x" }}
-{{ end }}
-{{ $themeLogo = $themeLogo.RelPermalink}}
-
-{{ $hugoLogo:= resources.Get $hugoLogo}}
-{{ if and $hugoLogo (ne $hugoLogo.MediaType.SubType "svg")}}
-{{ $hugoLogo = $hugoLogo.Resize "32x" }}
-{{ end }}
-{{ $hugoLogo = $hugoLogo.RelPermalink}}
-
 <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
   <div class="container pt-5">
     <div class="row text-start">
@@ -153,24 +136,5 @@
     <p id="disclaimer"><strong>{{ i18n "disclaimer_text" }}:</strong> {{ $disclaimer | markdownify }}</p>
   </div>
   {{ end }}
-  <!-- {{ if $credentialsEnabled }}
-  <hr />
-  <div class="container">
-    <div class="row text-start">
-      <div class="col-md-4">
-        <a id="theme" href="https://github.com/hugo-toha/toha" target="_blank" rel="noopener">
-          <img src="{{ $themeLogo }}" alt="Toha Theme Logo">
-          Toha
-        </a>
-      </div>
-      <div class="col-md-4 text-center">{{ $copyrightNotice | markdownify }}</div>
-      <div class="col-md-4 text-end">
-        <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">{{ i18n "hugoAttributionText" }}
-          <img src="{{ $hugoLogo }}" alt="Hugo Logo" height="18" />
-        </a>
-      </div>
-    </div>
-  </div>
-  {{ end }} -->
 </footer>
 {{end}}
