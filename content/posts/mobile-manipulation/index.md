@@ -16,7 +16,10 @@ categories: ["Basic"]
 
 This project incorporates several robotics concepts to perform a pick and place task in simulation using a mecanum-wheeled mobile robot with a 5 degree-of-freedom robot arm.
 
-![Robot](robot.png)
+<!-- ![Robot](robot.png) -->
+<div align="center">
+    <img src="robot.png" alt="Robot">
+</div>
 
 ## Omnidirectional Mobile Base Kinematics (Mecanum Wheels)
 This robot uses mecanum wheels, which are omnidirectional wheels with 45-degree rollers that allow the robot to move in any direction without changing its orientation. When controlling the robot, we command the wheel velocities, which can be described by the following equation:
@@ -34,7 +37,10 @@ where:
 - \\(x_i\\) and \\(y_i\\) are the x and y coordinates of the wheel relative to the body frame's origin
 - \\(V_b\\) is the robot's 3D body twist, composed of the linear and angular velocity: \\([v_x, v_y, \omega]\\)
 
-![Mecanum Base](mecanum_base.png)
+<!-- ![Mecanum Base](mecanum_base.png) -->
+<div align="center">
+    <img src="mecanum_base.png" alt="Mecanum Base">
+</div>
 
 ## Trajectory Generation
 There were two

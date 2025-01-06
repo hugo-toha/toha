@@ -2,7 +2,6 @@ baseURL: "https://sharwin24.github.io/toha/"
 
 languageCode: "en-us"
 title: "Sharwin's Portfolio"
-
 outputs:
   home:
     - "HTML"
@@ -40,6 +39,68 @@ module:
   - source: ../../node_modules/katex/dist/fonts
     target: static/fonts
 
+
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    duplicateResourceFiles: false
+    extensions:
+      cjk:
+        eastAsianLineBreaks: false
+        eastAsianLineBreaksStyle: simple
+        enable: false
+        escapedSpace: false
+      definitionList: true
+      extras:
+        delete:
+          enable: false
+        insert:
+          enable: false
+        mark:
+          enable: false
+        subscript:
+          enable: false
+        superscript:
+          enable: false
+      footnote: true
+      linkify: true
+      linkifyProtocol: https
+      passthrough:
+        delimiters:
+          block: []
+          inline: []
+        enable: false
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer:
+        apostrophe: '&rsquo;'
+        disable: false
+        ellipsis: '&hellip;'
+        emDash: '&mdash;'
+        enDash: '&ndash;'
+        leftAngleQuote: '&laquo;'
+        leftDoubleQuote: '&ldquo;'
+        leftSingleQuote: '&lsquo;'
+        rightAngleQuote: '&raquo;'
+        rightDoubleQuote: '&rdquo;'
+        rightSingleQuote: '&rsquo;'
+    parser:
+      attribute:
+        block: false
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+      wrapStandAloneImageWithinParagraph: true
+    renderHooks:
+      image:
+        enableDefault: false
+      link:
+        enableDefault: false
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
 
 # Site parameters
 params:
