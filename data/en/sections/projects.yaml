@@ -22,7 +22,7 @@ section:
 # your projects
 projects:
 - name: Simulation of a Mobile Manipulator
-  image: /images/mobile_robot.gif
+  image: /images/kuka_youbot.jpg
   role: "ME449: Robotic Manipulation Final Project"
   timeline: "Nov 2024 - Dec 2024"
   repo: https://github.com/Sharwin24/Mobile-Manipulation
