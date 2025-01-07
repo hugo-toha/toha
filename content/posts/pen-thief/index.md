@@ -9,7 +9,7 @@ menu:
   sidebar:
     name: Pen Thief
     identifier: pen-thief
-    weight: 4
+    weight: 11
 tags: ["Basic", "Multi-lingual"]
 categories: ["Basic"]
 ---

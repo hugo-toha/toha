@@ -9,7 +9,7 @@ menu:
   sidebar:
     name: AGV Motion Planning
     identifier: agv-hsky
-    weight: 1
+    weight: 6
 tags: ["Basic", "Multi-lingual"]
 categories: ["Basic"]
 ---

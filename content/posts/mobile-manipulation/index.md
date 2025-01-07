@@ -2,16 +2,16 @@
 title: "Mobile Manipulation"
 date: 2025-01-02T09:00:00+00:00
 description: Introduction to Sample Post
-hero: images/error_plot.png
+hero: images/robot_states.png
 author:
   image: /images/sharwin_portrait.jpg
 menu:
   sidebar:
     name: Mobile Manipulation
     identifier: mobile-manipulation
-    weight: 0
-tags: ["Basic", "Multi-lingual"]
-categories: ["Basic"]
+    weight: 1
+tags: ["Python", "CoppeliaSim", "Odometry", "Omnidirectional Robot Kinematics"]
+# categories: ["Basic"]
 ---
 
 This project incorporates several robotics concepts to perform a pick and place task in simulation using a mecanum-wheeled mobile robot with a 5 degree-of-freedom robot arm.

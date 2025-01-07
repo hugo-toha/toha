@@ -9,7 +9,7 @@ menu:
   sidebar:
     name: Toastbot
     identifier: ToastBot
-    weight: 1
+    weight: 2
 tags: ["Basic", "Multi-lingual"]
 categories: ["Basic"]
 ---

@@ -28,15 +28,15 @@ projects:
   repo: https://github.com/Sharwin24/Mobile-Manipulation
   url: "/posts/mobile-manipulation/"
   summary: Simulating a pick and place task with the KUKA YouBot using a task-space feed-forward PID controller. 
-  tags: ["Mobile Robotics", "Python", "CoppeliaSim"]
+  tags: ["Python", "CoppeliaSim", "Odometry", "Omnidirectional Robot Kinematics"]
 
 - name: Toasting Bread with a Franka Robot Arm
   role: "ME495: Embedded Systems Final Project"
   timeline: "Nov 2024 - Dec 2024"
   repo: https://github.com/snydergi/ToastBot
   url: "/posts/toastbot/"
-  summary: A robotic system that toasts bread using a Franka Emika Panda robot arm.
-  tags: ["Python", "ROS", "Robotics", "Franka Robot Arm"]
+  summary: A system that toasts bread using a Franka Emika Panda robot arm and an Intel Realsense Camera.
+  tags: ["Python", "ROS", "Moveit API", "Intel Realsense"]
 
 - name: Automated Poker Table
   image: /images/bike_dealer.jpg
@@ -53,7 +53,7 @@ projects:
   timeline: "Sept 2021 - Dec 2021"
   url: "/posts/chess-robot/"
   repo: "https://github.com/Connor205/Chess-Robot-NURobotics"
-  summary: A gantry robot with a camera that plays chess against a human opponent.
+  summary: A gantry robot equipped with a camera to autonomously play and teach chess to human opponents.
   tags: ["Python", "OpenCV", "Arduino", "Stepper Motors"]
 
 - name: Robot Arm Educational Kit
@@ -62,8 +62,8 @@ projects:
   timeline: "May 2022 - May 2024"
   url: "/posts/robot-arm-edu/"
   repo: https://github.com/Shawin24/
-  summary: A 3D-printed robot arm kit for educational purposes.
-  tags: ["3D Printing", "Arduino"]
+  summary: A 3D-printed robot arm kit for educational purposes. Coupled with a software package intended for students with little to no experience coding to use.
+  tags: ["3D Printing", "Arduino", "C++"]
 
 - name: AGV Odometry & Motion Planning
   image: /images/pure-pursuit.png
@@ -83,11 +83,12 @@ projects:
   tags: ["Python", "ROS", "Gazebo", "Nav2"]
 
 - name: Autonomous Drone Swarm Simulation
+  image: /images/robotech_sim.gif
   role: "RoboTech 2022 Hackathon Project"
   timeline: "April 2022"
   url: "/posts/robo-tech/"
   repo: https://github.com/Sharwin24/RoboTech
-  summary: A simulation of a swarm of drones using ROS and Gazebo
+  summary: A simulation of a swarm of drones cleaning algal blooms in a lake using RRT and A* path planning.
   tags: ["Python", "RRT", "A*"]
 
 - name: Robot Pen Thief

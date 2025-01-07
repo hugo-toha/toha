@@ -9,7 +9,7 @@ menu:
   sidebar:
     name: Robotech
     identifier: robo-tech
-    weight: 4
+    weight: 9
 tags: ["Basic", "Multi-lingual"]
 categories: ["Basic"]
 ---
