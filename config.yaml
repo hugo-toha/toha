@@ -1,4 +1,4 @@
-baseURL: "https://sharwin24.github.io/toha/"
+baseURL: "https://sharwin24.github.io/toha"
 
 languageCode: "en-us"
 title: "Sharwin's Portfolio"
@@ -38,7 +38,6 @@ module:
     target: static/files
   - source: ../../node_modules/katex/dist/fonts
     target: static/fonts
-
 
 markup:
   defaultMarkdownHandler: goldmark
@@ -114,7 +113,7 @@ params:
     favicon: /images/sharwin_portrait.jpg
 
     # GitHub repo of your site
-  gitRepo: https://github.com/Sharwin24/toha
+  gitRepo: https://github.com/Sharwin24/sharwin24.github.io
   # Default branch of your Git repo
   gitBranch: main
 

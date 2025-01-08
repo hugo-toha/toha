@@ -18,16 +18,13 @@ This project incorporates several robotics concepts to perform a pick and place 
 
 <!-- ![Robot](robot.png) -->
 <div align="center">
-    <img src="robot.png" alt="Robot">
+    <img src="robot.png" alt="Robot" style="border-radius: 15px;">
 </div>
 
 ## Omnidirectional Mobile Base Kinematics (Mecanum Wheels)
 This robot uses mecanum wheels, which are omnidirectional wheels with 45-degree rollers that allow the robot to move in any direction without changing its orientation. When controlling the robot, we command the wheel velocities, which can be described by the following equation:
 
-$$
-u_i=\frac{1}{r_i}\overbrace{\begin{bmatrix}1 & \tan\gamma_i\end{bmatrix}}^{\text{driving direction}}\underbrace{\begin{bmatrix}\cos\beta_i & \sin\beta_i \\\ -\sin\beta_i & \cos\beta_i\end{bmatrix}}_{\text{linear velocity in wheel frame}}
-\overbrace{\begin{bmatrix}-y_i & 1 & 0 \\\ x_i & 0 & 1\end{bmatrix}}^{\text{linear velocity in body frame}} V_b
-$$
+$$ u_i=\frac{1}{r_i}\overbrace{\begin{bmatrix}1 & \tan\gamma_i\end{bmatrix}}^{\text{driving direction}}\underbrace{\begin{bmatrix}\cos\beta_i & \sin\beta_i \\\ -\sin\beta_i & \cos\beta_i\end{bmatrix}}_{\text{linear velocity in wheel frame}} \overbrace{\begin{bmatrix}-y_i & 1 & 0 \\\ x_i & 0 & 1\end{bmatrix}}^{\text{linear velocity in body frame}} V_b $$
 
 where:
 - \\(u_i\\) is the wheel velocity
@@ -38,12 +35,89 @@ where:
 - \\(V_b\\) is the robot's 3D body twist, composed of the linear and angular velocity: \\([v_x, v_y, \omega]\\)
 
 <!-- ![Mecanum Base](mecanum_base.png) -->
-<div align="center">
+<div align="center" style="background-color: rgba(255, 255, 255, 0.3); border-radius: 15px;">
     <img src="mecanum_base.png" alt="Mecanum Base">
 </div>
 
 ## Trajectory Generation
-There were two
+There were two components to the trajectory generation:
+
+1. End-Effector Reference Trajectory: Generating a desired end-effector trajectory for the robot to follow.
+2. Time allocation: Generating the time and number of simulation steps per trajectory segment based on the desired end-effector trajectory.
+
+These were accomplished using the trajectory generation functions provided by the `modern_robotics` library after splitting the sequence into 8 separate segments.
+
+```python
+dt = 0.01  # [s]
+total_time = 10  # [s]
+traj_1_time = 0.21 * total_time  # Initial -> Pick_Standoff
+traj_2_time = 0.01 * total_time  # Pick_Standoff -> Cube_Initial
+traj_3_time = 0.07 * total_time  # Cube_Initial -> Gripper Closed
+traj_4_time = 0.21 * total_time  # Gripper Closed -> Pick_Standoff
+traj_5_time = 0.21 * total_time  # Pick_Standoff -> Place_Standoff
+traj_6_time = 0.01 * total_time  # Place_Standoff -> Cube_Final
+traj_7_time = 0.07 * total_time  # Cube_Final -> Gripper Open
+traj_8_time = 0.21 * total_time  # Gripper Open -> Place_Standoff
+trajectory_time = np.array([
+    traj_1_time, traj_2_time, traj_3_time, traj_4_time,
+    traj_5_time, traj_6_time, traj_7_time, traj_8_time
+])
+# steps per trajectory segment
+# traj_steps = int(total_time * num_reference_configs / dt)
+traj_steps = [
+    int(t * num_reference_configs / dt) for t in trajectory_time
+]
+# Apply transformations for the waypoints we'll need
+pick_standoff_config = cube_initial_config @ standoff_config
+place_standoff_config = cube_final_config @ standoff_config
+pick_grasp_config = cube_initial_config @ ee_grasping_config
+place_grasp_config = cube_final_config @ ee_grasping_config
+# Gripper states for the trajectory
+gripper_states = []
+# Trajectory 1: Initial -> Pick_Standoff (Screw Trajectory)
+gripper_states.extend([0] * traj_steps[0])
+traj_1 = mr.ScrewTrajectory(
+    ee_initial_config, pick_standoff_config, trajectory_time[0], traj_steps[0], method=3
+)
+# Trajectory 2: Pick_Standoff -> Cube_Initial (Cartesian Trajectory)
+gripper_states.extend([0] * traj_steps[1])
+traj_2 = mr.CartesianTrajectory(
+    pick_standoff_config, pick_grasp_config, trajectory_time[1], traj_steps[1], method=3
+)
+# Trajectory 3: Cube_Initial -> Gripper Closed
+gripper_states.extend([1] * traj_steps[2])
+traj_3 = mr.ScrewTrajectory(
+    pick_grasp_config, pick_grasp_config, trajectory_time[2], traj_steps[2], method=3
+)
+# Trajectory 4: Gripper Closed -> Pick_Standoff (Cartesian Trajectory)
+gripper_states.extend([1] * traj_steps[3])
+traj_4 = mr.CartesianTrajectory(
+    pick_grasp_config, pick_standoff_config, trajectory_time[3], traj_steps[3], method=3
+)
+# Trajectory 5: Pick_Standoff -> Place_Standoff (Screw Trajectory)
+gripper_states.extend([1] * traj_steps[4])
+traj_5 = mr.ScrewTrajectory(
+    pick_standoff_config, place_standoff_config, trajectory_time[4], traj_steps[4], method=3
+)
+# Trajectory 6: Place_Standoff -> Cube_Final (Cartesian Trajectory)
+gripper_states.extend([1] * traj_steps[5])
+traj_6 = mr.CartesianTrajectory(
+    place_standoff_config, place_grasp_config, trajectory_time[5], traj_steps[5], method=3
+)
+# Trajectory 7: Cube_Final -> Gripper Open
+gripper_states.extend([0] * traj_steps[6])
+traj_7 = mr.ScrewTrajectory(
+    place_grasp_config, place_grasp_config, trajectory_time[6], traj_steps[6], method=3
+)
+# Trajectory 8: Gripper Open -> Place_Standoff
+gripper_states.extend([0] * traj_steps[7])
+traj_8 = mr.CartesianTrajectory(
+    place_grasp_config, place_standoff_config, trajectory_time[7], traj_steps[7], method=3
+)
+trajectory = np.concatenate(
+    (traj_1, traj_2, traj_3, traj_4, traj_5, traj_6, traj_7, traj_8), axis=0
+)
+```
 
 ## Odometry
 Odometry is the process of estimating the mobile robot's pose by integrating the wheel velocities. The robot's pose is represented by the chassis configuration \\([\phi, x, y]\\), where \\(\phi\\) is the orientation and \\(x, y\\) are the position in the world frame. We can compute the body twist \\(V_b\\) using the wheel velocities \\(\dot{\theta}\\), the timestep \\(\Delta t\\), and the chassis configuration \\( F=pinv(H(0))\\):
