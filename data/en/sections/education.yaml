@@ -79,29 +79,29 @@ degrees:
   #     content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   #   - name: Supervisor
   #     content: Fusce eu augue ut odio porttitor pulvinar.
-- name: High School Diploma
-  icon: fa-graduation-cap
-  timeframe: 2015-2019
-  institution:
-    name: Dougherty Valley High School
-    url: "https://dvhs.srvusd.net/"
-    # logo: /images/linux.png
-    # Can optionally show a different logo for dark theme
-    # darkLogo: /images/sections/education/science_college.png
-  # grade: #(optional)
-    # scale: GPA
-    # achieved: 5
-    # outOf: 5
-  extracurricularActivities: #(optional)
-  - Varsity Water Polo (MVP Award in 2018 & 2019)
-  - VEX Robotics Team Captain (Team 5776E)
-  - BSA Eagle Scout
-# - name: Secondary School Certificate
-#   icon: fa-school
-#   timeframe: 2005-2010
+# - name: High School Diploma
+#   icon: fa-graduation-cap
+#   timeframe: 2015-2019
 #   institution:
-#     name: JK School of Science
-#   grade: #(optional)
-#     scale: GPA
-#     achieved: 4.5
-#     outOf: 5
+#     name: Dougherty Valley High School
+#     url: "https://dvhs.srvusd.net/"
+#     # logo: /images/linux.png
+#     # Can optionally show a different logo for dark theme
+#     # darkLogo: /images/sections/education/science_college.png
+#   # grade: #(optional)
+#     # scale: GPA
+#     # achieved: 5
+#     # outOf: 5
+#   extracurricularActivities: #(optional)
+#   - Varsity Water Polo (MVP Award in 2018 & 2019)
+#   - VEX Robotics Team Captain (Team 5776E)
+#   - BSA Eagle Scout
+# # - name: Secondary School Certificate
+# #   icon: fa-school
+# #   timeframe: 2005-2010
+# #   institution:
+# #     name: JK School of Science
+# #   grade: #(optional)
+# #     scale: GPA
+# #     achieved: 4.5
+# #     outOf: 5
