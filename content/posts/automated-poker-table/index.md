@@ -1,6 +1,6 @@
 ---
 title: "Automated Poker Table"
-date: 2025-01-05T09:00:00+00:00
+date: 2023-04-18T09:00:00+00:00
 description: Introduction to Sample Post
 hero: images/bike_dealer.jpg
 author:
@@ -10,6 +10,6 @@ menu:
     name: Automated Poker Table
     identifier: automated-poker-table
     weight: 3
-tags: ["Basic", "Multi-lingual"]
-categories: ["Basic"]
+tags: ["Arduino", "Python", "Raspberry Pi", "I2C", "Stepper Motors"]
+# categories: ["Basic"]
 ---

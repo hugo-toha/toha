@@ -46,7 +46,7 @@ projects:
   url: "/posts/automated-poker-table/"
   repo: "https://github.com/Connor205/B-I-K-E"
   summary: An robotic system that faciliates a game of poker with automated shuffling, dealing, and game management.
-  tags: ["Arduino", "Python", "Raspberry Pi", "I2C"]
+  tags: ["Arduino", "Python", "Raspberry Pi", "I2C", "Stepper Motors"]
 
 - name: Chess Robot
   role: "NEU Robotics Club Project"
