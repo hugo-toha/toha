@@ -1,6 +1,6 @@
 ---
 title: "Napkin.AI"
-date: 2024-02-03T09:00:00+00:00
+date: 2024-02-04T09:00:00+00:00
 description: Napkin.AI Hackathon Project
 hero: images/copilot.png
 author:

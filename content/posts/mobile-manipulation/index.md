@@ -1,7 +1,7 @@
 ---
 title: "Mobile Manipulation"
-date: 2025-01-02T09:00:00+00:00
-description: Introduction to Sample Post
+date: 2024-12-12T09:00:00+00:00
+description: Final Project for ME449 - Robotic Manipulation
 hero: images/kuka_youbot.jpg
 author:
   image: /images/sharwin_portrait.jpg
