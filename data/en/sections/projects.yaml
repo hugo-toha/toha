@@ -22,7 +22,7 @@ section:
 # your projects
 projects:
 - name: Simulation of a Mobile Manipulator
-  image: /images/kuka_youbot.jpg
+  image: /images/mobile_manipulation.gif
   role: "ME449: Robotic Manipulation Final Project"
   timeline: "Nov 2024 - Dec 2024"
   repo: https://github.com/Sharwin24/Mobile-Manipulation
@@ -31,6 +31,7 @@ projects:
   tags: ["Python", "CoppeliaSim", "Odometry", "Omnidirectional Robot Kinematics"]
 
 - name: Toasting Bread with a Franka Robot Arm
+  image: /images/toast_grab.gif
   role: "ME495: Embedded Systems Final Project"
   timeline: "Nov 2024 - Dec 2024"
   repo: https://github.com/snydergi/ToastBot
@@ -39,7 +40,7 @@ projects:
   tags: ["Python", "ROS", "Moveit API", "Intel Realsense"]
 
 - name: Automated Poker Table
-  image: /images/bike_dealer.jpg
+  image: /images/bike_dealer.gif
   role: "ECE 2023 Capstone"
   timeline: "Jan 2023 - May 2034"
   url: "/posts/automated-poker-table/"
@@ -49,7 +50,7 @@ projects:
 
 - name: Chess Robot
   role: "NEU Robotics Club Project"
-  image: /images/chess.jpg
+  image: /images/chess_robot.gif
   timeline: "Sept 2021 - Dec 2021"
   url: "/posts/chess-robot/"
   repo: "https://github.com/Connor205/Chess-Robot-NURobotics"
@@ -75,6 +76,7 @@ projects:
   tags: ["C++", "Multi-threading", "Spline Interpolation"]
 
 - name: SLAM Simulation
+  image: /images/slam_simulation.jpg
   role: "ME495: Embedded Systems Homework"
   timeline: "Nov 2024 - Dec 2024"
   url: "/posts/slam-simulation/"
@@ -92,6 +94,7 @@ projects:
   tags: ["Python", "RRT", "A*"]
 
 - name: Robot Pen Thief
+  image: /images/pincherx100_calibration.gif
   role: "Personal Project"
   timeline: "Sept 2024"
   url: "/posts/pen-thief/"

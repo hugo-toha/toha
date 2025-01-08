@@ -13,7 +13,7 @@ description: Sharwin Patil's Portfolio and project showcases.
 # they will be separated by a divider from the main menus.
 customMenus:
 - name: Resume
-  url: post/files/main.pdf
+  url: https://github.com/Sharwin24/Resume/blob/master/main.pdf
   showOnFooter: true
 
 - name: GitHub
@@ -26,4 +26,4 @@ openGraph:
   type: website
   description: Sharwin Patil's Portfolio, showcasing several robotics projects.
   image: images/kavar_background.jpg
-  url: https://sharwin24.github.io/
+  url: https://sharwinpatil.info/

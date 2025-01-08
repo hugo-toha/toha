@@ -2,7 +2,7 @@
 title: "Mobile Manipulation"
 date: 2025-01-02T09:00:00+00:00
 description: Introduction to Sample Post
-hero: images/robot_states.png
+hero: images/kuka_youbot.jpg
 author:
   image: /images/sharwin_portrait.jpg
 menu:

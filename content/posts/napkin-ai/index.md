@@ -2,7 +2,7 @@
 title: "Napkin.AI"
 date: 2024-02-03T09:00:00+00:00
 description: Napkin.AI Hackathon Project
-hero: images/error_plot.png
+hero: images/copilot.png
 author:
   image: /images/sharwin_portrait.jpg
 menu:
