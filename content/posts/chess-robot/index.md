@@ -14,7 +14,7 @@ tags: ["Python", "OpenCV", "Arduino", "Stepper Motors"]
 # categories: ["Basic"]
 ---
 
-This robot utilized stepper motors, a camera, sensors, and a gantry style system to interact with the chess board.
+This robot utilized stepper motors, a camera, sensors, and a gantry style system to interact with the chess board and play against a human opponent.
 
 ## System Hardware
 The robot's frame was assembled using aluminum extrusion and 3D printed parts. 2 motors were used to drive the X-axis, and 1 motor was used to drive the Y-axis (horizontally).
