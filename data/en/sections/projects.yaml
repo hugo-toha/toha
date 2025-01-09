@@ -66,14 +66,14 @@ projects:
   summary: A 3D-printed robot arm kit for educational purposes. Coupled with a software package intended for students with little to no experience coding to use.
   tags: ["3D Printing", "Arduino", "C++"]
 
-- name: AGV Odometry & Motion Planning
-  image: /images/pure-pursuit.png
-  role: "VEXU Team HSKY"
-  timeline: "Sept 2022 - Dec 2022"
-  url: "/posts/agv-hsky/"
-  repo: https://github.com/Sharwin24/HSKY
-  summary: Implemented Odometry from scratch in C++ for spline motions
-  tags: ["C++", "Multi-threading", "Spline Interpolation"]
+# - name: AGV Odometry & Motion Planning
+#   image: /images/pure-pursuit.png
+#   role: "VEXU Team HSKY"
+#   timeline: "Sept 2022 - Dec 2022"
+#   url: "/posts/agv-hsky/"
+#   repo: https://github.com/Sharwin24/HSKY
+#   summary: Implemented Odometry from scratch in C++ for spline motions
+#   tags: ["C++", "Multi-threading", "Spline Interpolation"]
 
 - name: SLAM Simulation
   image: /images/slam_simulation.jpg
@@ -84,15 +84,6 @@ projects:
   summary: A simulation of a robot navigating an environment using SLAM with frontier exploration.
   tags: ["Python", "ROS", "Gazebo", "Nav2"]
 
-- name: Autonomous Drone Swarm Simulation
-  image: /images/robotech_sim.gif
-  role: "RoboTech 2022 Hackathon Project"
-  timeline: "April 2022"
-  url: "/posts/robo-tech/"
-  repo: https://github.com/Sharwin24/RoboTech
-  summary: A simulation of a swarm of drones cleaning algal blooms in a lake using RRT and A* path planning.
-  tags: ["Python", "RRT", "A*"]
-
 - name: Robot Pen Thief
   image: /images/pincherx100_calibration.gif
   role: "Personal Project"
@@ -101,6 +92,15 @@ projects:
   repo: https://github.com/Sharwin24/Pen-Challenge
   summary: Combining a PincherX 100 robot arm with an Intel Realsense to identify and grab pens.
   tags: ["Python", "ROS", "Intel Realsense"]
+
+- name: Autonomous Drone Swarm Simulation
+  image: /images/robotech_sim.gif
+  role: "RoboTech 2022 Hackathon Project"
+  timeline: "April 2022"
+  url: "/posts/robo-tech/"
+  repo: https://github.com/Sharwin24/RoboTech
+  summary: A simulation of a swarm of drones cleaning algal blooms in a lake using RRT and A* path planning.
+  tags: ["Python", "RRT", "A*"]
 
 - name: Napkin.ai Code Assistant
   role: "Hack@Brown 2024 Project"
