@@ -27,7 +27,7 @@ projects:
   timeline: "Nov 2024 - Dec 2024"
   repo: https://github.com/Sharwin24/Mobile-Manipulation
   url: "/posts/mobile-manipulation/"
-  summary: Simulating a pick and place task with the KUKA YouBot using a task-space feed-forward PID controller. 
+  summary: Simulating a pick and place task with the KUKA YouBot using a task-space feed-forward PID controller and Odometry.
   tags: ["Python", "CoppeliaSim", "Odometry", "Omnidirectional Robot Kinematics"]
 
 - name: Toasting Bread with a Franka Robot Arm
@@ -62,7 +62,7 @@ projects:
   role: "Personal Project"
   timeline: "May 2022 - May 2024"
   url: "/posts/robot-arm-edu/"
-  repo: https://github.com/Shawin24/
+  repo: https://github.com/Sharwin24/Robotic-Arm
   summary: A 3D-printed robot arm kit for educational purposes. Coupled with a software package intended for students with little to no experience coding to use.
   tags: ["3D Printing", "Arduino", "C++"]
 
@@ -75,23 +75,23 @@ projects:
 #   summary: Implemented Odometry from scratch in C++ for spline motions
 #   tags: ["C++", "Multi-threading", "Spline Interpolation"]
 
-- name: SLAM Simulation
-  image: /images/slam_simulation.jpg
-  role: "ME495: Embedded Systems Homework"
-  timeline: "Nov 2024 - Dec 2024"
-  url: "/posts/slam-simulation/"
-  repo: https://github.com/ME495-EmbeddedSystems/homework-4-Sharwin24
-  summary: A simulation of a robot navigating an environment using SLAM with frontier exploration.
-  tags: ["Python", "ROS", "Gazebo", "Nav2"]
+# - name: SLAM Simulation
+#   image: /images/slam_simulation.jpg
+#   role: "ME495: Embedded Systems Homework"
+#   timeline: "Nov 2024 - Dec 2024"
+#   url: "/posts/slam-simulation/"
+#   repo: https://github.com/ME495-EmbeddedSystems/homework-4-Sharwin24
+#   summary: A simulation of a robot navigating an environment using SLAM with frontier exploration.
+#   tags: ["Python", "ROS", "Gazebo", "Nav2"]
 
-- name: Robot Pen Thief
-  image: /images/pincherx100_calibration.gif
-  role: "Personal Project"
-  timeline: "Sept 2024"
-  url: "/posts/pen-thief/"
-  repo: https://github.com/Sharwin24/Pen-Challenge
-  summary: Combining a PincherX 100 robot arm with an Intel Realsense to identify and grab pens.
-  tags: ["Python", "ROS", "Intel Realsense"]
+# - name: Robot Pen Thief
+#   image: /images/pincherx100_calibration.gif
+#   role: "Personal Project"
+#   timeline: "Sept 2024"
+#   url: "/posts/pen-thief/"
+#   repo: https://github.com/Sharwin24/Pen-Challenge
+#   summary: Combining a PincherX 100 robot arm with an Intel Realsense to identify and grab pens.
+#   tags: ["Python", "ROS", "Intel Realsense"]
 
 - name: Autonomous Drone Swarm Simulation
   image: /images/robotech_sim.gif
