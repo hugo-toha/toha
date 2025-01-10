@@ -1,0 +1,15 @@
+section:
+  name: Featured Projects
+  id: featured-posts
+  template: sections/featured-posts.html # Use "sections/education-alt.html for alternate template.
+  enable: false
+  weight: 6
+  showOnNavbar: false
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+posts:
+- mobile-manipulation
+- automated-poker-table
+- chess-robot
+- robot-arm-edu
