@@ -130,7 +130,7 @@ params:
       enable: true
       showAuthor: true
     analytics:
-      enabled: false
+      enabled: true
       services:
         google:
           id: "G-D5RCC030C7"
