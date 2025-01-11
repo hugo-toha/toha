@@ -28,7 +28,7 @@ projects:
   repo: https://github.com/Sharwin24/Mobile-Manipulation
   url: "/posts/mobile-manipulation/"
   summary: Simulating a pick and place task with the KUKA YouBot using a task-space feed-forward PID controller and Odometry.
-  tags: ["Python", "CoppeliaSim", "Odometry", "Omnidirectional Robot Kinematics"]
+  tags: ["Python", "CoppeliaSim", "Odometry", "PID Control", "Omnidirectional Robot Kinematics"]
 
 - name: Toasting Bread with a Franka Robot Arm
   image: /images/toast_grab.gif
@@ -41,8 +41,8 @@ projects:
 
 - name: Automated Poker Table
   image: /images/bike_dealer.gif
-  role: "ECE 2023 Capstone"
-  timeline: "Jan 2023 - May 2034"
+  role: "ECE 2023 Senior Capstone Project"
+  timeline: "Jan 2023 - April 2023"
   url: "/posts/automated-poker-table/"
   repo: "https://github.com/Connor205/B-I-K-E"
   summary: An robotic system that faciliates a game of poker with automated shuffling, dealing, and game management.

@@ -1,6 +1,6 @@
 ---
 title: "Robotech"
-date: 2024-04-21T09:00:00+00:00
+date: 2022-04-21T09:00:00+00:00
 description: RoboTech 2022 Hackathon Submission
 hero: images/robotech_sim.gif
 author:
