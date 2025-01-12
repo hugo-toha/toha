@@ -123,18 +123,7 @@
         </ul>
       </div>
       {{ end }}
-      <!-------------- Newsletter --------------->
-      {{ if $newsletterEnabled }}
-      {{ $provider := site.Params.footer.newsletter.provider }}
-     <!-- /home/sharwin/sharwin24.github.io/data/en/site.yaml -->
-      {{ end }}
     </div>
   </div>
-  {{ if and $disclaimerEnabled $disclaimer}}
-  <hr />
-  <div class="container">
-    <p id="disclaimer"><strong>{{ i18n "disclaimer_text" }}:</strong> {{ $disclaimer | markdownify }}</p>
-  </div>
-  {{ end }}
 </footer>
 {{end}}
