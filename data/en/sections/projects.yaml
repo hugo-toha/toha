@@ -51,7 +51,7 @@ projects:
 - name: Chess Robot
   role: "NEU Robotics Club Project"
   image: /images/chess_robot.gif
-  timeline: "Sept 2021 - Dec 2021"
+  timeline: "Mar 2021 - June 2022"
   url: "/posts/chess-robot/"
   repo: "https://github.com/Connor205/Chess-Robot-NURobotics"
   summary: A gantry robot equipped with a camera to autonomously play and teach chess to human opponents.
