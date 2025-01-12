@@ -33,17 +33,9 @@ The Arduino Nano handles I/O control for the 4 button panels which enable player
     <img src="system_overview.png" alt="System Overview" style="border-radius: 15px;">
 </div>
 
-### Card Dealer
-
-### Auto-Shuffler
-
-### Player Button Panel
-
-### Game Display
-
 ## Design Reviews
 
-### Card Dealer
+### Card Dealer (Turret)
 
 ### Auto-Shuffler
 
@@ -54,3 +46,5 @@ The Arduino Nano handles I/O control for the 4 button panels which enable player
 #### Card Elevator
 
 ### Button Panel
+
+### Game Display
