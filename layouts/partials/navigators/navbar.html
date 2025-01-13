@@ -1,6 +1,8 @@
 {{/*  variables for enabling/disabling various features  */}}
 {{ $blogEnabled   := site.Params.features.blog.enable   | default false }}
+{{ $blogTitle  := site.Params.features.blog.title | default (i18n "posts") }}
 {{ $notesEnabled  := site.Params.features.notes.enable  | default false }}
+{{ $notesTitle := site.Params.features.notes.title  | default (i18n "notes") }}
 {{ $maxVisibleSections   := site.Params.topNavbar.maxVisibleSections   | default 5 }}
 
 {{/*  keep backward compatibility for blog post  */}}
@@ -121,12 +123,12 @@
         {{ end }}
         {{ if $blogEnabled }}
           <li class="nav-item">
-            <a class="nav-link" id="blog-link" href="{{ path.Join (site.BaseURL | relLangURL) "posts" }}">{{ i18n "posts" }}</a>
+            <a class="nav-link" id="blog-link" href="{{ path.Join (site.BaseURL | relLangURL) "posts" }}">{{ $blogTitle }}</a>
           </li>
         {{ end }}
         {{ if $notesEnabled }}
           <li class="nav-item">
-            <a class="nav-link" id="note-link" href="{{ path.Join (site.BaseURL | relLangURL) "notes" }}">{{ i18n "notes" }}</a>
+            <a class="nav-link" id="note-link" href="{{ path.Join (site.BaseURL | relLangURL) "notes" }}">{{ $notesTitle }}</a>
           </li>
         {{ end }}
         {{ range $customMenus }}
@@ -139,7 +141,7 @@
         {{ if .IsTranslated }}
           {{ partial "navigators/lang-selector.html" . }}
         {{ end }}
-        {{ if site.Params.features.darkMode.enable }}
+        {{ if or site.Params.features.darkMode.enable site.Params.features.theme.enable }}
           {{ partial "navigators/theme-selector.html" . }}
         {{ end }}
       </ul>

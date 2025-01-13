@@ -11,12 +11,22 @@
     <div class="card-header">
       <h5 class="card-title mb-0">{{ .title }}</h5>
       <div class="sub-title">
-        <span><a class="" href="{{.publishedIn.url}}">{{ .publishedIn.name }}</a></span>
+        <span>
+          {{ if .publishedIn.url }}
+          <a class="" href="{{.publishedIn.url}}">{{ .publishedIn.name }}</a>
+          {{ else }}
+          <a class="">{{ .publishedIn.name }}</a>
+          {{ end }}
+        </span>
         <span class="ms-2">{{ .publishedIn.date }}</span>
       </div>
       <div class="authors">
         {{ range $index,$author:= .authors }}
+        {{if .url}}
           <span class="me-2"><a class="" href="{{.url}}">{{ .name }}</a></span>
+        {{ else }}
+        <span class="me-2"><a class="">{{ .name }}</a></span>
+        {{ end }}
         {{ end }}
       </div>
     </div>
@@ -31,9 +41,11 @@
             </span>
         {{ end }}
       </div>
+      {{ if .paper.url }}
       <div class="details-btn">
         <a class="btn btn-outline-info ms-1 ps-2 mb-2" href="{{ .paper.url }}" target="_blank" rel="noopener" role="button">{{ i18n "project_details"}}</a>
       </div>
+      {{ end }}
     </div>
   </div>
 </div>

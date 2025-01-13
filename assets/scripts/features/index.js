@@ -10,6 +10,10 @@ if (process.env.FEATURE_DARKMODE === '1') {
   import('./darkmode')
 }
 
+if (process.env.FEATURE_THEME === '1') {
+  import('./theme')
+}
+
 if (process.env.FEATURE_FLOWCHART === '1') {
   import('./flowchart')
 }
@@ -24,4 +28,8 @@ if (process.env.FEATURE_MATH === '1') {
 
 if (process.env.FEATURE_EMBEDPDF === '1') {
   import('./embedpdf')
+}
+
+if (process.env.FEATURE_COPYCODEBUTTON === '1') {
+  import('./copyCode')
 }

@@ -13,7 +13,8 @@
     @include transition();
     &:hover {
       margin-left: 5px;
-      text-decoration: get-light-color('muted-text-color') underline;
+      -webkit-text-decoration: get-light-color('muted-text-color') underline;
+              text-decoration: get-light-color('muted-text-color') underline;
       @include transition();
     }
   }
@@ -79,7 +80,8 @@ html[data-theme='dark'] {
     a {
       color: get-dark-color('muted-text-color');
       &:hover {
-        text-decoration: get-dark-color('muted-text-color') underline;
+        -webkit-text-decoration: get-dark-color('muted-text-color') underline;
+                text-decoration: get-dark-color('muted-text-color') underline;
       }
     }
 
@@ -95,6 +97,10 @@ html[data-theme='dark'] {
       background-color: get-dark-color('bg-primary');
       &:focus {
         background-color: get-dark-color('bg-secondary');
+        color: get-dark-color('text-color');
+      }
+      &::placeholder {
+        color: get-dark-color('muted-text-color');
       }
     }
 

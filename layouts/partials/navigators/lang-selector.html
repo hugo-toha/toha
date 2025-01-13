@@ -6,16 +6,16 @@
     <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {{ if ne site.Params.features.flags.enable false }}
             {{ $countryCode := partial "helpers/country-code.html" . }}
-            <span class="flag-icon flag-icon-{{$countryCode}}"></span>
+            <span class="fi fi-{{$countryCode}}"></span>
         {{ end }}
         {{ site.Language.LanguageName }}
     </a>
     <div class="dropdown-menu" aria-labelledby="languageSelector">
         {{ range site.Home.AllTranslations }}
-        <a class="dropdown-item nav-link languages-item" href="{{ path.Join "/" (cond (eq .Language.Lang $.Sites.First.Language.Lang) "" .Language.Lang) $pageURL }}">
+        <a class="dropdown-item nav-link languages-item" href="{{ path.Join "/" (cond (eq .Language.Lang $.Sites.Default.Language.Lang) "" .Language.Lang) $pageURL }}">
             {{ if ne site.Params.features.flags.enable false }}
                 {{ $countryCode := partial "helpers/country-code.html" . }}
-                <span class="flag-icon flag-icon-{{$countryCode}}"></span>
+                <span class="fi fi-{{$countryCode}}"></span>
             {{ end }}
             {{ .Language.LanguageName }}
         </a>

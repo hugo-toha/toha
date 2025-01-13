@@ -3,7 +3,7 @@
   {{ $sectionID = .section.id }}
 {{ end }}
 
-<div class="container-fluid anchor pb-5 skills-section">
+<div class="container-fluid anchor pb-5 skills-section" id="{{ $sectionID }}">
   {{ if not (.section.hideTitle) }}
     <h1 class="text-center">
         <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
@@ -11,11 +11,25 @@
     <h1 class="text-center" style="display: none">
         <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
   {{ end }}
+  {{ if .section.filter }}
+  <div class="container ms-auto text-center">
+    <div class="btn-group flex-wrap" role="group" id="skill-filter-buttons">
+      {{ range .buttons }}
+      <button type="button" class="btn btn-dark skill-filtr-control" data-filter="{{ .filter }}">
+        {{ .name }}
+      </button>
+      {{ end }}
+    </div>
+  </div>
+  <div class="container d-flex-block filtr-skills">
+    <div class="row" id="skill-card-holder" style="margin-left:unset">
+  {{ else }}
   <div class="container d-flex-block">
     <div class="row" id="primary-skills">
+  {{ end }}
       {{ range .skills }}
-        {{ partial "cards/skill.html" . }}
-      {{ end }}
+      {{ partial "cards/skill.html" . }}
+    {{ end }}
     </div>
   </div>
 </div>

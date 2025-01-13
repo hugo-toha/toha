@@ -38,6 +38,7 @@ A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist desi
   - counter.dev
   - Google Analytics
   - Matomo/Piwik
+  - [Umami](https://umami.is/)
 - Comment Support
   - [Disqus](https://disqus.com/)
   - [Valine](https://valine.js.org/)
@@ -55,6 +56,7 @@ For more details about the features please visit [here](https://toha-guides.netl
 - Deutsch
 - Español
 - 简体中文
+- 繁體中文
 - हिन्दी
 - Italiano
 - 日本語
@@ -62,6 +64,7 @@ For more details about the features please visit [here](https://toha-guides.netl
 - русский
 - suomi
 - Tiếng Việt
+- Azerbaijan
 - Turkish
 - Arabic (العربية)
 - Português Europeu
@@ -90,7 +93,7 @@ Here are few screenshots from the [example site](https://hugo-toha.github.io).
 
 ## Requirements
 
-- Hugo Version 0.118.0 (extended) or higher
+- Hugo Version 0.128.0 (extended) or higher
 - Go language 1.18 or higher (require for hugo modules)
 - Node version v18.x or later and npm 8.x or later.
 
@@ -110,7 +113,7 @@ hugo mod init github.com/<your username>/<your repo name>
 
 ##### 2. Add this theme as your module dependency
 
-Now, in your `config.yaml` file, add a `module` section.
+Now, in your `hugo.yaml` file, add a `module` section.
 
 ```yaml
 # Use Hugo modules to add theme
@@ -119,7 +122,7 @@ module:
   - path: github.com/hugo-toha/toha/v4
 ```
 
-Check this sample [config.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/config.yaml) for further reference.
+Check this sample [hugo.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/hugo.yaml) for further reference.
 
 ##### 3. Update your module
 
@@ -206,7 +209,7 @@ $ npm install
 $ hugo server -w
 ```
 
-Now, you can make change in the theme and they will be reflected immediately on the running site. If you need to change any configuration, you can do that in the `config.yaml` file inside `exampleSite` folder. If you need to add any content or data, you can create the respective folder inside `exampleSite` directory and add your desired content or data there.
+Now, you can make change in the theme and they will be reflected immediately on the running site. If you need to change any configuration, you can do that in the `hugo.yaml` file inside `exampleSite` folder. If you need to add any content or data, you can create the respective folder inside `exampleSite` directory and add your desired content or data there.
 
 #### Running the forked theme against your own site
 

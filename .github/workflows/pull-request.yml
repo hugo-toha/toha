@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # checkout to the commit that has been pushed
-    - uses: actions/checkout@v4.1.5
+    - uses: actions/checkout@v4.2.2
 
     - name: Setup Node
       uses: actions/setup-node@v4
@@ -35,7 +35,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4.1.5
+    - uses: actions/checkout@v4.2.2
 
     - name: Setup Node
       uses: actions/setup-node@v4
@@ -73,20 +73,11 @@ jobs:
         timeout: 5
         urls: "${{ steps.preview.outputs.url }},${{ steps.preview.outputs.url }}/posts/,${{ steps.preview.outputs.url }}/posts/markdown-sample/,${{ steps.preview.outputs.url }}/posts/shortcodes/"
 
-  # Ensure that PR has desired labels
-  enforce-label:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: yogevbd/enforce-label-action@2.2.2
-      with:
-        REQUIRED_LABELS_ANY: "automerge,breaking-change,bug-fix,enhancement,feature,translation"
-        REQUIRED_LABELS_ANY_DESCRIPTION: "The PR must have at least one these labels: ['automerge','breaking-change','bug-fix','enhancement','feature','translation']"
-
   # Check for any broken links
   markdown-link-check:
     runs-on: ubuntu-latest
     steps:
     # checkout to latest commit
-    - uses: actions/checkout@v4.1.5
+    - uses: actions/checkout@v4.2.2
     # run markdown linter
     - uses: gaurav-nelson/github-action-markdown-link-check@1.0.15

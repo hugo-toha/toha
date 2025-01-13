@@ -9,6 +9,11 @@
     box-shadow: $box-shadow;
     border: 1px solid get-light-color('bg-primary');
     @include transition();
+    .card-img-top {
+      transform: scale(1.2);
+      object-fit: cover;
+      @include transition();
+    }
   }
 
   .card-head {
@@ -17,12 +22,17 @@
     overflow: hidden;
   }
 
+  .card-title {
+    font-size: large;
+  }
+
   .card-body {
-    text-align: justify;
+    text-align: left;
   }
 
   .card-img-top {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     @include transition();
   }
 
@@ -61,7 +71,8 @@
     &:focus {
       .card-img-top {
         transform: scale(1.2);
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
         @include transition();
       }
     }
