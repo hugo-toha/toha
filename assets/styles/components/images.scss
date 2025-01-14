@@ -56,3 +56,21 @@ html[data-theme='dark'] {
   max-height: 100%;
   width: auto;
 }
+
+.light-logo {
+  display: inline;
+}
+
+.dark-logo {
+  display: none;
+}
+
+html[data-theme='dark'] {
+  .light-logo {
+    display: none;
+  }
+
+  .dark-logo {
+    display: inline;
+  }
+}
