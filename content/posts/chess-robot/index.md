@@ -50,4 +50,4 @@ Resetting a chess board after a game is such a simple task for humans it is ofte
 
 The blue squares outlining the main board are reserved for captured pieces (and the extra queen). Whenever a capture occurs, the robot places the captured piece into the corresponding square.
 
-When solving for an optimal path using a state-space exploration with A*, the space rapidly expands and is infeasible to solve. Our approach was to use a greedy algorithm minimizing axes movement.
+When solving for an optimal path using a state-space exploration with A*, the space rapidly expands and is infeasible to solve. Our approach was to use a [greedy algorithm minimizing axes movement](https://github.com/Connor205/Chess-Robot-NURobotics/blob/main/mk1/resetFinder.py).
