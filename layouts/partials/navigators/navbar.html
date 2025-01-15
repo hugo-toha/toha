@@ -134,7 +134,7 @@
         {{ range $customMenus }}
             {{ if (not .hideFromNavbar) }}
               <li class="nav-item">
-                <a class="nav-link" href="{{ .url }}">{{ .name }}</a>
+                <a class="nav-link" href="{{ .url }}" target="_blank">{{ .name }}</a>
               </li>
             {{ end }}
         {{ end }}
