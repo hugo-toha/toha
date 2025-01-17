@@ -13,6 +13,7 @@
 {{/* by default, don't use any logo */}}
 {{ $mainLogo := "" }}
 {{ $invertedLogo := "" }}
+{{ $darkLogo := "" }}
 
 {{/*  if custom logo has been provided, use them  */}}
 {{ if site.Params.logo.main }}
@@ -20,6 +21,9 @@
 {{ end }}
 {{ if site.Params.logo.inverted }}
   {{ $invertedLogo = site.Params.logo.inverted }}
+{{ end }}
+{{ if site.Params.logo.dark }}
+  {{ $darkLogo = site.Params.logo.dark }}
 {{ end }}
 
 {{/* resize the logos. don't resize svg because it is not supported */}}
@@ -37,6 +41,14 @@
     {{ $invertedLogo = $invertedLogo.Resize "42x" }}
   {{ end }}
   {{ $invertedLogo = $invertedLogo.RelPermalink}}
+{{ end }}
+
+{{ if $darkLogo }}
+  {{ $darkLogo = resources.Get $darkLogo}}
+  {{ if and $darkLogo (ne $darkLogo.MediaType.SubType "svg")}}
+    {{ $darkLogo = $darkLogo.Resize "42x" }}
+  {{ end }}
+  {{ $darkLogo = $darkLogo.RelPermalink}}
 {{ end }}
 
 {{ $logo := $mainLogo }}
@@ -153,5 +165,8 @@
   {{ end }}
   {{ if $invertedLogo }}
     <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  {{ end }}
+  {{ if $darkLogo }}
+    <img src="{{ $darkLogo }}" class="d-none" id="dark-logo" alt="Dark Logo">
   {{ end }}
 </nav>
