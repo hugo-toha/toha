@@ -18,7 +18,7 @@
         </form>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
-            <li id="list-heading"><a href="{{ "/posts/" | relLangURL }}" data-filter="all">{{ i18n "posts" }}</a></li>
+            <li id="list-heading"><a href="{{ "/posts/" | relLangURL }}" data-filter="all">Project Posts</a></li>
             <div class="subtree">
                 {{ partial "navigators/sidebar.html" (dict "menuName" "sidebar" "menuItems" site.Menus.sidebar "ctx" .) }}
             </div>
@@ -66,10 +66,6 @@
           {{ .Page.Content }}
         </div>
       
-      <!---Next and Previous Navigator -->
-      <hr />
-        {{ partial "navigators/next-prev-navigator.html" . }}
-      <hr />
 
 
       <!-- Keep backward compatibility with old config.yaml -->

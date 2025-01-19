@@ -67,9 +67,6 @@
     </button>
     {{ end }}
     <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
-      {{ if $logo }}
-        <img src="{{ $logo }}" id="logo" alt="Logo">
-      {{ end }}
       {{- $navBarTitle -}}
     </a>
     <button
@@ -122,9 +119,9 @@
           <div id="top-navbar-divider"></div>
         {{ end }}
         {{ if $blogEnabled }}
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" id="blog-link" href="{{ path.Join (site.BaseURL | relLangURL) "posts" }}">{{ $blogTitle }}</a>
-          </li>
+          </li> -->
         {{ end }}
         {{ if $notesEnabled }}
           <li class="nav-item">
