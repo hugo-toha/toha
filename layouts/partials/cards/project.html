@@ -4,7 +4,7 @@
 >
   <div class="card mt-1">
     <div class="card">
-      <a href="{{ if .url }}{{ .url }}{{ else if .repo }}{{ .repo }}{{ else }}javascript:void(0){{ end }}" {{ if or .repo .url }}target="_blank" rel="noopener"{{ end }}>
+      <a href="{{ if .url }}{{ .url }}{{ else if .repo }}{{ .repo }}{{ else }}javascript:void(0){{ end}}">
         {{ if .image }}
         <div class="card-head">
           {{ $imageImage:= resources.Get .image}}
