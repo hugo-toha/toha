@@ -81,3 +81,35 @@ jobs:
     - uses: actions/checkout@v4.2.2
     # run markdown linter
     - uses: gaurav-nelson/github-action-markdown-link-check@1.0.15
+
+  proof-html:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout to the commit that has been pushed
+      - uses: actions/checkout@v4.1.1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install node modules
+        run: npm install
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2.6.0
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: |
+          cd exampleSite
+          hugo --minify
+
+      # Run HTML Proofer
+      - uses: anishathalye/proof-html@v2.1.2
+        with:
+          directory: exampleSite/public
+          enforce_https: false
+          ignore_url: "#"
