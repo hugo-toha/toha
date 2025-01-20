@@ -26,9 +26,16 @@ Collaborated with:
 
 An automated system that creates a seamless home-game experience by automating the tedious and repetitive tasks that occur during a game of cards while lowering the barrier of entry of knowledge for complex games, focusing on Texas Hold 'Em Poker as a proof of concept.
 
-<div align="center">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/PsuNezDvL1I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div style="position: relative; width: 100%; padding-top: 56.25%; margin: auto;">
+  <iframe
+    src="https://www.youtube.com/embed/PsuNezDvL1I"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
 </div>
+
 
 **Update (April 11, 2023): We won first place at the [Northeastern ECE Capstone Expo](https://coe.northeastern.edu/news/teams-share-top-honors-in-electrical-and-computer-engineering-capstone-presentations/)!**
 

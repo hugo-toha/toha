@@ -16,9 +16,16 @@ tags: ["Python", "ROS", "RViz", "Moveit API", "Intel Realsense"]
 
 Using a 7-DoF Franka Emika Panda Robot Arm, we developed a pick and place sequence using an Intel Realsense camera for identifying april tags.
 
-<div align="center">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/XGcdhWRo-iU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div style="position: relative; width: 100%; padding-top: 56.25%; margin: auto;">
+  <iframe
+    src="https://www.youtube.com/embed/XGcdhWRo-iU"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
 </div>
+
 
 ## Robot Arm Control
 The Franka Emika Panda Robot Arm has a ROS package `franka_ros` which allows us to control the robot arm using the Moveit API. 

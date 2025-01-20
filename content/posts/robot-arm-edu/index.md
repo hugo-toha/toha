@@ -1,6 +1,6 @@
 ---
 title: "Educational Robot Arm"
-date: 2024-01-05T09:00:00+00:00
+date: 2024-04-12T09:00:00+00:00
 description: Educational Kit for Introductory Robotics
 hero: images/kavar_background.jpg
 author:

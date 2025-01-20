@@ -24,7 +24,13 @@ This project incorporates several robotics concepts to perform a pick and place 
 ## Omnidirectional Mobile Base Kinematics (Mecanum Wheels)
 This robot uses mecanum wheels, which are omnidirectional wheels with 45-degree rollers that allow the robot to move in any direction without changing its orientation. When controlling the robot, we command the wheel velocities, which can be described by the following equation:
 
-$$ u_i=\frac{1}{r_i}\overbrace{\begin{bmatrix}1 & \tan\gamma_i\end{bmatrix}}^{\text{driving direction}}\underbrace{\begin{bmatrix}\cos\beta_i & \sin\beta_i \\\ -\sin\beta_i & \cos\beta_i\end{bmatrix}}_{\text{linear velocity in wheel frame}} \overbrace{\begin{bmatrix}-y_i & 1 & 0 \\\ x_i & 0 & 1\end{bmatrix}}^{\text{linear velocity in body frame}} V_b $$
+<div style="overflow-x: auto; width: 100%;">
+    \[
+    u_i=\frac{1}{r_i}\overbrace{\begin{bmatrix}1 & \tan\gamma_i\end{bmatrix}}^{\text{driving direction}}
+    \underbrace{\begin{bmatrix}\cos\beta_i & \sin\beta_i \\ -\sin\beta_i & \cos\beta_i\end{bmatrix}}_{\text{linear velocity in wheel frame}} 
+    \overbrace{\begin{bmatrix}-y_i & 1 & 0 \\ x_i & 0 & 1\end{bmatrix}}^{\text{linear velocity in body frame}} V_b
+    \]
+</div>
 
 where:
 - \\(u_i\\) is the wheel velocity
@@ -122,10 +128,12 @@ trajectory = np.concatenate(
 ## Odometry
 Odometry is the process of estimating the mobile robot's pose by integrating the wheel velocities. The robot's pose is represented by the chassis configuration \\([\phi, x, y]\\), where \\(\phi\\) is the orientation and \\(x, y\\) are the position in the world frame. We can compute the body twist \\(V_b\\) using the wheel velocities \\(\dot{\theta}\\), the timestep \\(\Delta t\\), and the chassis configuration \\( F=pinv(H(0))\\):
 
-$$
+<div style="overflow-x: auto; width: 100%;">
+\[
 \dot{\theta} = \Delta\theta / \Delta t \\\
 V_b = \underbrace{H(0)^{\dagger}}_{F} \cdot \dot{\theta}
-$$
+\]
+</div>
 
 The body twist \\(V_b\\) can be integrated to get the displacement \\(T_{bk} = exp([V_b])\\), which is then applied to the chassis configuration to get the new pose.
 
@@ -166,9 +174,11 @@ def odometry(chassis_config: np.array, delta_wheel_config: np.array) -> np.array
 ## Task-Space Feedforward & Feedback Control
 To perform the pick and place task, we need to implement a control law that can track a desired end-effector trajectory. The control law is given by:
 
-$$
+<div style="overflow-x: auto; width: 100%;">
+\[
 V_e(t) = \overbrace{[Ad_{X^{-1}X_d}]V_d(t)}^{\text{Feedforward}} + K_pX_{err}(t) + K_i \int X_{err}(t)
-$$
+\]
+</div>
 
 where:
 - \\(V_e(t)\\) is the error twist required to track the desired trajectory
