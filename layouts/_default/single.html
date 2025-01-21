@@ -62,6 +62,11 @@
         {{ if site.Params.features.tags.enable }}
           {{partial "misc/tags.html" .Params.tags }}
         {{ end }}
+        <!-- <div class="github-button">
+          <a href="https://github.com/Sharwin24/" target="_blank" class="btn btn-primary">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div> -->
         <div class="post-content" id="post-content">
           {{ .Page.Content }}
         </div>
