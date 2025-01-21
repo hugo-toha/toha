@@ -17,6 +17,8 @@ tags: ["3D Printing", "Arduino", "C++", "MATLAB"]
 An educational kit designed to teach the fundamentals of kinematics and dynamics. The kit is intended to accompany the course ME3460: Robot Dynamics & Control at Northeastern University. The kit is a physical representation of the final project, which is currently done purely through MATLAB simulation.
 
 ## Kit Design
+The robot is a 3-link planar manipulator with 3 degrees of freedom. The end effector is a simple gripper that can grab small objects.
+
 The entire kit is composed of 3D printed parts, and off-the-shelf hardware/electronics. Students can assemble the kit without any soldering and with minimal tools.
 
 <div align="center" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
