@@ -51,8 +51,11 @@ skills:
 - name: Unity
   logo: /images/unity.svg
 
-- name: LaTeX
-  logo: /images/latex.svg
+# - name: LaTeX
+#   logo: /images/latex.svg
 
-- name: SolidWorks
+- name: SolidWorks (CSWA)
   logo: /images/solidworks.svg
+
+- name: OnShape
+  logo: /images/onshape.svg
