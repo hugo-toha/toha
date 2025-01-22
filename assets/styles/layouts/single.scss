@@ -1,3 +1,13 @@
+.github-button {
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: get-light-color('muted-text-color');
+  background-color: get-light-color('bg-card');
+}
+
+
 body.kind-page {
   background-color: get-light-color('bg-secondary');
   position: relative;
