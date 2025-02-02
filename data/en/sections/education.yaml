@@ -29,7 +29,7 @@ degrees:
     - name: Mechatronics
     - name: Machine Learning
     - name: Deep Learning
-    - name: Theory of Dynamics
+    - name: Theory of Lagrangian Dynamics
     - name: Advanced Programming in C++
   # extracurricularActivities: #(optional)
   #   - Club Water Polo
@@ -67,7 +67,7 @@ degrees:
     - name: Algorithms & Data Structures
     - name: Circuits & Signals
     - name: Game Programming
-    - name: Robotic Science
+    - name: Robotic Science & Systems
   # publications: #(optional)
   # - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   #   url: "#"
