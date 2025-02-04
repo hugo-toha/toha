@@ -66,6 +66,15 @@ projects:
   summary: A 3D-printed robot arm kit for educational purposes. Coupled with a software package intended for students with little to no experience coding to use.
   tags: ["3D Printing", "Arduino", "C++"]
 
+- name: Open Source Delta Robot
+  image: /images/delta_robot.jpg
+  role: "MSR Winter Project"
+  timeline: "Jan 2025 - March 2025"
+  url: "/posts/delta-robot/"
+  repo: https://github.com/Sharwin24/DeltaRobot
+  summary: An open source ROS package for delta robot motion planning and kinematic control.
+  tags: ["ROS2", "C++", "Parallel Robot Kinematics"]
+
 # - name: AGV Odometry & Motion Planning
 #   image: /images/pure-pursuit.png
 #   role: "VEXU Team HSKY"
