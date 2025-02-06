@@ -64,11 +64,10 @@ outputs:
     - JSON
 
 # Configure custom path for RSS feed. Default is "index.xml"
+# Ref: https://gohugo.io/templates/output-formats/
 outputFormats:
   rss:
     baseName: rss # default is index
-    mediaType: application/rss+xml
-    isPlainText: false
 
 # Enable global emoji support
 enableEmoji: true
