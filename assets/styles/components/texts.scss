@@ -33,6 +33,10 @@ blockquote {
   }
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .text-muted {
   color: get-light-color('muted-text-color') !important;
 }
