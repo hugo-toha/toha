@@ -16,8 +16,6 @@
      {{ .Content | safeJS }}
     </script>
     {{ end }}
-    {{ $rssPath := .Site.Params.rssPath | default "/index.xml" }}
-    <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ $rssPath | relURL }}">
   </head>
 
   <body class="type-{{ .Page.Type }} kind-{{ .Page.Kind }}" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">

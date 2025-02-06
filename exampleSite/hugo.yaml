@@ -63,6 +63,13 @@ outputs:
     - RSS
     - JSON
 
+# Configure custom path for RSS feed. Default is "index.xml"
+outputFormats:
+  rss:
+    baseName: rss # default is index
+    mediaType: application/rss+xml
+    isPlainText: false
+
 # Enable global emoji support
 enableEmoji: true
 
@@ -298,9 +305,6 @@ params:
     # Enable reading time support in post cards and in post pages
     readingTime:
       enable: true
-
-    # Add RSS feed path configuration
-    rssPath: /rss.xml
 
   # Provide footer configuration.
   footer:
