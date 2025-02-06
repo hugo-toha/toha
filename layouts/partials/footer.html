@@ -106,7 +106,9 @@
                   <span><i class="fas fa-envelope"></i></span> <span>{{ $value }}</span>
                 </a></li>
               {{ else if (eq $key "phone") }}
-                <li><span><i class="fas fa-phone-alt"></i></span> <span>{{ $value }}</span></li>
+                <li><a href={{ printf "tel:%s" $value | safeURL }} target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>{{ $value }}</span>
+                </a></li>
               {{ else if (eq $key "linkedin") }}
                 <li><a href={{ printf "https://www.linkedin.com/in/%s" $value }} target="_blank" rel="noopener">
                   <span><i class="fab fa-linkedin"></i></span> <span>{{ $author.name }}</span>
