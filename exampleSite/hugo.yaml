@@ -1,4 +1,3 @@
-
 baseURL: http://example.org/
 languageCode: en-us
 title: Example Site
@@ -300,6 +299,8 @@ params:
     readingTime:
       enable: true
 
+    # Add RSS feed path configuration
+    rssPath: /rss.xml
 
   # Provide footer configuration.
   footer:
