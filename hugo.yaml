@@ -1,3 +1,7 @@
+baseURL: "https://yejashi.github.io"
+languageCode: "en-us"
+title: "Befikir's Place"
+
 module:
   hugoVersion:
     min: "0.142.0"
@@ -23,3 +27,5 @@ module:
     target: static/files
   - source: ../../node_modules/katex/dist/fonts
     target: static/fonts
+  imports:
+    - path: github.com/hugo-toha/toha/v4
