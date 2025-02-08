@@ -1,4 +1,5 @@
 baseURL: "https://yejashi.github.io"
+gitRepo: "https://github.com/Yejashi/toha"
 languageCode: "en-us"
 title: "Befikir's Place"
 
@@ -29,3 +30,5 @@ module:
     target: static/fonts
   imports:
     - path: github.com/hugo-toha/toha/v4
+analytics:
+  enable: false
