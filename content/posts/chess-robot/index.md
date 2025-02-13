@@ -11,7 +11,7 @@ menu:
     identifier: chess-robot
     weight: 4
 tags: ["Python", "OpenCV", "Arduino", "Stepper Motors"]
-# categories: ["Basic"]
+repo: https://github.com/Connor205/Chess-Robot-NURobotics
 ---
 
 This robot utilized stepper motors, a camera, sensors, and a gantry style system to interact with the chess board and play against a human opponent.

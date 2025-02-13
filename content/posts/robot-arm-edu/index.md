@@ -11,7 +11,7 @@ menu:
     identifier: robot-arm-edu
     weight: 4
 tags: ["3D Printing", "Arduino", "C++", "MATLAB"]
-# categories: ["Basic"]
+repo: https://github.com/Sharwin24/Robotic-Arm
 ---
 
 An educational kit designed to teach the fundamentals of kinematics and dynamics. The kit is intended to accompany the course ME3460: Robot Dynamics & Control at Northeastern University. The kit is a physical representation of the final project, which is currently done purely through MATLAB simulation.

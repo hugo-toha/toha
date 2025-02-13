@@ -62,17 +62,14 @@
         {{ if site.Params.features.tags.enable }}
           {{partial "misc/tags.html" .Params.tags }}
         {{ end }}
-        <!-- <div class="github-button">
-          <a href="https://github.com/Sharwin24/" target="_blank" class="btn btn-primary">
+        <div class="github-button">
+          <a href="{{ .Params.repo }}" target="_blank" class="btn btn-info">
             <i class="fab fa-github"></i> View on GitHub
           </a>
-        </div> -->
+        </div>
         <div class="post-content" id="post-content">
           {{ .Page.Content }}
         </div>
-      
-
-
       <!-- Keep backward compatibility with old config.yaml -->
       {{ if .Site.Config.Services.Disqus.Shortname }}
         {{ partial "comments/disqus.html" (dict (slice "disqus" "shortName")  .Site.Config.Services.Disqus.Shortname) }}

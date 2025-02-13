@@ -11,7 +11,7 @@ menu:
     identifier: ToastBot
     weight: 2
 tags: ["Python", "ROS", "RViz", "Moveit API", "Intel Realsense"]
-# categories: ["Basic"]
+repo: https://github.com/snydergi/ToastBot
 ---
 
 Using a 7-DoF Franka Emika Panda Robot Arm, we developed a pick and place sequence using an Intel Realsense camera for identifying april tags.
