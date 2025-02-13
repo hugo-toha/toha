@@ -26,7 +26,7 @@ The robot's forward and inverse kinematics were first implemented in a jupyter n
 
 # End-Effector Sensors
 ## BNO085 IMU
-<div style="text-align: center;">
+<div align="center">
   <img src="imu.png" alt="IMU" style="border-radius: 15px; width: 50%;">
 </div>
 
@@ -58,7 +58,7 @@ Thanks to the sensor fusion and signal processing wizards from CEVA, with the BN
     - Activity Classification
 
 ## VL53L1X Time of Flight Distance Sensor
-<div style="text-align: center;">
+<div align="center">
   <img src="ToF.png" alt="Time of Flight Sensor" style="border-radius: 15px; width: 50%;">
 </div>
 
