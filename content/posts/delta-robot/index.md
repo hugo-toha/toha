@@ -22,3 +22,44 @@ The robot's forward and inverse kinematics were first implemented in a jupyter n
 <div align="center">
     <img src="FK_notebook.png" alt="Robot Simulated in 3D Plot" style="border-radius: 15px;">
 </div>
+
+
+# End-Effector Sensors
+## BNO085 IMU
+<div style="text-align: center;">
+  <img src="imu.png" alt="IMU" style="border-radius: 15px; width: 50%;">
+</div>
+
+The [BNO085 IMU](https://www.adafruit.com/product/4754) has the following features:
+
+- **Acceleration Vector / Accelerometer**
+    - Three axes of acceleration (gravity + linear motion) in m/s^2
+- **Angular Velocity Vector / Gyro**
+    - Three axes of 'rotation speed' in rad/s
+- **Magnetic Field Strength Vector / Magnetometer**
+    - Three axes of magnetic field sensing in micro Tesla (uT)
+- **Linear Acceleration Vector**
+    - Three axes of linear acceleration data (acceleration minus gravity) in m/s^2
+- **Gravity Vector**
+    - Three axes of gravitational acceleration (minus any movement) in m/s^2
+- **Absolute Orientation/  Rotation Vector**
+    - Four point quaternion output for accurate data manipulation
+
+Thanks to the sensor fusion and signal processing wizards from CEVA, with the BNO085 you also get:
+
+- **Application Optimized Rotation Vectors**
+      - For AR/VR, low latency, and low power consumption
+- **Additional Base Sensor Reports**
+    - Separate and simultaneous outputs of Calibrated, Uncalibrated + Correction, and Raw ADC outputs for the Accelerometer, Gyro, and Magnetometer
+- **Detection and Classification reports:**
+    - Stability Detection and Classification
+    - Significant Motion Detector
+    - Tap, Step, and Shake Detectors
+    - Activity Classification
+
+## VL53L1X Time of Flight Distance Sensor
+<div style="text-align: center;">
+  <img src="ToF.png" alt="Time of Flight Sensor" style="border-radius: 15px; width: 50%;">
+</div>
+
+The [VL53L1X ToF Sensor](https://www.adafruit.com/product/3967) is capable of precise distance measurement within a range of $[30, 4000]$ mm, with up to a 50Hz update rate and a $27^\circ$ field of view which can be configured with a programmable Region of Interest (ROI).
