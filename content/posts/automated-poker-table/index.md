@@ -51,6 +51,14 @@ The Arduino Nano handles I/O control for the 4 button panels which enable player
     <img src="system_overview.png" alt="System Overview" style="border-radius: 15px;">
 </div>
 
+## Card Dealer (Turret)
+The card dealer is equipped with a 2-stage indexer and flywheel system to accurately control card dispensing. The entire system is mounted on a stepper-motor driven turret for dealing cards to anywhere on the table.
+
+<div align="center">
+  <img src="TurretAssemblyv5.gif" alt="Card Dealer" style="border-radius: 15px; display: inline-block; margin-right: 10px; height: 200px;">
+  <img src="TurretHoming.gif" alt="Turret Homing" style="border-radius: 15px; display: inline-block; height: 200px;">
+</div>
+
 <!-- 
 ## Design Reviews
 
