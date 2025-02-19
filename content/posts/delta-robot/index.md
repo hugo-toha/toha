@@ -9,7 +9,7 @@ menu:
   sidebar:
     name: Delta Robot
     identifier: delta-robot
-    weight: 9
+    weight: 4
 tags: ["ROS2", "C++", "Parallel Robot Kinematics"]
 repo: https://github.com/Sharwin24/DeltaRobot
 ---
