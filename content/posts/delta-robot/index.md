@@ -20,7 +20,8 @@ An open source ROS package for controlling delta robots with forward and inverse
 The robot's forward and inverse kinematics were first implemented in a jupyter notebook to visualize the robot's configuration space and workspace. Eventually, the kinematics will be implemented into ROS2 C++ nodes with optimizations for fast computation.
 
 <div align="center">
-    <img src="FK_notebook.png" alt="Robot Simulated in 3D Plot" style="border-radius: 15px;">
+    <img src="DeltaCircleTrajectory.gif" alt="Delta Robot Circular Trajectory" style="border-radius: 15px; height: 300px; margin-right: 5px;">
+    <img src="FK_notebook.png" alt="Robot Simulated in 3D Plot" style="border-radius: 15px; height: 300px; margin-left: 5px;">
 </div>
 
 
@@ -62,4 +63,4 @@ Thanks to the sensor fusion and signal processing wizards from CEVA, with the BN
   <img src="ToF.png" alt="Time of Flight Sensor" style="border-radius: 15px; width: 50%;">
 </div>
 
-The [VL53L1X ToF Sensor](https://www.adafruit.com/product/3967) is capable of precise distance measurement within a range of $[30, 4000]$ mm, with up to a 50Hz update rate and a $27^\circ$ field of view which can be configured with a programmable Region of Interest (ROI).
+The [VL53L1X ToF Sensor](https://www.adafruit.com/product/3967) is capable of precise distance measurement within a range of 30 to 4000 mm, with up to a 50Hz update rate and a 27 degree field of view which can be configured with a programmable Region of Interest (ROI).
