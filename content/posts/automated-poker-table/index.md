@@ -40,6 +40,18 @@ An automated system that creates a seamless home-game experience by automating t
 
 **Update (April 11, 2023): We won first place at the [Northeastern ECE Capstone Expo](https://coe.northeastern.edu/news/teams-share-top-honors-in-electrical-and-computer-engineering-capstone-presentations/)!**
 
+## Project Abstract
+The BIKE team has designed and built a system that creates a seamless poker home-game expe-
+rience by automating the tedious and repetitive tasks that occur during a game while lowering
+the barrier of entry of knowledge for a complex game. The system is complete with an automatic
+shuffler, automatic dealer, input button panels, and an accompanying computer application and
+screen. Poker is a common form of social entertainment both in the home and in dedicated
+gaming establishments that the BIKE system improves for all levels of players. The automated
+shuffler and dealer reduce responsibilities of the more knowledgeable players who are often
+burdened by handling the cards during home-games while the button panels and application
+provide a more seamless, easy-to-follow game for newer players that are often overwhelmed by
+the intricacies of the game.
+
 ## System Overview
 The main compute for the B-I-K-E Poker Table is a Rasperry Pi 4B. The Pi is operating on native Ubuntu and will run our main program written in Python (3.10.6). The main program will facilitate the Poker logic and delegate low-level control to Arduino Unos and an Arduino Nano via serial connection.
 
@@ -55,8 +67,10 @@ The Arduino Nano handles I/O control for the 4 button panels which enable player
 The card dealer is equipped with a 2-stage indexer and flywheel system to accurately control card dispensing. The entire system is mounted on a stepper-motor driven turret for dealing cards to anywhere on the table.
 
 <div align="center">
-  <img src="TurretAssemblyv5.gif" alt="Card Dealer" style="border-radius: 15px; display: inline-block; margin-right: 10px; height: 200px;">
-  <img src="TurretHoming.gif" alt="Turret Homing" style="border-radius: 15px; display: inline-block; height: 200px;">
+  <img src="TurretAssemblyv5.gif" alt="Card Dealer" style="border-radius: 15px; display: inline-block; margin: 5px; height: 200px;">
+  <img src="TurretHoming.gif" alt="Turret Homing" style="border-radius: 15px; display: inline-block; margin: 5px; height: 200px;">
+  <img src="TurretCrossSection.png" alt="Cross section of Card Dealer" style="border-radius: 15px; display: inline-block; margin: 5px; height: 200px;">
+  <img src="TurretSideView.png" alt="Cross section side view" style="border-radius: 15px; display: inline-block; margin: 5px; height: 200px;">
 </div>
 
 <!-- 
