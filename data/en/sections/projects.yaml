@@ -46,7 +46,7 @@ projects:
   url: "/posts/automated-poker-table/"
   repo: "https://github.com/Connor205/B-I-K-E"
   summary: An robotic system that faciliates a game of poker with automated shuffling, dealing, and game management.
-  tags: ["Arduino", "Python", "Raspberry Pi", "I2C", "Stepper Motors"]
+  tags: ["Arduino", "Python", "Raspberry Pi", "I2C", "Stepper Motors", "Solidworks"]
 
 - name: Open Source Delta Robot
   image: /images/delta_robot.jpg
@@ -54,7 +54,7 @@ projects:
   timeline: "Jan 2025 - March 2025"
   url: "/posts/delta-robot/"
   repo: https://github.com/Sharwin24/DeltaRobot
-  summary: An open source ROS package for delta robot motion planning and kinematic control.
+  summary: An open source ROS package for kinematic control and motion planning for delta robots.
   tags: ["ROS2", "C++", "Parallel Robot Kinematics", "I2C Sensors", "Kalman Filtering"]
 
 - name: Chess Robot
