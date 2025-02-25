@@ -78,9 +78,7 @@ void DeltaKinematics::forwardKinematics(const std::shared_ptr<DeltaFK::Request> 
   response->y = y; // [mm]
   response->z = z; // [mm]
 }
-```
 
-```cpp
 int DeltaKinematics::deltaFK_AngleYZ(float x0, float y0, float z0, float& theta) {
   float y1 = -0.5 * tan30 * SB; // Half base * tan(30)
   y0 -= 0.5 * tan30 * this->SP;    // shift center to edge
