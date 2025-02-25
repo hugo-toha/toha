@@ -26,6 +26,9 @@ The robot's forward and inverse kinematics were first implemented in a jupyter n
 
 The forward and inverse kinematics were then implemented in C++ following the approach described on the Trossen Robotics forum [1].
 
+<div>
+  <details>
+    <summary>Forward and Inverse Kinematics C++ Implementation</summary>
 ```cpp
 void DeltaKinematics::forwardKinematics(const std::shared_ptr<DeltaFK::Request> request, std::shared_ptr<DeltaFK::Response> response) {
   // Locally save the request data (joint angles)
@@ -121,7 +124,7 @@ void DeltaKinematics::inverseKinematics(const std::shared_ptr<DeltaIK::Request> 
   response->joint_angles.theta3 = theta3; // [rad]
 }
 ```
-
+</div>
 
 
 
