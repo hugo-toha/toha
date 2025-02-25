@@ -10,7 +10,7 @@ menu:
     name: Delta Robot
     identifier: delta-robot
     weight: 4
-tags: ["ROS2", "C++", "Parallel Robot Kinematics"]
+tags: ["ROS2", "C++", "Parallel Robot Kinematics", "I2C Sensors", "Kalman Filtering"]
 repo: https://github.com/Sharwin24/DeltaRobot
 ---
 An open source ROS package for controlling delta robots with forward and inverse kinematics, trajectory generation, and visualization. Designed for public use and easy integration with new delta robot designs and applications.
@@ -20,8 +20,8 @@ An open source ROS package for controlling delta robots with forward and inverse
 The robot's forward and inverse kinematics were first implemented in a jupyter notebook to visualize the robot's configuration space and workspace.
 
 <div align="center">
-    <img src="FK_notebook.png" alt="Robot Simulated in 3D Plot" style="border-radius: 15px; height: 200px; margin-left: 5px;">
-    <img src="DeltaCircleTrajectory.gif" alt="Delta Robot Circular Trajectory" style="border-radius: 15px; height:200px; margin-right: 5px;">
+  <img src="FK_notebook.png" alt="Robot Simulated in 3D Plot" style="border-radius: 15px; height: 200px; margin-left: 5px; display: inline-block;">
+  <img src="DeltaCircleTrajectory.gif" alt="Delta Robot Circular Trajectory" style="border-radius: 15px; height: 200px; margin-right: 5px; display: inline-block;">
 </div>
 
 The forward and inverse kinematics were then implemented in C++ following the approach described on the Trossen Robotics forum [1].
@@ -123,6 +123,8 @@ void DeltaKinematics::inverseKinematics(const std::shared_ptr<DeltaIK::Request> 
   response->joint_angles.theta3 = theta3; // [rad]
 }
 ```
+
+
 
 
 ## End-Effector Sensors

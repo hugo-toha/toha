@@ -21,14 +21,15 @@ section:
 
 # your projects
 projects:
-- name: Simulation of a Mobile Manipulator
-  image: /images/mobile_manipulation.gif
-  role: "ME449: Robotic Manipulation Final Project"
-  timeline: "Nov 2024 - Dec 2024"
-  repo: https://github.com/Sharwin24/Mobile-Manipulation
-  url: "/posts/mobile-manipulation/"
-  summary: Simulating a pick and place task with the KUKA YouBot using a task-space feed-forward PID controller and Odometry.
-  tags: ["Python", "CoppeliaSim", "Odometry", "PID Control", "Omnidirectional Robot Kinematics"]
+
+- name: Open Source Delta Robot
+  image: /images/delta_robot.jpg
+  role: "MSR Winter Project"
+  timeline: "Jan 2025 - March 2025"
+  url: "/posts/delta-robot/"
+  repo: https://github.com/Sharwin24/DeltaRobot
+  summary: An open source ROS package for kinematic control and motion planning for delta robots.
+  tags: ["ROS2", "C++", "Parallel Robot Kinematics", "I2C Sensors", "Kalman Filtering"]
 
 - name: Toasting Bread with a Franka Robot Arm
   image: /images/toast_grab.gif
@@ -48,14 +49,14 @@ projects:
   summary: An robotic system that faciliates a game of poker with automated shuffling, dealing, and game management.
   tags: ["Arduino", "Python", "Raspberry Pi", "I2C", "Stepper Motors", "Solidworks"]
 
-- name: Open Source Delta Robot
-  image: /images/delta_robot.jpg
-  role: "MSR Winter Project"
-  timeline: "Jan 2025 - March 2025"
-  url: "/posts/delta-robot/"
-  repo: https://github.com/Sharwin24/DeltaRobot
-  summary: An open source ROS package for kinematic control and motion planning for delta robots.
-  tags: ["ROS2", "C++", "Parallel Robot Kinematics", "I2C Sensors", "Kalman Filtering"]
+- name: Simulation of a Mobile Manipulator
+  image: /images/mobile_manipulation.gif
+  role: "ME449: Robotic Manipulation Final Project"
+  timeline: "Nov 2024 - Dec 2024"
+  repo: https://github.com/Sharwin24/Mobile-Manipulation
+  url: "/posts/mobile-manipulation/"
+  summary: Simulating a pick and place task with the KUKA YouBot using a task-space feed-forward PID controller and Odometry.
+  tags: ["Python", "CoppeliaSim", "Odometry", "PID Control", "Omnidirectional Robot Kinematics"]
 
 - name: Chess Robot
   role: "NEU Robotics Club Project"
@@ -109,7 +110,7 @@ projects:
   url: "/posts/robo-tech/"
   repo: https://github.com/Sharwin24/RoboTech
   summary: A simulation of a swarm of drones cleaning algal blooms in a lake using RRT and A* path planning.
-  tags: ["Python", "RRT", "A*"]
+  tags: ["Python", "RRT", "A*", "Pygame"]
 
 - name: Napkin.ai Code Assistant
   role: "Hack@Brown 2024 Project"
