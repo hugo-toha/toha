@@ -36,6 +36,13 @@ The forward and inverse kinematics were then implemented in C++ following the ap
   // this->SB = Base Side Length [mm]
   // this->SP = Platform (EE) Side Length [mm]
 
+  const float sqrt3 = sqrt(3.0);
+  const float sin120 = sqrt3 / 2.0;
+  constexpr float cos120 = -0.5;
+  const float tan60 = sqrt3;
+  constexpr float sin30 = 0.5;
+  const float tan30 = 1 / sqrt3;
+
   void DeltaKinematics::forwardKinematics(const std::shared_ptr<DeltaFK::Request> request, std::shared_ptr<DeltaFK::Response> response) {
       // Locally save the request data (joint angles)
       float theta1 = request->joint_angles.theta1;
