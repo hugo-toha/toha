@@ -9,7 +9,7 @@ menu:
   sidebar:
     name: Robotech
     identifier: robo-tech
-    weight: 9
+    weight: 7
 tags: ["Python", "RRT", "A*"]
 repo: https://github.com/Sharwin24/RoboTech
 # categories: ["Basic"]

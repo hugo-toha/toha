@@ -9,7 +9,7 @@ menu:
   sidebar:
     name: Educational Robot Arm
     identifier: robot-arm-edu
-    weight: 4
+    weight: 6
 tags: ["3D Printing", "Arduino", "C++", "MATLAB"]
 repo: https://github.com/Sharwin24/Robotic-Arm
 ---

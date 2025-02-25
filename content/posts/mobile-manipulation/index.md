@@ -9,7 +9,7 @@ menu:
   sidebar:
     name: Mobile Manipulation
     identifier: mobile-manipulation
-    weight: 1
+    weight: 4
 tags: ["Python", "CoppeliaSim", "Odometry", "Omnidirectional Robot Kinematics"]
 repo: https://github.com/Sharwin24/Mobile-Manipulation
 # categories: ["Basic"]

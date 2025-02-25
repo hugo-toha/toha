@@ -9,7 +9,7 @@ menu:
   sidebar:
     name: Delta Robot
     identifier: delta-robot
-    weight: 4
+    weight: 1
 tags: ["ROS2", "C++", "Parallel Robot Kinematics", "I2C Sensors", "Kalman Filtering"]
 repo: https://github.com/Sharwin24/DeltaRobot
 ---
@@ -28,7 +28,7 @@ The forward and inverse kinematics were then implemented in C++ following the ap
 
 <div>
   <details>
-    <summary>Forward and Inverse Kinematics C++ Implementation</summary>
+    <summary>Forward and Inverse Kinematics C++ Implementation as ROS services</summary>
     
   ```cpp
   // this->AL = Active Link Length [mm]
@@ -132,8 +132,6 @@ The forward and inverse kinematics were then implemented in C++ following the ap
   ```
   </details>
 </div>
-
-
 
 ## End-Effector Sensors
 
