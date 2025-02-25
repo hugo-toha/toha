@@ -1,6 +1,6 @@
 ---
 title: "Delta Robot ROS Package"
-date: 2025-01-06T09:00:00+00:00
+date: 2025-02-25T09:00:00+00:00
 description: Open Source Delta Robot ROS Package
 hero: images/delta_robot.jpg
 author:
@@ -16,8 +16,8 @@ repo: https://github.com/Sharwin24/DeltaRobot
 An open source ROS package for controlling delta robots with forward and inverse kinematics, trajectory generation, and visualization. Designed for public use and easy integration with new delta robot designs and applications.
 
 
-## Kinematic Simulation
-The robot's forward and inverse kinematics were first implemented in a jupyter notebook to visualize the robot's configuration space and workspace.
+## Robot Kinematics
+The robot's forward and inverse kinematics were first implemented in a [jupyter notebook](https://github.com/Sharwin24/DeltaRobot/blob/main/delta_kinematics.ipynb) to visualize the robot's configuration space and workspace.
 
 <div align="center">
   <img src="FK_notebook.png" alt="Robot Simulated in 3D Plot" style="border-radius: 15px; height: 200px; margin-left: 5px; display: inline-block;">
