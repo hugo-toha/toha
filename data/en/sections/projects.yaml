@@ -29,7 +29,7 @@ projects:
   url: "/posts/delta-robot/"
   repo: https://github.com/Sharwin24/DeltaRobot
   summary: An open source ROS package for kinematic control and motion planning for delta robots.
-  tags: ["ROS2", "C++", "Parallel Robot Kinematics", "I2C Sensors", "Kalman Filtering"]
+  tags: ["ROS2", "C++", "Python", "Parallel Robot Kinematics", "I2C Sensors", "Kalman Filtering"]
 
 - name: Toasting Bread with a Franka Robot Arm
   image: /images/toast_grab.gif

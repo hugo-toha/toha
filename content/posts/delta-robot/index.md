@@ -10,7 +10,7 @@ menu:
     name: Delta Robot
     identifier: delta-robot
     weight: 1
-tags: ["ROS2", "C++", "Parallel Robot Kinematics", "I2C Sensors", "Kalman Filtering"]
+tags: ["ROS2", "C++", "Python", "Parallel Robot Kinematics", "I2C Sensors", "Kalman Filtering"]
 repo: https://github.com/Sharwin24/DeltaRobot
 ---
 An open source ROS package for controlling delta robots with forward and inverse kinematics, trajectory generation, and visualization. Designed for public use and easy integration with new delta robot designs and applications.
