@@ -10,7 +10,7 @@ menu:
     name: Toastbot
     identifier: ToastBot
     weight: 2
-tags: ["Python", "ROS", "RViz", "Moveit API", "Intel Realsense"]
+tags: ["Python", "ROS2", "RViz", "Moveit API", "Intel Realsense"]
 repo: https://github.com/snydergi/ToastBot
 ---
 

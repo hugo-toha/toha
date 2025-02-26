@@ -38,7 +38,7 @@ projects:
   repo: https://github.com/snydergi/ToastBot
   url: "/posts/toastbot/"
   summary: A system that toasts bread using a Franka Emika Panda robot arm and an Intel Realsense Camera.
-  tags: ["Python", "ROS", "RViz", "Moveit API", "Intel Realsense"]
+  tags: ["Python", "ROS2", "RViz", "Moveit API", "Intel Realsense"]
 
 - name: Automated Poker Table
   image: /images/bike_dealer.gif
