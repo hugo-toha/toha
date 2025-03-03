@@ -74,7 +74,7 @@
                             {{ if .takenCourses }}
                             {{ $collapseAfter  := .takenCourses.collapseAfter | default 2 }}
                             <div class="taken-courses">
-                                <h6 class="text-heading">{{ i18n "taken_courses"}}:</h6>
+                                <h6 class="text-heading">Courses Taken:</h6>
                                 {{ if .takenCourses.showGrades }}
                                 {{ $hideScale  := .takenCourses.hideScale }}
                                 <table>
