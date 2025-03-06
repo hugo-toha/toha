@@ -29,7 +29,7 @@
 {{/* resize the logos. don't resize svg because it is not supported */}}
 {{ if $mainLogo }}
   {{ $mainLogo = resources.Get $mainLogo}}
-  {{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
+  {{ if and $mainLogo (not (or (eq $mainLogo.MediaType.SubType "svg") (eq $mainLogo.MediaType.SubType "gif"))) }}
     {{ $mainLogo = $mainLogo.Resize "42x" }}
   {{ end }}
   {{ $mainLogo = $mainLogo.RelPermalink}}
@@ -37,7 +37,7 @@
 
 {{ if $invertedLogo }}
   {{ $invertedLogo = resources.Get $invertedLogo}}
-  {{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg")}}
+  {{ if and $invertedLogo (not (or (eq $invertedLogo.MediaType.SubType "svg") (eq $invertedLogo.MediaType.SubType "gif"))) }}
     {{ $invertedLogo = $invertedLogo.Resize "42x" }}
   {{ end }}
   {{ $invertedLogo = $invertedLogo.RelPermalink}}
@@ -45,7 +45,7 @@
 
 {{ if $darkLogo }}
   {{ $darkLogo = resources.Get $darkLogo}}
-  {{ if and $darkLogo (ne $darkLogo.MediaType.SubType "svg")}}
+  {{ if and $darkLogo (not (or (eq $darkLogo.MediaType.SubType "svg") (eq $darkLogo.MediaType.SubType "gif"))) }}
     {{ $darkLogo = $darkLogo.Resize "42x" }}
   {{ end }}
   {{ $darkLogo = $darkLogo.RelPermalink}}
