@@ -292,7 +292,7 @@ The Modern Robotics [2] textbook details the process of deriving the Jacobian fo
 Using the Jacobian we can convert end-effector position trajectories into Joint velocity trajectories.
 
 <div align="center" style="overflow-x: auto; width: 100%;">
-  <img src="circle_pos_vel.png" alt="Circle Trajectory " style="border-radius: 15px; height: 200px; margin-left: 5px; display: inline-block;">
+  <img src="circle_pos_vel.png" alt="Circle Trajectory" style="border-radius: 15px; width: 80%; margin-left: 5px; display: inline-block;">
 </div>
 
 
