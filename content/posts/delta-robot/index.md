@@ -156,6 +156,12 @@ The Modern Robotics [2] textbook details the process of deriving the Jacobian fo
     \]
 </div>
 
+Using the Jacobian we can convert end-effector position trajectories into Joint velocity trajectories.
+
+<div align="center" style="overflow-x: auto; width: 100%;">
+  <img src="circle_pos_vel.png" alt="Circle Trajectory" style="border-radius: 15px; width: 80%; margin-left: 5px; display: inline-block;">
+</div>
+
 <div>
   <details>
     <summary>Jacobian ROS C++ Implementation</summary>
@@ -288,13 +294,6 @@ The Modern Robotics [2] textbook details the process of deriving the Jacobian fo
   ```
   </details>
 </div>
-
-Using the Jacobian we can convert end-effector position trajectories into Joint velocity trajectories.
-
-<div align="center" style="overflow-x: auto; width: 100%;">
-  <img src="circle_pos_vel.png" alt="Circle Trajectory" style="border-radius: 15px; width: 80%; margin-left: 5px; display: inline-block;">
-</div>
-
 
 ## End-Effector Sensors
 
