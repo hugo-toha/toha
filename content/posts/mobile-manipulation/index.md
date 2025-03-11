@@ -54,6 +54,10 @@ There were two components to the trajectory generation:
 
 These were accomplished using the trajectory generation functions provided by the `modern_robotics` library after splitting the sequence into 8 separate segments.
 
+<div>
+  <details>
+    <summary>Trajectory Generation Python Function</summary>
+
 ```python
 dt = 0.01  # [s]
 total_time = 10  # [s]
@@ -125,6 +129,8 @@ trajectory = np.concatenate(
     (traj_1, traj_2, traj_3, traj_4, traj_5, traj_6, traj_7, traj_8), axis=0
 )
 ```
+</details>
+</div>
 
 ## Odometry
 Odometry is the process of estimating the mobile robot's pose by integrating the wheel velocities. The robot's pose is represented by the chassis configuration \\([\phi, x, y]\\), where \\(\phi\\) is the orientation and \\(x, y\\) are the position in the world frame. We can compute the body twist \\(V_b\\) using the wheel velocities \\(\dot{\theta}\\), the timestep \\(\Delta t\\), and the chassis configuration \\( F=pinv(H(0))\\):
@@ -139,6 +145,11 @@ V_b = \underbrace{H(0)^{\dagger}}_{F} \cdot \dot{\theta}
 The body twist \\(V_b\\) can be integrated to get the displacement \\(T_{bk} = exp([V_b])\\), which is then applied to the chassis configuration to get the new pose.
 
 The odometry function computes the new chassis configuration based on the difference between the current and previous wheel configurations assuming a constant velocity between the two wheel configurations \\((\Delta t = 1)\\).
+
+<div>
+  <details>
+    <summary>Odometry Python Function</summary>
+
 ```python
 def odometry(chassis_config: np.array, delta_wheel_config: np.array) -> np.array:
     """
@@ -171,6 +182,8 @@ def odometry(chassis_config: np.array, delta_wheel_config: np.array) -> np.array
     ])
     return new_chassis_config
 ```
+</details>
+</div>
 
 ## Task-Space Feedforward & Feedback Control
 To perform the pick and place task, we need to implement a control law that can track a desired end-effector trajectory. The control law is given by:
@@ -189,6 +202,10 @@ where:
 - \\(K_p\\) is the proportional gain matrix
 - \\(K_i\\) is the integral gain matrix
 - \\(X_{err}(t)\\) is the error between the current and desired end-effector configurations
+
+<div>
+  <details>
+    <summary>Feedback Control Python Function</summary>
 
 ```python
 def feedback_control(X, Xd, Xd_next, Kp, Ki, control_type: str = 'FF+PI', dt: float = 0.01) -> tuple:
@@ -219,6 +236,8 @@ def feedback_control(X, Xd, Xd_next, Kp, Ki, control_type: str = 'FF+PI', dt: fl
         V = mr.Adjoint(mr.TransInv(X) @ Xd) @ Vd + (Kp @ X_err) + (Ki @ (X_err * dt))
     return V, X_err
 ```
+</details>
+</div>
 
 ## Singularity Avoidance
 During trajectory generation/planning, there are desired configurations that can bring the robot arm close to singularities in the robot's configuration space. To avoid any singularities, whenever the joint speeds are computed for the configuration at the next timestep, If the movement sends a joint past its limit, the column corresponding to that joint is set to zero within the Jacobian when computing the joint speeds to avoid using that joint to acheive the desired configuration.
