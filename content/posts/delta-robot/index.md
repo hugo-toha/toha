@@ -15,10 +15,6 @@ repo: https://github.com/Sharwin24/DeltaRobot
 ---
 An open source ROS package for controlling delta robots with forward and inverse kinematics, trajectory generation, and visualization. Designed for public use and easy integration with new delta robot designs and applications.
 
-<div align="center">
-  <img src="workspace.png" alt="Delta Robot Workspace" style="border-radius: 15px; height: 200px; margin-left: 5px; display: inline-block;">
-</div>
-
 ## Robot Kinematics
 The robot's forward and inverse kinematics were first implemented in a [jupyter notebook](https://github.com/Sharwin24/DeltaRobot/blob/main/delta_kinematics.ipynb) to visualize the robot's configuration space and workspace.
 
@@ -27,7 +23,15 @@ The robot's forward and inverse kinematics were first implemented in a [jupyter 
   <img src="DeltaCircleTrajectory.gif" alt="Delta Robot Circular Trajectory" style="border-radius: 15px; height: 200px; margin-right: 5px; display: inline-block;">
 </div>
 
-The forward and inverse kinematics were then implemented in C++ following the approach described on the Trossen Robotics forum [1].
+The forward and inverse kinematics were then implemented in C++ following the approach described on the Trossen Robotics forum [1]. Access to the kinematics lets us plan paths in the joint space significantly easier and safer since the workspace is irregular. Once a joint trajectory is planned, the path can be verified to stay in the workspace
+
+<div align="center">
+  <iframe src="workspace.html" width="800" height="600" style="border:none;"></iframe>
+</div>
+
+<!-- <div align="center">
+  <img src="workspace.png" alt="Delta Robot Workspace" style="border-radius: 15px; height: 200px; margin-left: 5px; display: inline-block;">
+</div> -->
 
 <div>
   <details>
@@ -148,7 +152,7 @@ The Modern Robotics [2] textbook details the process of deriving the Jacobian fo
 
 <div style="overflow-x: auto; width: 100%;">
     \[
-      \dot{\theta} = J_{\Theta} \cdot \underbrace{\dot{p}}_{EE Velocity}
+      \dot{\theta} = J^{-1}_{\theta} \cdot J_{p} \cdot \dot{p}
     \]
 </div>
 
