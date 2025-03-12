@@ -82,6 +82,28 @@
   <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
     <i class="fas fa-chevron-circle-up"></i>
   </a>
+
+  {{ if eq .Page.Title "Delta Robot ROS Package" }}
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const workspaceContainer = document.getElementById("workspace-container");
+
+    if (workspaceContainer) {
+      fetch("/workspace_plot.html") // Ensure this path is correct
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Failed to load workspace.html");
+          }
+          return response.text();
+        })
+        .then(data => {
+          workspaceContainer.innerHTML = data; // Embed workspace.html content
+        })
+        .catch(error => console.error("Error loading workspace:", error));
+    }
+  });
+  </script>
+  {{ end }}
 </section>
 {{ end }}
 

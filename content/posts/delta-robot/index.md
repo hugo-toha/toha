@@ -25,9 +25,8 @@ The robot's forward and inverse kinematics were first implemented in a [jupyter 
 
 The forward and inverse kinematics were then implemented in C++ following the approach described on the Trossen Robotics forum [1]. Access to the kinematics lets us plan paths in the joint space significantly easier and safer since the workspace is irregular. Once a joint trajectory is planned, the path can be verified to stay in the workspace
 
-<!-- <div align="center">
-  <iframe src="static/workspace.html" width="800" height="600" style="border:none;"></iframe>
-</div> -->
+<div id="workspace-container"></div>
+WORKSPACE ABOVE THIS
 
 <div align="center">
   <img src="workspace.png" alt="Delta Robot Workspace" style="border-radius: 15px; width: 50%; margin-left: 5px; display: inline-block;">
@@ -159,7 +158,7 @@ The Modern Robotics [2] textbook details the process of deriving the Jacobian fo
 Using the Jacobian we can convert end-effector position trajectories into Joint velocity trajectories.
 
 <div align="center" style="overflow-x: auto; width: 100%;">
-  <img src="circle_pos_vel.png" alt="Circle Trajectory" style="border-radius: 15px; width: 80%; margin-left: 5px; display: inline-block;">
+  <img src="circle_pos_vel.png" alt="Circle Trajectory" style="border-radius: 15px; width: 95%; margin-left: 5px; display: inline-block;">
 </div>
 
 <div>
