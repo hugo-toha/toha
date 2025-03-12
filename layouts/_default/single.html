@@ -84,25 +84,29 @@
   </a>
 
   {{ if eq .Page.Title "Delta Robot ROS Package" }}
+  <!-- Hidden div containing the workspace content -->
+  <div id="hidden-workspace" style="display: none;">
+    {{ partial "workspace_plot.html" . }}
+  </div>
   <script>
   document.addEventListener("DOMContentLoaded", function () {
     const workspaceContainer = document.getElementById("workspace-container");
+    const hiddenWorkspace = document.getElementById("hidden-workspace");
 
-    if (workspaceContainer) {
-      fetch("/workspace_plot.html") // Ensure this path is correct
-        .then(response => {
-          if (!response.ok) {
-            throw new Error("Failed to load workspace.html");
-          }
-          return response.text();
-        })
-        .then(data => {
-          workspaceContainer.innerHTML = data; // Embed workspace.html content
-        })
-        .catch(error => console.error("Error loading workspace:", error));
+    if (workspaceContainer && hiddenWorkspace) {
+      // Move the content from the hidden div into the visible workspace container
+      workspaceContainer.innerHTML = hiddenWorkspace.innerHTML;
+      hiddenWorkspace.remove(); // Remove the original hidden div
+
+      // Ensure scripts inside the moved content are executed
+      workspaceContainer.querySelectorAll("script").forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.text = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
     }
   });
-  </script>
+</script>
   {{ end }}
 </section>
 {{ end }}
