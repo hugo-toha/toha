@@ -26,7 +26,6 @@ The robot's forward and inverse kinematics were first implemented in a [jupyter 
 The forward and inverse kinematics were then implemented in C++ following the approach described on the Trossen Robotics forum [1]. Access to the kinematics lets us plan paths in the joint space significantly easier and safer since the workspace is irregular. Once a joint trajectory is planned, the path can be verified to stay in the workspace
 
 <div id="workspace-container"></div>
-WORKSPACE ABOVE THIS
 
 <div align="center">
   <img src="workspace.png" alt="Delta Robot Workspace" style="border-radius: 15px; width: 50%; margin-left: 5px; display: inline-block;">
