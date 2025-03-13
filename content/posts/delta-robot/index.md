@@ -139,7 +139,7 @@ The forward and inverse kinematics were then implemented in C++ following the ap
   </details>
 </div>
 
-<div id="workspace-container" style="display: flex; flex-direction: column; width: 100%; justify-content: center; align-items: center;">
+<div id="workspace-container" style="display: flex; flex-direction: column; width: 90%; justify-content: center; align-items: center;">
 </div>
 
 ### The Jacobian
