@@ -1,6 +1,6 @@
 ---
 title: "Delta Robot ROS Package"
-date: 2025-03-14T09:00:00+00:00
+date: 2025-03-13T09:00:00+00:00
 description: Open Source Delta Robot ROS Package
 hero: images/delta_robot.jpg
 author:
@@ -20,7 +20,6 @@ The robot's forward and inverse kinematics were first implemented in a [jupyter 
 
 <div align="center">
   <img src="FK_notebook.png" alt="Robot Simulated in 3D Plot" style="border-radius: 15px; width: 45%; margin-left: 5px; display: inline-block;">
-  <img src="DeltaCircleTrajectory.gif" alt="Delta Robot Circular Trajectory" style="border-radius: 15px; width: 40%; margin-right: 5px; display: inline-block;">
 </div>
 
 The forward and inverse kinematics were then implemented in C++ following the approach described on the Trossen Robotics forum [1]. Access to the kinematics lets us plan paths in the joint space significantly easier and safer since the workspace is irregular. Once a joint trajectory is planned, the path can be verified to stay in the workspace to avoid singularities.
@@ -154,7 +153,8 @@ The Modern Robotics [2] textbook details the process of deriving the Jacobian fo
 Using the Jacobian we can convert end-effector position trajectories into Joint velocity trajectories.
 
 <div align="center" style="overflow-x: auto; width: 100%;">
-  <img src="circle_pos_vel.png" alt="Circle Trajectory" style="border-radius: 15px; width: 95%; margin-left: 5px; display: inline-block;">
+  <img src="DeltaCircleTrajectory.gif" alt="Delta Robot Circular Trajectory" style="border-radius: 15px; width: 39%; margin-right: 0px; display: inline-block;">
+  <img src="circle_pos_vel.png" alt="Circle Trajectory" style="border-radius: 15px; width: 60%; margin-left: 0px; display: inline-block;">
 </div>
 
 <div>
