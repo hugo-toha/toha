@@ -20,10 +20,10 @@ The robot's forward and inverse kinematics were first implemented in a [jupyter 
 
 <div align="center">
   <img src="FK_notebook.png" alt="Robot Simulated in 3D Plot" style="border-radius: 15px; width: 45%; margin-left: 5px; display: inline-block;">
-  <img src="DeltaCircleTrajectory.gif" alt="Delta Robot Circular Trajectory" style="border-radius: 15px; width: 45%; margin-right: 5px; display: inline-block;">
+  <img src="DeltaCircleTrajectory.gif" alt="Delta Robot Circular Trajectory" style="border-radius: 15px; width: 40%; margin-right: 5px; display: inline-block;">
 </div>
 
-The forward and inverse kinematics were then implemented in C++ following the approach described on the Trossen Robotics forum [1]. Access to the kinematics lets us plan paths in the joint space significantly easier and safer since the workspace is irregular. Once a joint trajectory is planned, the path can be verified to stay in the workspace
+The forward and inverse kinematics were then implemented in C++ following the approach described on the Trossen Robotics forum [1]. Access to the kinematics lets us plan paths in the joint space significantly easier and safer since the workspace is irregular. Once a joint trajectory is planned, the path can be verified to stay in the workspace to avoid singularities.
 
 <div>
   <details>
@@ -292,11 +292,19 @@ Using the Jacobian we can convert end-effector position trajectories into Joint 
 
 ## End-Effector Sensors
 
-| Sensor | Image | Description |
-|--------|-------|-------------|
-| [BNO055 IMU](https://www.adafruit.com/product/4646) | <img src="imu.png" alt="IMU" style="border-radius: 15px; width: 200px;">  | A 9-DOF sensor providing absolute orientation data with an on-board accelerometer, gyroscope, and magnetometer. |
-| [VL53L1X ToF Sensor](https://www.adafruit.com/product/3967) | <img src="ToF.png" alt="Time of Flight Sensor" style="border-radius: 15px; width: 200px;"> | Capable of precise distance measurement within a range of 30 to 4000 mm, with up to a 50Hz update rate and a 27 degree field of view. |
+| Sensor | Image | Description | Update Frequency |
+|--------|-------|-------------|------------------|
+| [BNO055 IMU](https://www.adafruit.com/product/4646) | <img src="imu.png" alt="IMU" style="border-radius: 15px; width: 200px;">  | A 9-DOF sensor providing absolute orientation data with an on-board accelerometer, gyroscope, and magnetometer. | 100Hz |
+| [VL53L1X ToF Sensor](https://www.adafruit.com/product/3967) | <img src="ToF.png" alt="Time of Flight Sensor" style="border-radius: 15px; width: 200px;"> | Capable of precise distance measurement within a range of 30 to 4000 mm, with up to a 50Hz update rate and a 27 degree field of view. | 48Hz |
 
+### Collecting data
+The sensors are interfaced with the Raspberry Pi over I2C. The data is read from the sensors and published to ROS topics on their respective frequencies. The data can be read during motions to obtain real-time feedback on the robot's state.
+
+<div align="center">
+  <img src="optimized_snake_scan.png" alt="Optimized Snake Scan" style="border-radius: 15px; width: 45%; margin-right: 5px; display: inline-block;">
+  <img src="scan_data.gif" alt="Scan Data" style="border-radius: 15px; width: 50%; margin-left: 5px; display: inline-block;">
+</div>
+Above is an example path planned for the robot to collect some data while moving in a snake-like "scanning" pattern. A cross-section of a Z-plane at -180mm and the workspace was created and a boundary was drawn using a convex hull. The hull was given some padding to prevent sending the robot close to a singularity
 
 ## References
 1. [Delta Robot Kinematics](https://hypertriangle.com/~alex/delta-robot-tutorial/)
