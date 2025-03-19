@@ -15,6 +15,10 @@ repo: https://github.com/Sharwin24/DeltaRobot
 ---
 An open source ROS package for controlling delta robots with forward and inverse kinematics, trajectory generation, and visualization. Designed for public use and easy integration with new delta robot designs and applications.
 
+<div align="center">
+  <img src="ROS_Diagram.png" alt="ROS Diagram" style="border-radius: 15px; width: 85%; margin-right: 0px; display: inline-block;">
+</div>
+
 ## Robot Kinematics
 The robot's forward and inverse kinematics were first implemented in a [jupyter notebook](https://github.com/Sharwin24/DeltaRobot/blob/main/delta_kinematics.ipynb) to visualize the robot's configuration space and workspace.
 
@@ -298,13 +302,16 @@ Using the Jacobian we can convert end-effector position trajectories into Joint 
 | [VL53L1X ToF Sensor](https://www.adafruit.com/product/3967) | <img src="ToF.png" alt="Time of Flight Sensor" style="border-radius: 15px; width: 200px;"> | Capable of precise distance measurement within a range of 30 to 4000 mm, with up to a 50Hz update rate and a 27 degree field of view. | 48Hz |
 
 ### Collecting data
-The sensors are interfaced with the Raspberry Pi over I2C. The data is read from the sensors and published to ROS topics on their respective frequencies. The data can be read during motions to obtain real-time feedback on the robot's state.
+The sensors are interfaced with the Raspberry Pi over I2C. The raw data is read from the sensors and published to ROS topics on their respective frequencies.
 
 <div align="center">
   <img src="optimized_snake_scan.png" alt="Optimized Snake Scan" style="border-radius: 15px; width: 45%; margin-right: 5px; display: inline-block;">
   <img src="scan_data.gif" alt="Scan Data" style="border-radius: 15px; width: 50%; margin-left: 5px; display: inline-block;">
 </div>
 Above is an example path planned for the robot to collect some data while moving in a snake-like "scanning" pattern. A cross-section of a Z-plane at -180mm and the workspace was created and a boundary was drawn using a convex hull. The hull was given some padding to prevent sending the robot close to a singularity
+
+<!-- ### Alpha-Beta Filtering -->
+
 
 ## References
 1. [Delta Robot Kinematics](https://hypertriangle.com/~alex/delta-robot-tutorial/)
