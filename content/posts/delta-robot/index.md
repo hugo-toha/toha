@@ -1,6 +1,6 @@
 ---
-title: "Delta Robot ROS Package"
-date: 2025-03-13T09:00:00+00:00
+title: "Open Source Delta Robot"
+date: 2025-03-14T09:00:00+00:00
 description: Open Source Delta Robot ROS Package
 hero: images/delta_robot.jpg
 author:
@@ -13,7 +13,7 @@ menu:
 tags: ["ROS2", "C++", "Python", "Parallel Robot Kinematics", "I2C Sensors", "Kalman Filtering"]
 repo: https://github.com/Sharwin24/DeltaRobot
 ---
-An open source ROS package for controlling delta robots with forward and inverse kinematics, trajectory generation, and visualization. Designed for public use and easy integration with new delta robot designs and applications.
+An open source ROS package for controlling delta robots with position and velocity control. Configurable for any delta robot parametes for adaptive forward and inverse kinematics. Trajectory generation and visualization examples are also offered. Designed for public use and easy integration with new delta robot designs and applications.
 
 <div align="center">
   <img src="ROS_Diagram.png" alt="ROS Diagram" style="border-radius: 15px; width: 85%; margin-right: 0px; display: inline-block;">
@@ -146,19 +146,12 @@ The forward and inverse kinematics were then implemented in C++ following the ap
 </div>
 
 ### The Jacobian
-The Modern Robotics [2] textbook details the process of deriving the Jacobian for a delta robot. The Jacobian is useful for converting end effector velocities to joint velocities.
+The Modern Robotics [2] textbook details the process of deriving the Jacobian for a delta robot. The Jacobian is useful for converting end effector velocities to joint velocities. Using the Jacobian we can convert end-effector position trajectories into Joint velocity trajectories.
 
 <div style="overflow-x: auto; width: 100%;">
     \[
       \dot{\theta} = J^{-1}_{\theta} \cdot J_{p} \cdot \dot{p}
     \]
-</div>
-
-Using the Jacobian we can convert end-effector position trajectories into Joint velocity trajectories.
-
-<div align="center" style="overflow-x: auto; width: 100%;">
-  <img src="DeltaCircleTrajectory.gif" alt="Delta Robot Circular Trajectory" style="border-radius: 15px; width: 39%; margin-right: 0px; display: inline-block;">
-  <img src="circle_pos_vel.png" alt="Circle Trajectory" style="border-radius: 15px; width: 60%; margin-left: 0px; display: inline-block;">
 </div>
 
 <div>
@@ -294,6 +287,16 @@ Using the Jacobian we can convert end-effector position trajectories into Joint 
   </details>
 </div>
 
+<div align="center" style="overflow-x: auto; width: 100%;">
+  <img src="DeltaCircleTrajectory.gif" alt="Delta Robot Circular Trajectory" style="border-radius: 15px; width: 30%; margin-right: 0px; display: inline-block;">
+  <img src="circle_pos_vel.png" alt="Circle Trajectory" style="border-radius: 15px; width: 69%; margin-left: 0px; display: inline-block;">
+</div>
+
+<div align="center">
+  <img src="optimized_snake_scan.png" alt="Optimized Snake Scan" style="border-radius: 15px; width: 45%; margin: 10px;">
+</div>
+Above is an example path planned for the robot to collect some data while moving in a snake-like "scanning" pattern. A cross-section of the workspace with a plane at Z=-180mm was created and a boundary was drawn using a convex hull. The hull was given some padding to prevent sending the robot close to a singularity.
+
 ## End-Effector Sensors
 
 | Sensor | Image | Description | Update Frequency |
@@ -304,13 +307,114 @@ Using the Jacobian we can convert end-effector position trajectories into Joint 
 ### Collecting data
 The sensors are interfaced with the Raspberry Pi over I2C. The raw data is read from the sensors and published to ROS topics on their respective frequencies.
 
-<div align="center">
-  <img src="optimized_snake_scan.png" alt="Optimized Snake Scan" style="border-radius: 15px; width: 45%; margin-right: 5px; display: inline-block;">
-  <img src="scan_data.gif" alt="Scan Data" style="border-radius: 15px; width: 50%; margin-left: 5px; display: inline-block;">
-</div>
-Above is an example path planned for the robot to collect some data while moving in a snake-like "scanning" pattern. A cross-section of a Z-plane at -180mm and the workspace was created and a boundary was drawn using a convex hull. The hull was given some padding to prevent sending the robot close to a singularity
+#### Alpha-Beta Filtering
+An Alpha-Beta filter is a simple filter that produce a more accurate estimate of a sensor reading by estimating both the value and the rate of change of the value. The filter has 2 steps: prediction and update. The prediction step estimates the next value using the previous estimate and the rate of change (over the timestep). The update step utilizes the alpha and beta parameters to adjust the estimate based on the residual error (difference between the predicted and measured value from the sensor).
 
-<!-- ### Alpha-Beta Filtering -->
+<div style="overflow-x: auto; width: 100%;">
+      \[
+        \text{Prediction Step:} \\
+        \hat{x}_k = x_{k-1} + v_{k-1} \cdot \Delta t \\
+        \hat{v}_k = v_{k-1}
+      \]
+    \[
+      \text{Update Step:} \\
+      x_k = \hat{x}_k + \alpha \cdot (z_k - \hat{x}_k) \\
+      v_k = \hat{v}_k + \frac{\beta}{\Delta t} \cdot (z_k - \hat{x}_k)
+    \]
+</div>
+
+Where:
+- \\(\Delta t\\) is the timestep between sensor readings
+- \\(\hat{x}_k\\) is the estimated value at timestep \\(k\\)
+- \\(\hat{v}_k\\) is the estimated rate of change at timestep \\(k\\)
+- \\(x_k\\) is the updated value at timestep \\(k\\)
+- \\(v_k\\) is the updated rate of change at timestep \\(k\\)
+- \\(z_k\\) is the sensor reading/measurement at timestep \\(k\\)
+- \\(\alpha\\) controls how much of the estimate is updated by the residual error
+- \\(\beta\\) scales how much of the rate of change estimate is updated by the residual error
+
+The alpha and beta parameters were tuned empirically to improve the signal from the time-of-flight sensor. The filter was implemented in a ROS node to process the raw sensor data and publish the filtered data.
+
+<div>
+  <details>
+    <summary>Alpha-Beta Filter ROS C++ Implementation</summary>
+  
+  ```cpp
+    /**
+    * @struct AlphaBetaFilter
+    * @brief Struct for storing alpha-beta filter parameters and state.
+    *
+    * This struct contains the parameters and state variables for an alpha-beta filter,
+    * which is used to filter sensor data.
+    */
+    typedef struct {
+      /**
+      * @brief Alpha value for filter
+      *
+      * @note Determines how much of the residual error is used to update the estimate.
+      *
+      */
+      float alpha;
+
+      /**
+      * @brief Beta value for filter
+      *
+      * @note Determines how much of the residual error is used to update the rate estimate.
+      */
+      float beta;
+      float estimate; // Current estimate
+      float rateEstimate; // Current rate estimate
+      float previousEstimate = 0; // Previous estimate
+      float previousRateEstimate = 0; // Previous rate estimate
+      rclcpp::Time prevMeasureTime = rclcpp::Time(0); // Time of the previous measurement
+    } AlphaBetaFilter;
+
+    void KalmanFilter::applyAlphaBetaFilter(float z, AlphaBetaFilter& filter) {
+      // Handle first measurement case
+      if (filter.previousEstimate == 0 && filter.previousRateEstimate == 0) {
+        filter.prevMeasureTime = this->now();
+        filter.previousEstimate = z;
+        filter.estimate = z; // Use current measurement as the initial estimate
+        return; // Skip prediction for first measurement
+      }
+
+      // Update Timestep and save the previous measurement time
+      float dt = (this->now() - filter.prevMeasureTime).seconds();
+      filter.prevMeasureTime = this->now();
+
+      // Prediction Step
+      filter.estimate = filter.previousEstimate + (filter.rateEstimate * dt);
+
+      // Update Step
+      float residual = z - filter.estimate;
+      filter.estimate += filter.alpha * residual;
+      filter.rateEstimate += filter.beta * (residual / dt);
+
+      // Update the filter state
+      filter.previousRateEstimate = filter.rateEstimate;
+      filter.previousEstimate = filter.estimate;
+    }
+
+    void KalmanFilter::rangeCallback(const Range::SharedPtr msg) {
+      // Alpha-Beta Filter for Range Data from Time-of-Flight Sensor
+      this->applyAlphaBetaFilter(msg->range, this->rangeFilter);
+
+      // Publish the filtered range value
+      auto filtered_msg = std::make_shared<Range>(*msg);
+      filtered_msg->range = this->rangeFilter.estimate; // Update the range value to the filtered value
+      filtered_msg->header.stamp = this->now(); // Update the timestamp to the current time
+      // Only publish the filtered range if it is within the min and max range values
+      if ((filtered_msg->range >= filtered_msg->min_range) && (filtered_msg->range <= filtered_msg->max_range)) {
+        this->filtered_range_pub->publish(*filtered_msg);
+      }
+  }
+  ```
+  </details>
+</div>
+
+<div align="center">
+  <img src="filtered_data.gif" alt="Filtered Data Visualization" style="border-radius: 15px; width: 60%; margin: 10px;">
+</div>
 
 
 ## References
