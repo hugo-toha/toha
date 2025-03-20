@@ -10,7 +10,7 @@ menu:
     name: Delta Robot
     identifier: delta-robot
     weight: 1
-tags: ["ROS2", "C++", "Python", "Parallel Robot Kinematics", "I2C Sensors", "Kalman Filtering"]
+tags: ["ROS2", "C++", "Python", "Parallel Robot Kinematics", "I2C Sensors", "Alpha-Beta Filtering"]
 repo: https://github.com/Sharwin24/DeltaRobot
 ---
 An open source ROS package for controlling delta robots with position and velocity control. Configurable for any delta robot parametes for adaptive forward and inverse kinematics. Trajectory generation and visualization examples are also offered. Designed for public use and easy integration with new delta robot designs and applications.
@@ -308,7 +308,7 @@ Above is an example path planned for the robot to collect some data while moving
 The sensors are interfaced with the Raspberry Pi over I2C. The raw data is read from the sensors and published to ROS topics on their respective frequencies.
 
 #### Alpha-Beta Filtering
-An Alpha-Beta filter is a simple filter that produce a more accurate estimate of a sensor reading by estimating both the value and the rate of change of the value. The filter has 2 steps: prediction and update. The prediction step estimates the next value using the previous estimate and the rate of change (over the timestep). The update step utilizes the alpha and beta parameters to adjust the estimate based on the residual error (difference between the predicted and measured value from the sensor).
+An Alpha-Beta filter [3] is a simple filter that produce a more accurate estimate of a sensor reading by estimating both the value and the rate of change of the value. The filter has 2 steps: prediction and update. The prediction step estimates the next value using the previous estimate and the rate of change (over the timestep). The update step utilizes the alpha and beta parameters to adjust the estimate based on the residual error (difference between the predicted and measured value from the sensor).
 
 <div style="overflow-x: auto; width: 100%;">
       \[
@@ -318,17 +318,17 @@ An Alpha-Beta filter is a simple filter that produce a more accurate estimate of
       \]
     \[
       \text{Update Step:} \\
-      x_k = \hat{x}_k + \alpha \cdot (z_k - \hat{x}_k) \\
-      v_k = \hat{v}_k + \frac{\beta}{\Delta t} \cdot (z_k - \hat{x}_k)
+      x_k = \hat{x}_k + \alpha \cdot \underbrace{(z_k - \hat{x}_k)}_{\text{residual}} \\
+      v_k = \hat{v}_k + \beta \cdot \frac{(z_k - \hat{x}_k)}{\Delta t}
     \]
 </div>
 
 Where:
 - \\(\Delta t\\) is the timestep between sensor readings
-- \\(\hat{x}_k\\) is the estimated value at timestep \\(k\\)
-- \\(\hat{v}_k\\) is the estimated rate of change at timestep \\(k\\)
-- \\(x_k\\) is the updated value at timestep \\(k\\)
-- \\(v_k\\) is the updated rate of change at timestep \\(k\\)
+- \\(\hat{x}_k\\) is the predicted value at timestep \\(k\\)
+- \\(\hat{v}_k\\) is the predicted rate of change at timestep \\(k\\)
+- \\(x_k\\) is the updated estimate at timestep \\(k\\)
+- \\(v_k\\) is the updated rate of change estimate at timestep \\(k\\)
 - \\(z_k\\) is the sensor reading/measurement at timestep \\(k\\)
 - \\(\alpha\\) controls how much of the estimate is updated by the residual error
 - \\(\beta\\) scales how much of the rate of change estimate is updated by the residual error
@@ -420,3 +420,4 @@ The alpha and beta parameters were tuned empirically to improve the signal from 
 ## References
 1. [Delta Robot Kinematics](https://hypertriangle.com/~alex/delta-robot-tutorial/)
 2. [Modern Robotics](http://hades.mech.northwestern.edu/index.php/Modern_Robotics)
+3. [Alpha-Beta Filtering](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python)
