@@ -287,15 +287,18 @@ The Modern Robotics [2] textbook details the process of deriving the Jacobian fo
   </details>
 </div>
 
-<div align="center" style="overflow-x: auto; width: 100%;">
-  <img src="DeltaCircleTrajectory.gif" alt="Delta Robot Circular Trajectory" style="border-radius: 15px; width: 30%; margin-right: 0px; display: inline-block;">
-  <img src="circle_pos_vel.png" alt="Circle Trajectory" style="border-radius: 15px; width: 69%; margin-left: 0px; display: inline-block;">
-</div>
 
-<div align="center">
-  <img src="optimized_snake_scan.png" alt="Optimized Snake Scan" style="border-radius: 15px; width: 45%; margin: 10px;">
+<div align="center" style="overflow-x: auto; width: 100%;">
+  <img src="DeltaCircleTrajectory.gif" alt="Delta Robot Circular Trajectory" style="border-radius: 15px; width: 50%; margin: 5px; display: inline-block;">
+  <img src="RealDeltaPringle.gif" alt="Real Robot Trajectory" style="border-radius: 15px; width: 25%; margin: 5px; display: inline-block;">
+  <img src="circle_pos_vel.png" alt="Circle Trajectory" style="border-radius: 15px; width: 80%; display: inline-block; margin: 5px;">
 </div>
-Above is an example path planned for the robot to collect some data while moving in a snake-like "scanning" pattern. A cross-section of the workspace with a plane at Z=-180mm was created and a boundary was drawn using a convex hull. The hull was given some padding to prevent sending the robot close to a singularity.
+<div align="center" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+  <img src="optimized_snake_scan.png" alt="Optimized Snake Scan" style="border-radius: 15px; width: 45%; margin: 10px;">
+  <div style="width: 45%; margin: 10px;">
+    An example path planned for the robot to collect some data while moving in a snake-like "scanning" pattern. A cross-section of the workspace with a plane at Z=-180mm was created and a boundary was drawn using a convex hull. The hull was given some padding to prevent sending the robot close to a singularity.
+  </div>
+</div>
 
 ## End-Effector Sensors
 
