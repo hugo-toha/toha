@@ -23,7 +23,8 @@ An open source ROS package for controlling delta robots with position and veloci
 The robot's forward and inverse kinematics were first implemented in a [jupyter notebook](https://github.com/Sharwin24/DeltaRobot/blob/main/delta_kinematics.ipynb) to visualize the robot's configuration space and workspace.
 
 <div align="center">
-  <img src="FK_notebook.png" alt="Robot Simulated in 3D Plot" style="border-radius: 15px; width: 45%; margin-left: 5px; display: inline-block;">
+  <img src="FK_notebook.png" alt="Robot Simulated in 3D Plot" style="border-radius: 15px; width: 45%; margin: 5px; display: inline-block;">
+  <img src="DeltaCAD.png" alt="Delta Robot CAD Model" style="border-radius: 15px; width: 32%; margin: 5px; display: inline-block;">
 </div>
 
 The forward and inverse kinematics were then implemented in C++ following the approach described on the Trossen Robotics forum [1]. Access to the kinematics lets us plan paths in the joint space significantly easier and safer since the workspace is irregular. Once a joint trajectory is planned, the path can be verified to stay in the workspace to avoid singularities.
@@ -286,7 +287,6 @@ The Modern Robotics [2] textbook details the process of deriving the Jacobian fo
   ```
   </details>
 </div>
-
 
 <div align="center" style="overflow-x: auto; width: 100%;">
   <img src="DeltaCircleTrajectory.gif" alt="Delta Robot Circular Trajectory" style="border-radius: 15px; width: 50%; margin: 5px; display: inline-block;">
