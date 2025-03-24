@@ -64,11 +64,11 @@ function setMermaidTheme(siteTheme) {
     if (siteTheme === 'dark') themeName = 'dark';
 
     // Set custom theme
-    if (themeName === 'default' && params.flowchart?.mermaid['theme']) {
-        themeName = params.flowchart?.mermaid['theme'];
+    if (themeName === 'default' && params.flowchart?.mermaid.theme) {
+        themeName = params.flowchart?.mermaid.theme;
     }
-    else if (themeName === 'dark' && params.flowchart?.mermaid['darktheme']) {
-        themeName = params.flowchart?.mermaid['darktheme'];
+    else if (themeName === 'dark' && params.flowchart?.mermaid.darktheme) {
+        themeName = params.flowchart?.mermaid.darktheme;
     }
     const mermaidOptions = { theme: themeName };
     const options = Object.assign({}, mermaidOptions, { startOnLoad: true });
