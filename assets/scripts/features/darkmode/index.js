@@ -1,3 +1,5 @@
+import { setMermaidTheme } from '../flowchart/mermaid.js'
+
 const PERSISTENCE_KEY = 'darkmode:color-scheme'
 
 window.addEventListener('load', async () => {
@@ -41,6 +43,8 @@ window.addEventListener('load', async () => {
     saveScheme(newScheme)
 
     setImages(theme)
+
+    setMermaidTheme(theme)
   }
 
   setScheme(loadScheme())
