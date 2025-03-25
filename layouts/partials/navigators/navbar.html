@@ -30,7 +30,7 @@
 {{ if $mainLogo }}
   {{ $mainLogo = resources.Get $mainLogo}}
   {{ if and $mainLogo (not (or (eq $mainLogo.MediaType.SubType "svg") (eq $mainLogo.MediaType.SubType "gif"))) }}
-    {{ $mainLogo = $mainLogo.Resize "42x" }}
+    {{ $mainLogo = $mainLogo.Resize "100x" }}
   {{ end }}
   {{ $mainLogo = $mainLogo.RelPermalink}}
 {{ end }}
@@ -46,7 +46,7 @@
 {{ if $darkLogo }}
   {{ $darkLogo = resources.Get $darkLogo}}
   {{ if and $darkLogo (not (or (eq $darkLogo.MediaType.SubType "svg") (eq $darkLogo.MediaType.SubType "gif"))) }}
-    {{ $darkLogo = $darkLogo.Resize "42x" }}
+    {{ $darkLogo = $darkLogo.Resize "100x" }}
   {{ end }}
   {{ $darkLogo = $darkLogo.RelPermalink}}
 {{ end }}
