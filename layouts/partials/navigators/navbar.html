@@ -38,7 +38,7 @@
 {{ if $invertedLogo }}
   {{ $invertedLogo = resources.Get $invertedLogo}}
   {{ if and $invertedLogo (not (or (eq $invertedLogo.MediaType.SubType "svg") (eq $invertedLogo.MediaType.SubType "gif"))) }}
-    {{ $invertedLogo = $invertedLogo.Resize "42x" }}
+    {{ $invertedLogo = $invertedLogo.Resize "100x" }}
   {{ end }}
   {{ $invertedLogo = $invertedLogo.RelPermalink}}
 {{ end }}
