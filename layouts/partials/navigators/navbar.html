@@ -30,7 +30,7 @@
 {{ if $mainLogo }}
   {{ $mainLogo = resources.Get $mainLogo}}
   {{ if and $mainLogo (not (or (eq $mainLogo.MediaType.SubType "svg") (eq $mainLogo.MediaType.SubType "gif"))) }}
-    {{ $mainLogo = $mainLogo.Resize "100x" }}
+    {{ $mainLogo = $mainLogo.Resize "200x" }}
   {{ end }}
   {{ $mainLogo = $mainLogo.RelPermalink}}
 {{ end }}
@@ -38,7 +38,7 @@
 {{ if $invertedLogo }}
   {{ $invertedLogo = resources.Get $invertedLogo}}
   {{ if and $invertedLogo (not (or (eq $invertedLogo.MediaType.SubType "svg") (eq $invertedLogo.MediaType.SubType "gif"))) }}
-    {{ $invertedLogo = $invertedLogo.Resize "100x" }}
+    {{ $invertedLogo = $invertedLogo.Resize "200x" }}
   {{ end }}
   {{ $invertedLogo = $invertedLogo.RelPermalink}}
 {{ end }}
@@ -46,7 +46,7 @@
 {{ if $darkLogo }}
   {{ $darkLogo = resources.Get $darkLogo}}
   {{ if and $darkLogo (not (or (eq $darkLogo.MediaType.SubType "svg") (eq $darkLogo.MediaType.SubType "gif"))) }}
-    {{ $darkLogo = $darkLogo.Resize "100x" }}
+    {{ $darkLogo = $darkLogo.Resize "200x" }}
   {{ end }}
   {{ $darkLogo = $darkLogo.RelPermalink}}
 {{ end }}
@@ -80,7 +80,7 @@
     {{ end }}
     <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
       {{ if $logo }}
-        <img src="{{ $logo }}" id="logo" alt="Logo">
+        <img src="{{ $logo }}" id="logo" alt="Logo" style="width: 50%; object-fit: contain;">
       {{ end }}
       {{- $navBarTitle -}}
     </a>
