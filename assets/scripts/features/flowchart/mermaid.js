@@ -86,7 +86,6 @@ function setMermaidTheme(siteTheme) {
 
 function initMermaid() {
     saveOriginalData().catch(console.error);
-    setMermaidTheme("light");
 }
 
 export { setMermaidTheme }
