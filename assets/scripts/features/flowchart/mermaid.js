@@ -72,9 +72,6 @@ function setMermaidTheme(siteTheme) {
     }
     const mermaidOptions = { theme: themeName };
     const options = Object.assign({}, mermaidOptions, { startOnLoad: true });
-    console.log(themeName);
-    console.log(params.flowchart?.mermaid);
-    console.log(mermaidOptions);
 
     // Initialize mermaid with the new options
     mermaid.initialize(options);
@@ -88,6 +85,7 @@ function setMermaidTheme(siteTheme) {
 }
 
 function initMermaid() {
+    setMermaidTheme("light");
     saveOriginalData().catch(console.error);
 }
 
