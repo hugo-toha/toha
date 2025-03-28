@@ -58,6 +58,15 @@ projects:
   summary: Simulating a pick and place task with the KUKA YouBot using a task-space feed-forward PID controller and Odometry.
   tags: ["Python", "CoppeliaSim", "Odometry", "PID Control", "Omnidirectional Robot Kinematics"]
 
+- name: Teaching an Old Dog New Tricks
+  role: "MSAI437: Deep Learning Final Project"
+  image: /images/go2_strafing.gif
+  timeline: "Mar 2025"
+  url: "/posts/go2-tasks/"
+  repo: "https://github.com/HarrisonBounds/go2RL"
+  summary: Teaching the Unitree Go2 robot dog various locomotion tasks using reinforcement learning on the Genesis simulator.
+  tags: ["Python", "Reinforcement Learning", "PPO", "Genesis"]
+
 - name: Chess Robot
   role: "NEU Robotics Club Project"
   image: /images/chess_robot.gif

@@ -9,7 +9,7 @@ menu:
   sidebar:
     name: Chess Robot
     identifier: chess-robot
-    weight: 5
+    weight: 6
 tags: ["Python", "OpenCV", "Arduino", "Stepper Motors"]
 repo: https://github.com/Connor205/Chess-Robot-NURobotics
 ---

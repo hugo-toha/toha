@@ -9,7 +9,7 @@ menu:
   sidebar:
     name: Napkin.AI
     identifier: napkin-ai
-    weight: 8
+    weight: 9
 tags: ["Python", "PyTorch", "Retrieval-Augmented Generation", "Knowledge Graphs", "Language Models"]
 repo: https://github.com/Sharwin24/HackAtBrown
 # categories: ["Basic"]
