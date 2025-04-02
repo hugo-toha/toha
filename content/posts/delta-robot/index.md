@@ -13,7 +13,7 @@ menu:
 tags: ["ROS2", "C++", "Python", "Parallel Robot Kinematics", "I2C Sensors", "Alpha-Beta Filtering"]
 repo: https://github.com/Sharwin24/DeltaRobot
 ---
-An open source ROS package for controlling delta robots with position and velocity control. Configurable for any delta robot parametes for adaptive forward and inverse kinematics. Trajectory generation and visualization examples are also offered. Designed for public use and easy integration with new delta robot designs and applications.
+An open source ROS package for controlling delta robots with position and velocity control. Configurable for adaptive forward and inverse kinematics. Trajectory generation and visualization examples are also offered. Designed for public use and easy integration with new delta robots as long as their configuration parameters are setup correctly.
 
 <div align="center">
   <img src="ROS_Diagram.png" alt="ROS Diagram" style="border-radius: 15px; width: 85%; margin-right: 0px; display: inline-block;">
