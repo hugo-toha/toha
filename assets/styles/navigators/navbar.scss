@@ -119,23 +119,6 @@
     }
   }
 
-  &.transparent-navbar {
-    background-color: rgb(255,255,255) !important;
-    opacity: 0.1;
-    .navbar-brand {
-      color: get-light-color('inverse-text-color');
-      font-weight: 600;
-    }
-    li {
-      a {
-        color: get-light-color('inverse-text-color');
-      }
-    }
-    .feather-menu {
-      stroke: get-light-color('inverse-text-color');
-    }
-  }
-
   #themeMenu {
     width: 25px;
     min-width: 3rem;
@@ -157,13 +140,6 @@
       max-width: 100%;
     }
 
-    &.transparent-navbar {
-      .navbar-nav .active,
-      li a:hover {
-        color: get-light-color('accent-color');
-        @include transition();
-      }
-    }
 
     #top-navbar-divider {
       height: auto;
@@ -260,21 +236,6 @@ html[data-theme='dark'] {
         }
       }
     }
-
-    &.transparent-navbar {
-      .navbar-brand {
-        color: get-dark-color('text-color');
-      }
-      li {
-        a {
-          color: get-dark-color('text-color');
-        }
-      }
-      .feather-menu {
-        stroke: get-dark-color('text-color');
-      }
-    }
-  }
 
   img.theme-icon {
     filter: invert(1);

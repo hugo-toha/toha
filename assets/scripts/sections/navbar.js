@@ -4,7 +4,6 @@ const updateNavBar = () => {
   const themeIcon = document.getElementById('navbar-theme-icon-svg')
 
   if (window.scrollY > 40) {
-    topNavbar?.classList.remove('transparent-navbar')
     topNavbar?.classList.add('shadow')
 
     navbarToggler?.classList.remove('navbar-dark')
@@ -21,7 +20,6 @@ const updateNavBar = () => {
     }
   } else {
     topNavbar?.classList.remove('shadow')
-    topNavbar?.classList.add('transparent-navbar')
 
     navbarToggler?.classList.remove('navbar-light')
     navbarToggler?.classList.add('navbar-dark')
