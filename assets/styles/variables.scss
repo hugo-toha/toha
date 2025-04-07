@@ -23,63 +23,35 @@ $box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
 // themes
 $themes: (
   'light': (
-    // cyan 600
-    'accent-color': #0891b2,
-    // cyan 500
-    'hover-over-accent-color': #06b6d4,
-    // zinc 200
-    'text-over-accent-color': #e4e4e7,
-    // slate 50
-    'bg-primary': #f8fafc,
-    // slate 900
-    'bg-primary-inverse': #0f172a,
-    // slate 200
-    'bg-secondary': #e2e8f0,
-    'bg-card': #fff,
-    // slate 800
-    'heading-color': #1e293b,
-    // slate 700
-    'text-color': #334155,
-    // slate 300
-    'inverse-text-color': #cbd5e1,
-    // slate 500
-    'muted-text-color': #64748b,
-    // red 600
-    'inline-code-color': #dc2626,
-    // amber 200
-    'highlight-color': #fde68a,
-    // slate 900
-    'footer-color': #0f172a,
-  ),
+    'accent-color': #8BC34A,         /* A bright, fresh green */
+    'hover-over-accent-color': #689F38, /* Slightly darker for hover feedback */
+    'text-over-accent-color': #FFFFFF,   /* White for good contrast on the accent */
+    'bg-primary': #F1F8E9,           /* Very light, almost off-white green */
+    'bg-primary-inverse': #33691E,    /* Dark green for contrasting elements */
+    'bg-secondary': #DCEDC8,          /* Slightly darker light green for subtle separation */
+    'bg-card': #FFFFFF,              /* Clean white for content cards */
+    'heading-color': #33691E,         /* Dark green for strong heading contrast */
+    'text-color': #212121,            /* Dark gray for readable body text */
+    'inverse-text-color': #FFFFFF,    /* White for text on dark backgrounds */
+    'muted-text-color': #757575,      /* Medium gray for less important text */
+    'inline-code-color': #AED581,     /* Light green to highlight inline code */
+    'highlight-color': #CCFF90,       /* A very light, bright green for highlighting */
+    'footer-color': #E0E7DA,          /* A slightly darker shade of the primary background */  ),
   'dark': (
-    // cyan 600
-    'accent-color': #0891b2,
-    // cyan 500
-    'hover-over-accent-color': #06b6d4,
-    // zinc 200
-    'text-over-accent-color': #e4e4e7,
-    // gray-800
-    'bg-primary': #1f2937,
-    // slate 900
-    'bg-primary-inverse': #0f172a,
-    // gray 900
-    'bg-secondary': #111827,
-    // slate 800
-    'bg-card': #1e293b,
-    // slate 100
-    'heading-color': #f1f5f9,
-    // slate 300
-    'text-color': #cbd5e1,
-    // slate 900
-    'inverse-text-color': #0f172a,
-    // slate 500
-    'muted-text-color': #64748b,
-    // red 600
-    'inline-code-color': #dc2626,
-    // amber 200
-    'highlight-color': #fde68a,
-    // slate 900
-    'footer-color': #0f172a,
+    'accent-color': #AED581,         /* A lighter green to stand out on dark */
+    'hover-over-accent-color': #8BC34A, /* Slightly lighter for hover feedback */
+    'text-over-accent-color': #212121,   /* Dark gray for good contrast on the accent */
+    'bg-primary': #1B5E20,           /* A deep, dark green */
+    'bg-primary-inverse': #F1F8E9,    /* Very light green for contrasting elements */
+    'bg-secondary': #2E7D32,          /* Slightly lighter dark green for subtle separation */
+    'bg-card': #388E3C,              /* A medium dark green for content cards */
+    'heading-color': #F1F8E9,         /* Very light green for strong heading contrast */
+    'text-color': #E0E7DA,            /* Light gray/off-white for readable body text */
+    'inverse-text-color': #212121,    /* Dark gray for text on light backgrounds */
+    'muted-text-color': #9E9E9E,      /* Medium gray for less important text */
+    'inline-code-color': #CCFF90,     /* Light, bright green to highlight inline code */
+    'highlight-color': #8BC34A,       /* A brighter green for highlighting */
+    'footer-color': #2E7D32,          /* A slightly lighter shade of the primary background */
   ),
 );
 
@@ -92,6 +64,7 @@ $brand-colors: (
   'pocket': #ef4056,
   'diaspora': #1e1e1e,
   'whatsapp': #25d366,
+  'instagram':#E1306C
 );
 
 $alerts: (

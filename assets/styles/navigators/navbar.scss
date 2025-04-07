@@ -120,7 +120,7 @@
   }
 
   &.transparent-navbar {
-    background-color: transparent !important;
+    background-color: rgb(255,255,255,0.1)!important;
     .navbar-brand {
       color: get-light-color('inverse-text-color');
       font-weight: 600;
