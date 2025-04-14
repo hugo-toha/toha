@@ -80,5 +80,5 @@
 
 <!-- Keep backwards compatibility and consistency with HUGO defaults -->
 {{ if .Site.Config.Services.GoogleAnalytics.ID }}
-    {{ template "_internal/google_analytics.html" . }}
+    {{ partial "google_analytics.html" . }}
 {{ end }}
