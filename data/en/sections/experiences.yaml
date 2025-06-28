@@ -11,10 +11,26 @@ section:
 # Your experiences
 experiences:
 - company:
+    name: Locus Robotics
+    url: "https://locusrobotics.com"
+    location: Remote (Wilmington, MA)
+    logo: /images/locus_robotics.png
+    # Can optionally show a different logo for dark theme
+    # darkLogo: /images/sections/experiences/company1.jpg
+    # company overview
+    overview: Warehouse automation company that builds autonomous mobile robots (AMRs) to improve warehouse efficiency and productivity.
+  positions:
+  - designation: Planning and Controls Intern
+    start: June 2025
+    # end: Dec 2023
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    responsibilities:
+    - Reduced mobile robots' downtime with optimizations to the fleet's charging behavior.
+- company:
     name: GreenSight Inc.
     url: "https://www.greensightag.com/"
     location: Boston, MA
-    logo: /images/sections/experiences/company1.jpg
+    logo: /images/greensight.png
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/experiences/company1.jpg
     # company overview
@@ -35,7 +51,7 @@ experiences:
     name: Fulfil Solutions Inc.
     url: "https://www.fulfil.com/"
     location: Redwood City, CA
-    logo: /images/sections/experiences/company2.jpg
+    logo: /images/fulfil.png
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/experiences/company2.jpg
     overview: A warehouse automation company that specializes in groceries, with zero labor pick and pack.
@@ -53,7 +69,7 @@ experiences:
     name: Doble Engineering Company
     url: "https://www.doble.com/"
     location: Marlborough, MA
-    logo: /images/sections/experiences/company3.jpg
+    logo: /images/doble_engineering.png
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/experiences/company3.jpg
     overview: A hardware and software company that specializes in diagnostic test equipment, software, and services for the electric power industry.
