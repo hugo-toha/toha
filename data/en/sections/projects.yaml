@@ -67,6 +67,15 @@ projects:
   summary: Teaching the Unitree Go2 robot dog various locomotion tasks using reinforcement learning on the Genesis simulator.
   tags: ["Python", "Reinforcement Learning", "PPO", "Genesis"]
 
+- name: RL Mobile Robot Navigation
+  image: /images/jackal_lidar.png
+  role: "CS496: Machine Learning and Sensing Final Project"
+  timeline: "April 2025 - June 2025"
+  url: "/posts/rle/"
+  repo: https://github.com/HarrisonBounds/RLE
+  summary: Teaching a Jackal mobile robot with a LiDaR to navigate using reinforcement learning with Mujoco.
+  tags: ["Python", "Reinforcement Learning", "Mujoco", "PPO", "LiDaR"]
+
 - name: Chess Robot
   role: "NEU Robotics Club Project"
   image: /images/chess_robot.gif
@@ -75,6 +84,15 @@ projects:
   repo: "https://github.com/Connor205/Chess-Robot-NURobotics"
   summary: A gantry robot equipped with a camera to autonomously play and teach chess to human opponents.
   tags: ["Python", "OpenCV", "Arduino", "Stepper Motors"]
+
+- name: Racing Simulator with VIO
+  image: /images/turtlebot_video.png
+  role: "MSAI495: Computer Vision Final Project"
+  timeline: "April 2025 - June 2025"
+  url: "/posts/turtlebot-racing/"
+  repo: https://github.com/Sharwin24/Visual-Pose-Graph-Estimation
+  summary: Utilized a turtlebot3 with a Zed 2i camera to create a racing simulator that uses Visual-Inertial Odometry (VIO) for localization and mapping.
+  tags: ["Computer Vision", "C++", "OpenCV", "Zed 2i Camera", "Visual-Inertial Odometry"]
 
 - name: Robot Arm Educational Kit
   image: /images/kavar_background.jpg
