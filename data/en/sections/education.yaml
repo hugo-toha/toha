@@ -26,9 +26,12 @@ degrees:
     courses:
     - name: Robotics Operating System (ROS)
     - name: Robotic Manipulation
+    - name: Computer Vision
+    - name: Deep Learning
     - name: Mechatronics
     - name: Machine Learning
-    - name: Deep Learning
+    - name: Active Learning
+    - name: Machine Learning and Sensing
     - name: Theory of Lagrangian Dynamics
     - name: Advanced Programming in C++
   # extracurricularActivities: #(optional)

@@ -27,7 +27,7 @@ skills:
 - name: Git
   logo: /images/git.svg
 
-- name: ROS2
+- name: ROS/ROS 2
   logo: /images/ros2.svg
 
 - name: Python
