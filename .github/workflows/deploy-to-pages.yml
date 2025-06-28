@@ -1,0 +1,27 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.102.3'
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: actions/github-pages@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          directory: public
