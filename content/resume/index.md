@@ -7,12 +7,10 @@ url: "/resume/"
 repo: https://github.com/Sharwin24/Resume
 ---
 
-
-
 <iframe
   src="SharwinPatilResume.pdf"
   width="100%"
-  height="800"
+  height="1500"
   style="border: none;"
   allowfullscreen
   loading="lazy"
