@@ -13,7 +13,7 @@ description: Sharwin Patil's Portfolio and project showcases.
 # they will be separated by a divider from the main menus.
 customMenus:
 - name: Resume
-  url: https://github.com/Sharwin24/Resume/blob/master/main.pdf
+  url: /resume/
   showOnFooter: true
 
 - name: GitHub
