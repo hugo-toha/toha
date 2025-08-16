@@ -56,9 +56,9 @@
     "imagesloaded": "^5.0.0",
     "include-media": "^1.4.10",
     "ityped": "^1.0.3",
-    "katex": "^0.16.21",
+    "katex": "^0.16.11",
     "mark.js": "^8.11.1",
-    "mermaid": "^11.6.0",
+    "mermaid": "^11.9.0",
     "plyr": "^3.7.2",
     "popper.js": "^1.16.1",
     "postcss": "^8.4.41",
@@ -73,7 +73,6 @@
     "url": "git+https://github.com/hugo-toha/toha.git"
   },
   "scripts": {
-    "autoprefixer": "postcss static/css/*/*.css --use autoprefixer -r --no-map",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
