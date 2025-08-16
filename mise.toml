@@ -7,6 +7,10 @@ go = '1.25.0'
 description = "Install project dependencies"
 run = "npm install"
 
+[tasks.update]
+description = "Update node dependencies and prepare package.hugo.json file"
+run = ["npm update", "hugo mod npm pack"]
+
 [tasks.install-example-deps]
 description = "Install example site dependencies"
 depends = ["install"]
