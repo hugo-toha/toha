@@ -93,8 +93,8 @@ Here are few screenshots from the [example site](https://hugo-toha.github.io).
 
 ## Requirements
 
-- Hugo Version 0.128.0 (extended) or higher
-- Go language 1.18 or higher (require for hugo modules)
+- Hugo Version 0.146.0 (extended) or higher
+- Go language 1.19 or higher (require for hugo modules)
 - Node version v18.x or later and npm 8.x or later.
 
 ## Usage
@@ -189,29 +189,36 @@ Pull requests are most welcome and I will be happy to review. Just follow the fo
 
 For local development, you can make changes in the theme submodule and test the changes against your own site or this [example site](https://github.com/hugo-toha/hugo-toha.github.io) locally.
 
-### Fork
+### 1. Fork
 
 At first, fork [this repo](https://github.com/hugo-toha/toha). Then, follow the following steps to use the forked theme for local developments,
 
-#### Running the forked theme against the example site
+We have an example configuration under `exampleSite` folder that will let you run the theme locally. Follow below steps to run the example site.
 
-If your want to run your local development against this [example site](https://github.com/hugo-toha/hugo-toha.github.io), follow the following steps:
+### 2. Install Mise
+
+We use [jdx/mise](https://github.com/jdx/mise) to simplify managing dependencies and running locally. Please, install it following the instruction from [here](https://mise.jdx.dev/getting-started.html).
+
+### 3. Install dependencies
+
+Install the all the necessary tools by running:
+```bash
+mise install
+```
+
+This will install `hugo`, `go`, `node` and other tools that are necessary to run this project to appropriate versions.
+
+### 4. Run example site
+
+Now, run the site locally using following command.
 
 ```bash
-# go to exampleSite directory
-$ cd exampleSite
-# install hugo modules
-$ hugo mod tidy
-# install dependencies
-$ hugo mod npm pack
-$ npm install
-# run the example site locally
-$ hugo server -w
+mise run example-site
 ```
 
 Now, you can make change in the theme and they will be reflected immediately on the running site. If you need to change any configuration, you can do that in the `hugo.yaml` file inside `exampleSite` folder. If you need to add any content or data, you can create the respective folder inside `exampleSite` directory and add your desired content or data there.
 
-#### Running the forked theme against your own site
+### Running the forked theme against your own site
 
 If you want to run your local development against your own site, follow the following steps:
 
