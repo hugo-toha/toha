@@ -1,6 +1,6 @@
 baseURL: http://example.org/
 languageCode: en-us
-title: Example Site
+title: Jason Lucas 
 
 module:
   imports:
@@ -34,7 +34,7 @@ languages:
   en:
     languageCode: en
     languageName: English
-    title: "John's Blog"
+    title: "Jason Lucas"
     weight: 1
   bn:
     languageCode: bn
