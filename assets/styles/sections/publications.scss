@@ -26,7 +26,7 @@
       }
 
       a[href] {
-        text-decoration: underline; /* Underline only when href is present */
+        text-decoration: underline;
       }
       
       a:not([href]) {
