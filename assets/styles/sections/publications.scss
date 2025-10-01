@@ -29,8 +29,8 @@
         text-decoration: underline; /* Underline only when href is present */
       }
       
-      a:not([href]) {
-        text-decoration: none; /* No underline when href is absent */
+      .author-name {
+        color: get-light-color('text-color'); /* Use text color for authors without URLs */
       }
     }
 
@@ -129,6 +129,10 @@ html[data-theme='dark'] {
       .card-header {
         .sub-title {
           color: get-dark-color('muted-text-color');
+        }
+        
+        .author-name {
+          color: get-dark-color('text-color'); /* Use text color for authors without URLs in dark mode */
         }
       }
 
