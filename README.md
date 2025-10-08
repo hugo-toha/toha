@@ -42,7 +42,7 @@ A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist desi
 - Comment Support
   - [Disqus](https://disqus.com/)
   - [Valine](https://valine.js.org/)
-  - [Uttarances](https://utteranc.es/)
+  - [Utterances](https://utteranc.es/)
   - [Giscus](https://giscus.app/)
 
 For more details about the features please visit [here](https://toha-guides.netlify.app/posts/features/).
