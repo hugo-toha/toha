@@ -1,0 +1,54 @@
+{{- $enabledLanguages := where .Site.Languages "Disabled" false -}}
+{{- $enabledLanguageCodes := slice -}}
+{{- range $enabledLanguages }}
+  {{- $enabledLanguageCodes = $enabledLanguageCodes | append .Lang }}
+{{- end }}
+{{- $pages := .Site.RegularPages -}}
+{{- $searchPages := where $pages "Type" "search" -}}
+{{- $otherPages := where $pages "Type" "!=" "search" -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{{- range $otherPages }}
+  {{- if in $enabledLanguageCodes .Language.Lang }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- if not .Lastmod.IsZero }}
+    <lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}</lastmod>
+    {{- end }}
+    {{- with .Sitemap.ChangeFreq }}
+    <changefreq>{{ . }}</changefreq>
+    {{- end }}
+    {{- if ge .Sitemap.Priority 0.0 }}
+    <priority>{{ .Sitemap.Priority }}</priority>
+    {{- end }}
+    {{- if .IsTranslated }}
+      {{- range .Translations }}
+        {{- if in $enabledLanguageCodes .Language.Lang }}
+    <xhtml:link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  </url>
+  {{- end }}
+{{- end }}
+{{- if $searchPages }}
+  {{- $searchPage := index $searchPages 0 -}}
+  <url>
+    <loc>{{ $searchPage.Permalink }}</loc>
+    {{- if not $searchPage.Lastmod.IsZero }}
+    <lastmod>{{ $searchPage.Lastmod.Format "2006-01-02T15:04:05-07:00" }}</lastmod>
+    {{- end }}
+    {{- with $searchPage.Sitemap.ChangeFreq }}
+    <changefreq>{{ . }}</changefreq>
+    {{- end }}
+    {{- if ge $searchPage.Sitemap.Priority 0.0 }}
+    <priority>{{ $searchPage.Sitemap.Priority }}</priority>
+    {{- end }}
+    {{- range $searchPages }}
+      {{- if in $enabledLanguageCodes .Language.Lang }}
+    <xhtml:link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+      {{- end }}
+    {{- end }}
+  </url>
+{{- end }}
+</urlset>
