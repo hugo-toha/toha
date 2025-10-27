@@ -77,11 +77,11 @@ sitemap:
   changefreq: monthly
   priority: 0.5
   filename: sitemap.xml
-  disabled: false
+  disable: false
 
 # Disable Hugo's sitemap generation completely
-disableKinds:
-  - sitemap
+# disableKinds:
+#   - sitemap
   
 # Site parameters
 params:
