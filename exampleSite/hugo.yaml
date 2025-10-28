@@ -72,6 +72,17 @@ outputFormats:
 # Enable global emoji support
 enableEmoji: true
 
+# Configure sitemap
+sitemap:
+  changefreq: monthly
+  priority: 0.5
+  filename: sitemap.xml
+  disable: false
+
+# Disable Hugo's sitemap generation completely
+# disableKinds:
+#   - sitemap
+  
 # Site parameters
 params:
   # Background image of the landing page
