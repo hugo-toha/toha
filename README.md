@@ -20,7 +20,7 @@ A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist desi
 
 ![Thumbnail](https://raw.githubusercontent.com/hugo-toha/toha/main/images/screenshot.png)
 
-- **Example Site:** [hugo-themes.github.io/toha-example-site]([https://hugo-toha.github.io](https://hugo-themes.github.io/toha-example-site/)
+- **Example Site:** [hugo-themes.github.io/toha-example-site](https://hugo-themes.github.io/toha-example-site/)
 - **Documentation:** [toha-guides.netlify.app](https://toha-guides.netlify.app/posts)
 
 ## Features
