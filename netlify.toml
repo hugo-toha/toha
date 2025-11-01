@@ -3,7 +3,7 @@ command = "mise install && mise run install-example-deps && cd exampleSite && hu
 publish = "exampleSite/public"
 
 [build.environment]
-HUGO_ENABLEGITINFO = true
+HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview]
 command = "mise install && mise run install-example-deps && cd exampleSite && hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
